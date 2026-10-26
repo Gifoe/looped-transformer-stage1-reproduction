@@ -1,0 +1,101 @@
+{
+  "model": "Ouro-1.4B",
+  "split": "validation",
+  "source_sha256": "50de00048ce2c68d234551682cf0b1df48ac17915d6f3ab8bd6cd119d7ae7bf4",
+  "source_records": 900,
+  "methods": [
+    {
+      "method": "baseline",
+      "n": 100,
+      "strict_correct": 88,
+      "numeric_correct": 88,
+      "missing_extraction": 0,
+      "token_cap": 0,
+      "mean_tokens": 135.46,
+      "mean_audited_seconds": 11.637569248999935
+    },
+    {
+      "method": "logits_0.25",
+      "n": 100,
+      "strict_correct": 91,
+      "numeric_correct": 91,
+      "missing_extraction": 2,
+      "token_cap": 1,
+      "mean_tokens": 139.77,
+      "mean_audited_seconds": 10.646916748002404
+    },
+    {
+      "method": "logits_0.5",
+      "n": 100,
+      "strict_correct": 84,
+      "numeric_correct": 84,
+      "missing_extraction": 2,
+      "token_cap": 0,
+      "mean_tokens": 135.92,
+      "mean_audited_seconds": 10.457259689008351
+    },
+    {
+      "method": "logits_1",
+      "n": 100,
+      "strict_correct": 69,
+      "numeric_correct": 69,
+      "missing_extraction": 9,
+      "token_cap": 7,
+      "mean_tokens": 152.48,
+      "mean_audited_seconds": 11.762365208008559
+    },
+    {
+      "method": "logits_2",
+      "n": 100,
+      "strict_correct": 17,
+      "numeric_correct": 17,
+      "missing_extraction": 62,
+      "token_cap": 55,
+      "mean_tokens": 340.25,
+      "mean_audited_seconds": 25.862023624994325
+    },
+    {
+      "method": "hidden_0.25",
+      "n": 100,
+      "strict_correct": 87,
+      "numeric_correct": 87,
+      "missing_extraction": 1,
+      "token_cap": 0,
+      "mean_tokens": 132.43,
+      "mean_audited_seconds": 10.361167749997694
+    },
+    {
+      "method": "hidden_0.5",
+      "n": 100,
+      "strict_correct": 83,
+      "numeric_correct": 83,
+      "missing_extraction": 4,
+      "token_cap": 1,
+      "mean_tokens": 135.13,
+      "mean_audited_seconds": 10.35188400899875
+    },
+    {
+      "method": "hidden_1",
+      "n": 100,
+      "strict_correct": 44,
+      "numeric_correct": 44,
+      "missing_extraction": 36,
+      "token_cap": 36,
+      "mean_tokens": 268.54,
+      "mean_audited_seconds": 20.761751310002293
+    },
+    {
+      "method": "hidden_2",
+      "n": 100,
+      "strict_correct": 0,
+      "numeric_correct": 0,
+      "missing_extraction": 97,
+      "token_cap": 96,
+      "mean_tokens": 494.91,
+      "mean_audited_seconds": 38.014857996996724
+    }
+  ],
+  "no_test_outcomes_read": true,
+  "no_parameter_selection_performed": true,
+  "scope": "Descriptive manual pretest review; validation rates are not held-out estimates and audited times are not clean method speedups"
+}

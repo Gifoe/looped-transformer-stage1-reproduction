@@ -1,0 +1,42 @@
+{
+  "passed": true,
+  "cases": [
+    {
+      "model": "Ouro-1.4B",
+      "prompt": "Question: Which planet is closest to the Sun?\nAnswer:",
+      "answer": " Mercury",
+      "n_tokens": 1,
+      "reference_sum_loglikelihood": -0.10451219975948334,
+      "selected_sum_loglikelihood": -0.10451219975948334,
+      "error_per_token": 0.0
+    },
+    {
+      "model": "Ouro-1.4B",
+      "prompt": "Question: What do green plants need?\nAnswer:",
+      "answer": " sunlight and water",
+      "n_tokens": 3,
+      "reference_sum_loglikelihood": -5.53256368637085,
+      "selected_sum_loglikelihood": -5.53256368637085,
+      "error_per_token": 0.0
+    },
+    {
+      "model": "Qwen3-4B-Base",
+      "prompt": "Question: Which planet is closest to the Sun?\nAnswer:",
+      "answer": " Mercury",
+      "n_tokens": 1,
+      "reference_sum_loglikelihood": -1.6267471313476562,
+      "selected_sum_loglikelihood": -1.6267473697662354,
+      "error_per_token": 2.384185791015625e-07
+    },
+    {
+      "model": "Qwen3-4B-Base",
+      "prompt": "Question: What do green plants need?\nAnswer:",
+      "answer": " sunlight and water",
+      "n_tokens": 3,
+      "reference_sum_loglikelihood": -10.920364379882812,
+      "selected_sum_loglikelihood": -10.920364379882812,
+      "error_per_token": 0.0
+    }
+  ],
+  "tolerance_nll_per_token": 0.05
+}

@@ -1,0 +1,63 @@
+{
+  "used_seconds": 11831.555229100399,
+  "estimated_remaining_seconds": 141518.08434278407,
+  "models": [
+    {
+      "model": "Ouro-1.4B",
+      "mean_seconds_by_validation_method": {
+        "baseline": 9.70790086002089,
+        "hidden_0.25": 9.797576399962418,
+        "hidden_0.5": 9.86163291996345,
+        "hidden_1": 14.553017739998177,
+        "hidden_2": 38.15937756001949,
+        "logits_0.25": 10.037922360002995,
+        "logits_0.5": 10.132775599998421,
+        "logits_1": 9.711344079999254,
+        "logits_2": 17.215673279995098
+      },
+      "test_seconds_by_method": {
+        "depth_2": 5.10793313998729,
+        "depth_3": 7.481462239963003,
+        "logits_paper_03": 9.67015204001218,
+        "logits_adaptive_paper": 9.87127733998932,
+        "baseline": 9.70790086002089,
+        "hidden_fixed_025": 9.797576399962418,
+        "logits_validation_selected": 10.085348980000708,
+        "hidden_validation_selected": 12.207325329980813
+      },
+      "remaining_validation_seconds": 12271.835975996219,
+      "test_seconds_per_question": 73.92897632991662
+    },
+    {
+      "model": "Ouro-2.6B",
+      "mean_seconds_by_validation_method": {
+        "baseline": 25.545410360000098,
+        "hidden_0.25": 22.029199299961327,
+        "hidden_0.5": 22.55500116001349,
+        "hidden_1": 44.74003733997233,
+        "hidden_2": 81.38780840002,
+        "logits_0.25": 23.729087859997527,
+        "logits_0.5": 19.898500559991227,
+        "logits_1": 26.553329319949263,
+        "logits_2": 35.188514119992035
+      },
+      "test_seconds_by_method": {
+        "depth_2": 14.25790738002397,
+        "depth_3": 15.42207275996916,
+        "logits_paper_03": 22.97517510000616,
+        "logits_adaptive_paper": 22.14752686000429,
+        "baseline": 25.545410360000098,
+        "hidden_fixed_025": 22.029199299961327,
+        "logits_validation_selected": 25.141208589973395,
+        "hidden_validation_selected": 33.64751924999291
+      },
+      "remaining_validation_seconds": 28654.554399890243,
+      "test_seconds_per_question": 181.1660195999313
+    }
+  ],
+  "test_count": 200,
+  "uncertainty_multiplier": 1.5,
+  "reserve_seconds": 3600,
+  "passes_hard_budget": true,
+  "selection_source": "pre-validation method-specific pilot; provisional selected costs are grid medians"
+}

@@ -1,0 +1,131 @@
+{
+  "passed": true,
+  "cases": [
+    {
+      "cache_layers": 96,
+      "cache_error": {
+        "max_abs": 0.125,
+        "relative_l2": 0.00957968458533287,
+        "argmax_agreement": 1.0
+      }
+    },
+    {
+      "cache_layers": 96,
+      "cache_error": {
+        "max_abs": 0.125,
+        "relative_l2": 0.010947433300316334,
+        "argmax_agreement": 1.0
+      }
+    }
+  ],
+  "native_gate": [
+    {
+      "threshold": 0.01,
+      "depth": 2,
+      "max_abs": 0
+    },
+    {
+      "threshold": 0.25,
+      "depth": 3,
+      "max_abs": 0
+    },
+    {
+      "threshold": 0.45,
+      "depth": 3,
+      "max_abs": 0
+    },
+    {
+      "threshold": 0.5,
+      "depth": 3,
+      "max_abs": 0
+    },
+    {
+      "threshold": 0.01,
+      "depth": 3,
+      "max_abs": 0
+    },
+    {
+      "threshold": 0.25,
+      "depth": 3,
+      "max_abs": 0
+    },
+    {
+      "threshold": 0.45,
+      "depth": 4,
+      "max_abs": 0
+    },
+    {
+      "threshold": 0.5,
+      "depth": 4,
+      "max_abs": 0
+    }
+  ],
+  "projection_log_probability_max_error": 1.9073486328125e-06,
+  "projection_relative_inner_product": 1.2161021345491463e-07,
+  "layers": 24,
+  "loops": 4,
+  "cache_layers": 96,
+  "source_sha256": "c5c68fbb368ce2909c257ae2afc50719be8c91539333d3295e19312c4316f413",
+  "harness": {
+    "passed": true,
+    "harness_version": "0.4.9",
+    "cases": [
+      {
+        "id": "arc_challenge/validation/Mercury_SC_407695",
+        "max_error_per_token": 0.004286766052246094,
+        "harness_sum_loglikelihood": [
+          -20.375,
+          -7.90625,
+          -10.6875,
+          -17.75
+        ],
+        "selected_sum_loglikelihood": [
+          -20.400720596313477,
+          -7.919707298278809,
+          -10.703243255615234,
+          -17.746509552001953
+        ],
+        "prompt_tokens": 1127,
+        "n_choices": 4
+      },
+      {
+        "id": "openbookqa/validation/7-951",
+        "max_error_per_token": 0.005347251892089844,
+        "harness_sum_loglikelihood": [
+          -40.75,
+          -43.0,
+          -28.0,
+          -40.25
+        ],
+        "selected_sum_loglikelihood": [
+          -40.74791717529297,
+          -42.96825408935547,
+          -27.97861099243164,
+          -40.257774353027344
+        ],
+        "prompt_tokens": 3,
+        "n_choices": 4
+      },
+      {
+        "id": "mmlu_elementary_mathematics/validation/38",
+        "max_error_per_token": 0.0027005672454833984,
+        "harness_sum_loglikelihood": [
+          -2.4375,
+          -1.0625,
+          -2.8125,
+          -0.68359375
+        ],
+        "selected_sum_loglikelihood": [
+          -2.4347994327545166,
+          -1.0597994327545166,
+          -2.8097994327545166,
+          -0.6847993731498718
+        ],
+        "prompt_tokens": 596,
+        "n_choices": 4
+      }
+    ],
+    "force_ouro_final_depth": true
+  },
+  "peak_memory_bytes": 4059480576
+}

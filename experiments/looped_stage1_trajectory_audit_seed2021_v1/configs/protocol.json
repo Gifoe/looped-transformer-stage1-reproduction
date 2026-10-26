@@ -1,0 +1,31 @@
+{
+  "seed": 2021,
+  "bootstrap_seed": 2021,
+  "bootstrap_resamples": 10000,
+  "hard_gpu_hours": 50,
+  "disk_target_gb": 60,
+  "disk_free_reserve_gb": 5,
+  "dtype": "bfloat16",
+  "quantization": false,
+  "models": {"qwen": "Qwen/Qwen3-4B-Base", "ouro": "ByteDance/Ouro-1.4B"},
+  "qwen_window": [15,16,17,18],
+  "qwen_methods": [
+    {"id":"A0","strategy":"original","K":0},
+    {"id":"A1","strategy":"naive","K":2},
+    {"id":"A2","strategy":"naive","K":6},
+    {"id":"A3","strategy":"euler","K":6,"alpha":0.16666666666666666},
+    {"id":"A4","strategy":"block_anchored","K":6,"anchor_beta":0.5,"cache_strategy":"first","decode_mode":"bypass"}
+  ],
+  "ouro_depths": [1,2,3,4],
+  "loopcd_reference_depth": 1,
+  "loopcd_strength_grid": [0,0.25,0.5,1,2],
+  "temperature_grid": [0.5,0.75,1,1.25,1.5,2],
+  "validation": {"arc_challenge":50,"openbookqa":50},
+  "qwen_test": {"arc_challenge":200,"openbookqa":200,"mmlu":200},
+  "ouro_test": {"arc_challenge":100,"openbookqa":100,"mmlu":100},
+  "mmlu_subjects": ["elementary_mathematics","high_school_mathematics","college_mathematics","abstract_algebra","formal_logic"],
+  "math_generation": {"dataset":"openai/gsm8k","test_count":100,"max_new_tokens":256,"decoding":"greedy","fewshot":3},
+  "scoring": {"prompt_protocol":"harness-compatible zero-shot complementary audit; paper 25-shot ARC is a separate protocol", "candidate_score":"sum token conditional log probabilities divided by candidate character count", "secondary_score":"unnormalized summed token log likelihood", "prompt_max_tokens":2048, "truncation":"none; fail on oversized prompt"},
+  "metrics": {"full_vocab_kl":"KL(p_r || p_previous) at last prompt token", "choice_kl":"KL(softmax(normalized_choice_scores_r) || softmax(previous_scores))", "hidden":"last valid prompt token; relative L2 denominator previous norm; returned normalized recurrent state", "loopcd_hidden":"combine pre-output-norm recurrent states then apply exactly one final norm and head"},
+  "gates": {"qwen_official_source_required":true,"parity_required":true,"benchmark_samples":20,"pilot_samples":50,"no_test_hyperparameter_selection":true}
+}

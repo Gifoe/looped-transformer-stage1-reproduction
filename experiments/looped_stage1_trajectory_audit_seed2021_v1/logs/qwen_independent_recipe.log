@@ -1,0 +1,161 @@
+`torch_dtype` is deprecated! Use `dtype` instead!
+Loading checkpoint shards:   0%|          | 0/3 [00:00<?, ?it/s]Loading checkpoint shards: 100%|██████████| 3/3 [00:00<00:00, 77.91it/s]
+Traceback (most recent call last):
+  File "D:\looped_stage1_trajectory_audit_seed2021_v1\scripts\qwen_audit.py", line 105, in <module>
+    if __name__=='__main__':main()
+                            ~~~~^^
+  File "D:\looped_stage1_trajectory_audit_seed2021_v1\scripts\qwen_audit.py", line 76, in main
+    tok,m,recipe=load();parity(tok,m,recipe)
+                        ~~~~~~^^^^^^^^^^^^^^
+  File "D:\looped_stage1_trajectory_audit_seed2021_v1\scripts\qwen_audit.py", line 27, in parity
+    assert diff['max_abs']<=.125 and diff['relative_l2']<=.01 and diff['argmax_agreement']==1,diff
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: {'max_abs': 0.3125, 'relative_l2': 0.017372969537973404, 'argmax_agreement': 1.0}
+`torch_dtype` is deprecated! Use `dtype` instead!
+Loading checkpoint shards:   0%|          | 0/3 [00:00<?, ?it/s]Loading checkpoint shards: 100%|██████████| 3/3 [00:00<00:00, 109.17it/s]
+{"method": "A0", "split": "pilot", "done": 25}
+{"method": "A0", "split": "pilot", "done": 50}
+{"method": "A1", "split": "pilot", "done": 25}
+{"method": "A1", "split": "pilot", "done": 50}
+{"method": "A2", "split": "pilot", "done": 25}
+{"method": "A2", "split": "pilot", "done": 50}
+{"method": "A3", "split": "pilot", "done": 25}
+{"method": "A3", "split": "pilot", "done": 50}
+{"method": "A4", "split": "pilot", "done": 25}
+{"method": "A4", "split": "pilot", "done": 50}
+{"method": "A0", "split": "test", "done": 25}
+{"method": "A0", "split": "test", "done": 50}
+{"method": "A0", "split": "test", "done": 75}
+{"method": "A0", "split": "test", "done": 100}
+{"method": "A0", "split": "test", "done": 125}
+{"method": "A0", "split": "test", "done": 150}
+{"method": "A0", "split": "test", "done": 175}
+{"method": "A0", "split": "test", "done": 200}
+{"method": "A0", "split": "test", "done": 225}
+{"method": "A0", "split": "test", "done": 250}
+{"method": "A0", "split": "test", "done": 275}
+{"method": "A0", "split": "test", "done": 300}
+{"method": "A0", "split": "test", "done": 325}
+{"method": "A0", "split": "test", "done": 350}
+{"method": "A0", "split": "test", "done": 375}
+{"method": "A0", "split": "test", "done": 400}
+{"method": "A0", "split": "test", "done": 425}
+{"method": "A0", "split": "test", "done": 450}
+{"method": "A0", "split": "test", "done": 475}
+{"method": "A0", "split": "test", "done": 500}
+{"method": "A0", "split": "test", "done": 525}
+{"method": "A0", "split": "test", "done": 550}
+{"method": "A0", "split": "test", "done": 575}
+{"method": "A0", "split": "test", "done": 600}
+{"method": "A1", "split": "test", "done": 25}
+{"method": "A1", "split": "test", "done": 50}
+{"method": "A1", "split": "test", "done": 75}
+{"method": "A1", "split": "test", "done": 100}
+{"method": "A1", "split": "test", "done": 125}
+{"method": "A1", "split": "test", "done": 150}
+{"method": "A1", "split": "test", "done": 175}
+{"method": "A1", "split": "test", "done": 200}
+{"method": "A1", "split": "test", "done": 225}
+{"method": "A1", "split": "test", "done": 250}
+{"method": "A1", "split": "test", "done": 275}
+{"method": "A1", "split": "test", "done": 300}
+{"method": "A1", "split": "test", "done": 325}
+{"method": "A1", "split": "test", "done": 350}
+{"method": "A1", "split": "test", "done": 375}
+{"method": "A1", "split": "test", "done": 400}
+{"method": "A1", "split": "test", "done": 425}
+{"method": "A1", "split": "test", "done": 450}
+{"method": "A1", "split": "test", "done": 475}
+{"method": "A1", "split": "test", "done": 500}
+{"method": "A1", "split": "test", "done": 525}
+{"method": "A1", "split": "test", "done": 550}
+{"method": "A1", "split": "test", "done": 575}
+{"method": "A1", "split": "test", "done": 600}
+{"method": "A2", "split": "test", "done": 25}
+{"method": "A2", "split": "test", "done": 50}
+{"method": "A2", "split": "test", "done": 75}
+{"method": "A2", "split": "test", "done": 100}
+{"method": "A2", "split": "test", "done": 125}
+{"method": "A2", "split": "test", "done": 150}
+{"method": "A2", "split": "test", "done": 175}
+{"method": "A2", "split": "test", "done": 200}
+{"method": "A2", "split": "test", "done": 225}
+{"method": "A2", "split": "test", "done": 250}
+{"method": "A2", "split": "test", "done": 275}
+{"method": "A2", "split": "test", "done": 300}
+{"method": "A2", "split": "test", "done": 325}
+{"method": "A2", "split": "test", "done": 350}
+{"method": "A2", "split": "test", "done": 375}
+{"method": "A2", "split": "test", "done": 400}
+{"method": "A2", "split": "test", "done": 425}
+{"method": "A2", "split": "test", "done": 450}
+{"method": "A2", "split": "test", "done": 475}
+{"method": "A2", "split": "test", "done": 500}
+{"method": "A2", "split": "test", "done": 525}
+{"method": "A2", "split": "test", "done": 550}
+{"method": "A2", "split": "test", "done": 575}
+{"method": "A2", "split": "test", "done": 600}
+{"method": "A3", "split": "test", "done": 25}
+{"method": "A3", "split": "test", "done": 50}
+{"method": "A3", "split": "test", "done": 75}
+{"method": "A3", "split": "test", "done": 100}
+{"method": "A3", "split": "test", "done": 125}
+{"method": "A3", "split": "test", "done": 150}
+{"method": "A3", "split": "test", "done": 175}
+{"method": "A3", "split": "test", "done": 200}
+{"method": "A3", "split": "test", "done": 225}
+{"method": "A3", "split": "test", "done": 250}
+{"method": "A3", "split": "test", "done": 275}
+{"method": "A3", "split": "test", "done": 300}
+{"method": "A3", "split": "test", "done": 325}
+{"method": "A3", "split": "test", "done": 350}
+Traceback (most recent call last):
+  File "D:\looped_stage1_trajectory_audit_seed2021_v1\scripts\qwen_audit.py", line 109, in <module>
+    if __name__=='__main__':main()
+                            ~~~~^^
+  File "D:\looped_stage1_trajectory_audit_seed2021_v1\scripts\qwen_audit.py", line 99, in main
+    save('logs/qwen_progress.json',dict(configuration=cfg['id'],split=split,completed=len(done),total=len(rows)))
+    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\looped_stage1_trajectory_audit_seed2021_v1\scripts\ouro_audit.py", line 36, in save
+    tmp.write_text(json.dumps(obj,indent=2,ensure_ascii=False),encoding='utf-8');tmp.replace(path)
+                                                                                 ~~~~~~~~~~~^^^^^^
+  File "E:\Anaconda\Lib\pathlib\_local.py", line 780, in replace
+    os.replace(self, target)
+    ~~~~~~~~~~^^^^^^^^^^^^^^
+PermissionError: [WinError 5] 拒绝访问。: 'D:\\looped_stage1_trajectory_audit_seed2021_v1\\logs\\qwen_progress.json.tmp' -> 'D:\\looped_stage1_trajectory_audit_seed2021_v1\\logs\\qwen_progress.json'
+`torch_dtype` is deprecated! Use `dtype` instead!
+Loading checkpoint shards:   0%|          | 0/3 [00:00<?, ?it/s]Loading checkpoint shards: 100%|██████████| 3/3 [00:00<00:00, 90.63it/s]
+{"method": "A3", "split": "test", "done": 375}
+{"method": "A3", "split": "test", "done": 400}
+{"method": "A3", "split": "test", "done": 425}
+{"method": "A3", "split": "test", "done": 450}
+{"method": "A3", "split": "test", "done": 475}
+{"method": "A3", "split": "test", "done": 500}
+{"method": "A3", "split": "test", "done": 525}
+{"method": "A3", "split": "test", "done": 550}
+{"method": "A3", "split": "test", "done": 575}
+{"method": "A3", "split": "test", "done": 600}
+{"method": "A4", "split": "test", "done": 25}
+{"method": "A4", "split": "test", "done": 50}
+{"method": "A4", "split": "test", "done": 75}
+{"method": "A4", "split": "test", "done": 100}
+{"method": "A4", "split": "test", "done": 125}
+{"method": "A4", "split": "test", "done": 150}
+{"method": "A4", "split": "test", "done": 175}
+{"method": "A4", "split": "test", "done": 200}
+{"method": "A4", "split": "test", "done": 225}
+{"method": "A4", "split": "test", "done": 250}
+{"method": "A4", "split": "test", "done": 275}
+{"method": "A4", "split": "test", "done": 300}
+{"method": "A4", "split": "test", "done": 325}
+{"method": "A4", "split": "test", "done": 350}
+{"method": "A4", "split": "test", "done": 375}
+{"method": "A4", "split": "test", "done": 400}
+{"method": "A4", "split": "test", "done": 425}
+{"method": "A4", "split": "test", "done": 450}
+{"method": "A4", "split": "test", "done": 475}
+{"method": "A4", "split": "test", "done": 500}
+{"method": "A4", "split": "test", "done": 525}
+{"method": "A4", "split": "test", "done": 550}
+{"method": "A4", "split": "test", "done": 575}
+{"method": "A4", "split": "test", "done": 600}

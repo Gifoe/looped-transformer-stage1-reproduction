@@ -1,0 +1,43 @@
+{
+  "qwen_dola": {
+    "arc_challenge": "dola_high",
+    "openbookqa": "dola_high",
+    "mmlu": "dola_low"
+  },
+  "ouro": {
+    "Ouro-1.4B": {
+      "logits": {
+        "arc_challenge": 0.5,
+        "openbookqa": 0.25,
+        "mmlu": 0.25
+      },
+      "hidden": {
+        "arc_challenge": 0.5,
+        "openbookqa": 0.5,
+        "mmlu": 0.25
+      },
+      "temperature": {
+        "arc_challenge": 1.25,
+        "openbookqa": 1,
+        "mmlu": 1
+      }
+    },
+    "Ouro-2.6B": {
+      "logits": {
+        "arc_challenge": 2,
+        "openbookqa": 0,
+        "mmlu": 0
+      },
+      "hidden": {
+        "arc_challenge": 1,
+        "openbookqa": 0.5,
+        "mmlu": 0
+      },
+      "temperature": {
+        "arc_challenge": 1.25,
+        "openbookqa": 1.25,
+        "mmlu": 1
+      }
+    }
+  }
+}

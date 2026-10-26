@@ -1,0 +1,26 @@
+{
+  "passed": true,
+  "local_runtime": "3.10.0 (tags/v3.10.0:b494f59, Oct  4 2021, 19:00:18) [MSC v.1929 64 bit (AMD64)]",
+  "tests": 16,
+  "synthetic_auditor_contract_tests": 9,
+  "models_exercised": [
+    "Ouro-1.4B",
+    "Ouro-2.6B"
+  ],
+  "mutation_types": [
+    "duplicate/missing Cartesian coverage",
+    "unselected question",
+    "incorrect observed layer count",
+    "incorrect exit despite plausible work count",
+    "candidate-score corruption despite true parity flag",
+    "future-depth history",
+    "incorrect prediction despite true parity flag",
+    "changed validation-selected threshold"
+  ],
+  "source_sha256": {
+    "scripts/audit_actual_halting.py": "b64b1cf821086b93c0aecb2fd9e7d6f94c0367273b1e1acda45a762b621598e0",
+    "scripts/audit_suite.py": "606bd24335e85def247356e18e7d5d2abba28a427d909ec9ed743dca060cc771",
+    "tests/test_actual_halting_audit.py": "cda231f95269295bcafece4acb78e539c4f097074f95d60dd798981ddfc2b10c"
+  },
+  "scope": "CPU validator/protocol tests and syntax checks only. Synthetic timing fixtures stay in memory; no actual-halting GPU execution or measured speedup is established."
+}

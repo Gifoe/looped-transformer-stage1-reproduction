@@ -1,0 +1,51 @@
+`torch_dtype` is deprecated! Use `dtype` instead!
+{"model": "Ouro-2.6B", "phase": "validation", "method": "logits_2", "completed": 50, "expected": 900}
+{"model": "Ouro-2.6B", "phase": "validation", "method": "baseline", "completed": 55, "expected": 900}
+{"model": "Ouro-2.6B", "phase": "validation", "method": "hidden_0.25", "completed": 60, "expected": 900}
+{"model": "Ouro-2.6B", "phase": "validation", "method": "logits_0.25", "completed": 65, "expected": 900}
+{"model": "Ouro-2.6B", "phase": "validation", "method": "hidden_0.5", "completed": 70, "expected": 900}
+{"model": "Ouro-2.6B", "phase": "validation", "method": "logits_0.5", "completed": 75, "expected": 900}
+{"model": "Ouro-2.6B", "phase": "validation", "method": "hidden_1", "completed": 80, "expected": 900}
+{"model": "Ouro-2.6B", "phase": "validation", "method": "logits_1", "completed": 85, "expected": 900}
+{"model": "Ouro-2.6B", "phase": "validation", "method": "hidden_2", "completed": 90, "expected": 900}
+{"model": "Ouro-2.6B", "phase": "validation", "method": "logits_2", "completed": 95, "expected": 900}
+{"model": "Ouro-2.6B", "phase": "validation", "method": "baseline", "completed": 100, "expected": 900}
+{"model": "Ouro-2.6B", "phase": "validation", "method": "hidden_0.25", "completed": 105, "expected": 900}
+{"model": "Ouro-2.6B", "phase": "validation", "method": "logits_0.25", "completed": 110, "expected": 900}
+{"model": "Ouro-2.6B", "phase": "validation", "method": "hidden_0.5", "completed": 115, "expected": 900}
+{"model": "Ouro-2.6B", "phase": "validation", "method": "logits_0.5", "completed": 120, "expected": 900}
+{"model": "Ouro-2.6B", "phase": "validation", "method": "hidden_1", "completed": 125, "expected": 900}
+{"model": "Ouro-2.6B", "phase": "validation", "method": "logits_1", "completed": 130, "expected": 900}
+{"model": "Ouro-2.6B", "phase": "validation", "method": "hidden_2", "completed": 135, "expected": 900}
+{"model": "Ouro-2.6B", "phase": "validation", "method": "logits_2", "completed": 140, "expected": 900}
+{"model": "Ouro-2.6B", "phase": "validation", "method": "baseline", "completed": 145, "expected": 900}
+{"model": "Ouro-2.6B", "phase": "validation", "method": "hidden_0.25", "completed": 150, "expected": 900}
+{"model": "Ouro-2.6B", "phase": "validation", "method": "logits_0.25", "completed": 155, "expected": 900}
+{"model": "Ouro-2.6B", "phase": "validation", "method": "hidden_0.5", "completed": 160, "expected": 900}
+{"model": "Ouro-2.6B", "phase": "validation", "method": "logits_0.5", "completed": 165, "expected": 900}
+{"model": "Ouro-2.6B", "phase": "validation", "method": "hidden_1", "completed": 170, "expected": 900}
+{"model": "Ouro-2.6B", "phase": "validation", "method": "logits_1", "completed": 175, "expected": 900}
+{"model": "Ouro-2.6B", "phase": "validation", "method": "hidden_2", "completed": 180, "expected": 900}
+{"model": "Ouro-2.6B", "phase": "validation", "method": "logits_2", "completed": 185, "expected": 900}
+{"model": "Ouro-2.6B", "phase": "validation", "method": "baseline", "completed": 190, "expected": 900}
+{"model": "Ouro-2.6B", "phase": "validation", "method": "hidden_0.25", "completed": 195, "expected": 900}
+{"model": "Ouro-2.6B", "phase": "validation", "method": "logits_0.25", "completed": 200, "expected": 900}
+{"model": "Ouro-2.6B", "phase": "validation", "method": "hidden_0.5", "completed": 205, "expected": 900}
+Windows fatal exception: access violation
+
+Current thread 0x00006610 (most recent call first):
+  File "D:\looped_stage1_trajectory_audit_seed2021_v1\extensions\baseline_suite_20261025_seed2021\cache\huggingface\modules\transformers_modules\Ouro_hyphen_2_dot_6B\modeling_ouro.py", line 361 in forward
+  File "E:\Anaconda\Lib\site-packages\torch\nn\modules\module.py", line 1790 in _call_impl
+  File "E:\Anaconda\Lib\site-packages\torch\nn\modules\module.py", line 1779 in _wrapped_call_impl
+  File "D:\looped_stage1_trajectory_audit_seed2021_v1\extensions\baseline_suite_20261025_seed2021\cache\huggingface\modules\transformers_modules\Ouro_hyphen_2_dot_6B\modeling_ouro.py", line 421 in forward
+  File "E:\Anaconda\Lib\site-packages\torch\nn\modules\module.py", line 1790 in _call_impl
+  File "E:\Anaconda\Lib\site-packages\torch\nn\modules\module.py", line 1779 in _wrapped_call_impl
+  File "D:\looped_stage1_trajectory_audit_seed2021_v1\.venv\Lib\site-packages\transformers\modeling_layers.py", line 94 in __call__
+  File "D:\looped_stage1_trajectory_audit_seed2021_v1\extensions\baseline_suite_20261025_seed2021\cache\huggingface\modules\transformers_modules\Ouro_hyphen_2_dot_6B\modeling_ouro.py", line 594 in forward
+  File "D:\looped_stage1_trajectory_audit_seed2021_v1\.venv\Lib\site-packages\transformers\utils\generic.py", line 1064 in wrapper
+  File "E:\Anaconda\Lib\site-packages\torch\nn\modules\module.py", line 1790 in _call_impl
+  File "E:\Anaconda\Lib\site-packages\torch\nn\modules\module.py", line 1779 in _wrapped_call_impl
+  File "D:\looped_stage1_trajectory_audit_seed2021_v1\extensions\baseline_suite_20261025_seed2021\scripts\generate_math.py", line 53 in decode
+  File "D:\looped_stage1_trajectory_audit_seed2021_v1\extensions\baseline_suite_20261025_seed2021\scripts\generate_math.py", line 130 in run_cases
+  File "D:\looped_stage1_trajectory_audit_seed2021_v1\extensions\baseline_suite_20261025_seed2021\scripts\generate_math.py", line 149 in main
+  File "D:\looped_stage1_trajectory_audit_seed2021_v1\extensions\baseline_suite_20261025_seed2021\scripts\generate_math.py", line 159 in <module>

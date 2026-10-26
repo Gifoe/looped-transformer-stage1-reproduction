@@ -1,0 +1,40 @@
+{
+  "passed": true,
+  "model": "Ouro-1.4B",
+  "protocol_sha256": "060b67fe769a8e61d05587b31902652bdc11e4b8615f4915a4e549a5bb048ccd",
+  "probe_pid": 44404,
+  "completed_unix": 1792953566.4803553,
+  "existing_replays": [
+    {
+      "record_key": "gsm8k/train/1661|baseline",
+      "token_ids_exact": true,
+      "text_exact": true,
+      "prediction_exact": true,
+      "all_depth_argmax_exact": true,
+      "new_tokens": 112
+    },
+    {
+      "record_key": "gsm8k/train/5318|baseline",
+      "token_ids_exact": true,
+      "text_exact": true,
+      "prediction_exact": true,
+      "all_depth_argmax_exact": true,
+      "new_tokens": 170
+    },
+    {
+      "record_key": "gsm8k/train/5318|hidden_0.5",
+      "token_ids_exact": true,
+      "text_exact": true,
+      "prediction_exact": true,
+      "all_depth_argmax_exact": false,
+      "new_tokens": 143
+    }
+  ],
+  "next_case_key": "gsm8k/train/5318|hidden_1",
+  "next_case_completed": true,
+  "next_case_metadata_numeric_and_append_checked": true,
+  "formal_prefix_records": 835,
+  "formal_prefix_sha256": "16457e44a1ff9bd228c1dc1ea91bbb6da986e8e8265c718dadf0afb4658768c8",
+  "formal_jsonl_unchanged": true,
+  "scope": "Exact token/text and baseline depth-argmax replay of three completed boundary cases plus successful retry of the previously unsaved next case; not a replay of all835 cases"
+}

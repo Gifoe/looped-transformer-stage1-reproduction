@@ -1,0 +1,111 @@
+{
+  "passed": true,
+  "tables": [
+    {
+      "file": "absolute_stability.csv",
+      "rows": 396,
+      "shared_columns": 11,
+      "all_columns_equal": true
+    },
+    {
+      "file": "continuation_auc.csv",
+      "rows": 468,
+      "shared_columns": 10,
+      "all_columns_equal": true
+    },
+    {
+      "file": "depth_diagnostics.csv",
+      "rows": 72,
+      "shared_columns": 18,
+      "all_columns_equal": true
+    },
+    {
+      "file": "halting_curves.csv",
+      "rows": 4152,
+      "shared_columns": 13,
+      "all_columns_equal": true
+    },
+    {
+      "file": "halting_matched_random.csv",
+      "rows": 126,
+      "shared_columns": 8,
+      "all_columns_equal": true
+    },
+    {
+      "file": "halting_selected.csv",
+      "rows": 509,
+      "shared_columns": 33,
+      "all_columns_equal": true
+    },
+    {
+      "file": "loopcd_trajectory_attribution.csv",
+      "rows": 648,
+      "shared_columns": 26,
+      "all_columns_equal": true
+    },
+    {
+      "file": "offline_oracle.csv",
+      "rows": 18,
+      "shared_columns": 25,
+      "all_columns_equal": true
+    },
+    {
+      "file": "ouro_metrics.csv",
+      "rows": 468,
+      "shared_columns": 26,
+      "all_columns_equal": true
+    },
+    {
+      "file": "projection_geometry.csv",
+      "rows": 18,
+      "shared_columns": 5,
+      "all_columns_equal": true
+    },
+    {
+      "file": "qwen_metrics.csv",
+      "rows": 72,
+      "shared_columns": 30,
+      "all_columns_equal": true
+    },
+    {
+      "file": "readout_pairwise_controls.csv",
+      "rows": 126,
+      "shared_columns": 26,
+      "all_columns_equal": true
+    },
+    {
+      "file": "score_rule_sensitivity.csv",
+      "rows": 531,
+      "shared_columns": 8,
+      "all_columns_equal": true
+    },
+    {
+      "file": "trajectory_patterns.csv",
+      "rows": 108,
+      "shared_columns": 8,
+      "all_columns_equal": true
+    },
+    {
+      "file": "trajectory_strata.csv",
+      "rows": 288,
+      "shared_columns": 12,
+      "all_columns_equal": true
+    }
+  ],
+  "configurations_exactly_equal": [
+    "mc_selected.json",
+    "halting_selected.json"
+  ],
+  "numeric_relative_tolerance": 1e-12,
+  "numeric_absolute_tolerance": 1e-12,
+  "analysis_source_hashes_match": true,
+  "analysis_source_sha256": {
+    "scripts/analyze_suite.py": "646240d8cbb4bf6a0a35b0a39b685e876167132f4bd2660955849d5859335b7b",
+    "scripts/analyze_diagnostics.py": "ec023c966553eee9ef1ce177995609fc6ee7800a8064899ae6ca5ad9c4bab606",
+    "scripts/policies.py": "f764e61446a39898eb8215a6942bb3a05c00e769d2ddc134614f16e662e6111a",
+    "scripts/common.py": "54d1865cf04253977111f350dea1f340ddc015ff37b7d22e17db554f352ef4fc"
+  },
+  "raw_mc_snapshot_sha256": "2eb1b46f8a3e376930d23e0adcfd4c2ff5acb8046922fb8856d071b25f7b0353",
+  "reference_archive_sha256": "35258e0c9a85c1027b0b2690b260a6d690d43790d8356fbda39b3aa0eabc6621",
+  "scope": "Closed MC-only CPU rebuild: all reference CSV columns/values and exact validation-selected configurations under identical analysis source. Mathematical generation, real stopping and final delivery are excluded."
+}

@@ -1,0 +1,52 @@
+{
+  "passed": true,
+  "model": "Ouro-2.6B",
+  "cases": [
+    {
+      "depth": 2,
+      "tokens": [
+        22995,
+        28,
+        284,
+        260,
+        10729,
+        3829,
+        314,
+        253
+      ],
+      "cache_layers": 96,
+      "passed": true
+    },
+    {
+      "depth": 3,
+      "tokens": [
+        550,
+        3401,
+        338,
+        8591,
+        260,
+        5430,
+        30,
+        378
+      ],
+      "cache_layers": 144,
+      "passed": true
+    },
+    {
+      "depth": 4,
+      "tokens": [
+        550,
+        3401,
+        338,
+        8591,
+        260,
+        5430,
+        30,
+        378
+      ],
+      "cache_layers": 192,
+      "passed": true
+    }
+  ],
+  "scope": "HF.generate, true-depth 2/3/4 caching and zero guidance; baseline scalar tracing preserves tokens"
+}

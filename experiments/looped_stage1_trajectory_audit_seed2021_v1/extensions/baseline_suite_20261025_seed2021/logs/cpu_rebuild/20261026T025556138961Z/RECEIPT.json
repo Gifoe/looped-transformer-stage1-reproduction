@@ -1,0 +1,112 @@
+{
+  "passed": true,
+  "scope": "mc",
+  "python": "3.10.0 (tags/v3.10.0:b494f59, Oct  4 2021, 19:00:18) [MSC v.1929 64 bit (AMD64)]",
+  "executable": "D:\\loopbase_cpu_20261026\\Scripts\\python.exe",
+  "started_utc": "20261026T025556138961Z",
+  "cpu_only": true,
+  "steps": [
+    {
+      "name": "protocol_tests",
+      "command": [
+        "D:\\loopbase_cpu_20261026\\Scripts\\python.exe",
+        "-u",
+        "-X",
+        "utf8",
+        "-X",
+        "faulthandler",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-v"
+      ],
+      "exit_code": 0,
+      "elapsed_s": 1.172000000020489,
+      "log": "D:\\chenyu-iclr\\experiments\\looped_stage1_trajectory_audit_seed2021_v1\\extensions\\baseline_suite_20261025_seed2021\\logs\\cpu_rebuild\\20261026T025556138961Z\\protocol_tests.log"
+    },
+    {
+      "name": "tokenizer_exports",
+      "command": [
+        "D:\\loopbase_cpu_20261026\\Scripts\\python.exe",
+        "-u",
+        "-X",
+        "utf8",
+        "-X",
+        "faulthandler",
+        "scripts/verify_audit_tokenizers.py"
+      ],
+      "exit_code": 0,
+      "elapsed_s": 7.812999999965541,
+      "log": "D:\\chenyu-iclr\\experiments\\looped_stage1_trajectory_audit_seed2021_v1\\extensions\\baseline_suite_20261025_seed2021\\logs\\cpu_rebuild\\20261026T025556138961Z\\tokenizer_exports.log"
+    },
+    {
+      "name": "statistics",
+      "command": [
+        "D:\\loopbase_cpu_20261026\\Scripts\\python.exe",
+        "-u",
+        "-X",
+        "utf8",
+        "-X",
+        "faulthandler",
+        "scripts/analyze_suite.py",
+        "--stage",
+        "mc"
+      ],
+      "exit_code": 0,
+      "elapsed_s": 31.625,
+      "log": "D:\\chenyu-iclr\\experiments\\looped_stage1_trajectory_audit_seed2021_v1\\extensions\\baseline_suite_20261025_seed2021\\logs\\cpu_rebuild\\20261026T025556138961Z\\statistics.log"
+    },
+    {
+      "name": "mc_diagnostics",
+      "command": [
+        "D:\\loopbase_cpu_20261026\\Scripts\\python.exe",
+        "-u",
+        "-X",
+        "utf8",
+        "-X",
+        "faulthandler",
+        "scripts/analyze_diagnostics.py"
+      ],
+      "exit_code": 0,
+      "elapsed_s": 3.9679999999934807,
+      "log": "D:\\chenyu-iclr\\experiments\\looped_stage1_trajectory_audit_seed2021_v1\\extensions\\baseline_suite_20261025_seed2021\\logs\\cpu_rebuild\\20261026T025556138961Z\\mc_diagnostics.log"
+    },
+    {
+      "name": "mc_reference",
+      "command": [
+        "D:\\loopbase_cpu_20261026\\Scripts\\python.exe",
+        "-u",
+        "-X",
+        "utf8",
+        "-X",
+        "faulthandler",
+        "scripts/compare_mc_rebuild.py"
+      ],
+      "exit_code": 0,
+      "elapsed_s": 1.312000000034459,
+      "log": "D:\\chenyu-iclr\\experiments\\looped_stage1_trajectory_audit_seed2021_v1\\extensions\\baseline_suite_20261025_seed2021\\logs\\cpu_rebuild\\20261026T025556138961Z\\mc_reference.log"
+    },
+    {
+      "name": "mc_audit",
+      "command": [
+        "D:\\loopbase_cpu_20261026\\Scripts\\python.exe",
+        "-u",
+        "-X",
+        "utf8",
+        "-X",
+        "faulthandler",
+        "scripts/audit_suite.py",
+        "--stage",
+        "mc"
+      ],
+      "exit_code": 0,
+      "elapsed_s": 2.687999999965541,
+      "log": "D:\\chenyu-iclr\\experiments\\looped_stage1_trajectory_audit_seed2021_v1\\extensions\\baseline_suite_20261025_seed2021\\logs\\cpu_rebuild\\20261026T025556138961Z\\mc_audit.log"
+    }
+  ],
+  "entrypoint_sha256": "0d25b9fc9f541ff7ed4f37018fdee34c8d2fe3efbb0c0b69b9bb12cffbd9c654",
+  "scope_note": "MC scope does not certify math, actual stopping, full completion or final delivery",
+  "finished_utc": "2026-10-26T02:56:44.744982+00:00"
+}
