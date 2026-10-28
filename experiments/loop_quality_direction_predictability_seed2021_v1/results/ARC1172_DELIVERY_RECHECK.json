@@ -1,0 +1,52 @@
+{
+  "passed": true,
+  "questions": 1172,
+  "methods": 3,
+  "raw_sha256": "285d9836498ecded58d304aad3e9478fd0344f3be7177a403ed12087a985bde3",
+  "source": "Separate CPU recomputation directly from raw candidate score vectors, ID joins and answer lengths; no producer/auditor import",
+  "summary": [
+    {
+      "method": "baseline",
+      "correct": 707,
+      "n": 1172,
+      "accuracy_percent": 60.32423208191127,
+      "corrections": 0,
+      "degradations": 0,
+      "delta_pp": 0.0,
+      "ci95_pp": [
+        0.0,
+        0.0
+      ],
+      "mcnemar_p": 1.0
+    },
+    {
+      "method": "fixed",
+      "correct": 722,
+      "n": 1172,
+      "accuracy_percent": 61.60409556313993,
+      "corrections": 38,
+      "degradations": 23,
+      "delta_pp": 1.2798634812286689,
+      "ci95_pp": [
+        0.0,
+        2.5597269624573378
+      ],
+      "mcnemar_p": 0.07217743850092258
+    },
+    {
+      "method": "adaptive",
+      "correct": 727,
+      "n": 1172,
+      "accuracy_percent": 62.03071672354948,
+      "corrections": 50,
+      "degradations": 30,
+      "delta_pp": 1.7064846416382253,
+      "ci95_pp": [
+        0.17064846416382254,
+        3.242320819112628
+      ],
+      "mcnemar_p": 0.03299261842647619
+    }
+  ],
+  "new_gpu_hours": 0
+}

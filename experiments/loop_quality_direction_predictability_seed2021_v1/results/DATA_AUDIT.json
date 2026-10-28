@@ -1,0 +1,55 @@
+{
+  "passed": true,
+  "n": 600,
+  "original_correct": 297,
+  "euler_correct": 314,
+  "beneficial": 32,
+  "harmful": 15,
+  "prediction_changes": 75,
+  "both_wrong_changed": 28,
+  "both_correct": 282,
+  "both_wrong": 271,
+  "oracle_correct": 329,
+  "oracle_accuracy_percent": 54.833333333333336,
+  "model": "Qwen/Qwen3-4B-Base",
+  "model_revision": "906bfd4b4dc7f14ee4320094d8b41684abff8539",
+  "join": "unique exact sample ID; order determined only by pinned data manifest",
+  "input_sources": {
+    "data\\qwen_test.jsonl": {
+      "bytes": 246937,
+      "sha256": "7c7b965413dea1b01a2213694dacd459be99cf018afafabf79e5fad767f0cbb9"
+    },
+    "results\\qwen_A0_test.jsonl": {
+      "bytes": 732878,
+      "sha256": "04c6dad55f03153c5170a9b0810ca9155c217d14b319a1594be1470acf22a0b2"
+    },
+    "results\\qwen_A3_test.jsonl": {
+      "bytes": 1207143,
+      "sha256": "4bf4c848c8e9baed063f1ce9e41a75d3610e641539dcc94b446a792607d2fab2"
+    },
+    "scripts\\qwen_audit.py": {
+      "bytes": 7671,
+      "sha256": "610792bdc628c7d221c392d533ce529e66ac7a4269783fa85d4cfe25c64b9230"
+    },
+    "scripts\\qwen_recipe.py": {
+      "bytes": 3399,
+      "sha256": "9cadfece47fb195ee7ae5e1830762b3123ca12175dd837d2f1c81b2c87995419"
+    },
+    "configs\\protocol.json": {
+      "bytes": 2124,
+      "sha256": "62cea48ad1071c33fd693f58953bdac118a697f294badb9393e873b0da910e86"
+    }
+  },
+  "original_seal": {
+    "passed": true,
+    "files": 175,
+    "manifest_sha256": "8324a96a9b6cbe75dba85362fcfaee8ce4823526313afc6d1a214fec169bcb94"
+  },
+  "label_mutation_feature_invariance_all600": true,
+  "historical_log_limitations": [
+    "No full hidden vectors or update-vector directions",
+    "Hidden summaries and full-vocabulary statistics refer to last prompt token from candidate0; candidate scoring is causal",
+    "Only forward full-vocab KL is stored, not full distributions; reverse KL/JS/TV computed at choice level only",
+    "No candidate token lengths saved; character lengths and prompt length available; no GPU rerun required"
+  ]
+}

@@ -1,5 +1,16 @@
 # Training-free and looped Transformer reproduction
 
+**28 October2026: prioritized ARC1172 + Qwen600 delivery complete.**
+
+- [1172-question ARC reproduction](experiments/looped_stage1_trajectory_audit_seed2021_v1/extensions/arc_loopcd_ouro14_full_20261026/FINDINGS.md): Ouro-1.4B,25-shot; baseline707, Fixed722, Adaptive727 correct. Fixed has positive net15 but exact McNemar p=0.07218, not significant at0.05. [Fresh independent raw-score recheck](experiments/loop_quality_direction_predictability_seed2021_v1/results/ARC1172_DELIVERY_RECHECK.json).
+- [600-question Qwen direction-quality report](experiments/loop_quality_direction_predictability_seed2021_v1/FINDINGS.md): Original297, Euler314, nested-CV linear gate314, leave-task-out linear gate313, gold-label Oracle329. **Current selector: No-Go.** Independent new-data validation was deferred by the user and is not claimed.
+
+The new delivery includes all60 features,30,600 policy decisions, nested splits/model-selection records, paired statistics, random controls, five PNG/PDF figures, CPU rebuild code and six passing validation tests. It used zero new GPU hours. [Reproduce](experiments/loop_quality_direction_predictability_seed2021_v1/REPRODUCE.md).
+
+The separate GSM8K generation was interrupted during a server restart at224/3957 records and is incomplete. It was not restarted in this prioritized delivery. Prior global GPU usage, conservatively reconciled through the next boot, is10.073745 hours out of50. This repository is public by user instruction.
+
+The original175 sealed artifacts remain byte-for-byte unchanged. Earlier checkpoint details follow.
+
 Latest completed experiment: full ARC-Challenge, Ouro-1.4B,25-shot, three paper LoopCD configurations.
 
 | Method | Correct /1172 | Accuracy | Corrections | Degradations | Net |
@@ -12,7 +23,7 @@ Fixed's paired95% interval is[0.00,2.56]pp and exact McNemar p=0.07218, so this 
 
 [Full ARC report](experiments/looped_stage1_trajectory_audit_seed2021_v1/extensions/arc_loopcd_ouro14_full_20261026/FINDINGS.md) · [Paired question records](experiments/looped_stage1_trajectory_audit_seed2021_v1/extensions/arc_loopcd_ouro14_full_20261026/results/arc_paired_transitions.csv) · [Summary](experiments/looped_stage1_trajectory_audit_seed2021_v1/extensions/arc_loopcd_ouro14_full_20261026/results/arc_summary.csv)
 
-The complete raw scores, prompts, code, native exits and independently rebuilt CPU checks are included. The ARC worker charged0.183077 GPU-hours. GSM8K is running separately; this upload makes no completed GSM8K claim.
+The complete raw scores, prompts, code, native exits and independently rebuilt CPU checks are included. The ARC worker charged0.183077 GPU-hours. GSM8K was subsequently interrupted by a system restart; no completed GSM8K claim is made.
 
 Earlier research checkpoint follows:
 

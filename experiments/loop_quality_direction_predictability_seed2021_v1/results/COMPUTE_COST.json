@@ -1,0 +1,20 @@
+{
+  "new_gpu_hours": 0.0,
+  "offline_selection_gpu_cost": 0.0,
+  "original_historical_total_s": 128.46719070000108,
+  "euler_historical_total_s": 213.12592609925196,
+  "serial_two_output_total_s": 341.59311679925304,
+  "historical_serial_pair_vs_euler_ratio": 1.6027759881271995,
+  "historical_original_mean_s": 0.2141119845000018,
+  "historical_euler_mean_s": 0.3552098768320866,
+  "cpu_predictor_microseconds_per_question": 0.04949483341382195,
+  "cpu_feature_extraction_microseconds_per_question": 216.79616688440242,
+  "cpu_platform": "Windows-10-10.0.26100-SP0",
+  "cpu_python": "3.10.0 (tags/v3.10.0:b494f59, Oct  4 2021, 19:00:18) [MSC v.1929 64 bit (AMD64)]",
+  "scope": "CPU overhead measured live; model timings reused historical per-question records, not fresh online/shared-compute measurements",
+  "reuse": "First natural window is mathematically reusable, but the pinned recipe recomputes each complete A0/A3 candidate separately; no shared-compute implementation benchmarked.",
+  "layer_evaluations_per_candidate_original": 36,
+  "layer_evaluations_per_candidate_euler": 56,
+  "layer_evaluations_per_candidate_serial_pair": 92,
+  "caveat": "Layer counts ignore sequence-length-dependent FLOPs, head, attention and feature logging. No acceleration claim."
+}

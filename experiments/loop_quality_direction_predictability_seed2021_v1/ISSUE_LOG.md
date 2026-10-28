@@ -1,0 +1,6 @@
+# Data and execution issues
+
+1. Historical A3 full-vocabulary KL is absent on235/600 records. The historical process cached A0 vocabulary vectors only in RAM, so restart/resume could omit this field. The analysis initially detected the absent key before completing feature analysis. The optional feature was changed to explicit missing values; it is not a predeclared linear-model input. No model parameter, threshold, sample or gold label was changed.
+2. Historical logs contain window scalar summaries only. No complete hidden vectors, adjacent update-vector angles or spectral diagnostics are inferred from them. Both monotonic-trend indicators are constant on these600 records and retained in the feature sanity report; neither enters the linear model.
+3. Before this task, the separate GSM8K job was interrupted by a Windows reboot. A fresh WMI query found no worker or controller. The global ledger conservatively charges3895.968243 seconds from its start through the next recorded kernel boot, including reboot downtime. Full GSM8K is not complete. Original partial predictions and source files were preserved. This delivery launches zero new GPU inference.
+4. The first local SSH bridge launch used the host's GBK default when reading an existing UTF-8 known-hosts file. It was relaunched with Python `-X utf8`; no host-key bypass or credential file was introduced.
