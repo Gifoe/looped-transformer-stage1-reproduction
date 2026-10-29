@@ -1,0 +1,173 @@
+{
+  "url": "https://hf-mirror.com/api/models/ByteDance/Ouro-1.4B/revision/574fa66cb8bf5abdc979642d01cf2b79b16bfab1?blobs=true",
+  "metadata": {
+    "_id": "69014076083089f336605ed3",
+    "id": "ByteDance/Ouro-1.4B",
+    "private": false,
+    "pipeline_tag": "text-generation",
+    "library_name": "transformers",
+    "tags": [
+      "transformers",
+      "safetensors",
+      "ouro",
+      "text-generation",
+      "looped-language-model",
+      "reasoning",
+      "recurrent-depth",
+      "conversational",
+      "custom_code",
+      "arxiv:2510.25741",
+      "license:apache-2.0",
+      "region:us"
+    ],
+    "downloads": 23003,
+    "likes": 166,
+    "modelId": "ByteDance/Ouro-1.4B",
+    "author": "ByteDance",
+    "sha": "574fa66cb8bf5abdc979642d01cf2b79b16bfab1",
+    "lastModified": "2026-01-18T20:38:56.000Z",
+    "gated": false,
+    "disabled": false,
+    "widgetData": [
+      {
+        "text": "Hi, what can you help me with?"
+      },
+      {
+        "text": "What is 84 * 3 / 2?"
+      },
+      {
+        "text": "Tell me an interesting fact about the universe!"
+      },
+      {
+        "text": "Explain quantum computing in simple terms."
+      }
+    ],
+    "model-index": null,
+    "config": {
+      "architectures": [
+        "OuroForCausalLM"
+      ],
+      "auto_map": {
+        "AutoConfig": "configuration_ouro.OuroConfig",
+        "AutoModel": "modeling_ouro.OuroModel",
+        "AutoModelForCausalLM": "modeling_ouro.OuroForCausalLM"
+      },
+      "model_type": "ouro",
+      "tokenizer_config": {
+        "bos_token": "<|endoftext|>",
+        "chat_template": "{%- if messages[0]['role'] == 'system' -%}{{- '<|im_start|>system\\n' + messages[0]['content'] + '<|im_end|>\\n' }}{%- else -%}{{- '<|im_start|>system\\nYou are a helpful assistant.<|im_end|>\\n' }}{%- endif -%}{%- for message in messages -%}{%- if message.role == 'system' and loop.first -%}{# Skip #}{%- else -%}{{- '<|im_start|>' + message['role'] + '\\n' + message['content'] + '<|im_end|>' + '\\n' }}{%- endif -%}{%- endfor -%}{%- if add_generation_prompt -%}{{- '<|im_start|>assistant\\n' }}{%- endif -%}",
+        "eos_token": "<|endoftext|>",
+        "unk_token": "<|endoftext|>"
+      }
+    },
+    "cardData": {
+      "library_name": "transformers",
+      "license": "apache-2.0",
+      "pipeline_tag": "text-generation",
+      "tags": [
+        "looped-language-model",
+        "reasoning",
+        "recurrent-depth"
+      ]
+    },
+    "transformersInfo": {
+      "auto_model": "AutoModelForCausalLM",
+      "custom_class": "modeling_ouro.OuroForCausalLM",
+      "pipeline_tag": "text-generation"
+    },
+    "siblings": [
+      {
+        "rfilename": ".gitattributes",
+        "blobId": "34e4f690c092c652331e2e642a6e9e039366d0d3",
+        "size": 1628
+      },
+      {
+        "rfilename": "README.md",
+        "blobId": "ae8e6a34730edfb59920be640a20059c692c7f8c",
+        "size": 4348
+      },
+      {
+        "rfilename": "assets/benchmark.png",
+        "blobId": "142304c078128efd169942a6d3a0fd28d74884b8",
+        "size": 198443,
+        "lfs": {
+          "sha256": "f6e13c68673acd6a609aeb83aaf0955bfe80a81619849e4bf52f7122e931e88d",
+          "size": 198443,
+          "pointerSize": 131
+        }
+      },
+      {
+        "rfilename": "assets/logo.png",
+        "blobId": "80de825cc16ab7fdae88f2b093a00e7e69e55e8f",
+        "size": 656922,
+        "lfs": {
+          "sha256": "b971dc437f16af7155034488be23ca64039d66a85348a24710d7c6459f984484",
+          "size": 656922,
+          "pointerSize": 131
+        }
+      },
+      {
+        "rfilename": "config.json",
+        "blobId": "3c30cf9918b3a881cc2d020f490deb01b75556a8",
+        "size": 1472
+      },
+      {
+        "rfilename": "configuration_ouro.py",
+        "blobId": "ed783160ba1a64292bb0b060bb0e2e920afbe3b2",
+        "size": 11550
+      },
+      {
+        "rfilename": "merges.txt",
+        "blobId": "69503b13f727ba3812b6803e97442a6de05ef5eb",
+        "size": 466391
+      },
+      {
+        "rfilename": "model.safetensors",
+        "blobId": "0abac80caa3d9f43d031f34086a238fa31019b3e",
+        "size": 2869336434,
+        "lfs": {
+          "sha256": "58872a72616c736595b8b7662079c5b12c5a162ec16eae94f21c348dfa9885af",
+          "size": 2869336434,
+          "pointerSize": 135
+        }
+      },
+      {
+        "rfilename": "modeling_ouro.py",
+        "blobId": "daf1cc7b84d22cf67dd903528240590a407e2d84",
+        "size": 33350
+      },
+      {
+        "rfilename": "special_tokens_map.json",
+        "blobId": "b4ba320a61e7ea7943bd8d0a11666e53820af952",
+        "size": 825
+      },
+      {
+        "rfilename": "tokenizer.json",
+        "blobId": "5046b313b3e16fa14cd3662ef70c105b08c92092",
+        "size": 3522644
+      },
+      {
+        "rfilename": "tokenizer_config.json",
+        "blobId": "b5a0c01a64da3076bcbb3ea0251f57cf0c7af7d4",
+        "size": 4211
+      },
+      {
+        "rfilename": "vocab.json",
+        "blobId": "6a22c055228041f2f7b055686644c157cb5d21fc",
+        "size": 800656
+      }
+    ],
+    "spaces": [
+      "aquanode/gpu-vram-calculator"
+    ],
+    "createdAt": "2025-10-28T22:15:18.000Z",
+    "safetensors": {
+      "parameters": {
+        "BF16": 1434652673
+      },
+      "total": 1434652673
+    },
+    "usedStorage": 2870191799
+  },
+  "transport_note": "Official endpoint timed out; same pinned repository metadata retrieved from hf-mirror.com"
+}

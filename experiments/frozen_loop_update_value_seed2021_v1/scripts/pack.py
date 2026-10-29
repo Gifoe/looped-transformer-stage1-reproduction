@@ -5,9 +5,11 @@ ROOT=Path(__file__).resolve().parents[1]
 name=sys.argv[1]
 assert name.replace('_','').isalnum()
 out=ROOT/'logs'/(name+'.zip');files=[]
-for folder in ['configs','scripts','results','data','sources','logs']:
+for folder in ['configs','scripts','results','data','sources','logs','figures','tests']:
  for p in (ROOT/folder).glob('*'):
-  if p.is_file() and p.suffix in ['.json','.jsonl','.py','.ps1','.yaml','.out','.err','.log','.md'] and p.name!='runtime_probe.py':files.append(p)
+  if p.is_file() and p.suffix in ['.json','.jsonl','.py','.ps1','.yaml','.out','.err','.log','.md','.png','.pdf'] and p.name!='runtime_probe.py':files.append(p)
+for doc in ['GOAL.md','PROTOCOL.md','REPRODUCE.md','DISCOVERY.md','FINDINGS.md']:
+ if (ROOT/doc).exists():files.append(ROOT/doc)
 with zipfile.ZipFile(out,'w',zipfile.ZIP_DEFLATED,compresslevel=6) as z:
  for p in files:z.write(p,str(p.relative_to(ROOT)))
 print(json.dumps(dict(path=str(out),bytes=out.stat().st_size,sha256=hashlib.sha256(out.read_bytes()).hexdigest(),files=len(files))))
