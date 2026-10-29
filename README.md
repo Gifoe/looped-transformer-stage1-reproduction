@@ -1,5 +1,9 @@
 # Training-free and looped Transformer reproduction
 
+**29 October 2026: state-feedback calibration is running; no new success claim.**
+
+The [frozen protocol and code](experiments/closed_loop_value_calibration_20261029/README.md) test whether a tiny value head can turn an intermediate input response into useful continuation, rollback or extrapolation decisions. The backbone remains frozen; these follow-up heads are supervised. The 3,200-question collection and 800-question head-held-out development evaluation have a three-hour cap. Both sets were historically exposed, so this is not independent confirmation. The earlier [400-question controller failed](experiments/closed_loop_action_value_dev400_20261029/FINDINGS_ZH.md): 190/400 versus Adaptive LoopCD 192/400. Historical reports below retain their original scopes.
+
 **28 October2026: prioritized ARC1172 + Qwen600 delivery complete.**
 
 - [1172-question ARC reproduction](experiments/looped_stage1_trajectory_audit_seed2021_v1/extensions/arc_loopcd_ouro14_full_20261026/FINDINGS.md): Ouro-1.4B,25-shot; baseline707, Fixed722, Adaptive727 correct. Fixed has positive net15 but exact McNemar p=0.07218, not significant at0.05. [Fresh independent raw-score recheck](experiments/loop_quality_direction_predictability_seed2021_v1/results/ARC1172_DELIVERY_RECHECK.json).
