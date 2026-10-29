@@ -68,6 +68,7 @@ def train():
  depth=max(['depth1','depth2','rollback','keep'],key=lambda k:summary[k]['correct'])
  lock=dict(selected_policy=winner,best_fixed_depth=depth,eligible=eligible,adjusted_p=adj,training_events=events,head_count=len(models),validation_n=800,reason='Validation selection gate passed' if eligible else 'No candidate passed the precommitted validation gate; retain Adaptive, final comparisons of other policies remain diagnostic',frozen_files={str(p.relative_to(ROOT)):sha(p) for p in [ROOT/'configs/protocol.json',ROOT/'PROTOCOL.md',ROOT/'configs/heads.json',ROOT/'scripts/analysis_core.py',Path(__file__),ROOT/'scripts/score.py',ROOT/'scripts/finalize_analysis.py',ROOT/'scripts/runtime_bootstrap.py',ROOT/'scripts/windows_task_affinity.py']})
  lock.update(frozen_unix=time.time(),training_predictions_sha256=sha(ROOT/'results/head_train.jsonl'),validation_predictions_sha256=sha(ROOT/'results/validation.jsonl'))
+ lock['best_fixed_action']=max(ALL,key=lambda k:summary[k]['correct'])
  dump('results/validation_analysis.json',dict(summary=summary,adjusted_p=adj,events=events));dump('results/validation_predictions.json',rec);dump('configs/FINAL_LOCK.json',lock);print(json.dumps(lock),flush=True)
 if __name__=='__main__':
  {'discovery':discovery,'train':train}[sys.argv[1]]()
