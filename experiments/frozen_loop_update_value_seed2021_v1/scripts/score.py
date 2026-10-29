@@ -29,7 +29,7 @@ def probes(tok,prompt,question,prefix):
  ids=enc['input_ids'];offsets=enc['offset_mapping']
  # Verify token identities against the actual harness-encoded causal prefix.
  good=[i for i,(a,b) in enumerate(offsets) if i>0 and i<len(prefix) and a>=start and b<=start+len(question) and b>a and ids[i]==prefix[i]]
- assert good,'No valid question probe tokens'
+ if not good:return []
  picked=[good[i] for i in np.unique(np.linspace(0,len(good)-1,min(CFG['probe_tokens'],len(good)),dtype=int))]
  assert all(prefix[:i+1]==ids[:i+1] for i in picked)
  return picked
@@ -63,14 +63,14 @@ def score_view(tok,model,pairs,question,parity_probe=False):
    sums[k].append(float(ll[npb:].sum()));tokvals[k].append(ll[npb:].cpu().tolist())
    if ci==0:
     if probe_loss is None:probe_loss={}
-    probe_loss[k]=float(-ll[:npb].mean())
+    probe_loss[k]=float(-ll[:npb].mean()) if npb else None
   counts.append(len(target))
   if ci==0:
    geom,projection=geometry(raw)
    lp1=z[0][npb].log_softmax(-1);lp4=z[3][npb].log_softmax(-1);p4=lp4.exp();top=p4.topk(2).values
    stats=dict(entropy=float(-(p4*lp4).sum()),confidence=float(top[0]),vocab_margin=float(top[0]-top[1]),kl41=float((p4*(lp4-lp1)).sum()))
    probe_record=dict(token_indices=pi,targets=[prefix[i] for i in pi],positions=[i-1 for i in pi],prefix_tokens=len(prefix))
-   if parity_probe:
+   if parity_probe and pi:
     # Same causal prediction with all future input removed; no gold used.
     idx=pi[-1];short=torch.tensor([prefix[:idx]],device='cuda')
     _,ss,_=model.model(input_ids=short,use_cache=False)
@@ -122,16 +122,30 @@ def main():
  if pilot:rows=rows[:CFG['pilot_questions']]
  if source.startswith('final'):assert (ROOT/'configs/FINAL_LOCK.json').exists(),'Final policy must be locked'
  signature={p.name:sha(p) for p in [Path(__file__),ROOT/'configs/protocol.json',path]}
- out=ROOT/'results'/(split+'.jsonl');assert not out.exists(),'Never overwrite previous predictions; audit explicit resume separately'
+ out=ROOT/'results'/(split+'.jsonl');done=[]
+ if out.exists():
+  approval=json.loads((ROOT/'configs'/('RESUME_'+split+'.json')).read_text())
+  assert sha(out)==approval['partial_sha256']
+  done=read('results/'+split+'.jsonl');assert len(done)==approval['completed']
+  assert [r['id'] for r in done]==[r['id'] for r in rows[:len(done)]]
+  assert all(r['signature']==approval['previous_signature'] for r in done)
+  assert approval['previous_signature']['protocol.json']==signature['protocol.json'] and approval['previous_signature'][path.name]==signature[path.name]
  tok,model=load();timings=[]
  if pilot:dump('results/PARITY.json',parity(tok,model,rows[0]))
+ if done:
+  boundary=rows[len(done)-1]
+  for view,pairs in boundary['variants'].items():
+   actual=score_view(tok,model,pairs,boundary['question']);old=done[-1]['views'][view]
+   for a in actual['sum_scores']:assert np.allclose(actual['sum_scores'][a],old['sum_scores'][a],atol=1e-5,rtol=0)
+  dump('results/'+split+'_RESUME_PARITY.json',dict(passed=True,reused_questions=len(done),boundary_id=boundary['id'],reason='Missing-probe handling only; previous valid-probe score boundary unchanged'))
  torch.cuda.reset_peak_memory_stats();begin=time.monotonic()
- with out.open('x',encoding='utf8') as f:
+ with out.open('a' if done else 'x',encoding='utf8') as f:
   for i,row in enumerate(rows):
+   if i<len(done):continue
    if time.time()+30>float(os.environ['WORKER_DEADLINE']):raise RuntimeError('Budget reserve')
    if __import__('shutil').disk_usage(ROOT).free<5*1024**3:raise RuntimeError('Disk reserve')
    # Scorer never receives gold or candidate correctness.
-   views={k:score_view(tok,model,pairs,row['question']) for k,pairs in row['variants'].items()}
+   views={k:score_view(tok,model,pairs,row['question']) for k,pairs in row['variants'].items() if source!='head_train' or k=='official'}
    if pilot:
     timing=baseline_timing(tok,model,row);errors=[abs(a-b)/n for a,b,n in zip(timing['sum_scores'],views['official']['sum_scores']['adaptive'],views['official']['token_counts'])]
     assert max(errors)<.05

@@ -1,0 +1,149 @@
+{
+  "_id": "621ffdd236468d709f181f6e",
+  "id": "allenai/sciq",
+  "author": "allenai",
+  "sha": "2c94ad3e1aafab77146f384e23536f97a4849815",
+  "lastModified": "2024-01-04T16:23:51.000Z",
+  "private": false,
+  "gated": false,
+  "disabled": false,
+  "tags": [
+    "task_categories:question-answering",
+    "task_ids:closed-domain-qa",
+    "annotations_creators:no-annotation",
+    "language_creators:crowdsourced",
+    "multilinguality:monolingual",
+    "source_datasets:original",
+    "language:en",
+    "license:cc-by-nc-3.0",
+    "size_categories:10K<n<100K",
+    "format:parquet",
+    "modality:text",
+    "library:datasets",
+    "library:pandas",
+    "library:mlcroissant",
+    "library:polars",
+    "arxiv:1707.06209",
+    "region:us"
+  ],
+  "description": "\n\t\n\t\t\n\t\n\t\n\t\tDataset Card for \"sciq\"\n\t\n\n\n\t\n\t\t\n\t\n\t\n\t\tDataset Summary\n\t\n\nThe SciQ dataset contains 13,679 crowdsourced science exam questions about Physics, Chemistry and Biology, among others. The questions are in multiple-choice format with 4 answer options each. For the majority of the questions, an additional paragraph with supporting evidence for the correct answer is provided.\n\n\t\n\t\t\n\t\n\t\n\t\tSupported Tasks and Leaderboards\n\t\n\nMore Information Needed\n\n\t\n\t\t\n\t\n\t\n\t\tLanguages\n\t\n\nMore Information… See the full description on the dataset page: https://huggingface.co/datasets/allenai/sciq.",
+  "paperswithcode_id": "sciq",
+  "downloads": 180348,
+  "likes": 169,
+  "cardData": {
+    "annotations_creators": [
+      "no-annotation"
+    ],
+    "language_creators": [
+      "crowdsourced"
+    ],
+    "language": [
+      "en"
+    ],
+    "license": [
+      "cc-by-nc-3.0"
+    ],
+    "multilinguality": [
+      "monolingual"
+    ],
+    "size_categories": [
+      "10K<n<100K"
+    ],
+    "source_datasets": [
+      "original"
+    ],
+    "task_categories": [
+      "question-answering"
+    ],
+    "task_ids": [
+      "closed-domain-qa"
+    ],
+    "paperswithcode_id": "sciq",
+    "pretty_name": "SciQ",
+    "dataset_info": {
+      "features": [
+        {
+          "name": "question",
+          "dtype": "string"
+        },
+        {
+          "name": "distractor3",
+          "dtype": "string"
+        },
+        {
+          "name": "distractor1",
+          "dtype": "string"
+        },
+        {
+          "name": "distractor2",
+          "dtype": "string"
+        },
+        {
+          "name": "correct_answer",
+          "dtype": "string"
+        },
+        {
+          "name": "support",
+          "dtype": "string"
+        }
+      ],
+      "splits": [
+        {
+          "name": "train",
+          "num_bytes": 6546183,
+          "num_examples": 11679
+        },
+        {
+          "name": "validation",
+          "num_bytes": 554120,
+          "num_examples": 1000
+        },
+        {
+          "name": "test",
+          "num_bytes": 563927,
+          "num_examples": 1000
+        }
+      ],
+      "download_size": 4674410,
+      "dataset_size": 7664230
+    },
+    "configs": [
+      {
+        "config_name": "default",
+        "data_files": [
+          {
+            "split": "train",
+            "path": "data/train-*"
+          },
+          {
+            "split": "validation",
+            "path": "data/validation-*"
+          },
+          {
+            "split": "test",
+            "path": "data/test-*"
+          }
+        ]
+      }
+    ]
+  },
+  "siblings": [
+    {
+      "rfilename": ".gitattributes"
+    },
+    {
+      "rfilename": "README.md"
+    },
+    {
+      "rfilename": "data/test-00000-of-00001.parquet"
+    },
+    {
+      "rfilename": "data/train-00000-of-00001.parquet"
+    },
+    {
+      "rfilename": "data/validation-00000-of-00001.parquet"
+    }
+  ],
+  "createdAt": "2022-03-02T23:29:22.000Z",
+  "usedStorage": 95130544
+}

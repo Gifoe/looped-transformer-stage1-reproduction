@@ -1,0 +1,15 @@
+`torch_dtype` is deprecated! Use `dtype` instead!
+Traceback (most recent call last):
+  File "D:\Codex_Research\experiments\frozen_loop_update_value_seed2021_v1\scripts\score.py", line 146, in <module>
+    if __name__=='__main__':main()
+                            ~~~~^^
+  File "D:\Codex_Research\experiments\frozen_loop_update_value_seed2021_v1\scripts\score.py", line 134, in main
+    views={k:score_view(tok,model,pairs,row['question']) for k,pairs in row['variants'].items()}
+             ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Codex_Research\experiments\frozen_loop_update_value_seed2021_v1\scripts\score.py", line 50, in score_view
+    prefix,target=encode(tok,prompt,answer);pi=probes(tok,prompt,question,prefix) if ci==0 else []
+                                               ~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Codex_Research\experiments\frozen_loop_update_value_seed2021_v1\scripts\score.py", line 32, in probes
+    assert good,'No valid question probe tokens'
+           ^^^^
+AssertionError: No valid question probe tokens

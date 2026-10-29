@@ -39,8 +39,11 @@ def discovery():
  # Signed, prespecified proxies: positive = hypothesized action improvement.
  for a in ['keep','forward','rollback']:
   y=np.array([targets(r)[ACTIONS[1:].index(a)] for r in rows]);mask=y!=0
-  proxies={'prompt_residual':[r['views']['official']['probe_nll']['adaptive']-r['views']['official']['probe_nll'][a] for r in rows], 'alignment':[r['views']['official']['geometry']['align34']*(1 if a=='forward' else -1 if a=='rollback' else 0) for r in rows]}
-  signals[a]=dict(positive=int((y>0).sum()),negative=int((y<0).sum()),neutral=int((y==0).sum()),auc={k:float(roc_auc_score(y[mask]>0,np.array(v)[mask])) if len(set(y[mask]))==2 else None for k,v in proxies.items()})
+  proxies={'prompt_residual':[r['views']['official']['probe_nll']['adaptive']-r['views']['official']['probe_nll'][a] if r['views']['official']['probe_nll']['adaptive'] is not None else np.nan for r in rows], 'alignment':[r['views']['official']['geometry']['align34']*(1 if a=='forward' else -1 if a=='rollback' else 0) for r in rows]}
+  auc={}
+  for k,v in proxies.items():
+   valid=mask&np.isfinite(v);auc[k]=dict(n=int(valid.sum()),auc=float(roc_auc_score(y[valid]>0,np.array(v)[valid])) if len(set(y[valid]))==2 else None)
+  signals[a]=dict(positive=int((y>0).sum()),negative=int((y<0).sum()),neutral=int((y==0).sum()),auc=auc)
  report=dict(stage='discovery_exploratory',n=len(rows),summary=summary,mechanism=mechanism(rows),signed_signal_auc=signals,training_free_first=True,head_next='Bounded head permitted to test whether genuine update supervision adds information; no controller claim from discovery')
  dump('results/discovery_analysis.json',report);dump('results/discovery_predictions.json',rec)
  print(json.dumps(report),flush=True)
@@ -52,8 +55,9 @@ def head_action(row,m):
  x,names=features(row,m['kind']);assert names==m['features'];values=np.array(m['coef'])@((x-np.array(m['mean']))/np.array(m['scale']))+np.array(m['intercept']);i=int(values.argmax());return (ACTIONS[i+1] if values[i]>.05 else 'adaptive'),values
 def train():
  assert (ROOT/'results/discovery_analysis.json').exists()
+ assert not (ROOT/'configs/FINAL_LOCK.json').exists(),'Never refit after final policy lock'
  train=read('head_train');val=read('validation');assert len(train)==3200 and len(val)==800
- Y=np.stack([targets(r) for r in train]);events=dict(positive=int((Y>0).sum()),negative=int((Y<0).sum()),neutral=int((Y==0).sum()))
+ Y=np.stack([targets(r) for r in train]);events=dict(positive=int((Y>0).sum()),negative=int((Y<0).sum()),neutral=int((Y==0).sum()),by_action={a:dict(positive=int((Y[:,i]>0).sum()),negative=int((Y[:,i]<0).sum()),neutral=int((Y[:,i]==0).sum())) for i,a in enumerate(ACTIONS[1:])})
  models={}
  if min(events['positive'],events['negative'])>=50:
   for kind in ['controls','new','combined']:
@@ -63,6 +67,7 @@ def train():
  winner=max(eligible,key=lambda k:summary[k]['net']) if eligible else 'adaptive'
  depth=max(['depth1','depth2','rollback','keep'],key=lambda k:summary[k]['correct'])
  lock=dict(selected_policy=winner,best_fixed_depth=depth,eligible=eligible,adjusted_p=adj,training_events=events,head_count=len(models),validation_n=800,reason='Validation selection gate passed' if eligible else 'No candidate passed the precommitted validation gate; retain Adaptive, final comparisons of other policies remain diagnostic',frozen_files={str(p.relative_to(ROOT)):sha(p) for p in [ROOT/'configs/protocol.json',ROOT/'PROTOCOL.md',ROOT/'configs/heads.json',ROOT/'scripts/analysis_core.py',Path(__file__),ROOT/'scripts/score.py',ROOT/'scripts/finalize_analysis.py',ROOT/'scripts/runtime_bootstrap.py',ROOT/'scripts/windows_task_affinity.py']})
+ lock.update(frozen_unix=time.time(),training_predictions_sha256=sha(ROOT/'results/head_train.jsonl'),validation_predictions_sha256=sha(ROOT/'results/validation.jsonl'))
  dump('results/validation_analysis.json',dict(summary=summary,adjusted_p=adj,events=events));dump('results/validation_predictions.json',rec);dump('configs/FINAL_LOCK.json',lock);print(json.dumps(lock),flush=True)
 if __name__=='__main__':
  {'discovery':discovery,'train':train}[sys.argv[1]]()

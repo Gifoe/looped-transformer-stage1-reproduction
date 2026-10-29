@@ -12,24 +12,27 @@ def margin(x):
 def features(row,kind='combined'):
  v=row['views']['official'];s=view_scores(row);c={};n={};b=int(s['adaptive'].argmax())
  c.update(v['controls']);c.update({k:v['geometry'][k] for k in ['norm2','norm3','norm4']})
+ counts=[len(x) for x in v['token_logprobs']['keep']]
+ c.update(prompt_tokens=float(v['probe']['prefix_tokens']),mean_candidate_tokens=float(np.mean(counts)),max_candidate_tokens=float(max(counts)),probe_available=float(v['probe_nll']['keep'] is not None))
  for a in ACTIONS:
   lp=log_softmax(s[a]);p=np.exp(lp);c[a+'_margin']=margin(s[a]);c[a+'_entropy']=float(-sum(p*lp));c[a+'_kl_keep']=float(sum(p*(lp-log_softmax(s['keep']))));c[a+'_agrees_adaptive']=float(s[a].argmax()==b)
-  n[a+'_probe_delta']=v['probe_nll']['keep']-v['probe_nll'][a]
+  n[a+'_probe_delta']=v['probe_nll']['keep']-v['probe_nll'][a] if v['probe_nll']['keep'] is not None else 0.
   # Candidate index never enters a feature; select by observable prediction.
   pred=int(s[a].argmax());ll=np.array(v['token_logprobs'][a][pred]);base=np.array(v['token_logprobs']['keep'][pred]);delta=ll-base
   n[a+'_token_gain_mean']=float(delta.mean());n[a+'_token_positive_fraction']=float((delta>0).mean())
  for a in ['depth1','depth2','rollback','keep']:
   c[a+'_rank_adaptive']=float(np.sum(s[a]>s[a][b]))/max(len(s[a])-1,1)
+ n['probe_available']=float(v['probe_nll']['keep'] is not None)
  for k,val in v['geometry'].items():
   if not k.startswith('norm'):n[k]=val
  for i,val in enumerate(v['update_projections']):n[f'update_projection_{i:03d}']=val
- out=c if kind=='controls' else n if kind=='new' else dict(c,**n)
+ out=c if kind=='controls' else n if kind=='new' else {**c,**n}
  assert all(np.isfinite(x) for x in out.values())
  names=sorted(out);return np.array([out[k] for k in names]),names
 def fixed_policies(row):
  s=view_scores(row);v=row['views']['official'];s2=view_scores(row,'format')
  choose=lambda fn:max(ACTIONS,key=fn) # Adaptive is first, so ties retain it.
- selected={'proxy':min(ACTIONS,key=lambda a:v['probe_nll'][a]),'geometry':'forward' if v['geometry']['align34']>0 else 'rollback' if v['geometry']['align34']<0 else 'adaptive','confidence':choose(lambda a:margin(s[a])),'support':choose(lambda a:float(np.mean(np.array(v['token_logprobs'][a][int(s[a].argmax())])-np.array(v['token_logprobs']['keep'][int(s[a].argmax())])))),'format_support':choose(lambda a:min(margin(s[a]),margin(s2[a])))}
+ selected={'proxy':min(ACTIONS,key=lambda a:v['probe_nll'][a]) if v['probe_nll']['keep'] is not None else 'adaptive','geometry':'forward' if v['geometry']['align34']>0 else 'rollback' if v['geometry']['align34']<0 else 'adaptive','confidence':choose(lambda a:margin(s[a])),'support':choose(lambda a:float(np.mean(np.array(v['token_logprobs'][a][int(s[a].argmax())])-np.array(v['token_logprobs']['keep'][int(s[a].argmax())])))),'format_support':choose(lambda a:min(margin(s[a]),margin(s2[a])))}
  pred={a:int(s[a].argmax()) for a in ALL}
  pred.update({k:int(s[a].argmax()) for k,a in selected.items()})
  pred['ensemble']=int(((s['adaptive']+s2['adaptive'])/2).argmax())

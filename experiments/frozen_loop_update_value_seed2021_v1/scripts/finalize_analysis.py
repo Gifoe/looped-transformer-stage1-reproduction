@@ -17,7 +17,8 @@ def head_diagnostics(rows,models):
    for low,high in zip([0,.25,.5,.75],[.25,.5,.75,1.01]):
     lo,hi=np.quantile(margins,[low,min(high,1)]);mm=mask&(margins>=lo)&((margins<hi) if high<1 else (margins<=hi))
     groups.append(dict(n=int(mm.sum()),auc=float(roc_auc_score(y[mm]>0,values[mm,i])) if len(set(y[mm]))==2 else None))
-   per[a]=dict(positive=int((y>0).sum()),negative=int((y<0).sum()),neutral=int((y==0).sum()),auc=auc,confidence_quartiles=groups,accuracy_gain_mse=float(np.mean((values[:,i]-y)**2)))
+   mse=float(np.mean((values[:,i]-y)**2)) if m['target']=='accuracy' else None
+   per[a]=dict(positive=int((y>0).sum()),negative=int((y<0).sum()),neutral=int((y==0).sum()),auc=auc,confidence_quartiles=groups,accuracy_gain_mse=mse,target=m['target'])
   result[name]=per
  return result
 def correction_accounting(records,policy):
