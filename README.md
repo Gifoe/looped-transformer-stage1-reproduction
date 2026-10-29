@@ -1,8 +1,10 @@
 # Training-free and looped Transformer reproduction
 
-**29 October 2026: state-feedback calibration is running; no new success claim.**
+**29 October 2026: frozen-state value calibration completed; No-Go for this action family.**
 
-The [frozen protocol and code](experiments/closed_loop_value_calibration_20261029/README.md) test whether a tiny value head can turn an intermediate input response into useful continuation, rollback or extrapolation decisions. The backbone remains frozen; these follow-up heads are supervised. The 3,200-question collection and 800-question head-held-out development evaluation have a three-hour cap. Both sets were historically exposed, so this is not independent confirmation. The earlier [400-question controller failed](experiments/closed_loop_action_value_dev400_20261029/FINDINGS_ZH.md): 190/400 versus Adaptive LoopCD 192/400. Historical reports below retain their original scopes.
+The [completed report](experiments/closed_loop_value_calibration_20261029/FINDINGS.md) includes 3,200 training and 800 head-held-out development questions. Adaptive LoopCD scored 367/800; the input-response head scored 367 (21 corrections, 21 degradations); the combined head scored 369 (19 corrections, 17 degradations), matching the training-selected fixed partial rollback at 369. The combined gain was +0.25 pp, paired 95% CI [-1.25, 1.75] pp, exact McNemar p=0.86794 before correction; all eight preregistered Holm p values were 1.0. No candidate passed the frozen admission rule. Both splits had been historically exposed, so this is development evidence rather than independent confirmation.
+
+Ouro remained frozen; the small heads were supervised. Baseline score parity was exact across all 4,000 collected questions. Independent CPU reconstruction passed. Research collection charged 2.4927 GPU-worker hours; the combined controller's measured serial replay cost was 1.1436 times Adaptive. The earlier [400-question training-free controller](experiments/closed_loop_action_value_dev400_20261029/FINDINGS_ZH.md) also failed, scoring 190 versus Adaptive 192. [Raw outcomes and manifests](experiments/closed_loop_value_calibration_20261029/results/) and [reproduction instructions](experiments/closed_loop_value_calibration_20261029/REPRODUCE.md) are included. Historical reports below retain their original scopes.
 
 **28 October2026: prioritized ARC1172 + Qwen600 delivery complete.**
 
