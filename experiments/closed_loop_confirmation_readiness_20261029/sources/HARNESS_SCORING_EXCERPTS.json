@@ -1,0 +1,140 @@
+{
+  "matches": [
+    {
+      "after": [
+        "    fewshot_delimiter: str = \"\\n\\n\"",
+        "    fewshot_config: Optional[dict] = None",
+        "    # runtime configuration options",
+        "    num_fewshot: Optional[int] = None",
+        "    # scoring options"
+      ],
+      "before": [
+        "    use_prompt: Optional[str] = None",
+        "    description: str = \"\""
+      ],
+      "text": "    target_delimiter: str = \" \"",
+      "line": 85
+    },
+    {
+      "after": [
+        "                    )",
+        "                elif (not delimiter_has_whitespace) and (not choice_has_whitespace):",
+        "                    eval_logger.debug(",
+        "                        f'Both target_delimiter \"{self.config.target_delimiter}\" and target choice: \"{choice}\" do not have whitespace, ignore if the language you are evaluating on does not require/use whitespace'",
+        "                    )"
+      ],
+      "before": [
+        "                if delimiter_has_whitespace and choice_has_whitespace:",
+        "                    eval_logger.debug("
+      ],
+      "text": "                        f'Both target_delimiter \"{self.config.target_delimiter}\" and target choice: \"{choice}\" have whitespace'",
+      "line": 972
+    },
+    {
+      "after": [
+        "                    )",
+        "",
+        "    def download(",
+        "        self, dataset_kwargs: Optional[Dict[str, Any]] = None, **kwargs",
+        "    ) -> None:"
+      ],
+      "before": [
+        "                elif (not delimiter_has_whitespace) and (not choice_has_whitespace):",
+        "                    eval_logger.debug("
+      ],
+      "text": "                        f'Both target_delimiter \"{self.config.target_delimiter}\" and target choice: \"{choice}\" do not have whitespace, ignore if the language you are evaluating on does not require/use whitespace'",
+      "line": 976
+    },
+    {
+      "after": [
+        "",
+        "            # TODO: we should raise a warning telling users this will at most ~2x runtime.",
+        "            if \"acc_mutual_info\" in self._metric_fn_list.keys():",
+        "                # if we are calculating multiple choice accuracy",
+        "                # using mutual information instead of raw loglikelihood as metric, need unconditional lls."
+      ],
+      "before": [
+        "            else:",
+        "                # Otherwise they are placed in the continuation"
+      ],
+      "text": "                arguments = [(ctx, f\"{target_delimiter}{cont}\") for cont in choices]",
+      "line": 1474
+    },
+    {
+      "after": [
+        "                ]",
+        "",
+        "                arguments.extend(aux_arguments)",
+        "",
+        "        elif self.OUTPUT_TYPE == \"generate_until\":"
+      ],
+      "before": [
+        "                # TODO: should these be strided? will have to modify the processing in process_results if so",
+        "                aux_arguments = ["
+      ],
+      "text": "                    (\"\", f\"{target_delimiter}{choice}\") for choice in choices",
+      "line": 1486
+    },
+    {
+      "after": [
+        "",
+        "            if (",
+        "                2 * len(choices) == len(lls)",
+        "                and \"acc_mutual_info\" in self._metric_fn_list.keys()",
+        "            ):"
+      ],
+      "before": [
+        "            # retrieve choices in List[str] form, to compute choice lengths, etc.",
+        "            choices = self.doc_to_choice(doc)"
+      ],
+      "text": "            completion_len = np.array([float(len(i)) for i in choices])",
+      "line": 1578
+    },
+    {
+      "after": [
+        "",
+        "            if self.multiple_input:",
+        "                gold = self.doc_to_text(doc)",
+        "            else:",
+        "                gold = self.doc_to_target(doc)"
+      ],
+      "before": [
+        "",
+        "            pred = np.argmax(lls)"
+      ],
+      "text": "            pred_norm = np.argmax(lls / completion_len)",
+      "line": 1594
+    },
+    {
+      "after": [
+        "        acc_norm = 1.0 if np.argmax(results / completion_len) == gold else 0.0",
+        "",
+        "        return {",
+        "            \"acc\": acc,",
+        "            \"acc_norm\": acc_norm,"
+      ],
+      "before": [
+        "",
+        "        acc = 1.0 if np.argmax(results) == gold else 0.0"
+      ],
+      "text": "        completion_len = np.array([float(len(i)) for i in doc[\"choices\"]])",
+      "line": 1785
+    },
+    {
+      "after": [
+        "",
+        "        return {",
+        "            \"acc\": acc,",
+        "            \"acc_norm\": acc_norm,",
+        "        }"
+      ],
+      "before": [
+        "        acc = 1.0 if np.argmax(results) == gold else 0.0",
+        "        completion_len = np.array([float(len(i)) for i in doc[\"choices\"]])"
+      ],
+      "text": "        acc_norm = 1.0 if np.argmax(results / completion_len) == gold else 0.0",
+      "line": 1786
+    }
+  ],
+  "source_sha256": "499d02257f181ad725247dc8fa0191432970941283f1a2ee9f42154d39bfeccf"
+}
