@@ -1,0 +1,1080 @@
+{
+  "scope": "Post-completion failure audit, not confirmatory evidence; no new policy evaluated, no fitting, final labels excluded",
+  "source_commit": "3fe2bac590c515056966cd7add12e62fd8951cee",
+  "heads_sha256": "a15f8caecb3e09ef68a419eb99c1223adb76c7fa12adfb24026860416b434b89",
+  "input_sha256": {
+    "head_train": "64ea5cf3d9526d3bea14571c25e01994ae3031f967b9973580c4805518735670",
+    "validation": "a99a2982ba8777f1b4a4fa79daa2c62bcc5e0bd4b8e7430ab7f996973a2702ea",
+    "final_sciq": "bc595706b2772a71e10b351da6b086622753fe02e8031737b747978c8b0fe1b9",
+    "final_piqa": "74cd7ad8ae8cd50dd98f0b8dc655d00a2e784597ec12cf85b0724c681676b76d"
+  },
+  "datasets": {
+    "head_train": {
+      "n": 3200,
+      "answer_disagreements": {
+        "keep": 305,
+        "forward": 137,
+        "rollback": 472
+      },
+      "heads": {
+        "head_controls_accuracy": {
+          "override_questions": 212,
+          "answer_changed_questions": 76,
+          "same_answer_overrides": 136,
+          "blocked_different_answer_above_threshold": 2,
+          "any_different_answer_above_threshold": 78,
+          "positive_value_for_same_answer_pairs": 151,
+          "predicted_gain_quantiles": [
+            -0.21925278003475393,
+            0.0016799441044719082,
+            0.009781009430426785,
+            0.018909303050242257,
+            0.05781583433172809,
+            0.0977158781438915,
+            0.16806979570648264
+          ],
+          "target": "accuracy",
+          "interpretation": "Exact zero-accuracy-gain identity applies only to correctness-delta heads; log-weight targets can change while answers agree"
+        },
+        "head_controls_logweight": {
+          "override_questions": 332,
+          "answer_changed_questions": 39,
+          "same_answer_overrides": 293,
+          "blocked_different_answer_above_threshold": 14,
+          "any_different_answer_above_threshold": 53,
+          "positive_value_for_same_answer_pairs": 543,
+          "predicted_gain_quantiles": [
+            -0.0940483843016409,
+            -0.010207694210896588,
+            0.0027596415830498273,
+            0.023072442747209716,
+            0.07707007926449737,
+            0.1360937112483416,
+            0.3602268608229874
+          ],
+          "target": "logweight",
+          "interpretation": "Exact zero-accuracy-gain identity applies only to correctness-delta heads; log-weight targets can change while answers agree"
+        },
+        "head_new_accuracy": {
+          "override_questions": 679,
+          "answer_changed_questions": 87,
+          "same_answer_overrides": 592,
+          "blocked_different_answer_above_threshold": 6,
+          "any_different_answer_above_threshold": 93,
+          "positive_value_for_same_answer_pairs": 879,
+          "predicted_gain_quantiles": [
+            -0.17391545746488193,
+            -0.006739517941297141,
+            0.017552035685152283,
+            0.044123514001948486,
+            0.0931827033567682,
+            0.13417097223251162,
+            0.23767287493629705
+          ],
+          "target": "accuracy",
+          "interpretation": "Exact zero-accuracy-gain identity applies only to correctness-delta heads; log-weight targets can change while answers agree"
+        },
+        "head_new_logweight": {
+          "override_questions": 522,
+          "answer_changed_questions": 47,
+          "same_answer_overrides": 475,
+          "blocked_different_answer_above_threshold": 16,
+          "any_different_answer_above_threshold": 63,
+          "positive_value_for_same_answer_pairs": 790,
+          "predicted_gain_quantiles": [
+            -0.08537220588878537,
+            -0.013976074890527695,
+            0.004240934833407843,
+            0.03445175792752527,
+            0.08552266144215435,
+            0.12928613790575244,
+            0.19091200545044923
+          ],
+          "target": "logweight",
+          "interpretation": "Exact zero-accuracy-gain identity applies only to correctness-delta heads; log-weight targets can change while answers agree"
+        },
+        "head_combined_accuracy": {
+          "override_questions": 873,
+          "answer_changed_questions": 71,
+          "same_answer_overrides": 802,
+          "blocked_different_answer_above_threshold": 13,
+          "any_different_answer_above_threshold": 84,
+          "positive_value_for_same_answer_pairs": 1100,
+          "predicted_gain_quantiles": [
+            -0.2546584545529342,
+            -0.0025330026390632645,
+            0.02411353635586233,
+            0.05388658547462461,
+            0.1071840859298661,
+            0.1545816236513451,
+            0.24573364395254288
+          ],
+          "target": "accuracy",
+          "interpretation": "Exact zero-accuracy-gain identity applies only to correctness-delta heads; log-weight targets can change while answers agree"
+        },
+        "head_combined_logweight": {
+          "override_questions": 689,
+          "answer_changed_questions": 78,
+          "same_answer_overrides": 611,
+          "blocked_different_answer_above_threshold": 25,
+          "any_different_answer_above_threshold": 103,
+          "positive_value_for_same_answer_pairs": 1092,
+          "predicted_gain_quantiles": [
+            -0.12089074345179818,
+            -0.015302375197652675,
+            0.008001477747801716,
+            0.04288071429001502,
+            0.10809158990858134,
+            0.16791299471183102,
+            0.37324259408494526
+          ],
+          "target": "logweight",
+          "interpretation": "Exact zero-accuracy-gain identity applies only to correctness-delta heads; log-weight targets can change while answers agree"
+        }
+      },
+      "feature_shift": {
+        "controls": {
+          "abs_standardized_quantiles": [
+            0.42042099684865364,
+            1.9855208653569147,
+            3.561138380590038,
+            5.4947588094054405
+          ],
+          "question_fraction_with_any_abs_z_over_5": 0.0540625,
+          "top_features_by_abs_z_over_5": [
+            {
+              "feature": "norm2",
+              "fraction": 0.015625
+            },
+            {
+              "feature": "keep_rank_adaptive",
+              "fraction": 0.01125
+            },
+            {
+              "feature": "rollback_kl_keep",
+              "fraction": 0.008125
+            },
+            {
+              "feature": "adaptive_kl_keep",
+              "fraction": 0.004375
+            },
+            {
+              "feature": "rollback_rank_adaptive",
+              "fraction": 0.00375
+            },
+            {
+              "feature": "forward_kl_keep",
+              "fraction": 0.0034375
+            },
+            {
+              "feature": "prompt_tokens",
+              "fraction": 0.003125
+            },
+            {
+              "feature": "norm4",
+              "fraction": 0.003125
+            }
+          ]
+        },
+        "new": {
+          "abs_standardized_quantiles": [
+            0.5905352316630428,
+            1.989369740184868,
+            2.81986852247683,
+            4.0628463413815945
+          ],
+          "question_fraction_with_any_abs_z_over_5": 0.0234375,
+          "top_features_by_abs_z_over_5": [
+            {
+              "feature": "curvature",
+              "fraction": 0.0053125
+            },
+            {
+              "feature": "rollback_token_gain_mean",
+              "fraction": 0.0040625
+            },
+            {
+              "feature": "rollback_probe_delta",
+              "fraction": 0.003125
+            },
+            {
+              "feature": "align24",
+              "fraction": 0.003125
+            },
+            {
+              "feature": "forward_probe_delta",
+              "fraction": 0.0028125
+            },
+            {
+              "feature": "adaptive_probe_delta",
+              "fraction": 0.0025
+            },
+            {
+              "feature": "adaptive_token_gain_mean",
+              "fraction": 0.0015625
+            },
+            {
+              "feature": "forward_token_gain_mean",
+              "fraction": 0.00125
+            }
+          ]
+        },
+        "combined": {
+          "abs_standardized_quantiles": [
+            0.5566233632157891,
+            1.9928623285764757,
+            2.9705091343952144,
+            4.7283891795806765
+          ],
+          "question_fraction_with_any_abs_z_over_5": 0.0703125,
+          "top_features_by_abs_z_over_5": [
+            {
+              "feature": "norm2",
+              "fraction": 0.015625
+            },
+            {
+              "feature": "keep_rank_adaptive",
+              "fraction": 0.01125
+            },
+            {
+              "feature": "rollback_kl_keep",
+              "fraction": 0.008125
+            },
+            {
+              "feature": "curvature",
+              "fraction": 0.0053125
+            },
+            {
+              "feature": "adaptive_kl_keep",
+              "fraction": 0.004375
+            },
+            {
+              "feature": "rollback_token_gain_mean",
+              "fraction": 0.0040625
+            },
+            {
+              "feature": "rollback_rank_adaptive",
+              "fraction": 0.00375
+            },
+            {
+              "feature": "forward_kl_keep",
+              "fraction": 0.0034375
+            }
+          ]
+        }
+      },
+      "target_decomposition": {
+        "keep": {
+          "same_prediction": 2895,
+          "different_prediction": 305,
+          "beneficial": 92,
+          "harmful": 105,
+          "both_wrong_disagreements": 108
+        },
+        "forward": {
+          "same_prediction": 3063,
+          "different_prediction": 137,
+          "beneficial": 45,
+          "harmful": 46,
+          "both_wrong_disagreements": 46
+        },
+        "rollback": {
+          "same_prediction": 2728,
+          "different_prediction": 472,
+          "beneficial": 139,
+          "harmful": 166,
+          "both_wrong_disagreements": 167
+        }
+      }
+    },
+    "validation": {
+      "n": 800,
+      "answer_disagreements": {
+        "keep": 64,
+        "forward": 31,
+        "rollback": 106
+      },
+      "heads": {
+        "head_controls_accuracy": {
+          "override_questions": 45,
+          "answer_changed_questions": 19,
+          "same_answer_overrides": 26,
+          "blocked_different_answer_above_threshold": 0,
+          "any_different_answer_above_threshold": 19,
+          "positive_value_for_same_answer_pairs": 29,
+          "predicted_gain_quantiles": [
+            -0.19750301742374865,
+            0.00045679862423567033,
+            0.009407923179704073,
+            0.019243599912069094,
+            0.055547953648825275,
+            0.08360026507037584,
+            0.1673981218488654
+          ],
+          "target": "accuracy",
+          "interpretation": "Exact zero-accuracy-gain identity applies only to correctness-delta heads; log-weight targets can change while answers agree"
+        },
+        "head_controls_logweight": {
+          "override_questions": 76,
+          "answer_changed_questions": 6,
+          "same_answer_overrides": 70,
+          "blocked_different_answer_above_threshold": 1,
+          "any_different_answer_above_threshold": 7,
+          "positive_value_for_same_answer_pairs": 115,
+          "predicted_gain_quantiles": [
+            -0.08507807708702016,
+            -0.009695110735390935,
+            0.0030757194899089313,
+            0.023114036193086003,
+            0.06749900841907468,
+            0.1088843322533954,
+            0.14766723198688042
+          ],
+          "target": "logweight",
+          "interpretation": "Exact zero-accuracy-gain identity applies only to correctness-delta heads; log-weight targets can change while answers agree"
+        },
+        "head_new_accuracy": {
+          "override_questions": 190,
+          "answer_changed_questions": 18,
+          "same_answer_overrides": 172,
+          "blocked_different_answer_above_threshold": 3,
+          "any_different_answer_above_threshold": 21,
+          "positive_value_for_same_answer_pairs": 259,
+          "predicted_gain_quantiles": [
+            -0.08899950018213983,
+            -0.006218953356718595,
+            0.018879892173474463,
+            0.048978333234802655,
+            0.10487994970271271,
+            0.14121261129208837,
+            0.17900883963091938
+          ],
+          "target": "accuracy",
+          "interpretation": "Exact zero-accuracy-gain identity applies only to correctness-delta heads; log-weight targets can change while answers agree"
+        },
+        "head_new_logweight": {
+          "override_questions": 162,
+          "answer_changed_questions": 13,
+          "same_answer_overrides": 149,
+          "blocked_different_answer_above_threshold": 3,
+          "any_different_answer_above_threshold": 16,
+          "positive_value_for_same_answer_pairs": 253,
+          "predicted_gain_quantiles": [
+            -0.07152817369598916,
+            -0.014071878573022216,
+            0.005001601202317851,
+            0.03918128076734958,
+            0.09070670825785113,
+            0.12731915149143969,
+            0.1621837713306647
+          ],
+          "target": "logweight",
+          "interpretation": "Exact zero-accuracy-gain identity applies only to correctness-delta heads; log-weight targets can change while answers agree"
+        },
+        "head_combined_accuracy": {
+          "override_questions": 241,
+          "answer_changed_questions": 18,
+          "same_answer_overrides": 223,
+          "blocked_different_answer_above_threshold": 3,
+          "any_different_answer_above_threshold": 21,
+          "positive_value_for_same_answer_pairs": 318,
+          "predicted_gain_quantiles": [
+            -0.1581865510387459,
+            -0.002284321110493398,
+            0.02484030515770158,
+            0.05733331165961787,
+            0.11362332847522395,
+            0.14987885977282392,
+            0.20247233247281307
+          ],
+          "target": "accuracy",
+          "interpretation": "Exact zero-accuracy-gain identity applies only to correctness-delta heads; log-weight targets can change while answers agree"
+        },
+        "head_combined_logweight": {
+          "override_questions": 187,
+          "answer_changed_questions": 22,
+          "same_answer_overrides": 165,
+          "blocked_different_answer_above_threshold": 3,
+          "any_different_answer_above_threshold": 25,
+          "positive_value_for_same_answer_pairs": 298,
+          "predicted_gain_quantiles": [
+            -0.08765229815037828,
+            -0.016706342869644005,
+            0.005800357508820697,
+            0.047167999936529065,
+            0.10970288916806646,
+            0.14413946968794797,
+            0.15796795309282063
+          ],
+          "target": "logweight",
+          "interpretation": "Exact zero-accuracy-gain identity applies only to correctness-delta heads; log-weight targets can change while answers agree"
+        }
+      },
+      "feature_shift": {
+        "controls": {
+          "abs_standardized_quantiles": [
+            0.42411578238642134,
+            1.9103628844060545,
+            3.3756406313356835,
+            5.5293587098081645
+          ],
+          "question_fraction_with_any_abs_z_over_5": 0.04625,
+          "top_features_by_abs_z_over_5": [
+            {
+              "feature": "norm2",
+              "fraction": 0.01375
+            },
+            {
+              "feature": "rollback_kl_keep",
+              "fraction": 0.01
+            },
+            {
+              "feature": "keep_rank_adaptive",
+              "fraction": 0.00625
+            },
+            {
+              "feature": "forward_kl_keep",
+              "fraction": 0.00375
+            },
+            {
+              "feature": "rollback_rank_adaptive",
+              "fraction": 0.00375
+            },
+            {
+              "feature": "adaptive_kl_keep",
+              "fraction": 0.0025
+            },
+            {
+              "feature": "keep_entropy",
+              "fraction": 0.0025
+            },
+            {
+              "feature": "rollback_entropy",
+              "fraction": 0.0025
+            }
+          ]
+        },
+        "new": {
+          "abs_standardized_quantiles": [
+            0.5917046126347656,
+            2.002255886056432,
+            2.831936977021013,
+            4.072116929311001
+          ],
+          "question_fraction_with_any_abs_z_over_5": 0.0225,
+          "top_features_by_abs_z_over_5": [
+            {
+              "feature": "rollback_token_gain_mean",
+              "fraction": 0.00625
+            },
+            {
+              "feature": "adaptive_token_gain_mean",
+              "fraction": 0.00375
+            },
+            {
+              "feature": "curvature",
+              "fraction": 0.00375
+            },
+            {
+              "feature": "align24",
+              "fraction": 0.0025
+            },
+            {
+              "feature": "rollback_probe_delta",
+              "fraction": 0.0025
+            },
+            {
+              "feature": "align34",
+              "fraction": 0.00125
+            },
+            {
+              "feature": "forward_token_gain_mean",
+              "fraction": 0.00125
+            },
+            {
+              "feature": "forward_probe_delta",
+              "fraction": 0.00125
+            }
+          ]
+        },
+        "combined": {
+          "abs_standardized_quantiles": [
+            0.5595593327974309,
+            1.993629613209229,
+            2.9303719681507077,
+            4.7283891795806765
+          ],
+          "question_fraction_with_any_abs_z_over_5": 0.065,
+          "top_features_by_abs_z_over_5": [
+            {
+              "feature": "norm2",
+              "fraction": 0.01375
+            },
+            {
+              "feature": "rollback_kl_keep",
+              "fraction": 0.01
+            },
+            {
+              "feature": "keep_rank_adaptive",
+              "fraction": 0.00625
+            },
+            {
+              "feature": "rollback_token_gain_mean",
+              "fraction": 0.00625
+            },
+            {
+              "feature": "rollback_rank_adaptive",
+              "fraction": 0.00375
+            },
+            {
+              "feature": "adaptive_token_gain_mean",
+              "fraction": 0.00375
+            },
+            {
+              "feature": "forward_kl_keep",
+              "fraction": 0.00375
+            },
+            {
+              "feature": "curvature",
+              "fraction": 0.00375
+            }
+          ]
+        }
+      },
+      "target_decomposition": {
+        "keep": {
+          "same_prediction": 736,
+          "different_prediction": 64,
+          "beneficial": 22,
+          "harmful": 17,
+          "both_wrong_disagreements": 25
+        },
+        "forward": {
+          "same_prediction": 769,
+          "different_prediction": 31,
+          "beneficial": 13,
+          "harmful": 9,
+          "both_wrong_disagreements": 9
+        },
+        "rollback": {
+          "same_prediction": 694,
+          "different_prediction": 106,
+          "beneficial": 32,
+          "harmful": 35,
+          "both_wrong_disagreements": 39
+        }
+      }
+    },
+    "final_sciq": {
+      "n": 1000,
+      "answer_disagreements": {
+        "keep": 11,
+        "forward": 2,
+        "rollback": 16
+      },
+      "heads": {
+        "head_controls_accuracy": {
+          "override_questions": 739,
+          "answer_changed_questions": 4,
+          "same_answer_overrides": 735,
+          "blocked_different_answer_above_threshold": 3,
+          "any_different_answer_above_threshold": 7,
+          "positive_value_for_same_answer_pairs": 1317,
+          "predicted_gain_quantiles": [
+            -0.008692980975650844,
+            0.04748152770048009,
+            0.08963435475510693,
+            0.1447273198367306,
+            0.3464069700351436,
+            0.5285509102311563,
+            0.700127371440983
+          ],
+          "target": "accuracy",
+          "interpretation": "Exact zero-accuracy-gain identity applies only to correctness-delta heads; log-weight targets can change while answers agree"
+        },
+        "head_controls_logweight": {
+          "override_questions": 14,
+          "answer_changed_questions": 0,
+          "same_answer_overrides": 14,
+          "blocked_different_answer_above_threshold": 1,
+          "any_different_answer_above_threshold": 1,
+          "positive_value_for_same_answer_pairs": 24,
+          "predicted_gain_quantiles": [
+            -0.7715396324833238,
+            -0.15820155461073693,
+            -0.09023141081483413,
+            -0.04046794893610347,
+            0.007120698658610305,
+            0.06236649773735879,
+            0.2073833627316503
+          ],
+          "target": "logweight",
+          "interpretation": "Exact zero-accuracy-gain identity applies only to correctness-delta heads; log-weight targets can change while answers agree"
+        },
+        "head_new_accuracy": {
+          "override_questions": 148,
+          "answer_changed_questions": 0,
+          "same_answer_overrides": 148,
+          "blocked_different_answer_above_threshold": 0,
+          "any_different_answer_above_threshold": 0,
+          "positive_value_for_same_answer_pairs": 190,
+          "predicted_gain_quantiles": [
+            -0.08045979136560857,
+            -0.00860898054150976,
+            0.01311060172885438,
+            0.03617505369102758,
+            0.07315597284265703,
+            0.109204440809718,
+            0.13212076853155366
+          ],
+          "target": "accuracy",
+          "interpretation": "Exact zero-accuracy-gain identity applies only to correctness-delta heads; log-weight targets can change while answers agree"
+        },
+        "head_new_logweight": {
+          "override_questions": 4,
+          "answer_changed_questions": 0,
+          "same_answer_overrides": 4,
+          "blocked_different_answer_above_threshold": 0,
+          "any_different_answer_above_threshold": 0,
+          "positive_value_for_same_answer_pairs": 5,
+          "predicted_gain_quantiles": [
+            -0.07455982465560135,
+            -0.03908478120552354,
+            -0.02618850043135135,
+            -0.014259456205140998,
+            0.0046528333576452,
+            0.03314081475674211,
+            0.09379712703726054
+          ],
+          "target": "logweight",
+          "interpretation": "Exact zero-accuracy-gain identity applies only to correctness-delta heads; log-weight targets can change while answers agree"
+        },
+        "head_combined_accuracy": {
+          "override_questions": 780,
+          "answer_changed_questions": 7,
+          "same_answer_overrides": 773,
+          "blocked_different_answer_above_threshold": 3,
+          "any_different_answer_above_threshold": 10,
+          "positive_value_for_same_answer_pairs": 1400,
+          "predicted_gain_quantiles": [
+            -0.046132717393938524,
+            0.05722967826556134,
+            0.1261757878950395,
+            0.24083667430930247,
+            0.6504851801013346,
+            0.9425364740389394,
+            1.3458591208707997
+          ],
+          "target": "accuracy",
+          "interpretation": "Exact zero-accuracy-gain identity applies only to correctness-delta heads; log-weight targets can change while answers agree"
+        },
+        "head_combined_logweight": {
+          "override_questions": 12,
+          "answer_changed_questions": 0,
+          "same_answer_overrides": 12,
+          "blocked_different_answer_above_threshold": 0,
+          "any_different_answer_above_threshold": 0,
+          "positive_value_for_same_answer_pairs": 26,
+          "predicted_gain_quantiles": [
+            -0.5482397121399465,
+            -0.13513913134741787,
+            -0.08585110079915093,
+            -0.048379145785678875,
+            0.0019207863562921545,
+            0.056745821987210565,
+            0.2360638570711736
+          ],
+          "target": "logweight",
+          "interpretation": "Exact zero-accuracy-gain identity applies only to correctness-delta heads; log-weight targets can change while answers agree"
+        }
+      },
+      "feature_shift": {
+        "controls": {
+          "abs_standardized_quantiles": [
+            0.5229560686285694,
+            4.234166639517478,
+            15.794946228863532,
+            52.49651896646268
+          ],
+          "question_fraction_with_any_abs_z_over_5": 0.778,
+          "top_features_by_abs_z_over_5": [
+            {
+              "feature": "prompt_tokens",
+              "fraction": 0.735
+            },
+            {
+              "feature": "forward_kl_keep",
+              "fraction": 0.184
+            },
+            {
+              "feature": "adaptive_kl_keep",
+              "fraction": 0.099
+            },
+            {
+              "feature": "kl41",
+              "fraction": 0.026
+            },
+            {
+              "feature": "forward_entropy",
+              "fraction": 0.016
+            },
+            {
+              "feature": "keep_entropy",
+              "fraction": 0.012
+            },
+            {
+              "feature": "rollback_entropy",
+              "fraction": 0.011
+            },
+            {
+              "feature": "adaptive_entropy",
+              "fraction": 0.009
+            }
+          ]
+        },
+        "new": {
+          "abs_standardized_quantiles": [
+            0.5757754705607111,
+            1.8514791308832335,
+            2.537995042260937,
+            3.5546890496802113
+          ],
+          "question_fraction_with_any_abs_z_over_5": 0.009,
+          "top_features_by_abs_z_over_5": [
+            {
+              "feature": "rollback_token_gain_mean",
+              "fraction": 0.006
+            },
+            {
+              "feature": "curvature",
+              "fraction": 0.001
+            },
+            {
+              "feature": "forward_token_gain_mean",
+              "fraction": 0.001
+            },
+            {
+              "feature": "update_projection_059",
+              "fraction": 0.001
+            },
+            {
+              "feature": "align23",
+              "fraction": 0.0
+            },
+            {
+              "feature": "align24",
+              "fraction": 0.0
+            },
+            {
+              "feature": "align34",
+              "fraction": 0.0
+            },
+            {
+              "feature": "adaptive_token_positive_fraction",
+              "fraction": 0.0
+            }
+          ]
+        },
+        "combined": {
+          "abs_standardized_quantiles": [
+            0.5671695873738309,
+            2.2546312981465584,
+            4.438420608462718,
+            25.940055176212283
+          ],
+          "question_fraction_with_any_abs_z_over_5": 0.778,
+          "top_features_by_abs_z_over_5": [
+            {
+              "feature": "prompt_tokens",
+              "fraction": 0.735
+            },
+            {
+              "feature": "forward_kl_keep",
+              "fraction": 0.184
+            },
+            {
+              "feature": "adaptive_kl_keep",
+              "fraction": 0.099
+            },
+            {
+              "feature": "kl41",
+              "fraction": 0.026
+            },
+            {
+              "feature": "forward_entropy",
+              "fraction": 0.016
+            },
+            {
+              "feature": "keep_entropy",
+              "fraction": 0.012
+            },
+            {
+              "feature": "rollback_entropy",
+              "fraction": 0.011
+            },
+            {
+              "feature": "adaptive_entropy",
+              "fraction": 0.009
+            }
+          ]
+        }
+      }
+    },
+    "final_piqa": {
+      "n": 1802,
+      "answer_disagreements": {
+        "keep": 82,
+        "forward": 41,
+        "rollback": 122
+      },
+      "heads": {
+        "head_controls_accuracy": {
+          "override_questions": 82,
+          "answer_changed_questions": 0,
+          "same_answer_overrides": 82,
+          "blocked_different_answer_above_threshold": 0,
+          "any_different_answer_above_threshold": 0,
+          "positive_value_for_same_answer_pairs": 155,
+          "predicted_gain_quantiles": [
+            -0.32623258382391623,
+            -0.04036967586634176,
+            -0.020012551597002347,
+            -0.008270924098877275,
+            0.023896226308817242,
+            0.0941801819858382,
+            0.12454810152389435
+          ],
+          "target": "accuracy",
+          "interpretation": "Exact zero-accuracy-gain identity applies only to correctness-delta heads; log-weight targets can change while answers agree"
+        },
+        "head_controls_logweight": {
+          "override_questions": 1778,
+          "answer_changed_questions": 78,
+          "same_answer_overrides": 1700,
+          "blocked_different_answer_above_threshold": 63,
+          "any_different_answer_above_threshold": 141,
+          "positive_value_for_same_answer_pairs": 4983,
+          "predicted_gain_quantiles": [
+            -0.05592608289459901,
+            0.17811526909268555,
+            0.20176162273141662,
+            0.22213938821637658,
+            0.24612954840591558,
+            0.2651389831794695,
+            0.2790613135029479
+          ],
+          "target": "logweight",
+          "interpretation": "Exact zero-accuracy-gain identity applies only to correctness-delta heads; log-weight targets can change while answers agree"
+        },
+        "head_new_accuracy": {
+          "override_questions": 244,
+          "answer_changed_questions": 13,
+          "same_answer_overrides": 231,
+          "blocked_different_answer_above_threshold": 0,
+          "any_different_answer_above_threshold": 13,
+          "positive_value_for_same_answer_pairs": 286,
+          "predicted_gain_quantiles": [
+            -0.13963778042670486,
+            -0.0189493540034438,
+            0.004481001214776391,
+            0.030456178005072068,
+            0.07707974941310489,
+            0.11514262585396377,
+            0.17740779361102513
+          ],
+          "target": "accuracy",
+          "interpretation": "Exact zero-accuracy-gain identity applies only to correctness-delta heads; log-weight targets can change while answers agree"
+        },
+        "head_new_logweight": {
+          "override_questions": 8,
+          "answer_changed_questions": 1,
+          "same_answer_overrides": 7,
+          "blocked_different_answer_above_threshold": 0,
+          "any_different_answer_above_threshold": 1,
+          "positive_value_for_same_answer_pairs": 8,
+          "predicted_gain_quantiles": [
+            -0.09783424323375771,
+            -0.03320613138508362,
+            -0.019742199663158325,
+            -0.006068085072404746,
+            0.021516154201194033,
+            0.04147807817474284,
+            0.06712354101486702
+          ],
+          "target": "logweight",
+          "interpretation": "Exact zero-accuracy-gain identity applies only to correctness-delta heads; log-weight targets can change while answers agree"
+        },
+        "head_combined_accuracy": {
+          "override_questions": 171,
+          "answer_changed_questions": 0,
+          "same_answer_overrides": 171,
+          "blocked_different_answer_above_threshold": 0,
+          "any_different_answer_above_threshold": 0,
+          "positive_value_for_same_answer_pairs": 244,
+          "predicted_gain_quantiles": [
+            -0.3121835649487335,
+            -0.04243294554116639,
+            -0.010403967289486775,
+            0.01875570855832307,
+            0.07492221882327767,
+            0.11370678264661967,
+            0.1575084611268293
+          ],
+          "target": "accuracy",
+          "interpretation": "Exact zero-accuracy-gain identity applies only to correctness-delta heads; log-weight targets can change while answers agree"
+        },
+        "head_combined_logweight": {
+          "override_questions": 1725,
+          "answer_changed_questions": 71,
+          "same_answer_overrides": 1654,
+          "blocked_different_answer_above_threshold": 60,
+          "any_different_answer_above_threshold": 131,
+          "positive_value_for_same_answer_pairs": 4477,
+          "predicted_gain_quantiles": [
+            -0.08216270720434594,
+            0.13153384168474508,
+            0.17294730676014564,
+            0.2053298053985174,
+            0.25199975751572795,
+            0.2775837643084532,
+            0.3315244119114425
+          ],
+          "target": "logweight",
+          "interpretation": "Exact zero-accuracy-gain identity applies only to correctness-delta heads; log-weight targets can change while answers agree"
+        }
+      },
+      "feature_shift": {
+        "controls": {
+          "abs_standardized_quantiles": [
+            0.5944992203528134,
+            4.93776187253338,
+            17.497826829789734,
+            42.55601820368911
+          ],
+          "question_fraction_with_any_abs_z_over_5": 0.7069922308546059,
+          "top_features_by_abs_z_over_5": [
+            {
+              "feature": "mean_candidate_tokens",
+              "fraction": 0.5566037735849056
+            },
+            {
+              "feature": "max_candidate_tokens",
+              "fraction": 0.4672586015538291
+            },
+            {
+              "feature": "rollback_entropy",
+              "fraction": 0.09822419533851276
+            },
+            {
+              "feature": "rollback_rank_adaptive",
+              "fraction": 0.06770255271920089
+            },
+            {
+              "feature": "probe_available",
+              "fraction": 0.04772475027746948
+            },
+            {
+              "feature": "keep_rank_adaptive",
+              "fraction": 0.04550499445061043
+            },
+            {
+              "feature": "keep_entropy",
+              "fraction": 0.04273029966703663
+            },
+            {
+              "feature": "forward_entropy",
+              "fraction": 0.0011098779134295228
+            }
+          ]
+        },
+        "new": {
+          "abs_standardized_quantiles": [
+            0.5795475378507392,
+            1.924175623388768,
+            2.7522228248664975,
+            4.409035477327838
+          ],
+          "question_fraction_with_any_abs_z_over_5": 0.07713651498335183,
+          "top_features_by_abs_z_over_5": [
+            {
+              "feature": "probe_available",
+              "fraction": 0.04772475027746948
+            },
+            {
+              "feature": "curvature",
+              "fraction": 0.01220865704772475
+            },
+            {
+              "feature": "forward_probe_delta",
+              "fraction": 0.007214206437291898
+            },
+            {
+              "feature": "adaptive_probe_delta",
+              "fraction": 0.004439511653718091
+            },
+            {
+              "feature": "rollback_probe_delta",
+              "fraction": 0.004439511653718091
+            },
+            {
+              "feature": "update_projection_021",
+              "fraction": 0.001664816870144284
+            },
+            {
+              "feature": "update_projection_057",
+              "fraction": 0.001664816870144284
+            },
+            {
+              "feature": "update_projection_037",
+              "fraction": 0.0011098779134295228
+            }
+          ]
+        },
+        "combined": {
+          "abs_standardized_quantiles": [
+            0.5863787395270066,
+            2.672048092941878,
+            4.972079167382162,
+            29.64184805308901
+          ],
+          "question_fraction_with_any_abs_z_over_5": 0.7197558268590455,
+          "top_features_by_abs_z_over_5": [
+            {
+              "feature": "mean_candidate_tokens",
+              "fraction": 0.5566037735849056
+            },
+            {
+              "feature": "max_candidate_tokens",
+              "fraction": 0.4672586015538291
+            },
+            {
+              "feature": "rollback_entropy",
+              "fraction": 0.09822419533851276
+            },
+            {
+              "feature": "rollback_rank_adaptive",
+              "fraction": 0.06770255271920089
+            },
+            {
+              "feature": "probe_available",
+              "fraction": 0.04772475027746948
+            },
+            {
+              "feature": "keep_rank_adaptive",
+              "fraction": 0.04550499445061043
+            },
+            {
+              "feature": "keep_entropy",
+              "fraction": 0.04273029966703663
+            },
+            {
+              "feature": "curvature",
+              "fraction": 0.01220865704772475
+            }
+          ]
+        }
+      }
+    }
+  },
+  "additional_gpu_seconds": 0
+}
