@@ -13,7 +13,7 @@ def main():
   result=subprocess.run([sys.executable,'-X','utf8',str(ROOT/'scripts/supervise.py'),stage]);assert result.returncode==0
   receipt=json.loads((ROOT/'logs'/(stage+'_exit.json')).read_text());assert receipt['exit_code']==0 and receipt['started_unix']>lock['frozen_unix']
   assert json.loads((ROOT/'results'/(stage+'_COMPLETE.json')).read_text())['passed']
- for script in ['finalize_analysis.py','render_report.py']:
+ for script in ['finalize_analysis.py','audit_results.py','diagnose_signals.py','render_report.py','render_appendix.py']:
   save(dict(stage=script,pid=os.getpid(),started_unix=time.time()))
   with (ROOT/'logs'/(script+'.out')).open('w',encoding='utf8') as out:
    result=subprocess.run([sys.executable,'-X','utf8',str(ROOT/'scripts'/script)],stdout=out,stderr=subprocess.STDOUT)

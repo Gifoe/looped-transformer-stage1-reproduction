@@ -34,6 +34,10 @@ python -X utf8 scripts/analyze.py train
 python -X utf8 scripts/supervise.py final_sciq
 python -X utf8 scripts/supervise.py final_piqa
 python -X utf8 scripts/finalize_analysis.py
+python -X utf8 scripts/audit_results.py
+python -X utf8 scripts/diagnose_signals.py
+python -X utf8 scripts/render_report.py
+python -X utf8 scripts/render_appendix.py
 ```
 
 Inspect pilot parity/cost before discovery and the discovery report before optional head collection/training. Do not run final stages until `configs/FINAL_LOCK.json` exists. Final analysis verifies its locked source hashes. The final manifests and predictions are immutable; scripts refuse to overwrite a prior prediction file. Reproduce in a fresh directory or preserve old outputs and document an explicit new run. Reads use physical JSONL lines, including questions containing Unicode line separators.
@@ -47,3 +51,11 @@ For durable execution over Windows SSH, use `scripts/launch.ps1 <stage>` via Win
 The primary metric is character-normalized full-candidate likelihood accuracy; raw accuracy is also reported. SciQ includes official supplied evidence. PIQA contains 1802 eligible validation questions after 36 normalized duplicate question exclusions, so it is not the unfiltered 1838-question score. Exposure checking cannot rule out pretraining contamination.
 
 Known-question predictive loss is a hypothesis, not a verifier. Format changes add no independent facts. Oracle choices are unreachable without labels. Retrospective rollback after all four loops saves no backbone computation. A No-Go result applies to the tested signals, supervision and action set, not all possible frozen-model controllers.
+
+## Locks, integrity, and CPU-only inspection
+
+`configs/PREVALIDATION_LOCK.json` hashes the inference/analysis code, protocol and all five data manifests before validation. `configs/FINAL_LOCK.json` then freezes fitted heads, selected policy and validation-selected fixed baselines before final inference. These are distinct lock stages. The discovery input-boundary repair is documented separately; its archived partial output and exact resume parity remain available.
+
+`results/ENVIRONMENT_AND_CHECKPOINT_AUDIT.json` records actual dependency versions and verifies nine local checkpoint files against the pinned Git-blob/LFS hashes. `audit_results.py` independently checks completed raw-file hashes, question/label alignment, source locks, chronology, token-score sums, fixed-action accuracies and budget accounting. `diagnose_signals.py` adds exploratory paired AUC-difference intervals without fitting or changing any model. `STATISTICAL_APPENDIX.md` exposes validation decisions, corrections/degradations, random-action controls and head overhead.
+
+For CPU-only independent arithmetic inspection of the published complete artifacts, `audit_results.py`, `diagnose_signals.py`, and the two rendering scripts do not import the server-specific affinity bootstrap. They require NumPy, SciPy and (for plots) Matplotlib. Do not rerun `analyze.py train` on a completed locked directory.
