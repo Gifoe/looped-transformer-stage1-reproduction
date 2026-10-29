@@ -3,7 +3,7 @@ import json,hashlib
 from pathlib import Path
 import numpy as np
 ROOT=Path(__file__).resolve().parents[1]
-def load(p):return json.loads((ROOT/p).read_text(encoding='utf8-sig'))
+def load(p):return json.loads((ROOT/p).read_text(encoding='utf-8-sig'))
 def rows(p):
  with (ROOT/p).open(encoding='utf8') as f:return [json.loads(l) for l in f if l.strip()]
 def sha(p):return hashlib.sha256(p.read_bytes()).hexdigest()
