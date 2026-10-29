@@ -1,0 +1,641 @@
+{
+  "method": "2000 stratified paired event bootstrap; fixed signs; seed2021; exploratory unadjusted intervals; conditional on nonzero correctness gains",
+  "datasets": {
+    "validation": {
+      "keep": {
+        "positive": 22,
+        "negative": 17,
+        "heads": {
+          "head_controls_accuracy": {
+            "auc": 0.5320855614973262,
+            "ci95": [
+              0.35561497326203206,
+              0.7192513368983957
+            ]
+          },
+          "head_controls_logweight": {
+            "auc": 0.5802139037433155,
+            "ci95": [
+              0.39572192513368987,
+              0.7566844919786097
+            ]
+          },
+          "head_new_accuracy": {
+            "auc": 0.5508021390374331,
+            "ci95": [
+              0.3609625668449198,
+              0.7352941176470589
+            ]
+          },
+          "head_new_logweight": {
+            "auc": 0.49732620320855614,
+            "ci95": [
+              0.31283422459893045,
+              0.6818181818181818
+            ]
+          },
+          "head_combined_accuracy": {
+            "auc": 0.5481283422459893,
+            "ci95": [
+              0.3582887700534759,
+              0.7352941176470589
+            ]
+          },
+          "head_combined_logweight": {
+            "auc": 0.47593582887700536,
+            "ci95": [
+              0.27807486631016043,
+              0.6657754010695187
+            ]
+          }
+        },
+        "paired_auc_differences": {
+          "head_new_accuracy_minus_controls": {
+            "delta_auc": 0.018716577540106916,
+            "ci95": [
+              -0.25401069518716574,
+              0.26477272727272694
+            ]
+          },
+          "head_combined_accuracy_minus_controls": {
+            "delta_auc": 0.016042780748663055,
+            "ci95": [
+              -0.10427807486631013,
+              0.1310160427807487
+            ]
+          },
+          "head_new_logweight_minus_controls": {
+            "delta_auc": -0.08288770053475936,
+            "ci95": [
+              -0.32359625668449205,
+              0.14171122994652402
+            ]
+          },
+          "head_combined_logweight_minus_controls": {
+            "delta_auc": -0.10427807486631013,
+            "ci95": [
+              -0.2914438502673796,
+              0.07493315508021356
+            ]
+          }
+        }
+      },
+      "forward": {
+        "positive": 13,
+        "negative": 9,
+        "heads": {
+          "head_controls_accuracy": {
+            "auc": 0.5128205128205128,
+            "ci95": [
+              0.2561965811965812,
+              0.7692307692307693
+            ]
+          },
+          "head_controls_logweight": {
+            "auc": 0.6666666666666666,
+            "ci95": [
+              0.4185897435897436,
+              0.8888888888888888
+            ]
+          },
+          "head_new_accuracy": {
+            "auc": 0.4358974358974359,
+            "ci95": [
+              0.19658119658119658,
+              0.7094017094017094
+            ]
+          },
+          "head_new_logweight": {
+            "auc": 0.5555555555555556,
+            "ci95": [
+              0.29914529914529914,
+              0.8034188034188035
+            ]
+          },
+          "head_combined_accuracy": {
+            "auc": 0.4358974358974359,
+            "ci95": [
+              0.20512820512820512,
+              0.6837606837606838
+            ]
+          },
+          "head_combined_logweight": {
+            "auc": 0.6495726495726496,
+            "ci95": [
+              0.37606837606837606,
+              0.8803418803418803
+            ]
+          }
+        },
+        "paired_auc_differences": {
+          "head_new_accuracy_minus_controls": {
+            "delta_auc": -0.07692307692307687,
+            "ci95": [
+              -0.41025641025641024,
+              0.29081196581196467
+            ]
+          },
+          "head_combined_accuracy_minus_controls": {
+            "delta_auc": -0.07692307692307687,
+            "ci95": [
+              -0.25662393162393166,
+              0.1282051282051282
+            ]
+          },
+          "head_new_logweight_minus_controls": {
+            "delta_auc": -0.11111111111111105,
+            "ci95": [
+              -0.452991452991453,
+              0.2222222222222222
+            ]
+          },
+          "head_combined_logweight_minus_controls": {
+            "delta_auc": -0.017094017094017033,
+            "ci95": [
+              -0.2564102564102564,
+              0.19658119658119666
+            ]
+          }
+        }
+      },
+      "rollback": {
+        "positive": 32,
+        "negative": 35,
+        "heads": {
+          "head_controls_accuracy": {
+            "auc": 0.5678571428571428,
+            "ci95": [
+              0.4258705357142857,
+              0.7107589285714283
+            ]
+          },
+          "head_controls_logweight": {
+            "auc": 0.5303571428571429,
+            "ci95": [
+              0.3848214285714286,
+              0.66875
+            ]
+          },
+          "head_new_accuracy": {
+            "auc": 0.53125,
+            "ci95": [
+              0.3946205357142857,
+              0.6723437499999999
+            ]
+          },
+          "head_new_logweight": {
+            "auc": 0.43392857142857144,
+            "ci95": [
+              0.29375,
+              0.58125
+            ]
+          },
+          "head_combined_accuracy": {
+            "auc": 0.5678571428571428,
+            "ci95": [
+              0.4320982142857143,
+              0.7071428571428572
+            ]
+          },
+          "head_combined_logweight": {
+            "auc": 0.49375,
+            "ci95": [
+              0.3508928571428571,
+              0.6366071428571428
+            ]
+          }
+        },
+        "paired_auc_differences": {
+          "head_new_accuracy_minus_controls": {
+            "delta_auc": -0.03660714285714284,
+            "ci95": [
+              -0.20095982142857144,
+              0.1482142857142857
+            ]
+          },
+          "head_combined_accuracy_minus_controls": {
+            "delta_auc": 0.0,
+            "ci95": [
+              -0.11877232142857146,
+              0.125
+            ]
+          },
+          "head_new_logweight_minus_controls": {
+            "delta_auc": -0.09642857142857142,
+            "ci95": [
+              -0.2928571428571428,
+              0.1080580357142856
+            ]
+          },
+          "head_combined_logweight_minus_controls": {
+            "delta_auc": -0.03660714285714284,
+            "ci95": [
+              -0.16249999999999998,
+              0.09196428571428567
+            ]
+          }
+        }
+      }
+    },
+    "final_sciq": {
+      "keep": {
+        "positive": 3,
+        "negative": 8,
+        "heads": {
+          "head_controls_accuracy": {
+            "auc": 0.5833333333333334,
+            "ci95": [
+              0.16666666666666666,
+              1.0
+            ]
+          },
+          "head_controls_logweight": {
+            "auc": 0.625,
+            "ci95": [
+              0.20833333333333334,
+              1.0
+            ]
+          },
+          "head_new_accuracy": {
+            "auc": 1.0,
+            "ci95": [
+              1.0,
+              1.0
+            ]
+          },
+          "head_new_logweight": {
+            "auc": 0.4166666666666667,
+            "ci95": [
+              0.0,
+              1.0
+            ]
+          },
+          "head_combined_accuracy": {
+            "auc": 0.7083333333333334,
+            "ci95": [
+              0.3333333333333333,
+              1.0
+            ]
+          },
+          "head_combined_logweight": {
+            "auc": 0.5416666666666666,
+            "ci95": [
+              0.125,
+              1.0
+            ]
+          }
+        },
+        "paired_auc_differences": {
+          "head_new_accuracy_minus_controls": {
+            "delta_auc": 0.41666666666666663,
+            "ci95": [
+              0.0,
+              0.8333333333333334
+            ]
+          },
+          "head_combined_accuracy_minus_controls": {
+            "delta_auc": 0.125,
+            "ci95": [
+              -0.16666666666666674,
+              0.41770833333332774
+            ]
+          },
+          "head_new_logweight_minus_controls": {
+            "delta_auc": -0.20833333333333331,
+            "ci95": [
+              -0.7916666666666666,
+              0.37499999999999994
+            ]
+          },
+          "head_combined_logweight_minus_controls": {
+            "delta_auc": -0.08333333333333337,
+            "ci95": [
+              -0.33333333333333326,
+              0.125
+            ]
+          }
+        }
+      },
+      "forward": {
+        "positive": 2,
+        "negative": 0,
+        "heads": {},
+        "paired_auc_differences": {}
+      },
+      "rollback": {
+        "positive": 3,
+        "negative": 10,
+        "heads": {
+          "head_controls_accuracy": {
+            "auc": 0.8333333333333334,
+            "ci95": [
+              0.5666666666666667,
+              1.0
+            ]
+          },
+          "head_controls_logweight": {
+            "auc": 0.5666666666666667,
+            "ci95": [
+              0.13333333333333333,
+              0.9666666666666667
+            ]
+          },
+          "head_new_accuracy": {
+            "auc": 0.4666666666666667,
+            "ci95": [
+              0.0,
+              0.9
+            ]
+          },
+          "head_new_logweight": {
+            "auc": 0.4,
+            "ci95": [
+              0.0,
+              1.0
+            ]
+          },
+          "head_combined_accuracy": {
+            "auc": 0.6333333333333333,
+            "ci95": [
+              0.2,
+              1.0
+            ]
+          },
+          "head_combined_logweight": {
+            "auc": 0.4666666666666667,
+            "ci95": [
+              0.1,
+              0.8333333333333334
+            ]
+          }
+        },
+        "paired_auc_differences": {
+          "head_new_accuracy_minus_controls": {
+            "delta_auc": -0.3666666666666667,
+            "ci95": [
+              -1.0,
+              0.20000000000000007
+            ]
+          },
+          "head_combined_accuracy_minus_controls": {
+            "delta_auc": -0.20000000000000007,
+            "ci95": [
+              -0.5666666666666667,
+              0.10000000000000009
+            ]
+          },
+          "head_new_logweight_minus_controls": {
+            "delta_auc": -0.16666666666666663,
+            "ci95": [
+              -0.6,
+              0.19999999999999996
+            ]
+          },
+          "head_combined_logweight_minus_controls": {
+            "delta_auc": -0.09999999999999998,
+            "ci95": [
+              -0.3666666666666667,
+              0.13333333333333336
+            ]
+          }
+        }
+      }
+    },
+    "final_piqa": {
+      "keep": {
+        "positive": 40,
+        "negative": 42,
+        "heads": {
+          "head_controls_accuracy": {
+            "auc": 0.40654761904761905,
+            "ci95": [
+              0.28450892857142857,
+              0.5315773809523808
+            ]
+          },
+          "head_controls_logweight": {
+            "auc": 0.5059523809523809,
+            "ci95": [
+              0.3886904761904762,
+              0.6321726190476189
+            ]
+          },
+          "head_new_accuracy": {
+            "auc": 0.638095238095238,
+            "ci95": [
+              0.5118898809523809,
+              0.7559672619047618
+            ]
+          },
+          "head_new_logweight": {
+            "auc": 0.5363095238095238,
+            "ci95": [
+              0.4083333333333333,
+              0.6577380952380952
+            ]
+          },
+          "head_combined_accuracy": {
+            "auc": 0.5166666666666667,
+            "ci95": [
+              0.38748511904761906,
+              0.6440476190476191
+            ]
+          },
+          "head_combined_logweight": {
+            "auc": 0.5297619047619048,
+            "ci95": [
+              0.4011607142857143,
+              0.657157738095238
+            ]
+          }
+        },
+        "paired_auc_differences": {
+          "head_new_accuracy_minus_controls": {
+            "delta_auc": 0.231547619047619,
+            "ci95": [
+              0.07736607142857144,
+              0.3898809523809524
+            ]
+          },
+          "head_combined_accuracy_minus_controls": {
+            "delta_auc": 0.11011904761904767,
+            "ci95": [
+              0.04166666666666663,
+              0.181547619047619
+            ]
+          },
+          "head_new_logweight_minus_controls": {
+            "delta_auc": 0.03035714285714286,
+            "ci95": [
+              -0.1333482142857143,
+              0.1827380952380952
+            ]
+          },
+          "head_combined_logweight_minus_controls": {
+            "delta_auc": 0.023809523809523836,
+            "ci95": [
+              -0.08754464285714288,
+              0.13035714285714284
+            ]
+          }
+        }
+      },
+      "forward": {
+        "positive": 19,
+        "negative": 22,
+        "heads": {
+          "head_controls_accuracy": {
+            "auc": 0.39712918660287083,
+            "ci95": [
+              0.22488038277511962,
+              0.5861842105263154
+            ]
+          },
+          "head_controls_logweight": {
+            "auc": 0.4569377990430622,
+            "ci95": [
+              0.2822966507177033,
+              0.6483253588516746
+            ]
+          },
+          "head_new_accuracy": {
+            "auc": 0.6698564593301436,
+            "ci95": [
+              0.4880382775119617,
+              0.8278110047846886
+            ]
+          },
+          "head_new_logweight": {
+            "auc": 0.5119617224880383,
+            "ci95": [
+              0.33253588516746413,
+              0.6913875598086124
+            ]
+          },
+          "head_combined_accuracy": {
+            "auc": 0.5167464114832536,
+            "ci95": [
+              0.3373205741626794,
+              0.7033492822966507
+            ]
+          },
+          "head_combined_logweight": {
+            "auc": 0.47607655502392343,
+            "ci95": [
+              0.2894736842105263,
+              0.6674641148325359
+            ]
+          }
+        },
+        "paired_auc_differences": {
+          "head_new_accuracy_minus_controls": {
+            "delta_auc": 0.27272727272727276,
+            "ci95": [
+              0.05974880382775118,
+              0.47613636363636336
+            ]
+          },
+          "head_combined_accuracy_minus_controls": {
+            "delta_auc": 0.11961722488038279,
+            "ci95": [
+              0.02870813397129185,
+              0.22727272727272724
+            ]
+          },
+          "head_new_logweight_minus_controls": {
+            "delta_auc": 0.055023923444976086,
+            "ci95": [
+              -0.13397129186602869,
+              0.24162679425837325
+            ]
+          },
+          "head_combined_logweight_minus_controls": {
+            "delta_auc": 0.019138755980861233,
+            "ci95": [
+              -0.0933612440191388,
+              0.13157894736842102
+            ]
+          }
+        }
+      },
+      "rollback": {
+        "positive": 55,
+        "negative": 67,
+        "heads": {
+          "head_controls_accuracy": {
+            "auc": 0.4662143826322931,
+            "ci95": [
+              0.3601017639077341,
+              0.5723337856173677
+            ]
+          },
+          "head_controls_logweight": {
+            "auc": 0.49009497964721843,
+            "ci95": [
+              0.38614654002713705,
+              0.5894233378561736
+            ]
+          },
+          "head_new_accuracy": {
+            "auc": 0.5953867028493894,
+            "ci95": [
+              0.49388059701492537,
+              0.6995929443690637
+            ]
+          },
+          "head_new_logweight": {
+            "auc": 0.528629579375848,
+            "ci95": [
+              0.43092944369063774,
+              0.6344708276797829
+            ]
+          },
+          "head_combined_accuracy": {
+            "auc": 0.5649932157394844,
+            "ci95": [
+              0.46457937584803255,
+              0.6629579375848033
+            ]
+          },
+          "head_combined_logweight": {
+            "auc": 0.501763907734057,
+            "ci95": [
+              0.3989009497964722,
+              0.6054545454545452
+            ]
+          }
+        },
+        "paired_auc_differences": {
+          "head_new_accuracy_minus_controls": {
+            "delta_auc": 0.12917232021709635,
+            "ci95": [
+              -0.021472184531885992,
+              0.2803392130257801
+            ]
+          },
+          "head_combined_accuracy_minus_controls": {
+            "delta_auc": 0.09877883310719127,
+            "ci95": [
+              -0.003554952510176397,
+              0.20081411126187243
+            ]
+          },
+          "head_new_logweight_minus_controls": {
+            "delta_auc": 0.03853459972862955,
+            "ci95": [
+              -0.06896879240162819,
+              0.1541519674355495
+            ]
+          },
+          "head_combined_logweight_minus_controls": {
+            "delta_auc": 0.01166892808683856,
+            "ci95": [
+              -0.05400949796472189,
+              0.08195386702849389
+            ]
+          }
+        }
+      }
+    }
+  }
+}

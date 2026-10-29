@@ -1,0 +1,15 @@
+`torch_dtype` is deprecated! Use `dtype` instead!
+Traceback (most recent call last):
+  File "D:\Codex_Research\experiments\frozen_loop_update_value_seed2021_v1\scripts\score.py", line 160, in <module>
+    if __name__=='__main__':main()
+                            ~~~~^^
+  File "D:\Codex_Research\experiments\frozen_loop_update_value_seed2021_v1\scripts\score.py", line 156, in main
+    dump('STATUS.json',dict(stage=split,completed=i+1,expected=len(rows),elapsed_s=time.monotonic()-begin,peak_vram_bytes=torch.cuda.max_memory_allocated(),pid=os.getpid()))
+    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Codex_Research\experiments\frozen_loop_update_value_seed2021_v1\scripts\score.py", line 16, in dump
+    p=ROOT/p;p.parent.mkdir(parents=True,exist_ok=True);tmp=p.with_suffix('.tmp');tmp.write_text(json.dumps(x,ensure_ascii=False,indent=2),encoding='utf8');tmp.replace(p)
+                                                                                                                                                            ~~~~~~~~~~~^^^
+  File "E:\Anaconda\Lib\pathlib\_local.py", line 780, in replace
+    os.replace(self, target)
+    ~~~~~~~~~~^^^^^^^^^^^^^^
+PermissionError: [WinError 5] 拒绝访问。: 'D:\\Codex_Research\\experiments\\frozen_loop_update_value_seed2021_v1\\STATUS.tmp' -> 'D:\\Codex_Research\\experiments\\frozen_loop_update_value_seed2021_v1\\STATUS.json'

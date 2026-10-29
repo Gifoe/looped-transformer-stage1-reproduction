@@ -14,12 +14,16 @@ def main():
   assert len(source)==len(actual)==manifest['manifests'][name]['n']==complete['n']
   assert sha(ROOT/'data'/(name+'.jsonl'))==manifest['manifests'][name]['sha256']
   assert sha(ROOT/'results'/(name+'.jsonl'))==complete['sha256']
+  if name=='head_train':assert complete['sha256']==lock['training_predictions_sha256']
+  if name=='validation':assert complete['sha256']==lock['validation_predictions_sha256']
   assert receipt['exit_code']==0
   counts={a:0 for a in ['adaptive','keep','forward','rollback','depth1','depth2','negative']};missing=0
   for s,r in zip(source,actual):
    assert s['id']==r['id'] and s['gold']==r['gold'] and s['choice_char_lengths']==r['choice_char_lengths']
    assert r['id'] not in seen;seen.add(r['id'])
    assert r['signature']['protocol.json']==pre['files']['configs/protocol.json']
+   assert r['signature'][name+'.jsonl']==manifest['manifests'][name]['sha256']
+   if name!='discovery':assert r['signature']['score.py']==pre['files']['scripts/score.py']
    for v in r['views'].values():
     assert len(v['update_projections'])==96 and np.isfinite(v['update_projections']).all()
     assert v['probe']['positions']==[t-1 for t in v['probe']['token_indices']]
@@ -32,6 +36,11 @@ def main():
    for a in counts:counts[a]+=int(np.argmax(np.array(v['sum_scores'][a])/r['choice_char_lengths'])==r['gold'])
   if name=='validation':assert pre['frozen_unix']<receipt['started_unix']<lock['frozen_unix']
   if name.startswith('final'):assert lock['frozen_unix']<receipt['started_unix']
+  if name=='final_piqa' and (ROOT/'configs/RESUME_final_piqa.json').exists():
+   resume=load('configs/RESUME_final_piqa.json');prior=ROOT/'results/final_piqa_attempt1.jsonl'
+   assert sha(prior)==resume['partial_sha256']
+   assert (ROOT/'results/final_piqa.jsonl').read_bytes().startswith(prior.read_bytes())
+   assert load('results/final_piqa_RESUME_PARITY.json')['passed']
   checks[name]=dict(n=len(actual),fixed_action_correct=counts,official_probe_missing_questions=missing,raw_sha256=complete['sha256'])
  for rel,h in pre['files'].items():assert sha(ROOT/rel)==h,('Prevalidation rule changed',rel)
  for rel,h in lock['frozen_files'].items():assert sha(ROOT/rel)==h
