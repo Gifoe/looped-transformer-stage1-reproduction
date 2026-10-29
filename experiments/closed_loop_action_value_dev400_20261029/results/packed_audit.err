@@ -1,0 +1,11 @@
+`torch_dtype` is deprecated! Use `dtype` instead!
+Traceback (most recent call last):
+  File "D:\Codex_Research\experiments\closed_loop_action_value_dev400_20261029\scripts\audit_packed.py", line 29, in <module>
+    if __name__=='__main__':main()
+                            ~~~~^^
+  File "D:\Codex_Research\experiments\closed_loop_action_value_dev400_20261029\scripts\audit_packed.py", line 18, in main
+    pil,_,_=frozen.evaluate(tok,model,pairs,0.,row['question'])
+            ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Anaconda\Lib\site-packages\torch\utils\_contextlib.py", line 124, in decorate_context
+    return func(*args, **kwargs)
+TypeError: evaluate() takes 4 positional arguments but 5 were given
