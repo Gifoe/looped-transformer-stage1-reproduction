@@ -1,0 +1,55 @@
+{
+  "scope": "This replacement server/task only; loaded worker wall time, including failed/interrupted pilots; not exclusive utilization billing",
+  "stages": [
+    {
+      "stage": "checkpoint_smoke",
+      "status": "passed",
+      "loaded_gpu_worker_seconds": 153.2063717842102,
+      "receipt": "fresh\\pilot_01\\receipt.json"
+    },
+    {
+      "stage": "arc_full",
+      "status": "complete",
+      "loaded_gpu_worker_seconds": 1555.920663356781,
+      "receipt": "logs\\ARC_PIPELINE_STATE.json"
+    },
+    {
+      "stage": "own_reply_preparation",
+      "status": "complete",
+      "loaded_gpu_worker_seconds": 574.53102850914,
+      "receipt": "logs\\OWN_REPLY_STATE.json"
+    },
+    {
+      "stage": "failed_training_cost_pilot",
+      "status": "failed",
+      "loaded_gpu_worker_seconds": 912.4593515396118,
+      "receipt": "logs\\WARM_TRAINING_SMOKE.json"
+    },
+    {
+      "stage": "stopped_training_cost_pilot",
+      "status": "stopped_by_user_scope_change",
+      "loaded_gpu_worker_seconds": 207.96483254432678,
+      "receipt": "logs\\WARM_TRAINING_SMOKE_V2.json"
+    },
+    {
+      "stage": "causal_pilot",
+      "status": "complete",
+      "loaded_gpu_worker_seconds": 364.0530812740326,
+      "receipt": "logs\\CAUSAL_PILOT_STATE.json"
+    },
+    {
+      "stage": "causal_original_shape",
+      "status": "complete",
+      "loaded_gpu_worker_seconds": 1408.9599070549011,
+      "receipt": "logs\\causal_original_shape_STATE.json"
+    },
+    {
+      "stage": "feedback_validation",
+      "status": "complete",
+      "loaded_gpu_worker_seconds": 872.2878150939941,
+      "receipt": "logs\\feedback_validation_STATE.json"
+    }
+  ],
+  "total_seconds": 6049.383051156998,
+  "total_hours": 1.6803841808769437
+}

@@ -1,0 +1,60 @@
+{
+  "status": "complete",
+  "scope": "All16 previously untraced correct-peer harm events; same-checkpoint selected-failure validation, not accuracy estimation.",
+  "groups": {
+    "quill": {
+      "n_targets": 8,
+      "transitions_surviving_dot64": 8,
+      "reverse_cut_repairs_native": 0,
+      "reverse_cut_repairs_both_readouts": 0,
+      "reverse_cut_robust_ids": [],
+      "clean_kv_repairs_native": 0,
+      "clean_kv_repairs_both_readouts": 0,
+      "clean_kv_robust_ids": [],
+      "clean_gate_repairs_native": 0,
+      "clean_gate_repairs_both_readouts": 0,
+      "clean_gate_robust_ids": [],
+      "clean_kv_normmatched_repairs_native": 0,
+      "clean_kv_normmatched_repairs_both_readouts": 0,
+      "clean_kv_normmatched_robust_ids": []
+    },
+    "ember": {
+      "n_targets": 8,
+      "transitions_surviving_dot64": 5,
+      "reverse_cut_repairs_native": 1,
+      "reverse_cut_repairs_both_readouts": 0,
+      "reverse_cut_robust_ids": [],
+      "clean_kv_repairs_native": 1,
+      "clean_kv_repairs_both_readouts": 0,
+      "clean_kv_robust_ids": [],
+      "clean_gate_repairs_native": 0,
+      "clean_gate_repairs_both_readouts": 0,
+      "clean_gate_robust_ids": [],
+      "clean_kv_normmatched_repairs_native": 1,
+      "clean_kv_normmatched_repairs_both_readouts": 0,
+      "clean_kv_normmatched_robust_ids": []
+    },
+    "both_receivers": {
+      "n_targets": 16,
+      "transitions_surviving_dot64": 13,
+      "reverse_cut_repairs_native": 1,
+      "reverse_cut_repairs_both_readouts": 0,
+      "reverse_cut_robust_ids": [],
+      "clean_kv_repairs_native": 1,
+      "clean_kv_repairs_both_readouts": 0,
+      "clean_kv_robust_ids": [],
+      "clean_gate_repairs_native": 0,
+      "clean_gate_repairs_both_readouts": 0,
+      "clean_gate_robust_ids": [],
+      "clean_kv_normmatched_repairs_native": 1,
+      "clean_kv_normmatched_repairs_both_readouts": 0,
+      "clean_kv_normmatched_robust_ids": []
+    }
+  },
+  "checks": {
+    "exact_original_replay_all": true,
+    "same_shape_repeat_all": true
+  },
+  "content_specific_replication_gate": false,
+  "warning": "FP64 is output-dot arithmetic on BF16 states, not full-FP32 robustness. Native norm-matched patches alone do not decode the semantic content or establish an information bottleneck."
+}

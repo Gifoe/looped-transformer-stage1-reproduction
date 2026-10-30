@@ -1,0 +1,21 @@
+{
+  "evidence_type": "tiny_random_infrastructure_only",
+  "status": "passed",
+  "checks": [
+    "tracing bitwise preserves original fused forward",
+    "disabled recording preserves forward and avoids state collection",
+    "both sides and later native layers captured at requested token positions",
+    "cutting both writes equals upstream zero under same weights",
+    "one-way read leaves sender identical to its own cut run",
+    "empty retained-layer set equals cut",
+    "self-donor sender and receiver patches preserve original result",
+    "self K/V and gate donor inputs preserve original result",
+    "matching factual write norms alone preserves original result",
+    "individual write removal equals the same one-way communication",
+    "zero strength equals cut",
+    "context restores original methods after exception"
+  ],
+  "elapsed_seconds": 1.6254730224609375,
+  "gpu_seconds": 0,
+  "warning": "No trained-checkpoint inference, semantic transfer, probes or mechanism claim follows from these assertions."
+}

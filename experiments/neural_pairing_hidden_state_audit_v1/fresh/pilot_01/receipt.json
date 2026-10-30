@@ -1,0 +1,123 @@
+{
+  "evidence_type": "fresh_checkpoint_smoke_only",
+  "models": [
+    {
+      "alias": "Quill-Qwen3-4B",
+      "repo": "Qwen/Qwen3-4B",
+      "revision": "1cfa9a7208912126459214e8b04321603b3df60c"
+    },
+    {
+      "alias": "Ember-AFM-4.5B",
+      "repo": "arcee-ai/AFM-4.5B",
+      "revision": "e84d19711eca5817c1608cb344d931bf05c966dd"
+    },
+    {
+      "alias": "Pairing-final-nl33w",
+      "repo": "Sauers/neural-pairing",
+      "revision": "29e7ea33878c5bdc2c3cf4e27fffe46b4966859c"
+    }
+  ],
+  "started_unix": 1793344003.246575,
+  "gpu": "NVIDIA GB10",
+  "gpu_worker_seconds": 153.2063717842102,
+  "status": "passed",
+  "formal_baseline": false,
+  "native_cut_max_abs": {
+    "quill": 0.0,
+    "ember": 0.0
+  },
+  "results": {
+    "link": {
+      "quill": {
+        "argmax_token": [
+          17105,
+          71326
+        ],
+        "logit_max": [
+          28.375,
+          27.375
+        ]
+      },
+      "ember": {
+        "argmax_token": [
+          128003,
+          128003
+        ],
+        "logit_max": [
+          21.0,
+          20.75
+        ]
+      }
+    },
+    "cut": {
+      "quill": {
+        "argmax_token": [
+          3552,
+          3552
+        ],
+        "logit_max": [
+          17.125,
+          17.125
+        ]
+      },
+      "ember": {
+        "argmax_token": [
+          128003,
+          128003
+        ],
+        "logit_max": [
+          20.375,
+          20.5
+        ]
+      }
+    },
+    "ember_to_quill_only": {
+      "quill": {
+        "argmax_token": [
+          17105,
+          71326
+        ],
+        "logit_max": [
+          28.75,
+          27.875
+        ]
+      },
+      "ember": {
+        "argmax_token": [
+          128003,
+          128003
+        ],
+        "logit_max": [
+          20.375,
+          20.5
+        ]
+      }
+    },
+    "quill_to_ember_only": {
+      "quill": {
+        "argmax_token": [
+          3552,
+          3552
+        ],
+        "logit_max": [
+          17.125,
+          17.125
+        ]
+      },
+      "ember": {
+        "argmax_token": [
+          128003,
+          128003
+        ],
+        "logit_max": [
+          20.875,
+          20.875
+        ]
+      }
+    }
+  },
+  "peak_allocated_bytes": 18593150464,
+  "peak_reserved_bytes": 18800967680,
+  "warning": "Two constructed episodes, one receiving direction. No benchmark or mechanism conclusion.",
+  "finished_unix": 1793344156.4529467
+}
