@@ -1,0 +1,48 @@
+{
+  "candidate_definitions_frozen": true,
+  "model_revision": "574fa66cb8bf5abdc979642d01cf2b79b16bfab1",
+  "source_of_directions": "none_no_direction_accepted",
+  "weight_edits": [],
+  "readout_chord_coefficients": [
+    0.125,
+    0.25,
+    0.5
+  ],
+  "methods": [
+    "native_k1",
+    "native_k2",
+    "native_k3",
+    "native_k4",
+    "native_k5",
+    "native_k6",
+    "loopcd_k4_fixed",
+    "loopcd_k4_adaptive",
+    "normalized_chord_0.125",
+    "normalized_chord_0.25",
+    "normalized_chord_0.5"
+  ],
+  "auxiliary_depths": [
+    1,
+    2
+  ],
+  "main_depths": [
+    3,
+    4,
+    5,
+    6
+  ],
+  "original_native_call": "model.model(input_ids=x,use_cache=False)",
+  "dtype": "bfloat16",
+  "lm_eval": "0.4.9",
+  "metric": "full_candidate_loglikelihood_character_length_normalized_acc_norm",
+  "fewshot": "fixed_same25_demonstrations_seed2021",
+  "loopcd": {
+    "reference_depth": 1,
+    "final_depth": 4,
+    "fixed_omega": 0.5,
+    "adaptive_cap": 1
+  },
+  "primary_weight_contrast": null,
+  "test_method_or_depth_selection": false,
+  "coef_source": "Protocol fixed before discovery; allthree reported, no best-on-test choice"
+}

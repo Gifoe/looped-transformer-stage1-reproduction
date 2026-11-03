@@ -1,0 +1,52 @@
+{
+  "seed": 2021,
+  "model_revision": "574fa66cb8bf5abdc979642d01cf2b79b16bfab1",
+  "hardware": "NVIDIA GB10",
+  "dtype": "BF16",
+  "training": false,
+  "gpu_budget_seconds": 28800,
+  "lm_eval_version": "0.4.9",
+  "metric": "acc_norm",
+  "fewshot": {
+    "n": 25,
+    "mode": "fixed_global_25_in_random_seed2021_order",
+    "legacy_prompt_difference": true,
+    "decision": "explicit_user_confirmation: fixed25 examples; rerun all comparable methods"
+  },
+  "data": {
+    "discovery_n": 192,
+    "selection_n": 192,
+    "initial_n": 64,
+    "official_validation_n": 299,
+    "official_test_n": 1172,
+    "test_locked": true
+  },
+  "depths": [
+    3,
+    4,
+    5,
+    6
+  ],
+  "interpolation_grid": [
+    0,
+    0.125,
+    0.25,
+    0.5,
+    1
+  ],
+  "edit_strengths": [
+    0.5,
+    1.0
+  ],
+  "max_initial_layers": 2,
+  "max_primary_edit": 1,
+  "rank_options": [
+    1,
+    4
+  ],
+  "random_control_seeds": [
+    401,
+    402,
+    403
+  ]
+}

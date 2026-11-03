@@ -1,0 +1,14 @@
+{
+  "status": "no_go_current_weight_repair_route",
+  "halt_weight_editing": true,
+  "primary_weight_edit": null,
+  "decided_unix": 1793682708.8787596,
+  "official_validation_or_test_labels_accessed": false,
+  "selection_outcomes_used": false,
+  "pca_or_svd_computed": false,
+  "supervised_parameter_fitting": false,
+  "review_path": "astra/independent_stop_go_after_shared.md",
+  "review_sha256": "b616c5a930d5742bd63437428a3e975d250238efda349754d6f2d2b23de631d6",
+  "scope": "Two bounded shortlisted postnorm branch interventions; not a proof that every possible projection repair fails",
+  "rationale_zh": "48模块筛查后只确认了按规则选出的两个模块。MLP物理第0层在第5轮能修复一题，但全循环K5为1次纠错抵消1次损坏，K6损坏2题；Attention物理第10层全循环在K3/K4/K5/K6均损坏2题、无纠错。最强支持继续的案例是Mercury_7180758：MLP0全循环确实恢复它，K5margin由−0.017957升至0.116709；但这同时破坏其他原生纠错，尚无可分离方向及独立问题迁移证据。两个已确认模块均未通过共享调用门槛，因此停止本轮H2→方向搜索→权重编辑路线，不据此否定一切投影修复。"
+}

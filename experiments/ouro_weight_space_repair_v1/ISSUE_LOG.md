@@ -1,0 +1,11 @@
+# Implementation observations
+
+2026-11-03. User confirmed GB10 instead of the attachment's RTX5090 and explicitly confirmed a fixed25-example prompting protocol with all comparisons rerun.
+
+1. The legacy advancing few-shot sampler uses all1119 training examples across1172 draws of25 under seed2021. This is a training-only RNG/code audit, without reading test labels or prior test prompts. Fixed25 demonstrations plus disjoint train discovery/selection cohorts resolve the conflict. This is a declared prompt change, not exact legacy per-question prompt parity.
+2. Pinned Ouro source matches the earlier source byte-for-byte after line-ending normalization. Its custom cache constructor conflicts with the installed Cache property API. The scorer can supply a standard DynamicCache without changing model weights/source, but this is optional acceleration only.
+3. Native independent K3/4/5 scores agree exactly with corresponding states from K6 in real BF16 readiness. Cached BF16 scores did not meet the fixed parity threshold: in the synthetic real-model check, max token log-likelihood discrepancy was about0.105 and normalized score discrepancy about0.026. Predictions happened to agree. The formal experiment uses the original whole-sequence, no-cache path; thresholds were not relaxed. Both failed readiness workers are preserved and charged to the independent8h ledger.
+
+These are implementation/data-protocol observations, not evidence for H1/H2/H3. No validation or test labels have been opened during preparation.
+
+4. Source audit identified that explicit all-ones attention_mask versus the legacy omitted mask selects different HF4.55.4 SDPA/GQA paths. CPU mask audit confirmed None produces a4D causal tensor, whereas explicit ones can skip the mask. Earlier discovery_audit and partial layer_screen_v1 are superseded implementation diagnostics and excluded from final scientific aggregates. Only this experiment's pending pipeline and worker were stopped; its supervisor charged566.00s and preserved output. The original no-mask model.model(input_ids=x,use_cache=False) call is restored, new studies use separate names and must pass direct-call/depth parity before acceptance. No validation/test files had been opened. This correction is an implementation failure, not a negative mechanism result.

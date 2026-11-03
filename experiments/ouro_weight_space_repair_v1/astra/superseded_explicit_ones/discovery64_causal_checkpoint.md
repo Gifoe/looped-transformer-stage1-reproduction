@@ -1,0 +1,29 @@
+# Independent Astra checkpoint after initial 64 discovery examples
+
+**SUPERSEDED ENGINEERING DIAGNOSTIC — NOT FORMAL MECHANISM EVIDENCE.** The explicit-all-ones attention-mask path used for these results differs from the original no-mask call under HF4.55.4. Preserve this note only as historical engineering provenance; all numerical conclusions require recomputation under `discovery_original`. Do not reuse its failure selections or outcomes as accepted scientific evidence.
+
+Evidence available to this review is the parent's aggregate report: K4-to-K5 has two correct-to-incorrect and four incorrect-to-correct transitions; both harms recover correctness at an interior normalized chord point; one satisfies the declared sampled-path overshoot criterion. I have not independently recomputed those outcomes. The preregistered 192-question extension is still running.
+
+The premise that extra loops reduce aggregate accuracy is not established for this initial cohort: the fifth loop has a net gain of two correct answers. Selected individual harms are real diagnostic targets, but they cannot stand in for a cohort-wide recurrent failure. Two harms are too few to infer a transferable mechanism or prevalence. Both interpolation rescues are compatible with step-scale/readout sensitivity. Only the stated stronger sampled-path condition supplies evidence that a small nonzero step improves over the earlier endpoint, and even that is a finite-grid observation, not a local derivative proof.
+
+The next bounded questions are:
+
+1. Does fixed loop-5 boundary damping at steps .25/.5 preserve or improve subsequent K6 behavior? Compare its K5 scores with the independently computed endpoint chord scores, and its K6 scores with native K6. This is recurrence feedback, not merely a modified readout. If only the endpoint improves, retain an H1/H3 ambiguity; do not declare the head defective.
+2. Does damping one branch after its branch RMSNorm rescue harms without breaking the representative rescues/stable-correct examples? This localizes execution sensitivity. It does not establish a removable raw projection direction, and could simply implement a more selective step-size reduction.
+3. Does an identified effect survive all-loop application and a fixed, held-out train selection cohort? Only then justify testing an untrained, independently specified low-rank/sparse direction and norm-matched directional controls. No weight-edit candidate is justified yet.
+
+The runner defaults to at most eight previously fixed representative discovery cases, all 48 branch recordings, two boundary controls, and 48 fifth-loop-only scalar branch screens. `--all-loops` adds the corresponding 48 shared-invocation scalar screens. The search budget and all examined branches must be disclosed. With 48 branches and only eight selected cases, apparent best layers are exploratory and easily overfit; do not report their best-case p-values as confirmatory evidence.
+
+## Code audit against the actual pinned local model source
+
+Reviewed `models/Ouro-1.4B/modeling_ouro.py` decoder and loop implementations. `current_ut` arrives at decoder layers through keyword arguments and is forwarded into attention. `causal_hooks.py` uses `with_kwargs=True` decoder prehooks and converts the native zero-based index into a documented one-based loop index. Physical layer indices remain zero based.
+
+Both projection sites precede their branch-specific RMSNorm: attention `o_proj -> input_layernorm_2 -> residual add`; MLP `down_proj -> post_attention_layernorm_2 -> residual add`. Projector hooks and scalar damping hooks occupy these respective pre-/post-norm sites. The norm-preserving control recomputes the untreated branch norm from the same original projection output using the exact pinned RMSNorm arithmetic without invoking a hooked module recursively. BF16 rounding may leave small norm residuals, which require measurement.
+
+Loop-end `model.norm` feeds subsequent recurrence. Boundary damping takes the actual first-decoder-layer input of loop 5 and the normalized native loop-5 output. Step zero returns the prior entry exactly; step one is an exact no-op. No embedding, head or norm weights are touched. Whole-sequence execution makes capture positions explicit: every continuation prediction position, from the final prefix token through the penultimate target token.
+
+Record-only and zero-alpha hooks return `None` rather than casting/reconstructing original outputs. Hooks are removed by ExitStack on success or error; pending full-chunk references are cleared. CPU synthetic tests previously covered exact no-op, projection perturbation, post-norm matching, boundary step zero, source-preserving sparse materialization and exceptional cleanup. They do not replace the runner's exact real-model no-op gate.
+
+`run_layer_screen.py` only reads discovery manifests, frozen representative IDs, that discovery study's scores, and readiness/configuration receipts. It has no validation/test loader. It uses `score_uncached` exclusively because the real cached BF16 gate failed. Every candidate gets its complete continuation score, and outcomes retain the original character-length normalization. Exact no-op agreement is required at K4/K5/K6; loop5-only edits must also leave K4 exactly unchanged. It writes original candidate scores/outcomes, trace summaries, optionally selected-position tensors, progress and a frozen-input/code digest. Native scores and representative definitions cannot silently change on resume.
+
+The runner is unexecuted. Main-agent prerequisites: finish and freeze the 192-example source study, generate `configs/representative_cases.json`, transfer matching code, and run under the independent-budget supervisor. No cached path, no gradient computation, and no trained/supervised direction fitting are admitted.
