@@ -1,0 +1,51 @@
+{
+  "experiment": "ouro_weight_space_repair_v2",
+  "model_revision": "574fa66cb8bf5abdc979642d01cf2b79b16bfab1",
+  "hardware": "NVIDIA GB10",
+  "dtype": "BF16",
+  "metric": "lm_eval_0.4.9_acc_norm_character_length",
+  "fewshot": "V1_identical_fixed25_seed2021",
+  "seed": 2021,
+  "gpu_worker_budget_seconds": 21600,
+  "discovery_n": 384,
+  "selection_n": 192,
+  "screen_n": 64,
+  "validation_n": 299,
+  "test_n": 1172,
+  "candidate_count": 14,
+  "promote_to_selection": 4,
+  "promote_to_validation": 3,
+  "selected_edited_checkpoint_count": 1,
+  "baseline_is_final_selection_eligible": false,
+  "training": false,
+  "gradients": false,
+  "optimizers": false,
+  "weight_changes": "real_physical_BF16_parameters_shared_across_every_loop",
+  "primary_plain": {
+    "edited_k": 4,
+    "reference": "original_native_k4"
+  },
+  "primary_combined": {
+    "method": "fixed_loopcd",
+    "k": 4,
+    "reference_depth": 1,
+    "omega": 0.5,
+    "reference": "original_fixed_loopcd_k4"
+  },
+  "secondary_adaptive": {
+    "k": 4,
+    "reference_depth": 1,
+    "cap": 1.0
+  },
+  "final_depths": [
+    3,
+    4,
+    5,
+    6
+  ],
+  "test_role": "locked_regression_benchmark_previously_used",
+  "test_labels_may_be_opened_only_after_selected_weight_and_method_freeze": true,
+  "original_baseline_reuse": "V1_unchanged_model_and_exact_fixed25_prompts; train_noop_parity_checked; test_rows_read_only_after_final_lock",
+  "candidate_design_sha256": "c8a9ca26040287e2f4f6ffe4eec64e30d16f230f8b6a75f957bc62df26c1b6fb",
+  "promotion_policy": "screen best2 per family; selection best1 per family plus best remaining; final exactly1 edited by native K4 ranking"
+}

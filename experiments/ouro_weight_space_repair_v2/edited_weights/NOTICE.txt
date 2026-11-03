@@ -1,0 +1,20 @@
+Ouro V2 research weight modifications
+
+Derived from ByteDance/Ouro-1.4B, pinned revision
+574fa66cb8bf5abdc979642d01cf2b79b16bfab1.
+Original model.safetensors SHA256:
+58872a72616c736595b8b7662079c5b12c5a162ec16eae94f21c348dfa9885af
+
+The upstream model card identifies the original model license as Apache-2.0:
+https://huggingface.co/ByteDance/Ouro-1.4B/blob/574fa66cb8bf5abdc979642d01cf2b79b16bfab1/README.md
+See ../third_party/APACHE-2.0.txt and preserved upstream source notices.
+
+This experiment modifies selected MLP output columns and/or low-rank output
+directions without gradient training. Each manifest identifies exactly which
+BF16 parameters differ, the original and target hashes, and the magnitude.
+These modified tensors are research derivatives, not an official upstream
+checkpoint or an endorsement by ByteDance or MIT.
+
+The original checkpoint, embeddings, tokenizer, LM head and normalization
+parameters are not modified in their source files. Exact replacement patches
+must be applied only to the pinned base verified by tensor SHA256.

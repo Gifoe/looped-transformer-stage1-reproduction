@@ -1,0 +1,77 @@
+{
+  "status": "passed",
+  "data_scope": "synthetic only; no outcome files opened",
+  "analyzer_sha256": "72a990e0bf7b8aaaeb2e30f650d68f0ba9bcf82627960d00718b847003e60049",
+  "exhaustive_n3_probability_max_error": 0.0,
+  "paired_example": {
+    "scope": "synthetic",
+    "method": "native_k4",
+    "n": 6,
+    "original_correct": 3,
+    "edited_correct": 4,
+    "corrections": 2,
+    "regressions": 1,
+    "net_correct": 1,
+    "delta_accuracy_pp": 16.666666666666668,
+    "original_accuracy_percent": 50.0,
+    "edited_accuracy_percent": 66.66666666666666,
+    "both_correct": 2,
+    "both_wrong": 1,
+    "answer_changes": 3,
+    "wrong_to_different_wrong": 0,
+    "rescue_rate_on_original_errors": 0.6666666666666666,
+    "damage_rate_on_original_correct": 0.3333333333333333,
+    "paired_bootstrap_95_low_pp": -33.333333333333336,
+    "paired_bootstrap_95_high_pp": 66.66666666666667,
+    "exact_mcnemar_p": 1.0,
+    "mean_delta_gold_margin": 0.5,
+    "bootstrap_replicates": 50000,
+    "bootstrap_seed": 4060934838,
+    "bootstrap_unit": "question",
+    "interval": "pointwise paired percentile 95%; not simultaneous",
+    "interpretation": "search/selection evidence, not confirmatory"
+  },
+  "holm_six": [
+    {
+      "exact_mcnemar_p": 0.001,
+      "adjusted": 0.006
+    },
+    {
+      "exact_mcnemar_p": 0.03,
+      "adjusted": 0.15
+    },
+    {
+      "exact_mcnemar_p": 0.04,
+      "adjusted": 0.16
+    },
+    {
+      "exact_mcnemar_p": 0.2,
+      "adjusted": 0.6000000000000001
+    },
+    {
+      "exact_mcnemar_p": 0.8,
+      "adjusted": 1.0
+    },
+    {
+      "exact_mcnemar_p": 0.9,
+      "adjusted": 1.0
+    }
+  ],
+  "holm_primary_two": [
+    {
+      "exact_mcnemar_p": 0.03,
+      "adjusted": 0.06
+    },
+    {
+      "exact_mcnemar_p": 0.04,
+      "adjusted": 0.06
+    }
+  ],
+  "zero_discordance": {
+    "p": 1.0,
+    "low": 0.0,
+    "high": 0.0
+  },
+  "ID_reordering_and_character_normalization_passed": true,
+  "mismatched_lengths_rejected": true
+}

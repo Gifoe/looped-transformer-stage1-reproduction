@@ -1,0 +1,252 @@
+{
+  "status": "pre_feedback_candidate_design",
+  "seed": 2021,
+  "model_revision": "574fa66cb8bf5abdc979642d01cf2b79b16bfab1",
+  "discovery_n": 384,
+  "screen_n": 64,
+  "selection_n": 192,
+  "validation_n": 299,
+  "candidate_count": 14,
+  "promote_to_selection": 4,
+  "promote_to_validation": 3,
+  "select_exactly_one_edited": true,
+  "baseline_eligible_for_final_selection": false,
+  "selection_order": [
+    "descending_native_k4_correct",
+    "descending_native_k4_mean_gold_margin",
+    "ascending_actual_BF16_changed_coordinates",
+    "ascending_candidate_id"
+  ],
+  "statistic_arrays": {
+    "loop_axis": [
+      3,
+      4,
+      5,
+      6
+    ],
+    "mlp_input_second_moment": [
+      384,
+      24,
+      4,
+      5632
+    ],
+    "attention_input_second_moment": [
+      384,
+      24,
+      4,
+      2048
+    ],
+    "mlp_raw_output_mean": [
+      384,
+      24,
+      4,
+      2048
+    ],
+    "attention_raw_output_mean": [
+      384,
+      24,
+      4,
+      2048
+    ],
+    "axes": [
+      "question",
+      "physical_layer",
+      "loop",
+      "channel"
+    ],
+    "averaging": "target-position mean per candidate then equal-weight mean over answer candidates",
+    "accumulator_dtype": "float32",
+    "shape_check": "verify against actual checkpoint projection weights before allocation"
+  },
+  "trends": {
+    "transitions": [
+      [
+        3,
+        4
+      ],
+      [
+        4,
+        5
+      ],
+      [
+        5,
+        6
+      ]
+    ],
+    "weights": [
+      0.5,
+      0.25,
+      0.25
+    ],
+    "groups": "bottom96 and top96 native gold-margin changes independently per transition",
+    "group_tie_break": "SHA256(V2-trend|2021|transition|question_id)",
+    "direction": "D=sum_t w_t*(mean_bottom delta_raw_output - mean_top delta_raw_output)",
+    "site_score": "norm(D)/(sqrt(sum_t w_t*mean_all_questions squared_norm(delta_raw_output))+1e-12)",
+    "site_tie_break": "ascending physical layer index",
+    "sites": [
+      "mlp_first",
+      "mlp_second",
+      "attention_first"
+    ],
+    "nondegenerate_direction_required": true,
+    "rank1": "u=D/norm(D), sign fixed by positive largest-magnitude coordinate",
+    "rank4": "u plus top3 right singular vectors of weighted within-bottom-group-centered delta_raw_output projected orthogonal to u; QR and deterministic signs",
+    "rank4_weighting": "rows for transition t multiplied by sqrt(w_t/96)",
+    "rank4_zero_rank_policy": "report numerical rank deficiency; do not insert random filler"
+  },
+  "columns": {
+    "contrast": "c=sum_t w_t*(mean_bottom delta_input_second_moment - mean_top delta_input_second_moment)",
+    "score": "max(c_j,0)*(u_transpose_W_column_j)^2",
+    "all_zero_fallback": "mean_all_questions_and_loops(input_second_moment_j)*squared_norm(W_column_j)",
+    "tie_break": "ascending input column index",
+    "fallback_must_be_recorded": true
+  },
+  "candidates": [
+    {
+      "id": "A01",
+      "family": "A",
+      "mode": "sparse_directional_projection",
+      "site": "mlp_first",
+      "columns": 32,
+      "rank": 1,
+      "alpha": 1.0
+    },
+    {
+      "id": "A02",
+      "family": "A",
+      "mode": "sparse_directional_projection",
+      "site": "mlp_first",
+      "columns": 64,
+      "rank": 1,
+      "alpha": 1.0
+    },
+    {
+      "id": "A03",
+      "family": "A",
+      "mode": "sparse_directional_projection",
+      "site": "mlp_first",
+      "columns": 128,
+      "rank": 1,
+      "alpha": 1.0
+    },
+    {
+      "id": "A04",
+      "family": "A",
+      "mode": "sparse_directional_projection",
+      "site": "mlp_second",
+      "columns": 32,
+      "rank": 1,
+      "alpha": 1.0
+    },
+    {
+      "id": "A05",
+      "family": "A",
+      "mode": "sparse_directional_projection",
+      "site": "mlp_second",
+      "columns": 64,
+      "rank": 1,
+      "alpha": 1.0
+    },
+    {
+      "id": "A06",
+      "family": "A",
+      "mode": "sparse_directional_projection",
+      "site": "mlp_second",
+      "columns": 128,
+      "rank": 1,
+      "alpha": 1.0
+    },
+    {
+      "id": "A07",
+      "family": "A",
+      "mode": "sparse_column_attenuation",
+      "site": "mlp_first",
+      "columns": 64,
+      "alpha": 0.5
+    },
+    {
+      "id": "A08",
+      "family": "A",
+      "mode": "sparse_directional_projection_two_layers",
+      "sites": [
+        "mlp_first",
+        "mlp_second"
+      ],
+      "columns_each": 32,
+      "rank_each": 1,
+      "alpha_each": 1.0
+    },
+    {
+      "id": "B01",
+      "family": "B",
+      "mode": "dense_low_rank_projection",
+      "site": "mlp_first",
+      "rank": 1,
+      "alpha": 0.25
+    },
+    {
+      "id": "B02",
+      "family": "B",
+      "mode": "dense_low_rank_projection",
+      "site": "mlp_first",
+      "rank": 1,
+      "alpha": 0.5
+    },
+    {
+      "id": "B03",
+      "family": "B",
+      "mode": "dense_low_rank_projection",
+      "site": "mlp_first",
+      "rank": 4,
+      "alpha": 0.25
+    },
+    {
+      "id": "B04",
+      "family": "B",
+      "mode": "dense_low_rank_projection",
+      "site": "attention_first",
+      "rank": 1,
+      "alpha": 0.25
+    },
+    {
+      "id": "B05",
+      "family": "B",
+      "mode": "dense_low_rank_projection",
+      "site": "attention_first",
+      "rank": 1,
+      "alpha": 0.5
+    },
+    {
+      "id": "B06",
+      "family": "B",
+      "mode": "dense_low_rank_projection",
+      "site": "attention_first",
+      "rank": 4,
+      "alpha": 0.25
+    }
+  ],
+  "combined_models": {
+    "primary": {
+      "method": "edited_fixed_loopcd",
+      "k": 4,
+      "reference_k": 1,
+      "omega": 0.5
+    },
+    "secondary": {
+      "method": "edited_adaptive_loopcd",
+      "k": 4,
+      "reference_k": 1,
+      "cap": 1.0
+    },
+    "source": "same selected edited checkpoint own hidden states and logits"
+  },
+  "max_physical_layers_per_candidate": 2,
+  "no_validation_or_test_direction_updates": true,
+  "no_gradients_optimizers_adapters": true,
+  "V1_NoGo_is_not_a_V2_gate": true,
+  "promotion_policy": {
+    "screen_to_selection": "best2 per family by the frozen K4 ranking; 4 total",
+    "selection_to_validation": "best1 per family then best remaining by frozen K4 ranking; 3 total",
+    "validation_to_final": "exactly1 edited candidate by frozen K4 ranking; baseline ineligible"
+  }
+}

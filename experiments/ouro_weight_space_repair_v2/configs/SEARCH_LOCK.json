@@ -1,0 +1,35 @@
+{
+  "model_revision": "574fa66cb8bf5abdc979642d01cf2b79b16bfab1",
+  "implementation": {
+    "run_edit_pipeline.py": "bc3eee7737670a66f2c5ab7aab3d3603782c45452d2d73407b529abb2530b242",
+    "runtime.py": "9ebbbdb2573a567cc6bb331a861490ebbdab85dd723a73036bf3813a7c8d85d1",
+    "ouro_cached_scoring.py": "2801db23cf20e574765aad7f94f1f4967af640b3af7cf6aa01cbe96500457901",
+    "weight_edits.py": "24a6089e35e6cf5e73b08bcae26acd840a872287c59f62ac715d2dd3fc57af00",
+    "candidate_io.py": "94a5ab3e12db37a403a25ea2f1a07e70f549010094e0719972c8ff153efb9c44"
+  },
+  "implementation_sha256": "ead3c656c973400111bf6e36bc7d6cd5958e696a51acf9ab407e4ca9ec400082",
+  "candidates_frozen_sha256": "ea7277d50c0ed0ae88a49640bc631ea6e5351d5455c334903d25dde315e9a524",
+  "data_lock_sha256": "5f8f281e90ac6dcdfebf4f80be9a917dc38f67b0cfaa5c65d8d6fce1e0f3cf7c",
+  "training_manifest_sha256": {
+    "discovery_expanded.jsonl": "8d1d83a2fab5fa9de4df10ba21b1525605aa500c071f5469eea05f9420b9256d",
+    "discovery_screen.jsonl": "dfc07b5ff0c310d8ebc53f0946634fac93720ae67def662d4e335e3ee6f45d0d",
+    "selection.jsonl": "e196ca17fb9d5df6085fc9b6506668cd6c21debd1a770f600dda9f68273f51d2",
+    "fixed_demonstrations.json": "8cf4b70e7c07c67a589560d5fcbc1fa8feb85a0e7af3b348fa21f147271419da"
+  },
+  "selection_policy": "screen top2 per family; selection best1 per family plus best remaining; validation exactly1 by nativeK4 count/margin/changed/id",
+  "baseline_eligible": false,
+  "final_plain_depths": [
+    3,
+    4,
+    5,
+    6
+  ],
+  "primary_combo": {
+    "k": 4,
+    "omega": 0.5
+  },
+  "secondary_combo": {
+    "k": 4,
+    "cap": 1
+  }
+}

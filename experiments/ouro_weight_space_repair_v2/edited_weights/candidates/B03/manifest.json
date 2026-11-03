@@ -1,0 +1,86 @@
+{
+  "format": "ouro_v2_exact_bf16_replacement_patch_v1",
+  "model_revision": "574fa66cb8bf5abdc979642d01cf2b79b16bfab1",
+  "total_unique_parameters": 1434652673,
+  "actual_changed_parameters": 9507579,
+  "actual_changed_fraction_of_model": 0.006627094612467223,
+  "actual_delta_frobenius": 1.2754215002059937,
+  "edited_physical_layers": [
+    14
+  ],
+  "edits": [
+    {
+      "tensor_name": "model.layers.14.mlp.down_proj.weight",
+      "shape": [
+        2048,
+        5632
+      ],
+      "evaluated_dtype": "torch.bfloat16",
+      "base_sha256": "93866b0b9f9ea8b0b8b2aa6f5b75c650974e73a16bdf579026420368349b5f87",
+      "edited_sha256": "4dac4c131eeda7becccdbe4923fb2739727160ad20acad7855f457196de8f1ba",
+      "hash_semantics": "contiguous_cpu_tensor_raw_bytes",
+      "intended_support_coordinates": 11534336,
+      "actual_changed_coordinates": 9507579,
+      "numerically_changed_coordinates": 9507579,
+      "unchanged_coordinates_in_support": 2026757,
+      "changed_fraction_of_tensor": 0.8242849003184926,
+      "total_unique_parameters": 1434652673,
+      "changed_fraction_of_model": 0.006627094612467223,
+      "base_frobenius": 72.02727508544922,
+      "actual_delta_frobenius": 1.2754215002059937,
+      "relative_delta_frobenius": 0.017707479544282402,
+      "max_abs_delta": 0.1484375,
+      "note": "Intended low rank may increase after BF16 rounding; changed coordinates count actual BF16 bit differences.",
+      "specification": {
+        "family": "B_low_rank_projection",
+        "formula": "W <- BF16(FP32(W)-alpha*U*(U.T*FP32(W))*D_S)",
+        "alpha": 0.25,
+        "intended_update_rank": 4,
+        "columns": null,
+        "basis_sha256": "4cb0e51a29c536c15110f759dcc97915d9b711b4e2f27608cc20a9d352e4541f",
+        "basis_dtype": "torch.float32",
+        "provenance": {
+          "candidate_id": "B03",
+          "basis_key": "mlp_first_rank4",
+          "directions_sha256": "e512d3cb3cf5625e29256bcc2de22ea4f67353270808ad97260d0b0cf231b89e",
+          "discovery_provenance_sha256": "9aea1f383a0fb23383cb9f58340db7a0381ff78dd9ec84702c94ec3e3cd2154c"
+        }
+      },
+      "full_edited_tensor_file": "edited_tensor_00.pt",
+      "full_edited_tensor_file_sha256": "cac34125f162ce24ce3d634b24203e6e56bd8318677f1934934389a52e4d72a4",
+      "factors_file": "factors_00.pt",
+      "factors_file_sha256": "073ef23c32b95d657a5349337197cf7fe57d2db842620d07dd692b2f9a319bbb",
+      "payload_file": "edit_00.pt",
+      "payload_sha256": "a8656b5c58b23c09c5fcec4834bcbcb827da38cef779a4a2517b11534dcb2b45",
+      "payload_format": "dense_target"
+    }
+  ],
+  "training": false,
+  "all_recurrent_invocations_share_edited_parameters": true,
+  "embeddings_tokenizer_head_and_norm_weights_unchanged": true,
+  "metadata": {
+    "candidate_spec": {
+      "id": "B03",
+      "family": "B",
+      "description": "dense_low_rank_projection",
+      "edits": [
+        {
+          "name": "model.layers.14.mlp.down_proj.weight",
+          "mode": "projection",
+          "alpha": 0.25,
+          "columns": null,
+          "basis_key": "mlp_first_rank4",
+          "basis_sha256": "4cb0e51a29c536c15110f759dcc97915d9b711b4e2f27608cc20a9d352e4541f",
+          "U_file": "edited_weights/statistics/bases.pt",
+          "U_key": "mlp_first_rank4",
+          "base_tensor_sha256": "93866b0b9f9ea8b0b8b2aa6f5b75c650974e73a16bdf579026420368349b5f87",
+          "physical_layer": 14
+        }
+      ],
+      "directions_file": "edited_weights/statistics/bases.pt",
+      "directions_sha256": "e512d3cb3cf5625e29256bcc2de22ea4f67353270808ad97260d0b0cf231b89e",
+      "discovery_provenance_sha256": "9aea1f383a0fb23383cb9f58340db7a0381ff78dd9ec84702c94ec3e3cd2154c"
+    },
+    "candidates_frozen_sha256": "ea7277d50c0ed0ae88a49640bc631ea6e5351d5455c334903d25dde315e9a524"
+  }
+}

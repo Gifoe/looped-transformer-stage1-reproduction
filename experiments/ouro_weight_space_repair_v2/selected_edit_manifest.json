@@ -1,0 +1,280 @@
+{
+  "format": "ouro_v2_exact_bf16_replacement_patch_v1",
+  "model_revision": "574fa66cb8bf5abdc979642d01cf2b79b16bfab1",
+  "total_unique_parameters": 1434652673,
+  "actual_changed_parameters": 3570385,
+  "actual_changed_fraction_of_model": 0.0024886755290630543,
+  "actual_delta_frobenius": 3.974278211593628,
+  "edited_physical_layers": [
+    17
+  ],
+  "edits": [
+    {
+      "tensor_name": "model.layers.17.self_attn.o_proj.weight",
+      "shape": [
+        2048,
+        2048
+      ],
+      "evaluated_dtype": "torch.bfloat16",
+      "base_sha256": "5358c8cae25acde8d13cfad7912cbfa1e13f33042e8fb12acde8f0145132915d",
+      "edited_sha256": "8ec8a8ad28b8abf477692d081d635e3773e2e0bea7f89b3b88cd4fc81a5f4cb2",
+      "hash_semantics": "contiguous_cpu_tensor_raw_bytes",
+      "intended_support_coordinates": 4194304,
+      "actual_changed_coordinates": 3570385,
+      "numerically_changed_coordinates": 3570385,
+      "unchanged_coordinates_in_support": 623919,
+      "changed_fraction_of_tensor": 0.8512461185455322,
+      "total_unique_parameters": 1434652673,
+      "changed_fraction_of_model": 0.0024886755290630543,
+      "base_frobenius": 44.24537658691406,
+      "actual_delta_frobenius": 3.974278211593628,
+      "relative_delta_frobenius": 0.08982358199136797,
+      "max_abs_delta": 0.15234375,
+      "note": "Intended low rank may increase after BF16 rounding; changed coordinates count actual BF16 bit differences.",
+      "specification": {
+        "family": "B_low_rank_projection",
+        "formula": "W <- BF16(FP32(W)-alpha*U*(U.T*FP32(W))*D_S)",
+        "alpha": 0.5,
+        "intended_update_rank": 1,
+        "columns": null,
+        "basis_sha256": "9144fef34ce81f9359140a1b9b1b841a60115d7a8c0511101bcddc8340f7bee1",
+        "basis_dtype": "torch.float32",
+        "provenance": {
+          "candidate_id": "B05",
+          "basis_key": "attention_first_rank1",
+          "directions_sha256": "e512d3cb3cf5625e29256bcc2de22ea4f67353270808ad97260d0b0cf231b89e",
+          "discovery_provenance_sha256": "9aea1f383a0fb23383cb9f58340db7a0381ff78dd9ec84702c94ec3e3cd2154c"
+        }
+      },
+      "full_edited_tensor_file": "edited_tensor_00.pt",
+      "full_edited_tensor_file_sha256": "05bc321f381d5f5da2ef2e3a4b54f9ff234aa47cd47a1d0e02465dc0c1432c84",
+      "factors_file": "factors_00.pt",
+      "factors_file_sha256": "11c1a6b5090933a0c3ecf9e42dd42dbc6847e91a1998e539ebabf83d64dc9c7a",
+      "payload_file": "edit_00.pt",
+      "payload_sha256": "1dfef9fad4d99ccef1f9baeae4a87deb77847ef2dc036185ab97dc4a133a5458",
+      "payload_format": "dense_target"
+    }
+  ],
+  "training": false,
+  "all_recurrent_invocations_share_edited_parameters": true,
+  "embeddings_tokenizer_head_and_norm_weights_unchanged": true,
+  "metadata": {
+    "candidate_spec": {
+      "id": "B05",
+      "family": "B",
+      "description": "dense_low_rank_projection",
+      "edits": [
+        {
+          "name": "model.layers.17.self_attn.o_proj.weight",
+          "mode": "projection",
+          "alpha": 0.5,
+          "columns": null,
+          "basis_key": "attention_first_rank1",
+          "basis_sha256": "9144fef34ce81f9359140a1b9b1b841a60115d7a8c0511101bcddc8340f7bee1",
+          "U_file": "edited_weights/statistics/bases.pt",
+          "U_key": "attention_first_rank1",
+          "base_tensor_sha256": "5358c8cae25acde8d13cfad7912cbfa1e13f33042e8fb12acde8f0145132915d",
+          "physical_layer": 17
+        }
+      ],
+      "directions_file": "edited_weights/statistics/bases.pt",
+      "directions_sha256": "e512d3cb3cf5625e29256bcc2de22ea4f67353270808ad97260d0b0cf231b89e",
+      "discovery_provenance_sha256": "9aea1f383a0fb23383cb9f58340db7a0381ff78dd9ec84702c94ec3e3cd2154c"
+    },
+    "candidates_frozen_sha256": "ea7277d50c0ed0ae88a49640bc631ea6e5351d5455c334903d25dde315e9a524"
+  },
+  "selected_candidate_id": "B05",
+  "selected_bundle": "edited_weights/selected",
+  "selected_bundle_manifest_sha256": "3cb202d4c003340562f84438661b4f3f4ca62a93a3bc858b04de3cb7f2db2e45",
+  "validation_ranking": [
+    {
+      "candidate_id": "B05",
+      "family": "B",
+      "stage": "validation",
+      "n": 299,
+      "metrics": {
+        "native_k1": {
+          "n": 299,
+          "correct": 109,
+          "accuracy": 0.36454849498327757,
+          "mean_gold_margin": -0.0899813349407618
+        },
+        "native_k2": {
+          "n": 299,
+          "correct": 157,
+          "accuracy": 0.5250836120401338,
+          "mean_gold_margin": 0.009533464533548022
+        },
+        "native_k3": {
+          "n": 299,
+          "correct": 165,
+          "accuracy": 0.5518394648829431,
+          "mean_gold_margin": 0.03618958446700155
+        },
+        "native_k4": {
+          "n": 299,
+          "correct": 168,
+          "accuracy": 0.5618729096989966,
+          "mean_gold_margin": 0.033490057554046986
+        },
+        "native_k5": {
+          "n": 299,
+          "correct": 164,
+          "accuracy": 0.5484949832775919,
+          "mean_gold_margin": 0.022002939642786552
+        },
+        "native_k6": {
+          "n": 299,
+          "correct": 163,
+          "accuracy": 0.5451505016722408,
+          "mean_gold_margin": 0.022479733412313286
+        },
+        "loopcd_k4_fixed": {
+          "n": 299,
+          "correct": 169,
+          "accuracy": 0.5652173913043478,
+          "mean_gold_margin": 0.05222726595088165
+        },
+        "loopcd_k4_adaptive": {
+          "n": 299,
+          "correct": 172,
+          "accuracy": 0.5752508361204013,
+          "mean_gold_margin": 0.0550827527594532
+        }
+      },
+      "actual_changed_parameters": 3570385,
+      "delta_frobenius": 3.974278211593628,
+      "bundle_manifest_sha256": "3cb202d4c003340562f84438661b4f3f4ca62a93a3bc858b04de3cb7f2db2e45",
+      "scores_sha256": "b7ddd14cbc965d81596fee92a15e419db70853535a47f5609205432aae2bd663",
+      "implementation_sha256": "ead3c656c973400111bf6e36bc7d6cd5958e696a51acf9ab407e4ca9ec400082",
+      "stage_data_sha256": "2c81a0adc4f49f9d08f69e18fc455bff976fcde3cf1f00376d30ff9349f7d024"
+    },
+    {
+      "candidate_id": "A08",
+      "family": "A",
+      "stage": "validation",
+      "n": 299,
+      "metrics": {
+        "native_k1": {
+          "n": 299,
+          "correct": 109,
+          "accuracy": 0.36454849498327757,
+          "mean_gold_margin": -0.08779617726254894
+        },
+        "native_k2": {
+          "n": 299,
+          "correct": 154,
+          "accuracy": 0.5150501672240803,
+          "mean_gold_margin": 0.010773299542083057
+        },
+        "native_k3": {
+          "n": 299,
+          "correct": 166,
+          "accuracy": 0.5551839464882943,
+          "mean_gold_margin": 0.039067193994654366
+        },
+        "native_k4": {
+          "n": 299,
+          "correct": 163,
+          "accuracy": 0.5451505016722408,
+          "mean_gold_margin": 0.03851602524763352
+        },
+        "native_k5": {
+          "n": 299,
+          "correct": 163,
+          "accuracy": 0.5451505016722408,
+          "mean_gold_margin": 0.027098244870906386
+        },
+        "native_k6": {
+          "n": 299,
+          "correct": 163,
+          "accuracy": 0.5451505016722408,
+          "mean_gold_margin": 0.027582151843985683
+        },
+        "loopcd_k4_fixed": {
+          "n": 299,
+          "correct": 175,
+          "accuracy": 0.5852842809364549,
+          "mean_gold_margin": 0.05863172823048953
+        },
+        "loopcd_k4_adaptive": {
+          "n": 299,
+          "correct": 175,
+          "accuracy": 0.5852842809364549,
+          "mean_gold_margin": 0.06047545504583149
+        }
+      },
+      "actual_changed_parameters": 127809,
+      "delta_frobenius": 0.8370497925754251,
+      "bundle_manifest_sha256": "953c537e7bdf1e6f123ff8afd690a3e0cf5217c4729044b93bf6a2f5ad717d52",
+      "scores_sha256": "0f7558e13584cc52de08d5770ceda5de0f648a98dbb54e4bcf60837b6342051e",
+      "implementation_sha256": "ead3c656c973400111bf6e36bc7d6cd5958e696a51acf9ab407e4ca9ec400082",
+      "stage_data_sha256": "2c81a0adc4f49f9d08f69e18fc455bff976fcde3cf1f00376d30ff9349f7d024"
+    },
+    {
+      "candidate_id": "A02",
+      "family": "A",
+      "stage": "validation",
+      "n": 299,
+      "metrics": {
+        "native_k1": {
+          "n": 299,
+          "correct": 110,
+          "accuracy": 0.36789297658862874,
+          "mean_gold_margin": -0.08777179535514038
+        },
+        "native_k2": {
+          "n": 299,
+          "correct": 153,
+          "accuracy": 0.5117056856187291,
+          "mean_gold_margin": 0.01096758197621945
+        },
+        "native_k3": {
+          "n": 299,
+          "correct": 164,
+          "accuracy": 0.5484949832775919,
+          "mean_gold_margin": 0.03818725108780387
+        },
+        "native_k4": {
+          "n": 299,
+          "correct": 161,
+          "accuracy": 0.5384615384615384,
+          "mean_gold_margin": 0.03783144996692244
+        },
+        "native_k5": {
+          "n": 299,
+          "correct": 162,
+          "accuracy": 0.5418060200668896,
+          "mean_gold_margin": 0.025734471171333605
+        },
+        "native_k6": {
+          "n": 299,
+          "correct": 163,
+          "accuracy": 0.5451505016722408,
+          "mean_gold_margin": 0.026421055749626658
+        },
+        "loopcd_k4_fixed": {
+          "n": 299,
+          "correct": 170,
+          "accuracy": 0.568561872909699,
+          "mean_gold_margin": 0.05765505956481991
+        },
+        "loopcd_k4_adaptive": {
+          "n": 299,
+          "correct": 171,
+          "accuracy": 0.5719063545150501,
+          "mean_gold_margin": 0.059682985447552454
+        }
+      },
+      "actual_changed_parameters": 127718,
+      "delta_frobenius": 0.8083005547523499,
+      "bundle_manifest_sha256": "a42f59de261ebb0286d38a69471a35a38ecbe6fceca808488de0625025791439",
+      "scores_sha256": "65cdfc1a5a6b6fb779604d165a2f979d9a2b07346ce696dfe16f832684f57e0a",
+      "implementation_sha256": "ead3c656c973400111bf6e36bc7d6cd5958e696a51acf9ab407e4ca9ec400082",
+      "stage_data_sha256": "2c81a0adc4f49f9d08f69e18fc455bff976fcde3cf1f00376d30ff9349f7d024"
+    }
+  ],
+  "original_baseline_eligible": false,
+  "selection_criterion": "native K4 correct count then mean gold margin then actual BF16 changed count then ID",
+  "selected_even_if_inferior_to_original": true
+}

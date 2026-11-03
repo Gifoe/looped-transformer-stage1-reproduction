@@ -1,0 +1,23 @@
+ARC-Challenge question data and rendered prompts
+
+Source: Allen Institute for AI, ARC (AI2 Reasoning Challenge), distributed as
+allenai/ai2_arc, ARC-Challenge configuration.
+https://huggingface.co/datasets/allenai/ai2_arc
+https://allenai.org/data/arc
+Paper: Clark et al. (2018), Think you have Solved Question Answering? Try ARC,
+the AI2 Reasoning Challenge. https://arxiv.org/abs/1803.05457
+
+The Hugging Face dataset card identifies the question dataset license as
+CC BY-SA 4.0: https://creativecommons.org/licenses/by-sa/4.0/
+Legal terms: https://creativecommons.org/licenses/by-sa/4.0/legalcode.en
+The included question/choice data and their rendered-prompt adaptations are
+provided under the same CC BY-SA 4.0 terms with this source attribution.
+
+Changes for this experiment: fixed25 demonstrations, deterministic training
+cohorts, rendering into lm-eval request pairs, normalized question fingerprints,
+and addition of prompt hashes/scoring metadata. Question text, choices and
+ground-truth labels retain their source meaning; the official test retains
+all1172 rows. Source-file metadata/hashes are preserved in sources/ and data/.
+
+This notice concerns the question data; it does not relabel the original
+Ouro model license or imply AllenAI endorsement of the experimental edits.
