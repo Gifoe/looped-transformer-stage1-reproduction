@@ -1,0 +1,242 @@
+{
+  "status": "frozen_final_method",
+  "created_unix": 1793715698.9928303,
+  "primary": "A1_g1p0",
+  "secondary": null,
+  "method_registry": {
+    "native4": {
+      "id": "native4",
+      "kind": "baseline",
+      "method": "native_k4",
+      "required_depth": 4,
+      "complexity": 0
+    },
+    "fixed": {
+      "id": "fixed",
+      "kind": "baseline",
+      "method": "loopcd_k4_fixed",
+      "required_depth": 4,
+      "complexity": 0
+    },
+    "adaptive": {
+      "id": "adaptive",
+      "kind": "baseline",
+      "method": "loopcd_k4_adaptive",
+      "required_depth": 4,
+      "complexity": 0
+    },
+    "A1_g1p0": {
+      "id": "A1_g1p0",
+      "kind": "score_late",
+      "gamma": 1.0,
+      "late": 5,
+      "required_depth": 5,
+      "complexity": 1
+    }
+  },
+  "coefficients_and_definitions": {
+    "native4": {
+      "id": "native4",
+      "kind": "baseline",
+      "method": "native_k4",
+      "required_depth": 4,
+      "complexity": 0
+    },
+    "fixed": {
+      "id": "fixed",
+      "kind": "baseline",
+      "method": "loopcd_k4_fixed",
+      "required_depth": 4,
+      "complexity": 0
+    },
+    "adaptive": {
+      "id": "adaptive",
+      "kind": "baseline",
+      "method": "loopcd_k4_adaptive",
+      "required_depth": 4,
+      "complexity": 0
+    },
+    "A1_g1p0": {
+      "id": "A1_g1p0",
+      "kind": "score_late",
+      "gamma": 1.0,
+      "late": 5,
+      "required_depth": 5,
+      "complexity": 1
+    }
+  },
+  "model_checkpoint": "ByteDance/Ouro-1.4B",
+  "model_revision": "574fa66cb8bf5abdc979642d01cf2b79b16bfab1",
+  "model_safetensors_sha256": "58872a72616c736595b8b7662079c5b12c5a162ec16eae94f21c348dfa9885af",
+  "weights_modified": false,
+  "tokenizer_and_model_metadata_sha256": {
+    "config.json": "ce9cc13da41591b8b4deca053d7dfee06424c0228628ee862ea86d725bc163f3",
+    "configuration_ouro.py": "950443e32929047aa08d02abad2e1888bc1914b3db988d3d675f70787f65dafb",
+    "merges.txt": "0b54e8aa4e53d5383e2e4bc635a56b43f9647f7b13832d5d9ecd8f82dac4f510",
+    "modeling_ouro.py": "c5c68fbb368ce2909c257ae2afc50719be8c91539333d3295e19312c4316f413",
+    "snapshot_metadata.json": "6c6aeb014bbf31bdecf2efe30b370502bd5c8e260804b8d459cd48e9c301318b",
+    "special_tokens_map.json": "55087bb8409060d9cb0f80495e34f4e0d8a84f68a799a6b0cab3132be0aae319",
+    "tokenizer.json": "fcb808fe5e7642f5299be28aea07fc7f6d4f4364c3ac5e408e15a772cbc8fa8d",
+    "tokenizer_config.json": "7e010da95d71b0fa1aa809552922c74cc1dd98d628f21ba39ca6c35aa18d5d91",
+    "vocab.json": "7b9de3f47796abf8d00ab96be299fea0dc9afdf1827f34e7e0b9fb44593efe5c"
+  },
+  "environment": {
+    "torch": "2.11.0+cu130",
+    "transformers": "4.55.4",
+    "tokenizers": "0.21.4",
+    "lm_eval": "0.4.9",
+    "safetensors": "0.8.0"
+  },
+  "prompt_protocol": "Same global fixed25 ARC train demonstrations, seed2021, lm-eval0.4.9; complete candidate teacher-forced token likelihood, divided by answer character count; first argmax ties",
+  "fixed_demonstrations_sha256": "8cf4b70e7c07c67a589560d5fcbc1fa8feb85a0e7af3b348fa21f147271419da",
+  "seed": 2021,
+  "dataset_revision_notice_sha256": "ba23ab644bc9156f6a2fc05854fbb89ddb4e73e94a06931f9ba731778fd46152",
+  "dataset_sha256": {
+    "test": "c21f826e316eac7d5101787aae1e4cea5515a820cc0f0d5d577582a7b9c93eb6"
+  },
+  "allowed_recipe_sha256": [
+    "5b93556cd65968d6cedfe8138451d90873b636b63c7a4a0747468e09c437b177"
+  ],
+  "inference_source_sha256": {
+    "slcd_token_worker_v2.py": "de6dcd7e75b3e6d328846817cf69892004519f581d4cc513e9ae880520fa2074",
+    "slcd_logit_methods.py": "8444689b5ea666446d8f395d93be67190a27d1198881591a68256f61431a490e",
+    "runtime.py": "9ebbbdb2573a567cc6bb331a861490ebbdab85dd723a73036bf3813a7c8d85d1",
+    "ouro_cached_scoring.py": "2801db23cf20e574765aad7f94f1f4967af640b3af7cf6aa01cbe96500457901",
+    "slcd_core.py": "e80c70c7b85e9fa73028038efcc45cf08fe6e07e0219ba5f47e9afcc27b8ae31"
+  },
+  "controller_source_sha256": "75a613374215e04a00e2fd44187afe6d9b7bcaf86dc80952d50f7535205b5e30",
+  "validation_lock_sha256": "d558199610adf4a134c6852401a9b57d3cde018ff642ee437ed57f3e5c8d39ed",
+  "selection_evidence": [
+    {
+      "split": "validation",
+      "method": "native4",
+      "spec_sha256": "1757518eb2c3e70a143ab82c247e214ae6eecab6c28f3280cf2b6121a43ba4b5",
+      "n": 299,
+      "correct": 162,
+      "baseline_correct": 168,
+      "accuracy": 0.5418060200668896,
+      "corrections": 7,
+      "regressions": 13,
+      "net_correct": -6,
+      "delta_accuracy_pp": -2.0066889632107023,
+      "mean_gold_margin": 0.037243034886011134,
+      "mean_delta_margin": -0.019369978715880407,
+      "answer_changes": 28,
+      "exact_mcnemar_p": 0.26317596435546875,
+      "required_depth": 4
+    },
+    {
+      "split": "validation",
+      "method": "fixed",
+      "spec_sha256": "4d9b964d34ac6c2369af9d200b5d649068077006841c90ed7e016420c27ce2cd",
+      "n": 299,
+      "correct": 168,
+      "baseline_correct": 168,
+      "accuracy": 0.5618729096989966,
+      "corrections": 0,
+      "regressions": 0,
+      "net_correct": 0,
+      "delta_accuracy_pp": 0.0,
+      "mean_gold_margin": 0.05661301360189155,
+      "mean_delta_margin": 0.0,
+      "answer_changes": 0,
+      "exact_mcnemar_p": 1.0,
+      "required_depth": 4
+    },
+    {
+      "split": "validation",
+      "method": "adaptive",
+      "spec_sha256": "17431b2724ed08100ab1faf4bc10fe14258da3554e614d0683838cd648e2b4ea",
+      "n": 299,
+      "correct": 172,
+      "baseline_correct": 168,
+      "accuracy": 0.5752508361204013,
+      "corrections": 9,
+      "regressions": 5,
+      "net_correct": 4,
+      "delta_accuracy_pp": 1.3377926421404682,
+      "mean_gold_margin": 0.05819539455634626,
+      "mean_delta_margin": 0.0015823809544547069,
+      "answer_changes": 17,
+      "exact_mcnemar_p": 0.4239501953125,
+      "required_depth": 4
+    },
+    {
+      "split": "validation",
+      "method": "A1_g1p0",
+      "spec_sha256": "059759eee4260e510daa2168a2303755cde37d77fc7a31c0e1c47eb7cc201708",
+      "n": 299,
+      "correct": 173,
+      "baseline_correct": 168,
+      "accuracy": 0.5785953177257525,
+      "corrections": 7,
+      "regressions": 2,
+      "net_correct": 5,
+      "delta_accuracy_pp": 1.6722408026755853,
+      "mean_gold_margin": 0.06649012372457261,
+      "mean_delta_margin": 0.00987711012268106,
+      "answer_changes": 12,
+      "exact_mcnemar_p": 0.1796875,
+      "required_depth": 5
+    },
+    {
+      "split": "validation",
+      "method": "Ref2_w0p5",
+      "spec_sha256": "9b90c5efac062e9e4682790344fe330b6a84214c6bc91bee50badd499dbbbae4",
+      "n": 299,
+      "correct": 170,
+      "baseline_correct": 168,
+      "accuracy": 0.568561872909699,
+      "corrections": 12,
+      "regressions": 10,
+      "net_correct": 2,
+      "delta_accuracy_pp": 0.6688963210702341,
+      "mean_gold_margin": 0.045856486711442615,
+      "mean_delta_margin": -0.010756526890448924,
+      "answer_changes": 29,
+      "exact_mcnemar_p": 0.8318119049072266,
+      "required_depth": 4
+    },
+    {
+      "split": "validation",
+      "method": "A2_g0p25",
+      "spec_sha256": "201233b574276062611ea19efb8bac8cefebfea48e7613952275416cfddb4e09",
+      "n": 299,
+      "correct": 169,
+      "baseline_correct": 168,
+      "accuracy": 0.5652173913043478,
+      "corrections": 2,
+      "regressions": 1,
+      "net_correct": 1,
+      "delta_accuracy_pp": 0.33444816053511706,
+      "mean_gold_margin": 0.05890753661445618,
+      "mean_delta_margin": 0.00229452301256464,
+      "answer_changes": 3,
+      "exact_mcnemar_p": 1.0,
+      "required_depth": 5
+    }
+  ],
+  "ranking": [
+    "A1_g1p0",
+    "Ref2_w0p5",
+    "A2_g0p25"
+  ],
+  "selection_rule": [
+    "largest validation correct count",
+    "largest minimum proportional net gain across discovery, selection, confirmation",
+    "fewest validation correctness-discordant pairs versus Fixed at tied net",
+    "lowest required logical loop depth",
+    "lowest registered complexity",
+    "lexicographically first method ID"
+  ],
+  "final_test_access_authorized": true,
+  "no_post_test_changes": true,
+  "other_benchmark_gate": {
+    "primary_correct_strictly_greater_than": 717,
+    "n": 1172
+  },
+  "logical_loop_depth": 5,
+  "shared_actual_trajectory_depth": 6,
+  "runtime_speed_claim_permitted": false,
+  "test_status": "Previously used regression benchmark, not blind. Retrospective A1 gamma1 726 was exposed before this research; not a selection criterion."
+}

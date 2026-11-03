@@ -1,0 +1,29 @@
+{
+  "recipes": [
+    {
+      "id": "tf_fixed",
+      "kind": "fixed",
+      "omega": 0.5
+    },
+    {
+      "id": "tf_adaptive",
+      "kind": "adaptive",
+      "omega": 1.0
+    },
+    {
+      "id": "Ref2_w0p5",
+      "kind": "fixed",
+      "omega": 0.5,
+      "reference": 2,
+      "final": 4
+    },
+    {
+      "id": "A2_g0p25",
+      "kind": "two_sided_logit",
+      "omega": 0.5,
+      "gamma": 0.25,
+      "late": 5
+    }
+  ],
+  "scope": "only selected/frozen methods plus mandatory controls"
+}

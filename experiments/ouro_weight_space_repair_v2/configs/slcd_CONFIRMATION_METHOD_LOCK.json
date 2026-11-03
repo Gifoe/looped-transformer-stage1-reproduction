@@ -1,0 +1,106 @@
+{
+  "status": "frozen_before_new_train_confirmation",
+  "methods": [
+    "H_A1_g1p0_cd_agrees_k5",
+    "H_A1_g1p0_protect0p025",
+    "H_A2_g0p25_cd_agrees_k5",
+    "A2_g1p0",
+    "Ref2_w0p5",
+    "C_fixed_low_revert_t0p025",
+    "A2_g0p25",
+    "A1_g1p0"
+  ],
+  "specifications": {
+    "H_A1_g1p0_cd_agrees_k5": {
+      "id": "H_A1_g1p0_cd_agrees_k5",
+      "kind": "gate",
+      "signal": "cd_agrees_k5",
+      "a": "A1_g1p0",
+      "fallback": "native4",
+      "required_depth": 5,
+      "complexity": 3
+    },
+    "H_A1_g1p0_protect0p025": {
+      "id": "H_A1_g1p0_protect0p025",
+      "kind": "gate",
+      "signal": "cd_margin_below",
+      "threshold": 0.025,
+      "a": "native4",
+      "fallback": "A1_g1p0",
+      "required_depth": 5,
+      "complexity": 3
+    },
+    "H_A2_g0p25_cd_agrees_k5": {
+      "id": "H_A2_g0p25_cd_agrees_k5",
+      "kind": "gate",
+      "signal": "cd_agrees_k5",
+      "a": "A2_g0p25",
+      "fallback": "native4",
+      "required_depth": 5,
+      "complexity": 3
+    },
+    "A2_g1p0": {
+      "id": "A2_g1p0",
+      "kind": "token",
+      "recipe_id": "A2_g1p0",
+      "token_recipe": {
+        "id": "A2_g1p0",
+        "kind": "two_sided_logit",
+        "omega": 0.5,
+        "gamma": 1.0,
+        "late": 5
+      },
+      "required_depth": 5,
+      "complexity": 1
+    },
+    "Ref2_w0p5": {
+      "id": "Ref2_w0p5",
+      "kind": "token",
+      "recipe_id": "Ref2_w0p5",
+      "token_recipe": {
+        "id": "Ref2_w0p5",
+        "kind": "fixed",
+        "omega": 0.5,
+        "reference": 2,
+        "final": 4
+      },
+      "required_depth": 4,
+      "complexity": 1
+    },
+    "C_fixed_low_revert_t0p025": {
+      "id": "C_fixed_low_revert_t0p025",
+      "kind": "gate",
+      "signal": "cd_margin_below",
+      "threshold": 0.025,
+      "a": "native4",
+      "fallback": "fixed",
+      "required_depth": 4,
+      "complexity": 2
+    },
+    "A2_g0p25": {
+      "id": "A2_g0p25",
+      "kind": "token",
+      "recipe_id": "A2_g0p25",
+      "token_recipe": {
+        "id": "A2_g0p25",
+        "kind": "two_sided_logit",
+        "omega": 0.5,
+        "gamma": 0.25,
+        "late": 5
+      },
+      "required_depth": 5,
+      "complexity": 1
+    },
+    "A1_g1p0": {
+      "id": "A1_g1p0",
+      "kind": "score_late",
+      "gamma": 1.0,
+      "late": 5,
+      "required_depth": 5,
+      "complexity": 1
+    }
+  },
+  "registry_sha256": "75ae3cbfea44a09d4b151b4da336adc12bb6aa1c75a6967aecdeb0fe1221b6d1",
+  "scope": "train_only; used for development and not final test",
+  "expected_n": 517
+}

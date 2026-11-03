@@ -1,0 +1,60 @@
+{
+  "status": "bounded_round4_after_round3_failure_analysis",
+  "recipes": [
+    {
+      "id": "tf_fixed",
+      "kind": "fixed",
+      "omega": 0.5
+    },
+    {
+      "id": "tf_adaptive",
+      "kind": "adaptive",
+      "omega": 1.0
+    },
+    {
+      "id": "A2_g0p0",
+      "kind": "two_sided_logit",
+      "omega": 0.5,
+      "gamma": 0.0,
+      "late": 5
+    },
+    {
+      "id": "A2_g0p125",
+      "kind": "two_sided_logit",
+      "omega": 0.5,
+      "gamma": 0.125,
+      "late": 5
+    },
+    {
+      "id": "A2_g0p375",
+      "kind": "two_sided_logit",
+      "omega": 0.5,
+      "gamma": 0.375,
+      "late": 5
+    },
+    {
+      "id": "F_w0p25",
+      "kind": "fixed",
+      "omega": 0.25
+    },
+    {
+      "id": "F_w0p75",
+      "kind": "fixed",
+      "omega": 0.75
+    },
+    {
+      "id": "Ref2_w0p5",
+      "kind": "fixed",
+      "omega": 0.5,
+      "reference": 2,
+      "final": 4
+    },
+    {
+      "id": "Ref3_w0p5",
+      "kind": "fixed",
+      "omega": 0.5,
+      "reference": 3,
+      "final": 4
+    }
+  ]
+}

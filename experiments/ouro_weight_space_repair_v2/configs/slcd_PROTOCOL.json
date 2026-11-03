@@ -1,0 +1,49 @@
+{
+  "task": "training_free_LoopCD_self_improvement",
+  "model_revision": "574fa66cb8bf5abdc979642d01cf2b79b16bfab1",
+  "no_model_weight_modifications": true,
+  "same_existing_directory_only": true,
+  "preserve_previous_files": true,
+  "new_file_prefix": "slcd_",
+  "data": {
+    "discovery_n": 384,
+    "selection_n": 192,
+    "validation_n": 299,
+    "test_n": 1172,
+    "fixed25": "V1 same seed2021"
+  },
+  "seed": 2021,
+  "additional_gpu_worker_budget_seconds": 21600,
+  "max_substantial_development_iterations": 6,
+  "validation_one_final_selection_stage": true,
+  "test_access_before_final_lock": false,
+  "historical_test_726_at_gamma1": "exploratory; forbidden for tuning or selection",
+  "test_gate": {
+    "selected_primary_correct_strictly_greater_than": 717,
+    "primary_only_gate": true,
+    "secondary_cannot_replace_primary_after_test": true,
+    "if_fail": "stop all external benchmarks; no retuning"
+  },
+  "conditional_benchmarks": [
+    "HellaSwag full official validation",
+    "OpenBookQA full official test if budget allows"
+  ],
+  "initial_gamma": [
+    0,
+    0.25,
+    0.5,
+    0.75,
+    1.0
+  ],
+  "stage1_families": [
+    "score_two_sided",
+    "token_logit_two_sided",
+    "orthogonal_guidance",
+    "deterministic_candidate_aware_guidance"
+  ],
+  "model_weight_edit_bundles_forbidden": true,
+  "baseline_test_reuse_only_after_freeze_and_full_compatibility_check": true,
+  "required_outputs_in_existing_results_directory_with_slcd_prefix": true,
+  "selection_primary": "strongest new method by official validation correct count, then independent selection/discovery consistency, paired uncertainty, lower logical recurrent cost, fewer transforms, fixed method id",
+  "all_new_benchmark_methods_frozen_before_first_test": true
+}
