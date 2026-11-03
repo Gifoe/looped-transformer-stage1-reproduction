@@ -82,7 +82,7 @@ def main():
   for split in allrows:
    rows=[r for r in summary if r['split']==split and r['method'] in ['native_k3','native_k4','native_k5','native_k6']]
    axs[0].plot([r['k'] for r in rows],[r['accuracy_percent'] for r in rows],marker='o',label=f'{split} (n={len(allrows[split])})',color=colors[split])
-  axs[0].set(xlabel='Recurrent loops K',ylabel='ARC-Challenge acc_norm (%)',xticks=[3,4,5,6]);axs[0].legend(fontsize=8)
+  axs[0].set(xlabel='Recurrent loops K',ylabel='ARC-Challenge acc_norm (%)',xticks=[3,4,5,6]);axs[0].legend(fontsize=8,loc='lower center',bbox_to_anchor=(.5,1.01),ncol=2,frameon=False)
   show=[c for c in contrasts if c['after']=='native_k5'];labels=[c['split'] for c in show];x=np.arange(len(show))
   axs[1].bar(x-.18,[c['rescues'] for c in show],.36,label='Wrong → correct',color='#3E8E78');axs[1].bar(x+.18,[c['regressions'] for c in show],.36,label='Correct → wrong',color='#C66A62')
   axs[1].set(xticks=x,xticklabels=labels,ylabel='Question count',title='Native K=4 → K=5');axs[1].legend(fontsize=8)
