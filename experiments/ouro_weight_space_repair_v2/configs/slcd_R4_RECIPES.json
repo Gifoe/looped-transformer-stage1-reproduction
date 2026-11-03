@@ -1,0 +1,14 @@
+{
+  "schema":"slcd_r4_recipes_v1",
+  "status":"fixed_before_R4_candidate_feedback",
+  "selection_scope":"previously_used_training_only; folds summarize robustness, not blind generalization",
+  "interpretation":"Fixed scalar guidance budget, not calibration or accuracy guarantee. RMS uses local quadratic energy; KL uses actual full-vocabulary forward KL per target position with 16 FP32 bisections and feasible lower endpoint. No fitting or coefficient scan.",
+  "cost":"All base recipes need logical K4 and head readouts K1/K4. Optional external score-late compositions need K5. KL recipe performs cap check, 16 bisection KL evaluations, final feasibility recheck and target LL normalization; not zero-cost.",
+  "recipes":[
+    {"id":"tf_fixed","kind":"fixed","omega":0.5,"reference":1,"final":4,"required_depth":4,"role":"control"},
+    {"id":"tf_adaptive","kind":"adaptive","omega":1.0,"reference":1,"final":4,"required_depth":4,"role":"control"},
+    {"id":"r4_fisher_rms","kind":"fisher_rms","reference":1,"final":4,"cap":1.0,"rms_budget":0.5,"zero_variance_strength":0.5,"required_depth":4,"role":"candidate"},
+    {"id":"r4_kl_trust_region","kind":"kl_trust_region","reference":1,"final":4,"cap":1.0,"kl_budget":0.125,"bisection_steps":16,"required_depth":4,"role":"candidate"},
+    {"id":"r4_uniform_rms","kind":"uniform_rms","reference":1,"final":4,"cap":1.0,"rms_budget":0.5,"zero_variance_strength":0.5,"required_depth":4,"role":"geometry_control_candidate"}
+  ]
+}

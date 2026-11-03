@@ -1,0 +1,986 @@
+{
+  "status": "complete",
+  "n": 192,
+  "provenance": {
+    "model_revision": "574fa66cb8bf5abdc979642d01cf2b79b16bfab1",
+    "data_sha256": "e196ca17fb9d5df6085fc9b6506668cd6c21debd1a770f600dda9f68273f51d2",
+    "recipes_sha256": "8baf267d9de2a26ab987051017cf037bf4feed043fe6120eaf521af5c0225bed",
+    "implementation": {
+      "slcd_token_worker.py": "3e4759152a829bc901a1d450fe881adb12ebfe7d006cfb86c6c069f718f9b1b1",
+      "slcd_logit_methods.py": "8444689b5ea666446d8f395d93be67190a27d1198881591a68256f61431a490e",
+      "runtime.py": "9ebbbdb2573a567cc6bb331a861490ebbdab85dd723a73036bf3813a7c8d85d1",
+      "ouro_cached_scoring.py": "2801db23cf20e574765aad7f94f1f4967af640b3af7cf6aa01cbe96500457901"
+    }
+  },
+  "implementation_signature": "57c1a1005e740b26840562c879affb15708f0904388cb752a97bd3e29d8f1090",
+  "score_file": "results/slcd_tokens_selection_neighbors.jsonl",
+  "score_file_sha256": "7b64ec2d259c3008f50b046eb41f811578b022b1f90dc62c3b6f48c67515c5b6",
+  "max_baseline_sum_score_error": 0.0,
+  "all_baseline_parity_exact": true,
+  "original_head_sha256": "1170220e3f8a9b1de7a307b6558c440225c691a45391e2838e160463107ac0b7",
+  "model_weights_modified": false,
+  "elapsed_seconds": 8.294827222824097,
+  "states": [
+    {
+      "id": "arc_challenge/train/MSA_2013_5_33",
+      "file": "results/slcd_state_selection_MSA_2013_5_33.pt",
+      "bytes": 328261
+    },
+    {
+      "id": "arc_challenge/train/Mercury_7097248",
+      "file": "results/slcd_state_selection_Mercury_7097248.pt",
+      "bytes": 844481
+    },
+    {
+      "id": "arc_challenge/train/MCAS_1999_4_17",
+      "file": "results/slcd_state_selection_MCAS_1999_4_17.pt",
+      "bytes": 303715
+    },
+    {
+      "id": "arc_challenge/train/Mercury_SC_400113",
+      "file": "results/slcd_state_selection_Mercury_SC_400113.pt",
+      "bytes": 598781
+    },
+    {
+      "id": "arc_challenge/train/Mercury_7160983",
+      "file": "results/slcd_state_selection_Mercury_7160983.pt",
+      "bytes": 451201
+    },
+    {
+      "id": "arc_challenge/train/Mercury_7159758",
+      "file": "results/slcd_state_selection_Mercury_7159758.pt",
+      "bytes": 107137
+    },
+    {
+      "id": "arc_challenge/train/Mercury_7202160",
+      "file": "results/slcd_state_selection_Mercury_7202160.pt",
+      "bytes": 352897
+    },
+    {
+      "id": "arc_challenge/train/MCAS_2002_8_9",
+      "file": "results/slcd_state_selection_MCAS_2002_8_9.pt",
+      "bytes": 205381
+    },
+    {
+      "id": "arc_challenge/train/Mercury_SC_LBS10271",
+      "file": "results/slcd_state_selection_Mercury_SC_LBS10271.pt",
+      "bytes": 992057
+    },
+    {
+      "id": "arc_challenge/train/MSA_2012_8_33",
+      "file": "results/slcd_state_selection_MSA_2012_8_33.pt",
+      "bytes": 1286853
+    },
+    {
+      "id": "arc_challenge/train/Mercury_7217070",
+      "file": "results/slcd_state_selection_Mercury_7217070.pt",
+      "bytes": 1286849
+    },
+    {
+      "id": "arc_challenge/train/Mercury_SC_406048",
+      "file": "results/slcd_state_selection_Mercury_SC_406048.pt",
+      "bytes": 869117
+    },
+    {
+      "id": "arc_challenge/train/Mercury_SC_416141",
+      "file": "results/slcd_state_selection_Mercury_SC_416141.pt",
+      "bytes": 205501
+    },
+    {
+      "id": "arc_challenge/train/Mercury_7222810",
+      "file": "results/slcd_state_selection_Mercury_7222810.pt",
+      "bytes": 869057
+    },
+    {
+      "id": "arc_challenge/train/Mercury_7038430",
+      "file": "results/slcd_state_selection_Mercury_7038430.pt",
+      "bytes": 991937
+    },
+    {
+      "id": "arc_challenge/train/Mercury_7228165",
+      "file": "results/slcd_state_selection_Mercury_7228165.pt",
+      "bytes": 107137
+    },
+    {
+      "id": "arc_challenge/train/Mercury_402211",
+      "file": "results/slcd_state_selection_Mercury_402211.pt",
+      "bytes": 303715
+    },
+    {
+      "id": "arc_challenge/train/MCAS_2009_8_1",
+      "file": "results/slcd_state_selection_MCAS_2009_8_1.pt",
+      "bytes": 107013
+    },
+    {
+      "id": "arc_challenge/train/Mercury_7108833",
+      "file": "results/slcd_state_selection_Mercury_7108833.pt",
+      "bytes": 107137
+    },
+    {
+      "id": "arc_challenge/train/ACTAAP_2013_5_14",
+      "file": "results/slcd_state_selection_ACTAAP_2013_5_14.pt",
+      "bytes": 1188639
+    },
+    {
+      "id": "arc_challenge/train/Mercury_7166618",
+      "file": "results/slcd_state_selection_Mercury_7166618.pt",
+      "bytes": 991937
+    },
+    {
+      "id": "arc_challenge/train/Mercury_7230580",
+      "file": "results/slcd_state_selection_Mercury_7230580.pt",
+      "bytes": 893633
+    },
+    {
+      "id": "arc_challenge/train/ACTAAP_2012_7_4",
+      "file": "results/slcd_state_selection_ACTAAP_2012_7_4.pt",
+      "bytes": 770753
+    },
+    {
+      "id": "arc_challenge/train/Mercury_7004043",
+      "file": "results/slcd_state_selection_Mercury_7004043.pt",
+      "bytes": 107137
+    },
+    {
+      "id": "arc_challenge/train/Mercury_SC_401306",
+      "file": "results/slcd_state_selection_Mercury_SC_401306.pt",
+      "bytes": 672509
+    },
+    {
+      "id": "arc_challenge/train/NYSEDREGENTS_2004_4_12",
+      "file": "results/slcd_state_selection_NYSEDREGENTS_2004_4_12.pt",
+      "bytes": 205651
+    },
+    {
+      "id": "arc_challenge/train/Mercury_SC_400519",
+      "file": "results/slcd_state_selection_Mercury_SC_400519.pt",
+      "bytes": 795389
+    },
+    {
+      "id": "arc_challenge/train/MCAS_2006_9_42-v1",
+      "file": "results/slcd_state_selection_MCAS_2006_9_42-v1.pt",
+      "bytes": 623357
+    },
+    {
+      "id": "arc_challenge/train/Mercury_SC_400160",
+      "file": "results/slcd_state_selection_Mercury_SC_400160.pt",
+      "bytes": 352957
+    },
+    {
+      "id": "arc_challenge/train/MDSA_2010_5_35",
+      "file": "results/slcd_state_selection_MDSA_2010_5_35.pt",
+      "bytes": 770723
+    },
+    {
+      "id": "arc_challenge/train/MEA_2014_5_7",
+      "file": "results/slcd_state_selection_MEA_2014_5_7.pt",
+      "bytes": 844391
+    },
+    {
+      "id": "arc_challenge/train/Mercury_7182893",
+      "file": "results/slcd_state_selection_Mercury_7182893.pt",
+      "bytes": 230017
+    },
+    {
+      "id": "arc_challenge/train/MCAS_1999_8_6",
+      "file": "results/slcd_state_selection_MCAS_1999_8_6.pt",
+      "bytes": 352837
+    },
+    {
+      "id": "arc_challenge/train/Mercury_SC_405862",
+      "file": "results/slcd_state_selection_Mercury_SC_405862.pt",
+      "bytes": 451261
+    },
+    {
+      "id": "arc_challenge/train/Mercury_7228025",
+      "file": "results/slcd_state_selection_Mercury_7228025.pt",
+      "bytes": 1041089
+    },
+    {
+      "id": "arc_challenge/train/Mercury_7271285",
+      "file": "results/slcd_state_selection_Mercury_7271285.pt",
+      "bytes": 918209
+    },
+    {
+      "id": "arc_challenge/train/NCEOGA_2013_5_10",
+      "file": "results/slcd_state_selection_NCEOGA_2013_5_10.pt",
+      "bytes": 1901407
+    },
+    {
+      "id": "arc_challenge/train/TIMSS_1995_8_N3",
+      "file": "results/slcd_state_selection_TIMSS_1995_8_N3.pt",
+      "bytes": 772445
+    },
+    {
+      "id": "arc_challenge/train/NYSEDREGENTS_2007_4_17",
+      "file": "results/slcd_state_selection_NYSEDREGENTS_2007_4_17.pt",
+      "bytes": 500627
+    },
+    {
+      "id": "arc_challenge/train/Mercury_SC_405728",
+      "file": "results/slcd_state_selection_Mercury_SC_405728.pt",
+      "bytes": 205501
+    },
+    {
+      "id": "arc_challenge/train/CSZ30564",
+      "file": "results/slcd_state_selection_CSZ30564.pt",
+      "bytes": 106863
+    },
+    {
+      "id": "arc_challenge/train/Mercury_7085908",
+      "file": "results/slcd_state_selection_Mercury_7085908.pt",
+      "bytes": 942785
+    },
+    {
+      "id": "arc_challenge/train/Mercury_7228375",
+      "file": "results/slcd_state_selection_Mercury_7228375.pt",
+      "bytes": 352897
+    },
+    {
+      "id": "arc_challenge/train/Mercury_7215740",
+      "file": "results/slcd_state_selection_Mercury_7215740.pt",
+      "bytes": 893633
+    },
+    {
+      "id": "arc_challenge/train/Mercury_7043015",
+      "file": "results/slcd_state_selection_Mercury_7043015.pt",
+      "bytes": 549505
+    },
+    {
+      "id": "arc_challenge/train/Mercury_7283938",
+      "file": "results/slcd_state_selection_Mercury_7283938.pt",
+      "bytes": 180865
+    },
+    {
+      "id": "arc_challenge/train/VASoL_2009_3_36",
+      "file": "results/slcd_state_selection_VASoL_2009_3_36.pt",
+      "bytes": 402049
+    },
+    {
+      "id": "arc_challenge/train/MCAS_2007_5_4788",
+      "file": "results/slcd_state_selection_MCAS_2007_5_4788.pt",
+      "bytes": 598751
+    },
+    {
+      "id": "arc_challenge/train/Mercury_7037240",
+      "file": "results/slcd_state_selection_Mercury_7037240.pt",
+      "bytes": 107137
+    },
+    {
+      "id": "arc_challenge/train/Mercury_7283955",
+      "file": "results/slcd_state_selection_Mercury_7283955.pt",
+      "bytes": 697025
+    },
+    {
+      "id": "arc_challenge/train/Mercury_410136",
+      "file": "results/slcd_state_selection_Mercury_410136.pt",
+      "bytes": 1090211
+    },
+    {
+      "id": "arc_challenge/train/Mercury_7090353",
+      "file": "results/slcd_state_selection_Mercury_7090353.pt",
+      "bytes": 869057
+    },
+    {
+      "id": "arc_challenge/train/Mercury_7040740",
+      "file": "results/slcd_state_selection_Mercury_7040740.pt",
+      "bytes": 869057
+    },
+    {
+      "id": "arc_challenge/train/Mercury_7084210",
+      "file": "results/slcd_state_selection_Mercury_7084210.pt",
+      "bytes": 549505
+    },
+    {
+      "id": "arc_challenge/train/TIMSS_2003_8_pg28",
+      "file": "results/slcd_state_selection_TIMSS_2003_8_pg28.pt",
+      "bytes": 131773
+    },
+    {
+      "id": "arc_challenge/train/Mercury_416635",
+      "file": "results/slcd_state_selection_Mercury_416635.pt",
+      "bytes": 967331
+    },
+    {
+      "id": "arc_challenge/train/Mercury_7159530",
+      "file": "results/slcd_state_selection_Mercury_7159530.pt",
+      "bytes": 795329
+    },
+    {
+      "id": "arc_challenge/train/Mercury_SC_417556",
+      "file": "results/slcd_state_selection_Mercury_SC_417556.pt",
+      "bytes": 770813
+    },
+    {
+      "id": "arc_challenge/train/Mercury_7206535",
+      "file": "results/slcd_state_selection_Mercury_7206535.pt",
+      "bytes": 205441
+    },
+    {
+      "id": "arc_challenge/train/Mercury_7168665",
+      "file": "results/slcd_state_selection_Mercury_7168665.pt",
+      "bytes": 623297
+    },
+    {
+      "id": "arc_challenge/train/Mercury_192763",
+      "file": "results/slcd_state_selection_Mercury_192763.pt",
+      "bytes": 328291
+    },
+    {
+      "id": "arc_challenge/train/Mercury_SC_416515",
+      "file": "results/slcd_state_selection_Mercury_SC_416515.pt",
+      "bytes": 107197
+    },
+    {
+      "id": "arc_challenge/train/Mercury_7057295",
+      "file": "results/slcd_state_selection_Mercury_7057295.pt",
+      "bytes": 967361
+    },
+    {
+      "id": "arc_challenge/train/MEAP_2005_8_8",
+      "file": "results/slcd_state_selection_MEAP_2005_8_8.pt",
+      "bytes": 991877
+    },
+    {
+      "id": "arc_challenge/train/Mercury_404903",
+      "file": "results/slcd_state_selection_Mercury_404903.pt",
+      "bytes": 795299
+    },
+    {
+      "id": "arc_challenge/train/Mercury_7188913",
+      "file": "results/slcd_state_selection_Mercury_7188913.pt",
+      "bytes": 205441
+    },
+    {
+      "id": "arc_challenge/train/NCEOGA_2013_8_51",
+      "file": "results/slcd_state_selection_NCEOGA_2013_8_51.pt",
+      "bytes": 967391
+    },
+    {
+      "id": "arc_challenge/train/Mercury_7075005",
+      "file": "results/slcd_state_selection_Mercury_7075005.pt",
+      "bytes": 352897
+    },
+    {
+      "id": "arc_challenge/train/Mercury_7083545",
+      "file": "results/slcd_state_selection_Mercury_7083545.pt",
+      "bytes": 402049
+    },
+    {
+      "id": "arc_challenge/train/Mercury_7084420",
+      "file": "results/slcd_state_selection_Mercury_7084420.pt",
+      "bytes": 721601
+    },
+    {
+      "id": "arc_challenge/train/Mercury_SC_401336",
+      "file": "results/slcd_state_selection_Mercury_SC_401336.pt",
+      "bytes": 524989
+    },
+    {
+      "id": "arc_challenge/train/Mercury_SC_413531",
+      "file": "results/slcd_state_selection_Mercury_SC_413531.pt",
+      "bytes": 598781
+    },
+    {
+      "id": "arc_challenge/train/TIMSS_2007_8_pg101",
+      "file": "results/slcd_state_selection_TIMSS_2007_8_pg101.pt",
+      "bytes": 549595
+    },
+    {
+      "id": "arc_challenge/train/Mercury_SC_402089",
+      "file": "results/slcd_state_selection_Mercury_SC_402089.pt",
+      "bytes": 500413
+    },
+    {
+      "id": "arc_challenge/train/NYSEDREGENTS_2009_8_20",
+      "file": "results/slcd_state_selection_NYSEDREGENTS_2009_8_20.pt",
+      "bytes": 107347
+    },
+    {
+      "id": "arc_challenge/train/Mercury_7246978",
+      "file": "results/slcd_state_selection_Mercury_7246978.pt",
+      "bytes": 500353
+    },
+    {
+      "id": "arc_challenge/train/ACTAAP_2011_5_9",
+      "file": "results/slcd_state_selection_ACTAAP_2011_5_9.pt",
+      "bytes": 1508097
+    },
+    {
+      "id": "arc_challenge/train/LEAP_2006_4_10274",
+      "file": "results/slcd_state_selection_LEAP_2006_4_10274.pt",
+      "bytes": 254653
+    },
+    {
+      "id": "arc_challenge/train/Mercury_SC_LBS10030",
+      "file": "results/slcd_state_selection_Mercury_SC_LBS10030.pt",
+      "bytes": 254713
+    },
+    {
+      "id": "arc_challenge/train/MEA_2011_8_8",
+      "file": "results/slcd_state_selection_MEA_2011_8_8.pt",
+      "bytes": 279079
+    },
+    {
+      "id": "arc_challenge/train/TIMSS_1995_8_N5",
+      "file": "results/slcd_state_selection_TIMSS_1995_8_N5.pt",
+      "bytes": 991937
+    },
+    {
+      "id": "arc_challenge/train/Mercury_7057715",
+      "file": "results/slcd_state_selection_Mercury_7057715.pt",
+      "bytes": 598721
+    },
+    {
+      "id": "arc_challenge/train/Mercury_7211663",
+      "file": "results/slcd_state_selection_Mercury_7211663.pt",
+      "bytes": 254593
+    },
+    {
+      "id": "arc_challenge/train/MCAS_1998_8_4",
+      "file": "results/slcd_state_selection_MCAS_1998_8_4.pt",
+      "bytes": 1188549
+    },
+    {
+      "id": "arc_challenge/train/NYSEDREGENTS_2009_8_7",
+      "file": "results/slcd_state_selection_NYSEDREGENTS_2009_8_7.pt",
+      "bytes": 500597
+    },
+    {
+      "id": "arc_challenge/train/Mercury_7014525",
+      "file": "results/slcd_state_selection_Mercury_7014525.pt",
+      "bytes": 107137
+    },
+    {
+      "id": "arc_challenge/train/Mercury_415753",
+      "file": "results/slcd_state_selection_Mercury_415753.pt",
+      "bytes": 869027
+    },
+    {
+      "id": "arc_challenge/train/MCAS_2008_8_5719",
+      "file": "results/slcd_state_selection_MCAS_2008_8_5719.pt",
+      "bytes": 180895
+    },
+    {
+      "id": "arc_challenge/train/Mercury_402213",
+      "file": "results/slcd_state_selection_Mercury_402213.pt",
+      "bytes": 2073379
+    },
+    {
+      "id": "arc_challenge/train/Mercury_7271268",
+      "file": "results/slcd_state_selection_Mercury_7271268.pt",
+      "bytes": 549505
+    },
+    {
+      "id": "arc_challenge/train/Mercury_SC_415723",
+      "file": "results/slcd_state_selection_Mercury_SC_415723.pt",
+      "bytes": 746237
+    },
+    {
+      "id": "arc_challenge/train/Mercury_7099365",
+      "file": "results/slcd_state_selection_Mercury_7099365.pt",
+      "bytes": 254593
+    },
+    {
+      "id": "arc_challenge/train/NCEOGA2013_8_50",
+      "file": "results/slcd_state_selection_NCEOGA2013_8_50.pt",
+      "bytes": 967361
+    },
+    {
+      "id": "arc_challenge/train/Mercury_7041160",
+      "file": "results/slcd_state_selection_Mercury_7041160.pt",
+      "bytes": 107137
+    },
+    {
+      "id": "arc_challenge/train/MCAS_2004_9_15",
+      "file": "results/slcd_state_selection_MCAS_2004_9_15.pt",
+      "bytes": 451171
+    },
+    {
+      "id": "arc_challenge/train/TIMSS_2003_8_pg74",
+      "file": "results/slcd_state_selection_TIMSS_2003_8_pg74.pt",
+      "bytes": 107197
+    },
+    {
+      "id": "arc_challenge/train/LEAP_2009_4_10293",
+      "file": "results/slcd_state_selection_LEAP_2009_4_10293.pt",
+      "bytes": 205501
+    },
+    {
+      "id": "arc_challenge/train/Mercury_7038570",
+      "file": "results/slcd_state_selection_Mercury_7038570.pt",
+      "bytes": 795329
+    },
+    {
+      "id": "arc_challenge/train/MCAS_2007_8_5166",
+      "file": "results/slcd_state_selection_MCAS_2007_8_5166.pt",
+      "bytes": 795359
+    },
+    {
+      "id": "arc_challenge/train/MCAS_2008_5_5623",
+      "file": "results/slcd_state_selection_MCAS_2008_5_5623.pt",
+      "bytes": 697055
+    },
+    {
+      "id": "arc_challenge/train/Mercury_SC_401645",
+      "file": "results/slcd_state_selection_Mercury_SC_401645.pt",
+      "bytes": 426685
+    },
+    {
+      "id": "arc_challenge/train/NYSEDREGENTS_2016_4_13",
+      "file": "results/slcd_state_selection_NYSEDREGENTS_2016_4_13.pt",
+      "bytes": 451411
+    },
+    {
+      "id": "arc_challenge/train/MCAS_2003_8_14",
+      "file": "results/slcd_state_selection_MCAS_2003_8_14.pt",
+      "bytes": 549475
+    },
+    {
+      "id": "arc_challenge/train/Mercury_7120785",
+      "file": "results/slcd_state_selection_Mercury_7120785.pt",
+      "bytes": 107137
+    },
+    {
+      "id": "arc_challenge/train/Mercury_7191153",
+      "file": "results/slcd_state_selection_Mercury_7191153.pt",
+      "bytes": 352897
+    },
+    {
+      "id": "arc_challenge/train/Mercury_7086153",
+      "file": "results/slcd_state_selection_Mercury_7086153.pt",
+      "bytes": 991937
+    },
+    {
+      "id": "arc_challenge/train/TIMSS_1995_8_I17",
+      "file": "results/slcd_state_selection_TIMSS_1995_8_I17.pt",
+      "bytes": 254623
+    },
+    {
+      "id": "arc_challenge/train/MCAS_2011_5_17",
+      "file": "results/slcd_state_selection_MCAS_2011_5_17.pt",
+      "bytes": 672419
+    },
+    {
+      "id": "arc_challenge/train/Mercury_7027020",
+      "file": "results/slcd_state_selection_Mercury_7027020.pt",
+      "bytes": 279169
+    },
+    {
+      "id": "arc_challenge/train/Mercury_7230545",
+      "file": "results/slcd_state_selection_Mercury_7230545.pt",
+      "bytes": 819905
+    },
+    {
+      "id": "arc_challenge/train/Mercury_7212730",
+      "file": "results/slcd_state_selection_Mercury_7212730.pt",
+      "bytes": 672449
+    },
+    {
+      "id": "arc_challenge/train/Mercury_7042665",
+      "file": "results/slcd_state_selection_Mercury_7042665.pt",
+      "bytes": 303745
+    },
+    {
+      "id": "arc_challenge/train/Mercury_SC_414080",
+      "file": "results/slcd_state_selection_Mercury_SC_414080.pt",
+      "bytes": 647933
+    },
+    {
+      "id": "arc_challenge/train/Mercury_SC_414079",
+      "file": "results/slcd_state_selection_Mercury_SC_414079.pt",
+      "bytes": 1188669
+    },
+    {
+      "id": "arc_challenge/train/Mercury_SC_405303",
+      "file": "results/slcd_state_selection_Mercury_SC_405303.pt",
+      "bytes": 107197
+    },
+    {
+      "id": "arc_challenge/train/Mercury_402349",
+      "file": "results/slcd_state_selection_Mercury_402349.pt",
+      "bytes": 229987
+    },
+    {
+      "id": "arc_challenge/train/NAEP_2011_8_S11+15",
+      "file": "results/slcd_state_selection_NAEP_2011_8_S11+15.pt",
+      "bytes": 205531
+    },
+    {
+      "id": "arc_challenge/train/Mercury_7086293",
+      "file": "results/slcd_state_selection_Mercury_7086293.pt",
+      "bytes": 205441
+    },
+    {
+      "id": "arc_challenge/train/MDSA_2008_8_26",
+      "file": "results/slcd_state_selection_MDSA_2008_8_26.pt",
+      "bytes": 500323
+    },
+    {
+      "id": "arc_challenge/train/Mercury_7027353",
+      "file": "results/slcd_state_selection_Mercury_7027353.pt",
+      "bytes": 254593
+    },
+    {
+      "id": "arc_challenge/train/Mercury_7210000",
+      "file": "results/slcd_state_selection_Mercury_7210000.pt",
+      "bytes": 869057
+    },
+    {
+      "id": "arc_challenge/train/MCAS_1998_4_17",
+      "file": "results/slcd_state_selection_MCAS_1998_4_17.pt",
+      "bytes": 795299
+    },
+    {
+      "id": "arc_challenge/train/Mercury_7086678",
+      "file": "results/slcd_state_selection_Mercury_7086678.pt",
+      "bytes": 942785
+    },
+    {
+      "id": "arc_challenge/train/TIMSS_2011_4_pg92",
+      "file": "results/slcd_state_selection_TIMSS_2011_4_pg92.pt",
+      "bytes": 1508157
+    },
+    {
+      "id": "arc_challenge/train/ACTAAP_2008_7_15",
+      "file": "results/slcd_state_selection_ACTAAP_2008_7_15.pt",
+      "bytes": 402079
+    },
+    {
+      "id": "arc_challenge/train/Mercury_7093030",
+      "file": "results/slcd_state_selection_Mercury_7093030.pt",
+      "bytes": 697025
+    },
+    {
+      "id": "arc_challenge/train/MEA_2014_5_14",
+      "file": "results/slcd_state_selection_MEA_2014_5_14.pt",
+      "bytes": 500293
+    },
+    {
+      "id": "arc_challenge/train/LEAP_2001_8_10381",
+      "file": "results/slcd_state_selection_LEAP_2001_8_10381.pt",
+      "bytes": 2073469
+    },
+    {
+      "id": "arc_challenge/train/Mercury_SC_LBS10343",
+      "file": "results/slcd_state_selection_Mercury_SC_LBS10343.pt",
+      "bytes": 795449
+    },
+    {
+      "id": "arc_challenge/train/Mercury_SC_401653",
+      "file": "results/slcd_state_selection_Mercury_SC_401653.pt",
+      "bytes": 869117
+    },
+    {
+      "id": "arc_challenge/train/Mercury_401376",
+      "file": "results/slcd_state_selection_Mercury_401376.pt",
+      "bytes": 131683
+    },
+    {
+      "id": "arc_challenge/train/Mercury_SC_408742",
+      "file": "results/slcd_state_selection_Mercury_SC_408742.pt",
+      "bytes": 746237
+    },
+    {
+      "id": "arc_challenge/train/Mercury_7114870",
+      "file": "results/slcd_state_selection_Mercury_7114870.pt",
+      "bytes": 549505
+    },
+    {
+      "id": "arc_challenge/train/Mercury_184293",
+      "file": "results/slcd_state_selection_Mercury_184293.pt",
+      "bytes": 1016483
+    },
+    {
+      "id": "arc_challenge/train/Mercury_177468",
+      "file": "results/slcd_state_selection_Mercury_177468.pt",
+      "bytes": 107107
+    },
+    {
+      "id": "arc_challenge/train/Mercury_7127173",
+      "file": "results/slcd_state_selection_Mercury_7127173.pt",
+      "bytes": 1016513
+    },
+    {
+      "id": "arc_challenge/train/Mercury_7090685",
+      "file": "results/slcd_state_selection_Mercury_7090685.pt",
+      "bytes": 303745
+    },
+    {
+      "id": "arc_challenge/train/Mercury_416649",
+      "file": "results/slcd_state_selection_Mercury_416649.pt",
+      "bytes": 303715
+    },
+    {
+      "id": "arc_challenge/train/NYSEDREGENTS_2007_4_22",
+      "file": "results/slcd_state_selection_NYSEDREGENTS_2007_4_22.pt",
+      "bytes": 205651
+    },
+    {
+      "id": "arc_challenge/train/Mercury_7207218",
+      "file": "results/slcd_state_selection_Mercury_7207218.pt",
+      "bytes": 819905
+    },
+    {
+      "id": "arc_challenge/train/MDSA_2008_5_30",
+      "file": "results/slcd_state_selection_MDSA_2008_5_30.pt",
+      "bytes": 229987
+    },
+    {
+      "id": "arc_challenge/train/Mercury_SC_401153",
+      "file": "results/slcd_state_selection_Mercury_SC_401153.pt",
+      "bytes": 107197
+    },
+    {
+      "id": "arc_challenge/train/Mercury_7233800",
+      "file": "results/slcd_state_selection_Mercury_7233800.pt",
+      "bytes": 156289
+    },
+    {
+      "id": "arc_challenge/train/Mercury_7146090",
+      "file": "results/slcd_state_selection_Mercury_7146090.pt",
+      "bytes": 524929
+    },
+    {
+      "id": "arc_challenge/train/Mercury_7111248",
+      "file": "results/slcd_state_selection_Mercury_7111248.pt",
+      "bytes": 647873
+    },
+    {
+      "id": "arc_challenge/train/Mercury_7140035",
+      "file": "results/slcd_state_selection_Mercury_7140035.pt",
+      "bytes": 623297
+    },
+    {
+      "id": "arc_challenge/train/Mercury_7064628",
+      "file": "results/slcd_state_selection_Mercury_7064628.pt",
+      "bytes": 402049
+    },
+    {
+      "id": "arc_challenge/train/AKDE&ED_2008_8_9",
+      "file": "results/slcd_state_selection_AKDE&ED_2008_8_9.pt",
+      "bytes": 1188639
+    },
+    {
+      "id": "arc_challenge/train/CSZ30771",
+      "file": "results/slcd_state_selection_CSZ30771.pt",
+      "bytes": 1065455
+    },
+    {
+      "id": "arc_challenge/train/MSA_2015_8_37",
+      "file": "results/slcd_state_selection_MSA_2015_8_37.pt",
+      "bytes": 819845
+    },
+    {
+      "id": "arc_challenge/train/MDSA_2009_4_18",
+      "file": "results/slcd_state_selection_MDSA_2009_4_18.pt",
+      "bytes": 574051
+    },
+    {
+      "id": "arc_challenge/train/Mercury_7154648",
+      "file": "results/slcd_state_selection_Mercury_7154648.pt",
+      "bytes": 795329
+    },
+    {
+      "id": "arc_challenge/train/MCAS_2005_8_15",
+      "file": "results/slcd_state_selection_MCAS_2005_8_15.pt",
+      "bytes": 1090211
+    },
+    {
+      "id": "arc_challenge/train/NYSEDREGENTS_2006_4_19",
+      "file": "results/slcd_state_selection_NYSEDREGENTS_2006_4_19.pt",
+      "bytes": 181075
+    },
+    {
+      "id": "arc_challenge/train/Mercury_7109585",
+      "file": "results/slcd_state_selection_Mercury_7109585.pt",
+      "bytes": 254593
+    },
+    {
+      "id": "arc_challenge/train/Mercury_SC_400607",
+      "file": "results/slcd_state_selection_Mercury_SC_400607.pt",
+      "bytes": 377533
+    },
+    {
+      "id": "arc_challenge/train/Mercury_7207165",
+      "file": "results/slcd_state_selection_Mercury_7207165.pt",
+      "bytes": 795329
+    },
+    {
+      "id": "arc_challenge/train/MCAS_2001_8_13",
+      "file": "results/slcd_state_selection_MCAS_2001_8_13.pt",
+      "bytes": 1262307
+    },
+    {
+      "id": "arc_challenge/train/Mercury_7016818",
+      "file": "results/slcd_state_selection_Mercury_7016818.pt",
+      "bytes": 205441
+    },
+    {
+      "id": "arc_challenge/train/Mercury_SC_407397",
+      "file": "results/slcd_state_selection_Mercury_SC_407397.pt",
+      "bytes": 967421
+    },
+    {
+      "id": "arc_challenge/train/LEAP_2001_4_10241",
+      "file": "results/slcd_state_selection_LEAP_2001_4_10241.pt",
+      "bytes": 205501
+    },
+    {
+      "id": "arc_challenge/train/LEAP_2008_4_10288",
+      "file": "results/slcd_state_selection_LEAP_2008_4_10288.pt",
+      "bytes": 1188669
+    },
+    {
+      "id": "arc_challenge/train/NCEOGA_2013_8_24",
+      "file": "results/slcd_state_selection_NCEOGA_2013_8_24.pt",
+      "bytes": 426655
+    },
+    {
+      "id": "arc_challenge/train/ACTAAP_2008_7_2",
+      "file": "results/slcd_state_selection_ACTAAP_2008_7_2.pt",
+      "bytes": 303745
+    },
+    {
+      "id": "arc_challenge/train/Mercury_7223178",
+      "file": "results/slcd_state_selection_Mercury_7223178.pt",
+      "bytes": 549505
+    },
+    {
+      "id": "arc_challenge/train/MCAS_1998_4_9",
+      "file": "results/slcd_state_selection_MCAS_1998_4_9.pt",
+      "bytes": 229957
+    },
+    {
+      "id": "arc_challenge/train/AKDE&ED_2012_4_21",
+      "file": "results/slcd_state_selection_AKDE&ED_2012_4_21.pt",
+      "bytes": 819965
+    },
+    {
+      "id": "arc_challenge/train/Mercury_SC_416456",
+      "file": "results/slcd_state_selection_Mercury_SC_416456.pt",
+      "bytes": 254653
+    },
+    {
+      "id": "arc_challenge/train/Mercury_SC_415389",
+      "file": "results/slcd_state_selection_Mercury_SC_415389.pt",
+      "bytes": 942845
+    },
+    {
+      "id": "arc_challenge/train/Mercury_417153",
+      "file": "results/slcd_state_selection_Mercury_417153.pt",
+      "bytes": 721571
+    },
+    {
+      "id": "arc_challenge/train/MCAS_8_2015_9",
+      "file": "results/slcd_state_selection_MCAS_8_2015_9.pt",
+      "bytes": 795269
+    },
+    {
+      "id": "arc_challenge/train/MDSA_2009_5_17",
+      "file": "results/slcd_state_selection_MDSA_2009_5_17.pt",
+      "bytes": 746147
+    },
+    {
+      "id": "arc_challenge/train/NCEOGA_2013_5_57",
+      "file": "results/slcd_state_selection_NCEOGA_2013_5_57.pt",
+      "bytes": 574111
+    },
+    {
+      "id": "arc_challenge/train/Mercury_7230300",
+      "file": "results/slcd_state_selection_Mercury_7230300.pt",
+      "bytes": 131713
+    },
+    {
+      "id": "arc_challenge/train/Mercury_7015750",
+      "file": "results/slcd_state_selection_Mercury_7015750.pt",
+      "bytes": 107137
+    },
+    {
+      "id": "arc_challenge/train/Mercury_7187005",
+      "file": "results/slcd_state_selection_Mercury_7187005.pt",
+      "bytes": 697025
+    },
+    {
+      "id": "arc_challenge/train/Mercury_SC_401596",
+      "file": "results/slcd_state_selection_Mercury_SC_401596.pt",
+      "bytes": 574205
+    },
+    {
+      "id": "arc_challenge/train/Mercury_400940",
+      "file": "results/slcd_state_selection_Mercury_400940.pt",
+      "bytes": 942755
+    },
+    {
+      "id": "arc_challenge/train/Mercury_7143045",
+      "file": "results/slcd_state_selection_Mercury_7143045.pt",
+      "bytes": 205441
+    },
+    {
+      "id": "arc_challenge/train/Mercury_7212065",
+      "file": "results/slcd_state_selection_Mercury_7212065.pt",
+      "bytes": 893633
+    },
+    {
+      "id": "arc_challenge/train/Mercury_7013405",
+      "file": "results/slcd_state_selection_Mercury_7013405.pt",
+      "bytes": 352897
+    },
+    {
+      "id": "arc_challenge/train/AKDE&ED_2012_8_45",
+      "file": "results/slcd_state_selection_AKDE&ED_2012_8_45.pt",
+      "bytes": 721661
+    },
+    {
+      "id": "arc_challenge/train/Mercury_7199150",
+      "file": "results/slcd_state_selection_Mercury_7199150.pt",
+      "bytes": 1065665
+    },
+    {
+      "id": "arc_challenge/train/Mercury_7013213",
+      "file": "results/slcd_state_selection_Mercury_7013213.pt",
+      "bytes": 352897
+    },
+    {
+      "id": "arc_challenge/train/NYSEDREGENTS_2005_4_20",
+      "file": "results/slcd_state_selection_NYSEDREGENTS_2005_4_20.pt",
+      "bytes": 303955
+    },
+    {
+      "id": "arc_challenge/train/Mercury_7211225",
+      "file": "results/slcd_state_selection_Mercury_7211225.pt",
+      "bytes": 795329
+    },
+    {
+      "id": "arc_challenge/train/Mercury_416466",
+      "file": "results/slcd_state_selection_Mercury_416466.pt",
+      "bytes": 893603
+    },
+    {
+      "id": "arc_challenge/train/MCAS_2005_8_4",
+      "file": "results/slcd_state_selection_MCAS_2005_8_4.pt",
+      "bytes": 328261
+    },
+    {
+      "id": "arc_challenge/train/VASoL_2009_3_17",
+      "file": "results/slcd_state_selection_VASoL_2009_3_17.pt",
+      "bytes": 328321
+    },
+    {
+      "id": "arc_challenge/train/MCAS_2007_8_5172",
+      "file": "results/slcd_state_selection_MCAS_2007_8_5172.pt",
+      "bytes": 107167
+    },
+    {
+      "id": "arc_challenge/train/AKDE&ED_2008_4_37",
+      "file": "results/slcd_state_selection_AKDE&ED_2008_4_37.pt",
+      "bytes": 647933
+    },
+    {
+      "id": "arc_challenge/train/Mercury_SC_415349",
+      "file": "results/slcd_state_selection_Mercury_SC_415349.pt",
+      "bytes": 303805
+    }
+  ],
+  "required_logical_depth": 5
+}

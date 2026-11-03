@@ -1,0 +1,17 @@
+{
+  "schema": "slcd_r2_recipes_v1",
+  "status": "fixed_before_R2_candidate_feedback",
+  "selection_scope": "previously_used_training_only; fixed folds are robustness summaries, not blind holdouts",
+  "geometry": "Cov_softmax(z4), FP32; centering only for inner products; raw d/u output; zero denominator gives coefficient zero",
+  "interpretation": "Clipped projection is bounded decorrelation, not necessarily orthogonal. All six new recipes require depth5; shared collection may use depth6. No fitting or weight changes.",
+  "recipes": [
+    {"id":"tf_fixed","kind":"fixed","omega":0.5,"reference":1,"final":4,"required_depth":4,"role":"control"},
+    {"id":"tf_adaptive","kind":"adaptive","omega":1.0,"reference":1,"final":4,"required_depth":4,"role":"control"},
+    {"id":"r2_fisher_signed","kind":"fisher_signed","omega":0.5,"reference":1,"final":4,"late":5,"required_depth":5,"role":"candidate"},
+    {"id":"r2_fisher_positive","kind":"fisher_positive","omega":0.5,"reference":1,"final":4,"late":5,"required_depth":5,"role":"candidate"},
+    {"id":"r2_euclidean_signed","kind":"euclidean_signed","omega":0.5,"reference":1,"final":4,"late":5,"required_depth":5,"role":"geometry_control_candidate"},
+    {"id":"r2_fisher_matched_norm","kind":"fisher_matched_norm","omega":0.5,"reference":1,"final":4,"late":5,"required_depth":5,"role":"magnitude_control_candidate"},
+    {"id":"r2_fisher_cosine","kind":"fisher_cosine","omega":0.5,"gamma":1.0,"reference":1,"final":4,"late":5,"required_depth":5,"role":"candidate"},
+    {"id":"r2_ref2_late","kind":"ref2_late","omega":0.5,"gamma":1.0,"reference":2,"final":4,"late":5,"required_depth":5,"role":"non_novel_composition_control_candidate"}
+  ]
+}

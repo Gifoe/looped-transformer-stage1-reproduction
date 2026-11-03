@@ -71,3 +71,45 @@ Observed development results: [{"method": "native4", "correct": 325, "correction
 Decision: Retain A1_g1p0(+4), Ref2_w0p5(+2), A2_g0p25(-1) by locked ranking. Hybrid gates fail transfer(-1 to-6); abandon their expansion. Confirmation is now selection data, not blind evidence.
 
 Next action: One frozen official validation stage; no further development iterations.
+
+## Iteration 6 (R2, user target extension)
+
+Hypothesis: Late residual Fisher decorrelation may remove harmful contrast components.
+
+Motivating evidence: User target raised from beating717 to733; direction and matched-norm controls required.
+
+Modification/configuration: Six parameter-free token recipes, two baseline controls, reused1093 train examples; five fixed robustness slices, not blind CV.
+
+Observed development results: [{"method": "incumbent_A1", "correct": 690, "net_correct": 0}, {"method": "native4", "correct": 678, "net_correct": -12}, {"method": "fixed", "correct": 682, "net_correct": -8}, {"method": "adaptive", "correct": 688, "net_correct": -2}, {"method": "r2_fisher_signed", "correct": 689, "net_correct": -1}, {"method": "r2_fisher_positive", "correct": 685, "net_correct": -5}, {"method": "r2_euclidean_signed", "correct": 679, "net_correct": -11}, {"method": "r2_fisher_matched_norm", "correct": 683, "net_correct": -7}, {"method": "r2_fisher_cosine", "correct": 685, "net_correct": -5}, {"method": "r2_ref2_late", "correct": 688, "net_correct": -2}]
+
+Decision: No candidate beat incumbent690; zero new tests. Fisher689 beats matchednorm683 descriptively but falls below incumbent.
+
+Next action: Separate candidate likelihood reversal from token intervention in4 fixed compositions.
+
+## Iteration 7 (R3, user target extension)
+
+Hypothesis: Candidate-score late LL reversal has a distinct log-partition contribution.
+
+Motivating evidence: R2 token variants failed the existing A1 score method; A1 vs A2 are not equivalent.
+
+Modification/configuration: Four locked score compositions gamma1: reference2, Fisher signed, matched norm, Euclidean.
+
+Observed development results: [{"method": "incumbent_A1", "correct": 690, "net_correct": 0}, {"method": "fixed", "correct": 682, "net_correct": -8}, {"method": "r3_ref2_scorelate", "correct": 687, "net_correct": -3}, {"method": "r3_fisher_scorelate", "correct": 686, "net_correct": -4}, {"method": "r3_matchednorm_scorelate", "correct": 691, "net_correct": 1}, {"method": "r3_euclidean_scorelate", "correct": 686, "net_correct": -4}]
+
+Decision: Best matchednorm691, only+1 vsA1; eligible by preliminary rule but not accepted for costly test because evidence weak. Fisher+late686 does not support directional mechanism. No new test accessed.
+
+Next action: Test fixed per-token guidance energy/trust budgets; raise train guard before seeing R4 feedback to>=7 net vsA1 and3/5 nonnegative folds.
+
+## Iteration 8 (R4, user target extension)
+
+Hypothesis: Guidance energy control may be more useful than changing contrast direction.
+
+Motivating evidence: R3 matched-norm+late691 exceeded direction-composed686 only marginally; avoid testing weak+1.
+
+Modification/configuration: Fixed FisherRMS/local energy, exact categoricalKL0.12516bisection, uniformRMS and their late-score variants plus Adaptive+late. Guard >=7 train net and3/5 nonnegative folds frozen before feedback.
+
+Observed development results: [{"method": "native4", "correct": 678, "net_correct": -12}, {"method": "fixed", "correct": 682, "net_correct": -8}, {"method": "adaptive", "correct": 688, "net_correct": -2}, {"method": "incumbent_A1", "correct": 690, "net_correct": 0}, {"method": "r4_fisher_rms", "correct": 681, "net_correct": -9}, {"method": "r4_fisher_rms_scorelate", "correct": 685, "net_correct": -5}, {"method": "r4_kl_trust_region", "correct": 683, "net_correct": -7}, {"method": "r4_kl_trust_region_scorelate", "correct": 687, "net_correct": -3}, {"method": "r4_uniform_rms", "correct": 687, "net_correct": -3}, {"method": "r4_uniform_rms_scorelate", "correct": 685, "net_correct": -5}, {"method": "r4_adaptive_scorelate", "correct": 681, "net_correct": -9}]
+
+Decision: All7 candidates below incumbent690; best687. No new test. Full server receipts remain there; this local observation is from completed-worker SSH snapshot.
+
+Next action: Switch information source to fixed answer-text domain prior; R5 six coefficient1 rules prepared, no job started because SSH route was lost.
