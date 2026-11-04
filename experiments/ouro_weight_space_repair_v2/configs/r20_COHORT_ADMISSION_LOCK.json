@@ -1,0 +1,108 @@
+{
+  "status": "immutable_cohort_before_baseline_admission",
+  "cohort": [
+    {
+      "id": "arc_challenge/train/MSA_2013_5_33",
+      "split": "selection"
+    },
+    {
+      "id": "arc_challenge/train/LEAP_2001_4_10241",
+      "split": "selection"
+    },
+    {
+      "id": "arc_challenge/train/AKDE&ED_2012_8_37",
+      "split": "discovery"
+    },
+    {
+      "id": "arc_challenge/train/MCAS_1998_4_9",
+      "split": "selection"
+    },
+    {
+      "id": "arc_challenge/train/Mercury_SC_401336",
+      "split": "selection"
+    },
+    {
+      "id": "arc_challenge/train/Mercury_7109585",
+      "split": "selection"
+    },
+    {
+      "id": "arc_challenge/train/Mercury_SC_409907",
+      "split": "discovery"
+    },
+    {
+      "id": "arc_challenge/train/Mercury_7219100",
+      "split": "discovery"
+    },
+    {
+      "id": "arc_challenge/train/Mercury_7159758",
+      "split": "selection"
+    },
+    {
+      "id": "arc_challenge/train/Mercury_SC_405459",
+      "split": "discovery"
+    },
+    {
+      "id": "arc_challenge/train/MCAS_2008_8_5707",
+      "split": "discovery"
+    },
+    {
+      "id": "arc_challenge/train/Mercury_SC_400673",
+      "split": "discovery"
+    },
+    {
+      "id": "arc_challenge/train/Mercury_7233695",
+      "split": "discovery"
+    },
+    {
+      "id": "arc_challenge/train/Mercury_7221743",
+      "split": "discovery"
+    },
+    {
+      "id": "arc_challenge/train/Mercury_7233800",
+      "split": "selection"
+    },
+    {
+      "id": "arc_challenge/train/Mercury_7094010",
+      "split": "discovery"
+    },
+    {
+      "id": "arc_challenge/train/Mercury_7084210",
+      "split": "selection"
+    },
+    {
+      "id": "arc_challenge/train/Mercury_7146090",
+      "split": "selection"
+    },
+    {
+      "id": "arc_challenge/train/Mercury_7175718",
+      "split": "discovery"
+    },
+    {
+      "id": "arc_challenge/train/Mercury_7197225",
+      "split": "discovery"
+    },
+    {
+      "id": "arc_challenge/train/NYSEDREGENTS_2007_8_21",
+      "split": "discovery"
+    },
+    {
+      "id": "arc_challenge/train/Mercury_7239470",
+      "split": "discovery"
+    },
+    {
+      "id": "arc_challenge/train/AKDE&ED_2012_4_22",
+      "split": "discovery"
+    },
+    {
+      "id": "arc_challenge/train/NYSEDREGENTS_2016_4_13",
+      "split": "selection"
+    }
+  ],
+  "selection": "default_rng(2021).permutation(original_R16_64)[:24]; no outcome reads before exclusive cohort write",
+  "input_sha256": {
+    "configs/r16_NATIVE_KL_PILOT_LOCK.json": "40e71598b3fbe07922b6f15f2203b5f4517e6039745cd970e4adbd6da1a71412",
+    "r20_ASTRA_LITERATURE_REVIEW.md": "41746edc2db04a610ee7bf3eff344330d7c5964b6c335340d21d4bc88466abfd"
+  },
+  "source_sha256": "4c5613e8aaa0bb7a8ec37cfa3927e72b2d9d2dd6d9f13c08080ebf9ee9d86e1b",
+  "scope": "CPU-only baseline admission. No new features, tokenizer, model, CUDA, heldout, external dataset or GPU worker. This is not GPU authorization."
+}

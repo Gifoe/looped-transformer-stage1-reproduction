@@ -1,0 +1,11 @@
+"""Build reviewable DRAFT definition only; never GPU authorization or freeze."""
+from r20_admission import ROOT,read,sha,save
+
+def main():
+    old=read('configs/r19_LAST_LOOP_PROTECTION_PILOT_LOCK.json');cohort=read('configs/r20_COHORT_ADMISSION_LOCK.json')['cohort']
+    ledgers=['logs/r'+str(i)+'_gpu_budget.json' for i in [7,9,10,11,15,16,17,18,19]];total=sum(read(p)['used_seconds'] for p in ledgers);assert abs(total-17960.053507566452)<1e-6
+    inputs=dict(old['input_sha256']);inputs.update({p:sha(p) for p in ['r20_ASTRA_LITERATURE_REVIEW.md','configs/r20_COHORT_ADMISSION_LOCK.json','configs/r20_SPANS.json','results/r20_CPU_ADMISSION.json','results/r20_CPU_MATH_CHECKS.json']})
+    spec=dict(status='DRAFT_PENDING_ROOT_AND_ASTRA_REVIEW',new_method_candidates=1,heldout_access_authorized=False,external_benchmarks_authorized=False,cohort=cohort,source_sha256={p.name:sha(str(p.relative_to(ROOT))) for p in sorted((ROOT/'scripts').glob('r20_*.py'))},inherited_source_sha256=old['source_sha256'],input_sha256=inputs,model_identity=old['model_identity'],design_authority='r20_ASTRA_LITERATURE_REVIEW.md final precedence section; v0 preserved',method='Auxiliary all-layer/all-loop question-source V zero; unchanged R7 native Fisher projection. Raw demo direction normmatch C and actual completed correction shuffle D. Full V normalization/full candidates/original char denominator/unchanged late.',screen=dict(complete24=True,R6_net_min=2,R6_damage_max=0,R6_unique_min=1,retain_all_R6_unique=True,strictly_exceed=['old_Fisher','demo','raw_demo_matched','shuffle'],paired_net_min_against_demo_and_C=1,all_parity_and_norm_checks=True,overrun_ineligible=True,on_failure='Stop, no resample/retune/retry/control promotion',on_pass='Feasibility review only; no heldout/full run/new budget authorization'),budget=dict(original_cap_seconds=21600,inherited_ledger_sha256={p:sha(p) for p in ledgers},inherited_total_seconds=total,hard_seconds=180,soft_seconds=170,kill_seconds=179,grace_max_seconds=9,reap_reserve_seconds=1,no_retry=True,all_actual_time_charged=True))
+    (ROOT/'configs/r20_REVIEW_DRAFT.json').write_text(__import__('json').dumps(spec,indent=2)+'\n',encoding='utf8');print('DRAFT_READY')
+if __name__=='__main__':main()
+
