@@ -1,0 +1,23 @@
+{
+  "status": "frozen_before_current_confirmation",
+  "created_unix": 1793794881.4637868,
+  "eligible_methods_unchanged": [
+    "joint4_fusion",
+    "joint4_protected",
+    "jointFixed_protected",
+    "balanced4_protected"
+  ],
+  "additional_nonselectable_baselines": [
+    "joint1_only",
+    "balanced1_only_when_cyclic_forwards_required"
+  ],
+  "rationale": "Separate joint-option prompt format from recurrent depth and fusion. All readouts already exist in collected trajectories; no extra tuned method or reference.",
+  "disclosure": "Added after64 pilot and partial development aggregate feedback, before confirmation/validation/new ARC; no additional candidate, formula, coefficient or template selection.",
+  "interpretation": "SharedK5 collection provides K1 readout, not K1 latency; independentK1 actual auxiliary parity checked in heldout parity stage",
+  "integrity_fixes": [
+    "Bind receipt/row signatures, phase, fixedN, source hashes, selected names and input authority",
+    "Replay every score, prediction and correctness from saved auxiliary likelihoods",
+    "Check extra sources before heldout parsing",
+    "Compare final winner to its corresponding joint-only baseline"
+  ]
+}

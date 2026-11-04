@@ -38,7 +38,8 @@ def run(name,phase,seconds,budget_phase='development'):
 def lock(path,**values):
     assert not (ROOT/path).exists(),'Locks are immutable, inspect existing before continuing'
     value=dict(created_unix=time.time(),protocol_sha256=sha('configs/r10_PROTOCOL.json'),source_sha256=sources(),
-        extra_source_sha256=extra_sources(),post_pilot_audit_sha256=sha('configs/r10_POST_PILOT_AUDIT.json'),**values)
+        extra_source_sha256=extra_sources(),post_pilot_audit_sha256=sha('configs/r10_POST_PILOT_AUDIT.json'),
+        depth_attribution_addendum_sha256=sha('configs/r10_DEPTH_ATTRIBUTION_ADDENDUM.json'),**values)
     save(path,value)
 
 

@@ -55,6 +55,8 @@ def selected_scores(base,aux,names):
 
 def baselines(aux):
     s=aux['auxiliary_sum_scores'];q4=np.asarray(s['native_k4']);q5=np.asarray(s['native_k5']);f=np.asarray(s['loopcd_k4_fixed'])
-    result=dict(joint4_only=q4,jointFixed_only=f,jointA1_only=f+q4-q5)
-    if aux['balanced_native4_scores'] is not None:result['balanced4_only']=np.asarray(aux['balanced_native4_scores'])
+    result=dict(joint1_only=np.asarray(s['native_k1']),joint4_only=q4,jointFixed_only=f,jointA1_only=f+q4-q5)
+    if aux['balanced_native4_scores'] is not None:
+        result['balanced4_only']=np.asarray(aux['balanced_native4_scores'])
+        result['balanced1_only']=np.mean([r['sum_scores']['native_k1'] for r in aux['cyclic_rotations']],axis=0)
     return result

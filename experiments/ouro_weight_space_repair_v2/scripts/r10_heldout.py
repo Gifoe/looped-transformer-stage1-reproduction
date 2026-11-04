@@ -14,15 +14,20 @@ def extra_sources():return {n:sha('scripts/'+n) for n in EXTRA}
 
 def main():
     p=argparse.ArgumentParser();p.add_argument('--phase',choices=['parity','confirmation','validation','test'],required=True);a=p.parse_args();start=time.time()
-    phase=a.phase;protocol=read('configs/r10_PROTOCOL.json');data=rows('pilot' if phase=='parity' else phase)
+    phase=a.phase;protocol=read('configs/r10_PROTOCOL.json')
+    assert protocol['source_sha256']==sources()
     if phase=='parity':
-        names=['joint4_fusion','joint4_protected','jointFixed_protected','balanced4_protected'];data=data[:2]
+        names=['joint4_fusion','joint4_protected','jointFixed_protected','balanced4_protected']
         lock=read('configs/r10_CANDIDATE_LOCK.json')
     else:
         label={'confirmation':'CANDIDATE','validation':'VALIDATION','test':'FINAL_METHOD'}[phase];lock=read('configs/r10_'+label+'_LOCK.json')
         names=[lock['primary']] if phase=='test' else lock['candidates']
     assert lock['extra_source_sha256']==extra_sources() and lock['source_sha256']==sources()
     assert lock['post_pilot_audit_sha256']==sha('configs/r10_POST_PILOT_AUDIT.json')
+    assert lock['depth_attribution_addendum_sha256']==sha('configs/r10_DEPTH_ATTRIBUTION_ADDENDUM.json')
+    # Verify every new helper before any held-out row is parsed.
+    data=rows('pilot' if phase=='parity' else phase)
+    if phase=='parity':data=data[:2]
     output=f'results/r10_{phase}_selected.jsonl';receipt=output.replace('.jsonl','_COMPLETE.json');assert not (ROOT/receipt).exists()
     sig=digest(dict(protocol_sha256=sha('configs/r10_PROTOCOL.json'),lock_sha256=sha('configs/r10_'+('CANDIDATE' if phase=='parity' else label)+'_LOCK.json'),names=names,extra_source_sha256=extra_sources()))
     done={}
@@ -55,6 +60,14 @@ def main():
             assert aux['balanced_native4_scores']==ref['balanced_native4_scores']
             for n in names:maxerr=max(maxerr,float(np.max(np.abs(values[n]-np.asarray(ref['method_scores'][n])))))
             assert maxerr==0.,('Heldout path parity',row['id'],maxerr)
+            from runtime import encode_pair
+            from r10_core import joint_requests
+            from r7_inference import forward_states,head_logits,target_lp
+            pair=encode_pair(tok,*joint_requests(clean,prefix)[0])
+            k1=head_logits(model,forward_states(scorer,pair,1))
+            k1error=abs(float(target_lp(k1[1],pair[1]).sum())-aux['auxiliary_sum_scores']['native_k1'][0])
+            maxerr=max(maxerr,k1error);assert k1error==0.,('Independent auxiliary K1 parity',row['id'],k1error)
+            scorer.kmax=5;scorer._set_depth(5)
         vectors={**value['baseline_scores'],**{k:v.tolist() for k,v in values.items()},**{k:v.tolist() for k,v in joint.items()}}
         preds={k:int(np.argmax(v)) for k,v in vectors.items()};gold=row['gold'];torch.cuda.synchronize();peak=int(torch.cuda.max_memory_allocated());maxpeak=max(maxpeak,peak)
         rec=dict(id=row['id'],split=value['split'],gold=gold,signature=sig,prompt_sha256=row['prompt_sha256'],baseline_scores=value['baseline_scores'],
