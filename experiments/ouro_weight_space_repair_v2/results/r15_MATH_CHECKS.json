@@ -1,0 +1,30 @@
+{
+  "status": "passed",
+  "checks": {
+    "zero_repair": true,
+    "identical_context": true,
+    "gauge_invariance": true,
+    "vocabulary_permutation": true,
+    "duplicate_reference": true
+  },
+  "nonidentifiability_witness": {
+    "status": "nonidentifiability_witness",
+    "vocabulary": 4,
+    "target_coordinate": 0,
+    "permuted_non_target_coordinates": [
+      1,
+      2
+    ],
+    "actual_R7_numpy_projected_logits_bit_equal": true,
+    "all_projection_statistic_arrays_bit_equal": true,
+    "max_projection_statistic_error": 0.0,
+    "canonical_reference_target_logprob_max_error": 0.0,
+    "context_change_two_worlds": [
+      0.21306172030715126,
+      -0.21306171754948616
+    ],
+    "claim": "Absolute non-target reference logits matter. Stored R7 scalar projection summaries and target likelihoods alone do not identify context-contrast retention.",
+    "scope": "Mathematical/canonical-FP64 likelihood equality; not a claim every possible GPU reduction yields identical serialized bits. Known weights plus re-execution can recover the missing information."
+  },
+  "Torch_CPU_NumPy_max_error": 6.904199434387692e-16
+}

@@ -1,0 +1,189 @@
+{
+  "status": "complete_frozen_development_association",
+  "n": 58,
+  "disagreements": 29,
+  "informative_questions": 22,
+  "protocol_sha256": "55d3a9e5ae454200d945e23c31b234f555d12ba37386dc1027b2912de68dc4a6",
+  "question_features_sha256": "58640b2a89d14b44bc92d11cf54a9f41c3020605f1bec007a618569d906362ba",
+  "metrics": {
+    "primary": {
+      "AUC": 0.5095238095238095,
+      "one_sided_exact_label_permutation_p": 0.47893212308846983,
+      "assignments": 170544,
+      "positive_means_rescue": true,
+      "ties_count_half": true
+    },
+    "static": {
+      "AUC": 0.5904761904761905,
+      "one_sided_exact_label_permutation_p": 0.267455905807299,
+      "assignments": 170544,
+      "positive_means_rescue": true,
+      "ties_count_half": true
+    },
+    "energy": {
+      "AUC": 0.6238095238095238,
+      "one_sided_exact_label_permutation_p": 0.18808049535603716,
+      "assignments": 170544,
+      "positive_means_rescue": true,
+      "ties_count_half": true
+    },
+    "old_margin": {
+      "AUC": 0.41904761904761906,
+      "one_sided_exact_label_permutation_p": 0.7325440941927011,
+      "assignments": 170544,
+      "positive_means_rescue": true,
+      "ties_count_half": true
+    }
+  },
+  "primary_stratified_bootstrap_95_CI": [
+    0.22380952380952382,
+    0.8095238095238095
+  ],
+  "paired_AUC_differences": {
+    "static": {
+      "point": -0.080952380952381,
+      "paired_bootstrap_95_CI": [
+        -0.4761904761904762,
+        0.3333333333333333
+      ]
+    },
+    "energy": {
+      "point": -0.11428571428571432,
+      "paired_bootstrap_95_CI": [
+        -0.5047619047619047,
+        0.2571428571428571
+      ]
+    },
+    "old_margin": {
+      "point": 0.09047619047619043,
+      "paired_bootstrap_95_CI": [
+        -0.33333333333333337,
+        0.5047619047619047
+      ]
+    }
+  },
+  "bootstrap_samples": 5000,
+  "bootstrap_seed": 2021,
+  "diagnostic_sign_groups": {
+    "positive": {
+      "n": 13,
+      "outcomes": {
+        "rescue": 3,
+        "both_wrong": 3,
+        "damage": 7
+      },
+      "net": -4
+    },
+    "nonpositive": {
+      "n": 16,
+      "outcomes": {
+        "rescue": 4,
+        "both_wrong": 4,
+        "damage": 8
+      },
+      "net": -4
+    }
+  },
+  "same_coverage_null": {
+    "approved": 13,
+    "disagreements": 29,
+    "observed_net": -4,
+    "exact_same_coverage_random_tail_p": 0.6555472521737068,
+    "distribution": [
+      {
+        "net": -13,
+        "probability": 1.5472140090945239e-06
+      },
+      {
+        "net": -12,
+        "probability": 4.693215827586723e-05
+      },
+      {
+        "net": -11,
+        "probability": 0.00046932158275867224
+      },
+      {
+        "net": -10,
+        "probability": 0.0025343365468968302
+      },
+      {
+        "net": -9,
+        "probability": 0.0095084552666907
+      },
+      {
+        "net": -8,
+        "probability": 0.026564942502948732
+      },
+      {
+        "net": -7,
+        "probability": 0.05796792006473543
+      },
+      {
+        "net": -6,
+        "probability": 0.10177573751823779
+      },
+      {
+        "net": -5,
+        "probability": 0.14558355497174014
+      },
+      {
+        "net": -4,
+        "probability": 0.17222224800912236
+      },
+      {
+        "net": -3,
+        "probability": 0.1685347212874471
+      },
+      {
+        "net": -2,
+        "probability": 0.13722963079863576
+      },
+      {
+        "net": -1,
+        "probability": 0.09232225992267025
+      },
+      {
+        "net": 0,
+        "probability": 0.05115605252069528
+      },
+      {
+        "net": 1,
+        "probability": 0.02300480306802223
+      },
+      {
+        "net": 2,
+        "probability": 0.008248507325284727
+      },
+      {
+        "net": 3,
+        "probability": 0.002292455423475053
+      },
+      {
+        "net": 4,
+        "probability": 0.0004667428927435147
+      },
+      {
+        "net": 5,
+        "probability": 6.498298838197e-05
+      },
+      {
+        "net": 6,
+        "probability": 4.744789627889874e-06
+      },
+      {
+        "net": 7,
+        "probability": 1.031476006063016e-07
+      }
+    ],
+    "scope": "Diagnostic zero-sign partition, not a released routing method"
+  },
+  "predefined_association_screen_passed": false,
+  "incremental_over_static_and_energy_screen_passed": false,
+  "reference_sign_agreement": 29,
+  "heldout_accessed": false,
+  "method_selected": false,
+  "controller_trained": false,
+  "GPU_worker_seconds": 176.76761937141418,
+  "all_original_GPU_worker_seconds": 17656.16580247879,
+  "interpretation": "Posthoc association in22 reused development questions. Forward target-free but candidate-prefix-conditioned. Measures M2-vs-Fixed context preference, not truth or mutual information; R6 undo confound remains. Controls are not winners. No new gate fitting or heldout execution authorized."
+}
