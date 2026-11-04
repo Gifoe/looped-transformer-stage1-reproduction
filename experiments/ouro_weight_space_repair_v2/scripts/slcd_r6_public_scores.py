@@ -48,11 +48,17 @@ def export():
     audit=read('results/slcd_R6_EXTERNAL_ACCEPTANCE.json')
     assert audit['status']=='passed' and audit['scope']=='combined'
     lock=read('configs/slcd_R6_EXTERNAL_LOCK.json');tasks={}
+    assert audit['external_lock_sha256']==sha('configs/slcd_R6_EXTERNAL_LOCK.json')
+    assert audit['final_lock_sha256']==lock['expected_final_sha']==sha('configs/slcd_R6_FINAL_LOCK.json')
     assert sha('scripts/slcd_r6_scores.py')==lock['ranking_source_sha256']
     for task,n in SIZES.items():
         receipt_path=f'results/slcd_r6_{task}_COMPLETE.json';receipt=read(receipt_path)
         assert receipt['status']=='complete' and receipt['n']==n
         assert sha(receipt['score_file'])==receipt['score_file_sha256']
+        assert sha(receipt_path)==audit['tasks'][task]['complete_sha256']
+        assert receipt['score_file_sha256']==audit['tasks'][task]['score_sha256']
+        assert receipt['external_lock_sha256']==audit['external_lock_sha256']
+        for p,value in receipt['artifact_sha256'].items():assert sha(p)==value==audit['artifact_sha256'][p]
         original=np.empty((n,8,4),dtype=np.float64);prior=np.empty_like(original)
         ranking=np.empty((n,5,4),dtype=np.float64)
         gold=np.empty(n,dtype=np.int16);lengths=np.empty((n,4),dtype=np.int32)
@@ -109,7 +115,11 @@ def pair_stats(good,base,rng):
 
 def verify():
     export_receipt=read('results/slcd_R6_PUBLIC_NUMERIC_EXPORT.json');lock=read('configs/slcd_R6_EXTERNAL_LOCK.json')
+    audit=read('results/slcd_R6_EXTERNAL_ACCEPTANCE.json');assert audit['status']=='passed' and audit['scope']=='combined'
+    assert export_receipt['source_sha256']==sha('scripts/slcd_r6_public_scores.py')
     assert export_receipt['external_lock_sha256']==sha('configs/slcd_R6_EXTERNAL_LOCK.json')
+    assert export_receipt['external_lock_sha256']==audit['external_lock_sha256']
+    assert audit['final_lock_sha256']==lock['expected_final_sha']==sha('configs/slcd_R6_FINAL_LOCK.json')
     assert export_receipt['external_acceptance_sha256']==sha('results/slcd_R6_EXTERNAL_ACCEPTANCE.json')
     assert sha('scripts/slcd_r6_scores.py')==lock['ranking_source_sha256']
     results={}
@@ -117,6 +127,10 @@ def verify():
         spec=export_receipt['tasks'][task];receipt=read(f'results/slcd_r6_{task}_COMPLETE.json')
         assert spec['n']==receipt['n']==n and receipt['score_file_sha256']==spec['source_score_file_sha256']
         assert spec['source_complete_sha256']==sha(f'results/slcd_r6_{task}_COMPLETE.json')
+        assert spec['source_complete_sha256']==audit['tasks'][task]['complete_sha256']
+        assert spec['source_score_file_sha256']==audit['tasks'][task]['score_sha256']
+        assert receipt['external_lock_sha256']==audit['external_lock_sha256']
+        for p,value in receipt['artifact_sha256'].items():assert sha(p)==value==audit['artifact_sha256'][p]
         assert list(READOUTS)==spec['readout_order'] and list(METHODS)==spec['method_order']
         for p,meta in spec['artifacts'].items():assert sha(p)==meta['sha256'] and (ROOT/p).stat().st_size==meta['bytes']
         numeric,meta=exported_paths(task)

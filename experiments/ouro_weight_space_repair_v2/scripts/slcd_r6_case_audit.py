@@ -93,6 +93,17 @@ def main():
     assert sum(q['r6_prior_projection']==q['gold'] for q in questions)==receipt['correct']==736
     counts={name:sum(q['transition_vs_A1']==name for q in questions) for name in ['unchanged','rescue','damage','wrong_to_wrong']}
     assert (counts['rescue'],counts['damage'])==(23,13)
+    patterns={}; rescues=[]; damage=[]
+    pattern_order=['native4','fixed','incumbent_A1','r6_prior_projection']
+    for q in questions:
+        good={name:q[name]==q['gold'] for name in pattern_order}
+        key=''.join('1' if good[name] else '0' for name in pattern_order)
+        patterns[key]=patterns.get(key,0)+1
+        if good['r6_prior_projection'] and not good['fixed']:rescues.append(good)
+        if good['fixed'] and not good['r6_prior_projection']:damage.append(good)
+    decomposition=dict(pattern_order=pattern_order,correctness_patterns=patterns,
+        R6_rescues_vs_fixed=dict(total=len(rescues),recover_fixed_damage=sum(x['native4'] for x in rescues),beyond_native4=sum(not x['native4'] for x in rescues)),
+        R6_damage_vs_fixed=dict(total=len(damage),undo_fixed_rescue=sum(not x['native4'] for x in damage),new_native4_damage=sum(x['native4'] for x in damage)))
     write_csv('results/slcd_r6_arc_candidate_scores.csv', candidates)
     write_csv('results/slcd_r6_arc_question_diagnostics.csv', questions)
     with (ROOT/'results/slcd_r6_arc_changed_cases.jsonl').open('w',encoding='utf8') as stream:
@@ -102,13 +113,14 @@ def main():
                  regions=[dict(region=name,n=sum(q['alpha_region']==name for q in questions),
                                rescues=sum(q['alpha_region']==name and q['transition_vs_A1']=='rescue' for q in questions),
                                damage=sum(q['alpha_region']==name and q['transition_vs_A1']=='damage' for q in questions)) for name in ['zero','interior','one']],
-                 frozen_primary=lock['primary'], source_sha256=digest('scripts/slcd_r6_case_audit.py'),
+                 correctness_decomposition=decomposition,frozen_primary=lock['primary'], source_sha256=digest('scripts/slcd_r6_case_audit.py'),
                  posthoc=True,method_selection=False,scope='Only selected frozen rule. No new model forwards, alternatives or causal hidden-state interventions.',
                  input_sha256={p:digest(p) for p in ['configs/slcd_R6_FINAL_LOCK.json','scripts/slcd_r6_scores.py','results/slcd_original_test.jsonl','results/slcd_r6_priors_test.jsonl','data/slcd_test.jsonl']})
     (ROOT/'results/slcd_R6_CASE_AUDIT.json').write_text(json.dumps(summary,indent=2)+'\n',encoding='utf8')
     lines=['# Frozen R6 ARC changed cases', '',
            'Posthoc decomposition of the selected frozen rule. These cases were not used to change coefficients or choose another method.',
            '', f"All changes versus A1: {counts}. Complete vectors: [candidate CSV](slcd_r6_arc_candidate_scores.csv); all changed cases: [JSONL](slcd_r6_arc_changed_cases.jsonl).", '',
+           'Of 35 rescues versus Fixed, 10 recover damage to an originally correct Native K4 answer and 25 correct questions both Native K4 and Fixed missed. Of 16 damages, 6 undo a useful Fixed rescue and 10 damage an answer both Native K4 and Fixed had correct. This is posthoc correctness accounting, not a causal mechanism.', '',
            'The score intervention establishes which ranking component flipped a decision. It does not identify a hidden-state causal mechanism, factual knowledge source, or calibrated probability.', '']
     # Show the smallest source-index rescue and damage, not the most favorable examples.
     for kind in ['rescue','damage']:

@@ -34,8 +34,43 @@
       "damage": 2
     }
   ],
+  "correctness_decomposition": {
+    "pattern_order": [
+      "native4",
+      "fixed",
+      "incumbent_A1",
+      "r6_prior_projection"
+    ],
+    "correctness_patterns": {
+      "1001": 6,
+      "0001": 12,
+      "0000": 403,
+      "1110": 7,
+      "0111": 32,
+      "1111": 664,
+      "1000": 16,
+      "0011": 13,
+      "0110": 5,
+      "1100": 3,
+      "0101": 3,
+      "1101": 2,
+      "1011": 4,
+      "0100": 1,
+      "0010": 1
+    },
+    "R6_rescues_vs_fixed": {
+      "total": 35,
+      "recover_fixed_damage": 10,
+      "beyond_native4": 25
+    },
+    "R6_damage_vs_fixed": {
+      "total": 16,
+      "undo_fixed_rescue": 6,
+      "new_native4_damage": 10
+    }
+  },
   "frozen_primary": "r6_prior_projection",
-  "source_sha256": "c7fc1017d905dc95816b5830c947327e3ba304b3b819bc7c5baade9ed5d6ae06",
+  "source_sha256": "3343a3a77d50918102bfd05ccdd53e1ff897b76a6ee6c3b3f9fe24c329c15231",
   "posthoc": true,
   "method_selection": false,
   "scope": "Only selected frozen rule. No new model forwards, alternatives or causal hidden-state interventions.",

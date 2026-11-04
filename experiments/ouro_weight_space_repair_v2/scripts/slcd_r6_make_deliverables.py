@@ -32,7 +32,8 @@ def csvout(path,rows):
 
 
 def table(rows,columns):
-    return '| '+' | '.join(columns)+' |\n| '+' | '.join(['---']*len(columns))+' |\n'+'\n'.join('| '+' | '.join(str(row.get(c,'')) for c in columns)+' |' for row in rows)+'\n'
+    def display(value):return f'{value:.4f}' if isinstance(value,float) else str(value)
+    return '| '+' | '.join(columns)+' |\n| '+' | '.join(['---']*len(columns))+' |\n'+'\n'.join('| '+' | '.join(display(row.get(c,'')) for c in columns)+' |' for row in rows)+'\n'
 
 
 METHODS=['native4','fixed','adaptive','incumbent_A1','r6_prior_projection']
@@ -120,6 +121,9 @@ def main():
         for p,value in result['artifact_sha256'].items():assert sha(p)==value
         tasks.append((title,result))
     audit=read('results/slcd_R6_EXTERNAL_ACCEPTANCE.json');assert audit['status']=='passed'
+    manifest_audit=read('results/slcd_R6_MANIFEST_AUDIT.json');assert manifest_audit['status']=='passed'
+    assert manifest_audit['external_lock_sha256']==sha('configs/slcd_R6_EXTERNAL_LOCK.json')
+    assert all(manifest_audit['tasks'][task]['exact_full_row_equality'] for task in ['hellaswag','openbookqa'])
     budget=read('logs/slcd_gpu_budget.json');assert budget['used_seconds']<=21600
     assert all(r['status'] in ['complete','failed'] for r in budget['runs'])
     assert abs(sum(r['gpu_worker_seconds'] for r in budget['runs'])-budget['used_seconds'])<1e-6
@@ -167,7 +171,7 @@ def main():
 
 ## Q3. 自主迭代发现了什么？
 
-初始正交/门控在小子集上上升，却未通过新增 517 题确认训练子集。R2–R4 的方向或信赖域操作也没有超过已有 A1；R5 直接全强度减先验没有通过 +7 训练门槛。R6 改用当前候选集合上、有界且不用标签的投影系数，才获得较一致的训练净纠错。
+初始正交/门控在小子集上上升，却未通过新增 517 题确认训练子集。R2/R4 的方向或信赖域操作没有超过已有 A1；R3 最好仅多1题，未获追加测试；R5 直接全强度减先验没有通过 +7 训练门槛。R6 改用当前候选集合上、有界且不用标签的投影系数，才获得较一致的训练净纠错。
 
 {table(followup,['round','best','correct','net','test'])}
 训练比较的 A1 分母均为 1093，正确 690。R2–R5 没有追加测试集候选评估；R3 最好只多 1 题，也未消耗全量测试。R1 五轮加用户目标扩展后的五轮共十轮，不能把整个历史写成只有五轮。推理公式不使用 gold、样本频率或答案出现次数。
@@ -205,6 +209,8 @@ score = A - alpha * e
 
 相对 Fixed：35纠错、16损害、净+19。相对 A1：23纠错、13损害、12错到错、1124不改答。alpha=0/interior/1 分别覆盖419/562/191题；interior纠错17损害11，alpha=1纠错6损害2。419题严格回退为 A1。均为冻结后的描述性分析，没有据此改系数。
 
+35个对Fixed的纠错中，10个恢复Native K4原本正确但被Fixed改错的答案，25个修复Native K4与Fixed都错的题。16个损害中，6个撤销Fixed的有益纠错，10个把Native K4与Fixed都正确的题改错。因此本数据上的净增19来自Native K4原错子集（25-6）；原正确子集上恢复与新增损害相抵（10-10）。这仍是结果分类，不是神经因果机制。
+
 源顺序第一个纠错案例是行星自转加快：A1 选“重力增强”，R6 改为“行星日变短”，gold margin 从 -0.053662 变为 +0.004431。第一个损害案例是实验改变车速：A1 正确选自变量，R6 改成因变量，margin 从 +0.015070 变为 -0.010395。全48改答案例及全部4687候选的 g/e/alpha/修正项保存在 [案例报告](slcd_R6_FAILURE_CASES.md)、[JSONL](slcd_r6_arc_changed_cases.jsonl)、[候选分数](slcd_r6_arc_candidate_scores.csv)。这些例子展示了排序翻转，并未识别隐藏状态因果链。
 
 ## Q7. 统计与计算成本是否支持结论？
@@ -222,11 +228,13 @@ R6 vs Fixed：+{primary_fixed['delta_pp']:.4f}pp，配对50,000次题级 bootstr
 
 两个任务均为全量官方 split：HellaSwag validation10042，OpenBookQA main test500；官方 lm-eval0.4.9 零样本 prompt，acc_norm，同一冻结公式，无重调。A1 是固定历史对照。HellaSwag 复用1956行原始主分数，重放其源顺序首/中/末三题的八种readout完全一致；其余8086主上下文为新推理，不能把三题parity写成1956题独立重放。OpenBookQA500主上下文均为新推理。先验使用经授权 ARC 缓存或原始模型新推理，无独立历史 prior baseline。
 
-完整候选在各上下文分别按官方 encode_pair 边界编码；连续文本相同、字符分母相同，target token IDs 可能因上下文边界不同而不同，不强制裁剪成相同 token 段。外部任务与 ARC25-shot 的绝对准确率不直接比较。配对统计是描述性结果，未声称多重比较校正后的全局显著性。
+另一项独立CPU检查从固定raw parquet与官方task定义重新渲染全部10542行，prompt、候选顺序、gold、请求边界和字符分母逐行完全相等，见 `slcd_R6_MANIFEST_AUDIT.json`。完整候选在各上下文分别按官方 encode_pair 边界编码；连续文本相同、字符分母相同，target token IDs 可能因上下文边界不同而不同，不强制裁剪成相同 token 段。外部任务与 ARC25-shot 的绝对准确率不直接比较。配对统计是描述性结果，未声称多重比较校正后的全局显著性。
 
 ## Q9. 是否继续，以及有哪些研究价值？
 
 ARC 的62.5%目标已完成。值得保留的是“晚期反转 + 部分答案先验校正”的可复核排序干预，以及几何/能量控制失败的完整证据。下一阶段是否投入应由外部完整结果和新、未反复使用的数据决定；不能凭训练切片或一次已暴露测试集的达标就宣称通用改进。当前不启动新的大规模训练、循环结构或隐藏状态因果推断。
+
+当前 R6 是针对给定候选集合的完整答案排名规则。它尚未实现或验证自由生成版本，不能将多项选择题上的提高直接推广为 GSM8K 自回归推理改善。候选集合变化对投影系数的影响是后续可证伪的问题，本轮没有据测试结果设计新的候选集合或再筛方法。
 
 投影和校准均有明确先例：[Adaptive Projected Guidance](https://arxiv.org/abs/2410.02416)、[PMI_DC / Surface Form Competition](https://aclanthology.org/2021.emnlp-main.564/)、[Calibrate Before Use](https://proceedings.mlr.press/v139/zhao21c.html)。本轮是对 recurrent guidance 的具体适配，未证明首创、优于80%可比方法或揭示新神经机制。R2–R5的其他主文献边界见 [相关工作核验](../astra/slcd_FOLLOWUP_RELATED_WORK.md)。
 
@@ -267,11 +275,11 @@ In this existing experiment directory, fetch every release part listed by the re
 
 CPU ARC reproduction from restored records: `python -B scripts/slcd_r6_case_audit.py`. This computes only the frozen selected rule, without a model. `python -B scripts/slcd_r6_overlap_sensitivity.py` runs explicitly posthoc sensitivity. External numeric reproduction: `python -B scripts/slcd_r6_public_scores.py verify`, which reconstructs all five methods from exact raw LL and checks paired statistics and every public candidate CSV row. Then rebuild the final report/figures with `python -B scripts/slcd_r6_make_deliverables.py --public-records`. Original full-input server audits require raw inputs not duplicated publicly.
 
-## Fresh inference
+## Original-server inference and full-input audit
 
 Use the unchanged helper/scorer code on this branch and the pinned model/environment in `env` and `models/Ouro-1.4B`. Keep all caches/temp files inside this existing folder. Every GPU job must use `scripts/slcd_supervise.py`, preserving its21600s ledger. `scripts/slcd_r6_prior_worker.py --split test` requires the frozen R6 final lock; `scripts/slcd_r6_final_chain.py` guards transitive hashes before and after evaluating ARC. The prior cache uses exact prefix/continuation/token IDs/model/source keys, never gold or frequencies.
 
-After the complete ARC acceptance gate, external preprocessing uses `scripts/slcd_r6_prepare_external.py` and fixed raw parquets/source receipts. The joint worker is `scripts/slcd_r6_external_worker.py --task hellaswag` (or openbookqa); controller `scripts/slcd_r6_external_chain.py` runs HellaSwag then OpenBookQA. Existing completion files validate/reuse immutable evidence; a changed source, model, input, package, or cache raises an error. Inspect failed/stale supervisors before any retry. Re-running on the completed server does not authorize resetting budgets or replacing the final method.
+After the complete ARC acceptance gate, external preprocessing uses `scripts/slcd_r6_prepare_external.py` and fixed raw parquets/source receipts. The joint worker is `scripts/slcd_r6_external_worker.py --task hellaswag` (or openbookqa); controller `scripts/slcd_r6_external_chain.py` runs HellaSwag then OpenBookQA. These exact commands are for the original server and require its immutable original main-score authority, raw inputs and caches, including the 1956-row old HellaSwag partial file. The public numeric package supports exact score/statistic reconstruction; it is not by itself the complete original-server runtime snapshot. Source-text-containing authorities remain on the server and are not fabricated or relabeled to bypass their hash locks. Existing completion files validate/reuse immutable evidence; a changed source, model, input, package, or cache raises an error. Inspect failed/stale supervisors before any retry. Re-running on the completed server does not authorize resetting budgets or replacing the final method.
 
 The root `FINAL_METHOD_LOCK.json`, original `slcd_*` R1 test tables/receipts, and `slcd_R1_REPORT_ZH.md` are historical R1 evidence. The current R6 lock is explicitly under configs. Do not rerun method selection or substitute R1 metadata for R6. Original V2 README/REPORT and model weights remain preserved.
 '''

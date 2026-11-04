@@ -4,6 +4,8 @@ Posthoc decomposition of the selected frozen rule. These cases were not used to 
 
 All changes versus A1: {'unchanged': 1124, 'rescue': 23, 'damage': 13, 'wrong_to_wrong': 12}. Complete vectors: [candidate CSV](slcd_r6_arc_candidate_scores.csv); all changed cases: [JSONL](slcd_r6_arc_changed_cases.jsonl).
 
+Of 35 rescues versus Fixed, 10 recover damage to an originally correct Native K4 answer and 25 correct questions both Native K4 and Fixed missed. Of 16 damages, 6 undo a useful Fixed rescue and 10 damage an answer both Native K4 and Fixed had correct. This is posthoc correctness accounting, not a causal mechanism.
+
 The score intervention establishes which ranking component flipped a decision. It does not identify a hidden-state causal mechanism, factual knowledge source, or calibrated probability.
 
 ## First rescue in source order: arc_challenge/test/Mercury_7175875
