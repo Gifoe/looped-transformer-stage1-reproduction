@@ -1,0 +1,30 @@
+{
+  "status": "verified_complete_ARC_snapshot",
+  "complete_experiment": false,
+  "external_cancelled_by_user": true,
+  "created_unix": 1793793174.0865955,
+  "primary": "M2_N0_token",
+  "release_source_sha256": "07da937ae06af8307a5d3ad0184ebd80496afc227b5c513c7a48fc9d8eadb7fa",
+  "correct": 740,
+  "n": 1172,
+  "final_method_lock_sha256": "de11c9641b3f9e08575a2806c6686b81051a7064566950e86cf6461550702afb",
+  "raw": {
+    "path": "results/r7_test_final.jsonl",
+    "bytes": 13502675,
+    "sha256": "8689490c94e055e9210d4bf77fb378acedebbb87b06652e148c6ed45fa3c49c2"
+  },
+  "compressed": {
+    "path": "artifacts/r7_arc_test_scores.jsonl.xz",
+    "bytes": 2672844,
+    "sha256": "b2ca24b73872f4be560e3162f1f8d628bbc981513d8686501649985c2ad46b9b"
+  },
+  "parts": [
+    {
+      "path": "artifacts/r7_arc_scores.part00.xz",
+      "bytes": 2672844,
+      "sha256": "b2ca24b73872f4be560e3162f1f8d628bbc981513d8686501649985c2ad46b9b"
+    }
+  ],
+  "restoration": "Concatenate listed part bytes in order, validate compressed SHA256, then lzma.decompress; validate raw SHA256 before using as results/r7_test_final.jsonl",
+  "contents": "All1172 raw numerical score rows with per-token scalar diagnostics; no corpus-wide vocabulary logits or raw hidden tensors"
+}
