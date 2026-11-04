@@ -1,0 +1,53 @@
+{
+  "status": "frozen_CPU_readout_oracle",
+  "source_sha256": {
+    "r21_common.py": "fd4e4c4b8b438b0ed243f6181ae6ff6e529bd3f85aa6800f9272aac8dbf47a25",
+    "r21_cpu_checks.py": "d74804dcc8ce1dd18a6fd3820f7850fcbb292d6ac1e8c39b014a5a990155edac",
+    "r21_lp.py": "b77d526b2f96e59c992d802115089e46134124f9bf63508775f2e90f00bc5a75",
+    "r21_prepare.py": "9f7245cee028f6877a1077af949dd8be865d4b2e8dc440a8abcd805ed303a26b",
+    "r21_readout_oracle.py": "aa18b700178e53d1f9f6883c2ba7311a914b4df1a922f638ab19351361a348ae",
+    "r21_supervise.py": "a313b47a3cd69b99f442e41589db3cb73cd660fc088c22a1e5f5699f16d85eb1"
+  },
+  "input_sha256": {
+    "results/slcd_r2_discovery_development.jsonl": "6409948df29559f331321e13dbb1990e3c9fb7d858eb95b4680be6d83459c7be",
+    "results/slcd_r2_selection_development.jsonl": "ac475ca80bf9f6d1d0b18b2ab214f14b02ab41411473c85f5425809cab94454a",
+    "results/r7_discovery_development.jsonl": "e83aa133169bf412a763f8c94b70b70a4e64675e9e6626e4a4c946f26b63b417",
+    "results/r7_selection_development.jsonl": "3fc918a2af658bd9f7252fd12c1345fbccd3ed8732d6648c41b1f80c5a0e8648",
+    "data/slcd_discovery.jsonl": "8d1d83a2fab5fa9de4df10ba21b1525605aa500c071f5469eea05f9420b9256d",
+    "data/slcd_selection.jsonl": "e196ca17fb9d5df6085fc9b6506668cd6c21debd1a770f600dda9f68273f51d2",
+    "r21_ASTRA_DESIGN.md": "f3b904df919909a013626b39b0395cf675b46b86f458da347b66c5c2b02cfd50",
+    "r21_ROOT_SCOPE_REVIEW.md": "4d44ee6c2e2b42f7e60deef75d7ec892740344034e96aa1281573bffabe777f5",
+    "results/r21_CPU_CHECKS.json": "2c3a720ffc9aac57b58074684f9af73df5a16759e977aca74719e53926b8594c",
+    "scripts/slcd_r2_worker.py": "81076515ebad08625985a7cfed86f0c7ff21cca7eefead4198eaad73e90f8f84",
+    "scripts/r7_worker.py": "423fe4b1ce0157010cc1296e8ecd710ce83641f1f4acfe7e28e472290779cf14",
+    "scripts/r7_inference.py": "9281aea93580a122f57767991b037267114ac965588b747990c7570099a672ae",
+    "scripts/runtime.py": "9ebbbdb2573a567cc6bb331a861490ebbdab85dd723a73036bf3813a7c8d85d1",
+    "results/slcd_r2_discovery_development_COMPLETE.json": "a505ab98f9255c43279f2a40253483663e7f29ae613bdd3aecf20ec69be24f6d",
+    "results/slcd_r2_selection_development_COMPLETE.json": "1ca15231f47e1f04d73fb9fa3046eea9ac22a7797c8b56b29f73620128eaa55b",
+    "results/r7_discovery_development_COMPLETE.json": "e504fb1c749f20c64642f29090f6b6354fb508e0a222334295e541f1ed3e622b",
+    "results/r7_selection_development_COMPLETE.json": "585a3c3339a489671f988ba0be872fb438b743a3c3160d0c65ccc1e9c0a39494"
+  },
+  "cohort": "Full discovery384 and selection192 manifest order; no subset/depth search",
+  "sets": {
+    "H6": "native1..6 normalized scores",
+    "H7": "H6 plus original R6 separate upperbound only"
+  },
+  "tau": 1e-08,
+  "numeric_certificate": "lambda=-ineqlin.marginals. Clip negatives, positive-denominator simplex normalization, raw negative residual retained. L=min(Aw), U=max(A.Tlambda), delta=64eps64*(d+m+2)*max(1,maxabsA). Bounds L-delta,U+delta cover FP normalization/evaluation. Max raw residual or abs(U-L)>tau ->uncertain; nonpositive denominator raises. Solver success not proof.",
+  "scaling": "per depth subtract first candidate, shared divisor=max(1,max_depth(maxscore-minscore))",
+  "categories": [
+    "discrete_reachable",
+    "only_convex_reachable",
+    "hull_unreachable",
+    "numerically_undetermined"
+  ],
+  "screen": "R6wrong H6 strict>=20%, each split>=10%, U<=1% all576; diagnostic only",
+  "CPU_wall_limit_seconds": 1200,
+  "GPU_worker_seconds": 0,
+  "existing_GPU_ledger_total": 18472.29435229581,
+  "heldout_access_authorized": false,
+  "oracle_gold_weights_not_deployable": true,
+  "solver": "scipy.linprog highs fixed defaults; solver exception stops incomplete; no tolerance/presolve search",
+  "reviewed_draft_sha256": "f71c7db6bc6c6ba6f0ab65992ca5a65449f7885e81f13da12c80a190e6fa42a9",
+  "approval": "Root/Astra final static PASS per r21_ROOT_FINAL_REVIEW.md; await independent public readback before sole CPU job"
+}
