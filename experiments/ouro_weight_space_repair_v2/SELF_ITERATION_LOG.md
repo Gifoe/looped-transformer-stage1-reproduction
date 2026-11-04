@@ -113,3 +113,33 @@ Observed development results: [{"method": "native4", "correct": 678, "net_correc
 Decision: All7 candidates below incumbent690; best687. No new test. Full server receipts remain there; this local observation is from completed-worker SSH snapshot.
 
 Next action: Switch information source to fixed answer-text domain prior; R5 six coefficient1 rules prepared, no job started because SSH route was lost.
+
+
+## Iteration 9 (R5, user target extension)
+
+Hypothesis: A content-free answer prior may isolate a reusable direction in early-loop guidance.
+
+Motivating evidence: R4 geometric/energy controls failed; test a different source of information.
+
+Modification/configuration: Six coefficient-one prior rules, original Answer: model likelihoods, train1093 only.
+
+Observed development results: [{"method": "native4", "correct": 678, "net_correct": -12}, {"method": "fixed", "correct": 682, "net_correct": -8}, {"method": "adaptive", "correct": 688, "net_correct": -2}, {"method": "incumbent_A1", "correct": 690, "net_correct": 0}, {"method": "r5_fixed_nativeprior", "correct": 605, "net_correct": -85}, {"method": "r5_fixed_matchedprior", "correct": 531, "net_correct": -159}, {"method": "r5_a1_matchedprior", "correct": 512, "net_correct": -178}, {"method": "r5_a1_lateprior", "correct": 678, "net_correct": -12}, {"method": "r5_a1_earlyprior", "correct": 691, "net_correct": 1}, {"method": "r5_a1_guidanceprior", "correct": 650, "net_correct": -40}]
+
+Decision: Best early-prior rule691 versus incumbent690; none meets +7 guard. No new test.
+
+Next action: Evaluate four partial/adaptive prior corrections with the same saved original scores and priors.
+
+
+## Iteration 10 (R6, user target extension)
+
+Hypothesis: Only the aligned component of a no-question guidance prior should be removed.
+
+Motivating evidence: R5 full-strength subtraction failed; projection provides a label-free per-question bounded coefficient.
+
+Modification/configuration: Four frozen rules: quarter, half, constrained projection, matched magnitude. No further validation access.
+
+Observed development results: [{"method": "native4", "correct": 678, "net_correct": -12}, {"method": "fixed", "correct": 682, "net_correct": -8}, {"method": "adaptive", "correct": 688, "net_correct": -2}, {"method": "incumbent_A1", "correct": 690, "net_correct": 0}, {"method": "r6_prior_quarter", "correct": 690, "net_correct": 0}, {"method": "r6_prior_half", "correct": 698, "net_correct": 8}, {"method": "r6_prior_projection", "correct": 705, "net_correct": 15}, {"method": "r6_matched_magnitude", "correct": 692, "net_correct": 2}]
+
+Decision: Projection705 versus incumbent690, +15 (22/7); all five reused folds positive. Freeze one primary before full test. Full ARC736: +19 versus Fixed, +10 versus A1; no test-based replacement.
+
+Next action: Stop ARC method search; evaluate frozen five-method comparison on full HellaSwag and OpenBookQA, then publish.
