@@ -1,0 +1,14 @@
+{
+  "schema":"slcd_r6_methods_v1",
+  "status":"fixed_before_R6_candidate_feedback",
+  "inputs":"FP64 character-normalized complete-answer scores in identical choice order; no gold or occurrence frequencies",
+  "definitions":{"A":"Fixed_ctx + (K4_ctx - K5_ctx)","g":"Fixed_ctx - K4_ctx","e":"Fixed_prior - K4_prior","center":"subtract arithmetic mean across this question's answer choices","alpha":"clip(dot(center(g),center(e))/dot(center(e),center(e)),0,1); zero denominator -> 0","rho":"norm(center(g)-alpha*center(e))/norm(center(g)); zero guidance norm -> 1; numerical clip [0,1]"},
+  "methods":{
+    "r6_prior_quarter":{"formula":"A - 0.25*e","coefficient":0.25},
+    "r6_prior_half":{"formula":"A - 0.5*e","coefficient":0.5},
+    "r6_prior_projection":{"formula":"A - alpha*e","coefficient_rule":"constrained projection"},
+    "r6_matched_magnitude":{"formula":"A + (rho-1)*g","coefficient_rule":"matched centered guidance norm"}
+  },
+  "limits":"Choice-set-dependent score transformation, not vocabulary projection, normalized probability, calibration guarantee, or causal proof. Clipped projection need not be orthogonal. All training folds have previously been used for development; no new blind holdout. No coefficient scan.",
+  "context":"Original contextual 25-shot scores and fixed Answer: auxiliary prior retained unchanged. Only these four score rules are added."
+}
