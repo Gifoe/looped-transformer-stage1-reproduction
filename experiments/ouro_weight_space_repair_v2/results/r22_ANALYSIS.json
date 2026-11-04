@@ -1,0 +1,366 @@
+{
+  "status": "complete_label_association",
+  "n": 576,
+  "results": {
+    "discovery": {
+      "status": "complete",
+      "rescue_questions": 38,
+      "damage_questions": 129,
+      "rescue_pairs": 38,
+      "damage_pairs": 144,
+      "AUC": {
+        "V": 0.5427376580987352,
+        "C_energy": 0.6328029375764994,
+        "C_margin": 0.7158302733578131,
+        "C_log_tokens": 0.5873113015095879,
+        "C_neg_log_tokens": 0.41268869849041206
+      },
+      "CI95": {
+        "V": [
+          0.43798194614443076,
+          0.6491228070175438
+        ],
+        "C_energy": [
+          0.5287612199102406,
+          0.7306201550387597
+        ],
+        "C_margin": [
+          0.6253569971440227,
+          0.8002855977152181
+        ],
+        "C_log_tokens": [
+          0.48648383312933485,
+          0.6838025295797632
+        ],
+        "C_neg_log_tokens": [
+          0.3161974704202366,
+          0.513516166870665
+        ]
+      },
+      "paired_difference": {
+        "C_energy": {
+          "point": -0.09006527947776422,
+          "CI95": [
+            -0.20348837209302317,
+            0.026726336189310404
+          ]
+        },
+        "C_margin": {
+          "point": -0.17309261525907793,
+          "CI95": [
+            -0.31884944920440617,
+            -0.026514687882497032
+          ]
+        },
+        "C_log_tokens": {
+          "point": -0.04457364341085268,
+          "CI95": [
+            -0.19329100367197052,
+            0.1102623929008567
+          ]
+        },
+        "C_neg_log_tokens": {
+          "point": 0.13004895960832313,
+          "CI95": [
+            -0.007498215014279895,
+            0.26963739290085675
+          ]
+        }
+      },
+      "bootstrap_repetitions": 10000,
+      "seed": 2021,
+      "question_weight_each_class": 1,
+      "paired_same_indices_all_signals": true
+    },
+    "selection": {
+      "status": "complete",
+      "rescue_questions": 16,
+      "damage_questions": 65,
+      "rescue_pairs": 16,
+      "damage_pairs": 72,
+      "AUC": {
+        "V": 0.47644230769230766,
+        "C_energy": 0.5855769230769231,
+        "C_margin": 0.6831730769230769,
+        "C_log_tokens": 0.49230769230769234,
+        "C_neg_log_tokens": 0.5076923076923077
+      },
+      "CI95": {
+        "V": [
+          0.32884615384615384,
+          0.6269230769230769
+        ],
+        "C_energy": [
+          0.4394230769230769,
+          0.7259615384615385
+        ],
+        "C_margin": [
+          0.520673076923077,
+          0.8303004807692307
+        ],
+        "C_log_tokens": [
+          0.3317307692307693,
+          0.6490384615384616
+        ],
+        "C_neg_log_tokens": [
+          0.3509615384615385,
+          0.6682692307692308
+        ]
+      },
+      "paired_difference": {
+        "C_energy": {
+          "point": -0.10913461538461544,
+          "CI95": [
+            -0.297127403846154,
+            0.08461538461538454
+          ]
+        },
+        "C_margin": {
+          "point": -0.20673076923076927,
+          "CI95": [
+            -0.4139423076923077,
+            0.004807692307692348
+          ]
+        },
+        "C_log_tokens": {
+          "point": -0.01586538461538467,
+          "CI95": [
+            -0.2221153846153846,
+            0.18365384615384622
+          ]
+        },
+        "C_neg_log_tokens": {
+          "point": -0.03125,
+          "CI95": [
+            -0.2591466346153847,
+            0.20480769230769225
+          ]
+        }
+      },
+      "bootstrap_repetitions": 10000,
+      "seed": 2021,
+      "question_weight_each_class": 1,
+      "paired_same_indices_all_signals": true
+    },
+    "combined": {
+      "status": "complete",
+      "rescue_questions": 54,
+      "damage_questions": 194,
+      "rescue_pairs": 54,
+      "damage_pairs": 216,
+      "AUC": {
+        "V": 0.5208094692630775,
+        "C_energy": 0.6152634593356243,
+        "C_margin": 0.7051832760595648,
+        "C_log_tokens": 0.560877243222604,
+        "C_neg_log_tokens": 0.43912275677739593
+      },
+      "CI95": {
+        "V": [
+          0.4346589824360442,
+          0.6073417812142038
+        ],
+        "C_energy": [
+          0.5320220026727757,
+          0.6974513172966779
+        ],
+        "C_margin": [
+          0.6264318442153493,
+          0.7798790091638027
+        ],
+        "C_log_tokens": [
+          0.4771376240931652,
+          0.6426355479190529
+        ],
+        "C_neg_log_tokens": [
+          0.35736445208094686,
+          0.5228623759068345
+        ]
+      },
+      "paired_difference": {
+        "C_energy": {
+          "point": -0.09445399007254685,
+          "CI95": [
+            -0.1917239404352804,
+            0.0030068728522338883
+          ]
+        },
+        "C_margin": {
+          "point": -0.1843738067964873,
+          "CI95": [
+            -0.3016991218022145,
+            -0.0639020141275297
+          ]
+        },
+        "C_log_tokens": {
+          "point": -0.04006777395952654,
+          "CI95": [
+            -0.15898303264604824,
+            0.0799756586483389
+          ]
+        },
+        "C_neg_log_tokens": {
+          "point": 0.08168671248568155,
+          "CI95": [
+            -0.03704240645284459,
+            0.19936223272241316
+          ]
+        }
+      },
+      "bootstrap_repetitions": 10000,
+      "seed": 2021,
+      "question_weight_each_class": 1,
+      "paired_same_indices_all_signals": true
+    }
+  },
+  "coverage": {
+    "discovery": {
+      "all": {
+        "rescue": {
+          "questions": 38,
+          "pairs": 38
+        },
+        "damage": {
+          "questions": 129,
+          "pairs": 144
+        },
+        "background": {
+          "questions": 58,
+          "pairs": 62
+        }
+      },
+      "equal_tokens": {
+        "rescue": {
+          "questions": 15,
+          "pairs": 15
+        },
+        "damage": {
+          "questions": 63,
+          "pairs": 65
+        },
+        "background": {
+          "questions": 25,
+          "pairs": 25
+        }
+      },
+      "both_single": {
+        "rescue": {
+          "questions": 4,
+          "pairs": 4
+        },
+        "damage": {
+          "questions": 15,
+          "pairs": 15
+        },
+        "background": {
+          "questions": 4,
+          "pairs": 4
+        }
+      }
+    },
+    "selection": {
+      "all": {
+        "rescue": {
+          "questions": 16,
+          "pairs": 16
+        },
+        "damage": {
+          "questions": 65,
+          "pairs": 72
+        },
+        "background": {
+          "questions": 31,
+          "pairs": 32
+        }
+      },
+      "equal_tokens": {
+        "rescue": {
+          "questions": 5,
+          "pairs": 5
+        },
+        "damage": {
+          "questions": 30,
+          "pairs": 34
+        },
+        "background": {
+          "questions": 14,
+          "pairs": 14
+        }
+      },
+      "both_single": {
+        "rescue": {
+          "questions": 2,
+          "pairs": 2
+        },
+        "damage": {
+          "questions": 7,
+          "pairs": 9
+        },
+        "background": {
+          "questions": 5,
+          "pairs": 5
+        }
+      }
+    },
+    "combined": {
+      "all": {
+        "rescue": {
+          "questions": 54,
+          "pairs": 54
+        },
+        "damage": {
+          "questions": 194,
+          "pairs": 216
+        },
+        "background": {
+          "questions": 89,
+          "pairs": 94
+        }
+      },
+      "equal_tokens": {
+        "rescue": {
+          "questions": 20,
+          "pairs": 20
+        },
+        "damage": {
+          "questions": 93,
+          "pairs": 99
+        },
+        "background": {
+          "questions": 39,
+          "pairs": 39
+        }
+      },
+      "both_single": {
+        "rescue": {
+          "questions": 6,
+          "pairs": 6
+        },
+        "damage": {
+          "questions": 22,
+          "pairs": 24
+        },
+        "background": {
+          "questions": 9,
+          "pairs": 9
+        }
+      }
+    }
+  },
+  "all54_R21_rescue_questions_present": true,
+  "degenerate_positions": 0,
+  "total_positions": 13417,
+  "degenerate_fraction": 0.0,
+  "screens": {
+    "power": true,
+    "split_AUC": false,
+    "combined_CI_lower_above_half": false,
+    "all_four_control_differences_CI_positive": false
+  },
+  "worth_further_research": false,
+  "interpretation_status": "specific_hypothesis_gate_failed",
+  "protocol_sha256": "2dad20de948fbe73411de89fc5544168e279236c24e1bd30862448cd8742b09d",
+  "features_sha256": "0749ea1c489c7f9a32be51d15b6e297b937b025538314f5f8522488aa8aeafdf",
+  "controls_ineligible": true,
+  "scope": "Repeated-development association, not causal/deployable; coverage subgroups descriptive only"
+}
