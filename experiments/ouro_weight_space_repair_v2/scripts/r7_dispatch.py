@@ -77,6 +77,8 @@ def work():
     if not (ROOT/final_path).exists():
         frozen=read(candidate_path).copy();frozen.update(status='frozen_before_R7_test',created_unix=time.time(),
             primary=primary,test_access_authorized=True,candidate_lock_sha256=sha(candidate_path),
+            external_reference_rules_sha256=sha('configs/r7_EXTERNAL_REFERENCE_RULES.json'),
+            pretest_github_commit=read('configs/r7_GITHUB_PREREGISTRATION.json')['commit'],
             validation_lock_sha256=sha(vpath),validation_results_sha256=sha('results/r7_validation_results.csv'),
             validation_ranking=validation_rank(val,train,candidates),
             primary_definition=read('configs/r7_METHODS.json')['methods'][primary],

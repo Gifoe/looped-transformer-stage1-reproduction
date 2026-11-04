@@ -13,7 +13,7 @@ def main():
             if not p.is_file() or not p.name.startswith('r7_') or p.suffix not in ['.py','.json','.jsonl','.csv','.md','.png','.pdf','.out','.err']:continue
             # SSH observations and launch requests are transport records, not
             # experiment execution logs. Keep actual worker/coordinator outputs.
-            if folder=='logs' and p.suffix=='.json' and not (p.name.endswith('_SUPERVISOR.json') or p.name in ['r7_gpu_budget.json','r7_PRESERVATION_BASELINE.json','r7_PIPELINE_STATUS.json','r7_AFTER_ARC_STATUS.json']):continue
+            if folder=='logs' and p.suffix=='.json' and not (p.name.endswith('_SUPERVISOR.json') or p.name in ['r7_gpu_budget.json','r7_PRESERVATION_BASELINE.json','r7_PIPELINE_STATUS.json','r7_AFTER_ARC_STATUS.json','r7_COORDINATOR_RESTART.json']):continue
             if folder=='logs' and p.name in ['r7_after_arc_launcher.out','r7_after_arc_launcher.err']:continue
             files.append(p)
     files.extend(ROOT/name for name in ['r7_TASK_ORIGINAL.md','r7_README.md','r7_SELF_ITERATION_LOG.md','data/DATA_SOURCE_NOTICE.txt'])

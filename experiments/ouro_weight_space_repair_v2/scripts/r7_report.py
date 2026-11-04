@@ -166,6 +166,8 @@ N0为字面量Answer:；N1/N2保留原25例和分隔符，仅通过结构化ques
 
 表中均为完整train1093上的配对比较，属于开发证据。M2对R6同时改变token粒度、系数估计和重新归一化，因此不能把全部差值归因于单一因素；桥接控制固定整题alpha后在token空间重新归一化，提供中间对照。M3对M2比较引入N1/N2的稳健参考作用。{direction_note}
 
+若冻结赢家为M1，现有匹配幅度及置乱控制定义在M3的token空间，不能据此隔离M1的候选级方向机制。M1相对R6仅支持这套多参考候选公式的配对效果，不能把其提升归因于更细的token校正。
+
 M1是候选分数空间投影；M2/M3先在完整词表加权内积下解析投影，再完整log_softmax，最后才累加并除一次字符长度。两类归一化不同，不能相互替代。r7_selectivity_diagnostics.csv将实际目标logit位移、log-partition变化和目标log概率变化分开，检查三者恒等式；不把已读标签用于系数。
 
 ![Development](r7_development_ablation.png)
@@ -177,6 +179,8 @@ M1是候选分数空间投影；M2/M3先在完整词表加权内积下解析投�
 新增GPU-worker累计{ledger['used_seconds']:.3f}秒（{ledger['used_seconds']/3600:.4f}小时），包含加载、失败尝试、参考、head和导出；硬上限21600秒，开发阶段预留5400秒。旧预算未修改；完整历史ledger与可识别缓存采集条目单列，不宣称历史缓存免费，也不把包含其他工作的总额误当缓存专属成本。
 
 独立部署测量使用真实主上下文K5与参考K4，不使用历史K6状态、KV或诊断hooks/CPU诊断数组导出。12道固定discovery题与已完成开发分数逐候选精确一致；模型加载{profile['load_seconds']:.3f}秒，首题{profile['first_question_seconds']:.3f}秒，后11题均值{profile['warm_mean_question_seconds']:.3f}秒/题。PyTorch峰值分配{profile['peak_cuda_allocated_bytes']/2**30:.3f}GiB；GB10为统一内存，此值不是独立显存总占用。参考前缀缓存未获批准，缓存预热收益不适用。
+
+同一12题独立R6执行的后11题均值为{profile['R6_warm_mean_question_seconds']:.3f}秒/题，新方法为其{profile['warm_time_ratio_vs_R6']:.3f}倍。两组按顺序测量，结果仅代表该小样本部署路径，不外推为硬件通用速度结论。
 
 ## 研究结论
 
@@ -193,6 +197,8 @@ Primary **{primary}**, complete ARC-Challenge **{arc['correct']}/1172**; R6 **73
 All work remains in the original V2 directory; new files user7_ names. Read [Chinese report](results/r7_REPORT_ZH.md), [locked method](configs/r7_FINAL_METHOD_LOCK.json), [test metrics](results/r7_arc_full_test_results.csv), [paired transitions](results/r7_paired_transitions.csv), [compute accounting](results/r7_compute_costs.csv).
 
 Replay completed numerical records onCPU: `python -B scripts/r7_evaluate.py --stage arc`. Rebuilding scores requires the original pinned model, fixed manifests and environment from the base repository. Inference must use the original no-KV/no-mask BF16 path; the historical KV optimization failed parity. `r7_dispatch.py` refuses duplicate failed attempts and never selects an alternate test winner. `r7_deploy.py` separately profiles exact5/4 deployment against development scores.
+
+The branch also carries the unchanged inheritedR6 multipart release. Restore its inputs with `python -B scripts/slcd_r6_restore_records.py`, then verify/restore new numerical evidence with `python -B scripts/r7_restore.py`. `--verify-only` checks every indexed byte without overwriting. Historical raw states are not required by `scripts/r7_replay_fresh.py`, which reruns the frozen formula from the original model and manifests and compares every scored vector to archived results.
 
 Inherited ARC question/rendered-demo data retain [CC BY-SA4.0 attribution](data/DATA_SOURCE_NOTICE.txt). Model weights, environment, credentials, transport and raw historical hidden-state tensors are excluded from the public evidence archive; historical states remain regenerable under their SHA authorities. Dataset histories were already exposed; no blind-test claim.
 ''')

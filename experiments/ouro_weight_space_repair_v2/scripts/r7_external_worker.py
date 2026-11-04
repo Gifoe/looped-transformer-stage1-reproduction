@@ -13,7 +13,19 @@ def main():
     ap=argparse.ArgumentParser();ap.add_argument('--task',choices=['hellaswag','openbookqa'],required=True);args=ap.parse_args();task=args.task;start=time.time()
     lock=read('configs/r7_EXTERNAL_LOCK.json');primary=lock['primary'];spec=lock['tasks'][task]
     arc=read('results/r7_ARC_COMPLETE.json');assert arc['n']==1172 and arc['correct']>736 and sha('results/r7_ARC_COMPLETE.json')==lock['arc_complete_sha256']
-    assert read('results/r7_TEST_ACCEPTANCE.json')['status']=='passed' and sha('results/r7_TEST_ACCEPTANCE.json')==lock['acceptance_sha256']
+    accept=read('results/r7_TEST_ACCEPTANCE.json');final=read('configs/r7_FINAL_METHOD_LOCK.json')
+    assert accept['status']=='passed' and sha('results/r7_TEST_ACCEPTANCE.json')==lock['acceptance_sha256']
+    assert accept['n']==1172 and accept['max_R6_candidate_score_abs_error']==0. and accept['N0_prior_sums_exact']
+    assert accept['final_method_lock_sha256']==arc['final_method_lock_sha256']==lock['final_method_lock_sha256']
+    assert accept['new_score_file_sha256']==arc['score_file_sha256']==sha('results/r7_test_final.jsonl')
+    assert arc['primary']==final['primary']==primary
+    assert sha('configs/r7_EXTERNAL_REFERENCE_RULES.json')==final['external_reference_rules_sha256']==lock['pretest_reference_rules_sha256']
+    oldaudit=read('results/slcd_R6_EXTERNAL_ACCEPTANCE.json');assert oldaudit['status']=='passed' and oldaudit['scope']=='combined'
+    assert sha('results/slcd_R6_EXTERNAL_ACCEPTANCE.json')==lock['old_external_acceptance_sha256']
+    assert sha('artifacts/slcd_R6_RELEASE_INDEX.json')==lock['old_release_index_sha256']
+    assert read('artifacts/slcd_R6_RELEASE_INDEX.json')['external_acceptance_sha256']==lock['old_external_acceptance_sha256']
+    assert sha(f'results/slcd_r6_{task}_COMPLETE.json')==spec['old_receipt_sha256']==oldaudit['tasks'][task]['complete_sha256']
+    assert spec['old_scores_sha256']==oldaudit['tasks'][task]['score_sha256']
     assert sha('configs/r7_FINAL_METHOD_LOCK.json')==lock['final_method_lock_sha256']
     import importlib.metadata
     for name,value in lock['package_versions'].items():assert importlib.metadata.version(name)==value
@@ -41,7 +53,9 @@ def main():
     head_before=tensor_sha256(model.lm_head.weight);norm_before=tensor_sha256(model.model.norm.weight)
     assert head_before==read('results/slcd_SOURCE_AUDIT.json')['original_head_raw_tensor_sha256']
     prompts=[spec['references'][key] for key in ['N0','N1','N2']]
-    probe_ids={data[0]['id'],data[len(data)//2]['id'],data[-1]['id']};replayed=[];max_peak=0
+    probe_ids={data[0]['id'],data[len(data)//2]['id'],data[-1]['id']}
+    replayed=[r['id'] for r in done.values() if r.get('independent_probe_passed')]
+    assert set(replayed)<=probe_ids;max_peak=0
     for row in data:
         if row['id'] in done:continue
         check_budget(45);begin=time.time();historical=old[row['id']];expected=baseline_vectors(historical['original_methods'],historical['prior_methods'])
@@ -85,12 +99,14 @@ def main():
         record=dict(id=row['id'],gold=row['gold'],signature=signature,prompt_sha256=row['prompt_sha256'],choice_char_lengths=row['choice_char_lengths'],
             predictions=predictions,correct={name:pred==row['gold'] for name,pred in predictions.items()},
             **inferred,elapsed_seconds=time.time()-begin,peak_cuda_allocated_bytes=peak)
+        record['independent_probe_passed']=primary=='M1_multi_candidate' and row['id'] in probe_ids
         with (ROOT/output).open('a',encoding='utf8') as stream:stream.write(json.dumps(record,allow_nan=False)+'\n');stream.flush()
         done[row['id']]=record
         if len(done)%50==0 or len(done)==len(data):
             progress=dict(task=task,completed=len(done),target=len(data),elapsed_seconds=time.time()-start)
             save(f'results/r7_{task}_PROGRESS.json',progress);print(json.dumps(progress),flush=True)
     assert len(done)==len(data)==spec['n']
+    if primary=='M1_multi_candidate':assert set(replayed)==probe_ids,'All three independent old-LL probes must survive completion/resume'
     assert sum(r['correct']['M0_R6'] for r in done.values())=={'hellaswag':7259,'openbookqa':219}[task]
     assert tensor_sha256(model.lm_head.weight)==head_before and tensor_sha256(model.model.norm.weight)==norm_before
     from r7_evaluate import paired

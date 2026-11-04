@@ -19,7 +19,10 @@ def main():
     from r7_core import baseline_vectors
     lock=read('configs/r7_FINAL_METHOD_LOCK.json');primary=lock['primary']
     for n,value in lock['inference_source_sha256'].items():assert sha('scripts/'+n)==value
-    saved={r['id']:r for r in jsonlines('results/r7_discovery_development.jsonl')}
+    receipt=read('results/r7_discovery_development_COMPLETE.json')
+    assert receipt['status']=='complete' and sha('results/r7_discovery_development.jsonl')==receipt['score_file_sha256']
+    saved={r['id']:r for r in jsonlines('results/r7_discovery_development.jsonl')};assert len(saved)==receipt['n']==384
+    assert all(r['signature']==receipt['signature'] for r in saved.values())
     data=gated_rows('discovery')[:12];start=time.time();tok,model=load_model();scorer=OuroCachedScorer(model,5)
     torch.cuda.synchronize();load_seconds=time.time()-start
     assert not any(m._forward_hooks or m._forward_pre_hooks for m in model.modules())
@@ -60,6 +63,23 @@ def main():
         error=float(np.max(np.abs(score-np.asarray(saved[row['id']]['method_scores'][primary]))));assert error==0.,('Deployment parity',row['id'],error)
         torch.cuda.synchronize();records.append(dict(id=row['id'],seconds=time.time()-begin,timing=timing,
             peak_cuda_allocated_bytes=int(torch.cuda.max_memory_allocated()),score_max_error=error,alignment_fallback=failed))
+    # Same fixed12 questions, independent original5/4 R6 execution. This is
+    # timing only; no score here can alter the frozen primary or test gate.
+    def r6_sample(row):
+        original={};prior={}
+        for request in row['request_pairs']:
+            pair=encode_pair(tok,*request);rp=encode_pair(tok,'Answer:',request[1])
+            q=head_logits(model,forward_states(scorer,pair,5));p=head_logits(model,forward_states(scorer,rp,4))
+            for key,value in original_sums(q,pair[1]).items():original.setdefault(key,[]).append(value)
+            for key,value in original_sums(p,rp[1]).items():prior.setdefault(key,[]).append(value)
+        lengths=np.asarray(row['choice_char_lengths'])
+        return baseline_vectors(methods_from_sums(original,lengths),methods_from_sums(prior,lengths))['M0_R6']
+    r6_records=[]
+    for row in data:
+        check_budget(30);torch.cuda.synchronize();begin=time.time();score=r6_sample(row);torch.cuda.synchronize()
+        assert np.array_equal(score,np.asarray(saved[row['id']]['baseline_scores']['M0_R6']))
+        r6_records.append(dict(id=row['id'],seconds=time.time()-begin,score_max_error=0.))
+    r6_warm=float(np.mean([r['seconds'] for r in r6_records[1:]]))
     import resource
     save('results/r7_DEPLOYMENT_PROFILE.json',dict(status='complete',n=len(data),primary=primary,
         source_sha256=sha('scripts/r7_deploy.py'),final_method_lock_sha256=sha('configs/r7_FINAL_METHOD_LOCK.json'),
@@ -68,6 +88,9 @@ def main():
         load_seconds=load_seconds,first_question_seconds=records[0]['seconds'],
         warm_mean_question_seconds=float(np.mean([r['seconds'] for r in records[1:]])),
         warm_median_question_seconds=float(np.median([r['seconds'] for r in records[1:]])),
+        R6_warm_mean_question_seconds=r6_warm,R6_records=r6_records,
+        warm_time_ratio_vs_R6=float(np.mean([r['seconds'] for r in records[1:]]))/r6_warm,
+        timing_design='Sequential blocks on identical12 questions, first question excluded from both warm means; local deployment timing, not a hardware-wide speed guarantee',
         peak_cuda_allocated_bytes=max(r['peak_cuda_allocated_bytes'] for r in records),
         host_maxrss_kib=resource.getrusage(resource.RUSAGE_SELF).ru_maxrss,
         memory_semantics='PyTorch allocator bytes on GB10 unified memory, not a discrete-VRAM claim',records=records))
