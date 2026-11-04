@@ -1,0 +1,14 @@
+# R20 final result: complete24, scientific gate failed
+
+E2 completed the original24question cohort from scratch. The clean supervisor exited0 without timeout/overrun; all parameter hashes before/after matched. Before the first effect analysis, the frozen label-free comparator passed ALL raw fields strictly exactly against both v0's19 and E1's23 records. Only after both receipts passed was the original full24 analyzer run once.
+
+Primary13/24, R614/24, old native-Fisher/N0 M214/24, Fixed13/24, A113/24. The demo ablation control B and raw-demo direction norm-matched control C each scored13/24; shuffled correction D scored12/24. Relative to R6:0 rescues,1 damage, net-1, exact two-sided McNemar p=1. The one old R6-only-vs-Fixed success was not retained. Against B and C each:1 rescue,1 damage, net0. Primary predictions were identical to Fixed and A1 on all24 questions (paired0/0); this pilot identifies no question-V benefit. The primary did not exceed the original reference or the two substantive controls and failed the preregistered scientific screen. No control is promoted; stop this method without tuning span/layer/loop/strength/sign/metric or expanding datasets.
+
+All native main/N0/M2 exact score/alpha parity checks passed, as did first off-hook/post-unload Q1/Q4 and active B1 independent-depth1 full-vocabulary equality, original HF input/kwargs/backend audit, layer/loop hook checks and full parameter-hash equality. C/D norm maximum error2.7755575615628914e-16, unmatched0. Allocator peak2,981,758,464bytes; GB10 unified memory means this is not a full system memory measurement. Cached-main pilot timing is not independent deployment throughput.
+
+Execution history is retained transparently: v0 incomplete19/24 cost168.55203619925305seconds; E1 incomplete23/24 cost169.64143291302025seconds; E2 complete24 cost174.04737561708316seconds. v0/E1 did not reach final parameter-hash/allocator receipts and their partial effects were never analyzed. E1 and E2 were explicit public revisions to earlier execution promises; the original180second allocation was inadequate. E2's300second limit was informed by execution costs, not accuracy. It does not establish a300second deployment bound.
+
+Twelve ledgers, used_seconds counted once each:18472.29435229581/21600seconds, remaining3127.7056477041915seconds. All old sources, locks, ledgers and raw records remain unchanged. No confirmation517/validation299/test question records or external benchmarks were accessed; the two other datasets remain paused. This reused development24 is exploratory, not independent generalization evidence. The wider research goal remains unachieved.
+
+Definition commit d005be47bcfaf0b4a7c74288bd9af667ef8c04f5. Protocol SHA256 b30ac418aa9c1837778e4877c988aa724012c68ec280ef3ea3d6e6917a98a311. Complete score SHA256 fdaf05aeb6ff6bc1b57c3e7ceeea8224c30b3ad2150594a643254793b3d9f189.
+
