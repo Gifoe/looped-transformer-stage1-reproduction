@@ -1,0 +1,109 @@
+{
+  "status": "passed_ARC_scope_and_archive",
+  "primary": "M2_N0_token",
+  "arc_correct": 740,
+  "complete_experiment": false,
+  "external_cancelled_by_user": true,
+  "external_required": false,
+  "checks": [
+    {
+      "check": "frozen_sources_methods_references_stage_order",
+      "status": "passed",
+      "primary": "M2_N0_token",
+      "substantive_configurations": 8
+    },
+    {
+      "check": "complete_split_discovery",
+      "status": "passed",
+      "n": 384,
+      "fresh_main": false
+    },
+    {
+      "check": "complete_split_selection",
+      "status": "passed",
+      "n": 192,
+      "fresh_main": false
+    },
+    {
+      "check": "complete_split_confirmation",
+      "status": "passed",
+      "n": 517,
+      "fresh_main": false
+    },
+    {
+      "check": "complete_split_validation",
+      "status": "passed",
+      "n": 299,
+      "fresh_main": true
+    },
+    {
+      "check": "complete_split_test",
+      "status": "passed",
+      "n": 1172,
+      "fresh_main": true
+    },
+    {
+      "check": "complete_test_counts_and_frozen_R6_per_question_equivalence",
+      "status": "passed",
+      "correct": 740
+    },
+    {
+      "check": "all_changed_predictions_and_score_decompositions",
+      "status": "passed",
+      "cases": 63
+    },
+    {
+      "check": "saved_projection_coefficients_and_matched_control_norms",
+      "status": "passed",
+      "mode_positions": 152184,
+      "scope": "Scalar diagnostics, not reconstruction of undistributed full-vocabulary logits"
+    },
+    {
+      "check": "metadata_exclusion_math_invariants_original_mask_and_depth",
+      "status": "passed",
+      "math_checks": 20,
+      "independent_depth_probe_questions": 1,
+      "KV_cache_rejected": true
+    },
+    {
+      "check": "original_model_and_tokenizer_bytes_fixed25_unchanged",
+      "status": "passed"
+    },
+    {
+      "check": "fresh_5_4_deployment_and_R6_timing",
+      "status": "passed",
+      "questions": 12,
+      "time_ratio_vs_R6": 1.0036870328580245
+    },
+    {
+      "check": "independent_6h_budget_all_attempts_and_ARC_reserve",
+      "status": "passed",
+      "GPU_worker_seconds": 9690.506185531616
+    },
+    {
+      "check": "external_scope_cancelled_by_user_partial_Hella_not_reported",
+      "status": "passed",
+      "worker_stopped": true
+    },
+    {
+      "check": "gated_complete_external_openbookqa",
+      "status": "passed",
+      "n": 500,
+      "correct": 214
+    },
+    {
+      "check": "all_named_deliverables_and_lossless_archive",
+      "status": "passed",
+      "files": 152,
+      "archive_bytes": 26664876
+    }
+  ],
+  "scope": "Completed ARC data, invariants, temporal/data gates, accounting and archive byte integrity; user-cancelled external scope is explicitly incomplete",
+  "remaining_release_checks": [
+    "Human visual inspection of generated figures",
+    "Connector GitHub final commit/readback verification"
+  ],
+  "final_method_lock_sha256": "de11c9641b3f9e08575a2806c6686b81051a7064566950e86cf6461550702afb",
+  "archive_index_sha256": "032dd3c483ab7b84c5ce32dcb8a0955dcd4dd057aea5db6afb1a749f9216f1b7",
+  "audit_source_sha256": "b47dac60dc2f28a3062d00842468a152d3c39b17d66496acf638c7cdb2f1c34d"
+}

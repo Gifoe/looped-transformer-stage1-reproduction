@@ -76,6 +76,19 @@ def main():
     lock=read('configs/r7_FINAL_METHOD_LOCK.json');primary=lock['primary'];assert arc['primary']==primary
     test=rows('test');train=[r for s in ['discovery','selection','confirmation'] for r in rows(s)]
     cases=changed_cases(test,primary)
+    strata=[]
+    for fixed_ok,r6_ok,label in [(True,True,'Fixed_and_R6_correct'),(False,True,'R6_only_correct'),(True,False,'Fixed_only_correct'),(False,False,'Fixed_and_R6_wrong')]:
+        subset=[r for r in test if r['correct']['fixed']==fixed_ok and r['correct']['M0_R6']==r6_ok]
+        correct=sum(r['correct'][primary] for r in subset)
+        strata.append(dict(stratum=label,n=len(subset),new_correct=correct,new_wrong=len(subset)-correct,net_vs_R6=correct-(len(subset) if r6_ok else 0)))
+    csvout('results/r7_rescue_retention.csv',strata)
+    primary_pairs=[]
+    for reference in ['native4','fixed','adaptive','A1','M0_R6']:
+        metric=paired(test,primary,reference=reference,bootstrap=True)
+        if reference!='M0_R6':
+            for key in ['retained_R6_vs_Fixed_rescues','total_R6_vs_Fixed_rescues','retained_R6_rescue_fraction']:metric.pop(key)
+        primary_pairs.append(metric)
+    csvout('results/r7_arc_primary_vs_baselines.csv',primary_pairs)
     val=rows('validation');dev=csvrows('results/r7_development_results.csv');full=csvrows('results/r7_arc_full_test_results.csv')
     contrasts=[]
     for name,ref in [('M2_N0_token','M0_R6'),('M3_multi_token','M2_N0_token'),
@@ -140,6 +153,7 @@ def main():
     profile=read('results/r7_DEPLOYMENT_PROFILE.json')
     previous_parity=read('results/r7_baseline_parity.json')
     cpu_phase=previous_parity.get('cpu_phase',previous_parity)
+    train_diagnostic_audit=read('results/r7_TRAIN_DIAGNOSTIC_AUDIT.json');assert train_diagnostic_audit['status']=='passed'
     parity=dict(status='passed_CPU_and_GPU',cpu_phase=cpu_phase,gpu_parity_status='exact_with_explicit_stage_coverage',
         total_authorized_scored_questions=2564,fresh_main_forward_questions=1471,historical_main_state_questions=1093,
         gpu_split_receipts={s:dict(complete_sha256=sha('results/r7_'+s+('_development_COMPLETE.json' if s in ['discovery','selection','confirmation'] else '_final_COMPLETE.json')),
@@ -148,7 +162,8 @@ def main():
         KV_reason='Real discovery pilot failed zero-tolerance BF16 parity: max token error0.3139867783; original uncached path retained',
         mathematical_checks_sha256=sha('results/r7_MATH_CHECKS.json'),
         deployment_profile_sha256=sha('results/r7_DEPLOYMENT_PROFILE.json'),
-        real_model_zero_sum_and_constant_shift_checks=profile['real_model_invariants'])
+        real_model_zero_sum_and_constant_shift_checks=profile['real_model_invariants'],
+        full_train_scalar_projection_audit_sha256=sha('results/r7_TRAIN_DIAGNOSTIC_AUDIT.json'))
     save('results/r7_baseline_parity.json',parity)
     oracle=csvrows('results/r7_oracle_alpha_diagnostics.csv');lim={k:sum(r['limitation']==k for r in oracle) for k in set(r['limitation'] for r in oracle)}
     # All plots use complete source artifacts and export standalone PNG/PDF.
@@ -156,8 +171,11 @@ def main():
     import matplotlib.pyplot as plt
     plt.rcParams.update({'font.family':'DejaVu Sans','font.size':10,'axes.spines.top':False,'axes.spines.right':False,'pdf.fonttype':42})
     methods=list(test[0]['predictions']);numbers=[sum(r['correct'][m] for r in test) for m in methods]
-    fig,ax=plt.subplots(figsize=(8,4.1));bars=ax.bar(methods,numbers,color=['#aab8c5']*(len(methods)-1)+['#1b6e75'])
-    for bar,n in zip(bars,numbers):ax.text(bar.get_x()+bar.get_width()/2,n+1,str(n),ha='center',va='bottom')
+    fig,ax=plt.subplots(figsize=(8,4.1));positions=np.arange(len(methods))
+    ax.scatter(positions,numbers,s=65,color=['#aab8c5']*(len(methods)-1)+['#1b6e75'],zorder=3)
+    ax.set_xticks(positions,methods)
+    for x,n in zip(positions,numbers):ax.text(x,n+1,str(n),ha='center',va='bottom')
+    m=arc['metrics'];ax.set_title(f"Paired change vs R6: {m['net']:+d} ({m['rescue']} rescued, {m['damage']} damaged); p={m['exact_mcnemar_p']:.3f}",fontsize=10)
     ax.axhline(736,color='#7a3d35',ls='--',lw=1,label='R6 gate736');ax.axhline(751,color='#615a83',ls=':',lw=1,label='Target751')
     ax.set_ylabel('Correct /1172');ax.set_ylim(max(0,min(numbers)-20),max(756,max(numbers)+12));ax.tick_params(axis='x',rotation=17);ax.legend(frameon=False,loc='upper left');fig.tight_layout()
     for suffix in ['png','pdf']:fig.savefig(ROOT/f'results/r7_arc_results.{suffix}',dpi=180,bbox_inches='tight')
@@ -178,13 +196,24 @@ def main():
         selection_table.append(dict(method=name,train1093_correct=sum(r['correct'][name] for r in train),
             validation299_correct=sum(r['correct'][name] for r in val) if name in val[0]['predictions'] else 'not evaluated'))
     contrast_table=[{'contrast':r['method']+' vs '+r['reference'],'rescue':r['rescue'],'damage':r['damage'],'net':r['net']} for r in contrasts]
+    for displayed,source in zip(contrast_table,contrasts):displayed['exact_mcnemar_p']=f"{source['exact_mcnemar_p']:.6g}"
+    alpha_rows=[r for r in csvrows('results/r7_token_coefficient_summary.csv') if r['outcome']=='all']
+    alpha_by={r['method']:r for r in alpha_rows}
+    alpha_table=[dict(method=r['method'],positions=r['prediction_positions'],mean_alpha=f"{float(r['alpha_mean']):.4f}",
+        alpha0=f"{100*float(r['alpha_zero_fraction']):.2f}%",alpha1=f"{100*float(r['alpha_one_fraction']):.2f}%",
+        mean_delta_target_LP=f"{float(r['target_logprob_change_mean']):+.5f}") for r in alpha_rows]
     example_table=[]
     for transition in ['Wrong->Correct','Correct->Wrong']:
         for case in sorted([r for r in cases if r['transition']==transition],key=lambda r:r['id'])[:3]:
             example_table.append({key:case[key] for key in ['id','transition','gold','R6_prediction','new_prediction','R6_gold_margin','new_gold_margin']})
     testtable=[dict(method=r['method'],correct=r['correct'],accuracy=f"{100*float(r['accuracy']):.4f}%",rescue=r['rescue'],damage=r['damage'],net=r['net']) for r in full]
+    primary_pair_table=[dict(reference=r['reference'],rescue=r['rescue'],damage=r['damage'],net=r['net'],
+        delta_pp=f"{r['accuracy_delta_pp']:+.4f}",paired_95CI_pp=f"[{r['paired_bootstrap_95_lower_pp']:.4f}, {r['paired_bootstrap_95_upper_pp']:.4f}]",
+        exact_mcnemar_p=f"{r['exact_mcnemar_p']:.6g}") for r in primary_pairs]
     comparison=next(r for r in contrasts if r['method']=='M3_multi_token' and r['reference']=='C_matched_guidance')
     shuffled=next(r for r in contrasts if r['method']=='M3_multi_token' and r['reference']=='C_shuffled_direction')
+    external_cancelled=(ROOT/'logs/r7_SCOPE_CHANGE_EXTERNAL_STOP.json').exists()
+    if external_cancelled:assert read('logs/r7_SCOPE_CHANGE_EXTERNAL_STOP.json')['status']=='external_evaluations_stopped_by_user'
     external_completed=gate and all((ROOT/f'results/r7_{task}_COMPLETE.json').exists() for task in ['hellaswag','openbookqa'])
     external_section=''
     if external_completed:
@@ -197,9 +226,16 @@ def main():
         csvout('results/r7_external_results.csv',externals)
         external_note='同一冻结方法完成HellaSwag10042及OpenBookQA500，结果见迁移表；未使用外部结果调整方法。'
         external_section='\n## 同一冻结公式的外部迁移\n\n'+markdown_table(externals,['task','n','correct','reference_correct','rescue','damage','net','exact_mcnemar_p'])+'\n\n两个任务均保持原0-shot官方协议和字符分母。N0为Answer:；N1/N2按ARC测试前声明的字段规则，将官方processed文档的query（HellaSwag）或question_stem（OpenBookQA）替换为N/A或Unknown，并用官方fewshot_context(0)渲染。所有原始prompt及参考渲染逐题核验。M1仅需候选完整LL，复用已绑定历史主LL和N0LL，并在首/中/末三题独立前向精确核验；M2/M3需要完整词表，因此重新前向。历史复用成本及独立核验覆盖分别记录，不宣称三题核验覆盖全量。\n'
+    elif external_cancelled:
+        external_note='用户随后要求停止另外两个数据集并继续ARC方法研究：已完成的OpenBookQA负结果保留，HellaSwag部分采集已停止，不报告其完整准确率。R7公式及ARC结果保持冻结。'
+        receipt=read('results/r7_openbookqa_COMPLETE.json');assert receipt['status']=='complete' and receipt['n']==500 and receipt['primary']==primary
+        assert sha(receipt['score_file'])==receipt['score_file_sha256']
+        externals=[dict(task='openbookqa',**receipt['metrics'])];csvout('results/r7_external_results.csv',externals)
+        external_section='\n## 用户停止前已完成的迁移记录\n\n'+markdown_table(externals,['task','n','correct','reference_correct','rescue','damage','net','exact_mcnemar_p'])+'\n\n该任务在停止指令之前已完成，保留完整负结果。HellaSwag未完成，部分数值只作运行记录，不用于后续选择方法。后续方法仍在原文件夹，以新轮次命名并明确历史数据暴露，不改R7测试赢家。\n'
     else:external_note='ARC门槛已打开；外部基准结果尚未交付，当前只完成ARC阶段。' if gate else '未超过736，外部基准按预设规则停止；未改公式、参考或另换候选重测。'
     significance='配对检验未提供显著增益证据（p≥0.05）；点估计不能据此解释为稳定提升。' if mainrow['exact_mcnemar_p']>=.05 else '配对检验显示该历史测试集上的差异，仍需新数据复核其可迁移性。'
-    direction_note='M3在开发集正确数上同时超过两个控制；这只是有限开发比较，仍不能据此宣称发现新机制。' if comparison['net']>0 and shuffled['net']>0 else 'M3未同时超过匹配guidance范数与置乱控制；本轮不能证明定向先验修正具有独立于幅度变化的优势。'
+    direction_note=(f"M3在训练集正确数的点估计上同时高于两个控制；对应配对p分别为{comparison['exact_mcnemar_p']:.6g}和{shuffled['exact_mcnemar_p']:.6g}，未作多重比较校正，不能仅凭点估计宣称机制成立。"
+        if comparison['net']>0 and shuffled['net']>0 else 'M3未同时超过匹配guidance范数与置乱控制；本轮不能证明定向先验修正具有独立于幅度变化的优势。')
     report=f'''# Ouro R7：完整ARC实验报告
 
 冻结主方法 **{primary}**：**{arc['correct']}/1172（{100*mainrow['accuracy']:.4f}%）**，R6为736/1172；净变化 **{mainrow['net']:+d}题**，新增纠错{mainrow['rescue']}、误伤{mainrow['damage']}。超过736：{'是' if gate else '否'}；达到751：{'是' if achieve else '否'}。{external_note}
@@ -218,11 +254,21 @@ def main():
 
 选择以预先固定的validation正确数优先，因此训练集最优方法不一定成为最终主方法。M3未晋级时不在validation补算其结果。
 
+最终主方法的整题对齐回退为{mainrow['alignment_fallbacks']}/1172，直接使用新公式的覆盖率为{100*(1172-mainrow['alignment_fallbacks'])/1172:.4f}%。回退逐题标记和方法作用范围保存在原始记录中。
+
 ## 完整test结果：主要参照R6
 
 {markdown_table(testtable,['method','correct','accuracy','rescue','damage','net'])}
 
+上表的rescue/damage/net统一以R6为参照；以下为冻结主方法分别对五个基线的配对比较，主要检验为最后一行M0_R6。完整指标另存r7_arc_primary_vs_baselines.csv。
+
+{markdown_table(primary_pair_table,['reference','rescue','damage','net','delta_pp','paired_95CI_pp','exact_mcnemar_p'])}
+
 主方法保留R6相对Fixed原有纠错中的{mainrow['retained_R6_vs_Fixed_rescues']}/{mainrow['total_R6_vs_Fixed_rescues']}题。逐题记录、五组配对转移、候选总分和token诊断保存在原始JSONL及r7_paired_transitions.csv。没有测试后更换赢家。
+
+{markdown_table(strata,['stratum','n','new_correct','new_wrong','net_vs_R6'])}
+
+该分层区分恢复Fixed本来正确而R6损坏的题、救回Fixed/R6都错的题，以及丢失R6独有纠错。新救回与新误伤必须共同解释；当前ARC统计不能证明本方法是更可靠的选择性升级。
 
 {markdown_table(example_table,['id','transition','gold','R6_prediction','new_prediction','R6_gold_margin','new_gold_margin'])}
 
@@ -240,11 +286,15 @@ N0为字面量Answer:；N1/N2保留原25例和分隔符，仅通过结构化ques
 
 ## token粒度、多参考与控制
 
-{markdown_table(contrast_table,['contrast','rescue','damage','net'])}
+{markdown_table(contrast_table,['contrast','rescue','damage','net','exact_mcnemar_p'])}
 
 表中均为完整train1093上的配对比较，属于开发证据。M2对R6同时改变token粒度、系数估计和重新归一化，因此不能把全部差值归因于单一因素；桥接控制固定整题alpha后在token空间重新归一化，提供中间对照。M3对M2比较引入N1/N2的稳健参考作用。{direction_note}
 
 现有匹配幅度及置乱控制对应M3多参考token修正；若赢家为M1或M2，不能用它比这些J3控制高就隔离其自身方向机制。M1相对R6只检验多参考候选公式，不能归功于token粒度；M2对桥接控制检验其token系数估计，但仍不能独立证明收益来自去除无关先验而非通用幅度变化。该机制归因限制保留在最终结论中。
+
+{markdown_table(alpha_table,['method','positions','mean_alpha','alpha0','alpha1','mean_delta_target_LP'])}
+
+以上为全部候选的token加权统计，包含错误选项，平均目标log概率增加并不等价于正确答案margin改善。稳健分母将平均alpha从仅平均参考投影的{float(alpha_by['C_mean_denominator']['alpha_mean']):.4f}降到{float(alpha_by['M3_multi_token']['alpha_mean']):.4f}；正确数仍由实际配对结果判断。全部{train_diagnostic_audit['mode_prediction_positions']:,}个模式预测位置的alpha重建误差为0，置乱范数与匹配残差范数最大误差分别为{train_diagnostic_audit['max_shuffled_norm2_abs_error']:.6g}、{train_diagnostic_audit['max_matched_residual_norm2_abs_error']:.6g}，说明控制确实匹配其定义中的范数。
 
 M1是候选分数空间投影；M2/M3先在完整词表加权内积下解析投影，再完整log_softmax，最后才累加并除一次字符长度。两类归一化不同，不能相互替代。r7_selectivity_diagnostics.csv将实际目标logit位移、log-partition变化和目标log概率变化分开，检查三者恒等式；不把已读标签用于系数。
 
@@ -287,12 +337,13 @@ Inherited ARC question/rendered-demo data retain [CC BY-SA4.0 attribution](data/
 1. CPU replay of384+192 restored R6=360/576; oracle path diagnosis found32 coefficient-reachable and184 direction-limited remaining errors. Fixed-prompt choice perturbations were audited. No confirmation/test labels were read.
 2. Twenty CPU math checks passed. A real BF16 discovery pilot reproduced original scores and independent K1/4/5 exactly. KV cache parity failed (max token0.3139867783), so it was rejected. Two-question integration runs checked original/N0 sums and token invariants; source/data binding and receipt coverage were tightened before full development. All attempts are charged and retained.
 3. The eight prescribed configurations ran on384+192; no coefficient grid and no extra mixture were added. All definitions and selection code were frozen before517 confirmation. Top two main configurations advanced once to299 validation, and {primary} was frozen before1172 test.
-4. Test produced{arc['correct']}/1172, net{mainrow['net']:+d} vsR6. {'External gate opened; same locked method is required.' if gate else 'External gate closed; no alternate test winner or retuning.'} Separate12-question5/4 deployment profile matched development scores exactly. Formula revision rounds after first complete dev feedback:0, within maximum3.
+4. Test produced{arc['correct']}/1172, net{mainrow['net']:+d} vsR6. {external_note} Separate12-question5/4 deployment profile matched development scores exactly. Formula revision rounds after first complete dev feedback:0, within maximum3 for R7; subsequent user-authorized R8/R9/R10 searches are separate disclosed rounds under the same total GPU cap.
 
 This is a finite negative-or-positive experiment, not a search guarantee. Full original/source hashes, immutable stage locks, raw scores, diagnostics, logs and cost accounting accompany the report.
 ''')
     save('results/r7_DELIVERABLES.json',dict(status='rendered_from_complete_ARC',primary=primary,arc_correct=arc['correct'],
-        external_gate_open=gate,external_completed=external_completed,final_method_lock_sha256=sha('configs/r7_FINAL_METHOD_LOCK.json'),
+        external_gate_open=gate,external_completed=external_completed,external_cancelled_by_user=external_cancelled,
+        complete_experiment=False if external_cancelled else (not gate or external_completed),final_method_lock_sha256=sha('configs/r7_FINAL_METHOD_LOCK.json'),
         report_sha256=sha('results/r7_REPORT_ZH.md'),compute_budget_used_seconds=ledger['used_seconds']))
     print(json.dumps(dict(status='report_rendered',primary=primary,arc_correct=arc['correct'],external_gate_open=gate)),flush=True)
 

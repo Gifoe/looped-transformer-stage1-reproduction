@@ -4,6 +4,7 @@ No winner selection, model forward or partial-test reading. Git readback and
 visual inspection remain explicit release checks outside this CPU evidence.
 """
 import ast,hashlib,json,math,tarfile
+from pathlib import Path
 import numpy as np
 from r7_core import ROOT,read,save,sha
 
@@ -111,7 +112,16 @@ def main():
     if arc['correct']>736:
         rules=read('configs/r7_EXTERNAL_REFERENCE_RULES.json');external=read('configs/r7_EXTERNAL_LOCK.json')
         assert rules['created_unix']<final['created_unix'] and sha('configs/r7_EXTERNAL_REFERENCE_RULES.json')==final['external_reference_rules_sha256']==external['pretest_reference_rules_sha256']
-        for task,n in [('hellaswag',10042),('openbookqa',500)]:
+        cancelled=(ROOT/'logs/r7_SCOPE_CHANGE_EXTERNAL_STOP.json').exists()
+        if cancelled:
+            assert read('logs/r7_SCOPE_CHANGE_EXTERNAL_STOP.json')['status']=='external_evaluations_stopped_by_user'
+            assert read('logs/r7_AFTER_ARC_STATUS.json')['status']=='external_cancelled_by_user'
+            stopped=read('logs/r7_hellaswag_SUPERVISOR.json')
+            assert stopped['status']=='failed' and stopped['exit_code']==-15
+            assert not (ROOT/'results/r7_hellaswag_COMPLETE.json').exists()
+            assert not (Path('/proc')/str(stopped['worker_pid'])).exists()
+            passed('external_scope_cancelled_by_user_partial_Hella_not_reported',worker_stopped=True)
+        for task,n in ([('openbookqa',500)] if cancelled else [('hellaswag',10042),('openbookqa',500)]):
             receipt=read(f'results/r7_{task}_COMPLETE.json');assert receipt['status']=='complete' and receipt['n']==n and receipt['primary']==primary
             assert sha(receipt['score_file'])==receipt['score_file_sha256'] and external['tasks'][task]['num_fewshot']==0
             if primary=='M1_multi_candidate':assert len(set(receipt['independent_original_replay_ids']))==3
@@ -122,7 +132,8 @@ def main():
     required=['r7_README.md','r7_SELF_ITERATION_LOG.md','results/r7_REPORT_ZH.md','results/r7_baseline_parity.json',
         'results/r7_oracle_alpha_diagnostics.csv','configs/r7_reference_manifest.json','results/r7_development_results.csv',
         'results/r7_ablation_results.csv','configs/r7_FINAL_METHOD_LOCK.json','results/r7_arc_full_test_results.csv',
-        'results/r7_paired_transitions.csv','results/r7_compute_costs.csv']
+        'results/r7_paired_transitions.csv','results/r7_compute_costs.csv','results/r7_arc_primary_vs_baselines.csv',
+        'results/r7_TRAIN_DIAGNOSTIC_AUDIT.json','results/r7_token_coefficient_summary.csv','results/r7_rescue_retention.csv']
     assert all((ROOT/name).is_file() and (ROOT/name).stat().st_size>0 for name in required)
     index=read('artifacts/r7_RECORDS_INDEX.json');assert index['status']=='verified'
     assert sha(index['archive_path'])==index['archive_sha256'] and sha('artifacts/r7_RECORDS_CONTENTS.json')==index['contents_sha256']
@@ -136,8 +147,10 @@ def main():
         for entry in records:assert hashlib.sha256(archive.extractfile(entry['path']).read()).hexdigest()==entry['sha256']
     assert set(required)<={entry['path'] for entry in records}
     passed('all_named_deliverables_and_lossless_archive',files=len(records),archive_bytes=index['archive_bytes'])
-    save('results/r7_COMPLETION_AUDIT.json',dict(status='passed_experiments_and_archive',primary=primary,arc_correct=arc['correct'],
-        external_required=arc['correct']>736,checks=checks,scope='Completed experimental data, invariants, temporal/data gates, accounting and archive byte integrity',
+    cancelled=(ROOT/'logs/r7_SCOPE_CHANGE_EXTERNAL_STOP.json').exists()
+    save('results/r7_COMPLETION_AUDIT.json',dict(status='passed_ARC_scope_and_archive' if cancelled else 'passed_experiments_and_archive',primary=primary,arc_correct=arc['correct'],
+        complete_experiment=not cancelled,external_cancelled_by_user=cancelled,
+        external_required=arc['correct']>736 and not cancelled,checks=checks,scope='Completed ARC data, invariants, temporal/data gates, accounting and archive byte integrity; user-cancelled external scope is explicitly incomplete',
         remaining_release_checks=['Human visual inspection of generated figures','Connector GitHub final commit/readback verification'],
         final_method_lock_sha256=sha('configs/r7_FINAL_METHOD_LOCK.json'),archive_index_sha256=sha('artifacts/r7_RECORDS_INDEX.json'),
         audit_source_sha256=sha('scripts/r7_completion_audit.py')))
