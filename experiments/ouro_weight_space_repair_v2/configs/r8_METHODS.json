@@ -1,0 +1,56 @@
+{
+  "status": "defined_before_R8_development",
+  "created_unix": 1793790959.38432,
+  "methods": {
+    "keep_r6_axis": {
+      "role": "primary_candidate",
+      "uses_P5": false
+    },
+    "nonundo_r6_axis": {
+      "role": "primary_candidate",
+      "uses_P5": false
+    },
+    "late_orthogonal": {
+      "role": "primary_candidate",
+      "uses_P5": true
+    },
+    "late_unprotected": {
+      "role": "primary_and_ablation",
+      "uses_P5": true
+    },
+    "matched_keep": {
+      "role": "mechanism_control",
+      "uses_P5": false
+    },
+    "matched_nonundo": {
+      "role": "mechanism_control",
+      "uses_P5": false
+    },
+    "matched_late": {
+      "role": "mechanism_control",
+      "uses_P5": true
+    },
+    "preserve_pair_margins": {
+      "role": "primary_candidate",
+      "uses_P5": false,
+      "formula": "Project center(M2-R6) to x_i>=x_j whenever R6_i>R6_j and Fixed_i<Fixed_j or A1_i<A1_j; output R6+x",
+      "solver": "Exact unweighted partial-order least squares by all set partitions; strict comparisons; no feasibility relaxation"
+    }
+  },
+  "substantive_configurations": 8,
+  "max_configurations": 8,
+  "max_definition_rounds": 3,
+  "coefficients": "Only current unlabelled score geometry; beta clipped[0,1]; no fitted coefficients or mixtures",
+  "numerics": "FP64, centered score vectors;64eps64 relative axis test; residual norm<=sqrt(64eps64)*original prior-late norm becomes zero",
+  "selection": {
+    "development": "Accuracy and rescue/damage/retention on384+192; freeze recipes before current517 confirmation",
+    "advance_validation": "Top2 primary candidates with fulltrain correct strictly above historical best706; rank total correct desc, worst cohort proportional net desc, retainedR6rescues desc, damage asc, ID",
+    "final": "Pooled1093train+299validation total correct desc; then validation correct desc; then pooled R6-rescue retention desc; then damage asc; ID"
+  },
+  "external_evaluation_authorized": false,
+  "R7_frozen_result_preserved": 740,
+  "test_history_notice": "All ARC splits previously exposed. R7 aggregate740 and correction-retention diagnostics informed this research. No new blind-test or CV claim. No test-per-question design/selection in R8.",
+  "definition_round": 1,
+  "updated_unix": 1793791768.936808,
+  "second_round_reason": "Axis/norm controls both354 vsR6360 on576; replace global-axis protection by direct protection of changed comparisons; no new confirmation/validation/test results used"
+}

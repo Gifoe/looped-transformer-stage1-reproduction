@@ -1,0 +1,21 @@
+{
+  "status": "frozen_before_current_confirmation",
+  "created_unix": 1793792310.5577736,
+  "methods_sha256": "fba33ec6cab4b03a54de55ebedb55eddae71e243b87fff3f43970ad1b3d7baea",
+  "source_sha256": {
+    "r8_scores.py": "9b0bb1bc69050a628e21c2ea03b444e2f047b2a73a50fd997987105e6775356a",
+    "r8_core.py": "202ad014c18ee251aed16f784241da17847af50aef0b6464dd52d77712b7e13d",
+    "r8_evaluate.py": "86ddf8756a7b19e56ff004b8f444fcad099b62350613259961efdaa56b47e711"
+  },
+  "development_receipt_sha256": "72043dda7a127e87b3479a3497c5c0b48ee2f95adc9550f1b3c14971a7999f22",
+  "protocol_sha256": "a09fea8bb17589de7b010c79c44c6b8c506d9fb4518a493396a0f030e635e1a4",
+  "external_evaluation_authorized": false,
+  "distinct_configurations": 8,
+  "definition_rounds": 2,
+  "selection": {
+    "development": "Accuracy and rescue/damage/retention on384+192; freeze recipes before current517 confirmation",
+    "advance_validation": "Top2 primary candidates with fulltrain correct strictly above historical best706; rank total correct desc, worst cohort proportional net desc, retainedR6rescues desc, damage asc, ID",
+    "final": "Pooled1093train+299validation total correct desc; then validation correct desc; then pooled R6-rescue retention desc; then damage asc; ID"
+  },
+  "historically_exposed_data": true
+}
