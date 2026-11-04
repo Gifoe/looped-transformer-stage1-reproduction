@@ -1,0 +1,112 @@
+{
+  "status": "complete_postrun_CPU_length_distribution_description",
+  "GPU_worker_seconds": 0,
+  "vectors_sha256": "2a2b3d86dbe91d4f03a9388cb86a81f1a1f893d09cd212f786519198d40701ec",
+  "changed_length_comparisons": [
+    {
+      "context": "N0",
+      "variant": "C1",
+      "depth": 4,
+      "position": 1,
+      "logit_difference_range": 0.1875,
+      "total_variation": 0.008010791285443507,
+      "squared_Hellinger_without_half": 0.00018146913598943526,
+      "KL_full_input_to_truncated": 0.0003624281866891879,
+      "KL_truncated_to_full_input": 0.0003635007428140105,
+      "maximum_log_probability_difference": 0.12077252391037874,
+      "normalization_sums": [
+        1.0,
+        1.0000000000000002
+      ]
+    },
+    {
+      "context": "N0",
+      "variant": "C2",
+      "depth": 4,
+      "position": 2,
+      "logit_difference_range": 0.1875,
+      "total_variation": 0.001913504645393087,
+      "squared_Hellinger_without_half": 2.4018183912953042e-05,
+      "KL_full_input_to_truncated": 4.78692231963399e-05,
+      "KL_truncated_to_full_input": 4.8206960722943296e-05,
+      "maximum_log_probability_difference": 0.12605367041122761,
+      "normalization_sums": [
+        1.0,
+        1.0000000000000002
+      ]
+    },
+    {
+      "context": "key",
+      "variant": "C1",
+      "depth": 1,
+      "position": 13,
+      "logit_difference_range": 0.109375,
+      "total_variation": 0.0038274540379085826,
+      "squared_Hellinger_without_half": 2.757106612999781e-05,
+      "KL_full_input_to_truncated": 5.508946664116703e-05,
+      "KL_truncated_to_full_input": 5.5195805335747704e-05,
+      "maximum_log_probability_difference": 0.06311230926915812,
+      "normalization_sums": [
+        0.9999999999999994,
+        0.999999999999999
+      ]
+    },
+    {
+      "context": "key",
+      "variant": "C1",
+      "depth": 2,
+      "position": 13,
+      "logit_difference_range": 0.25,
+      "total_variation": 0.008615209573159177,
+      "squared_Hellinger_without_half": 0.00019613590697925155,
+      "KL_full_input_to_truncated": 0.00039222722978453936,
+      "KL_truncated_to_full_input": 0.0003923768400962882,
+      "maximum_log_probability_difference": 0.18396419998321534,
+      "normalization_sums": [
+        1.0,
+        0.9999999999999997
+      ]
+    },
+    {
+      "context": "key",
+      "variant": "C1",
+      "depth": 3,
+      "position": 13,
+      "logit_difference_range": 0.234375,
+      "total_variation": 0.015027717157484384,
+      "squared_Hellinger_without_half": 0.0003569968663388197,
+      "KL_full_input_to_truncated": 0.0007151251395927283,
+      "KL_truncated_to_full_input": 0.0007129928624368499,
+      "maximum_log_probability_difference": 0.1369490078569342,
+      "normalization_sums": [
+        0.9999999999999997,
+        1.0000000000000002
+      ]
+    },
+    {
+      "context": "key",
+      "variant": "C1",
+      "depth": 4,
+      "position": 13,
+      "logit_difference_range": 0.2890625,
+      "total_variation": 0.017677227405101588,
+      "squared_Hellinger_without_half": 0.00040293862225198733,
+      "KL_full_input_to_truncated": 0.0008058825740377409,
+      "KL_truncated_to_full_input": 0.0008060217137895805,
+      "maximum_log_probability_difference": 0.1884822175251344,
+      "normalization_sums": [
+        1.0000000000000002,
+        1.0000000000000004
+      ]
+    }
+  ],
+  "precision": "NumPy FP64 normalization of saved BF16-head-promoted FP32 fullV vectors. No floor, epsilon, tail restriction or current target gather.",
+  "acceptance_unchanged": {
+    "category": "length_bitwise_sensitive",
+    "A_repeat_all_exact": true,
+    "A_B_all_exact": true,
+    "A_C_all_exact": false
+  },
+  "accuracy_computed": false,
+  "limitation": "Postrun description conditional on the observed length differences. Nonconstant differences establish a distribution change for these readouts, not semantic leakage, an explanation of previous method failures, a new method, or an accuracy effect. Does not replay prior R25 retrieval or scoring."
+}
