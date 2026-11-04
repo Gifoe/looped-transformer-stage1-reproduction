@@ -36,6 +36,25 @@ def path(relative):
     return value
 
 
+def read_path(relative):
+    """Read pinned model assets through the existing read-only V1 symlink.
+
+    This exception never applies to output paths. Each model asset is separately
+    bound to the frozen expected byte SHA before its contents are used.
+    """
+    parts=Path(relative).parts
+    if parts[:2]==('models','Ouro-1.4B'):
+        allowed={'model.safetensors','config.json','configuration_ouro.py','merges.txt',
+                 'modeling_ouro.py','snapshot_metadata.json','special_tokens_map.json',
+                 'tokenizer.json','tokenizer_config.json','vocab.json'}
+        require(len(parts)==3 and parts[2] in allowed,'Unexpected model asset path')
+        model_root=(ROOT/'models/Ouro-1.4B').resolve()
+        value=(ROOT/relative).resolve()
+        require(value.is_relative_to(model_root) and value.is_file(),'Pinned model asset outside model root')
+        return value
+    return path(relative)
+
+
 def digest(value):
     return hashlib.sha256(json.dumps(value,sort_keys=True,separators=(',',':'),allow_nan=False).encode()).hexdigest()
 
@@ -133,7 +152,7 @@ class Audit:
     def __init__(self):self.hashes={};self.dependency_hashes={};self.token_pairs_checked=0;self.new_used=set()
 
     def bind(self,relative,expected=None):
-        value=file_sha(path(relative))
+        value=file_sha(read_path(relative))
         if expected is not None:require(value==expected,'SHA differs: '+relative)
         self.hashes[relative]=value;return value
 
@@ -182,7 +201,7 @@ class Audit:
         # Load the tokenizer only. Extract the tiny official pair function without
         # importing lm_eval/transformers/torch or executing its surrounding module.
         from tokenizers import Tokenizer
-        self.tokenizer=Tokenizer.from_file(str(path('models/Ouro-1.4B/tokenizer.json')))
+        self.tokenizer=Tokenizer.from_file(str(read_path('models/Ouro-1.4B/tokenizer.json')))
         self.harness_distribution=importlib.metadata.distribution('lm_eval')
         source_path=self.harness_distribution.locate_file('lm_eval/api/model.py')
         source=Path(source_path).read_text(encoding='utf-8');tree=ast.parse(source)
@@ -453,7 +472,7 @@ def main():
     result={task:audit.task(task) for task in tasks}
     if args.task=='all':require(audit.new_used==set(audit.new_cache),'Unreferenced new external cache entries after both tasks completed')
     # Freeze evidence against mutation during this independent CPU audit.
-    for relative,expected in audit.hashes.items():require(file_sha(path(relative))==expected,'Artifact changed during audit: '+relative)
+    for relative,expected in audit.hashes.items():require(file_sha(read_path(relative))==expected,'Artifact changed during audit: '+relative)
     for relative,expected in audit.dependency_hashes.items():require(file_sha(audit.harness_distribution.locate_file(relative))==expected,'Installed task source changed during audit')
     report=dict(status='passed',scope='combined' if args.task=='all' else args.task,primary=PRIMARY,tasks=result,
         external_lock_sha256=audit.lock_sha,final_lock_sha256=audit.final_sha,artifact_sha256=audit.hashes,

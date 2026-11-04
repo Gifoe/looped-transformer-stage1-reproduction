@@ -1,0 +1,37 @@
+{
+  "status": "passed",
+  "stage": "post_package_local_public_reproduction",
+  "model_forwards": 0,
+  "unavailable_raw_inputs": [
+    "results/slcd_r6_hellaswag_scores.jsonl",
+    "results/slcd_hellaswag_scores.jsonl",
+    "results/slcd_r6_external_prior_cache.jsonl",
+    "data/slcd_hellaswag.jsonl",
+    "models/Ouro-1.4B/model.safetensors"
+  ],
+  "steps": [
+    {
+      "arguments": [
+        "scripts/slcd_r6_public_scores_portable.py"
+      ],
+      "exit_code": 0,
+      "stdout": "{\n  \"status\": \"passed\",\n  \"tasks\": {\n    \"hellaswag\": {\n      \"n\": 10042,\n      \"max_absolute_arithmetic_error\": 2.220446049250313e-16,\n      \"prediction_differences\": 0,\n      \"correct\": {\n        \"native4\": 7203,\n        \"fixed\": 7231,\n        \"adaptive\": 7235,\n        \"A1_g1p0\": 7239,\n        \"r6_prior_projection\": 7259\n      }\n    },\n    \"openbookqa\": {\n      \"n\": 500,\n      \"max_absolute_arithmetic_error\": 8.881784197001252e-16,\n      \"prediction_differences\": 0,\n      \"correct\": {\n        \"native4\": 206,\n        \"fixed\": 211,\n        \"adaptive\": 211,\n        \"A1_g1p0\": 213,\n        \"r6_prior_projection\": 219\n      }\n    }\n  }\n}\n",
+      "stderr": ""
+    },
+    {
+      "arguments": [
+        "scripts/slcd_r6_make_deliverables.py",
+        "--public-records"
+      ],
+      "exit_code": 0,
+      "stdout": "{\n  \"status\": \"rendered_from_complete_results\",\n  \"primary\": \"r6_prior_projection\",\n  \"arc_correct\": 736,\n  \"task_sizes\": {\n    \"ARC-Challenge\": 1172,\n    \"HellaSwag\": 10042,\n    \"OpenBookQA\": 500\n  },\n  \"worker_seconds\": 13565.214153528214,\n  \"source_sha256\": \"76b1a9b0a85cbe337ce052ab904a5896d6d10908b757ac6d56784ba4b9f31e14\",\n  \"report_sha256\": \"62f309495d531d62bcf864c94f46d05cb12884ab6629f50077fb19e145372b5c\",\n  \"readme_sha256\": \"97663520b6df4b531685f2dcb9c9c17851c251cc3e529fa12537e94825213170\",\n  \"figure_sha256\": {\n    \"results/slcd_accuracy_comparison.pdf\": \"284252a4f2409a09f472e288dcfa6a6e1a88fe130693922cf5010d0f5fbdacea\",\n    \"results/slcd_rescue_regression_analysis.pdf\": \"9a17b698ca611b4f37ca8acd6a98c7bfd47effd76737b0bf4b8d79da82af2570\"\n  }\n}\n",
+      "stderr": ""
+    }
+  ],
+  "report_text_equal_after_newline_normalization": true,
+  "numeric_csv_bytes_equal": true,
+  "canonical_archive_records_restored_and_sha_checked": 329,
+  "archive_sha256": "692a333601798e3a2569b70f108efbf440e04792d6b9ff4e22159bfb5ab7d952",
+  "source_sha256": "821abb35436a4ba279278154a96cfbc49f5c2967361053dc5db61c5a366e773d",
+  "note": "This post-package receipt and checker are published separately; they do not mutate the 329 canonical archive records."
+}

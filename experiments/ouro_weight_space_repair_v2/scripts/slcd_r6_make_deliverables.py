@@ -149,6 +149,7 @@ def main():
             ext.append(dict(benchmark=title,baseline=base,correct=f"{r['correct']}/{r['n']}",accuracy=f"{100*r['accuracy']:.3f}%",R=r['corrections'],D=r['regressions'],net=r['net_correct'],delta_pp=f"{r['delta_pp']:+.3f}",CI=f"[{r['paired_bootstrap_low_pp']:.3f}, {r['paired_bootstrap_high_pp']:.3f}]",p=f"{r['exact_mcnemar_p']:.5g}"))
     positive=sum(x['net']>0 for x in ext if x['baseline']=='fixed')
     generalization=('两个外部任务对 Fixed 的点估计均为正，但是否可靠须结合下表区间；不能据此宣称普遍优势。' if positive==2 else '外部任务未呈现一致的对 Fixed 正向迁移；ARC 达标与跨任务通用性是两个结论，不能合并。')
+    recommendation=('保留该方向进入新数据和新模型的预先冻结验证；目前证据仍不足以支持普遍替换 Fixed 或声称新机制。继续在同一 ARC 上搜索会进一步削弱外推价值。' if positive==2 else '当前冻结版本不支持作为通用 Fixed 替代方案；停止围绕同一 ARC 继续追分。若开展下一轮，应先在未用开发数据上检验任务/先验错配假设，并预先确定新预算与停止条件。')
     followup=[]
     for number in range(2,7):
         d=read(f'results/slcd_R{number}_DEVELOPMENT_COMPLETE.json');candidates=[x for x in d['summary'] if x['subset']=='all' and x['baseline']=='incumbent_A1' and x['method'].startswith('r'+str(number)+'_')]
@@ -233,6 +234,8 @@ R6 vs Fixed：+{primary_fixed['delta_pp']:.4f}pp，配对50,000次题级 bootstr
 ## Q9. 是否继续，以及有哪些研究价值？
 
 ARC 的62.5%目标已完成。值得保留的是“晚期反转 + 部分答案先验校正”的可复核排序干预，以及几何/能量控制失败的完整证据。下一阶段是否投入应由外部完整结果和新、未反复使用的数据决定；不能凭训练切片或一次已暴露测试集的达标就宣称通用改进。当前不启动新的大规模训练、循环结构或隐藏状态因果推断。
+
+基于本轮完整外部检验的决策：{recommendation}
 
 当前 R6 是针对给定候选集合的完整答案排名规则。它尚未实现或验证自由生成版本，不能将多项选择题上的提高直接推广为 GSM8K 自回归推理改善。候选集合变化对投影系数的影响是后续可证伪的问题，本轮没有据测试结果设计新的候选集合或再筛方法。
 

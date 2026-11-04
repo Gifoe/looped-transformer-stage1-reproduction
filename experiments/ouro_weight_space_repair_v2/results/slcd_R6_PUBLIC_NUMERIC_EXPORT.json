@@ -1,0 +1,80 @@
+{
+  "status": "exported_after_independent_full_acceptance",
+  "tasks": {
+    "hellaswag": {
+      "n": 10042,
+      "readout_order": [
+        "native_k1",
+        "native_k2",
+        "native_k3",
+        "native_k4",
+        "native_k5",
+        "native_k6",
+        "loopcd_k4_fixed",
+        "loopcd_k4_adaptive"
+      ],
+      "method_order": [
+        "native4",
+        "fixed",
+        "adaptive",
+        "A1_g1p0",
+        "r6_prior_projection"
+      ],
+      "source_score_file": "results/slcd_r6_hellaswag_scores.jsonl",
+      "source_score_file_sha256": "1e4e2a75da66c04d4b4e365244d200db02370bb0c116f9b3322c596da5e1956a",
+      "source_complete_sha256": "b6ff20e46b45c7c7a738cd26a9fd497d41aef38b534ae106c679e5d089c5329e",
+      "artifacts": {
+        "artifacts/slcd_r6_hellaswag_numeric.npz": {
+          "bytes": 3995199,
+          "sha256": "1273aa59302404432f248c6d2038078f8e4dcc4605ddb7a0ea57d3601db9607b"
+        },
+        "artifacts/slcd_r6_hellaswag_input_hashes.jsonl": {
+          "bytes": 18064490,
+          "sha256": "0c12a3345137a8571729a24ff9d3171dc6ece76c7afb2d42508de93df232c73f"
+        }
+      },
+      "values": "All sixteen raw complete-candidate LL readouts as exact FP64, all five final ranking vectors, labels, lengths, counts, origin and input hashes.",
+      "omitted": "Source text, raw parquet, reversible token IDs, and unused descriptive per-row timings. Full raw JSONL/cache is preserved on the experiment server."
+    },
+    "openbookqa": {
+      "n": 500,
+      "readout_order": [
+        "native_k1",
+        "native_k2",
+        "native_k3",
+        "native_k4",
+        "native_k5",
+        "native_k6",
+        "loopcd_k4_fixed",
+        "loopcd_k4_adaptive"
+      ],
+      "method_order": [
+        "native4",
+        "fixed",
+        "adaptive",
+        "A1_g1p0",
+        "r6_prior_projection"
+      ],
+      "source_score_file": "results/slcd_r6_openbookqa_scores.jsonl",
+      "source_score_file_sha256": "7596ab2faf57b0d9b7d814b38f2a20f416a5c06cef5649024bc067e8ea3fadec",
+      "source_complete_sha256": "47eaaf05b2a85d23e0c0f42b759ab50d32f8caa7bcba545205db2ede13dd9471",
+      "artifacts": {
+        "artifacts/slcd_r6_openbookqa_numeric.npz": {
+          "bytes": 186577,
+          "sha256": "00f5d666c4caf9ab4b2b60fb6cc0831129e2b36fdfd772ff37d107e89da9eec1"
+        },
+        "artifacts/slcd_r6_openbookqa_input_hashes.jsonl": {
+          "bytes": 895358,
+          "sha256": "459a8be555f626d93b9b6918c7757612e5dd0509144d559f96f923f7c8aae7e1"
+        }
+      },
+      "values": "All sixteen raw complete-candidate LL readouts as exact FP64, all five final ranking vectors, labels, lengths, counts, origin and input hashes.",
+      "omitted": "Source text, raw parquet, reversible token IDs, and unused descriptive per-row timings. Full raw JSONL/cache is preserved on the experiment server."
+    }
+  },
+  "external_acceptance_sha256": "a8480870a0805cd27983e039f5c1e4ef069ba29c3ba2aef2480d9bb9e71219f6",
+  "external_lock_sha256": "9e7c73b1c3ecbf29803f40a41427faf0a3234c1262f66d2bb13301c844a1e498",
+  "source_sha256": "ef469b56d5fc7e4c034563c40e583278c2f6ff790547f6c227c8143335b97716",
+  "model_forwards": 0,
+  "lossless_scope": "Numeric likelihoods/ranking vectors, not a byte-for-byte raw JSONL copy"
+}

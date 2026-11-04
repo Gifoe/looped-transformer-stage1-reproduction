@@ -1,0 +1,47 @@
+{
+  "status": "diagnosed",
+  "scope": "ARM server versus x86 local FP64 arithmetic; saved numeric values remain lossless",
+  "tasks": {
+    "hellaswag": {
+      "n": 10042,
+      "max_absolute_score_error": 2.220446049250313e-16,
+      "non_bitwise_equal_questions": 683,
+      "prediction_differences": 0,
+      "examples": [
+        {
+          "index": 3,
+          "max_abs_error": 2.220446049250313e-16
+        },
+        {
+          "index": 11,
+          "max_abs_error": 1.1102230246251565e-16
+        },
+        {
+          "index": 18,
+          "max_abs_error": 1.1102230246251565e-16
+        }
+      ]
+    },
+    "openbookqa": {
+      "n": 500,
+      "max_absolute_score_error": 8.881784197001252e-16,
+      "non_bitwise_equal_questions": 53,
+      "prediction_differences": 0,
+      "examples": [
+        {
+          "index": 0,
+          "max_abs_error": 1.1102230246251565e-16
+        },
+        {
+          "index": 2,
+          "max_abs_error": 2.220446049250313e-16
+        },
+        {
+          "index": 5,
+          "max_abs_error": 1.1102230246251565e-16
+        }
+      ]
+    }
+  },
+  "local_numpy": "2.2.6"
+}
