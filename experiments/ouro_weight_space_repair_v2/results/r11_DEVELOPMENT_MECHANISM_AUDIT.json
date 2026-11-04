@@ -1,0 +1,149 @@
+{
+  "status": "passed_posthoc_development_diagnostics",
+  "n": 576,
+  "source_sha256": "0440c527b38409926cac6c6313b041f97529e30b34ad6fed2326d712509b118a",
+  "protocol_sha256": "7d783387c034c0fdb008bba6ca4abb9e4080555f16e375ef040a870d48f35515",
+  "max_score_algebra_error": 6.841857809469776e-16,
+  "max_robust_cyclic_score_error": 1.5543122344752192e-15,
+  "summary": [
+    {
+      "method": "single_loop_axis",
+      "transition": "all",
+      "n": 576,
+      "old_zero_new_active": 47,
+      "alpha_increased": 166,
+      "correction_norm_increased": 139,
+      "positive_averaged_protection_margin": 237,
+      "positive_averaged_coefficient_margin": 227,
+      "auxiliary_loop_rescues": 225,
+      "mean_protection_margin": 0.0077305641962922495,
+      "mean_coefficient_margin": 0.004885913467813778,
+      "mean_reference_consensus": 1.0
+    },
+    {
+      "method": "single_loop_axis",
+      "transition": "Wrong->Correct",
+      "n": 9,
+      "old_zero_new_active": 0,
+      "alpha_increased": 5,
+      "correction_norm_increased": 3,
+      "positive_averaged_protection_margin": 8,
+      "positive_averaged_coefficient_margin": 5,
+      "auxiliary_loop_rescues": 6,
+      "mean_protection_margin": 0.04827494741567852,
+      "mean_coefficient_margin": 0.016212384153060703,
+      "mean_reference_consensus": 1.0
+    },
+    {
+      "method": "single_loop_axis",
+      "transition": "Correct->Wrong",
+      "n": 3,
+      "old_zero_new_active": 1,
+      "alpha_increased": 3,
+      "correction_norm_increased": 1,
+      "positive_averaged_protection_margin": 1,
+      "positive_averaged_coefficient_margin": 2,
+      "auxiliary_loop_rescues": 0,
+      "mean_protection_margin": -0.07013253422493809,
+      "mean_coefficient_margin": -0.04900825349936169,
+      "mean_reference_consensus": 1.0
+    },
+    {
+      "method": "single_loop_axis",
+      "transition": "Correct->Correct",
+      "n": 357,
+      "old_zero_new_active": 30,
+      "alpha_increased": 93,
+      "correction_norm_increased": 82,
+      "positive_averaged_protection_margin": 172,
+      "positive_averaged_coefficient_margin": 144,
+      "auxiliary_loop_rescues": 133,
+      "mean_protection_margin": 0.015577971916750831,
+      "mean_coefficient_margin": 0.00563066839219367,
+      "mean_reference_consensus": 1.0
+    },
+    {
+      "method": "single_loop_axis",
+      "transition": "Wrong->Wrong",
+      "n": 207,
+      "old_zero_new_active": 16,
+      "alpha_increased": 65,
+      "correction_norm_increased": 53,
+      "positive_averaged_protection_margin": 56,
+      "positive_averaged_coefficient_margin": 76,
+      "auxiliary_loop_rescues": 86,
+      "mean_protection_margin": -0.006437719426483111,
+      "mean_coefficient_margin": 0.0038901006983967893,
+      "mean_reference_consensus": 1.0
+    },
+    {
+      "method": "robust_cyclic_loop_axis",
+      "transition": "all",
+      "n": 576,
+      "old_zero_new_active": 38,
+      "alpha_increased": 162,
+      "correction_norm_increased": 134,
+      "positive_averaged_protection_margin": 240,
+      "positive_averaged_coefficient_margin": 219,
+      "auxiliary_loop_rescues": 196,
+      "mean_protection_margin": 0.00911495765350496,
+      "mean_coefficient_margin": 0.004874095568074578,
+      "mean_reference_consensus": 0.8034812933801763
+    },
+    {
+      "method": "robust_cyclic_loop_axis",
+      "transition": "Wrong->Correct",
+      "n": 7,
+      "old_zero_new_active": 0,
+      "alpha_increased": 4,
+      "correction_norm_increased": 2,
+      "positive_averaged_protection_margin": 6,
+      "positive_averaged_coefficient_margin": 3,
+      "auxiliary_loop_rescues": 4,
+      "mean_protection_margin": 0.05566597691419544,
+      "mean_coefficient_margin": 0.0015050153658369581,
+      "mean_reference_consensus": 0.8429113028824552
+    },
+    {
+      "method": "robust_cyclic_loop_axis",
+      "transition": "Correct->Correct",
+      "n": 360,
+      "old_zero_new_active": 27,
+      "alpha_increased": 92,
+      "correction_norm_increased": 78,
+      "positive_averaged_protection_margin": 174,
+      "positive_averaged_coefficient_margin": 139,
+      "auxiliary_loop_rescues": 113,
+      "mean_protection_margin": 0.017223644760129782,
+      "mean_coefficient_margin": 0.005528421153016244,
+      "mean_reference_consensus": 0.8308244029720637
+    },
+    {
+      "method": "robust_cyclic_loop_axis",
+      "transition": "Wrong->Wrong",
+      "n": 209,
+      "old_zero_new_active": 11,
+      "alpha_increased": 66,
+      "correction_norm_increased": 54,
+      "positive_averaged_protection_margin": 60,
+      "positive_averaged_coefficient_margin": 77,
+      "auxiliary_loop_rescues": 79,
+      "mean_protection_margin": -0.006411283940800153,
+      "mean_coefficient_margin": 0.0038598675816471297,
+      "mean_reference_consensus": 0.7550624918510118
+    }
+  ],
+  "stability": {
+    "single_loop_axis": {
+      "perturbations": 1728,
+      "prediction_changes": 39
+    },
+    "robust_cyclic_loop_axis": {
+      "perturbations": 1728,
+      "prediction_changes": 0
+    }
+  },
+  "additional_GPU_seconds": 0,
+  "elapsed_seconds": 1.8609297275543213,
+  "limits": "Posthoc development only; no inference formula/selection change. Score algebra is order-dependent with interactions; averaged terms are accounting, not a unique semantic or hidden-state causal explanation. Robust invariance is cyclic, not arbitrary n-factorial option permutation."
+}
