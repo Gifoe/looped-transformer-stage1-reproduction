@@ -1,4 +1,4 @@
-"""Wait for two idle observations, then run exactly one bounded probe and audit."""
+"""Low-CPU-priority shared run of exactly one bounded probe and audit."""
 import os,subprocess,time
 from r15_common import ROOT,save,gate
 
@@ -8,16 +8,10 @@ def status(value,**fields):
 
 
 def main():
-    gate();start=time.monotonic();idle=0
-    while time.monotonic()-start<180:
-        result=subprocess.run(['nvidia-smi','--query-gpu=utilization.gpu','--format=csv,noheader,nounits'],capture_output=True,text=True,check=True)
-        utilization=int(result.stdout.splitlines()[0].strip());idle=idle+1 if utilization<=10 else 0
-        status('waiting_GPU_idle',observed_utilization=utilization,consecutive_idle_observations=idle)
-        if idle>=2:break
-        time.sleep(5)
-    else:
-        status('deferred_busy_GPU_no_worker_started',GPU_worker_seconds=0);return
-    status('running_bounded_probe')
+    gate();os.nice(15)
+    # No other process is stopped or reconfigured. Scientific definitions,
+    # cohort and 240s+15s worker limit remain identical to the idle-wait version.
+    status('running_bounded_shared_probe',CPU_niceness=os.nice(0))
     subprocess.run([str(ROOT/'env/bin/python'),'-B','-u','scripts/r15_supervise.py'],cwd=ROOT,check=True)
     status('running_frozen_association_analysis')
     subprocess.run([str(ROOT/'env/bin/python'),'-B','-u','scripts/r15_analyze.py'],cwd=ROOT,check=True)
