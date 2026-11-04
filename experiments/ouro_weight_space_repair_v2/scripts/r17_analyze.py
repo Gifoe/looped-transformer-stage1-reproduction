@@ -44,14 +44,14 @@ def main():
         relevant=summaries['reference_R2_mean']['question_bootstrap95_CI'][0]>.5 and paired['reference']['exact_one_sided_sign_flip_p']<.05
         low_transfer=summaries['transfer_R2_mean']['question_bootstrap95_CI'][1]<.5
         high_transfer=summaries['transfer_R2_mean']['question_bootstrap95_CI'][0]>.5 and summaries['transfer_cosine_mean']['question_bootstrap95_CI'][0]>0
-        decision='supports_failure_of_majority_energy_transport_for_this_cue' if relevant and low_transfer else 'majority_energy_reference_and_positive_transport_supported_for_this_cue' if relevant and high_transfer else 'inconclusive_for_reference_direction_transport'
+        decision='supports_low_mean_prefix_projection_for_this_cue' if relevant and low_transfer else 'high_mean_prefix_reference_and_positive_transfer_for_this_cue' if relevant and high_transfer else 'inconclusive_for_reference_direction_transport'
     else:relevant=low_transfer=high_transfer=False;decision='undefined_direction_positions_block_operational_screen'
     for path,data in [('results/r17_question_responses.csv',questions),('results/r17_prefix_responses.csv',flat)]:
         with (ROOT/path).open('w',newline='',encoding='utf8') as f:
             w=csv.DictWriter(f,fieldnames=list(data[0]));w.writeheader();w.writerows(data)
     result=dict(status='complete_fixed_cue_observation',n=12,positions=positions,protocol_sha256=sha(LOCK),all_primary_and_shuffle_positions_defined=complete,
-        question_summaries=summaries,paired_shuffle_comparisons=paired,operational_screen=dict(reference_majority_energy_supported=relevant,transfer_majority_energy_excluded=low_transfer,
-            transfer_majority_energy_positive_supported=high_transfer,decision=decision,threshold_R2=.5,interpretation='Predeclared majority-energy diagnostic only; bootstrap interval is exploratory with12 questions. Not a new decoder or universal transport test.'),
+        question_summaries=summaries,paired_shuffle_comparisons=paired,operational_screen=dict(reference_mean_prefix_R2_supported=relevant,transfer_mean_prefix_R2_low=low_transfer,
+            transfer_mean_prefix_R2_positive_supported=high_transfer,decision=decision,threshold_R2=.5,interpretation='Equal-question mean of per-prefix projection fractions, not pooled response energy. Bootstrap interval is exploratory with12 questions; not a decoder or universal transport test.'),
         new_method_candidates=0,new_accuracy_results=False,heldout_accessed=False,external_benchmarks_started=False,automatic_extension_authorized=False,
         limitations='Answer->Response affects only the current answer cue, not demonstrations/question. It is not known pure nuisance. Reference-direction irrelevance can only refer to this specific cue; a negative transfer result is not a general semantic theorem. No outcome-based sample expansion or alternate wording search.')
     save('results/r17_RESPONSE_ANALYSIS.json',result);print(result['status'],decision,'positions',positions,flush=True)

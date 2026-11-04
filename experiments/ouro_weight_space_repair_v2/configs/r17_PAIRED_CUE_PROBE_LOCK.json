@@ -75,11 +75,11 @@
     "ouro_cached_scoring.py": "2801db23cf20e574765aad7f94f1f4967af640b3af7cf6aa01cbe96500457901",
     "slcd_r6_scores.py": "4decfa923ee1a69f03e2d5e6a734023f21780e04e754a9acf5fc9df5e9a25e58",
     "weight_edits.py": "24a6089e35e6cf5e73b08bcae26acd840a872287c59f62ac715d2dd3fc57af00",
-    "r17_analyze.py": "e73e13a488a7679f90707f31b5f275e62b4b48048ce944fb19804997232a3e28",
+    "r17_analyze.py": "29cbb6ff5aaad6429c8b298d70de6e93e8b5d6e2a6057b0a97bbb46c93bf60aa",
     "r17_common.py": "0c2b4abbc750c124193c6a346ae800873afc0e2743917abd8fe19bfd6204c8d4",
     "r17_launch.py": "70752c9c59504b2dff40209f68d2e69025188fdc4bded70f0b2cdd7eb5cf5fb3",
     "r17_math.py": "c7e66210def69cca3fe208296d78780bae1a373df47a57e541cbb7f828d35edc",
-    "r17_prepare.py": "3e8aa566a2a21baa49d321d33e916d3081d6fad0a59ede6d1de001e84e74d2c4",
+    "r17_prepare.py": "770364f0f5ea2122d65a9e4300ffa3ee3b1b1cbf7f2312db641103a6fabf6417",
     "r17_supervise.py": "badc83008d88555d92a362d8071a1835d30b7ad3bb6f870076498af0d617282f",
     "r17_worker.py": "eac1f3d8426a1fcf1a67bcbcd4f05b455d4b924d7b2dd01648912f5cbf2bd99c"
   },
@@ -132,9 +132,9 @@
   "analysis": {
     "units": "12 questions equally weighted after within-question position average. Report per-position records and coverage. No token independence or correctness metric.",
     "uncertainty": "10000 whole-question bootstrap draws seed2021; descriptive95%intervals. Exact4096 paired sign flips for R2 advantage over fixed shuffle, exploratory symmetry test.",
-    "operational_screen": "Reference majority energy only if lower95%R2>.5 AND reference vs shuffle p<.05. Conditional on that, transfer failure supported for this cue if upper95%transferR2<.5. Positive-majority transport only if lower95%transferR2>.5 and lower95%signedcos>0. Otherwise inconclusive.",
+    "operational_screen": "High equal-question mean prefix projection only if lower95%R2>.5 AND reference vs shuffle p<.05. Conditional on that, low equal-question mean prefix transfer projection supported for this cue if upper95%transferR2<.5. High mean prefix positive transfer only if lower95%transferR2>.5 and lower95%signedcos>0. Otherwise inconclusive.",
     "coverage": "Any undefined primary/shuffle position blocks operational inferential screen; all raw positions/questions still reported.",
-    "threshold": "R2=.5 expresses majority captured energy; fixed diagnostic threshold, never a decoding gate or tuned parameter.",
+    "threshold": "R2=.5 is a fixed threshold on equal-question means of per-prefix projection fractions, NOT pooled response energy; diagnostic only, never a decoding gate or tuned parameter.",
     "stop": "No new decoder, fitted threshold, alternate cue, sample expansion, heldout, external task or automatic model experiment. Findings inform theoretical next-step review only."
   },
   "budget": {
@@ -153,5 +153,8 @@
     "original_complete_ARC_worker_seconds_already_used": 5625.518387556076,
     "scope": "One post-evaluation explanatory observation, actual load/worker/failure time all charged; six old ledgers preserved. Same GPU mutex and CPU nice+15, no other processes altered, no automatic retry."
   },
-  "limitations": "Does not establish a universal transport theorem or a new successful method. A cue direction can be unrelated to the natural reference loop increment; that would make this probe inconclusive about broader calibration failures."
+  "limitations": "Does not establish a universal transport theorem or a new successful method. A cue direction can be unrelated to the natural reference loop increment; that would make this probe inconclusive about broader calibration failures.",
+  "pre_feature_interpretation_clarification": "No R17 worker or features exist. Equal-prefix then equal-question average is not total response-energy capture. Clarify exported names and interpretation; math/cohort/threshold/shuffle/budget unchanged. Only primary/shuffle undefined positions block screen; native/static auxiliary coverage separate.",
+  "previous_protocol_sha256": "dfc2b6f853ecd87e5aec85d259a2d104c5e504c9e7c298c02206a95bd15ad098",
+  "previous_definition_commit": "d4498f2c113c6cbb4b959ddb4703a41a7d64997d"
 }
