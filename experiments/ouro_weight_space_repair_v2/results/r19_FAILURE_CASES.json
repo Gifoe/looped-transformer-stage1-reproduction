@@ -1,0 +1,59 @@
+{
+  "status": "complete_post_screen_failure_accounting",
+  "n": 64,
+  "new_vs_old_Fisher_prediction_disagreements": 2,
+  "cases": [
+    {
+      "id": "arc_challenge/train/Mercury_7215810",
+      "transition": "damage",
+      "gold": 2,
+      "R6_prediction": 2,
+      "new_prediction": 0,
+      "old_Fisher_prediction": 0,
+      "post_repair_rival": 0,
+      "original_question": "An exploratory robot was sent to the planet Mars. The gravity on Mars is weaker than the gravity on Earth. Compared to the mass and weight of the robot on Earth, the robot on Mars has",
+      "original_choices": [
+        "less mass and weight.",
+        "less mass but equal weight.",
+        "equal mass but less weight.",
+        "equal mass and weight."
+      ],
+      "R6_pair_margin": 0.020124147808741,
+      "A1_pair_margin": 0.020124147808741,
+      "new_pair_margin": -0.00446792380519645,
+      "target_shift_pair_change": -0.0244174634338056,
+      "normalizer_pair_change": 0.0001745897212198802,
+      "LP_pair_change": -0.02459205315502548,
+      "reconstruction_error": -1.845891196838867e-08,
+      "convention": "Positive target shift improves gold margin; positive normalizer change opposes gold. Pair and rival fixed after observed repair; gauge-dependent score accounting, not semantic causal proof."
+    },
+    {
+      "id": "arc_challenge/train/Mercury_SC_408550",
+      "transition": "damage",
+      "gold": 3,
+      "R6_prediction": 3,
+      "new_prediction": 1,
+      "old_Fisher_prediction": 3,
+      "post_repair_rival": 1,
+      "original_question": "Michelle performed an investigation but the results did not match her hypothesis. What should Michelle do next?",
+      "original_choices": [
+        "perform the investigation in a different way",
+        "change the hypothesis to match the results",
+        "choose a different investigation",
+        "repeat the investigation"
+      ],
+      "R6_pair_margin": 0.007474268313503035,
+      "A1_pair_margin": -0.008123898789996198,
+      "new_pair_margin": -0.005376587311426817,
+      "target_shift_pair_change": 0.00329484258379255,
+      "normalizer_pair_change": 0.000547532480032671,
+      "LP_pair_change": 0.002747310103759879,
+      "reconstruction_error": 1.374809501918789e-09,
+      "convention": "Positive target shift improves gold margin; positive normalizer change opposes gold. Pair and rival fixed after observed repair; gauge-dependent score accounting, not semantic causal proof."
+    }
+  ],
+  "prefix_rows": 43,
+  "formula_changed": false,
+  "heldout_accessed": false,
+  "scope": "Fixed post-repair gold/rival accounting only. No threshold, dispatch, new candidate or independent causal explanation is inferred."
+}

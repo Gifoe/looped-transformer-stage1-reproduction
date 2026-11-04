@@ -1,0 +1,126 @@
+{
+  "status": "complete_single_last_loop_pilot",
+  "n": 64,
+  "protocol_sha256": "45c6443e949e234a591f63550f76a90ed7a332db24e5563f521bb81624ef1749",
+  "counts": {
+    "paired_loop_protection": 34,
+    "reference_only_axis": 33,
+    "matched_guidance": 33,
+    "shuffled_correction": 33,
+    "shuffled_axis": 36,
+    "old_Fisher": 34,
+    "R6": 36,
+    "fixed": 34,
+    "A1": 33,
+    "native4": 32
+  },
+  "paired": {
+    "reference_only_axis": {
+      "rescues": 1,
+      "damages": 0,
+      "net": 1,
+      "exact_two_sided_McNemar_p": 1.0
+    },
+    "matched_guidance": {
+      "rescues": 2,
+      "damages": 1,
+      "net": 1,
+      "exact_two_sided_McNemar_p": 1.0
+    },
+    "shuffled_correction": {
+      "rescues": 1,
+      "damages": 0,
+      "net": 1,
+      "exact_two_sided_McNemar_p": 1.0
+    },
+    "shuffled_axis": {
+      "rescues": 0,
+      "damages": 2,
+      "net": -2,
+      "exact_two_sided_McNemar_p": 0.5
+    },
+    "old_Fisher": {
+      "rescues": 1,
+      "damages": 1,
+      "net": 0,
+      "exact_two_sided_McNemar_p": 1.0
+    },
+    "R6": {
+      "rescues": 0,
+      "damages": 2,
+      "net": -2,
+      "exact_two_sided_McNemar_p": 0.5
+    },
+    "fixed": {
+      "rescues": 1,
+      "damages": 1,
+      "net": 0,
+      "exact_two_sided_McNemar_p": 1.0
+    },
+    "A1": {
+      "rescues": 2,
+      "damages": 1,
+      "net": 1,
+      "exact_two_sided_McNemar_p": 1.0
+    },
+    "native4": {
+      "rescues": 3,
+      "damages": 1,
+      "net": 2,
+      "exact_two_sided_McNemar_p": 0.625
+    }
+  },
+  "R6_unique_vs_Fixed": {
+    "total": 2,
+    "retained": 1
+  },
+  "screens": {
+    "beats_R6": false,
+    "beats_old_Fisher": false,
+    "beats_reference_only_axis": true,
+    "beats_matched_guidance": true,
+    "beats_shuffled_correction": true,
+    "beats_shuffled_axis": false,
+    "retains_all_pilot_R6_unique_vs_Fixed": false
+  },
+  "eligible_for_feasibility_review": false,
+  "automatic_extension_authorized": false,
+  "heldout_accessed": false,
+  "external_benchmarks_started": false,
+  "independent_depth3_checks": {
+    "main_cached6_vs_independent3_full_vocab_exact": true,
+    "reference_shared4_vs_independent3_full_vocab_exact": true
+  },
+  "primary_vs_reference_only_prediction_disagreements": 1,
+  "numerical": {
+    "positions": 1540,
+    "alpha_zero": 447,
+    "alpha_one": 111,
+    "mean_absolute_alpha_change": 0.10701223793131168,
+    "max_absolute_alpha_change": 1.0,
+    "axis_unresolved": 0,
+    "pre_FP32_norm_errors": {
+      "matched_guidance_norm2": 8.881784197001252e-16,
+      "shuffled_correction_norm2": 2.220446049250313e-16
+    },
+    "orthogonality_defined_positions": 1540,
+    "max_orthogonality_pre": 6.904199434387692e-16,
+    "max_orthogonality_rounded": 6.191363526864002e-07,
+    "axis_outside_ge_span_fraction_quantiles": [
+      0.013385691587070024,
+      0.2547615996831543,
+      0.5601904120310657,
+      0.8223401537573038,
+      0.9993126748468226
+    ],
+    "interpretation": "Outside-span fraction is descriptive under numerically resolved native Fisher geometry. Axis sign cannot determine answer correctness. Orthogonal FP64 logit components do not ensure probability/answer preservation."
+  },
+  "timing_sums": {
+    "main_head_seconds": 6.196776119992137,
+    "N0_reference_and_independent3_seconds": 33.808181311935186,
+    "projection_and_controls_seconds": 17.904667417518795
+  },
+  "model_load_seconds": 19.320670649874955,
+  "worker_elapsed_seconds": 87.41317044384778,
+  "limitation": "Reused development64, fixedN0, no independent validation or J3 stability claim. If reference-only matches/betters primary, no evidence that the added real-question loop3 information improves this repair."
+}
