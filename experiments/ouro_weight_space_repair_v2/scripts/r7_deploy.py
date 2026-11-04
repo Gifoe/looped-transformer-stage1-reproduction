@@ -80,6 +80,34 @@ def main():
         assert np.array_equal(score,np.asarray(saved[row['id']]['baseline_scores']['M0_R6']))
         r6_records.append(dict(id=row['id'],seconds=time.time()-begin,score_max_error=0.))
     r6_warm=float(np.mean([r['seconds'] for r in r6_records[1:]]))
+    # Required real-model invariants are separate from all timed samples.
+    # The first fixed discovery question includes a34-token continuation and
+    # therefore exercises accumulation across the32-position block boundary.
+    invariant_row=data[0];zero_errors=[];shift_errors=[];max_tokens=0
+    for request,length in zip(invariant_row['request_pairs'],invariant_row['choice_char_lengths']):
+        check_budget(30);pair=encode_pair(tok,*request);rp=encode_pair(tok,'Answer:',request[1])
+        mapping,reason=prefix_alignment(tok,request,pair,[rp]);assert mapping is not None,reason
+        q=head_logits(model,forward_states(scorer,pair,5));r=head_logits(model,forward_states(scorer,rp,4))
+        r1=r[1][mapping[0]][None];r4=r[4][mapping[0]][None];parts=[]
+        for b in range(0,len(pair[1]),BLOCK):
+            e=min(b+BLOCK,len(pair[1]));zero,_=token_logits(q[1][b:e],q[4][b:e],r1[:,b:e],r4[:,b:e],force_zero=True)
+            assert torch.equal(zero,q[4][b:e]+.5*(q[4][b:e]-q[1][b:e]))
+            parts.append(target_lp(zero,pair[1][b:e]))
+        new=float(torch.cat(parts).sum());native=original_sums(q,pair[1]);error=abs(new-native['loopcd_k4_fixed']);assert error==0.
+        late=native['native_k4']/length-native['native_k5']/length
+        assert new/length+late==native['loopcd_k4_fixed']/length+late
+        zero_errors.append(error);max_tokens=max(max_tokens,len(pair[1]))
+        base,d=token_logits(q[1][:1],q[4][:1],r1[:,:1],r4[:,:1])
+        shifted,sd=token_logits(q[1][:1]+.25,q[4][:1]+.25,r1[:,:1]-.5,r4[:,:1]-.5)
+        aerr=float((d['alpha']-sd['alpha']).abs().max());perr=float((base.log_softmax(-1)-shifted.log_softmax(-1)).abs().max())
+        assert aerr<=3e-5 and perr<=3e-5,('FP32 constant-shift invariance',aerr,perr)
+        shift_errors.append(dict(max_alpha_abs_error=aerr,max_full_vocabulary_logprob_abs_error=perr))
+    assert max_tokens>BLOCK
+    real_invariants=dict(status='passed',question=invariant_row['id'],candidates=len(zero_errors),max_continuation_tokens=max_tokens,
+        block_size=BLOCK,zero_correction_complete_sum_max_abs_error=max(zero_errors),zero_correction_recovers_A1=True,
+        constant_shift_tolerance=3e-5,constant_shift_max_alpha_abs_error=max(r['max_alpha_abs_error'] for r in shift_errors),
+        constant_shift_max_full_vocabulary_logprob_abs_error=max(r['max_full_vocabulary_logprob_abs_error'] for r in shift_errors),
+        scope='Independent original model5/4; no diagnostic checks included in timed records')
     import resource
     save('results/r7_DEPLOYMENT_PROFILE.json',dict(status='complete',n=len(data),primary=primary,
         source_sha256=sha('scripts/r7_deploy.py'),final_method_lock_sha256=sha('configs/r7_FINAL_METHOD_LOCK.json'),
@@ -93,7 +121,8 @@ def main():
         timing_design='Sequential blocks on identical12 questions, first question excluded from both warm means; local deployment timing, not a hardware-wide speed guarantee',
         peak_cuda_allocated_bytes=max(r['peak_cuda_allocated_bytes'] for r in records),
         host_maxrss_kib=resource.getrusage(resource.RUSAGE_SELF).ru_maxrss,
-        memory_semantics='PyTorch allocator bytes on GB10 unified memory, not a discrete-VRAM claim',records=records))
+        memory_semantics='PyTorch allocator bytes on GB10 unified memory, not a discrete-VRAM claim',records=records,
+        real_model_invariants=real_invariants))
     print('R7_DEPLOYMENT_COMPLETE',flush=True)
 
 

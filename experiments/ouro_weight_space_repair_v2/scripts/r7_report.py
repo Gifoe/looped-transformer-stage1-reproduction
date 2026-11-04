@@ -2,7 +2,7 @@
 import csv,json,time
 from pathlib import Path
 import numpy as np
-from r7_core import ROOT,read,save,sha,csvout
+from r7_core import ROOT,read,save,sha,csvout,jsonlines
 
 
 def csvrows(name):
@@ -18,17 +18,74 @@ def textout(name,content):
     p=ROOT/name;assert p.name.startswith('r7_') and p.parent.is_dir();p.write_text(content.rstrip()+'\n',encoding='utf8')
 
 
+def changed_cases(test,primary):
+    """Post-test algebraic decomposition, not another predictor or intervention.
+
+    Against R6, token methods restore its old subtraction, then apply a target
+    logit shift and a full log-partition shift. FP32 accumulation residuals are
+    recorded rather than hidden. Every prediction change is retained.
+    """
+    assert read('results/r7_ARC_COMPLETE.json')['status']=='complete'
+    documents={r['id']:r for r in jsonlines('data/slcd_test.jsonl')};cases=[]
+    for row in test:
+        old_pred=row['predictions']['M0_R6'];new_pred=row['predictions'][primary];gold=row['gold']
+        if old_pred==new_pred:continue
+        old=np.asarray(row['baseline_scores']['M0_R6']);new=np.asarray(row['method_scores'][primary]);lengths=np.asarray(row['choice_char_lengths'])
+        prior=row['prior_methods'][0];e0=np.asarray(prior['loopcd_k4_fixed']['normalized_scores'])-np.asarray(prior['native_k4']['normalized_scores'])
+        restored=row['alpha6']*e0
+        if primary=='M1_multi_candidate':
+            es=np.stack([np.asarray(p['loopcd_k4_fixed']['normalized_scores'])-np.asarray(p['native_k4']['normalized_scores']) for p in row['prior_methods']])
+            new_term=-row['M1_diagnostic']['alpha']*es.mean(axis=0)
+            components={'restored_old_R6_subtraction':restored.tolist(),'new_candidate_prior_term':new_term.tolist()}
+            reconstructed=restored+new_term
+        else:
+            diagnostic=[candidate[primary] for candidate in row['token_diagnostics']]
+            shift=np.asarray([np.sum(d['target_logit_shift']) for d in diagnostic])/lengths
+            normalizer=-np.asarray([np.sum(d['log_normalizer_change']) for d in diagnostic])/lengths
+            components={'target_logit_shift_component':shift.tolist(),'negative_log_normalizer_component':normalizer.tolist(),
+                        'restored_old_R6_subtraction':restored.tolist()}
+            reconstructed=shift+normalizer+restored
+        delta=new-old;residual=delta-reconstructed
+        components.update(actual_score_change=delta.tolist(),FP32_accumulation_residual=residual.tolist())
+        rival=old_pred if old_pred!=gold else new_pred
+        fixed_rival={name:values[gold]-values[rival] for name,values in components.items()}
+        doc=documents[row['id']];labels=doc['source_doc'].get('choices',{}).get('label',list(range(len(lengths))))
+        cases.append(dict(id=row['id'],transition=('Correct' if old_pred==gold else 'Wrong')+'->'+('Correct' if new_pred==gold else 'Wrong'),
+            question=doc['source_doc']['question'],choices=[dict(index=i,label=labels[i],scoring_continuation=pair[1],character_denominator=int(lengths[i])) for i,pair in enumerate(doc['request_pairs'])],
+            indices_are_zero_based=True,gold=gold,R6_prediction=old_pred,new_prediction=new_pred,primary=primary,
+            R6_scores=old.tolist(),new_scores=new.tolist(),R6_gold_margin=float(old[gold]-np.max(np.delete(old,gold))),
+            new_gold_margin=float(new[gold]-np.max(np.delete(new,gold))),
+            R6_rescued_vs_Fixed=row['correct']['M0_R6'] and not row['correct']['fixed'],
+            per_choice_change_decomposition=components,fixed_rival=rival,fixed_rival_margin_change_decomposition=fixed_rival,
+            decomposition_is='Exact score algebra plus explicitly recorded FP32 accumulation residual; not an isolated causal mechanism',
+            source_record_signature=row['signature']))
+    path=ROOT/'results/r7_failure_cases.jsonl'
+    with path.open('w',encoding='utf8') as stream:
+        for row in sorted(cases,key=lambda r:r['id']):stream.write(json.dumps(row,ensure_ascii=False,allow_nan=False)+'\n')
+    save('results/r7_CASE_DECOMPOSITION.json',dict(status='complete',n=len(cases),primary=primary,
+        transition_counts={name:sum(r['transition']==name for r in cases) for name in ['Wrong->Correct','Correct->Wrong','Wrong->Wrong']},
+        max_FP32_normalized_score_accumulation_residual=max((max(abs(x) for x in r['per_choice_change_decomposition']['FP32_accumulation_residual']) for r in cases),default=0.),
+        full_cases_sha256=sha('results/r7_failure_cases.jsonl'),selection='All prediction changes; illustrative rows choose first3 IDs lexicographically per outcome, never by margin magnitude',
+        attribution='ARC question/choice text is inherited CC BY-SA4.0; see data/DATA_SOURCE_NOTICE.txt'))
+    return cases
+
+
 def main():
     from r7_evaluate import rows,paired
     arc=read('results/r7_ARC_COMPLETE.json');assert arc['status']=='complete'
     lock=read('configs/r7_FINAL_METHOD_LOCK.json');primary=lock['primary'];assert arc['primary']==primary
     test=rows('test');train=[r for s in ['discovery','selection','confirmation'] for r in rows(s)]
+    cases=changed_cases(test,primary)
     val=rows('validation');dev=csvrows('results/r7_development_results.csv');full=csvrows('results/r7_arc_full_test_results.csv')
     contrasts=[]
     for name,ref in [('M2_N0_token','M0_R6'),('M3_multi_token','M2_N0_token'),
             ('M2_N0_token','C_R6alpha_token'),('M3_multi_token','C_mean_denominator'),
             ('M3_multi_token','C_matched_guidance'),('M3_multi_token','C_shuffled_direction'),('M3_multi_token','C_no_late')]:
-        contrasts.append(dict(split='train1093',**paired(train,name,reference=ref)))
+        metric=paired(train,name,reference=ref)
+        # These contrasts use different references; R6 rescue retention is
+        # reported in the primary-vs-R6 tables, not relabeled here.
+        for key in ['retained_R6_vs_Fixed_rescues','total_R6_vs_Fixed_rescues','retained_R6_rescue_fraction']:metric.pop(key)
+        contrasts.append(dict(split='train1093',**metric))
     csvout('results/r7_mechanism_contrasts.csv',contrasts)
     selectivity=[]
     for row in train:
@@ -80,15 +137,20 @@ def main():
     assert sha('configs/slcd_R6_FINAL_LOCK.json')=='6de605b885b4fb9ff72b273ecc0c0484e9fe72fc5d51d793b22367db879b7da7'
     save('results/r7_PRESERVATION_AUDIT.json',dict(status='passed',stat_snapshot_files=len(entries),R6_hash_checked_files=len(inherited),changed=changed,
         snapshot_sha256=sha('logs/r7_PRESERVATION_BASELINE.json'),scope='Size/mtime_ns of every enumerated pre-R7 file plus complete immutable R6 archive record hashes; environment/model symlink/cache/transport and nested initial-discovery hidden states excluded from snapshot'))
-    parity=read('results/r7_baseline_parity.json');parity.update(status='passed_CPU_and_GPU',
+    profile=read('results/r7_DEPLOYMENT_PROFILE.json')
+    previous_parity=read('results/r7_baseline_parity.json')
+    cpu_phase=previous_parity.get('cpu_phase',previous_parity)
+    parity=dict(status='passed_CPU_and_GPU',cpu_phase=cpu_phase,gpu_parity_status='exact_with_explicit_stage_coverage',
+        total_authorized_scored_questions=2564,fresh_main_forward_questions=1471,historical_main_state_questions=1093,
         gpu_split_receipts={s:dict(complete_sha256=sha('results/r7_'+s+('_development_COMPLETE.json' if s in ['discovery','selection','confirmation'] else '_final_COMPLETE.json')),
             **{k:v for k,v in read('results/r7_'+s+('_development_COMPLETE.json' if s in ['discovery','selection','confirmation'] else '_final_COMPLETE.json')).items() if k in ['n','baseline_parity_questions','baseline_parity_max_error','baseline_parity_status','historical_states_reused','actual_main_depth','historical_main_state_collection_depth']}) for s in ['discovery','selection','confirmation','validation','test']},
         pilot_sha256=sha('results/r7_PILOT_COMPLETE.json'),KV_cache_rejected=True,
         KV_reason='Real discovery pilot failed zero-tolerance BF16 parity: max token error0.3139867783; original uncached path retained',
-        mathematical_checks_sha256=sha('results/r7_MATH_CHECKS.json'))
+        mathematical_checks_sha256=sha('results/r7_MATH_CHECKS.json'),
+        deployment_profile_sha256=sha('results/r7_DEPLOYMENT_PROFILE.json'),
+        real_model_zero_sum_and_constant_shift_checks=profile['real_model_invariants'])
     save('results/r7_baseline_parity.json',parity)
     oracle=csvrows('results/r7_oracle_alpha_diagnostics.csv');lim={k:sum(r['limitation']==k for r in oracle) for k in set(r['limitation'] for r in oracle)}
-    profile=read('results/r7_DEPLOYMENT_PROFILE.json')
     # All plots use complete source artifacts and export standalone PNG/PDF.
     import matplotlib;matplotlib.use('Agg')
     import matplotlib.pyplot as plt
@@ -111,7 +173,15 @@ def main():
     plt.close(fig)
     mainrow=arc['metrics'];gate=arc['correct']>736;achieve=arc['correct']>=751
     main_train=next(r for r in aggregate if r['method']==primary)
+    selection_table=[]
+    for name in ['M0_R6','M1_multi_candidate','M2_N0_token','M3_multi_token']:
+        selection_table.append(dict(method=name,train1093_correct=sum(r['correct'][name] for r in train),
+            validation299_correct=sum(r['correct'][name] for r in val) if name in val[0]['predictions'] else 'not evaluated'))
     contrast_table=[{'contrast':r['method']+' vs '+r['reference'],'rescue':r['rescue'],'damage':r['damage'],'net':r['net']} for r in contrasts]
+    example_table=[]
+    for transition in ['Wrong->Correct','Correct->Wrong']:
+        for case in sorted([r for r in cases if r['transition']==transition],key=lambda r:r['id'])[:3]:
+            example_table.append({key:case[key] for key in ['id','transition','gold','R6_prediction','new_prediction','R6_gold_margin','new_gold_margin']})
     testtable=[dict(method=r['method'],correct=r['correct'],accuracy=f"{100*float(r['accuracy']):.4f}%",rescue=r['rescue'],damage=r['damage'],net=r['net']) for r in full]
     comparison=next(r for r in contrasts if r['method']=='M3_multi_token' and r['reference']=='C_matched_guidance')
     shuffled=next(r for r in contrasts if r['method']=='M3_multi_token' and r['reference']=='C_shuffled_direction')
@@ -144,11 +214,19 @@ def main():
 
 候选锁SHA256：`{sha('configs/r7_CANDIDATE_LOCK.json')}`；最终锁SHA256：`{sha('configs/r7_FINAL_METHOD_LOCK.json')}`。所有推理源代码、模型/tokenizer、数据、固定示例、参考和数值常量均被绑定。每个配置任一候选的自身参考前缀对齐失败即整题回退R6；模型/数值错误停止。推理函数不接收gold。
 
+{markdown_table(selection_table,['method','train1093_correct','validation299_correct'])}
+
+选择以预先固定的validation正确数优先，因此训练集最优方法不一定成为最终主方法。M3未晋级时不在validation补算其结果。
+
 ## 完整test结果：主要参照R6
 
 {markdown_table(testtable,['method','correct','accuracy','rescue','damage','net'])}
 
 主方法保留R6相对Fixed原有纠错中的{mainrow['retained_R6_vs_Fixed_rescues']}/{mainrow['total_R6_vs_Fixed_rescues']}题。逐题记录、五组配对转移、候选总分和token诊断保存在原始JSONL及r7_paired_transitions.csv。没有测试后更换赢家。
+
+{markdown_table(example_table,['id','transition','gold','R6_prediction','new_prediction','R6_gold_margin','new_gold_margin'])}
+
+示例按每类ID字典序取前3题，选项索引从0开始。r7_failure_cases.jsonl保存所有预测变化及完整题干/选项，逐选项分解为目标logit变化、完整归一化项变化和恢复旧R6扣除项，并显式记录FP32累加残差；该代数分解解释分数如何变化，不能单凭它识别唯一因果机制。
 
 ![ARC](r7_arc_results.png)
 
@@ -166,7 +244,7 @@ N0为字面量Answer:；N1/N2保留原25例和分隔符，仅通过结构化ques
 
 表中均为完整train1093上的配对比较，属于开发证据。M2对R6同时改变token粒度、系数估计和重新归一化，因此不能把全部差值归因于单一因素；桥接控制固定整题alpha后在token空间重新归一化，提供中间对照。M3对M2比较引入N1/N2的稳健参考作用。{direction_note}
 
-若冻结赢家为M1，现有匹配幅度及置乱控制定义在M3的token空间，不能据此隔离M1的候选级方向机制。M1相对R6仅支持这套多参考候选公式的配对效果，不能把其提升归因于更细的token校正。
+现有匹配幅度及置乱控制对应M3多参考token修正；若赢家为M1或M2，不能用它比这些J3控制高就隔离其自身方向机制。M1相对R6只检验多参考候选公式，不能归功于token粒度；M2对桥接控制检验其token系数估计，但仍不能独立证明收益来自去除无关先验而非通用幅度变化。该机制归因限制保留在最终结论中。
 
 M1是候选分数空间投影；M2/M3先在完整词表加权内积下解析投影，再完整log_softmax，最后才累加并除一次字符长度。两类归一化不同，不能相互替代。r7_selectivity_diagnostics.csv将实际目标logit位移、log-partition变化和目标log概率变化分开，检查三者恒等式；不把已读标签用于系数。
 
@@ -175,6 +253,8 @@ M1是候选分数空间投影；M2/M3先在完整词表加权内积下解析投�
 ## 正确性与计算成本
 
 20项CPU数学检查通过；真实模型无干预、N0先验、独立循环深度及各阶段历史基线精确parity见r7_baseline_parity.json。旧KV路径真实BF16单token最大差约0.314，未通过且停用。所有新模型前向使用原无mask、无KV的调用。开发复用历史K6目标状态并逐文件SHA/manifest绑定；这不计作本轮主上下文K5执行时间。
+
+另以真实模型第一道开发题的4个候选执行独立实现检查，最长34token，跨越32位置分块边界：强制零校正后完整候选总似然精确回到Fixed，加入原晚期项后回到A1。常数平移检查的alpha最大差为{profile['real_model_invariants']['constant_shift_max_alpha_abs_error']:.6g}，完整词表log概率最大差为{profile['real_model_invariants']['constant_shift_max_full_vocabulary_logprob_abs_error']:.6g}；使用预定FP32舍入容差3e-5。这些额外检查不计入部署计时样本。
 
 新增GPU-worker累计{ledger['used_seconds']:.3f}秒（{ledger['used_seconds']/3600:.4f}小时），包含加载、失败尝试、参考、head和导出；硬上限21600秒，开发阶段预留5400秒。旧预算未修改；完整历史ledger与可识别缓存采集条目单列，不宣称历史缓存免费，也不把包含其他工作的总额误当缓存专属成本。
 
