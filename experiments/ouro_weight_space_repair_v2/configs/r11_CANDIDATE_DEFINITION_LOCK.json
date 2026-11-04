@@ -1,0 +1,208 @@
+{
+  "status": "definitions_frozen_before_current_confirmation",
+  "created_unix": 1793795994.9961224,
+  "candidates": [
+    "single_loop_axis",
+    "robust_cyclic_loop_axis"
+  ],
+  "protocol_sha256": "7d783387c034c0fdb008bba6ca4abb9e4080555f16e375ef040a870d48f35515",
+  "inference_definition_sha256": {
+    "r11_scores.py": "ea886e6365effe63b609c73b5e18070c42c81c1267380ec5a8370c4e3a44d379",
+    "r11_checks.py": "1e23ea600c17945a6b268716005b637f2393e8ab9cce5fd5946201f55c0f951b",
+    "r11_development.py": "54d26b553e5e0379296632d64bd63209a687b380b71a0be30d90dcc95ce3e96e",
+    "r8_scores.py": "9b0bb1bc69050a628e21c2ea03b444e2f047b2a73a50fd997987105e6775356a",
+    "r7_core.py": "1e9265527fb4f9dbf3daabf0f69b41e0e303e372fd03780520ec02cc176e78c4",
+    "slcd_r6_scores.py": "4decfa923ee1a69f03e2d5e6a734023f21780e04e754a9acf5fc9df5e9a25e58"
+  },
+  "development_receipt_sha256": "77eececfb187053df3ed5f4335bac493a742a9df4680a748830b58473821c233",
+  "development_score_sha256": "f961581a6d4995a70f797e23bcd8fcce742d886249ea568f894419c83ecab108",
+  "dataset_sha256": {
+    "discovery": "8d1d83a2fab5fa9de4df10ba21b1525605aa500c071f5469eea05f9420b9256d",
+    "selection": "e196ca17fb9d5df6085fc9b6506668cd6c21debd1a770f600dda9f68273f51d2",
+    "confirmation": "2c3393e141e045b5d8eb9cbabe6388b6ae0441b8dbe3993a3da6c872401c03a6",
+    "validation": "cb7cb3f8cf2bc80523f775a41961352647845d71c4a0c8f91cfcb11aaab1257a",
+    "test": "c21f826e316eac7d5101787aae1e4cea5515a820cc0f0d5d577582a7b9c93eb6"
+  },
+  "model_identity": {
+    "revision": "574fa66cb8bf5abdc979642d01cf2b79b16bfab1",
+    "safetensors_sha256": "58872a72616c736595b8b7662079c5b12c5a162ec16eae94f21c348dfa9885af",
+    "metadata_and_tokenizer_sha256": {
+      "config.json": "ce9cc13da41591b8b4deca053d7dfee06424c0228628ee862ea86d725bc163f3",
+      "configuration_ouro.py": "950443e32929047aa08d02abad2e1888bc1914b3db988d3d675f70787f65dafb",
+      "merges.txt": "0b54e8aa4e53d5383e2e4bc635a56b43f9647f7b13832d5d9ecd8f82dac4f510",
+      "modeling_ouro.py": "c5c68fbb368ce2909c257ae2afc50719be8c91539333d3295e19312c4316f413",
+      "snapshot_metadata.json": "6c6aeb014bbf31bdecf2efe30b370502bd5c8e260804b8d459cd48e9c301318b",
+      "special_tokens_map.json": "55087bb8409060d9cb0f80495e34f4e0d8a84f68a799a6b0cab3132be0aae319",
+      "tokenizer.json": "fcb808fe5e7642f5299be28aea07fc7f6d4f4364c3ac5e408e15a772cbc8fa8d",
+      "tokenizer_config.json": "7e010da95d71b0fa1aa809552922c74cc1dd98d628f21ba39ca6c35aa18d5d91",
+      "vocab.json": "7b9de3f47796abf8d00ab96be299fea0dc9afdf1827f34e7e0b9fb44593efe5c"
+    }
+  },
+  "fixed25_sha256": "8cf4b70e7c07c67a589560d5fcbc1fa8feb85a0e7af3b348fa21f147271419da",
+  "selection_rule": "At most2 frozen candidates; require>174. Select highest correct, fulltrain correct, retained oldR6 rescues, fewer damages, fewer references, methodID.",
+  "development_summary": [
+    {
+      "method": "native4",
+      "n": 576,
+      "correct": 353,
+      "R6_correct": 360,
+      "net": -7,
+      "rescue": 21,
+      "damage": 28,
+      "retained_R6_special": 5,
+      "total_R6_special": 21
+    },
+    {
+      "method": "fixed",
+      "n": 576,
+      "correct": 349,
+      "R6_correct": 360,
+      "net": -11,
+      "rescue": 10,
+      "damage": 21,
+      "retained_R6_special": 0,
+      "total_R6_special": 21
+    },
+    {
+      "method": "adaptive",
+      "n": 576,
+      "correct": 353,
+      "R6_correct": 360,
+      "net": -7,
+      "rescue": 14,
+      "damage": 21,
+      "retained_R6_special": 5,
+      "total_R6_special": 21
+    },
+    {
+      "method": "A1",
+      "n": 576,
+      "correct": 353,
+      "R6_correct": 360,
+      "net": -7,
+      "rescue": 3,
+      "damage": 10,
+      "retained_R6_special": 14,
+      "total_R6_special": 21
+    },
+    {
+      "method": "M0_R6",
+      "n": 576,
+      "correct": 360,
+      "R6_correct": 360,
+      "net": 0,
+      "rescue": 0,
+      "damage": 0,
+      "retained_R6_special": 21,
+      "total_R6_special": 21
+    },
+    {
+      "method": "single_loop_axis",
+      "n": 576,
+      "correct": 366,
+      "R6_correct": 360,
+      "net": 6,
+      "rescue": 9,
+      "damage": 3,
+      "retained_R6_special": 19,
+      "total_R6_special": 21
+    },
+    {
+      "method": "single_loop_axis_prior_norm",
+      "n": 576,
+      "correct": 362,
+      "R6_correct": 360,
+      "net": 2,
+      "rescue": 4,
+      "damage": 2,
+      "retained_R6_special": 20,
+      "total_R6_special": 21
+    },
+    {
+      "method": "single_loop_axis_shuffle_update",
+      "n": 576,
+      "correct": 352,
+      "R6_correct": 360,
+      "net": -8,
+      "rescue": 10,
+      "damage": 18,
+      "retained_R6_special": 13,
+      "total_R6_special": 21
+    },
+    {
+      "method": "robust_cyclic_loop_axis",
+      "n": 576,
+      "correct": 367,
+      "R6_correct": 360,
+      "net": 7,
+      "rescue": 7,
+      "damage": 0,
+      "retained_R6_special": 21,
+      "total_R6_special": 21
+    },
+    {
+      "method": "robust_cyclic_loop_axis_prior_norm",
+      "n": 576,
+      "correct": 362,
+      "R6_correct": 360,
+      "net": 2,
+      "rescue": 3,
+      "damage": 1,
+      "retained_R6_special": 20,
+      "total_R6_special": 21
+    },
+    {
+      "method": "robust_cyclic_loop_axis_shuffle_update",
+      "n": 576,
+      "correct": 350,
+      "R6_correct": 360,
+      "net": -10,
+      "rescue": 10,
+      "damage": 20,
+      "retained_R6_special": 13,
+      "total_R6_special": 21
+    },
+    {
+      "method": "single_native_axis",
+      "n": 576,
+      "correct": 362,
+      "R6_correct": 360,
+      "net": 2,
+      "rescue": 6,
+      "damage": 4,
+      "retained_R6_special": 18,
+      "total_R6_special": 21
+    },
+    {
+      "method": "robust_cyclic_native_axis",
+      "n": 576,
+      "correct": 364,
+      "R6_correct": 360,
+      "net": 4,
+      "rescue": 7,
+      "damage": 3,
+      "retained_R6_special": 19,
+      "total_R6_special": 21
+    }
+  ],
+  "budget": {
+    "original_limit_seconds": 21600,
+    "spent_seconds": {
+      "r7": 9690.506185531616,
+      "r9": 110.90128564834595,
+      "r10": 2014.6348459720612
+    },
+    "inherited_total_seconds": 11816.042317152023,
+    "remaining_round_limit_seconds": 9783.957682847977,
+    "reserve_ARC_seconds": 5400,
+    "inherited_ledger_sha256": {
+      "r7": "04c324886c780766e2c58babf136401c5e422325782621f28d1076d81d8c18ca",
+      "r9": "23be449e146bb3ad0212ab751c00a3c0a7454e0e4d2c9502d6100b5f9e8d5eb0",
+      "r10": "9fe21c65ce8c50b3562c04177668c2ce93dbee90c0936406c572386bfe4012e3"
+    }
+  },
+  "next_gate": "Freeze and verify fresh auxiliary K4 selected-only implementation, source/helper hashes and score parity before parsing confirmation517",
+  "current_confirmation_opened": false,
+  "external_evaluation_authorized": false,
+  "history_exposed": true
+}

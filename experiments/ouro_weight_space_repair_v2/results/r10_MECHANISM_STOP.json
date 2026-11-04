@@ -1,0 +1,42 @@
+{
+  "status": "stopped_for_goal_fidelity_after_development",
+  "n": 576,
+  "comparison": [
+    {
+      "method": "joint4_fusion",
+      "corresponding_joint": "joint4_only",
+      "correct": 464,
+      "joint_correct": 509,
+      "net_vs_joint": -45
+    },
+    {
+      "method": "joint4_protected",
+      "corresponding_joint": "joint4_only",
+      "correct": 454,
+      "joint_correct": 509,
+      "net_vs_joint": -55
+    },
+    {
+      "method": "jointFixed_protected",
+      "corresponding_joint": "jointFixed_only",
+      "correct": 456,
+      "joint_correct": 509,
+      "net_vs_joint": -53
+    },
+    {
+      "method": "balanced4_protected",
+      "corresponding_joint": "balanced4_only",
+      "correct": 459,
+      "joint_correct": 517,
+      "net_vs_joint": -58
+    }
+  ],
+  "original_preregistered_gate_claimed_failed": false,
+  "additional_attribution_rule_added_after_partial_feedback": true,
+  "scope_change_sha256": "4f3339e82b6b0f98a2a47c864130938b65e3b6d59ee380690f1f5e06bf0cc71b",
+  "no_R10_confirmation": true,
+  "no_R10_validation": true,
+  "no_R10_test": true,
+  "external_evaluation_authorized": false,
+  "reason": "Joint-format diagnostic retained. Direct fusion does not establish prefix-conditional prior repair; reuse forwards to test R11 instead."
+}
