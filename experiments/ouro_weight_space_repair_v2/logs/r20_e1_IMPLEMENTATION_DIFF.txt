@@ -1,0 +1,197 @@
+--- r20_hooks
++++ r20_e1_hooks
+@@ -1,33 +1,45 @@
+-"""Auxiliary-only V output intervention; existing scorer guard remains active."""
++"""E1 only batches CPU reads of unchanged V zero checks and guard refresh."""
+ class ValueAblation:
+     def __init__(self,model,scorer):
+         self.scorer=scorer;self.modules=[layer.self_attn.v_proj for layer in model.model.layers];self.handles=[];self.enabled=False;self.positions=();self.expected_sequence_length=None;self.counts=[0]*len(self.modules)
+-        self.original=[len(m._forward_hooks) for m in self.modules]
++        self.original=[len(m._forward_hooks) for m in self.modules];self.flags=[];self.verified=True
+     def __enter__(self):
+         try:
+             for i,m in enumerate(self.modules):
+                 def hook(module,args,output,i=i):
+-                    self.counts[i]+=1
++                    self.verified=False;self.counts[i]+=1
+                     assert output.shape[1]==self.expected_sequence_length
+                     if not self.enabled:return output
+                     import torch
+                     assert output.dtype==torch.bfloat16 and output.ndim==3 and output.shape[0]==1
+                     assert self.positions and max(self.positions)<output.shape[1]
+                     result=output.clone();ix=torch.tensor(self.positions,device=output.device);result.index_fill_(1,ix,0)
+-                    assert bool((result.index_select(1,ix)==0).all())
++                    self.flags.append((result.index_select(1,ix)==0).all())
+                     return result
+-                self.handles.append(m.register_forward_hook(hook));self.scorer.invalidate()
+-            return self
++                self.handles.append(m.register_forward_hook(hook))
++            self.scorer.invalidate();return self
+         except BaseException:
+-            self.__exit__(None,None,None);raise
++            try:self.__exit__(None,None,None)
++            except BaseException:pass
++            raise
+     def configure(self,positions,enabled,expected_sequence_length=None):
++        assert self.verified,'Previous forward not verified'
+         positions=tuple(positions);assert len(set(positions))==len(positions) and all(i>=0 for i in positions)
+-        self.expected_sequence_length=expected_sequence_length;self.positions=positions;self.enabled=bool(enabled);self.counts=[0]*len(self.modules);self.scorer.invalidate()
++        self.expected_sequence_length=expected_sequence_length;self.positions=positions;self.enabled=bool(enabled);self.counts=[0]*len(self.modules);self.flags=[];self.scorer.invalidate()
+     def verify(self,loops):
++        import torch
+         assert self.counts==[loops]*len(self.modules),self.counts
++        assert len(self.flags)==(loops*len(self.modules) if self.enabled else 0)
++        if self.enabled:assert bool(torch.stack(self.flags).all().item())
++        self.verified=True
+         return dict(calls_per_physical_layer=list(self.counts),positions=list(self.positions),enabled=self.enabled)
+     def __exit__(self,*args):
+-        for h in self.handles:h.remove();self.scorer.invalidate()
++        error=None
++        for h in self.handles:
++            try:h.remove()
++            except BaseException as e:error=e
+         self.handles=[]
+-        assert [len(m._forward_hooks) for m in self.modules]==self.original
+-
++        try:
++            self.scorer.invalidate();assert [len(m._forward_hooks) for m in self.modules]==self.original
++        except BaseException as e:error=e
++        if error is not None and not (args and args[0] is not None):raise error
+--- r20_common
++++ r20_e1_common
+@@ -1,9 +1,9 @@
+ """R20 gates; writes exclusively in new namespace."""
+ import json
+ from r7_core import ROOT,read,sha,digest,jsonlines
+-LOCK='configs/r20_VALUE_ABLATION_PILOT_LOCK.json'
++LOCK='configs/r20_e1_VALUE_ABLATION_PILOT_LOCK.json'
+ def save(path,value):
+-    p=ROOT/path;assert p.name.startswith('r20_') and p.parent.is_dir()
++    p=ROOT/path;assert p.name.startswith('r20_e1_') and p.parent.is_dir()
+     tmp=p.with_suffix(p.suffix+'.tmp');tmp.write_text(json.dumps(value,indent=2,allow_nan=False)+'\n',encoding='utf8');tmp.replace(p)
+ def gate():
+     spec=read(LOCK);assert spec['status']=='frozen_bounded_development_pilot' and len(spec['cohort'])==24
+@@ -11,7 +11,7 @@
+     for p,h in spec['source_sha256'].items():assert sha('scripts/'+p)==h,p
+     for p,h in spec['inherited_source_sha256'].items():assert sha('scripts/'+p)==h,p
+     for p,h in spec['input_sha256'].items():assert sha(p)==h,p
+-    receipt=read('logs/r20_PUBLIC_DEFINITION_RECEIPT.json');assert receipt['readback_verified'] and receipt['protocol_sha256']==sha(LOCK)
++    receipt=read('logs/r20_e1_PUBLIC_DEFINITION_RECEIPT.json');assert receipt['readback_verified'] and receipt['protocol_sha256']==sha(LOCK)
+     assert read('results/r20_CPU_ADMISSION.json')['R6_unique_vs_Fixed']>=1
+     return spec
+ 
+--- r20_worker
++++ r20_e1_worker
+@@ -1,7 +1,7 @@
+ """One reviewed R20 worker, original uncached call; no label in numerical path."""
+ import time,os,json
+ import numpy as np
+-from r20_common import ROOT,LOCK,read,sha,digest,save,gate
++from r20_e1_common import ROOT,LOCK,read,sha,digest,save,gate
+ 
+ def measure(model,scorer,tok,request,hidden,expected,index,characters,span,permutation,check):
+     import torch
+@@ -10,7 +10,7 @@
+     from r7_references import prefix_alignment
+     from r7_math import token_logits
+     from r20_math import torch_controls,numpy_controls
+-    from r20_hooks import ValueAblation
++    from r20_e1_hooks import ValueAblation
+     pair=encode_pair(tok,*request);assert hidden['candidate']==index and hidden['target_ids']==pair[1]
+     q=head_logits(model,hidden['normalized']);original=original_sums(q,pair[1])
+     assert all(v==expected['original_methods'][k]['sum_scores'][index] for k,v in original.items())
+@@ -56,7 +56,7 @@
+     started=time.monotonic();spec=gate()
+     from r19_common import inputs
+     data=inputs(spec);spans={r['id']:r for r in read('configs/r20_SPANS.json')['rows']}
+-    assert not (ROOT/'results/r20_pilot.jsonl').exists()
++    assert not (ROOT/'results/r20_e1_pilot.jsonl').exists()
+     from runtime import load_model,check_budget
+     from ouro_cached_scoring import OuroCachedScorer
+     from weight_edits import tensor_sha256
+@@ -66,12 +66,12 @@
+     for p,h in identity['metadata_and_tokenizer_sha256'].items():assert sha('models/Ouro-1.4B/'+p)==h
+     before={n:tensor_sha256(p) for n,p in model.named_parameters()};permutation=np.random.default_rng(2021).permutation(model.config.vocab_size);count=0;peak=0
+     torch.cuda.reset_peak_memory_stats()
+-    with (ROOT/'results/r20_pilot.jsonl').open('x',encoding='utf8') as out:
++    with (ROOT/'results/r20_e1_pilot.jsonl').open('x',encoding='utf8') as out:
+         for chosen,clean,expected,state in data:
+             check_budget(5);assert time.monotonic()<float(os.environ['R20_SOFT_MONOTONIC'])
+             payload=torch.load(ROOT/state['file'],map_location='cpu',weights_only=True);assert payload['id']==chosen['id']
+             candidates=[measure(model,scorer,tok,req,payload['candidate_states'][j],expected,j,clean['choice_char_lengths'][j],spans[chosen['id']],permutation,count==0 and j==0) for j,req in enumerate(clean['request_pairs'])]
+-            out.write(json.dumps(dict(id=chosen['id'],split=chosen['split'],candidates=candidates),allow_nan=False)+'\n');out.flush();os.fsync(out.fileno());count+=1;peak=max(peak,torch.cuda.max_memory_allocated());save('results/r20_pilot_PROGRESS.json',dict(completed=count,target=24,elapsed_seconds=time.monotonic()-started))
++            out.write(json.dumps(dict(id=chosen['id'],split=chosen['split'],candidates=candidates),allow_nan=False)+'\n');out.flush();os.fsync(out.fileno());count+=1;peak=max(peak,torch.cuda.max_memory_allocated());save('results/r20_e1_pilot_PROGRESS.json',dict(completed=count,target=24,elapsed_seconds=time.monotonic()-started))
+     after={n:tensor_sha256(p) for n,p in model.named_parameters()};assert before==after and count==24
+-    save('results/r20_pilot_COMPLETE.json',dict(status='complete',n=count,protocol_sha256=sha(LOCK),score_file_sha256=sha('results/r20_pilot.jsonl'),weights_modified=False,all_parameter_hashes_before=before,all_parameter_hashes_after=after,elapsed_seconds=time.monotonic()-started,model_load_seconds=load_seconds,peak_cuda_allocated_bytes=peak,memory_scope='GB10 unified memory; allocator allocated bytes only',timing_scope='cached-main exploratory pilot, not independent deployment throughput',heldout_accessed=False,KV_cache=False,explicit_attention_mask=False))
++    save('results/r20_e1_pilot_COMPLETE.json',dict(status='complete',n=count,protocol_sha256=sha(LOCK),score_file_sha256=sha('results/r20_e1_pilot.jsonl'),weights_modified=False,all_parameter_hashes_before=before,all_parameter_hashes_after=after,elapsed_seconds=time.monotonic()-started,model_load_seconds=load_seconds,peak_cuda_allocated_bytes=peak,memory_scope='GB10 unified memory; allocator allocated bytes only',timing_scope='cached-main exploratory pilot, not independent deployment throughput',heldout_accessed=False,KV_cache=False,explicit_attention_mask=False))
+ if __name__=='__main__':main()
+--- r20_supervise
++++ r20_e1_supervise
+@@ -1,22 +1,22 @@
+ """R20 single-worker absolute monotonic deadlines, no retry, actual accounting."""
+ import fcntl,os,signal,subprocess,time
+-from r20_common import ROOT,read,sha,save,gate
++from r20_e1_common import ROOT,read,sha,save,gate
+ 
+ def main():
+     spec=gate();book=spec['budget']
+     with (ROOT/'logs/r7_gpu.lock').open('a') as mutex:
+         fcntl.flock(mutex,fcntl.LOCK_EX|fcntl.LOCK_NB)
+-        assert len(book['inherited_ledger_sha256'])==9
++        assert len(book['inherited_ledger_sha256'])==10
+         for p,h in book['inherited_ledger_sha256'].items():assert sha(p)==h
+-        inherited=sum(read(p)['used_seconds'] for p in book['inherited_ledger_sha256']);assert abs(inherited-17960.053507566452)<1e-6
+-        assert not any((ROOT/p).exists() for p in ['logs/r20_gpu_budget.json','logs/r20_SUPERVISOR.json'])
++        inherited=sum(read(p)['used_seconds'] for p in book['inherited_ledger_sha256']);assert abs(inherited-18128.605543765705)<1e-6
++        assert not any((ROOT/p).exists() for p in ['logs/r20_e1_gpu_budget.json','logs/r20_e1_SUPERVISOR.json'])
+         assert inherited+180<21600
+         start=time.monotonic();wall=time.time();p=None;state=dict(status='starting',started_unix=wall,supervisor_pid=os.getpid(),hard_limit_seconds=180,soft_stop_seconds=170,kill_seconds=179)
+         env=dict(os.environ,GPU_DEADLINE_UNIX=str(wall+170),R20_SOFT_MONOTONIC=str(start+170),PYTHONPYCACHEPREFIX=str(ROOT/'cache/pycache'))
+         try:
+-            with (ROOT/'logs/r20_worker.out').open('x') as out,(ROOT/'logs/r20_worker.err').open('x') as err:
+-                p=subprocess.Popen([str(ROOT/'env/bin/python'),'-B','-u','scripts/r20_worker.py'],cwd=ROOT,env=env,stdin=subprocess.DEVNULL,stdout=out,stderr=err,start_new_session=True,preexec_fn=lambda:os.nice(15))
+-                state.update(status='running',worker_pid=p.pid);save('logs/r20_SUPERVISOR.json',state)
++            with (ROOT/'logs/r20_e1_worker.out').open('x') as out,(ROOT/'logs/r20_e1_worker.err').open('x') as err:
++                p=subprocess.Popen([str(ROOT/'env/bin/python'),'-B','-u','scripts/r20_e1_worker.py'],cwd=ROOT,env=env,stdin=subprocess.DEVNULL,stdout=out,stderr=err,start_new_session=True,preexec_fn=lambda:os.nice(15))
++                state.update(status='running',worker_pid=p.pid);save('logs/r20_e1_SUPERVISOR.json',state)
+                 try:code=p.wait(timeout=max(0,start+170-time.monotonic()))
+                 except subprocess.TimeoutExpired:
+                     state['timed_out']=True;os.killpg(p.pid,signal.SIGTERM)
+@@ -30,6 +30,6 @@
+         finally:
+             elapsed=time.monotonic()-start;state.update(finished_unix=time.time(),gpu_worker_seconds=elapsed,overrun=elapsed>180)
+             if elapsed>180:state['status']='overrun_ineligible'
+-            save('logs/r20_SUPERVISOR.json',state);save('logs/r20_gpu_budget.json',dict(original_limit_seconds=21600,inherited_total_seconds=inherited,used_seconds=elapsed,total_used_seconds=inherited+elapsed,runs=[state]))
++            save('logs/r20_e1_SUPERVISOR.json',state);save('logs/r20_e1_gpu_budget.json',dict(original_limit_seconds=21600,inherited_total_seconds=inherited,used_seconds=elapsed,total_used_seconds=inherited+elapsed,runs=[state]))
+         if state['status']!='complete':raise SystemExit(1)
+ if __name__=='__main__':main()
+--- r20_analyze
++++ r20_e1_analyze
+@@ -1,14 +1,14 @@
+ """Analyze only complete, non-overrun R20 cohort; no partial effects."""
+ import numpy as np
+-from r20_common import read,sha,save,gate,jsonlines
++from r20_e1_common import read,sha,save,gate,jsonlines
+ from r19_analyze import paired
+ 
+ def main():
+-    spec=gate();done=read('results/r20_pilot_COMPLETE.json');sup=read('logs/r20_SUPERVISOR.json')
++    spec=gate();parity=read('results/r20_e1_OVERLAP_PARITY.json');assert parity['status']=='passed_strict_zero' and parity['protocol_sha256']==sha('configs/r20_e1_VALUE_ABLATION_PILOT_LOCK.json');done=read('results/r20_e1_pilot_COMPLETE.json');sup=read('logs/r20_e1_SUPERVISOR.json');assert parity['e1_scores_sha256']==done['score_file_sha256'] and parity['v0_scores_sha256']==spec['v0_partial_sha256']
+     assert done['status']==sup['status']=='complete' and done['n']==24 and not sup['overrun'] and not sup.get('timed_out',False)
+-    assert done['protocol_sha256']==sha('configs/r20_VALUE_ABLATION_PILOT_LOCK.json') and done['score_file_sha256']==sha('results/r20_pilot.jsonl')
++    assert done['protocol_sha256']==sha('configs/r20_e1_VALUE_ABLATION_PILOT_LOCK.json') and done['score_file_sha256']==sha('results/r20_e1_pilot.jsonl')
+     assert done['all_parameter_hashes_before']==done['all_parameter_hashes_after'] and not done['weights_modified']
+-    rows=list(jsonlines('results/r20_pilot.jsonl'));assert [r['id'] for r in rows]==[c['id'] for c in spec['cohort']]
++    rows=list(jsonlines('results/r20_e1_pilot.jsonl'));assert [r['id'] for r in rows]==[c['id'] for c in spec['cohort']]
+     first=rows[0]['candidates'][0];assert all(first['first_candidate_exact_checks'].values()) and len(first['actual_forward_audit'])==5
+     old={r['id']:r for s in ['discovery','selection'] for r in jsonlines('results/r7_'+s+'_development.jsonl')}
+     names=['primary','demo','raw_demo_matched','shuffle','old_Fisher','R6','Fixed','A1'];preds={k:[] for k in names};gold=[];table=[];normerror=0.;raw_mismatch=0.;unmatched=0
+@@ -30,7 +30,7 @@
+     checks=dict(R6_net_at_least_two=comparisons['R6']['net']>=2,R6_no_damage=comparisons['R6']['damages']==0,R6_unique_present=int(unique.sum())>=1,R6_unique_retained=retained==int(unique.sum()),controls_matched=unmatched==0)
+     checks.update({'strictly_exceeds_'+k:counts['primary']>counts[k] for k in ['old_Fisher','demo','raw_demo_matched','shuffle']})
+     checks.update({'paired_net_positive_'+k:comparisons[k]['net']>=1 for k in ['demo','raw_demo_matched']})
+-    save('results/r20_PILOT_ANALYSIS.json',dict(status='complete_single_pilot',n=24,counts=counts,paired=comparisons,question_results=table,R6_unique_total=int(unique.sum()),R6_unique_retained=retained,norm_max_error=normerror,raw_C_max_mismatch=raw_mismatch,protocol_sha256=done['protocol_sha256'],score_file_sha256=done['score_file_sha256'],source_sha256=spec['source_sha256'],model_identity=spec['model_identity'],unmatched_positions=unmatched,screens=checks,eligible_for_feasibility_review=all(checks.values()),automatic_extension_authorized=False,heldout_accessed=False,limitation='Repeated development24, no independent generalization or significance claim; controls cannot be promoted.'))
++    save('results/r20_e1_PILOT_ANALYSIS.json',dict(status='complete_single_pilot',n=24,counts=counts,paired=comparisons,question_results=table,R6_unique_total=int(unique.sum()),R6_unique_retained=retained,norm_max_error=normerror,raw_C_max_mismatch=raw_mismatch,protocol_sha256=done['protocol_sha256'],score_file_sha256=done['score_file_sha256'],source_sha256=spec['source_sha256'],model_identity=spec['model_identity'],unmatched_positions=unmatched,screens=checks,eligible_for_feasibility_review=all(checks.values()),automatic_extension_authorized=False,heldout_accessed=False,limitation='Repeated development24, no independent generalization or significance claim; controls cannot be promoted.'))
+ if __name__=='__main__':main()
+ 
+ 
