@@ -1,0 +1,34 @@
+{
+  "status": "passed_release_review",
+  "archive_member_count": 37,
+  "source_lock_unchanged": true,
+  "all_scientific_outputs_complete": true,
+  "independent_replay": {
+    "status": "passed_read_only_independent_replay",
+    "n": 64,
+    "positions": 1540,
+    "counts": {
+      "exact_native_KL": 34,
+      "matched_guidance": 33,
+      "shuffled_correction": 32,
+      "old_Fisher": 34,
+      "R6": 36,
+      "fixed": 34,
+      "A1": 33,
+      "native4": 32
+    },
+    "eligible_for_feasibility_review": false,
+    "pre_FP32_control_norm_max_error": 2.220446049250313e-16,
+    "scalar_FP32_sum_reconstruction_max_error": 3.725290298461914e-06,
+    "aggregate_worker_seconds": 17742.752264022827,
+    "remaining_worker_seconds": 3857.247735977173,
+    "heldout_accessed": false,
+    "external_benchmarks_started": false,
+    "scope": "Classification/statistical/accounting replay; no second model run and no independent full-vocabulary activation archive. Control norm identity is before final FP32 rounding."
+  },
+  "definition_commit": "c2a6485cb521d3c3307d6611128d4b2c5f97af7d",
+  "R16_primary_failed": true,
+  "no_new_winner": true,
+  "no_external_benchmarks": true,
+  "existing_files_to_be_preserved": "All prior R7/R11/R12/R13/R14/R15 public paths; verify against definition base tree after commit."
+}

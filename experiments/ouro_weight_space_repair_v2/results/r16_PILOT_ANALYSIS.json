@@ -1,0 +1,95 @@
+{
+  "status": "complete_single_fixed_pilot",
+  "n": 64,
+  "protocol_sha256": "40e71598b3fbe07922b6f15f2203b5f4517e6039745cd970e4adbd6da1a71412",
+  "counts": {
+    "exact_native_KL": 34,
+    "matched_guidance": 33,
+    "shuffled_correction": 32,
+    "old_Fisher": 34,
+    "R6": 36,
+    "fixed": 34,
+    "A1": 33,
+    "native4": 32
+  },
+  "paired": {
+    "matched_guidance": {
+      "rescues": 2,
+      "damages": 1,
+      "net": 1,
+      "exact_two_sided_McNemar_p": 1.0
+    },
+    "shuffled_correction": {
+      "rescues": 2,
+      "damages": 0,
+      "net": 2,
+      "exact_two_sided_McNemar_p": 0.5
+    },
+    "old_Fisher": {
+      "rescues": 0,
+      "damages": 0,
+      "net": 0,
+      "exact_two_sided_McNemar_p": 1.0
+    },
+    "R6": {
+      "rescues": 0,
+      "damages": 2,
+      "net": -2,
+      "exact_two_sided_McNemar_p": 0.5
+    },
+    "fixed": {
+      "rescues": 1,
+      "damages": 1,
+      "net": 0,
+      "exact_two_sided_McNemar_p": 1.0
+    },
+    "A1": {
+      "rescues": 2,
+      "damages": 1,
+      "net": 1,
+      "exact_two_sided_McNemar_p": 1.0
+    },
+    "native4": {
+      "rescues": 3,
+      "damages": 1,
+      "net": 2,
+      "exact_two_sided_McNemar_p": 0.625
+    }
+  },
+  "R6_unique_vs_Fixed": {
+    "total": 2,
+    "retained": 1
+  },
+  "screens": {
+    "beats_R6": false,
+    "beats_old_Fisher": false,
+    "beats_norm_control": true,
+    "beats_shuffle_control": true,
+    "retains_all_pilot_R6_unique_vs_Fixed": false
+  },
+  "eligible_for_feasibility_review": false,
+  "automatic_extension_authorized": false,
+  "heldout_accessed": false,
+  "external_benchmarks_started": false,
+  "numerical": {
+    "positions": 1540,
+    "alpha_zero": 569,
+    "alpha_one": 82,
+    "interior": 889,
+    "new_active_old_zero": 0,
+    "mean_absolute_alpha_change": 0.05496630762169501,
+    "max_absolute_alpha_change": 0.5975047909300826,
+    "rho_greater_than_one": 10,
+    "max_interval_width": 2.3283064365386963e-10,
+    "mean_KL_objective_gain_over_old_Fisher": 0.0014550923193332092,
+    "max_root_residual_interior": 2.2373308761203248e-10
+  },
+  "timing_sums": {
+    "main_head_seconds": 5.797244009561837,
+    "N0_reference_seconds": 33.827928114682436,
+    "solver_and_controls_seconds": 16.772874301299453
+  },
+  "model_load_seconds": 17.327915011905134,
+  "worker_elapsed_seconds": 83.96346590900794,
+  "limitation": "Post-evaluation development audit, one uniform64 sample from previously reused576. J1 only, reference stability untested; KL optimum does not guarantee correctness. Cached main, no standalone deployment timing."
+}
