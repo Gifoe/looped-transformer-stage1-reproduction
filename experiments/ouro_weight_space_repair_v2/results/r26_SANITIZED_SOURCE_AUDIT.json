@@ -1,0 +1,26 @@
+{
+  "status": "passed_read_only_source_and_process_audit",
+  "upstream_source_republished": false,
+  "actual_installed_versions": {
+    "transformers": "4.55.4",
+    "torch": "2.11.0+cu130"
+  },
+  "sources": {
+    "model": "c5c68fbb368ce2909c257ae2afc50719be8c91539333d3295e19312c4316f413",
+    "sdpa": "d16bbf0bc9fdd197cf02b2917959d2d2c17b8c95555432aa27b4cde83a140033",
+    "masking": "e29afe5c7058506b22c0e35e5efd8bb749dcfc2e79f32643d442b3e59088eb70"
+  },
+  "logic": "Ouro is_causal=True, causal mask factory used at every loop; installed SDPA uses is_causal for None mask and qlen>1. Source evidence only, no interception.",
+  "old_runtime_coverage": "R7 same-input depth parity and failed alternative KV path; R22 first-position BF16 across candidates only; R25 same-input selected/full key. No inspected receipt covers this arbitrary-prefix suffix/truncation experiment.",
+  "GPU_ledgers": 14,
+  "used_seconds": 18819.051603254396,
+  "remaining_seconds": 2780.9483967456035,
+  "matching_running_worker_or_supervisor_processes": 0,
+  "process_scope": "43 known existing worker/supervisor basenames matched whole process tokens; no process modified",
+  "CPU_only_tokenizer_preparations_seconds": [
+    5.75,
+    5.312000000005355,
+    5.296999999991385
+  ],
+  "scope": "Read-only metadata/source/tokenizer only, no model weights/state/load/forward/GPU"
+}
