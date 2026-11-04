@@ -1,0 +1,23 @@
+{
+  "status": "verified_complete_frozen_experiment_archive",
+  "archive_path": "artifacts/r11_records.tar.xz",
+  "archive_bytes": 4248220,
+  "archive_sha256": "b172b56ccaad87ba49344fdd20b9a77b6293a0dd2b3e10fc9571d97ab260a4ac",
+  "contents_sha256": "445d8e54101d1f9d8cb8063ca640870c66cb5cab03c9dcf01d7d3283476dbc70",
+  "inherited_evidence_sha256": "25cbcabb40f365a39558a96a9ea0c1f464426bd280307bf4db87912946e4b34c",
+  "model_snapshot_metadata_sha256": "6c6aeb014bbf31bdecf2efe30b370502bd5c8e260804b8d459cd48e9c301318b",
+  "experiment_acceptance_sha256": "8ebac9890e36bc42a0021b4fcfc9809313b0c981d8764ec9037e9af08e501b8e",
+  "parts": [
+    {
+      "path": "artifacts/r11_records.part01.xz",
+      "bytes": 4194304,
+      "sha256": "bdc7242d1b64df28c781221f3f6ff074114797b0d145eee626f58e4ce9b18dbb"
+    },
+    {
+      "path": "artifacts/r11_records.part02.xz",
+      "bytes": 53916,
+      "sha256": "812730b08ce02a150680fb8b1c84dfbe9ce5f51854ce874e43aa4196e7c9d499"
+    }
+  ],
+  "restoration": "Restore inherited exact inputs, concatenate listed parts, validate SHA256, then python -B scripts/r11_restore.py --verify-only or omit --verify-only to restore absent records"
+}

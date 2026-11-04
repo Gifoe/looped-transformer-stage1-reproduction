@@ -1,0 +1,30 @@
+{
+  "status": "unchanged_inherited_evidence",
+  "repository": "Gifoe/looped-transformer-stage1-reproduction",
+  "branch": "codex/ouro-r7-prefix-prior-20261104",
+  "R6": {
+    "index": "artifacts/slcd_R6_RELEASE_INDEX.json",
+    "archive_sha256": "692a333601798e3a2569b70f108efbf440e04792d6b9ff4e22159bfb5ab7d952",
+    "purpose": "Original ARC data/25demo manifests, source authority and original baselines"
+  },
+  "R7": {
+    "index": "artifacts/r7_RECORDS_INDEX.json",
+    "index_sha256": "032dd3c483ab7b84c5ce32dcb8a0955dcd4dd057aea5db6afb1a749f9216f1b7",
+    "archive_sha256": "0cd0d3741dbc18b6ed947b8e34062c00e4dd563b1104e66dd3eb90f33e9cf385",
+    "commit": "320af4fb73103166ccc0eda72af0b774e7a03de2",
+    "purpose": "Complete original main/N0 scores and pinned input/source evidence"
+  },
+  "development": {
+    "index": "artifacts/r10_r11_DEVELOPMENT_INDEX.json",
+    "archive_sha256": "1ac154b810872c6bdeb0d20f066c00f4241e1d6b62f510ea31f0c9849d7bedfd",
+    "purpose": "All576 auxiliary forwards and immutable R11 development receipts"
+  },
+  "older_ledgers": "Preserved public logs/r7_gpu_budget.json, logs/r9_gpu_budget.json, logs/r10_gpu_budget.json. Exact bytes are bound by the definition lock.",
+  "model_preparation": {
+    "script": "scripts/r11_prepare_model.py",
+    "snapshot_metadata": "artifacts/r11_MODEL_SNAPSHOT_METADATA.json",
+    "snapshot_metadata_sha256": "6c6aeb014bbf31bdecf2efe30b370502bd5c8e260804b8d459cd48e9c301318b",
+    "note": "Custom small metadata is released; weights remain excluded. --prepare verifies all pinned bytes before creating absent runtime metadata and refuses changes to existing different files or external model symlinks."
+  },
+  "restoration": "Restore inherited R6 then R7 exact evidence before R11. Mismatched existing files are refused; no old evidence is silently overwritten."
+}

@@ -1,0 +1,68 @@
+{
+  "status": "completed_development_falsification",
+  "n": 576,
+  "CPU_only": true,
+  "GPU_seconds": 0,
+  "heldout_accessed": false,
+  "lock_sha256": "9d58c29f6360a8a8b1cf5014b90c907aa0cf2c3da51de417826ba3014049fd82",
+  "summary": [
+    {
+      "method": "signed_loop",
+      "n": 576,
+      "correct": 476,
+      "rescue": 123,
+      "damage": 7
+    },
+    {
+      "method": "reversed_loop",
+      "n": 576,
+      "correct": 15,
+      "rescue": 3,
+      "damage": 348
+    },
+    {
+      "method": "static_joint",
+      "n": 576,
+      "correct": 473,
+      "rescue": 120,
+      "damage": 7
+    },
+    {
+      "method": "prior_norm",
+      "n": 576,
+      "correct": 293,
+      "rescue": 63,
+      "damage": 130
+    },
+    {
+      "method": "cyclic_joint4_only",
+      "n": 576,
+      "correct": 517,
+      "rescue": 174,
+      "damage": 17
+    },
+    {
+      "method": "R6",
+      "n": 576,
+      "correct": 360,
+      "rescue": 0,
+      "damage": 0
+    },
+    {
+      "method": "A1",
+      "n": 576,
+      "correct": 353,
+      "rescue": 3,
+      "damage": 10
+    }
+  ],
+  "passes_all_diagnostic_controls": true,
+  "prior_norm_match_possible_all": true,
+  "both_R6_and_joint_wrong_n": 42,
+  "signed_rescues_when_both_wrong": 4,
+  "signed_damages_joint_correct": 55,
+  "signed_beats_joint_only": false,
+  "next_action": "Stop; no validation, confirmation or test access authorized by this diagnostic.",
+  "interpretation": "Repeated development only. Sign evidence is not novelty, a causal hidden-state mechanism, or proof of useful LoopCD deployment.",
+  "score_file_sha256": "dd9cc19e37aba4c52bffc852f5df1a4e917b807c67687741266b497bc3befaf6"
+}
