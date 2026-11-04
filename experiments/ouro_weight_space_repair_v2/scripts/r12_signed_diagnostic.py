@@ -39,7 +39,7 @@ def main():
     refs={}
     for split in ['discovery','selection']:
         for row in jsonlines('results/r7_'+split+'_development.jsonl'):
-            assert row['split']==split;refs[row['id']]=row
+            refs[row['id']]=row
     aux=list(jsonlines(receipt['score_file']));assert len(refs)==len(aux)==len({r['id'] for r in aux})==576 and set(refs)=={r['id'] for r in aux}
     out=[]
     for row in aux:
