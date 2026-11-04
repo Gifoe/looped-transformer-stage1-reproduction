@@ -1,0 +1,100 @@
+{
+  "status": "complete_posthoc",
+  "official_result_unchanged": true,
+  "method_selection": false,
+  "training_overlap": 7,
+  "validation_overlap": 2,
+  "union_overlap": 9,
+  "fingerprint": "casefold then collapse whitespace; question only",
+  "limitation": "Exact-text sensitivity only, no semantic overlap or pretraining contamination audit; excluded subsets are posthoc and not a new blind benchmark.",
+  "primary_sensitivity": [
+    {
+      "scope": "official_all_1172",
+      "method": "r6_prior_projection",
+      "baseline": "fixed",
+      "n": 1172,
+      "correct": 736,
+      "accuracy": 0.6279863481228669,
+      "corrections": 35,
+      "regressions": 16,
+      "net_correct": 19,
+      "delta_pp": 1.621160409556314,
+      "exact_mcnemar_p": 0.010973562899720513
+    },
+    {
+      "scope": "official_all_1172",
+      "method": "r6_prior_projection",
+      "baseline": "incumbent_A1",
+      "n": 1172,
+      "correct": 736,
+      "accuracy": 0.6279863481228669,
+      "corrections": 23,
+      "regressions": 13,
+      "net_correct": 10,
+      "delta_pp": 0.8532423208191127,
+      "exact_mcnemar_p": 0.13249816396273673
+    },
+    {
+      "scope": "posthoc_exclude_training_question_overlap",
+      "method": "r6_prior_projection",
+      "baseline": "fixed",
+      "n": 1165,
+      "correct": 733,
+      "accuracy": 0.6291845493562231,
+      "corrections": 35,
+      "regressions": 16,
+      "net_correct": 19,
+      "delta_pp": 1.6309012875536482,
+      "exact_mcnemar_p": 0.010973562899720513
+    },
+    {
+      "scope": "posthoc_exclude_training_question_overlap",
+      "method": "r6_prior_projection",
+      "baseline": "incumbent_A1",
+      "n": 1165,
+      "correct": 733,
+      "accuracy": 0.6291845493562231,
+      "corrections": 23,
+      "regressions": 13,
+      "net_correct": 10,
+      "delta_pp": 0.8583690987124464,
+      "exact_mcnemar_p": 0.13249816396273673
+    },
+    {
+      "scope": "posthoc_exclude_train_and_validation_question_overlap",
+      "method": "r6_prior_projection",
+      "baseline": "fixed",
+      "n": 1163,
+      "correct": 732,
+      "accuracy": 0.6294067067927773,
+      "corrections": 35,
+      "regressions": 16,
+      "net_correct": 19,
+      "delta_pp": 1.6337059329320722,
+      "exact_mcnemar_p": 0.010973562899720513
+    },
+    {
+      "scope": "posthoc_exclude_train_and_validation_question_overlap",
+      "method": "r6_prior_projection",
+      "baseline": "incumbent_A1",
+      "n": 1163,
+      "correct": 732,
+      "accuracy": 0.6294067067927773,
+      "corrections": 23,
+      "regressions": 13,
+      "net_correct": 10,
+      "delta_pp": 0.8598452278589854,
+      "exact_mcnemar_p": 0.13249816396273673
+    }
+  ],
+  "source_sha256": "2ab86f12c58b9bf9d8440e0b5e033290dd22a4d370eb3cd89c6c0344ba8e3dad",
+  "input_sha256": {
+    "results/slcd_R6_TEST_ACCEPTANCE.json": "da87bbe12e4a7f090210f968908008df1db86b9ce515b3981bac1629dba386c6",
+    "results/slcd_r6_paired_transitions.csv": "040b47dec55ba416e320d606c351328b3e5c39088206675eee20ddc54a24577e",
+    "data/slcd_discovery.jsonl": "8d1d83a2fab5fa9de4df10ba21b1525605aa500c071f5469eea05f9420b9256d",
+    "data/slcd_selection.jsonl": "e196ca17fb9d5df6085fc9b6506668cd6c21debd1a770f600dda9f68273f51d2",
+    "data/slcd_confirmation.jsonl": "2c3393e141e045b5d8eb9cbabe6388b6ae0441b8dbe3993a3da6c872401c03a6",
+    "data/slcd_validation.jsonl": "cb7cb3f8cf2bc80523f775a41961352647845d71c4a0c8f91cfcb11aaab1257a",
+    "data/slcd_test.jsonl": "c21f826e316eac7d5101787aae1e4cea5515a820cc0f0d5d577582a7b9c93eb6"
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "status": "passed",
+  "n": 1172,
+  "correct": 736,
+  "candidate_rows": 4687,
+  "transition_counts_vs_A1": {
+    "unchanged": 1124,
+    "rescue": 23,
+    "damage": 13,
+    "wrong_to_wrong": 12
+  },
+  "alpha_regions": {
+    "zero": 419,
+    "interior": 562,
+    "one": 191
+  },
+  "regions": [
+    {
+      "region": "zero",
+      "n": 419,
+      "rescues": 0,
+      "damage": 0
+    },
+    {
+      "region": "interior",
+      "n": 562,
+      "rescues": 17,
+      "damage": 11
+    },
+    {
+      "region": "one",
+      "n": 191,
+      "rescues": 6,
+      "damage": 2
+    }
+  ],
+  "frozen_primary": "r6_prior_projection",
+  "source_sha256": "c7fc1017d905dc95816b5830c947327e3ba304b3b819bc7c5baade9ed5d6ae06",
+  "posthoc": true,
+  "method_selection": false,
+  "scope": "Only selected frozen rule. No new model forwards, alternatives or causal hidden-state interventions.",
+  "input_sha256": {
+    "configs/slcd_R6_FINAL_LOCK.json": "6de605b885b4fb9ff72b273ecc0c0484e9fe72fc5d51d793b22367db879b7da7",
+    "scripts/slcd_r6_scores.py": "4decfa923ee1a69f03e2d5e6a734023f21780e04e754a9acf5fc9df5e9a25e58",
+    "results/slcd_original_test.jsonl": "64ab2f3487251a6eb08f9c580cfa1689048e6e0759a701c26901dab9a7bcc0ca",
+    "results/slcd_r6_priors_test.jsonl": "e336e96a68fac582cc29856baeabcbc7c1d1433b47c0a9ef2fa44f20f19e4123",
+    "data/slcd_test.jsonl": "c21f826e316eac7d5101787aae1e4cea5515a820cc0f0d5d577582a7b9c93eb6"
+  }
+}

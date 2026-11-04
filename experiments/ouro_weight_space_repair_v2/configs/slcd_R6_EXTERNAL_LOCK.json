@@ -1,0 +1,97 @@
+{
+  "status": "frozen_before_external_model_inference",
+  "expected_final_sha": "6de605b885b4fb9ff72b273ecc0c0484e9fe72fc5d51d793b22367db879b7da7",
+  "primary": "r6_prior_projection",
+  "arc_result_sha256": "72c321e17e8df5e8222b545ed8ec2530df34ae4f7458d6a13d3775cf43726f63",
+  "arc_acceptance_sha256": "da87bbe12e4a7f090210f968908008df1db86b9ce515b3981bac1629dba386c6",
+  "ranking_source_sha256": "4decfa923ee1a69f03e2d5e6a734023f21780e04e754a9acf5fc9df5e9a25e58",
+  "worker_source_sha256": "8e25033478806b0f6b4277eeba8789df7bf38a3739d86d4bb1694603a3f0cfa6",
+  "package_versions": {
+    "torch": "2.11.0+cu130",
+    "transformers": "4.55.4",
+    "tokenizers": "0.21.4",
+    "lm_eval": "0.4.9",
+    "safetensors": "0.8.0",
+    "numpy": "2.2.6",
+    "scipy": "1.16.3"
+  },
+  "inference_sources": {
+    "slcd_r6_prior_worker.py": "c822101c6eba606df844e71ae2767d2f04e7c9ed854a59436796adc7b006be08",
+    "slcd_core.py": "e80c70c7b85e9fa73028038efcc45cf08fe6e07e0219ba5f47e9afcc27b8ae31",
+    "runtime.py": "9ebbbdb2573a567cc6bb331a861490ebbdab85dd723a73036bf3813a7c8d85d1",
+    "ouro_cached_scoring.py": "2801db23cf20e574765aad7f94f1f4967af640b3af7cf6aa01cbe96500457901",
+    "slcd_token_worker_v2.py": "de6dcd7e75b3e6d328846817cf69892004519f581d4cc513e9ae880520fa2074",
+    "weight_edits.py": "24a6089e35e6cf5e73b08bcae26acd840a872287c59f62ac715d2dd3fc57af00"
+  },
+  "tasks": {
+    "hellaswag": {
+      "n": 10042,
+      "split": "validation",
+      "manifest_path": "data/slcd_hellaswag.jsonl",
+      "manifest_sha256": "d3199fe67e2635ae2b94a84cf1435d976aa75b255587ce892d3d5be694af76a4",
+      "source": {
+        "repository": "Rowan/hellaswag",
+        "revision": "218ec52e09a7e7462a5400043bb9a69a41d06b76",
+        "path": "data/validation-00000-of-00001.parquet",
+        "url": "https://huggingface.co/datasets/Rowan/hellaswag/resolve/218ec52e09a7e7462a5400043bb9a69a41d06b76/data/validation-00000-of-00001.parquet",
+        "sha256": "899813071e1e95efafec90f856e1987d2150fa4d020fc005df6962c259f660cd"
+      },
+      "num_fewshot": 0,
+      "seed": 2021,
+      "official_yaml_sha256": "cabb0340cad5fb66c2d62f6cfab16b85df18070e606300f20e4f579e49fdc5e3",
+      "official_utils_sha256": "07d23b60b28f2a4f658dcf8440623a63fe6644854ce9b846a114dde980dc1214",
+      "old_main_path": "results/slcd_hellaswag_scores.jsonl",
+      "old_main_sha256": "ec0172d80b0275d60ed88170810ac67c0a5d8ea21a0d0b56441edb57f350e87a",
+      "old_protocol_path": "configs/slcd_hellaswag_PROTOCOL.json",
+      "old_protocol_sha256": "69942bb526917b348d0baee689d3e4346dcec11876227731b8c35dae4571330f",
+      "old_worker_source_sha256": "833593c3cf195d7ff0259c7d9e4bad61d4f2832c6c5446fd4e665ea5baa8868c",
+      "old_first_final_lock_sha256": "e1ea20e3a3a9dab575f812d6e550daa52acf095d45b706f8e8bf792aae20016b",
+      "old_main_count": 1956
+    },
+    "openbookqa": {
+      "n": 500,
+      "split": "test",
+      "manifest_path": "data/slcd_openbookqa.jsonl",
+      "manifest_sha256": "0bc0be03623979524bda178a50080eeff68dbf52dc0626bd8529f81d034e5b24",
+      "source": {
+        "repository": "allenai/openbookqa",
+        "revision": "388097ea7776314e93a529163e0fea805b8a6454",
+        "path": "main/test-00000-of-00001.parquet",
+        "url": "https://huggingface.co/datasets/allenai/openbookqa/resolve/388097ea7776314e93a529163e0fea805b8a6454/main/test-00000-of-00001.parquet",
+        "sha256": "cd5483e366daa230c1c87bbdc512d8b7229f14f6dd04d19fc8b1a3855aaaa8a3"
+      },
+      "num_fewshot": 0,
+      "seed": 2021,
+      "official_yaml_sha256": "6224b08e7b0f2f54c54d292994f67521213f49b50289be8f22321aa675b8c898",
+      "official_utils_sha256": null,
+      "old_main_path": null,
+      "old_main_sha256": null,
+      "old_protocol_path": null,
+      "old_protocol_sha256": null
+    }
+  },
+  "model_identity": {
+    "revision": "574fa66cb8bf5abdc979642d01cf2b79b16bfab1",
+    "safetensors_sha256": "58872a72616c736595b8b7662079c5b12c5a162ec16eae94f21c348dfa9885af",
+    "metadata_and_tokenizer_sha256": {
+      "config.json": "ce9cc13da41591b8b4deca053d7dfee06424c0228628ee862ea86d725bc163f3",
+      "configuration_ouro.py": "950443e32929047aa08d02abad2e1888bc1914b3db988d3d675f70787f65dafb",
+      "merges.txt": "0b54e8aa4e53d5383e2e4bc635a56b43f9647f7b13832d5d9ecd8f82dac4f510",
+      "modeling_ouro.py": "c5c68fbb368ce2909c257ae2afc50719be8c91539333d3295e19312c4316f413",
+      "snapshot_metadata.json": "6c6aeb014bbf31bdecf2efe30b370502bd5c8e260804b8d459cd48e9c301318b",
+      "special_tokens_map.json": "55087bb8409060d9cb0f80495e34f4e0d8a84f68a799a6b0cab3132be0aae319",
+      "tokenizer.json": "fcb808fe5e7642f5299be28aea07fc7f6d4f4364c3ac5e408e15a772cbc8fa8d",
+      "tokenizer_config.json": "7e010da95d71b0fa1aa809552922c74cc1dd98d628f21ba39ca6c35aa18d5d91",
+      "vocab.json": "7b9de3f47796abf8d00ab96be299fea0dc9afdf1827f34e7e0b9fb44593efe5c"
+    }
+  },
+  "prior_prefix": "Answer:",
+  "preparation_source_sha256": "13887c570113fef620d32c66d0e81112816a42a3ca2fb7820225e79ac32c226e",
+  "external_data_sha256": "73bd21b8d4bf7ef39d7a0b042480cc5dd3c82c15e40a16312a8407282c644fdd",
+  "controller_sha256": "7b036eabb5a4406a4851dd0074432a477a6bb50acdfde32ebfdc11204d19d7e9",
+  "metric": "acc_norm",
+  "num_fewshot": 0,
+  "seed": 2021,
+  "secondary": "A1_g1p0; original fixed R1 definition, no selection on external outcomes",
+  "runtime_speed_claim_permitted": false
+}

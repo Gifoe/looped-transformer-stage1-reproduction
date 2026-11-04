@@ -1,0 +1,55 @@
+{
+  "status": "prepared_after_full_ARC_target",
+  "arc_result_sha256": "72c321e17e8df5e8222b545ed8ec2530df34ae4f7458d6a13d3775cf43726f63",
+  "acceptance_sha256": "da87bbe12e4a7f090210f968908008df1db86b9ce515b3981bac1629dba386c6",
+  "tasks": {
+    "hellaswag": {
+      "n": 10042,
+      "split": "validation",
+      "manifest_path": "data/slcd_hellaswag.jsonl",
+      "manifest_sha256": "d3199fe67e2635ae2b94a84cf1435d976aa75b255587ce892d3d5be694af76a4",
+      "source": {
+        "repository": "Rowan/hellaswag",
+        "revision": "218ec52e09a7e7462a5400043bb9a69a41d06b76",
+        "path": "data/validation-00000-of-00001.parquet",
+        "url": "https://huggingface.co/datasets/Rowan/hellaswag/resolve/218ec52e09a7e7462a5400043bb9a69a41d06b76/data/validation-00000-of-00001.parquet",
+        "sha256": "899813071e1e95efafec90f856e1987d2150fa4d020fc005df6962c259f660cd"
+      },
+      "num_fewshot": 0,
+      "seed": 2021,
+      "official_yaml_sha256": "cabb0340cad5fb66c2d62f6cfab16b85df18070e606300f20e4f579e49fdc5e3",
+      "official_utils_sha256": "07d23b60b28f2a4f658dcf8440623a63fe6644854ce9b846a114dde980dc1214",
+      "old_main_path": "results/slcd_hellaswag_scores.jsonl",
+      "old_main_sha256": "ec0172d80b0275d60ed88170810ac67c0a5d8ea21a0d0b56441edb57f350e87a",
+      "old_protocol_path": "configs/slcd_hellaswag_PROTOCOL.json",
+      "old_protocol_sha256": "69942bb526917b348d0baee689d3e4346dcec11876227731b8c35dae4571330f",
+      "old_worker_source_sha256": "833593c3cf195d7ff0259c7d9e4bad61d4f2832c6c5446fd4e665ea5baa8868c",
+      "old_first_final_lock_sha256": "e1ea20e3a3a9dab575f812d6e550daa52acf095d45b706f8e8bf792aae20016b",
+      "old_main_count": 1956
+    },
+    "openbookqa": {
+      "n": 500,
+      "split": "test",
+      "manifest_path": "data/slcd_openbookqa.jsonl",
+      "manifest_sha256": "0bc0be03623979524bda178a50080eeff68dbf52dc0626bd8529f81d034e5b24",
+      "source": {
+        "repository": "allenai/openbookqa",
+        "revision": "388097ea7776314e93a529163e0fea805b8a6454",
+        "path": "main/test-00000-of-00001.parquet",
+        "url": "https://huggingface.co/datasets/allenai/openbookqa/resolve/388097ea7776314e93a529163e0fea805b8a6454/main/test-00000-of-00001.parquet",
+        "sha256": "cd5483e366daa230c1c87bbdc512d8b7229f14f6dd04d19fc8b1a3855aaaa8a3"
+      },
+      "num_fewshot": 0,
+      "seed": 2021,
+      "official_yaml_sha256": "6224b08e7b0f2f54c54d292994f67521213f49b50289be8f22321aa675b8c898",
+      "official_utils_sha256": null,
+      "old_main_path": null,
+      "old_main_sha256": null,
+      "old_protocol_path": null,
+      "old_protocol_sha256": null
+    }
+  },
+  "preparation_source_sha256": "13887c570113fef620d32c66d0e81112816a42a3ca2fb7820225e79ac32c226e",
+  "metric": "acc_norm",
+  "denominator": "same complete answer character count"
+}
