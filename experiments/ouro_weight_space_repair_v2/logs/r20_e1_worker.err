@@ -1,0 +1,11 @@
+Traceback (most recent call last):
+  File "/home/newuser1/experiments/ouro_weight_space_repair_v2/scripts/r20_e1_worker.py", line 77, in <module>
+    if __name__=='__main__':main()
+                            ^^^^^^
+  File "/home/newuser1/experiments/ouro_weight_space_repair_v2/scripts/r20_e1_worker.py", line 71, in main
+    check_budget(5);assert time.monotonic()<float(os.environ['R20_SOFT_MONOTONIC'])
+    ^^^^^^^^^^^^^^^
+  File "/home/newuser1/experiments/ouro_weight_space_repair_v2/scripts/runtime.py", line 17, in check_budget
+    if deadline and time.time()+reserve>=float(deadline):raise RuntimeError('Independent6 GPU-hour budget reserve reached')
+                                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: Independent6 GPU-hour budget reserve reached
