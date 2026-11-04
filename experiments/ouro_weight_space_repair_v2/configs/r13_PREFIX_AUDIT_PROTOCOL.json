@@ -1,0 +1,27 @@
+{
+  "status": "frozen_development_accounting_definition_before_new_decompositions",
+  "source_sha256": "bedbe0f68cc64b58f2b1e3af3c9ff0cf87b0ef7b643c4ef1ad2210d0d0845bfd",
+  "input_sha256": {
+    "results/r7_discovery_development.jsonl": "e83aa133169bf412a763f8c94b70b70a4e64675e9e6626e4a4c946f26b63b417",
+    "results/r7_discovery_development_COMPLETE.json": "e504fb1c749f20c64642f29090f6b6354fb508e0a222334295e541f1ed3e622b",
+    "results/r7_selection_development.jsonl": "3fc918a2af658bd9f7252fd12c1345fbccd3ed8732d6648c41b1f80c5a0e8648",
+    "results/r7_selection_development_COMPLETE.json": "585a3c3339a489671f988ba0be872fb438b743a3c3160d0c65ccc1e9c0a39494",
+    "scripts/r7_core.py": "1e9265527fb4f9dbf3daabf0f69b41e0e303e372fd03780520ec02cc176e78c4"
+  },
+  "GPU_seconds": 0,
+  "heldout_access_authorized": false,
+  "n": 576,
+  "methods": [
+    "M2_N0_token",
+    "M3_multi_token",
+    "C_R6alpha_token"
+  ],
+  "rival_frames": [
+    "pre_A1_rival",
+    "post_repair_rival"
+  ],
+  "primary_comparison": "R7 token correction vs original Fixed core with identical Q4-Q5 late term; baseline A1. R6 comparison includes explicitly separate undo-R6 component.",
+  "allowed_inference": "Accounting with bounded recorded FP32 residuals; no target-dependent deployed coefficient, density approximation, new decoder or new winner.",
+  "hypothetical_problem": "Does harmful change come from target logits, log-partition or loss of previous score-level R6 benefit? First vs later positions is attribution only, no prefix cutoff is selected.",
+  "preregistration_scope": "Diagnostic definition fixed prospectively; existing development accuracies and previous ARC results are already known. Not a blind empirical study."
+}
