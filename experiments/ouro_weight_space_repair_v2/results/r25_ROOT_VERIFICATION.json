@@ -1,0 +1,191 @@
+{
+  "status": "passed_independent_postrun_review",
+  "protocol_sha256": "a2ba1d236eb1ace9d60af16e2b574dfb018c494a7496c87199f8e41f5c9d8641",
+  "n": 24,
+  "checked_source_input_hashes": 78,
+  "counts": {
+    "primary": 13,
+    "M3": 13,
+    "q_only": 13,
+    "reference_only": 13,
+    "memory_direction_only": 1,
+    "frequency": 13,
+    "raw_occurrence_shuffle": 13,
+    "freq_bijection_matched": 7,
+    "leaveout_0": 13,
+    "leaveout_1": 13,
+    "leaveout_2": 13,
+    "M2": 14,
+    "R6": 14,
+    "Fixed": 13,
+    "A1": 13
+  },
+  "paired": {
+    "M3": {
+      "rescues": 0,
+      "damages": 0,
+      "net": 0,
+      "exact_mcnemar_p": 1.0
+    },
+    "q_only": {
+      "rescues": 0,
+      "damages": 0,
+      "net": 0,
+      "exact_mcnemar_p": 1.0
+    },
+    "reference_only": {
+      "rescues": 0,
+      "damages": 0,
+      "net": 0,
+      "exact_mcnemar_p": 1.0
+    },
+    "memory_direction_only": {
+      "rescues": 12,
+      "damages": 0,
+      "net": 12,
+      "exact_mcnemar_p": 0.00048828125
+    },
+    "frequency": {
+      "rescues": 0,
+      "damages": 0,
+      "net": 0,
+      "exact_mcnemar_p": 1.0
+    },
+    "raw_occurrence_shuffle": {
+      "rescues": 0,
+      "damages": 0,
+      "net": 0,
+      "exact_mcnemar_p": 1.0
+    },
+    "freq_bijection_matched": {
+      "rescues": 7,
+      "damages": 1,
+      "net": 6,
+      "exact_mcnemar_p": 0.0703125
+    },
+    "leaveout_0": {
+      "rescues": 0,
+      "damages": 0,
+      "net": 0,
+      "exact_mcnemar_p": 1.0
+    },
+    "leaveout_1": {
+      "rescues": 0,
+      "damages": 0,
+      "net": 0,
+      "exact_mcnemar_p": 1.0
+    },
+    "leaveout_2": {
+      "rescues": 0,
+      "damages": 0,
+      "net": 0,
+      "exact_mcnemar_p": 1.0
+    },
+    "M2": {
+      "rescues": 0,
+      "damages": 1,
+      "net": -1,
+      "exact_mcnemar_p": 1.0
+    },
+    "R6": {
+      "rescues": 0,
+      "damages": 1,
+      "net": -1,
+      "exact_mcnemar_p": 1.0
+    },
+    "Fixed": {
+      "rescues": 0,
+      "damages": 0,
+      "net": 0,
+      "exact_mcnemar_p": 1.0
+    },
+    "A1": {
+      "rescues": 0,
+      "damages": 0,
+      "net": 0,
+      "exact_mcnemar_p": 1.0
+    }
+  },
+  "changed_vs_R6_cases": [
+    {
+      "id": "arc_challenge/train/LEAP_2001_4_10241",
+      "gold": 3,
+      "primary_prediction": 1,
+      "R6_prediction": 3,
+      "rescue": false,
+      "damage": true
+    },
+    {
+      "id": "arc_challenge/train/Mercury_7219100",
+      "gold": 1,
+      "primary_prediction": 3,
+      "R6_prediction": 0,
+      "rescue": false,
+      "damage": false
+    }
+  ],
+  "prediction_disagreements_vs_primary": {
+    "primary": 0,
+    "M3": 1,
+    "q_only": 0,
+    "reference_only": 1,
+    "memory_direction_only": 19,
+    "frequency": 1,
+    "raw_occurrence_shuffle": 1,
+    "freq_bijection_matched": 13,
+    "leaveout_0": 0,
+    "leaveout_1": 0,
+    "leaveout_2": 0,
+    "M2": 2,
+    "R6": 2,
+    "Fixed": 0,
+    "A1": 1
+  },
+  "R6_unique_total": 1,
+  "R6_unique_retained": 0,
+  "total_answer_positions": 548,
+  "zero_c_positions": 183,
+  "raw_control_zero_positions": 131,
+  "unmatched_positions": 0,
+  "P_norm_max_error": 3.3306690738754696e-16,
+  "readout_checks": 4,
+  "independent_recorded_distance_rechecks": [
+    {
+      "context": "Q",
+      "max_error": 1.3322676295501878e-15
+    },
+    {
+      "context": "N0",
+      "max_error": 1.9984014443252818e-15
+    },
+    {
+      "context": "N1",
+      "max_error": 1.5543122344752192e-15
+    },
+    {
+      "context": "N2",
+      "max_error": 1.7763568394002505e-15
+    }
+  ],
+  "null_map_and_all_position_sparse_direction_reconstruction": true,
+  "original_strong_screen_passed": false,
+  "cost_review_eligible": false,
+  "gpu_worker_seconds": 177.2520755813457,
+  "prior_gpu_worker_seconds": 18641.79952767305,
+  "total_gpu_worker_seconds": 18819.051603254396,
+  "remaining_seconds": 2780.9483967456035,
+  "component_seconds": {
+    "key_build": 1.082133769057691,
+    "key_audit": 0.5780679620802402,
+    "Q_head": 0.7699819360859692,
+    "N_forward": 114.26544234203175,
+    "N_head": 0.7902075201272964,
+    "retrieval": 10.485148396342993,
+    "checks": 2.2634640294127166
+  },
+  "model_load_seconds": 16.101744023151696,
+  "frozen_parameter_count": 269,
+  "scope": "Independent local provenance, raw-score arithmetic, null maps, sparse direction and statistics. No local model run or independent regeneration of fullV key/query vectors.",
+  "heldout_accessed": false,
+  "new_gpu_jobs_authorized": false
+}
