@@ -1,0 +1,112 @@
+{
+  "status": "passed_independent_raw_vector_execution_review",
+  "protocol_sha256": "9de2154c5d6ba207b6a2ad864410d2c555f4107ce34a4721ec5ba3c62cf1ea20",
+  "execution_status": "complete_phaseB",
+  "forwards": 33,
+  "no_op_pairs": 5,
+  "source_query_pairs": 192,
+  "full_first3_sequence_pairs": 72,
+  "identity_state_head_pairs": 40,
+  "vectors": 276,
+  "raw_vector_bytes": 65839104,
+  "phaseA_strict_correct": 8,
+  "phaseA_total": 8,
+  "phaseB_performed": true,
+  "paths": {
+    "V": {
+      "effects": [
+        {
+          "instance": 0,
+          "baseline_B_margin": -4.5625,
+          "clean_margin": 1.25,
+          "shuffle_margin": -4.5625,
+          "transport_delta": 5.8125,
+          "specificity": 5.8125,
+          "crossed_zero": true
+        },
+        {
+          "instance": 1,
+          "baseline_B_margin": -5.875,
+          "clean_margin": 2.25,
+          "shuffle_margin": -1.0625,
+          "transport_delta": 8.125,
+          "specificity": 3.3125,
+          "crossed_zero": true
+        },
+        {
+          "instance": 2,
+          "baseline_B_margin": -4.4375,
+          "clean_margin": 0.625,
+          "shuffle_margin": -4.3125,
+          "transport_delta": 5.0625,
+          "specificity": 4.9375,
+          "crossed_zero": true
+        },
+        {
+          "instance": 3,
+          "baseline_B_margin": -5.125,
+          "clean_margin": 0.25,
+          "shuffle_margin": -2.5,
+          "transport_delta": 5.375,
+          "specificity": 2.75,
+          "crossed_zero": true
+        }
+      ],
+      "fixed_screen_pass": true,
+      "primary": true
+    },
+    "K": {
+      "effects": [
+        {
+          "instance": 0,
+          "baseline_B_margin": -4.5625,
+          "clean_margin": -2.75,
+          "shuffle_margin": -2.5,
+          "transport_delta": 1.8125,
+          "specificity": -0.25,
+          "crossed_zero": false
+        },
+        {
+          "instance": 1,
+          "baseline_B_margin": -5.875,
+          "clean_margin": -5.6875,
+          "shuffle_margin": 4.125,
+          "transport_delta": 0.1875,
+          "specificity": -9.8125,
+          "crossed_zero": false
+        },
+        {
+          "instance": 2,
+          "baseline_B_margin": -4.4375,
+          "clean_margin": -4.4375,
+          "shuffle_margin": -3.8125,
+          "transport_delta": 0.0,
+          "specificity": -0.625,
+          "crossed_zero": false
+        },
+        {
+          "instance": 3,
+          "baseline_B_margin": -5.125,
+          "clean_margin": -3.3125,
+          "shuffle_margin": 0.125,
+          "transport_delta": 1.8125,
+          "specificity": -3.4375,
+          "crossed_zero": false
+        }
+      ],
+      "fixed_screen_pass": false,
+      "primary": false
+    }
+  },
+  "label_mass_min": 0.9477576649583828,
+  "label_mass_max": 0.9951950717223897,
+  "descriptive_FP64_mass_max_difference_from_worker": 1.5543122344752192e-15,
+  "total_gpu_worker_seconds": 18930.428655151278,
+  "actual_gpu_worker_seconds": 56.29345832020044,
+  "remaining_seconds": 2669.571344848722,
+  "all_269_parameters_unchanged_since_R26": true,
+  "vectors_sha256": "c034a98c170d3d3bfcd89b818217fd1d8c77d1348ba71da6906912fc4418b6f6",
+  "scope": "Independent original saved tensors, all declared domains, exact gates, raw-logit effects and accounting. Off-source projection preservation is a frozen-hook runtime assertion; full intermediate projection outputs are not independently regenerated. No local model, SDPA interception, ARC scores or deployment candidate.",
+  "limitation": "Fixed synthetic four-label subspace; no unrestricted generation, reliability, compact-circuit, or ARC benefit claim.",
+  "new_model_job_authorized": false
+}
