@@ -1,0 +1,28 @@
+{
+  "status": "frozen_development_only_before_signed_diagnostic_outcomes",
+  "source_sha256": "ca6d80f8ae9891be1c5b1793efc427c8cbefc487999f96f872ac04fa2adcec99",
+  "input_sha256": {
+    "results/r10_development_initial_COMPLETE.json": "4dfea9a9599f33d00e1b006bac44083f0eb994caf72195239116cc964b4b98eb",
+    "results/r10_development_initial.jsonl": "2df1c4eeb8844f85853ef090d4b289ed9a6cf8db61be239a4a69b8a29fa17c7e",
+    "results/r7_discovery_development.jsonl": "e83aa133169bf412a763f8c94b70b70a4e64675e9e6626e4a4c946f26b63b417",
+    "results/r7_selection_development.jsonl": "3fc918a2af658bd9f7252fd12c1345fbccd3ed8732d6648c41b1f80c5a0e8648",
+    "scripts/r7_core.py": "1e9265527fb4f9dbf3daabf0f69b41e0e303e372fd03780520ec02cc176e78c4",
+    "scripts/r8_scores.py": "9b0bb1bc69050a628e21c2ea03b444e2f047b2a73a50fd997987105e6775356a",
+    "scripts/slcd_r6_scores.py": "4decfa923ee1a69f03e2d5e6a734023f21780e04e754a9acf5fc9df5e9a25e58"
+  },
+  "n": 576,
+  "GPU_seconds": 0,
+  "heldout_access_authorized": false,
+  "formulas": {
+    "s": "center(mean(J4-J1))",
+    "increment": "norm(center(R6))*s/norm(s); unresolved axis zero",
+    "signed": "R6+increment",
+    "reversed": "R6-increment",
+    "static": "R6+same centered increment norm along centered meanJ4",
+    "prior_norm": "A1 minus original prior scaled to final signed correction norm"
+  },
+  "gate": "Signed must beat R6, reversed, static and norm, with all norm matches possible. Always stop after diagnostic; no heldout access or winner switching.",
+  "scope": "One post-R11-definition diagnostic, repeated development not blind. Known loop contrast and fusion, no novelty or deployment claim. Earlier partial ARC aggregate stdout was exposed; no new test record is read here.",
+  "previous_lock_sha256": "0a52ea57c086f7373d9ed8d5d8a44f65eba709b6a88b7396af15d7ef86649796",
+  "preoutcome_parser_fix": "Remove nonexistent historical R7 split key assertion. No R12 scores/outcomes were computed; formulas unchanged. Full R11 result was subsequently seen, and no formula changed."
+}

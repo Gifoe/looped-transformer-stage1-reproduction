@@ -1,6 +1,6 @@
 {
   "status": "frozen_development_only_before_signed_diagnostic_outcomes",
-  "source_sha256": "ca6d80f8ae9891be1c5b1793efc427c8cbefc487999f96f872ac04fa2adcec99",
+  "source_sha256": "c4c0c75650a04b2b274ac4eb346df27d0b54ddef059a0d9e36cee9434880bcd8",
   "input_sha256": {
     "results/r10_development_initial_COMPLETE.json": "4dfea9a9599f33d00e1b006bac44083f0eb994caf72195239116cc964b4b98eb",
     "results/r10_development_initial.jsonl": "2df1c4eeb8844f85853ef090d4b289ed9a6cf8db61be239a4a69b8a29fa17c7e",
@@ -24,5 +24,7 @@
   "gate": "Signed must beat R6, reversed, static and norm, with all norm matches possible. Always stop after diagnostic; no heldout access or winner switching.",
   "scope": "One post-R11-definition diagnostic, repeated development not blind. Known loop contrast and fusion, no novelty or deployment claim. Earlier partial ARC aggregate stdout was exposed; no new test record is read here.",
   "previous_lock_sha256": "0a52ea57c086f7373d9ed8d5d8a44f65eba709b6a88b7396af15d7ef86649796",
-  "preoutcome_parser_fix": "Remove nonexistent historical R7 split key assertion. No R12 scores/outcomes were computed; formulas unchanged. Full R11 result was subsequently seen, and no formula changed."
+  "preoutcome_parser_fix": "Remove nonexistent historical R7 split key assertion. No R12 scores/outcomes were computed; formulas unchanged. Full R11 result was subsequently seen, and no formula changed.",
+  "previous_parser_lock_sha256": "4c58f030d2f085ea8c5645fa22e19efda697baa383170781438449ab33ab0f84",
+  "preoutcome_hash_fix": "Bind actual source bytes after Windows CRLF writing, not pre-write LF string. Attempt2 failed at initial source-hash assertion before reading any rows; formulas unchanged."
 }
