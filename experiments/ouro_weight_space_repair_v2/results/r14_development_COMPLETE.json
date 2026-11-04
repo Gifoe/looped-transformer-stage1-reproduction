@@ -1,0 +1,97 @@
+{
+  "status": "complete_cached_development",
+  "phase": "development",
+  "n": 576,
+  "CPU_only": true,
+  "GPU_seconds": 0,
+  "heldout_accessed": false,
+  "one_fixed_candidate": true,
+  "protocol_sha256": "904ffbe0f76249ddc0ba155f9c116eb32df939e42e479227975c1eb1ea02443b",
+  "score_file": "results/r14_development_scores.jsonl",
+  "score_file_sha256": "434ed2f13e26563c1416c22120aec788cf87c9def7374449322e48362ea3662f",
+  "passes_gate": false,
+  "criteria": {
+    "minimum_net": false,
+    "paired_R6_p": false,
+    "strictly_beats_M2_bridge_and_all_own_controls": false,
+    "split_gains_nonnegative": false,
+    "retains_at_least_90pct_R6_unique_vs_Fixed": false,
+    "all_norm_controls_match": true
+  },
+  "comparisons": [
+    {
+      "method": "anchored_token_refinement",
+      "reference": "R6",
+      "n": 576,
+      "correct": 349,
+      "reference_correct": 360,
+      "net": -11,
+      "rescue": 8,
+      "damage": 19,
+      "exact_mcnemar_p": 0.052238985896110535
+    },
+    {
+      "method": "anchored_token_refinement",
+      "reference": "M2",
+      "n": 576,
+      "correct": 349,
+      "reference_correct": 352,
+      "net": -3,
+      "rescue": 9,
+      "damage": 12,
+      "exact_mcnemar_p": 0.6636238098144531
+    },
+    {
+      "method": "anchored_token_refinement",
+      "reference": "bridge",
+      "n": 576,
+      "correct": 349,
+      "reference_correct": 358,
+      "net": -9,
+      "rescue": 15,
+      "damage": 24,
+      "exact_mcnemar_p": 0.19959086691960692
+    },
+    {
+      "method": "anchored_token_refinement",
+      "reference": "reversed_refinement",
+      "n": 576,
+      "correct": 349,
+      "reference_correct": 356,
+      "net": -7,
+      "rescue": 18,
+      "damage": 25,
+      "exact_mcnemar_p": 0.3603776529357674
+    },
+    {
+      "method": "anchored_token_refinement",
+      "reference": "prior_norm",
+      "n": 576,
+      "correct": 349,
+      "reference_correct": 360,
+      "net": -11,
+      "rescue": 9,
+      "damage": 20,
+      "exact_mcnemar_p": 0.06142834573984146
+    },
+    {
+      "method": "anchored_token_refinement",
+      "reference": "shuffled_refinement",
+      "n": 576,
+      "correct": 349,
+      "reference_correct": 361,
+      "net": -12,
+      "rescue": 13,
+      "damage": 25,
+      "exact_mcnemar_p": 0.07295138851623051
+    }
+  ],
+  "split_gains": {
+    "discovery": -6,
+    "selection": -5
+  },
+  "retained_R6_special": 12,
+  "total_R6_special": 21,
+  "next_action": "Stop this recipe; no coefficient, sign, prefix cutoff or reference search",
+  "limitations": "Repeated development, no blind confirmation, no new information or hidden-state causation. R6 additive anchoring does not guarantee correctness retention. No multi-reference claim."
+}
