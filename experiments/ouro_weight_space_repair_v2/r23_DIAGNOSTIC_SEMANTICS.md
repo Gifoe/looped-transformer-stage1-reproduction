@@ -1,0 +1,1 @@
+The stored degenerate_gradients count sums the combined invalid-cosine mask: either a degenerate centered d layer or a degenerate one-hot gradient norm. It is not exclusively a count of zero-gradient vocab entries. degenerate_layers reports the layer criterion separately. This is diagnostic terminology only; no formula, threshold, coefficient or scientific gate changes.

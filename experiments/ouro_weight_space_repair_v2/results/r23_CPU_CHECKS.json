@@ -1,0 +1,34 @@
+{
+  "status": "passed_CPU_synthetic",
+  "explicit_onehot_vs_linear_maxerror": 5.551115123125783e-17,
+  "NumPy_Torch_maxerror": 8.326672684688674e-17,
+  "gauge": true,
+  "identical_depth_zero": true,
+  "identical_Q_references_exact_M3": true,
+  "duplicate_reference": true,
+  "reference_permutation": true,
+  "candidate_extension_exact": true,
+  "normmatch": true,
+  "fullV_normalization": true,
+  "nonfinite_rejected": true,
+  "no_target_arguments": true,
+  "arithmetic": "c=mean_j(uQ-uNj), E=mean_j(pNj4-pQ4), FP64 paired differences; no epsilon",
+  "source_sha256": {
+    "r23_common.py": "a9ede0c5dae81c40d16123f6285d4903453b4f8f3ef8448ff6d9daa65be5bd60",
+    "r23_supervise.py": "d7f779bc21570a8208b98e4ff7e8612a6ed1a0bcc56130140ed128bc72c16d9e",
+    "r23_readouts.py": "8b62ad66b7b67f7f2f63d2eefb4ba15b6bb075673e66c5c08c5524a32f491263",
+    "r23_prepare.py": "b681bfdb4d42367dc8c1df1db4931e565961e8a45c573e6a58ff7742f600b0bf",
+    "r23_cpu_preflight.py": "a4ff7dafeeee03a5adfb7cd5d22cae8478479b18b80ecf7b880751f901c1fc6f",
+    "r23_worker.py": "21b1d78febfbb1991a939376170d85564f2d8340864826f234dbb24e42b43df8",
+    "r23_analyze.py": "07c43a3139970e37d4300eaba849d8e3e5a00c5088274e8d12f5daed1efa9c55",
+    "r23_cpu_checks.py": "4eb3a960802bf2702f1b278338c8fa64f531709c21ae295084876ee07e3f7253",
+    "r23_math.py": "359301ec5b82d5bba5d3888abe0026f1055762dd91ec9ccafc30f996bcecdcd2"
+  },
+  "versions": {
+    "python": "3.12.3 (main, Mar  3 2026, 12:15:18) [GCC 13.3.0]",
+    "numpy": "2.2.6",
+    "torch": "2.11.0+cu130",
+    "platform": "Linux-6.17.0-1022-nvidia-aarch64-with-glibc2.39"
+  },
+  "scope": "Synthetic CPU only; no model/load/real features/GPU/heldout"
+}
