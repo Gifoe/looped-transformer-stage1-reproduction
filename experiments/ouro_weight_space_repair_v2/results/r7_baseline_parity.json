@@ -1,0 +1,187 @@
+{
+  "status": "passed_cpu_reconstruction",
+  "base_commit": "81d1c83b79461bf69882a0ffd4cf39b38dc3ba36",
+  "n": 576,
+  "baselines": [
+    {
+      "split": "discovery",
+      "method": "native4",
+      "n": 384,
+      "correct": 239,
+      "accuracy": 0.6223958333333334,
+      "rescue_vs_R6": 16,
+      "damage_vs_R6": 20
+    },
+    {
+      "split": "discovery",
+      "method": "fixed",
+      "n": 384,
+      "correct": 235,
+      "accuracy": 0.6119791666666666,
+      "rescue_vs_R6": 9,
+      "damage_vs_R6": 17
+    },
+    {
+      "split": "discovery",
+      "method": "adaptive",
+      "n": 384,
+      "correct": 240,
+      "accuracy": 0.625,
+      "rescue_vs_R6": 12,
+      "damage_vs_R6": 15
+    },
+    {
+      "split": "discovery",
+      "method": "A1",
+      "n": 384,
+      "correct": 237,
+      "accuracy": 0.6171875,
+      "rescue_vs_R6": 3,
+      "damage_vs_R6": 9
+    },
+    {
+      "split": "discovery",
+      "method": "M0_R6",
+      "n": 384,
+      "correct": 243,
+      "accuracy": 0.6328125,
+      "rescue_vs_R6": 0,
+      "damage_vs_R6": 0
+    },
+    {
+      "split": "selection",
+      "method": "native4",
+      "n": 192,
+      "correct": 114,
+      "accuracy": 0.59375,
+      "rescue_vs_R6": 5,
+      "damage_vs_R6": 8
+    },
+    {
+      "split": "selection",
+      "method": "fixed",
+      "n": 192,
+      "correct": 114,
+      "accuracy": 0.59375,
+      "rescue_vs_R6": 1,
+      "damage_vs_R6": 4
+    },
+    {
+      "split": "selection",
+      "method": "adaptive",
+      "n": 192,
+      "correct": 113,
+      "accuracy": 0.5885416666666666,
+      "rescue_vs_R6": 2,
+      "damage_vs_R6": 6
+    },
+    {
+      "split": "selection",
+      "method": "A1",
+      "n": 192,
+      "correct": 116,
+      "accuracy": 0.6041666666666666,
+      "rescue_vs_R6": 0,
+      "damage_vs_R6": 1
+    },
+    {
+      "split": "selection",
+      "method": "M0_R6",
+      "n": 192,
+      "correct": 117,
+      "accuracy": 0.609375,
+      "rescue_vs_R6": 0,
+      "damage_vs_R6": 0
+    },
+    {
+      "split": "all_development",
+      "method": "native4",
+      "n": 576,
+      "correct": 353,
+      "accuracy": 0.6128472222222222,
+      "rescue_vs_R6": 21,
+      "damage_vs_R6": 28
+    },
+    {
+      "split": "all_development",
+      "method": "fixed",
+      "n": 576,
+      "correct": 349,
+      "accuracy": 0.6059027777777778,
+      "rescue_vs_R6": 10,
+      "damage_vs_R6": 21
+    },
+    {
+      "split": "all_development",
+      "method": "adaptive",
+      "n": 576,
+      "correct": 353,
+      "accuracy": 0.6128472222222222,
+      "rescue_vs_R6": 14,
+      "damage_vs_R6": 21
+    },
+    {
+      "split": "all_development",
+      "method": "A1",
+      "n": 576,
+      "correct": 353,
+      "accuracy": 0.6128472222222222,
+      "rescue_vs_R6": 3,
+      "damage_vs_R6": 10
+    },
+    {
+      "split": "all_development",
+      "method": "M0_R6",
+      "n": 576,
+      "correct": 360,
+      "accuracy": 0.625,
+      "rescue_vs_R6": 0,
+      "damage_vs_R6": 0
+    }
+  ],
+  "confirmation_rows_parsed": 0,
+  "test_rows_parsed": 0,
+  "oracle_summary": {
+    "discovery": {
+      "already_correct": 243,
+      "coefficient": 22,
+      "direction": 119
+    },
+    "selection": {
+      "already_correct": 117,
+      "coefficient": 10,
+      "direction": 65
+    }
+  },
+  "choice_perturbation_summary": {
+    "permute": {
+      "n": 576,
+      "changed_shared_centered_scores": 0,
+      "changed_prediction": 0,
+      "changed_shared_ranking_winner": 0,
+      "changed_prediction_with_original_winner_present": 0
+    },
+    "duplicate": {
+      "n": 2304,
+      "changed_shared_centered_scores": 1225,
+      "changed_prediction": 13,
+      "changed_shared_ranking_winner": 13,
+      "changed_prediction_with_original_winner_present": 13
+    },
+    "delete": {
+      "n": 2304,
+      "changed_shared_centered_scores": 1386,
+      "changed_prediction": 599,
+      "changed_shared_ranking_winner": 34,
+      "changed_prediction_with_original_winner_present": 23
+    }
+  },
+  "historical_train_1093_R6_correct": 705,
+  "historical_is_new_independent_evidence": false,
+  "gpu_parity_status": "pending",
+  "source_sha256": {
+    "r7_core.py": "97502a89798e4e14c40ebd4fcae0ef56d6262d0bec6792e6832eed190caed704",
+    "r7_diagnostics.py": "05d2bf97b7792c59a5217bbf0fa5e5b0d13f4a182decf33369f9f4d88f89c9f8",
+    "slcd_r6_scores.py": "4decfa923ee1a69f03e2d5e6a734023f21780e04e754a9acf5fc9df5e9a25e58"
+  }
+}

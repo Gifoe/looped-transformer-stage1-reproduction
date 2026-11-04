@@ -1,0 +1,119 @@
+{
+  "schema": "r7_v1",
+  "methods": {
+    "M1_multi_candidate": {
+      "role": "primary_candidate",
+      "references": [
+        "N0",
+        "N1",
+        "N2"
+      ],
+      "level": "complete_candidate",
+      "denominator": "mean individual centered squared norms",
+      "late": true
+    },
+    "M2_N0_token": {
+      "role": "primary_candidate",
+      "references": [
+        "N0"
+      ],
+      "level": "full_vocabulary_per_prediction",
+      "mode": "robust",
+      "late": true
+    },
+    "M3_multi_token": {
+      "role": "primary_candidate",
+      "references": [
+        "N0",
+        "N1",
+        "N2"
+      ],
+      "level": "full_vocabulary_per_prediction",
+      "mode": "robust",
+      "late": true
+    },
+    "C_mean_denominator": {
+      "role": "ablation",
+      "references": [
+        "N0",
+        "N1",
+        "N2"
+      ],
+      "mode": "mean_only",
+      "late": true
+    },
+    "C_R6alpha_token": {
+      "role": "ablation",
+      "references": [
+        "N0"
+      ],
+      "mode": "bridge",
+      "whole_alpha": "frozen R6 current-question alpha",
+      "late": true
+    },
+    "C_matched_guidance": {
+      "role": "ablation",
+      "references": [
+        "N0",
+        "N1",
+        "N2"
+      ],
+      "mode": "matched_scale",
+      "late": true
+    },
+    "C_shuffled_direction": {
+      "role": "random_control_never_eligible",
+      "references": [
+        "N0",
+        "N1",
+        "N2"
+      ],
+      "mode": "shuffle",
+      "seed": 2021,
+      "late": true
+    },
+    "C_no_late": {
+      "role": "ablation",
+      "references": [
+        "N0",
+        "N1",
+        "N2"
+      ],
+      "mode": "robust",
+      "late": false
+    }
+  },
+  "substantive_candidates": 8,
+  "historical_baselines": [
+    "native4",
+    "fixed",
+    "adaptive",
+    "A1",
+    "M0_R6"
+  ],
+  "optional_half_mix": "Not instantiated: all8 substantive slots are used by required main/control configurations",
+  "numerics": "FP32 model-head logits and final log_softmax; full-vocab Fisher p/statistics FP64; den<=64eps64*mean(maxabs(center_p(e))^2) sets alpha0; zero-alpha path exact Fixed; unchanged late Q4-Q5",
+  "selection": {
+    "freeze_candidates_before_confirmation": true,
+    "train_ranking": [
+      "total correct descending",
+      "worst proportional gain across original384/192/517 descending",
+      "damage to R6 ascending",
+      "reference count ascending",
+      "ID lexicographic"
+    ],
+    "validation_candidates": 2,
+    "final_ranking": [
+      "validation correct descending",
+      "full train1093 correct descending",
+      "validation damage vsR6 ascending",
+      "reference count ascending",
+      "ID lexicographic"
+    ]
+  },
+  "test_gate": "Exactly one primary complete ARC1172; >736 authorizes external full tasks; <=736 stops, no alternate winner",
+  "aspirational_target": 751,
+  "gpu_budget_seconds": 21600,
+  "reserved_arc_seconds": 5400,
+  "alignment": "Each configuration validates only its own references; any candidate alignment failure falls back the entire question for that configuration to frozen R6. Single-reference configs never consult unused N1/N2."
+}

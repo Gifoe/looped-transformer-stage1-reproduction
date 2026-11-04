@@ -1,0 +1,26 @@
+{
+  "status": "predeclared_before_ARC_test",
+  "created_unix": 1793781263.120951,
+  "tasks": {
+    "hellaswag": {
+      "current_problem_field": "query",
+      "doc_to_text": "{{query}}",
+      "official_yaml_sha256": "cabb0340cad5fb66c2d62f6cfab16b85df18070e606300f20e4f579e49fdc5e3",
+      "num_fewshot": 0,
+      "N0": "Answer:",
+      "N1": "N/A",
+      "N2": "Unknown"
+    },
+    "openbookqa": {
+      "current_problem_field": "question_stem",
+      "doc_to_text": "question_stem",
+      "official_yaml_sha256": "6224b08e7b0f2f54c54d292994f67521213f49b50289be8f22321aa675b8c898",
+      "num_fewshot": 0,
+      "N0": "Answer:",
+      "N1": "N/A",
+      "N2": "Unknown"
+    }
+  },
+  "operation": "On official processed document, replace only its doc_to_text current-problem field by N/A or Unknown; render via the original official zero-shot task. Preserve complete continuation and denominator. Reference rendering is verified against every original manifest row after ARC>736. No external outcomes used here.",
+  "gate": "Full frozen ARC1172 correct>736 and exact per-question R6 acceptance required"
+}

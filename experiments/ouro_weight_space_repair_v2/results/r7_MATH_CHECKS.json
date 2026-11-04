@@ -1,0 +1,38 @@
+{
+  "status": "passed",
+  "scope": "CPU synthetic only; no data/model/target-token access",
+  "checks": [
+    "M1 exact frozen R6 J1",
+    "M1 identical J3 exact",
+    "unused gold metadata",
+    "all five modes finite",
+    "alpha0 exact Fixed all modes",
+    "constant-shift invariance within FP32 tolerance",
+    "no mutation",
+    "all-identical reference exactness",
+    "partial duplicate multiplicity retained",
+    "robust vs mean denominator",
+    "matched guidance norm",
+    "shuffled correction norm",
+    "zero/indistinguishable denominator",
+    "zero guidance rho1",
+    "invalid/nonfinite input rejection",
+    "independent position extension",
+    "token log-partition is recomputed",
+    "Torch CPU independent implementation parity",
+    "no grad graph/output",
+    "Torch alpha0 exact Fixed"
+  ],
+  "torch": "CPU tested",
+  "max_torch_numpy_logit_abs_error": 0.0,
+  "source_sha256": {
+    "r7_math.py": "76db195622775721c807f7a6fe639581e48557e51cb91e141c82d197dc9b6a97",
+    "r7_math_checks.py": "cbf125a6523392b259cc03aa9ad6e1c4a201c672ea101c0796d7075b006b5ff8"
+  },
+  "numerical_contract": "FP32 g/e/Fixed; p=softmax(FP32 z4 converted to FP64); FP64 weighted statistics; final corrected logits cast once to FP32; caller performs FP32 full-vocab log_softmax",
+  "limits": [
+    "No BF16 model/head integration tested here.",
+    "Constant-shift invariance is tolerance-bounded because FP32 input/returned logits can round.",
+    "Forced-zero returns Fixed; adding the unchanged late term recovers A1, not R6."
+  ]
+}
