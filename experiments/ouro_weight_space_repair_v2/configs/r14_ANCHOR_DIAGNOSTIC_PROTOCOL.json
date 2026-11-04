@@ -1,0 +1,39 @@
+{
+  "status": "frozen_one_single_reference_refinement_before_R14_outcomes",
+  "source_sha256": "820c6c824700eeb04229531cf465b4d99d6e364407f0f235231b93effd10e4ca",
+  "inference_source_sha256": {
+    "r7_core.py": "1e9265527fb4f9dbf3daabf0f69b41e0e303e372fd03780520ec02cc176e78c4",
+    "r8_scores.py": "9b0bb1bc69050a628e21c2ea03b444e2f047b2a73a50fd997987105e6775356a",
+    "slcd_r6_scores.py": "4decfa923ee1a69f03e2d5e6a734023f21780e04e754a9acf5fc9df5e9a25e58",
+    "r7_math.py": "76db195622775721c807f7a6fe639581e48557e51cb91e141c82d197dc9b6a97",
+    "r7_inference.py": "9281aea93580a122f57767991b037267114ac965588b747990c7570099a672ae"
+  },
+  "input_sha256": {
+    "results/r7_discovery_development.jsonl": "e83aa133169bf412a763f8c94b70b70a4e64675e9e6626e4a4c946f26b63b417",
+    "results/r7_selection_development.jsonl": "3fc918a2af658bd9f7252fd12c1345fbccd3ed8732d6648c41b1f80c5a0e8648",
+    "results/r7_confirmation_development.jsonl": "289a3627aab54da75e12f2f344e25016ebe16208b0600efc56d8c7d4e6a54320"
+  },
+  "split_sizes": {
+    "discovery": 384,
+    "selection": 192,
+    "confirmation": 517
+  },
+  "GPU_seconds": 0,
+  "heldout_access_authorized": false,
+  "formula": "R6+(M2_N0_token-C_R6alpha_token), using both original complete vocabulary-normalized LLs and identical N0 direction/prefix/measure; late cancels.",
+  "controls": [
+    "Reverse the same residual; cannot promote",
+    "Original prior direction matched to final centered correction norm vsA1",
+    "Seed2021 shuffled centered refinement, same residual norm"
+  ],
+  "gate": {
+    "minimum_net_development": 6,
+    "minimum_net_fulltrain": 11,
+    "exact_McNemar_R6_p_below": 0.05,
+    "retention_R6_only_vs_Fixed_at_least": 0.9,
+    "all_splits_nonnegative": true,
+    "strictly_beat_every_control_and_M2_bridge": true
+  },
+  "iteration": "One fixed candidate. No scaling search, second reference candidate, prefix cutoff or sign switching. Fulltrain only after development passes; no automatic val/test.",
+  "interpretation": "Finite falsification of R13-motivated coarse-to-prefix residual transfer; existing-cache score combination introduces no new information and no novelty or token correctness guarantee. Historical data repeatedly used; confirmation is not independent."
+}
