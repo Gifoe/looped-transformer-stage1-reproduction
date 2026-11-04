@@ -1,0 +1,35 @@
+{
+  "status": "passed_R18_release_review",
+  "archive_members": 41,
+  "independent_replay": {
+    "status": "passed_read_only_independent_replay",
+    "n": 64,
+    "positions": 1540,
+    "counts": {
+      "uniform_projection": 35,
+      "matched_guidance_U": 33,
+      "matched_guidance_P": 33,
+      "shuffled_correction_U": 32,
+      "shuffled_correction_P": 32,
+      "old_Fisher": 34,
+      "R6": 36,
+      "fixed": 34,
+      "A1": 33,
+      "native4": 32
+    },
+    "eligible_for_feasibility_review": false,
+    "pre_FP32_control_norm_max_error": 8.881784197001252e-16,
+    "scalar_FP32_sum_reconstruction_max_error": 3.2186508178710938e-06,
+    "aggregate_worker_seconds": 17870.32302212715,
+    "remaining_worker_seconds": 3729.6769778728485,
+    "heldout_accessed": false,
+    "external_benchmarks_started": false,
+    "scope": "Classification/statistical/accounting replay; no second model run and no independent full-vocabulary activation archive. Control norm identity is before final FP32 rounding."
+  },
+  "pre_feature_definition_commit": "875686d6697b0d7ffd5c0613060a641a2dad87f8",
+  "R18_candidate_stopped": true,
+  "new_complete_ARC": false,
+  "new_external_benchmarks": false,
+  "visual_QA": "PNG viewed: all1540-rank histogram and64-question alignment distributions; log axes explicit, no confidence bars from dependent tokens.",
+  "scope": "Preserve all prior R7-R17 public files and R18 frozen sources. No winner switching, relabelled control, uniform temperature or mixed-geometry continuation."
+}

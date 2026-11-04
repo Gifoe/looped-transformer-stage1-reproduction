@@ -1,0 +1,35 @@
+{
+  "status": "complete_post_screen_failure_accounting",
+  "n": 64,
+  "new_vs_old_Fisher_prediction_disagreements": 1,
+  "cases": [
+    {
+      "id": "arc_challenge/train/Mercury_402569",
+      "transition": "damage",
+      "gold": 1,
+      "R6_prediction": 1,
+      "new_prediction": 3,
+      "old_Fisher_prediction": 3,
+      "post_repair_rival": 3,
+      "original_question": "What compound is formed when the soft putty-like metal sodium (Na) reacts with the green-colored poisonous gas chlorine (Cl_{2})?",
+      "original_choices": [
+        "sugar",
+        "table salt",
+        "sulfuric acid",
+        "sodium hydroxide"
+      ],
+      "R6_pair_margin": 0.11528860926628126,
+      "A1_pair_margin": -0.012005883455276534,
+      "new_pair_margin": -0.0026050031185149702,
+      "target_shift_pair_change": -0.052942144870758046,
+      "normalizer_pair_change": -0.06234304830431939,
+      "LP_pair_change": 0.009400903433561342,
+      "reconstruction_error": -2.309679977829937e-08,
+      "convention": "Positive target shift improves gold margin; positive normalizer change opposes gold. Pair and rival fixed after observed repair; gauge-dependent score accounting, not semantic causal proof."
+    }
+  ],
+  "prefix_rows": 8,
+  "formula_changed": false,
+  "heldout_accessed": false,
+  "scope": "Fixed post-repair gold/rival accounting only. No threshold, dispatch, new candidate or independent causal explanation is inferred."
+}

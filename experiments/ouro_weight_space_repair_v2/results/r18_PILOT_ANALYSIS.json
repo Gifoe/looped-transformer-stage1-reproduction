@@ -1,0 +1,168 @@
+{
+  "status": "complete_single_fixed_metric_pilot",
+  "n": 64,
+  "protocol_sha256": "43acdd9ab01345a940ebf7a70111651698e7b16b72031963dbb5c4bcec53c832",
+  "counts": {
+    "uniform_projection": 35,
+    "matched_guidance_U": 33,
+    "matched_guidance_P": 33,
+    "shuffled_correction_U": 32,
+    "shuffled_correction_P": 32,
+    "old_Fisher": 34,
+    "R6": 36,
+    "fixed": 34,
+    "A1": 33,
+    "native4": 32
+  },
+  "paired": {
+    "matched_guidance_U": {
+      "rescues": 2,
+      "damages": 0,
+      "net": 2,
+      "exact_two_sided_McNemar_p": 0.5
+    },
+    "matched_guidance_P": {
+      "rescues": 2,
+      "damages": 0,
+      "net": 2,
+      "exact_two_sided_McNemar_p": 0.5
+    },
+    "shuffled_correction_U": {
+      "rescues": 4,
+      "damages": 1,
+      "net": 3,
+      "exact_two_sided_McNemar_p": 0.375
+    },
+    "shuffled_correction_P": {
+      "rescues": 4,
+      "damages": 1,
+      "net": 3,
+      "exact_two_sided_McNemar_p": 0.375
+    },
+    "old_Fisher": {
+      "rescues": 1,
+      "damages": 0,
+      "net": 1,
+      "exact_two_sided_McNemar_p": 1.0
+    },
+    "R6": {
+      "rescues": 0,
+      "damages": 1,
+      "net": -1,
+      "exact_two_sided_McNemar_p": 1.0
+    },
+    "fixed": {
+      "rescues": 2,
+      "damages": 1,
+      "net": 1,
+      "exact_two_sided_McNemar_p": 1.0
+    },
+    "A1": {
+      "rescues": 2,
+      "damages": 0,
+      "net": 2,
+      "exact_two_sided_McNemar_p": 0.5
+    },
+    "native4": {
+      "rescues": 4,
+      "damages": 1,
+      "net": 3,
+      "exact_two_sided_McNemar_p": 0.375
+    }
+  },
+  "R6_unique_vs_Fixed": {
+    "total": 2,
+    "retained": 2
+  },
+  "screens": {
+    "beats_R6": false,
+    "beats_old_Fisher": true,
+    "beats_matched_guidance_U": true,
+    "beats_matched_guidance_P": true,
+    "beats_shuffled_correction_U": true,
+    "beats_shuffled_correction_P": true,
+    "retains_all_pilot_R6_unique_vs_Fixed": true
+  },
+  "eligible_for_feasibility_review": false,
+  "automatic_extension_authorized": false,
+  "heldout_accessed": false,
+  "external_benchmarks_started": false,
+  "primary_vs_old_Fisher_prediction_disagreements": 1,
+  "numerical": {
+    "positions": 1540,
+    "alpha_zero": 15,
+    "alpha_one": 10,
+    "mean_absolute_alpha_change": 0.31324349030853993,
+    "max_absolute_alpha_change": 0.9858156349115822,
+    "pre_FP32_control_norm_errors": {
+      "matched_U_norm2": 2.220446049250313e-16,
+      "matched_P_norm2": 8.881784197001252e-16,
+      "shuffle_U_norm2": 4.440892098500626e-16,
+      "shuffle_P_norm2": 4.440892098500626e-16
+    },
+    "rho_P_greater_than_one": 829
+  },
+  "geometry_diagnostic": {
+    "scope": "Pooled prefix summaries are descriptive, not independent samples. Original g/e alignment, not R17 cue-response remeasurement.",
+    "effective_Fisher_rank_defined": 1540,
+    "effective_Fisher_rank_undefined": 0,
+    "effective_Fisher_rank_quantiles": [
+      1.0139142460997688,
+      2.3243554843598604,
+      3.417815810365444,
+      7.132113089721402,
+      86.23669041657662
+    ],
+    "probability_IPR_quantiles": [
+      1.0002122804657985,
+      1.3028210261901458,
+      2.6270669430205773,
+      6.344183617277122,
+      82.68908122672624
+    ],
+    "pmax_quantiles": [
+      0.05670440184464058,
+      0.3059665246991974,
+      0.5534692025405039,
+      0.8723010419706243,
+      0.9998938762587164
+    ],
+    "alignment": {
+      "uniform": {
+        "defined_positions": 1540,
+        "mean_cosine": 0.5688495805006736,
+        "mean_squared_cosine": 0.37317860920969526
+      },
+      "native": {
+        "defined_positions": 1540,
+        "mean_cosine": 0.24911296458945797,
+        "mean_squared_cosine": 0.27111237213032285
+      },
+      "uniform_shuffle": {
+        "defined_positions": 1540,
+        "mean_cosine": -0.0014666466080289712,
+        "mean_squared_cosine": 1.8018437169383782e-05
+      },
+      "native_shuffle": {
+        "defined_positions": 1540,
+        "mean_cosine": -0.025679721340389223,
+        "mean_squared_cosine": 0.1768124381238785
+      }
+    },
+    "correction_energy_means": {
+      "correction_U_norm2": 0.3737920388711949,
+      "correction_P_norm2": 0.15093325811515257,
+      "old_Fisher_correction_U_norm2": 0.22925220282904457,
+      "old_Fisher_correction_P_norm2": 0.051442053661642034
+    },
+    "interpretation": "Low Fisher rank is not a computation error or proof of irrelevant reference; fixed vocabulary shuffle is not an isotropic null. Uniform tails may dominate and do not supply semantic ground truth."
+  },
+  "timing_sums": {
+    "main_head_seconds": 5.3435865407809615,
+    "N0_reference_seconds": 32.89510410139337,
+    "solver_and_controls_seconds": 15.19958355370909
+  },
+  "model_load_seconds": 19.457160987891257,
+  "worker_elapsed_seconds": 82.79436236200854,
+  "limitation": "One reused-development64 pilot, N0 only, no reference-stability claim and no independent validation. Uniform full-vocabulary prior-direction metric differs from old R2 late-update Euclidean control; standard geometry, not a new decoding principle."
+}
