@@ -1,0 +1,31 @@
+"""CPU-only explicit definition; not permission to evaluate new model heads."""
+import ast,json
+from r33_common import ROOT,read,sha
+from r33_preflight import run
+from r33_stream import STRONG_CONTROLS,METHODS
+SOURCES=['scripts/r33_'+n+'.py' for n in ['math','common','cpu_math_checks','stream','preflight','worker','analyze','supervise','cpu_stream_checks','cpu_cache_checks','prepare']]
+def old_source_dependencies():
+ seen=set();stack=[p.removeprefix('scripts/').removesuffix('.py') for p in SOURCES]
+ while stack:
+  name=stack.pop();p=ROOT/'scripts'/(name+'.py')
+  if name in seen or not p.is_file():continue
+  seen.add(name)
+  for node in ast.walk(ast.parse(p.read_text(encoding='utf8'))):
+   if isinstance(node,ast.Import):names=[a.name.split('.')[0] for a in node.names]
+   elif isinstance(node,ast.ImportFrom):names=[(node.module or '').split('.')[0]]
+   else:continue
+   stack.extend(n for n in names if (ROOT/'scripts'/(n+'.py')).is_file())
+ return sorted('scripts/'+n+'.py' for n in seen if 'scripts/'+n+'.py' not in SOURCES)
+def main():
+ pre=run();old=read('configs/r30_SOURCE_CLOCK_PILOT_LOCK.json');inputs=['r33_COMMON_GAIN_DESIGN.md','r33_ROOT_PREIMPLEMENTATION_REVIEW.md','r33_NUMERIC_DOMAIN_ADDENDUM.md','r33_GATE_COMPLETENESS_ADDENDUM.md','results/r33_RESOURCE_CACHE_PREFLIGHT_PUBLIC.json','results/r33_CPU_MATH_CHECKS.json','results/r33_CPU_STREAM_CHECKS.json','results/r33_CPU_CACHE_NEGATIVE_CHECKS.json','results/r33_CPU_NATIVE_ADMISSION.json','configs/r28_SOURCE_PRIOR_PILOT_LOCK.json','configs/r30_SOURCE_CLOCK_PILOT_LOCK.json','results/r28_COMPLETE.json','results/r28_NATIVE_STATE_INDEX.json','results/r28_NATIVE_SINGLE_POSITION_STATES.npz','results/r28_EXECUTION_AUDIT.json','results/r28_REPRESENTATIVE_VECTORS.npz','results/r28_SCORES.json','configs/r28_TRUE_PREFIX_TASK_INVENTORY.json','configs/r28_SANITIZED_REQUESTS.json','configs/r7_reference_manifest.json','data/slcd_discovery.jsonl','data/slcd_selection.jsonl','results/r7_discovery_development.jsonl','results/r7_selection_development.jsonl']+old_source_dependencies();assert len(inputs)==len(set(inputs))
+ for receipt in ['results/r33_CPU_MATH_CHECKS.json','results/r33_CPU_STREAM_CHECKS.json','results/r33_CPU_CACHE_NEGATIVE_CHECKS.json','results/r33_CPU_NATIVE_ADMISSION.json']:
+  r=read(receipt);assert r['GPU_worker_seconds']==0 and not r['model_loaded'] and not r['new_head_run']
+  for p,h in r['source_sha256'].items():assert sha(p)==h,(receipt,p)
+ assert 'results/r33_RESOURCE_CACHE_PREFLIGHT.json' not in inputs and all('PRIVATE' not in p for p in inputs)
+ hashes={p:sha(p) for p in inputs}
+ for f,h in old['model_identity']['metadata_and_tokenizer_sha256'].items():hashes['models/Ouro-1.4B/'+f]=h
+ spec=dict(status='DRAFT_PENDING_ROOT_ASTRA_REVIEW',source_sha256={p:sha(p) for p in SOURCES},input_sha256=hashes,model_identity=old['model_identity'],runtime_identity=old['runtime_identity'],cohort=old['cohort'],projection_width=old['projection_width'],vocabulary_permutation_sha256=old['vocabulary_permutation_sha256'],vocabulary_null_seed=2021,old_native_cache_contract_sha256=old['old_native_cache_contract_sha256'],primitive='same legal true-prefix BF16 normalized single-position native states and original BF16 head; no KV/padding/backend/mask/hook change',method='Only A: actual FP64 normalized literal Fixed-minus-native4 gains, signed-min across Q+N012, original shifted p-centering, subtract from original literal FP32 Fixed',methods=METHODS,strong_controls=STRONG_CONTROLS,LOO_controls=['LOO_N0','LOO_N1','LOO_N2'],branches_B_C_implemented=False,numeric_domain='finite p64 strictly positive every coordinate; finite norm2 and (norm2==0)==all(h==0); exact-zero main/control -> literal Fixed; nonzero main with degenerate64eps direction unmatched, no epsilon/floor; scale gzero/nonzero h unmatched',cache_plan=dict(native_tasks=1588,state_references=6773,native_head_passes=2,native_heads_per_pass=3597,native_head_calls=7194,fresh_Q=pre['fresh_Q'],model_body_calls=1,body_heads=3,total_heads=7197,all_baseline_per_target_scalar_parity_before_new_math=True,historical_saved_fullV_heads_exact=9,all_historical_fullV_parity_claimed=False,CF_calls=0),budget=dict(inherited_ledger_sha256=pre['inherited_GPU_ledgers'],inherited_total_seconds=20755.46525352029,remaining_seconds=844.5347464797087,original_cap_seconds=21600,hard_seconds=200,soft_seconds=185,kill_seconds=199,reap_seconds=1,reserve_seconds=5,provisional=True,planning_scope='Historical diagnostic costs only; current shared Ollama load not removed. No independent profile, warmup, retry or mid-job deadline extension.'),gates='Complete24/numeric/cache/params/clean/actual<=200+allcontrols matched before any labels; strong rescue>=2 damage0 and allold gains retained vs BOTH historical/matchedR6, strictbeat all six strong_controls, each3LOO net>=0+allgains retained vsBOTH; costreview_nonpass main net>=0+retention vsBOTH only, no automaticGPU',precision='Original BF16 head [1,1,2048]->BF16fullV->FP32; new log-gain/centering/norm statistics FP64; original literal Fixed FP32 anchor; all output FP32fullV log_softmax/gather, original-position GPU FP32 buffers/one sum, originalchar denominator once FP64, unchanged nativeQ4-Q5 late',scope='One fixed coordinate common-gain exploratory pilot; source-only no-target/menu estimator interface plus synthetic stateless evidence, not full dynamic candidate insertion validation. No claimed final probability sign/no-harm theorem or established novelty. Future whole576+517+299+1172 needs separate full-resource review.',private_artifact_exclusions=['results/r33_RESOURCE_CACHE_PREFLIGHT.json','transport/','artifacts/r24_TOKENIZER_AUDIT_PRIVATE.json','models/'],GPU_execution_authorized_by_draft=False,heldout_access_authorized=False,external_benchmarks_authorized=False,retry_authorized=False)
+ assert all('\\' not in p for group in ['source_sha256','input_sha256'] for p in spec[group]);assert len(spec['strong_controls'])==6 and 'J2_guidance' in spec['strong_controls']
+ with (ROOT/'configs/r33_REVIEW_DRAFT.json').open('x',encoding='utf8') as f:json.dump(spec,f,indent=2);f.write('\n')
+ print('R33_DRAFT',sha('configs/r33_REVIEW_DRAFT.json'),'sources',len(SOURCES),'inputs',len(hashes),'server_metadata',9)
+if __name__=='__main__':main()

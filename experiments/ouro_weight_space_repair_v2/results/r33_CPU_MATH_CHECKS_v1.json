@@ -1,0 +1,39 @@
+{
+  "status": "passed_CPU_synthetic_only",
+  "checks": [
+    "independent_numpy_torch",
+    "zero_main_and_controls_raw_exact_Fixed",
+    "three_LOO_and_reference_permutation",
+    "all_matched_norm_errors",
+    "local_gain_interval_theorem",
+    "duplicate_existing_reference_idempotence",
+    "LOO_removal_relaxes_clamp",
+    "renormalization_reverses_probability_gain_sign_counterexample",
+    "exact_representable_gauge_and_large_FP32_boundary",
+    "identical_references_native_distribution_with_declared_rounding_bound",
+    "deliberate_generic_unmatched_without_epsilon",
+    "literal_rounding_zero_guidance_nonzero_main_scale_unmatched",
+    "softmax_underflow_zero_rejected",
+    "positive_p_weighted_nonzero_h_norm_underflow_rejected",
+    "nonfinite_rejected",
+    "estimator_has_no_target_or_candidate_menu_input",
+    "mixed_type_diagnostic_packing"
+  ],
+  "FP32_output_max_error": 0.0,
+  "active_random_cases": 30,
+  "FP64_stat_max_error": 4.440892098500626e-16,
+  "renormalization_counterexample": {
+    "original_second_gain": -0.03390155167568132,
+    "new_second_probability": 0.3703703703703703
+  },
+  "model_loaded": false,
+  "new_head_run": false,
+  "GPU_worker_seconds": 0,
+  "torch": "2.10.0+cpu",
+  "numpy": "2.2.6",
+  "source_sha256": {
+    "scripts/r33_math.py": "00ba815a7cf8cbc83724080ef19093f65b62b3a571c0f0aa500023f62b4466e3",
+    "scripts/r33_common.py": "19c9ac7c14ac309df90a71d1b8c6d483ea459529246b79a34302e70487bf4326",
+    "scripts/r33_cpu_math_checks.py": "f2081233b4e00b2c90f9f68a184877c131cd910422c40af7c2df4320c0d4e24d"
+  }
+}

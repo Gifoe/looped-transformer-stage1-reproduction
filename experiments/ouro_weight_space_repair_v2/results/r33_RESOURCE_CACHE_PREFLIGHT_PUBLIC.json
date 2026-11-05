@@ -1,0 +1,509 @@
+{
+  "status": "completed_read_only_resource_cache_preflight",
+  "observed_unix": 1793847410.593757,
+  "host": "GB10 research server (instance identifier omitted)",
+  "model_loaded": false,
+  "head_or_forward_run": false,
+  "solver_run": false,
+  "GPU_worker_seconds": 0,
+  "scope": "Only process/GPU queries, aggregate JSON metadata and file stats. No tensor payload, score JSONL, dataset labels or per-test item output opened.",
+  "GPU_inventory": {
+    "command_available": true,
+    "device": {
+      "exit_code": 0,
+      "stdout": "NVIDIA GB10, UUID omitted, 88 %, memory.used N/A, memory.total N/A",
+      "stderr": ""
+    },
+    "processes": {
+      "exit_code": 0,
+      "stdout": "Existing Ollama llama-server process, 4315 MiB; PID and home path omitted",
+      "stderr": ""
+    }
+  },
+  "our_running_worker_or_supervisor_processes": [],
+  "last_R30_PIDs": {
+    "2474130": {
+      "exists": false
+    },
+    "2474150": {
+      "exists": false
+    }
+  },
+  "GPU_budget": {
+    "ledgers": 18,
+    "all_current_ledger_hashes_exact": true,
+    "used_seconds": 20755.46525352029,
+    "original_cap": 21600,
+    "remaining_seconds": 844.5347464797087
+  },
+  "historical_main_Q_state_stages": {
+    "discovery": {
+      "index": "results/slcd_SOURCE_AUDIT.json",
+      "index_sha256": "c72ac2b3aea4131765606374cebb80515be9ad4575fa26e830945aa4e22017ec",
+      "status": "passed",
+      "indexed_questions": 384,
+      "files_existing": 384,
+      "all_recorded_sizes_match": true,
+      "aggregate_current_bytes": 2178220472,
+      "candidate_counts": {
+        "4": 383,
+        "3": 1
+      },
+      "target_token_count_min": 1,
+      "target_token_count_max": 37,
+      "sample_stats": [
+        {
+          "index": 0,
+          "exists": true,
+          "actual_bytes": 9453457,
+          "recorded_bytes": 9453457
+        },
+        {
+          "index": 192,
+          "exists": true,
+          "actual_bytes": 5226013,
+          "recorded_bytes": 5226013
+        },
+        {
+          "index": 383,
+          "exists": true,
+          "actual_bytes": 5865047,
+          "recorded_bytes": 5865047
+        }
+      ],
+      "current_tensor_hashes_recomputed": false,
+      "payload_loaded": false,
+      "actual_executed_trajectory_depth": null
+    },
+    "selection": {
+      "index": "results/slcd_SOURCE_AUDIT.json",
+      "index_sha256": "c72ac2b3aea4131765606374cebb80515be9ad4575fa26e830945aa4e22017ec",
+      "status": "passed",
+      "indexed_questions": 192,
+      "files_existing": 192,
+      "all_recorded_sizes_match": true,
+      "aggregate_current_bytes": 113626370,
+      "candidate_counts": {
+        "4": 191,
+        "5": 1
+      },
+      "target_token_count_min": 1,
+      "target_token_count_max": 35,
+      "sample_stats": [
+        {
+          "index": 0,
+          "exists": true,
+          "actual_bytes": 328261,
+          "recorded_bytes": 328261
+        },
+        {
+          "index": 96,
+          "exists": true,
+          "actual_bytes": 205501,
+          "recorded_bytes": 205501
+        },
+        {
+          "index": 191,
+          "exists": true,
+          "actual_bytes": 303805,
+          "recorded_bytes": 303805
+        }
+      ],
+      "current_tensor_hashes_recomputed": false,
+      "payload_loaded": false,
+      "actual_executed_trajectory_depth": null
+    },
+    "confirmation": {
+      "index": "results/slcd_tokens_confirmation_confirmation_COMPLETE.json",
+      "index_sha256": "c67b3c702b86590d5c69ecdcb072c9d8ca5a54f2751d4f9a89838867382c4b8e",
+      "status": "complete",
+      "indexed_questions": 517,
+      "files_existing": 517,
+      "all_recorded_sizes_match": true,
+      "aggregate_current_bytes": 299732681,
+      "candidate_counts": {
+        "4": 517
+      },
+      "target_token_count_min": 1,
+      "target_token_count_max": 36,
+      "sample_stats": [
+        {
+          "index": 0,
+          "exists": true,
+          "actual_bytes": 281833,
+          "recorded_bytes": 281833
+        },
+        {
+          "index": 258,
+          "exists": true,
+          "actual_bytes": 405051,
+          "recorded_bytes": 405051
+        },
+        {
+          "index": 516,
+          "exists": true,
+          "actual_bytes": 159227,
+          "recorded_bytes": 159227
+        }
+      ],
+      "current_tensor_hashes_recomputed": false,
+      "payload_loaded": false,
+      "actual_executed_trajectory_depth": 6
+    },
+    "validation": {
+      "index": "results/slcd_tokens_validation_final_COMPLETE.json",
+      "index_sha256": "5a4d7a31b7380669cbe9beb6d60ba482b33ecbee45bb0048eac4279983ca5e81",
+      "status": "complete",
+      "indexed_questions": 299,
+      "files_existing": 299,
+      "all_recorded_sizes_match": true,
+      "aggregate_current_bytes": 169815697,
+      "candidate_counts": {
+        "4": 295,
+        "3": 3,
+        "5": 1
+      },
+      "target_token_count_min": 1,
+      "target_token_count_max": 34,
+      "sample_stats": [
+        {
+          "index": 0,
+          "exists": true,
+          "actual_bytes": 650537,
+          "recorded_bytes": 650537
+        },
+        {
+          "index": 149,
+          "exists": true,
+          "actual_bytes": 134317,
+          "recorded_bytes": 134317
+        },
+        {
+          "index": 298,
+          "exists": true,
+          "actual_bytes": 1584493,
+          "recorded_bytes": 1584493
+        }
+      ],
+      "current_tensor_hashes_recomputed": false,
+      "payload_loaded": false,
+      "actual_executed_trajectory_depth": 6
+    }
+  },
+  "R7_stage_aggregate_receipts": {
+    "discovery": {
+      "status": "complete",
+      "n": 384,
+      "elapsed_seconds": 1195.6586437225342,
+      "logical_main_depth": 5,
+      "actual_main_depth": null,
+      "historical_main_state_collection_depth": 6,
+      "actual_reference_depth": 4,
+      "kv_cache_used": false,
+      "historical_states_reused": true,
+      "diagnostic_overhead_included": true,
+      "receipt": "results/r7_discovery_development_COMPLETE.json",
+      "receipt_sha256": "e504fb1c749f20c64642f29090f6b6354fb508e0a222334295e541f1ed3e622b",
+      "frozen_method_names": [
+        "M1_multi_candidate",
+        "M2_N0_token",
+        "M3_multi_token",
+        "C_mean_denominator",
+        "C_R6alpha_token",
+        "C_matched_guidance",
+        "C_shuffled_direction",
+        "C_no_late"
+      ],
+      "cost_scope": "Historical complete old teacher-forced pipeline for these methods; not current true-prefix/canonical throughput and not debited again"
+    },
+    "selection": {
+      "status": "complete",
+      "n": 192,
+      "elapsed_seconds": 611.6032519340515,
+      "logical_main_depth": 5,
+      "actual_main_depth": null,
+      "historical_main_state_collection_depth": 6,
+      "actual_reference_depth": 4,
+      "kv_cache_used": false,
+      "historical_states_reused": true,
+      "diagnostic_overhead_included": true,
+      "receipt": "results/r7_selection_development_COMPLETE.json",
+      "receipt_sha256": "585a3c3339a489671f988ba0be872fb438b743a3c3160d0c65ccc1e9c0a39494",
+      "frozen_method_names": [
+        "M1_multi_candidate",
+        "M2_N0_token",
+        "M3_multi_token",
+        "C_mean_denominator",
+        "C_R6alpha_token",
+        "C_matched_guidance",
+        "C_shuffled_direction",
+        "C_no_late"
+      ],
+      "cost_scope": "Historical complete old teacher-forced pipeline for these methods; not current true-prefix/canonical throughput and not debited again"
+    },
+    "validation": {
+      "status": "complete",
+      "n": 299,
+      "elapsed_seconds": 1416.7353956699371,
+      "logical_main_depth": 5,
+      "actual_main_depth": 5,
+      "historical_main_state_collection_depth": null,
+      "actual_reference_depth": 4,
+      "kv_cache_used": false,
+      "historical_states_reused": false,
+      "diagnostic_overhead_included": true,
+      "receipt": "results/r7_validation_final_COMPLETE.json",
+      "receipt_sha256": "27fd651454fa2a423ea098b07fff8c1c30394d99b7772a6606f53ccbc12f6644",
+      "frozen_method_names": [
+        "M1_multi_candidate",
+        "M2_N0_token"
+      ],
+      "cost_scope": "Historical complete old teacher-forced pipeline for these methods; not current true-prefix/canonical throughput and not debited again"
+    },
+    "test": {
+      "status": "complete",
+      "n": 1172,
+      "elapsed_seconds": 2382.6914072036743,
+      "logical_main_depth": 5,
+      "actual_main_depth": 5,
+      "historical_main_state_collection_depth": null,
+      "actual_reference_depth": 4,
+      "kv_cache_used": false,
+      "historical_states_reused": false,
+      "diagnostic_overhead_included": true,
+      "receipt": "results/r7_test_final_COMPLETE.json",
+      "receipt_sha256": "9aa6319cfa732325b3f7565ba974f8d942fad8bd274375358082d8d37b2b7c7d",
+      "frozen_method_names": [
+        "M2_N0_token"
+      ],
+      "cost_scope": "Historical complete old teacher-forced pipeline for these methods; not current true-prefix/canonical throughput and not debited again"
+    },
+    "confirmation": {
+      "status": "complete",
+      "n": 517,
+      "elapsed_seconds": 1604.3332824707031,
+      "logical_main_depth": 5,
+      "actual_main_depth": null,
+      "historical_main_state_collection_depth": 6,
+      "actual_reference_depth": 4,
+      "kv_cache_used": false,
+      "historical_states_reused": true,
+      "diagnostic_overhead_included": true,
+      "receipt": "results/r7_confirmation_development_COMPLETE.json",
+      "receipt_sha256": "1be07a8e301dc944b075c6d18535d7951fde85e791a9cbe30cbe8c1ae3d98103",
+      "frozen_method_names": [
+        "M1_multi_candidate",
+        "M2_N0_token",
+        "M3_multi_token",
+        "C_mean_denominator",
+        "C_R6alpha_token",
+        "C_matched_guidance",
+        "C_shuffled_direction",
+        "C_no_late"
+      ],
+      "cost_scope": "Historical complete old teacher-forced pipeline for these methods; not current true-prefix/canonical throughput and not debited again"
+    }
+  },
+  "flat_state_namespace_counts": {
+    "discovery": 0,
+    "selection": 192,
+    "confirmation": 517,
+    "validation": 299,
+    "test": 0
+  },
+  "nested_training_statistics_pt_files": 384,
+  "cache_top_level_directories": [
+    "cuda",
+    "hf",
+    "matplotlib",
+    "pycache",
+    "torch",
+    "torchinductor",
+    "triton",
+    "xdg"
+  ],
+  "evidence_NPZ_names_and_bytes": [
+    {
+      "path": "results/r26_VECTORS.npz",
+      "bytes": 9668374
+    },
+    {
+      "path": "results/r27_EXEC_VECTORS.npz",
+      "bytes": 65938486
+    },
+    {
+      "path": "results/r28_NATIVE_SINGLE_POSITION_STATES.npz",
+      "bytes": 30180510
+    },
+    {
+      "path": "results/r28_REPRESENTATIVE_VECTORS.npz",
+      "bytes": 53730670
+    },
+    {
+      "path": "results/r30_REPRESENTATIVE_VECTORS.npz",
+      "bytes": 75763006
+    }
+  ],
+  "true_prefix_native_cache": {
+    "index": "results/r28_NATIVE_STATE_INDEX.json",
+    "tasks": 1588,
+    "by_context": {
+      "N0": 389,
+      "N1": 389,
+      "N2": 389,
+      "Q": 421
+    },
+    "state_references": 6773,
+    "primitives": [
+      "true_prefix_original_uncached_sdpa_BF16_single_position_head"
+    ],
+    "head_input_shapes": [
+      "[1, 1, 2048]"
+    ],
+    "state_shapes": [
+      "[1, 1, 2048]"
+    ],
+    "dtypes": [
+      "torch.bfloat16"
+    ],
+    "cache_contract_sha256": "e3f1668e319e21f963ed54c7ad28907da760d24744b147ca3ad7c932dee31c75",
+    "raw_file": "results/r28_NATIVE_SINGLE_POSITION_STATES.npz",
+    "raw_exists": true,
+    "raw_bytes": 30180510,
+    "index_sha256": "985f7eff3374aee4117828b302d8b36072b8920b9e7bf8af8297ad16373b8d82",
+    "current_raw_hash_recomputed": false,
+    "full_cohort_scope": "Original fixed24 only, not complete576/517/299/1172"
+  },
+  "source_sha256": {
+    "scripts/r7_worker.py": "423fe4b1ce0157010cc1296e8ecd710ce83641f1f4acfe7e28e472290779cf14",
+    "scripts/r7_inference.py": "9281aea93580a122f57767991b037267114ac965588b747990c7570099a672ae",
+    "scripts/slcd_source_audit.py": "14381b63d31748ca10691a938fdf353bddbc74f10acb5cd0ccef68ce4f676c57",
+    "scripts/slcd_token_worker_v2.py": "de6dcd7e75b3e6d328846817cf69892004519f581d4cc513e9ae880520fa2074",
+    "scripts/ouro_cached_scoring.py": "2801db23cf20e574765aad7f94f1f4967af640b3af7cf6aa01cbe96500457901",
+    "scripts/runtime.py": "9ebbbdb2573a567cc6bb331a861490ebbdab85dd723a73036bf3813a7c8d85d1"
+  },
+  "unified_host_memory_bytes": {
+    "MemTotal": 130662936576,
+    "MemAvailable": 104941449216,
+    "SwapTotal": 17179865088,
+    "SwapFree": 16485478400
+  },
+  "cache_compatibility": {
+    "historical_Q": {
+      "questions_by_stage": {
+        "development": 576,
+        "confirmation": 517,
+        "validation": 299,
+        "test": 0
+      },
+      "native_depths": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "normalized_dtype": "torch.bfloat16",
+      "normalized_shape": "[1,target_prediction_positions,2048] per candidate per native loop",
+      "primitive": "Original uncached full teacher-forced prefix+target[:-1] forward, all prediction positions retained; original full-continuation head shape",
+      "source_contract": {
+        "generation": "scripts/slcd_token_worker_v2.py:score_uncached(pairs,return_states=True), original6loop generation",
+        "development_shape_audit": "scripts/slcd_source_audit.py lines182-190 checks6depth/BF16/shape",
+        "R7_consumer": "scripts/r7_inference.py lines17-30,123-133"
+      },
+      "structural_availability": "All indexed1392 containers exist and recorded sizes match; no tensor or current tensor hash recheck. Discovery containers include statistics/raw tensors, not only normalized states.",
+      "reuse_scope": "Potential same-old-primitive reuse only after explicit input/source/weight and parity admission; not automatically true-prefix or canonical ABI-compatible"
+    },
+    "historical_N012": {
+      "full_stage_persistent_native_cache_identified": false,
+      "stage_coverage": {
+        "development576": {
+          "complete_native_cache_identified": false,
+          "partial_coverage": "Only separately listed fixed24 true-prefix cache is known; no complete stage-level reference-state index"
+        },
+        "confirmation517": {
+          "complete_native_cache_identified": false,
+          "partial_coverage": "Only separately listed fixed24 true-prefix cache is known; no complete stage-level reference-state index"
+        },
+        "validation299": {
+          "complete_native_cache_identified": false,
+          "partial_coverage": "Only separately listed fixed24 true-prefix cache is known; no complete stage-level reference-state index"
+        },
+        "test1172": {
+          "complete_native_cache_identified": false,
+          "partial_coverage": "Only separately listed fixed24 true-prefix cache is known; no complete stage-level reference-state index"
+        }
+      },
+      "count_semantics": "No complete indexed persistent reference-state cache identified; separately recorded fixed24 partial native states are not zeroed or treated as full-stage coverage.",
+      "evidence": "R7 infer_question fresh forward_states at reference depth4 per continuation, reduces heads/sums and does not serialize reference states. Queried existing cache/flat-state/NPZ namespaces show no full-stage N012 index.",
+      "cost_implication": "No free reference forward reuse may be assumed; references require a new approved compute or a separately evidenced cache."
+    },
+    "true_prefix_native24": {
+      "Q_tasks": 421,
+      "Q_depths": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "N0_tasks": 389,
+      "N1_tasks": 389,
+      "N2_tasks": 389,
+      "reference_depths": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "native6_saved": false,
+      "full_stages_576_517_299_1172": false,
+      "reuse_requires_explicit_ABI_and_head_parity": true
+    },
+    "canonical": {
+      "complete_indexed_state_cache_identified": false,
+      "scope": "No R29 canonical state artifact in queried known indices/NPZ namespaces; canonical proposal has not been executed. No assumption of canonical parity or speedup."
+    },
+    "causality_and_shape": "R26 limited test found same-shape suffix-content parity but six length comparisons not bit-exact. Mathematical causal structure does not establish bitwise interchangeability of old teacher-forced length/head shape and true-prefix or canonical inputs."
+  },
+  "measured_development_costs": {
+    "R28_fixed24": {
+      "actual_GPU_worker_seconds": 1263.6570102558471,
+      "forward_body_seconds": 1162.2695500524715,
+      "head_seconds": 8.488712915685028,
+      "source_receipt": "results/r28_COMPLETE.json",
+      "scope": "Already-measured diagnostic pipeline; no new computation or budget debit, no guarantee under current shared GPU load"
+    },
+    "R30_fixed24_cache_replay": {
+      "actual_GPU_worker_seconds": 561.3795881131664,
+      "forward_body_seconds": 447.57361968187615,
+      "head_seconds": 13.964301321655512,
+      "source_receipt": "results/r30_COMPLETE.json",
+      "scope": "Already-measured diagnostic pipeline; no new computation or budget debit, no guarantee under current shared GPU load"
+    }
+  },
+  "unknowns": [
+    "Current NVIDIA memory.used/total query reports N/A on unified GB10; host MemAvailable is not a guarantee of device/model headroom.",
+    "GPU is currently busy with an existing Ollama process; no process was stopped, no dedicated idle-throughput or new job timing was measured.",
+    "No tensor payloads loaded and no recursive tensor/weight hashing; file exists/size does not re-certify state content, native head parity or source ABI.",
+    "No complete test native-Q persistent state cache identified; no complete full-stage N0/N1/N2 persistent cache identified.",
+    "Full true-prefix/canonical stages require a new protocol, real task counts, cache admissions and measured budget; old R7 end-to-end totals are not a cost estimate for a different primitive."
+  ],
+  "audit_method": {
+    "process_matching": "Exact script argv basename in experiment cwd, excluding inventory -c text; originalR30 PIDs separately checked",
+    "directories_inspected": [
+      "results immediate flat-state and NPZ names",
+      "results/training_statistics immediate .pt count",
+      "cache immediate directory names"
+    ],
+    "scope_limit": "Not exhaustive full-filesystem absence proof; uses known authoritative metadata and source persistence paths",
+    "tensor_payloads_opened": 0,
+    "score_JSONL_files_opened": 0,
+    "dataset_or_test_item_rows_opened": 0,
+    "weight_files_hashed": 0,
+    "old_files_modified": false
+  },
+  "private_audit_raw_sha256": "8906706b03cdcbe7f19088424636981d5532be7d1e97ef6dcb928036fec36083",
+  "sanitization": "Server instance/UUID/user home path/process identity omitted. Aggregate cache/ABI/costs/time/limitations retained. Raw audit retained privately and excluded from public source/input/archive globs."
+}
