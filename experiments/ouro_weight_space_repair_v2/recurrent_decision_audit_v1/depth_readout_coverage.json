@@ -1,0 +1,54 @@
+{
+  "joint_test": {
+    "questions": 1172,
+    "available_native_K": [
+      1,
+      4
+    ],
+    "unavailable_K": [
+      2,
+      3,
+      5,
+      6
+    ],
+    "source_reason": "r7_inference.head_logits selects (1,4,5), infer_auxiliary depth4; no joint states persisted in record archive."
+  },
+  "cyclic_rotations": "all n cyclic rotations, not full permutation group",
+  "ordinary_nonjoint_cache_not_compatible": true,
+  "trajectory_scope": "Only observed endpoints. Equal endpoints cannot exclude intermediate reversals. First actual correction among K2..K4 is unresolved.",
+  "stable_criterion": "equal predictions at adjacent available endpoints K1/K4, gap3; not consecutive actual depths",
+  "intermediate_imputation": false,
+  "new_fresh_parity_only": {
+    "questions": 2,
+    "rotations": 8,
+    "native_K": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "independent_depth2_3_checks": 16,
+    "state_head_target_LP_exact": true,
+    "model_calls": 24,
+    "native_head_calls": 72,
+    "cohort64_model_calls": 0,
+    "full576_model_calls": 0,
+    "interpretation": "Technical validation only; no64 or full-test intermediate behavior inferred."
+  },
+  "historical_development_auxiliary": {
+    "questions": 576,
+    "available_native_K": [
+      1,
+      4,
+      5
+    ],
+    "executed_depth": 5,
+    "source": "Historical R10 depth5 records, not merged into R11 depth4 trajectories; no newK5/K6."
+  },
+  "cache_inventory": {
+    "current_metadata": "live_resource_cache_preflight.json",
+    "prior_structural_inventory": "../results/r33_RESOURCE_CACHE_PREFLIGHT_PUBLIC.json",
+    "prior_sha256": "2871b1c48132181b4d63010752f1a0c9f8806a8a78d9296668814de6c84f4d59",
+    "scope": "Old answer-body native1..6 caches are not Joint label-prompt states; no compatible Joint cache identified. No intermediate imputation."
+  }
+}

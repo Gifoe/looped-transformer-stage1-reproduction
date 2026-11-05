@@ -1,0 +1,75 @@
+{
+  "per_depth": [
+    {
+      "K": 1,
+      "questions": 1172,
+      "unanimous": 341,
+      "changed": 831,
+      "mean_pairwise_agreement": 0.5023606370875995,
+      "mean_score_variance": 0.2363960207464505,
+      "stable_correct": 269,
+      "stable_n": 341,
+      "unstable_correct": 365,
+      "unstable_n": 831,
+      "stable_accuracy": 0.7888563049853372,
+      "unstable_accuracy": 0.43922984356197353,
+      "stable_minus_unstable_bootstrap95": [
+        0.29394169260671943,
+        0.40336071172342886
+      ]
+    },
+    {
+      "K": 4,
+      "questions": 1172,
+      "unanimous": 952,
+      "changed": 220,
+      "mean_pairwise_agreement": 0.8909271899886235,
+      "mean_score_variance": 0.301098770593707,
+      "stable_correct": 898,
+      "stable_n": 952,
+      "unstable_correct": 123,
+      "unstable_n": 220,
+      "stable_accuracy": 0.9432773109243697,
+      "unstable_accuracy": 0.5590909090909091,
+      "stable_minus_unstable_bootstrap95": [
+        0.31621408354047703,
+        0.4519037107602955
+      ]
+    }
+  ],
+  "paired_K4_minus_K1": {
+    "pairwise_content_agreement": {
+      "mean": 0.38856655290102393,
+      "paired_bootstrap95": [
+        0.3662962172923777,
+        0.41026734926052333
+      ]
+    },
+    "mean_mapped_score_variance": {
+      "mean": 0.06470274984725648,
+      "paired_bootstrap95": [
+        0.04667438256893938,
+        0.0832599844867631
+      ]
+    },
+    "mean_centered_score_variance": {
+      "mean": 0.012536042860131815,
+      "paired_bootstrap95": [
+        -9.026816895764698e-05,
+        0.025532902191236856
+      ]
+    }
+  },
+  "ties": {
+    "K1_rotation_ties": 169,
+    "K1_mapped_argmax_diff": 60,
+    "K4_rotation_ties": 64,
+    "K4_mapped_argmax_diff": 26
+  },
+  "nchoices_distribution": {
+    "4": 1165,
+    "3": 4,
+    "5": 3
+  },
+  "scope": "Question-level 20k bootstrap. Rotation scores already mapped to original contents; displayed argmax then mapped via order. Population variance ddof0 of target LP sum, not probability."
+}
