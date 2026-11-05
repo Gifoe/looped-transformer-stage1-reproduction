@@ -1,0 +1,3184 @@
+{
+  "status": "complete_postrun_CPU_only",
+  "scope": "All24 previously unsealed; no coefficient search, model, heldout or deployable no-late proposal",
+  "input_sha256": {
+    "r31_CPU_MARGIN_DIAGNOSTIC_PROTOCOL.md": "1ec3608ade879cdc946fa079cc5ce863cfa9f93c1d3d09c07b2b477a919aeda4",
+    "scripts/r31_cpu_margin_decomposition.py": "c7d077d9ce6049b53586d8e6c9e3c49b47d858612ad2754718f5474e79675ddd",
+    "results/r28_SCORES.json": "15628008cfc6c71a1062ec34e154df38d4ca4684f1582ccf99ac40c7625812fd",
+    "results/r28_ANALYSIS.json": "1429a7e361f65fbec0323f0ed9f92191955a4b8a91c206e0fa32793c9332e16e",
+    "results/r28_COMPLETE.json": "24987be84852559f16e094a36fd3d8628408c8cb9362a0a50fc3f045fe3a7b0e",
+    "results/r30_SCORES.json": "5f35d91b38c21648879019900d8f613274e505c0240b7b5063fb5a8c7737c677",
+    "results/r30_ANALYSIS.json": "960a490cb46b4d5173bd2b17b821f38c3e5f938a93f97976f1f78dc2610922b2",
+    "results/r30_COMPLETE.json": "f9c2390c48b97cfe58041191b96a3a505d4bc4a0914418febd0e0504627843d8"
+  },
+  "methods": {
+    "r28": {
+      "all24": {
+        "n": 24,
+        "late_veto": 0,
+        "late_rescue": 0,
+        "pre_correction_rescue": 0,
+        "pre_correction_damage": 0,
+        "primary_pre_correct": 13,
+        "primary_post_correct": 13,
+        "Fixed_pre_correct": 13
+      },
+      "R6_errors": {
+        "n": 10,
+        "late_veto": 0,
+        "late_rescue": 0,
+        "pre_correction_rescue": 0,
+        "pre_correction_damage": 0,
+        "primary_pre_correct": 0,
+        "primary_post_correct": 0,
+        "Fixed_pre_correct": 0
+      },
+      "records": [
+        {
+          "id": "arc_challenge/train/MSA_2013_5_33",
+          "gold": 2,
+          "R6_wrong": true,
+          "Fixed_pre_prediction": 1,
+          "primary_pre_prediction": 1,
+          "primary_post_prediction": 1,
+          "late_veto": false,
+          "late_rescue": false,
+          "pre_correction_rescue": false,
+          "pre_correction_damage": false,
+          "pairs": [
+            {
+              "wrong": 0,
+              "pre_margin": 0.5231437683105469,
+              "late_margin": 0.03153383164178757,
+              "post_components_margin": 0.5546775999523345,
+              "correction_margin": -0.008881387256440661,
+              "exact_signs": {
+                "pre": 1,
+                "late": 1,
+                "correction": -1
+              },
+              "exact_ratios": {
+                "pre": "137139/262144",
+                "late": "347189/11010048",
+                "correction": "-195569/22020096"
+              }
+            },
+            {
+              "wrong": 1,
+              "pre_margin": -0.05991956506456648,
+              "late_margin": 0.014907568976992653,
+              "post_components_margin": -0.04501199608757382,
+              "correction_margin": 0.004962513560340518,
+              "exact_signs": {
+                "pre": -1,
+                "late": 1,
+                "correction": 1
+              },
+              "exact_ratios": {
+                "pre": "-17592461/293601280",
+                "late": "3282661/220200960",
+                "correction": "4371001/880803840"
+              }
+            },
+            {
+              "wrong": 3,
+              "pre_margin": -0.04224435385171469,
+              "late_margin": 0.039237959560377775,
+              "post_components_margin": -0.0030063942913369185,
+              "correction_margin": 0.0028548261303922313,
+              "exact_signs": {
+                "pre": -1,
+                "late": 1,
+                "correction": 1
+              },
+              "exact_ratios": {
+                "pre": "-426353/10092544",
+                "late": "2376065/60555264",
+                "correction": "691499/242221056"
+              }
+            }
+          ]
+        },
+        {
+          "id": "arc_challenge/train/LEAP_2001_4_10241",
+          "gold": 3,
+          "R6_wrong": false,
+          "Fixed_pre_prediction": 1,
+          "primary_pre_prediction": 1,
+          "primary_post_prediction": 1,
+          "late_veto": false,
+          "late_rescue": false,
+          "pre_correction_rescue": false,
+          "pre_correction_damage": false,
+          "pairs": [
+            {
+              "wrong": 0,
+              "pre_margin": 0.10836082186017718,
+              "late_margin": 0.057185636247907366,
+              "post_components_margin": 0.16554645810808455,
+              "correction_margin": -0.008781228746686662,
+              "exact_signs": {
+                "pre": 1,
+                "late": 1,
+                "correction": -1
+              },
+              "exact_ratios": {
+                "pre": "7953719/73400320",
+                "late": "1049361/18350080",
+                "correction": "-128909/14680064"
+              }
+            },
+            {
+              "wrong": 1,
+              "pre_margin": -0.1159728935786656,
+              "late_margin": 0.08281361489068895,
+              "post_components_margin": -0.033159278687976655,
+              "correction_margin": -0.009010349001203264,
+              "exact_signs": {
+                "pre": -1,
+                "late": 1,
+                "correction": -1
+              },
+              "exact_ratios": {
+                "pre": "-3404979/29360128",
+                "late": "7294255/88080384",
+                "correction": "-264545/29360128"
+              }
+            },
+            {
+              "wrong": 2,
+              "pre_margin": 0.9849383263360887,
+              "late_margin": 0.08281353541782924,
+              "post_components_margin": 1.067751861753918,
+              "correction_margin": -0.024635746365501768,
+              "exact_signs": {
+                "pre": 1,
+                "late": 1,
+                "correction": -1
+              },
+              "exact_ratios": {
+                "pre": "43376873/44040192",
+                "late": "303927/3670016",
+                "correction": "-1084963/44040192"
+              }
+            }
+          ]
+        },
+        {
+          "id": "arc_challenge/train/AKDE&ED_2012_8_37",
+          "gold": 0,
+          "R6_wrong": false,
+          "Fixed_pre_prediction": 0,
+          "primary_pre_prediction": 0,
+          "primary_post_prediction": 0,
+          "late_veto": false,
+          "late_rescue": false,
+          "pre_correction_rescue": false,
+          "pre_correction_damage": false,
+          "pairs": [
+            {
+              "wrong": 1,
+              "pre_margin": 0.17870272439101648,
+              "late_margin": 0.001949795361222892,
+              "post_components_margin": 0.18065251975223937,
+              "correction_margin": -0.0010275758545974206,
+              "exact_signs": {
+                "pre": 1,
+                "late": 1,
+                "correction": -1
+              },
+              "exact_ratios": {
+                "pre": "21736473/121634816",
+                "late": "237163/121634816",
+                "correction": "-124989/121634816"
+              }
+            },
+            {
+              "wrong": 2,
+              "pre_margin": 0.3600486769234513,
+              "late_margin": -0.004737523699870699,
+              "post_components_margin": 0.35531115322358064,
+              "correction_margin": 0.00045468196262774875,
+              "exact_signs": {
+                "pre": 1,
+                "late": -1,
+                "correction": 1
+              },
+              "exact_ratios": {
+                "pre": "2233517183/6203375616",
+                "late": "-9796213/2067791872",
+                "correction": "2820563/6203375616"
+              }
+            },
+            {
+              "wrong": 3,
+              "pre_margin": 0.3966895921396355,
+              "late_margin": 0.013819632133654117,
+              "post_components_margin": 0.4105092242732896,
+              "correction_margin": 0.0007956859789803836,
+              "exact_signs": {
+                "pre": 1,
+                "late": 1,
+                "correction": 1
+              },
+              "exact_ratios": {
+                "pre": "2460814543/6203375616",
+                "late": "28576123/2067791872",
+                "correction": "1645313/2067791872"
+              }
+            }
+          ]
+        },
+        {
+          "id": "arc_challenge/train/MCAS_1998_4_9",
+          "gold": 2,
+          "R6_wrong": true,
+          "Fixed_pre_prediction": 0,
+          "primary_pre_prediction": 0,
+          "primary_post_prediction": 0,
+          "late_veto": false,
+          "late_rescue": false,
+          "pre_correction_rescue": false,
+          "pre_correction_damage": false,
+          "pairs": [
+            {
+              "wrong": 0,
+              "pre_margin": -0.4329400903139359,
+              "late_margin": 0.030734488597282998,
+              "post_components_margin": -0.40220560171665287,
+              "correction_margin": 0.0,
+              "exact_signs": {
+                "pre": -1,
+                "late": 1,
+                "correction": 0
+              },
+              "exact_ratios": {
+                "pre": "-283277647/654311424",
+                "late": "6703309/218103808",
+                "correction": "0"
+              }
+            },
+            {
+              "wrong": 1,
+              "pre_margin": -0.3024834440304683,
+              "late_margin": 0.027363071074852578,
+              "post_components_margin": -0.2751203729556157,
+              "correction_margin": 0.0,
+              "exact_signs": {
+                "pre": -1,
+                "late": 1,
+                "correction": 0
+              },
+              "exact_ratios": {
+                "pre": "-65972791/218103808",
+                "late": "2983995/109051904",
+                "correction": "0"
+              }
+            },
+            {
+              "wrong": 3,
+              "pre_margin": 0.0776723414867908,
+              "late_margin": -0.004049497884470266,
+              "post_components_margin": 0.07362284360232053,
+              "correction_margin": 0.0,
+              "exact_signs": {
+                "pre": 1,
+                "late": -1,
+                "correction": 0
+              },
+              "exact_ratios": {
+                "pre": "23293371/299892736",
+                "late": "-1214415/299892736",
+                "correction": "0"
+              }
+            }
+          ]
+        },
+        {
+          "id": "arc_challenge/train/Mercury_SC_401336",
+          "gold": 3,
+          "R6_wrong": false,
+          "Fixed_pre_prediction": 3,
+          "primary_pre_prediction": 3,
+          "primary_post_prediction": 3,
+          "late_veto": false,
+          "late_rescue": false,
+          "pre_correction_rescue": false,
+          "pre_correction_damage": false,
+          "pairs": [
+            {
+              "wrong": 0,
+              "pre_margin": 0.328752935888933,
+              "late_margin": 0.09268087499281939,
+              "post_components_margin": 0.42143381088175236,
+              "correction_margin": -0.002209398198255243,
+              "exact_signs": {
+                "pre": 1,
+                "late": 1,
+                "correction": -1
+              },
+              "exact_ratios": {
+                "pre": "8057887/24510464",
+                "late": "826055/8912896",
+                "correction": "-433227/196083712"
+              }
+            },
+            {
+              "wrong": 1,
+              "pre_margin": 0.34885908320625836,
+              "late_margin": 0.023902219884535846,
+              "post_components_margin": 0.3727613030907942,
+              "correction_margin": 0.0017592333217355657,
+              "exact_signs": {
+                "pre": 1,
+                "late": 1,
+                "correction": 1
+              },
+              "exact_ratios": {
+                "pre": "4275349/12255232",
+                "late": "106519/4456448",
+                "correction": "344957/196083712"
+              }
+            },
+            {
+              "wrong": 2,
+              "pre_margin": 0.1086697665127841,
+              "late_margin": 0.0747640609741211,
+              "post_components_margin": 0.18343382748690518,
+              "correction_margin": 0.0065417809919877485,
+              "exact_signs": {
+                "pre": 1,
+                "late": 1,
+                "correction": 1
+              },
+              "exact_ratios": {
+                "pre": "195849/1802240",
+                "late": "391979/5242880",
+                "correction": "754551/115343360"
+              }
+            }
+          ]
+        },
+        {
+          "id": "arc_challenge/train/Mercury_7109585",
+          "gold": 3,
+          "R6_wrong": false,
+          "Fixed_pre_prediction": 3,
+          "primary_pre_prediction": 3,
+          "primary_post_prediction": 3,
+          "late_veto": false,
+          "late_rescue": false,
+          "pre_correction_rescue": false,
+          "pre_correction_damage": false,
+          "pairs": [
+            {
+              "wrong": 0,
+              "pre_margin": 0.6110205915239122,
+              "late_margin": 0.012715193960401747,
+              "post_components_margin": 0.623735785484314,
+              "correction_margin": 0.020919084548950195,
+              "exact_signs": {
+                "pre": 1,
+                "late": 1,
+                "correction": 1
+              },
+              "exact_ratios": {
+                "pre": "23065255/37748736",
+                "late": "959965/75497472",
+                "correction": "87741/4194304"
+              }
+            },
+            {
+              "wrong": 1,
+              "pre_margin": 0.14589170545165303,
+              "late_margin": -0.022967540729812712,
+              "post_components_margin": 0.12292416472184031,
+              "correction_margin": 0.007856369018554688,
+              "exact_signs": {
+                "pre": 1,
+                "late": -1,
+                "correction": 1
+              },
+              "exact_ratios": {
+                "pre": "52318661/358612992",
+                "late": "-16472917/717225984",
+                "correction": "4119/524288"
+              }
+            },
+            {
+              "wrong": 2,
+              "pre_margin": 0.15863215066249076,
+              "late_margin": -0.03047550269980836,
+              "post_components_margin": 0.1281566479626824,
+              "correction_margin": 0.012651499579934514,
+              "exact_signs": {
+                "pre": 1,
+                "late": -1,
+                "correction": 1
+              },
+              "exact_ratios": {
+                "pre": "50899387/320864256",
+                "late": "-19556999/641728512",
+                "correction": "225523/17825792"
+              }
+            }
+          ]
+        },
+        {
+          "id": "arc_challenge/train/Mercury_SC_409907",
+          "gold": 2,
+          "R6_wrong": false,
+          "Fixed_pre_prediction": 2,
+          "primary_pre_prediction": 2,
+          "primary_post_prediction": 2,
+          "late_veto": false,
+          "late_rescue": false,
+          "pre_correction_rescue": false,
+          "pre_correction_damage": false,
+          "pairs": [
+            {
+              "wrong": 0,
+              "pre_margin": 0.10774728537238246,
+              "late_margin": 0.024992670873748214,
+              "post_components_margin": 0.13273995624613066,
+              "correction_margin": 0.0021102763613592094,
+              "exact_signs": {
+                "pre": 1,
+                "late": 1,
+                "correction": 1
+              },
+              "exact_ratios": {
+                "pre": "42593919/395313152",
+                "late": "19759863/790626304",
+                "correction": "208555/98828288"
+              }
+            },
+            {
+              "wrong": 1,
+              "pre_margin": 0.01258436402121743,
+              "late_margin": 0.020312212325714448,
+              "post_components_margin": 0.032896576346931876,
+              "correction_margin": 0.0009572794149210165,
+              "exact_signs": {
+                "pre": 1,
+                "late": 1,
+                "correction": 1
+              },
+              "exact_ratios": {
+                "pre": "4803221/381681664",
+                "late": "7752799/381681664",
+                "correction": "5709/5963776"
+              }
+            },
+            {
+              "wrong": 3,
+              "pre_margin": 0.4240427541208791,
+              "late_margin": -0.025775631705483238,
+              "post_components_margin": 0.39826712241539586,
+              "correction_margin": -0.009642674372746395,
+              "exact_signs": {
+                "pre": 1,
+                "late": -1,
+                "correction": -1
+              },
+              "exact_ratios": {
+                "pre": "19757/46592",
+                "late": "-4919043/190840832",
+                "correction": "-32861/3407872"
+              }
+            }
+          ]
+        },
+        {
+          "id": "arc_challenge/train/Mercury_7219100",
+          "gold": 1,
+          "R6_wrong": true,
+          "Fixed_pre_prediction": 3,
+          "primary_pre_prediction": 3,
+          "primary_post_prediction": 0,
+          "late_veto": false,
+          "late_rescue": false,
+          "pre_correction_rescue": false,
+          "pre_correction_damage": false,
+          "pairs": [
+            {
+              "wrong": 0,
+              "pre_margin": 0.022769978648118774,
+              "late_margin": -0.0889081231104581,
+              "post_components_margin": -0.06613814446233934,
+              "correction_margin": 0.001582142071660601,
+              "exact_signs": {
+                "pre": 1,
+                "late": -1,
+                "correction": 1
+              },
+              "exact_ratios": {
+                "pre": "1572835/69074944",
+                "late": "-49130589/552599552",
+                "correction": "874291/552599552"
+              }
+            },
+            {
+              "wrong": 2,
+              "pre_margin": 0.14225483563990374,
+              "late_margin": -0.00230952285733358,
+              "post_components_margin": 0.13994531278257016,
+              "correction_margin": 0.001266057714657586,
+              "exact_signs": {
+                "pre": 1,
+                "late": -1,
+                "correction": 1
+              },
+              "exact_ratios": {
+                "pre": "11411123/80216064",
+                "late": "-1111565/481296384",
+                "correction": "609349/481296384"
+              }
+            },
+            {
+              "wrong": 3,
+              "pre_margin": -0.03452289805692785,
+              "late_margin": -0.012929131002987133,
+              "post_components_margin": -0.04745202905991498,
+              "correction_margin": -0.0004258436315199908,
+              "exact_signs": {
+                "pre": -1,
+                "late": -1,
+                "correction": -1
+              },
+              "exact_ratios": {
+                "pre": "-307699/8912896",
+                "late": "-28809/2228224",
+                "correction": "-7591/17825792"
+              }
+            }
+          ]
+        },
+        {
+          "id": "arc_challenge/train/Mercury_7159758",
+          "gold": 2,
+          "R6_wrong": false,
+          "Fixed_pre_prediction": 2,
+          "primary_pre_prediction": 2,
+          "primary_post_prediction": 2,
+          "late_veto": false,
+          "late_rescue": false,
+          "pre_correction_rescue": false,
+          "pre_correction_damage": false,
+          "pairs": [
+            {
+              "wrong": 0,
+              "pre_margin": 0.8815718759189952,
+              "late_margin": 0.03451181758533824,
+              "post_components_margin": 0.9160836935043335,
+              "correction_margin": -0.00010378902608698064,
+              "exact_signs": {
+                "pre": 1,
+                "late": 1,
+                "correction": -1
+              },
+              "exact_ratios": {
+                "pre": "406733849/461373440",
+                "late": "3980709/115343360",
+                "correction": "-95771/922746880"
+              }
+            },
+            {
+              "wrong": 1,
+              "pre_margin": 1.0588887929916382,
+              "late_margin": 0.05871915817260742,
+              "post_components_margin": 1.1176079511642456,
+              "correction_margin": 0.002118384838104248,
+              "exact_signs": {
+                "pre": 1,
+                "late": 1,
+                "correction": 1
+              },
+              "exact_ratios": {
+                "pre": "8882603/8388608",
+                "late": "123143/2097152",
+                "correction": "177703/83886080"
+              }
+            },
+            {
+              "wrong": 3,
+              "pre_margin": 1.3943691015243531,
+              "late_margin": 0.059156401952107744,
+              "post_components_margin": 1.4535255034764607,
+              "correction_margin": -0.012835673491160075,
+              "exact_signs": {
+                "pre": 1,
+                "late": 1,
+                "correction": -1
+              },
+              "exact_ratios": {
+                "pre": "58484079/41943040",
+                "late": "3721799/62914560",
+                "correction": "-3230203/251658240"
+              }
+            }
+          ]
+        },
+        {
+          "id": "arc_challenge/train/Mercury_SC_405459",
+          "gold": 3,
+          "R6_wrong": true,
+          "Fixed_pre_prediction": 1,
+          "primary_pre_prediction": 1,
+          "primary_post_prediction": 1,
+          "late_veto": false,
+          "late_rescue": false,
+          "pre_correction_rescue": false,
+          "pre_correction_damage": false,
+          "pairs": [
+            {
+              "wrong": 0,
+              "pre_margin": -0.22952520629697107,
+              "late_margin": 0.0019600318846789626,
+              "post_components_margin": -0.2275651744122921,
+              "correction_margin": -9.393595295068458e-05,
+              "exact_signs": {
+                "pre": -1,
+                "late": 1,
+                "correction": -1
+              },
+              "exact_ratios": {
+                "pre": "-118652589/516947968",
+                "late": "2026469/1033895936",
+                "correction": "-3035/32309248"
+              }
+            },
+            {
+              "wrong": 1,
+              "pre_margin": -0.29279871096556215,
+              "late_margin": -0.002168969633022031,
+              "post_components_margin": -0.2949676805985842,
+              "correction_margin": -0.0003767159706788045,
+              "exact_signs": {
+                "pre": -1,
+                "late": -1,
+                "correction": -1
+              },
+              "exact_ratios": {
+                "pre": "-3338861/11403264",
+                "late": "-9275/4276224",
+                "correction": "-103099/273678336"
+              }
+            },
+            {
+              "wrong": 2,
+              "pre_margin": 0.12213578970425958,
+              "late_margin": 0.037229892113480705,
+              "post_components_margin": 0.15936568181774027,
+              "correction_margin": -0.000547798622192059,
+              "exact_signs": {
+                "pre": 1,
+                "late": 1,
+                "correction": -1
+              },
+              "exact_ratios": {
+                "pre": "12070471/98828288",
+                "late": "7358733/197656576",
+                "correction": "-27069/49414144"
+              }
+            }
+          ]
+        },
+        {
+          "id": "arc_challenge/train/MCAS_2008_8_5707",
+          "gold": 2,
+          "R6_wrong": false,
+          "Fixed_pre_prediction": 2,
+          "primary_pre_prediction": 2,
+          "primary_post_prediction": 2,
+          "late_veto": false,
+          "late_rescue": false,
+          "pre_correction_rescue": false,
+          "pre_correction_damage": false,
+          "pairs": [
+            {
+              "wrong": 0,
+              "pre_margin": 0.2983955648493639,
+              "late_margin": -0.02284703152702454,
+              "post_components_margin": 0.27554853332233936,
+              "correction_margin": -0.0023196852780918388,
+              "exact_signs": {
+                "pre": 1,
+                "late": -1,
+                "correction": -1
+              },
+              "exact_ratios": {
+                "pre": "29255255/98041856",
+                "late": "-17919723/784334848",
+                "correction": "-909705/392167424"
+              }
+            },
+            {
+              "wrong": 1,
+              "pre_margin": 0.2313593298781152,
+              "late_margin": -0.006400889041377049,
+              "post_components_margin": 0.22495844083673813,
+              "correction_margin": -0.0037747972151812386,
+              "exact_signs": {
+                "pre": 1,
+                "late": -1,
+                "correction": -1
+              },
+              "exact_ratios": {
+                "pre": "98979919/427819008",
+                "late": "-1369211/213909504",
+                "correction": "-269155/71303168"
+              }
+            },
+            {
+              "wrong": 3,
+              "pre_margin": 0.36868546710294836,
+              "late_margin": -0.00997608689700856,
+              "post_components_margin": 0.3587093802059398,
+              "correction_margin": 0.0020372755387250115,
+              "exact_signs": {
+                "pre": 1,
+                "late": -1,
+                "correction": 1
+              },
+              "exact_ratios": {
+                "pre": "131442209/356515840",
+                "late": "-3556633/356515840",
+                "correction": "726321/356515840"
+              }
+            }
+          ]
+        },
+        {
+          "id": "arc_challenge/train/Mercury_SC_400673",
+          "gold": 1,
+          "R6_wrong": true,
+          "Fixed_pre_prediction": 3,
+          "primary_pre_prediction": 3,
+          "primary_post_prediction": 3,
+          "late_veto": false,
+          "late_rescue": false,
+          "pre_correction_rescue": false,
+          "pre_correction_damage": false,
+          "pairs": [
+            {
+              "wrong": 0,
+              "pre_margin": 0.2480025519738891,
+              "late_margin": 0.008129635046706505,
+              "post_components_margin": 0.2561321870205956,
+              "correction_margin": 0.009295005246983418,
+              "exact_signs": {
+                "pre": 1,
+                "late": 1,
+                "correction": 1
+              },
+              "exact_ratios": {
+                "pre": "287874823/1160773632",
+                "late": "4718333/580386816",
+                "correction": "10789397/1160773632"
+              }
+            },
+            {
+              "wrong": 2,
+              "pre_margin": 0.08035643750707815,
+              "late_margin": -0.0008779420372060232,
+              "post_components_margin": 0.07947849546987212,
+              "correction_margin": -0.0007826828855272489,
+              "exact_signs": {
+                "pre": 1,
+                "late": -1,
+                "correction": -1
+              },
+              "exact_ratios": {
+                "pre": "138775943/1727004672",
+                "late": "-758105/863502336",
+                "correction": "-1351697/1727004672"
+              }
+            },
+            {
+              "wrong": 3,
+              "pre_margin": -0.07800037443077716,
+              "late_margin": 0.011057495741372348,
+              "post_components_margin": -0.06694287868940481,
+              "correction_margin": -0.0016452347527161825,
+              "exact_signs": {
+                "pre": -1,
+                "late": 1,
+                "correction": -1
+              },
+              "exact_ratios": {
+                "pre": "-147956881/1896873984",
+                "late": "5243669/474218496",
+                "correction": "-3120803/1896873984"
+              }
+            }
+          ]
+        },
+        {
+          "id": "arc_challenge/train/Mercury_7233695",
+          "gold": 1,
+          "R6_wrong": false,
+          "Fixed_pre_prediction": 1,
+          "primary_pre_prediction": 1,
+          "primary_post_prediction": 1,
+          "late_veto": false,
+          "late_rescue": false,
+          "pre_correction_rescue": false,
+          "pre_correction_damage": false,
+          "pairs": [
+            {
+              "wrong": 0,
+              "pre_margin": 0.4269281032167632,
+              "late_margin": -0.08125647446204876,
+              "post_components_margin": 0.34567162875471447,
+              "correction_margin": -0.0026676283211543644,
+              "exact_signs": {
+                "pre": 1,
+                "late": -1,
+                "correction": -1
+              },
+              "exact_ratios": {
+                "pre": "162279129/380108800",
+                "late": "-30886301/380108800",
+                "correction": "-1013989/380108800"
+              }
+            },
+            {
+              "wrong": 2,
+              "pre_margin": 0.060438934413866066,
+              "late_margin": -0.031990244196749285,
+              "post_components_margin": 0.028448690217116785,
+              "correction_margin": -0.001635612838569729,
+              "exact_signs": {
+                "pre": 1,
+                "late": -1,
+                "correction": -1
+              },
+              "exact_ratios": {
+                "pre": "5513609/91226112",
+                "late": "-911983/28508160",
+                "correction": "-746053/456130560"
+              }
+            },
+            {
+              "wrong": 3,
+              "pre_margin": 0.2160060318213814,
+              "late_margin": -0.037722068846026836,
+              "post_components_margin": 0.17828396297535457,
+              "correction_margin": -0.0014884044914542634,
+              "exact_signs": {
+                "pre": 1,
+                "late": -1,
+                "correction": -1
+              },
+              "exact_ratios": {
+                "pre": "6363199/29458432",
+                "late": "-1111233/29458432",
+                "correction": "-701537/471334912"
+              }
+            }
+          ]
+        },
+        {
+          "id": "arc_challenge/train/Mercury_7221743",
+          "gold": 3,
+          "R6_wrong": true,
+          "Fixed_pre_prediction": 1,
+          "primary_pre_prediction": 1,
+          "primary_post_prediction": 1,
+          "late_veto": false,
+          "late_rescue": false,
+          "pre_correction_rescue": false,
+          "pre_correction_damage": false,
+          "pairs": [
+            {
+              "wrong": 0,
+              "pre_margin": -0.010110839207967123,
+              "late_margin": -0.011365795135498047,
+              "post_components_margin": -0.02147663434346517,
+              "correction_margin": 0.020781453450520834,
+              "exact_signs": {
+                "pre": -1,
+                "late": -1,
+                "correction": 1
+              },
+              "exact_ratios": {
+                "pre": "-636119/62914560",
+                "late": "-119179/10485760",
+                "correction": "20429/983040"
+              }
+            },
+            {
+              "wrong": 1,
+              "pre_margin": -0.09507807493209838,
+              "late_margin": -0.010365867614746093,
+              "post_components_margin": -0.10544394254684449,
+              "correction_margin": 0.023838496208190917,
+              "exact_signs": {
+                "pre": -1,
+                "late": -1,
+                "correction": 1
+              },
+              "exact_ratios": {
+                "pre": "-7975727/83886080",
+                "late": "-54347/5242880",
+                "correction": "999859/41943040"
+              }
+            },
+            {
+              "wrong": 2,
+              "pre_margin": 0.7027923822402954,
+              "late_margin": 0.002259349822998047,
+              "post_components_margin": 0.7050517320632934,
+              "correction_margin": 0.000995492935180664,
+              "exact_signs": {
+                "pre": 1,
+                "late": 1,
+                "correction": 1
+              },
+              "exact_ratios": {
+                "pre": "29477249/41943040",
+                "late": "23691/10485760",
+                "correction": "20877/20971520"
+              }
+            }
+          ]
+        },
+        {
+          "id": "arc_challenge/train/Mercury_7233800",
+          "gold": 2,
+          "R6_wrong": true,
+          "Fixed_pre_prediction": 3,
+          "primary_pre_prediction": 3,
+          "primary_post_prediction": 3,
+          "late_veto": false,
+          "late_rescue": false,
+          "pre_correction_rescue": false,
+          "pre_correction_damage": false,
+          "pairs": [
+            {
+              "wrong": 0,
+              "pre_margin": -0.4554131825764974,
+              "late_margin": -0.07463598251342773,
+              "post_components_margin": -0.5300491650899252,
+              "correction_margin": -0.024369160334269207,
+              "exact_signs": {
+                "pre": -1,
+                "late": -1,
+                "correction": -1
+              },
+              "exact_ratios": {
+                "pre": "-716303/1572864",
+                "late": "-156523/2097152",
+                "correction": "-306635/12582912"
+              }
+            },
+            {
+              "wrong": 1,
+              "pre_margin": 0.2893537985972869,
+              "late_margin": -0.07231760025024414,
+              "post_components_margin": 0.21703619834704277,
+              "correction_margin": 0.0016803863721016126,
+              "exact_signs": {
+                "pre": 1,
+                "late": -1,
+                "correction": 1
+              },
+              "exact_ratios": {
+                "pre": "23665937/81788928",
+                "late": "-151661/2097152",
+                "correction": "137437/81788928"
+              }
+            },
+            {
+              "wrong": 3,
+              "pre_margin": -0.638441244761149,
+              "late_margin": -0.21028833389282225,
+              "post_components_margin": -0.8487295786539714,
+              "correction_margin": -0.05117638905843099,
+              "exact_signs": {
+                "pre": -1,
+                "late": -1,
+                "correction": -1
+              },
+              "exact_ratios": {
+                "pre": "-4016725/6291456",
+                "late": "-2205033/10485760",
+                "correction": "-160987/3145728"
+              }
+            }
+          ]
+        },
+        {
+          "id": "arc_challenge/train/Mercury_7094010",
+          "gold": 1,
+          "R6_wrong": true,
+          "Fixed_pre_prediction": 2,
+          "primary_pre_prediction": 2,
+          "primary_post_prediction": 2,
+          "late_veto": false,
+          "late_rescue": false,
+          "pre_correction_rescue": false,
+          "pre_correction_damage": false,
+          "pairs": [
+            {
+              "wrong": 0,
+              "pre_margin": 0.1456038802709335,
+              "late_margin": 0.04060170295910957,
+              "post_components_margin": 0.18620558323004308,
+              "correction_margin": -0.0015535736083984375,
+              "exact_signs": {
+                "pre": 1,
+                "late": 1,
+                "correction": -1
+              },
+              "exact_ratios": {
+                "pre": "18607477/127795200",
+                "late": "20754811/511180800",
+                "correction": "-20363/13107200"
+              }
+            },
+            {
+              "wrong": 2,
+              "pre_margin": -0.49062547411237445,
+              "late_margin": 0.028918680463518417,
+              "post_components_margin": -0.46170679364885603,
+              "correction_margin": -0.0018133817400251117,
+              "exact_signs": {
+                "pre": -1,
+                "late": 1,
+                "correction": -1
+              },
+              "exact_ratios": {
+                "pre": "-90030167/183500800",
+                "late": "5306601/183500800",
+                "correction": "-332757/183500800"
+              }
+            },
+            {
+              "wrong": 3,
+              "pre_margin": -0.325425911880121,
+              "late_margin": 0.033364894215653584,
+              "post_components_margin": -0.2920610176644674,
+              "correction_margin": -0.0008888858702124619,
+              "exact_signs": {
+                "pre": -1,
+                "late": 1,
+                "correction": -1
+              },
+              "exact_ratios": {
+                "pre": "-174882323/537395200",
+                "late": "8965067/268697600",
+                "correction": "-477683/537395200"
+              }
+            }
+          ]
+        },
+        {
+          "id": "arc_challenge/train/Mercury_7084210",
+          "gold": 2,
+          "R6_wrong": false,
+          "Fixed_pre_prediction": 2,
+          "primary_pre_prediction": 2,
+          "primary_post_prediction": 2,
+          "late_veto": false,
+          "late_rescue": false,
+          "pre_correction_rescue": false,
+          "pre_correction_damage": false,
+          "pairs": [
+            {
+              "wrong": 0,
+              "pre_margin": 0.2866132794893705,
+              "late_margin": 0.007268703167255108,
+              "post_components_margin": 0.2938819826566256,
+              "correction_margin": 0.0025115409264197717,
+              "exact_signs": {
+                "pre": 1,
+                "late": 1,
+                "correction": 1
+              },
+              "exact_ratios": {
+                "pre": "97674137/340787200",
+                "late": "2477081/340787200",
+                "correction": "855901/340787200"
+              }
+            },
+            {
+              "wrong": 1,
+              "pre_margin": 0.2619037700834728,
+              "late_margin": 0.03261080605643136,
+              "post_components_margin": 0.2945145761399042,
+              "correction_margin": 0.014029897054036459,
+              "exact_signs": {
+                "pre": 1,
+                "late": 1,
+                "correction": 1
+              },
+              "exact_ratios": {
+                "pre": "72089327/275251200",
+                "late": "5984109/183500800",
+                "correction": "275839/19660800"
+              }
+            },
+            {
+              "wrong": 3,
+              "pre_margin": 0.003497995896772905,
+              "late_margin": 0.030998254255814987,
+              "post_components_margin": 0.03449625015258789,
+              "correction_margin": 0.0021606688065962357,
+              "exact_signs": {
+                "pre": 1,
+                "late": 1,
+                "correction": 1
+              },
+              "exact_ratios": {
+                "pre": "2017353/576716800",
+                "late": "8938607/288358400",
+                "correction": "623047/288358400"
+              }
+            }
+          ]
+        },
+        {
+          "id": "arc_challenge/train/Mercury_7146090",
+          "gold": 1,
+          "R6_wrong": false,
+          "Fixed_pre_prediction": 1,
+          "primary_pre_prediction": 1,
+          "primary_post_prediction": 1,
+          "late_veto": false,
+          "late_rescue": false,
+          "pre_correction_rescue": false,
+          "pre_correction_damage": false,
+          "pairs": [
+            {
+              "wrong": 0,
+              "pre_margin": 0.07331499908909653,
+              "late_margin": 0.02329021651490809,
+              "post_components_margin": 0.09660521560400462,
+              "correction_margin": -0.0007789622070968792,
+              "exact_signs": {
+                "pre": 1,
+                "late": 1,
+                "correction": -1
+              },
+              "exact_ratios": {
+                "pre": "5073839/69206016",
+                "late": "12491629/536346624",
+                "correction": "-151925/195035136"
+              }
+            },
+            {
+              "wrong": 2,
+              "pre_margin": 0.2577047171416106,
+              "late_margin": -0.03246620308113782,
+              "post_components_margin": 0.2252385140604728,
+              "correction_margin": -0.0003856245334857681,
+              "exact_signs": {
+                "pre": 1,
+                "late": -1,
+                "correction": -1
+              },
+              "exact_ratios": {
+                "pre": "14592041/56623104",
+                "late": "-18996151/585105408",
+                "correction": "-225631/585105408"
+              }
+            },
+            {
+              "wrong": 3,
+              "pre_margin": 0.4016432762145996,
+              "late_margin": 0.03576751328633328,
+              "post_components_margin": 0.4374107895009329,
+              "correction_margin": -0.005378432287848241,
+              "exact_signs": {
+                "pre": 1,
+                "late": 1,
+                "correction": -1
+              },
+              "exact_ratios": {
+                "pre": "842307/2097152",
+                "late": "6394595/178782208",
+                "correction": "-30049/5586944"
+              }
+            }
+          ]
+        },
+        {
+          "id": "arc_challenge/train/Mercury_7175718",
+          "gold": 3,
+          "R6_wrong": false,
+          "Fixed_pre_prediction": 3,
+          "primary_pre_prediction": 3,
+          "primary_post_prediction": 3,
+          "late_veto": false,
+          "late_rescue": false,
+          "pre_correction_rescue": false,
+          "pre_correction_damage": false,
+          "pairs": [
+            {
+              "wrong": 0,
+              "pre_margin": 0.17129824021283319,
+              "late_margin": 0.013758358300900927,
+              "post_components_margin": 0.1850565985137341,
+              "correction_margin": 0.004415005328608494,
+              "exact_signs": {
+                "pre": 1,
+                "late": 1,
+                "correction": 1
+              },
+              "exact_ratios": {
+                "pre": "7633817/44564480",
+                "late": "7357609/534773760",
+                "correction": "2361029/534773760"
+              }
+            },
+            {
+              "wrong": 1,
+              "pre_margin": 0.14755908435678736,
+              "late_margin": -0.0021902320644222265,
+              "post_components_margin": 0.14536885229236515,
+              "correction_margin": 0.0037421534193178337,
+              "exact_signs": {
+                "pre": 1,
+                "late": -1,
+                "correction": 1
+              },
+              "exact_ratios": {
+                "pre": "28933933/196083712",
+                "late": "-2576813/1176502272",
+                "correction": "1100663/294125568"
+              }
+            },
+            {
+              "wrong": 2,
+              "pre_margin": 0.06326177933636834,
+              "late_margin": -0.00916322296740962,
+              "post_components_margin": 0.05409855636895872,
+              "correction_margin": 0.0019698034548291973,
+              "exact_signs": {
+                "pre": 1,
+                "late": -1,
+                "correction": 1
+              },
+              "exact_ratios": {
+                "pre": "28192283/445644800",
+                "late": "-3062657/334233600",
+                "correction": "1316749/668467200"
+              }
+            }
+          ]
+        },
+        {
+          "id": "arc_challenge/train/Mercury_7197225",
+          "gold": 2,
+          "R6_wrong": true,
+          "Fixed_pre_prediction": 0,
+          "primary_pre_prediction": 0,
+          "primary_post_prediction": 0,
+          "late_veto": false,
+          "late_rescue": false,
+          "pre_correction_rescue": false,
+          "pre_correction_damage": false,
+          "pairs": [
+            {
+              "wrong": 0,
+              "pre_margin": -0.27397886912027997,
+              "late_margin": -0.011912322044372559,
+              "post_components_margin": -0.2858911911646525,
+              "correction_margin": -0.00016450087229410808,
+              "exact_signs": {
+                "pre": -1,
+                "late": -1,
+                "correction": -1
+              },
+              "exact_ratios": {
+                "pre": "-861863/3145728",
+                "late": "-499639/41943040",
+                "correction": "-20699/125829120"
+              }
+            },
+            {
+              "wrong": 1,
+              "pre_margin": -0.23059344106866408,
+              "late_margin": 0.003059129382288733,
+              "post_components_margin": -0.22753431168637533,
+              "correction_margin": 0.0010576349820277488,
+              "exact_signs": {
+                "pre": -1,
+                "late": 1,
+                "correction": 1
+              },
+              "exact_ratios": {
+                "pre": "-62383045/270532608",
+                "late": "1103459/360710144",
+                "correction": "1144499/1082130432"
+              }
+            },
+            {
+              "wrong": 3,
+              "pre_margin": -0.1443598899082165,
+              "late_margin": 0.0029445673102763163,
+              "post_components_margin": -0.14141532259794018,
+              "correction_margin": 0.0017327188852414564,
+              "exact_signs": {
+                "pre": -1,
+                "late": 1,
+                "correction": 1
+              },
+              "exact_ratios": {
+                "pre": "-60851671/421527552",
+                "late": "1654955/562036736",
+                "correction": "2921555/1686110208"
+              }
+            }
+          ]
+        },
+        {
+          "id": "arc_challenge/train/NYSEDREGENTS_2007_8_21",
+          "gold": 2,
+          "R6_wrong": false,
+          "Fixed_pre_prediction": 2,
+          "primary_pre_prediction": 2,
+          "primary_post_prediction": 2,
+          "late_veto": false,
+          "late_rescue": false,
+          "pre_correction_rescue": false,
+          "pre_correction_damage": false,
+          "pairs": [
+            {
+              "wrong": 0,
+              "pre_margin": 0.16050409331330662,
+              "late_margin": 0.004396340636777609,
+              "post_components_margin": 0.16490043395008425,
+              "correction_margin": -0.002629300666794768,
+              "exact_signs": {
+                "pre": 1,
+                "late": 1,
+                "correction": -1
+              },
+              "exact_ratios": {
+                "pre": "179408589/1117782016",
+                "late": "9828301/2235564032",
+                "correction": "-2938985/1117782016"
+              }
+            },
+            {
+              "wrong": 1,
+              "pre_margin": 0.22506423607850687,
+              "late_margin": 0.013145051858364008,
+              "post_components_margin": 0.23820928793687088,
+              "correction_margin": -0.005125737801576272,
+              "exact_signs": {
+                "pre": 1,
+                "late": 1,
+                "correction": -1
+              },
+              "exact_ratios": {
+                "pre": "92038813/408944640",
+                "late": "10751197/817889280",
+                "correction": "-2096143/408944640"
+              }
+            },
+            {
+              "wrong": 3,
+              "pre_margin": 0.11866709048931415,
+              "late_margin": 0.014838542204636793,
+              "post_components_margin": 0.13350563269395094,
+              "correction_margin": -0.003931343372051532,
+              "exact_signs": {
+                "pre": 1,
+                "late": 1,
+                "correction": -1
+              },
+              "exact_ratios": {
+                "pre": "80880451/681574400",
+                "late": "20227141/1363148800",
+                "correction": "-2679503/681574400"
+              }
+            }
+          ]
+        },
+        {
+          "id": "arc_challenge/train/Mercury_7239470",
+          "gold": 3,
+          "R6_wrong": true,
+          "Fixed_pre_prediction": 2,
+          "primary_pre_prediction": 2,
+          "primary_post_prediction": 2,
+          "late_veto": false,
+          "late_rescue": false,
+          "pre_correction_rescue": false,
+          "pre_correction_damage": false,
+          "pairs": [
+            {
+              "wrong": 0,
+              "pre_margin": 0.2658154557390911,
+              "late_margin": -0.012813614635932736,
+              "post_components_margin": 0.2530018411031583,
+              "correction_margin": -0.000501681233767108,
+              "exact_signs": {
+                "pre": 1,
+                "late": -1,
+                "correction": -1
+              },
+              "exact_ratios": {
+                "pre": "2856959/10747904",
+                "late": "-275439/21495808",
+                "correction": "-248033/494403584"
+              }
+            },
+            {
+              "wrong": 1,
+              "pre_margin": 0.16310879109127957,
+              "late_margin": 0.025994180962023994,
+              "post_components_margin": 0.1891029720533036,
+              "correction_margin": -8.542631625234521e-05,
+              "exact_signs": {
+                "pre": 1,
+                "late": 1,
+                "correction": -1
+              },
+              "exact_ratios": {
+                "pre": "136740055/838336512",
+                "late": "7263957/279445504",
+                "correction": "-373/4366336"
+              }
+            },
+            {
+              "wrong": 2,
+              "pre_margin": -0.055929219592836275,
+              "late_margin": 0.029540380666957473,
+              "post_components_margin": -0.026388838925878805,
+              "correction_margin": -0.00021718633440905553,
+              "exact_signs": {
+                "pre": -1,
+                "late": 1,
+                "correction": -1
+              },
+              "exact_ratios": {
+                "pre": "-56505457/1010302976",
+                "late": "59689469/2020605952",
+                "correction": "-6857/31571968"
+              }
+            }
+          ]
+        },
+        {
+          "id": "arc_challenge/train/AKDE&ED_2012_4_22",
+          "gold": 2,
+          "R6_wrong": false,
+          "Fixed_pre_prediction": 2,
+          "primary_pre_prediction": 2,
+          "primary_post_prediction": 2,
+          "late_veto": false,
+          "late_rescue": false,
+          "pre_correction_rescue": false,
+          "pre_correction_damage": false,
+          "pairs": [
+            {
+              "wrong": 0,
+              "pre_margin": 0.18830988373268734,
+              "late_margin": -0.0075256305662068455,
+              "post_components_margin": 0.1807842531664805,
+              "correction_margin": -0.00023480362512848593,
+              "exact_signs": {
+                "pre": 1,
+                "late": -1,
+                "correction": -1
+              },
+              "exact_ratios": {
+                "pre": "2780197723/14763950080",
+                "late": "-55554017/7381975040",
+                "correction": "-3466629/14763950080"
+              }
+            },
+            {
+              "wrong": 1,
+              "pre_margin": 0.1436889400439603,
+              "late_margin": -0.009610126061098916,
+              "post_components_margin": 0.1340788139828614,
+              "correction_margin": 0.0003360227814742497,
+              "exact_signs": {
+                "pre": 1,
+                "late": -1,
+                "correction": 1
+              },
+              "exact_ratios": {
+                "pre": "269998443/1879048192",
+                "late": "-9028945/939524096",
+                "correction": "631403/1879048192"
+              }
+            },
+            {
+              "wrong": 3,
+              "pre_margin": 0.0868071686309665,
+              "late_margin": -0.004905179921370834,
+              "post_components_margin": 0.08190198870959567,
+              "correction_margin": -0.0002494521661480861,
+              "exact_signs": {
+                "pre": 1,
+                "late": -1,
+                "correction": -1
+              },
+              "exact_ratios": {
+                "pre": "1561242167/17985175552",
+                "late": "-44110261/8992587776",
+                "correction": "-4486441/17985175552"
+              }
+            }
+          ]
+        },
+        {
+          "id": "arc_challenge/train/NYSEDREGENTS_2016_4_13",
+          "gold": 3,
+          "R6_wrong": false,
+          "Fixed_pre_prediction": 3,
+          "primary_pre_prediction": 3,
+          "primary_post_prediction": 3,
+          "late_veto": false,
+          "late_rescue": false,
+          "pre_correction_rescue": false,
+          "pre_correction_damage": false,
+          "pairs": [
+            {
+              "wrong": 0,
+              "pre_margin": 0.10837862933123553,
+              "late_margin": 0.027520193877043547,
+              "post_components_margin": 0.1358988232082791,
+              "correction_margin": 0.011528424863462094,
+              "exact_signs": {
+                "pre": 1,
+                "late": 1,
+                "correction": 1
+              },
+              "exact_ratios": {
+                "pre": "3835459/35389440",
+                "late": "3895697/141557760",
+                "correction": "815969/70778880"
+              }
+            },
+            {
+              "wrong": 1,
+              "pre_margin": 0.0921425061348157,
+              "late_margin": 0.03606124535585061,
+              "post_components_margin": 0.12820375149066632,
+              "correction_margin": -0.0014703775063539162,
+              "exact_signs": {
+                "pre": 1,
+                "late": 1,
+                "correction": -1
+              },
+              "exact_ratios": {
+                "pre": "1177537/12779520",
+                "late": "14747053/408944640",
+                "correction": "-601303/408944640"
+              }
+            },
+            {
+              "wrong": 2,
+              "pre_margin": 0.6426413218180339,
+              "late_margin": 0.014994983184031951,
+              "post_components_margin": 0.6576363050020658,
+              "correction_margin": 0.003145149426582532,
+              "exact_signs": {
+                "pre": 1,
+                "late": 1,
+                "correction": 1
+              },
+              "exact_ratios": {
+                "pre": "5053937/7864320",
+                "late": "3066059/204472320",
+                "correction": "80387/25559040"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "r30": {
+      "all24": {
+        "n": 24,
+        "late_veto": 0,
+        "late_rescue": 0,
+        "pre_correction_rescue": 0,
+        "pre_correction_damage": 0,
+        "primary_pre_correct": 13,
+        "primary_post_correct": 13,
+        "Fixed_pre_correct": 13
+      },
+      "R6_errors": {
+        "n": 10,
+        "late_veto": 0,
+        "late_rescue": 0,
+        "pre_correction_rescue": 0,
+        "pre_correction_damage": 0,
+        "primary_pre_correct": 0,
+        "primary_post_correct": 0,
+        "Fixed_pre_correct": 0
+      },
+      "records": [
+        {
+          "id": "arc_challenge/train/MSA_2013_5_33",
+          "gold": 2,
+          "R6_wrong": true,
+          "Fixed_pre_prediction": 1,
+          "primary_pre_prediction": 1,
+          "primary_post_prediction": 1,
+          "late_veto": false,
+          "late_rescue": false,
+          "pre_correction_rescue": false,
+          "pre_correction_damage": false,
+          "pairs": [
+            {
+              "wrong": 0,
+              "pre_margin": 0.5352005050295875,
+              "late_margin": 0.03153383164178757,
+              "post_components_margin": 0.5667343366713751,
+              "correction_margin": 0.0031753494625999814,
+              "exact_signs": {
+                "pre": 1,
+                "late": 1,
+                "correction": 1
+              },
+              "exact_ratios": {
+                "pre": "23570333/44040192",
+                "late": "347189/11010048",
+                "correction": "139843/44040192"
+              }
+            },
+            {
+              "wrong": 1,
+              "pre_margin": -0.06302359331221807,
+              "late_margin": 0.014907568976992653,
+              "post_components_margin": -0.048116024335225424,
+              "correction_margin": 0.0018584853126889184,
+              "exact_signs": {
+                "pre": -1,
+                "late": 1,
+                "correction": 1
+              },
+              "exact_ratios": {
+                "pre": "-55511423/880803840",
+                "late": "3282661/220200960",
+                "correction": "1636961/880803840"
+              }
+            },
+            {
+              "wrong": 3,
+              "pre_margin": -0.04324310269706693,
+              "late_margin": 0.039237959560377775,
+              "post_components_margin": -0.0040051431366891575,
+              "correction_margin": 0.0018560772850399925,
+              "exact_signs": {
+                "pre": -1,
+                "late": 1,
+                "correction": 1
+              },
+              "exact_ratios": {
+                "pre": "-5237195/121110528",
+                "late": "2376065/60555264",
+                "correction": "40871/22020096"
+              }
+            }
+          ]
+        },
+        {
+          "id": "arc_challenge/train/LEAP_2001_4_10241",
+          "gold": 3,
+          "R6_wrong": false,
+          "Fixed_pre_prediction": 1,
+          "primary_pre_prediction": 1,
+          "primary_post_prediction": 1,
+          "late_veto": false,
+          "late_rescue": false,
+          "pre_correction_rescue": false,
+          "pre_correction_damage": false,
+          "pairs": [
+            {
+              "wrong": 0,
+              "pre_margin": 0.11304536546979632,
+              "late_margin": 0.057185636247907366,
+              "post_components_margin": 0.1702310017177037,
+              "correction_margin": -0.004096685137067522,
+              "exact_signs": {
+                "pre": 1,
+                "late": 1,
+                "correction": -1
+              },
+              "exact_ratios": {
+                "pre": "4148783/36700160",
+                "late": "1049361/18350080",
+                "correction": "-150349/36700160"
+              }
+            },
+            {
+              "wrong": 1,
+              "pre_margin": -0.11028764361426943,
+              "late_margin": 0.08281361489068895,
+              "post_components_margin": -0.027474028723580495,
+              "correction_margin": -0.0033250990368071057,
+              "exact_signs": {
+                "pre": -1,
+                "late": 1,
+                "correction": -1
+              },
+              "exact_ratios": {
+                "pre": "-4857089/44040192",
+                "late": "7294255/88080384",
+                "correction": "-73219/22020096"
+              }
+            },
+            {
+              "wrong": 2,
+              "pre_margin": 1.0074076879592169,
+              "late_margin": 0.08281353541782924,
+              "post_components_margin": 1.090221223377046,
+              "correction_margin": -0.002166384742373512,
+              "exact_signs": {
+                "pre": 1,
+                "late": 1,
+                "correction": -1
+              },
+              "exact_ratios": {
+                "pre": "11091607/11010048",
+                "late": "303927/3670016",
+                "correction": "-5963/2752512"
+              }
+            }
+          ]
+        },
+        {
+          "id": "arc_challenge/train/AKDE&ED_2012_8_37",
+          "gold": 0,
+          "R6_wrong": false,
+          "Fixed_pre_prediction": 0,
+          "primary_pre_prediction": 0,
+          "primary_post_prediction": 0,
+          "late_veto": false,
+          "late_rescue": false,
+          "pre_correction_rescue": false,
+          "pre_correction_damage": false,
+          "pairs": [
+            {
+              "wrong": 1,
+              "pre_margin": 0.17962565915337925,
+              "late_margin": 0.001949795361222892,
+              "post_components_margin": 0.18157545451460214,
+              "correction_margin": -0.00010464109223464439,
+              "exact_signs": {
+                "pre": 1,
+                "late": 1,
+                "correction": -1
+              },
+              "exact_ratios": {
+                "pre": "10924367/60817408",
+                "late": "237163/121634816",
+                "correction": "-1591/15204352"
+              }
+            },
+            {
+              "wrong": 2,
+              "pre_margin": 0.3551035585074589,
+              "late_margin": -0.004737523699870699,
+              "post_components_margin": 0.3503660348075882,
+              "correction_margin": -0.004490436453364684,
+              "exact_signs": {
+                "pre": 1,
+                "late": -1,
+                "correction": -1
+              },
+              "exact_ratios": {
+                "pre": "10798239/30408704",
+                "late": "-9796213/2067791872",
+                "correction": "-1160661/258473984"
+              }
+            },
+            {
+              "wrong": 3,
+              "pre_margin": 0.39432373266110476,
+              "late_margin": 0.013819632133654117,
+              "post_components_margin": 0.4081433647947589,
+              "correction_margin": -0.0015701734995503455,
+              "exact_signs": {
+                "pre": 1,
+                "late": 1,
+                "correction": -1
+              },
+              "exact_ratios": {
+                "pre": "35972621/91226112",
+                "late": "28576123/2067791872",
+                "correction": "-405849/258473984"
+              }
+            }
+          ]
+        },
+        {
+          "id": "arc_challenge/train/MCAS_1998_4_9",
+          "gold": 2,
+          "R6_wrong": true,
+          "Fixed_pre_prediction": 0,
+          "primary_pre_prediction": 0,
+          "primary_post_prediction": 0,
+          "late_veto": false,
+          "late_rescue": false,
+          "pre_correction_rescue": false,
+          "pre_correction_damage": false,
+          "pairs": [
+            {
+              "wrong": 0,
+              "pre_margin": -0.4329425111795083,
+              "late_margin": 0.030734488597282998,
+              "post_components_margin": -0.4022080225822253,
+              "correction_margin": -2.4208655724158653e-06,
+              "exact_signs": {
+                "pre": -1,
+                "late": 1,
+                "correction": -1
+              },
+              "exact_ratios": {
+                "pre": "-283279231/654311424",
+                "late": "6703309/218103808",
+                "correction": "-33/13631488"
+              }
+            },
+            {
+              "wrong": 1,
+              "pre_margin": -0.30245275451586795,
+              "late_margin": 0.027363071074852578,
+              "post_components_margin": -0.27508968344101536,
+              "correction_margin": 3.0689514600313625e-05,
+              "exact_signs": {
+                "pre": -1,
+                "late": 1,
+                "correction": 1
+              },
+              "exact_ratios": {
+                "pre": "-131932195/436207616",
+                "late": "2983995/109051904",
+                "correction": "13387/436207616"
+              }
+            },
+            {
+              "wrong": 3,
+              "pre_margin": 0.08080521163406905,
+              "late_margin": -0.004049497884470266,
+              "post_components_margin": 0.07675571374959879,
+              "correction_margin": 0.003132870147278259,
+              "exact_signs": {
+                "pre": 1,
+                "late": -1,
+                "correction": 1
+              },
+              "exact_ratios": {
+                "pre": "378639/4685824",
+                "late": "-1214415/299892736",
+                "correction": "939525/299892736"
+              }
+            }
+          ]
+        },
+        {
+          "id": "arc_challenge/train/Mercury_SC_401336",
+          "gold": 3,
+          "R6_wrong": false,
+          "Fixed_pre_prediction": 3,
+          "primary_pre_prediction": 3,
+          "primary_post_prediction": 3,
+          "late_veto": false,
+          "late_rescue": false,
+          "pre_correction_rescue": false,
+          "pre_correction_damage": false,
+          "pairs": [
+            {
+              "wrong": 0,
+              "pre_margin": 0.33072255894462055,
+              "late_margin": 0.09268087499281939,
+              "post_components_margin": 0.42340343393743995,
+              "correction_margin": -0.0002397751425676805,
+              "exact_signs": {
+                "pre": 1,
+                "late": 1,
+                "correction": -1
+              },
+              "exact_ratios": {
+                "pre": "64849307/196083712",
+                "late": "826055/8912896",
+                "correction": "-5877/24510464"
+              }
+            },
+            {
+              "wrong": 1,
+              "pre_margin": 0.3517722828502961,
+              "late_margin": 0.023902219884535846,
+              "post_components_margin": 0.37567450273483194,
+              "correction_margin": 0.004672432965773312,
+              "exact_signs": {
+                "pre": 1,
+                "late": 1,
+                "correction": 1
+              },
+              "exact_ratios": {
+                "pre": "68976815/196083712",
+                "late": "106519/4456448",
+                "correction": "229047/49020928"
+              }
+            },
+            {
+              "wrong": 2,
+              "pre_margin": 0.08803996172818271,
+              "late_margin": 0.0747640609741211,
+              "post_components_margin": 0.1628040227023038,
+              "correction_margin": -0.014088023792613636,
+              "exact_signs": {
+                "pre": 1,
+                "late": 1,
+                "correction": -1
+              },
+              "exact_ratios": {
+                "pre": "2030965/23068672",
+                "late": "391979/5242880",
+                "correction": "-2539/180224"
+              }
+            }
+          ]
+        },
+        {
+          "id": "arc_challenge/train/Mercury_7109585",
+          "gold": 3,
+          "R6_wrong": false,
+          "Fixed_pre_prediction": 3,
+          "primary_pre_prediction": 3,
+          "primary_post_prediction": 3,
+          "late_veto": false,
+          "late_rescue": false,
+          "pre_correction_rescue": false,
+          "pre_correction_damage": false,
+          "pairs": [
+            {
+              "wrong": 0,
+              "pre_margin": 0.5816475550333658,
+              "late_margin": 0.012715193960401747,
+              "post_components_margin": 0.5943627489937676,
+              "correction_margin": -0.008453951941596137,
+              "exact_signs": {
+                "pre": 1,
+                "late": 1,
+                "correction": -1
+              },
+              "exact_ratios": {
+                "pre": "1829705/3145728",
+                "late": "959965/75497472",
+                "correction": "-159563/18874368"
+              }
+            },
+            {
+              "wrong": 1,
+              "pre_margin": 0.14657887241296602,
+              "late_margin": -0.022967540729812712,
+              "post_components_margin": 0.1236113316831533,
+              "correction_margin": 0.008543535979867678,
+              "exact_signs": {
+                "pre": 1,
+                "late": -1,
+                "correction": 1
+              },
+              "exact_ratios": {
+                "pre": "547553/3735552",
+                "late": "-16472917/717225984",
+                "correction": "3063823/358612992"
+              }
+            },
+            {
+              "wrong": 2,
+              "pre_margin": 0.14675232008391736,
+              "late_margin": -0.03047550269980836,
+              "post_components_margin": 0.116276817384109,
+              "correction_margin": 0.0007716690013611239,
+              "exact_signs": {
+                "pre": 1,
+                "late": -1,
+                "correction": 1
+              },
+              "exact_ratios": {
+                "pre": "7847929/53477376",
+                "late": "-19556999/641728512",
+                "correction": "247601/320864256"
+              }
+            }
+          ]
+        },
+        {
+          "id": "arc_challenge/train/Mercury_SC_409907",
+          "gold": 2,
+          "R6_wrong": false,
+          "Fixed_pre_prediction": 2,
+          "primary_pre_prediction": 2,
+          "primary_post_prediction": 2,
+          "late_veto": false,
+          "late_rescue": false,
+          "pre_correction_rescue": false,
+          "pre_correction_damage": false,
+          "pairs": [
+            {
+              "wrong": 0,
+              "pre_margin": 0.10608306424371128,
+              "late_margin": 0.024992670873748214,
+              "post_components_margin": 0.13107573511745949,
+              "correction_margin": 0.0004460552326880336,
+              "exact_signs": {
+                "pre": 1,
+                "late": 1,
+                "correction": 1
+              },
+              "exact_ratios": {
+                "pre": "6451697/60817408",
+                "late": "19759863/790626304",
+                "correction": "352663/790626304"
+              }
+            },
+            {
+              "wrong": 1,
+              "pre_margin": 0.015592404774257116,
+              "late_margin": 0.020312212325714448,
+              "post_components_margin": 0.03590461709997156,
+              "correction_margin": 0.003965320167960701,
+              "exact_signs": {
+                "pre": 1,
+                "late": 1,
+                "correction": 1
+              },
+              "exact_ratios": {
+                "pre": "457795/29360128",
+                "late": "7752799/381681664",
+                "correction": "756745/190840832"
+              }
+            },
+            {
+              "wrong": 3,
+              "pre_margin": 0.41717549732753206,
+              "late_margin": -0.025775631705483238,
+              "post_components_margin": 0.39139986562204887,
+              "correction_margin": -0.01650993116609343,
+              "exact_signs": {
+                "pre": 1,
+                "late": -1,
+                "correction": -1
+              },
+              "exact_ratios": {
+                "pre": "6124163/14680064",
+                "late": "-4919043/190840832",
+                "correction": "-3150769/190840832"
+              }
+            }
+          ]
+        },
+        {
+          "id": "arc_challenge/train/Mercury_7219100",
+          "gold": 1,
+          "R6_wrong": true,
+          "Fixed_pre_prediction": 3,
+          "primary_pre_prediction": 3,
+          "primary_post_prediction": 0,
+          "late_veto": false,
+          "late_rescue": false,
+          "pre_correction_rescue": false,
+          "pre_correction_damage": false,
+          "pairs": [
+            {
+              "wrong": 0,
+              "pre_margin": 0.016042139317550514,
+              "late_margin": -0.0889081231104581,
+              "post_components_margin": -0.0728659837929076,
+              "correction_margin": -0.005145697258907659,
+              "exact_signs": {
+                "pre": 1,
+                "late": -1,
+                "correction": -1
+              },
+              "exact_ratios": {
+                "pre": "8864879/552599552",
+                "late": "-49130589/552599552",
+                "correction": "-1421755/276299776"
+              }
+            },
+            {
+              "wrong": 2,
+              "pre_margin": 0.13621445990335967,
+              "late_margin": -0.00230952285733358,
+              "post_components_margin": 0.1339049370460261,
+              "correction_margin": -0.004774318021886489,
+              "exact_signs": {
+                "pre": 1,
+                "late": -1,
+                "correction": -1
+              },
+              "exact_ratios": {
+                "pre": "65559527/481296384",
+                "late": "-1111565/481296384",
+                "correction": "-42553/8912896"
+              }
+            },
+            {
+              "wrong": 3,
+              "pre_margin": -0.041871407452751606,
+              "late_margin": -0.012929131002987133,
+              "post_components_margin": -0.05480053845573874,
+              "correction_margin": -0.00777435302734375,
+              "exact_signs": {
+                "pre": -1,
+                "late": -1,
+                "correction": -1
+              },
+              "exact_ratios": {
+                "pre": "-746391/17825792",
+                "late": "-28809/2228224",
+                "correction": "-1019/131072"
+              }
+            }
+          ]
+        },
+        {
+          "id": "arc_challenge/train/Mercury_7159758",
+          "gold": 2,
+          "R6_wrong": false,
+          "Fixed_pre_prediction": 2,
+          "primary_pre_prediction": 2,
+          "primary_post_prediction": 2,
+          "late_veto": false,
+          "late_rescue": false,
+          "pre_correction_rescue": false,
+          "pre_correction_damage": false,
+          "pairs": [
+            {
+              "wrong": 0,
+              "pre_margin": 0.8816756649450822,
+              "late_margin": 0.03451181758533824,
+              "post_components_margin": 0.9161874825304205,
+              "correction_margin": 0.0,
+              "exact_signs": {
+                "pre": 1,
+                "late": 1,
+                "correction": 0
+              },
+              "exact_ratios": {
+                "pre": "813563469/922746880",
+                "late": "3980709/115343360",
+                "correction": "0"
+              }
+            },
+            {
+              "wrong": 1,
+              "pre_margin": 1.0567704081535338,
+              "late_margin": 0.05871915817260742,
+              "post_components_margin": 1.1154895663261413,
+              "correction_margin": 0.0,
+              "exact_signs": {
+                "pre": 1,
+                "late": 1,
+                "correction": 0
+              },
+              "exact_ratios": {
+                "pre": "88648327/83886080",
+                "late": "123143/2097152",
+                "correction": "0"
+              }
+            },
+            {
+              "wrong": 3,
+              "pre_margin": 1.407204775015513,
+              "late_margin": 0.059156401952107744,
+              "post_components_margin": 1.4663611769676208,
+              "correction_margin": 0.0,
+              "exact_signs": {
+                "pre": 1,
+                "late": 1,
+                "correction": 0
+              },
+              "exact_ratios": {
+                "pre": "354134677/251658240",
+                "late": "3721799/62914560",
+                "correction": "0"
+              }
+            }
+          ]
+        },
+        {
+          "id": "arc_challenge/train/Mercury_SC_405459",
+          "gold": 3,
+          "R6_wrong": true,
+          "Fixed_pre_prediction": 1,
+          "primary_pre_prediction": 1,
+          "primary_post_prediction": 1,
+          "late_veto": false,
+          "late_rescue": false,
+          "pre_correction_rescue": false,
+          "pre_correction_damage": false,
+          "pairs": [
+            {
+              "wrong": 0,
+              "pre_margin": -0.22177429276595975,
+              "late_margin": 0.0019600318846789626,
+              "post_components_margin": -0.2198142608812808,
+              "correction_margin": 0.0076569775780606225,
+              "exact_signs": {
+                "pre": -1,
+                "late": 1,
+                "correction": 1
+              },
+              "exact_ratios": {
+                "pre": "-57322885/258473984",
+                "late": "2026469/1033895936",
+                "correction": "3958259/516947968"
+              }
+            },
+            {
+              "wrong": 1,
+              "pre_margin": -0.2917005068802133,
+              "late_margin": -0.002168969633022031,
+              "post_components_margin": -0.29386947651323536,
+              "correction_margin": 0.0007214881146700142,
+              "exact_signs": {
+                "pre": -1,
+                "late": -1,
+                "correction": 1
+              },
+              "exact_ratios": {
+                "pre": "-29937041/102629376",
+                "late": "-9275/4276224",
+                "correction": "592367/821035008"
+              }
+            },
+            {
+              "wrong": 2,
+              "pre_margin": 0.12826974195890148,
+              "late_margin": 0.037229892113480705,
+              "post_components_margin": 0.1654996340723822,
+              "correction_margin": 0.005586153632449851,
+              "exact_signs": {
+                "pre": 1,
+                "late": 1,
+                "correction": 1
+              },
+              "exact_ratios": {
+                "pre": "12676679/98828288",
+                "late": "7358733/197656576",
+                "correction": "276035/49414144"
+              }
+            }
+          ]
+        },
+        {
+          "id": "arc_challenge/train/MCAS_2008_8_5707",
+          "gold": 2,
+          "R6_wrong": false,
+          "Fixed_pre_prediction": 2,
+          "primary_pre_prediction": 2,
+          "primary_post_prediction": 2,
+          "late_veto": false,
+          "late_rescue": false,
+          "pre_correction_rescue": false,
+          "pre_correction_damage": false,
+          "pairs": [
+            {
+              "wrong": 0,
+              "pre_margin": 0.30200053536318205,
+              "late_margin": -0.02284703152702454,
+              "post_components_margin": 0.2791535038361575,
+              "correction_margin": 0.0012852852357262596,
+              "exact_signs": {
+                "pre": 1,
+                "late": -1,
+                "correction": 1
+              },
+              "exact_ratios": {
+                "pre": "29608693/98041856",
+                "late": "-17919723/784334848",
+                "correction": "504047/392167424"
+              }
+            },
+            {
+              "wrong": 1,
+              "pre_margin": 0.23450896786708458,
+              "late_margin": -0.006400889041377049,
+              "post_components_margin": 0.22810807882570752,
+              "correction_margin": -0.000625159226211847,
+              "exact_signs": {
+                "pre": 1,
+                "late": -1,
+                "correction": -1
+              },
+              "exact_ratios": {
+                "pre": "50163697/213909504",
+                "late": "-1369211/213909504",
+                "correction": "-267455/427819008"
+              }
+            },
+            {
+              "wrong": 3,
+              "pre_margin": 0.37115102655747356,
+              "late_margin": -0.00997608689700856,
+              "post_components_margin": 0.361174939660465,
+              "correction_margin": 0.00450283499325023,
+              "exact_signs": {
+                "pre": 1,
+                "late": -1,
+                "correction": 1
+              },
+              "exact_ratios": {
+                "pre": "6616061/17825792",
+                "late": "-3556633/356515840",
+                "correction": "401333/89128960"
+              }
+            }
+          ]
+        },
+        {
+          "id": "arc_challenge/train/Mercury_SC_400673",
+          "gold": 1,
+          "R6_wrong": true,
+          "Fixed_pre_prediction": 3,
+          "primary_pre_prediction": 3,
+          "primary_post_prediction": 3,
+          "late_veto": false,
+          "late_rescue": false,
+          "pre_correction_rescue": false,
+          "pre_correction_damage": false,
+          "pairs": [
+            {
+              "wrong": 0,
+              "pre_margin": 0.22909346893227844,
+              "late_margin": 0.008129635046706505,
+              "post_components_margin": 0.23722310397898494,
+              "correction_margin": -0.00961407779462723,
+              "exact_signs": {
+                "pre": 1,
+                "late": 1,
+                "correction": -1
+              },
+              "exact_ratios": {
+                "pre": "44320943/193462272",
+                "late": "4718333/580386816",
+                "correction": "-1394971/145096704"
+              }
+            },
+            {
+              "wrong": 2,
+              "pre_margin": 0.08008469475640191,
+              "late_margin": -0.0008779420372060232,
+              "post_components_margin": 0.07920675271919589,
+              "correction_margin": -0.0010544256362034902,
+              "exact_signs": {
+                "pre": 1,
+                "late": -1,
+                "correction": -1
+              },
+              "exact_ratios": {
+                "pre": "377887/4718592",
+                "late": "-758105/863502336",
+                "correction": "-910499/863502336"
+              }
+            },
+            {
+              "wrong": 3,
+              "pre_margin": -0.07508924746790138,
+              "late_margin": 0.011057495741372348,
+              "post_components_margin": -0.06403175172652903,
+              "correction_margin": 0.001265892210159597,
+              "exact_signs": {
+                "pre": -1,
+                "late": 1,
+                "correction": 1
+              },
+              "exact_ratios": {
+                "pre": "-5934785/79036416",
+                "late": "5243669/474218496",
+                "correction": "1200619/948436992"
+              }
+            }
+          ]
+        },
+        {
+          "id": "arc_challenge/train/Mercury_7233695",
+          "gold": 1,
+          "R6_wrong": false,
+          "Fixed_pre_prediction": 1,
+          "primary_pre_prediction": 1,
+          "primary_post_prediction": 1,
+          "late_veto": false,
+          "late_rescue": false,
+          "pre_correction_rescue": false,
+          "pre_correction_damage": false,
+          "pairs": [
+            {
+              "wrong": 0,
+              "pre_margin": 0.4317396492793642,
+              "late_margin": -0.08125647446204876,
+              "post_components_margin": 0.35048317481731545,
+              "correction_margin": 0.0021439177414466597,
+              "exact_signs": {
+                "pre": 1,
+                "late": -1,
+                "correction": 1
+              },
+              "exact_ratios": {
+                "pre": "4102701/9502720",
+                "late": "-30886301/380108800",
+                "correction": "407461/190054400"
+              }
+            },
+            {
+              "wrong": 2,
+              "pre_margin": 0.06494073977415589,
+              "late_margin": -0.031990244196749285,
+              "post_components_margin": 0.03295049557740661,
+              "correction_margin": 0.002866192521720097,
+              "exact_signs": {
+                "pre": 1,
+                "late": -1,
+                "correction": 1
+              },
+              "exact_ratios": {
+                "pre": "1851341/28508160",
+                "late": "-911983/28508160",
+                "correction": "217893/76021760"
+              }
+            },
+            {
+              "wrong": 3,
+              "pre_margin": 0.21843442821396603,
+              "late_margin": -0.037722068846026836,
+              "post_components_margin": 0.1807123593679392,
+              "correction_margin": 0.0009399919011303792,
+              "exact_signs": {
+                "pre": 1,
+                "late": -1,
+                "correction": 1
+              },
+              "exact_ratios": {
+                "pre": "25738943/117833728",
+                "late": "-1111233/29458432",
+                "correction": "443051/471334912"
+              }
+            }
+          ]
+        },
+        {
+          "id": "arc_challenge/train/Mercury_7221743",
+          "gold": 3,
+          "R6_wrong": true,
+          "Fixed_pre_prediction": 1,
+          "primary_pre_prediction": 1,
+          "primary_post_prediction": 1,
+          "late_veto": false,
+          "late_rescue": false,
+          "pre_correction_rescue": false,
+          "pre_correction_damage": false,
+          "pairs": [
+            {
+              "wrong": 0,
+              "pre_margin": -0.030892292658487957,
+              "late_margin": -0.011365795135498047,
+              "post_components_margin": -0.042258087793986,
+              "correction_margin": 0.0,
+              "exact_signs": {
+                "pre": -1,
+                "late": -1,
+                "correction": 0
+              },
+              "exact_ratios": {
+                "pre": "-388715/12582912",
+                "late": "-119179/10485760",
+                "correction": "0"
+              }
+            },
+            {
+              "wrong": 1,
+              "pre_margin": -0.1189165711402893,
+              "late_margin": -0.010365867614746093,
+              "post_components_margin": -0.1292824387550354,
+              "correction_margin": 0.0,
+              "exact_signs": {
+                "pre": -1,
+                "late": -1,
+                "correction": 0
+              },
+              "exact_ratios": {
+                "pre": "-1995089/16777216",
+                "late": "-54347/5242880",
+                "correction": "0"
+              }
+            },
+            {
+              "wrong": 2,
+              "pre_margin": 0.7017968893051147,
+              "late_margin": 0.002259349822998047,
+              "post_components_margin": 0.7040562391281128,
+              "correction_margin": 0.0,
+              "exact_signs": {
+                "pre": 1,
+                "late": 1,
+                "correction": 0
+              },
+              "exact_ratios": {
+                "pre": "5887099/8388608",
+                "late": "23691/10485760",
+                "correction": "0"
+              }
+            }
+          ]
+        },
+        {
+          "id": "arc_challenge/train/Mercury_7233800",
+          "gold": 2,
+          "R6_wrong": true,
+          "Fixed_pre_prediction": 3,
+          "primary_pre_prediction": 3,
+          "primary_post_prediction": 3,
+          "late_veto": false,
+          "late_rescue": false,
+          "pre_correction_rescue": false,
+          "pre_correction_damage": false,
+          "pairs": [
+            {
+              "wrong": 0,
+              "pre_margin": -0.45745253562927246,
+              "late_margin": -0.07463598251342773,
+              "post_components_margin": -0.5320885181427002,
+              "correction_margin": -0.02640851338704427,
+              "exact_signs": {
+                "pre": -1,
+                "late": -1,
+                "correction": -1
+              },
+              "exact_ratios": {
+                "pre": "-1918695/4194304",
+                "late": "-156523/2097152",
+                "correction": "-41537/1572864"
+              }
+            },
+            {
+              "wrong": 1,
+              "pre_margin": 0.294439829312838,
+              "late_margin": -0.07231760025024414,
+              "post_components_margin": 0.2221222290625939,
+              "correction_margin": 0.006766417087652745,
+              "exact_signs": {
+                "pre": 1,
+                "late": -1,
+                "correction": 1
+              },
+              "exact_ratios": {
+                "pre": "4013653/13631488",
+                "late": "-151661/2097152",
+                "correction": "276709/40894464"
+              }
+            },
+            {
+              "wrong": 3,
+              "pre_margin": -0.6414530754089356,
+              "late_margin": -0.21028833389282225,
+              "post_components_margin": -0.8517414093017578,
+              "correction_margin": -0.05418821970621745,
+              "exact_signs": {
+                "pre": -1,
+                "late": -1,
+                "correction": -1
+              },
+              "exact_ratios": {
+                "pre": "-6726123/10485760",
+                "late": "-2205033/10485760",
+                "correction": "-852307/15728640"
+              }
+            }
+          ]
+        },
+        {
+          "id": "arc_challenge/train/Mercury_7094010",
+          "gold": 1,
+          "R6_wrong": true,
+          "Fixed_pre_prediction": 2,
+          "primary_pre_prediction": 2,
+          "primary_post_prediction": 2,
+          "late_veto": false,
+          "late_rescue": false,
+          "pre_correction_rescue": false,
+          "pre_correction_damage": false,
+          "pairs": [
+            {
+              "wrong": 0,
+              "pre_margin": 0.13923482259114583,
+              "late_margin": 0.04060170295910957,
+              "post_components_margin": 0.17983652555025542,
+              "correction_margin": -0.007922631288186098,
+              "exact_signs": {
+                "pre": 1,
+                "late": 1,
+                "correction": -1
+              },
+              "exact_ratios": {
+                "pre": "684367/4915200",
+                "late": "20754811/511180800",
+                "correction": "-4049897/511180800"
+              }
+            },
+            {
+              "wrong": 2,
+              "pre_margin": -0.4900145775931222,
+              "late_margin": 0.028918680463518417,
+              "post_components_margin": -0.4610958971296038,
+              "correction_margin": -0.0012024852207728795,
+              "exact_signs": {
+                "pre": -1,
+                "late": 1,
+                "correction": -1
+              },
+              "exact_ratios": {
+                "pre": "-89918067/183500800",
+                "late": "5306601/183500800",
+                "correction": "-220657/183500800"
+              }
+            },
+            {
+              "wrong": 3,
+              "pre_margin": -0.3265315879263529,
+              "late_margin": 0.033364894215653584,
+              "post_components_margin": -0.2931666937106993,
+              "correction_margin": -0.00199456191644436,
+              "exact_signs": {
+                "pre": -1,
+                "late": 1,
+                "correction": -1
+              },
+              "exact_ratios": {
+                "pre": "-43869127/134348800",
+                "late": "8965067/268697600",
+                "correction": "-267967/134348800"
+              }
+            }
+          ]
+        },
+        {
+          "id": "arc_challenge/train/Mercury_7084210",
+          "gold": 2,
+          "R6_wrong": false,
+          "Fixed_pre_prediction": 2,
+          "primary_pre_prediction": 2,
+          "primary_post_prediction": 2,
+          "late_veto": false,
+          "late_rescue": false,
+          "pre_correction_rescue": false,
+          "pre_correction_damage": false,
+          "pairs": [
+            {
+              "wrong": 0,
+              "pre_margin": 0.2854172603900616,
+              "late_margin": 0.007268703167255108,
+              "post_components_margin": 0.2926859635573167,
+              "correction_margin": 0.0013155218271108775,
+              "exact_signs": {
+                "pre": 1,
+                "late": 1,
+                "correction": 1
+              },
+              "exact_ratios": {
+                "pre": "97266549/340787200",
+                "late": "2477081/340787200",
+                "correction": "448313/340787200"
+              }
+            },
+            {
+              "wrong": 1,
+              "pre_margin": 0.240052737281436,
+              "late_margin": 0.03261080605643136,
+              "post_components_margin": 0.27266354333786735,
+              "correction_margin": -0.007821135748000372,
+              "exact_signs": {
+                "pre": 1,
+                "late": 1,
+                "correction": -1
+              },
+              "exact_ratios": {
+                "pre": "16518701/68812800",
+                "late": "5984109/183500800",
+                "correction": "-2152777/275251200"
+              }
+            },
+            {
+              "wrong": 3,
+              "pre_margin": 0.0015698450261896306,
+              "late_margin": 0.030998254255814987,
+              "post_components_margin": 0.03256809928200462,
+              "correction_margin": 0.00023251793601296165,
+              "exact_signs": {
+                "pre": 1,
+                "late": 1,
+                "correction": 1
+              },
+              "exact_ratios": {
+                "pre": "226339/144179200",
+                "late": "8938607/288358400",
+                "correction": "134097/576716800"
+              }
+            }
+          ]
+        },
+        {
+          "id": "arc_challenge/train/Mercury_7146090",
+          "gold": 1,
+          "R6_wrong": false,
+          "Fixed_pre_prediction": 1,
+          "primary_pre_prediction": 1,
+          "primary_post_prediction": 1,
+          "late_veto": false,
+          "late_rescue": false,
+          "pre_correction_rescue": false,
+          "pre_correction_damage": false,
+          "pairs": [
+            {
+              "wrong": 0,
+              "pre_margin": 0.07406178807233435,
+              "late_margin": 0.02329021651490809,
+              "post_components_margin": 0.09735200458724244,
+              "correction_margin": -3.217322385905425e-05,
+              "exact_signs": {
+                "pre": 1,
+                "late": 1,
+                "correction": -1
+              },
+              "exact_ratios": {
+                "pre": "6620465/89391104",
+                "late": "12491629/536346624",
+                "correction": "-719/22347776"
+              }
+            },
+            {
+              "wrong": 2,
+              "pre_margin": 0.2582656969733563,
+              "late_margin": -0.03246620308113782,
+              "post_components_margin": 0.22579949389221848,
+              "correction_margin": 0.00017535529825992197,
+              "exact_signs": {
+                "pre": 1,
+                "late": -1,
+                "correction": 1
+              },
+              "exact_ratios": {
+                "pre": "9444541/36569088",
+                "late": "-18996151/585105408",
+                "correction": "76951/438829056"
+              }
+            },
+            {
+              "wrong": 3,
+              "pre_margin": 0.4071009851271106,
+              "late_margin": 0.03576751328633328,
+              "post_components_margin": 0.4428684984134439,
+              "correction_margin": 7.927662466278523e-05,
+              "exact_signs": {
+                "pre": 1,
+                "late": 1,
+                "correction": 1
+              },
+              "exact_ratios": {
+                "pre": "6616583/16252928",
+                "late": "6394595/178782208",
+                "correction": "56693/715128832"
+              }
+            }
+          ]
+        },
+        {
+          "id": "arc_challenge/train/Mercury_7175718",
+          "gold": 3,
+          "R6_wrong": false,
+          "Fixed_pre_prediction": 3,
+          "primary_pre_prediction": 3,
+          "primary_post_prediction": 3,
+          "late_veto": false,
+          "late_rescue": false,
+          "pre_correction_rescue": false,
+          "pre_correction_damage": false,
+          "pairs": [
+            {
+              "wrong": 0,
+              "pre_margin": 0.16998409570432177,
+              "late_margin": 0.013758358300900927,
+              "post_components_margin": 0.18374245400522268,
+              "correction_margin": 0.003100860820097082,
+              "exact_signs": {
+                "pre": 1,
+                "late": 1,
+                "correction": 1
+              },
+              "exact_ratios": {
+                "pre": "45451517/267386880",
+                "late": "7357609/534773760",
+                "correction": "552753/178257920"
+              }
+            },
+            {
+              "wrong": 1,
+              "pre_margin": 0.14667834147625003,
+              "late_margin": -0.0021902320644222265,
+              "post_components_margin": 0.1444881094118278,
+              "correction_margin": 0.002861410538780498,
+              "exact_signs": {
+                "pre": 1,
+                "late": -1,
+                "correction": 1
+              },
+              "exact_ratios": {
+                "pre": "86283701/588251136",
+                "late": "-2576813/1176502272",
+                "correction": "140269/49020928"
+              }
+            },
+            {
+              "wrong": 2,
+              "pre_margin": 0.0656440383312749,
+              "late_margin": -0.00916322296740962,
+              "post_components_margin": 0.056480815363865275,
+              "correction_margin": 0.004352062449735753,
+              "exact_signs": {
+                "pre": 1,
+                "late": -1,
+                "correction": 1
+              },
+              "exact_ratios": {
+                "pre": "87761773/1336934400",
+                "late": "-3062657/334233600",
+                "correction": "969737/222822400"
+              }
+            }
+          ]
+        },
+        {
+          "id": "arc_challenge/train/Mercury_7197225",
+          "gold": 2,
+          "R6_wrong": true,
+          "Fixed_pre_prediction": 0,
+          "primary_pre_prediction": 0,
+          "primary_post_prediction": 0,
+          "late_veto": false,
+          "late_rescue": false,
+          "pre_correction_rescue": false,
+          "pre_correction_damage": false,
+          "pairs": [
+            {
+              "wrong": 0,
+              "pre_margin": -0.27709702650705975,
+              "late_margin": -0.011912322044372559,
+              "post_components_margin": -0.2890093485514323,
+              "correction_margin": -0.0032826582590738933,
+              "exact_signs": {
+                "pre": -1,
+                "late": -1,
+                "correction": -1
+              },
+              "exact_ratios": {
+                "pre": "-6973375/25165824",
+                "late": "-499639/41943040",
+                "correction": "-206527/62914560"
+              }
+            },
+            {
+              "wrong": 1,
+              "pre_margin": -0.23626881514408793,
+              "late_margin": 0.003059129382288733,
+              "post_components_margin": -0.23320968576179918,
+              "correction_margin": -0.00461773909339609,
+              "exact_signs": {
+                "pre": -1,
+                "late": 1,
+                "correction": -1
+              },
+              "exact_ratios": {
+                "pre": "-255673675/1082130432",
+                "late": "1103459/360710144",
+                "correction": "-1249249/270532608"
+              }
+            },
+            {
+              "wrong": 3,
+              "pre_margin": -0.14768069241177384,
+              "late_margin": 0.0029445673102763163,
+              "post_components_margin": -0.14473612510149753,
+              "correction_margin": -0.0015880836183158912,
+              "exact_signs": {
+                "pre": -1,
+                "late": 1,
+                "correction": -1
+              },
+              "exact_ratios": {
+                "pre": "-249005923/1686110208",
+                "late": "1654955/562036736",
+                "correction": "-669421/421527552"
+              }
+            }
+          ]
+        },
+        {
+          "id": "arc_challenge/train/NYSEDREGENTS_2007_8_21",
+          "gold": 2,
+          "R6_wrong": false,
+          "Fixed_pre_prediction": 2,
+          "primary_pre_prediction": 2,
+          "primary_post_prediction": 2,
+          "late_veto": false,
+          "late_rescue": false,
+          "pre_correction_rescue": false,
+          "pre_correction_damage": false,
+          "pairs": [
+            {
+              "wrong": 0,
+              "pre_margin": 0.16495946469047504,
+              "late_margin": 0.004396340636777609,
+              "post_components_margin": 0.16935580532725264,
+              "correction_margin": 0.0018260707103736405,
+              "exact_signs": {
+                "pre": 1,
+                "late": 1,
+                "correction": 1
+              },
+              "exact_ratios": {
+                "pre": "184388723/1117782016",
+                "late": "9828301/2235564032",
+                "correction": "2041149/1117782016"
+              }
+            },
+            {
+              "wrong": 1,
+              "pre_margin": 0.23057683064387394,
+              "late_margin": 0.013145051858364008,
+              "post_components_margin": 0.24372188250223795,
+              "correction_margin": 0.0003868567637908153,
+              "exact_signs": {
+                "pre": 1,
+                "late": 1,
+                "correction": 1
+              },
+              "exact_ratios": {
+                "pre": "31431053/136314880",
+                "late": "10751197/817889280",
+                "correction": "158203/408944640"
+              }
+            },
+            {
+              "wrong": 3,
+              "pre_margin": 0.11950272633479192,
+              "late_margin": 0.014838542204636793,
+              "post_components_margin": 0.1343412685394287,
+              "correction_margin": -0.003095707526573768,
+              "exact_signs": {
+                "pre": 1,
+                "late": 1,
+                "correction": -1
+              },
+              "exact_ratios": {
+                "pre": "81449999/681574400",
+                "late": "20227141/1363148800",
+                "correction": "-421991/136314880"
+              }
+            }
+          ]
+        },
+        {
+          "id": "arc_challenge/train/Mercury_7239470",
+          "gold": 3,
+          "R6_wrong": true,
+          "Fixed_pre_prediction": 2,
+          "primary_pre_prediction": 2,
+          "primary_post_prediction": 2,
+          "late_veto": false,
+          "late_rescue": false,
+          "pre_correction_rescue": false,
+          "pre_correction_damage": false,
+          "pairs": [
+            {
+              "wrong": 0,
+              "pre_margin": 0.26530329925763646,
+              "late_margin": -0.012813614635932736,
+              "post_components_margin": 0.25248968462170374,
+              "correction_margin": -0.0010138377152217408,
+              "exact_signs": {
+                "pre": 1,
+                "late": -1,
+                "correction": -1
+              },
+              "exact_ratios": {
+                "pre": "65583451/247201792",
+                "late": "-275439/21495808",
+                "correction": "-501245/494403584"
+              }
+            },
+            {
+              "wrong": 1,
+              "pre_margin": 0.16423075820894223,
+              "late_margin": 0.025994180962023994,
+              "post_components_margin": 0.19022493917096622,
+              "correction_margin": 0.0010365408014103052,
+              "exact_signs": {
+                "pre": 1,
+                "late": 1,
+                "correction": 1
+              },
+              "exact_ratios": {
+                "pre": "45893547/279445504",
+                "late": "7263957/279445504",
+                "correction": "434485/419168256"
+              }
+            },
+            {
+              "wrong": 2,
+              "pre_margin": -0.056520634261696956,
+              "late_margin": 0.029540380666957473,
+              "post_components_margin": -0.026980253594739486,
+              "correction_margin": -0.000808601003269736,
+              "exact_signs": {
+                "pre": -1,
+                "late": 1,
+                "correction": -1
+              },
+              "exact_ratios": {
+                "pre": "-57102965/1010302976",
+                "late": "59689469/2020605952",
+                "correction": "-204233/252575744"
+              }
+            }
+          ]
+        },
+        {
+          "id": "arc_challenge/train/AKDE&ED_2012_4_22",
+          "gold": 2,
+          "R6_wrong": false,
+          "Fixed_pre_prediction": 2,
+          "primary_pre_prediction": 2,
+          "primary_post_prediction": 2,
+          "late_veto": false,
+          "late_rescue": false,
+          "pre_correction_rescue": false,
+          "pre_correction_damage": false,
+          "pairs": [
+            {
+              "wrong": 0,
+              "pre_margin": 0.18600488657301123,
+              "late_margin": -0.0075256305662068455,
+              "post_components_margin": 0.1784792560068044,
+              "correction_margin": -0.002539800784804604,
+              "exact_signs": {
+                "pre": 1,
+                "late": -1,
+                "correction": -1
+              },
+              "exact_ratios": {
+                "pre": "137308343/738197504",
+                "late": "-55554017/7381975040",
+                "correction": "-9374373/3690987520"
+              }
+            },
+            {
+              "wrong": 1,
+              "pre_margin": 0.1404150617974145,
+              "late_margin": -0.009610126061098916,
+              "post_components_margin": 0.1308049357363156,
+              "correction_margin": -0.002937855465071542,
+              "exact_signs": {
+                "pre": 1,
+                "late": -1,
+                "correction": -1
+              },
+              "exact_ratios": {
+                "pre": "65961667/469762048",
+                "late": "-9028945/939524096",
+                "correction": "-1380093/469762048"
+              }
+            },
+            {
+              "wrong": 3,
+              "pre_margin": 0.08606391500181226,
+              "late_margin": -0.004905179921370834,
+              "post_components_margin": 0.08115873508044143,
+              "correction_margin": -0.0009927057953023199,
+              "exact_signs": {
+                "pre": 1,
+                "late": -1,
+                "correction": -1
+              },
+              "exact_ratios": {
+                "pre": "386968655/4496293888",
+                "late": "-44110261/8992587776",
+                "correction": "-4463497/4496293888"
+              }
+            }
+          ]
+        },
+        {
+          "id": "arc_challenge/train/NYSEDREGENTS_2016_4_13",
+          "gold": 3,
+          "R6_wrong": false,
+          "Fixed_pre_prediction": 3,
+          "primary_pre_prediction": 3,
+          "primary_post_prediction": 3,
+          "late_veto": false,
+          "late_rescue": false,
+          "pre_correction_rescue": false,
+          "pre_correction_damage": false,
+          "pairs": [
+            {
+              "wrong": 0,
+              "pre_margin": 0.10043566668475115,
+              "late_margin": 0.027520193877043547,
+              "post_components_margin": 0.1279558605617947,
+              "correction_margin": 0.00358546221697772,
+              "exact_signs": {
+                "pre": 1,
+                "late": 1,
+                "correction": 1
+              },
+              "exact_ratios": {
+                "pre": "1777181/17694720",
+                "late": "3895697/141557760",
+                "correction": "50755/14155776"
+              }
+            },
+            {
+              "wrong": 1,
+              "pre_margin": 0.09660463333129883,
+              "late_margin": 0.03606124535585061,
+              "post_components_margin": 0.13266587868714944,
+              "correction_margin": 0.0029917496901292065,
+              "exact_signs": {
+                "pre": 1,
+                "late": 1,
+                "correction": 1
+              },
+              "exact_ratios": {
+                "pre": "1012973/10485760",
+                "late": "14747053/408944640",
+                "correction": "20391/6815744"
+              }
+            },
+            {
+              "wrong": 2,
+              "pre_margin": 0.6415154677170973,
+              "late_margin": 0.014994983184031951,
+              "post_components_margin": 0.6565104509011294,
+              "correction_margin": 0.0020192953256460335,
+              "exact_signs": {
+                "pre": 1,
+                "late": 1,
+                "correction": 1
+              },
+              "exact_ratios": {
+                "pre": "10931013/17039360",
+                "late": "3066059/204472320",
+                "correction": "13763/6815744"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
