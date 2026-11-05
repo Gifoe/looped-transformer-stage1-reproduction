@@ -1,0 +1,31 @@
+{
+  "status": "complete24_all_conditions_numeric_before_labels",
+  "pilot_questions": 24,
+  "bounded_secondary_questions": 4,
+  "B5_B6_questions": 4,
+  "groups": 196,
+  "tasks": 218,
+  "stats_rows": 548,
+  "source_protocol_sha256": "4b8f4d5665ae590d91d686c66c038c97f6e43e6554cf8cbf172f23075fef5e27",
+  "raw_sha256": "4cf763a38975b31ece5bf7c6a19063b0a4f518507a240f13c9776e54f76a491b",
+  "labels_unsealed_after_numeric": true,
+  "numerical_validation": {
+    "status": "passed_all_numeric_before_labels",
+    "full_intervention_matrix": true,
+    "tasks": 218,
+    "native_heads": 872,
+    "consumers": 784,
+    "vectors": 1744,
+    "FP64_normalizer_max_abs_replay_error": 3.552713678800501e-15,
+    "FP32_token_LP_vs_FP64_reference_max_abs_error": 1.0225059376978152e-06,
+    "FP32_token_LP_reference_abs_tolerance": 5e-05,
+    "normalizer64_tolerance": 1e-10,
+    "FP32_native_sum_vs_exact_token_sum_max_abs_error": 1.6540288925170898e-06,
+    "sum_validation": "Fraction exact sum of stored FP32 tokens; conservative FP32 gamma(n-1) bound plus subnormal term. Not NumPy sum called GPUexact.",
+    "decomposition_scope": "FullV FP64 normalizer is diagnostic; primaryS uses actual original FP32 log_softmax/gather/sum, so logit-minus-FP64norm is not claimed bitexact.",
+    "labels_read": false
+  },
+  "bootstrap_seed": 2021,
+  "bootstrap_samples": 20000,
+  "scope": "Historical train/dev preregistered24; n4 secondary/readout/simpletask evidence bounded, all metrics/stages reported; no trained selector or new decoder."
+}
