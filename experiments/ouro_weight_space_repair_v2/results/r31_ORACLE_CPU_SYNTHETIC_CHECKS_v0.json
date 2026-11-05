@@ -1,0 +1,219 @@
+{
+  "status": "passed_CPU_synthetic_only",
+  "checks": [
+    "cross_candidate_shared_prefix_coupling_cheat_exposed",
+    "only_mixed_binary_reachable",
+    "all_choices_unreachable",
+    "LP_relaxation_feasible_integer_infeasible_is_undetermined",
+    "strict_tau_ties_not_argmax_success",
+    "dual_sign_zero_mass_non_simplex_rejected_exact_normalization",
+    "zero_columns_only_and_endpoints",
+    "candidate_permutation_invariant",
+    "duplicate_candidate_cannot_gain_strict_margin",
+    "FP32_numpy_reduction_is_only_a_bound_fixture_not_GPU_exact",
+    "near_integer_not_silently_rounded"
+  ],
+  "records": {
+    "coupled": {
+      "classification": "certified_unreachable_strict_margin",
+      "witness": [
+        0
+      ],
+      "witness_margin_lower": {
+        "numerator": "-3",
+        "denominator": "4"
+      },
+      "witness_pair_lowers": [
+        {
+          "numerator": "-3",
+          "denominator": "4"
+        },
+        {
+          "numerator": "1",
+          "denominator": "4"
+        }
+      ],
+      "dual_weights": [
+        {
+          "numerator": "1",
+          "denominator": "2"
+        },
+        {
+          "numerator": "1",
+          "denominator": "2"
+        }
+      ],
+      "upper": {
+        "numerator": "-1",
+        "denominator": "4"
+      },
+      "raw_dual": [
+        0.5,
+        0.5
+      ],
+      "dual_validation_error": null,
+      "MILP": {
+        "status": 0,
+        "message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+        "x": [
+          0.0,
+          -0.75
+        ]
+      },
+      "LP": {
+        "status": 0,
+        "message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+        "x": [
+          0.5,
+          -0.25
+        ]
+      },
+      "solver_warnings": [
+        "Unrecognized options detected: {'random_seed', 'threads'}. These will be passed to HiGHS verbatim.",
+        "Unrecognized options detected: {'threads': 1, 'random_seed': 2021}. These will be passed to HiGHS verbatim."
+      ],
+      "solver_elapsed_seconds": 0.0,
+      "scipy": "1.15.3",
+      "numpy": "2.2.6",
+      "thread_limit": 1,
+      "MILP_time_limit_seconds": 3.0,
+      "scope": "Witness/dual proposal only; solver status is never an infeasibility or reachability proof"
+    },
+    "mixed": {
+      "classification": "certified_reachable",
+      "witness": [
+        1,
+        0
+      ],
+      "witness_margin_lower": {
+        "numerator": "1",
+        "denominator": "2"
+      },
+      "witness_pair_lowers": [
+        {
+          "numerator": "1",
+          "denominator": "2"
+        }
+      ],
+      "dual_weights": [
+        {
+          "numerator": "1",
+          "denominator": "1"
+        }
+      ],
+      "upper": {
+        "numerator": "1",
+        "denominator": "2"
+      },
+      "raw_dual": [
+        1.0
+      ],
+      "dual_validation_error": null,
+      "MILP": {
+        "status": 0,
+        "message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+        "x": [
+          1.0,
+          0.0,
+          0.5
+        ]
+      },
+      "LP": {
+        "status": 0,
+        "message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+        "x": [
+          1.0,
+          0.0,
+          0.5
+        ]
+      },
+      "solver_warnings": [
+        "Unrecognized options detected: {'random_seed', 'threads'}. These will be passed to HiGHS verbatim.",
+        "Unrecognized options detected: {'threads': 1, 'random_seed': 2021}. These will be passed to HiGHS verbatim."
+      ],
+      "solver_elapsed_seconds": 0.01600000000325963,
+      "scipy": "1.15.3",
+      "numpy": "2.2.6",
+      "thread_limit": 1,
+      "MILP_time_limit_seconds": 3.0,
+      "scope": "Witness/dual proposal only; solver status is never an infeasibility or reachability proof"
+    },
+    "integer_gap": {
+      "classification": "undetermined",
+      "witness": [
+        0
+      ],
+      "witness_margin_lower": {
+        "numerator": "-1",
+        "denominator": "4"
+      },
+      "witness_pair_lowers": [
+        {
+          "numerator": "-1",
+          "denominator": "4"
+        },
+        {
+          "numerator": "3",
+          "denominator": "4"
+        }
+      ],
+      "dual_weights": [
+        {
+          "numerator": "1",
+          "denominator": "2"
+        },
+        {
+          "numerator": "1",
+          "denominator": "2"
+        }
+      ],
+      "upper": {
+        "numerator": "1",
+        "denominator": "4"
+      },
+      "raw_dual": [
+        0.5,
+        0.5
+      ],
+      "dual_validation_error": null,
+      "MILP": {
+        "status": 0,
+        "message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+        "x": [
+          0.0,
+          -0.25
+        ]
+      },
+      "LP": {
+        "status": 0,
+        "message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+        "x": [
+          0.5,
+          0.25
+        ]
+      },
+      "solver_warnings": [
+        "Unrecognized options detected: {'random_seed', 'threads'}. These will be passed to HiGHS verbatim.",
+        "Unrecognized options detected: {'threads': 1, 'random_seed': 2021}. These will be passed to HiGHS verbatim."
+      ],
+      "solver_elapsed_seconds": 0.0,
+      "scipy": "1.15.3",
+      "numpy": "2.2.6",
+      "thread_limit": 1,
+      "MILP_time_limit_seconds": 3.0,
+      "scope": "Witness/dual proposal only; solver status is never an infeasibility or reachability proof"
+    }
+  },
+  "rounding_max_error_bound_ratio": "762146091903308196317520200985671719964544860160/1321525984474810207781939846897849408107377337837",
+  "elapsed_seconds": 0.40600000001722947,
+  "platform": "Windows-10-10.0.26100-SP0",
+  "numpy": "2.2.6",
+  "GPU_worker_seconds": 0,
+  "real24_oracle_run": false,
+  "model_loaded": false,
+  "source_sha256": {
+    "scripts/r31_oracle_math.py": "f542936c50e727ea8f96f15d899b4baa7e1d6ee1a4dea90a6ef0fa60724ff18f",
+    "scripts/r31_oracle_solver.py": "807e48d2a32ccba7a0847bb69a711be6ed155ea1836e28ff1711d97d1258103e",
+    "scripts/r31_oracle_cpu_checks.py": "2d34f288e6cb7ce71342b9ee1ae13e555bd681c8b313cc9dba36029241bc33ac"
+  }
+}

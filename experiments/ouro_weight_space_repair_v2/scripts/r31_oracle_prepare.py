@@ -1,0 +1,18 @@
+"""One CPU diagnostic draft; not authority to execute the real24 oracle."""
+import json,ast
+from r31_oracle_common import ROOT,read,sha
+from r31_oracle_versions import versions
+SOURCES=['scripts/r31_oracle_'+n+'.py' for n in ['math','solver','common','inputs','cpu_checks','preflight','worker','analyze','supervise','pipeline_checks','versions','prepare']]
+INPUTS=['r31_EXPLORATORY_IDENTIFIABILITY_DESIGN.md','r31_ROOT_ORACLE_SCOPE_REVIEW.md','configs/r30_SOURCE_CLOCK_PILOT_LOCK.json','results/r30_COMPLETE.json','results/r30_SCORES.json','results/r30_ANALYSIS.json','configs/r28_TRUE_PREFIX_TASK_INVENTORY.json','configs/r28_SANITIZED_REQUESTS.json','results/r31_ORACLE_CPU_SYNTHETIC_CHECKS.json','results/r31_ORACLE_CPU_INPUT_PREFLIGHT.json','results/r31_ORACLE_CPU_PIPELINE_CHECKS.json']
+def main():
+ old=read('configs/r30_SOURCE_CLOCK_PILOT_LOCK.json');ledgers=dict(old['budget']['inherited_ledger_sha256']);ledgers['logs/r30_gpu_budget.json']=sha('logs/r30_gpu_budget.json');assert len(ledgers)==18 and sum(read(p)['used_seconds'] for p in ledgers)==20755.46525352029
+ for p in SOURCES:ast.parse((ROOT/p).read_text(encoding='utf8'))
+ for p in ['results/r31_ORACLE_CPU_SYNTHETIC_CHECKS.json','results/r31_ORACLE_CPU_INPUT_PREFLIGHT.json','results/r31_ORACLE_CPU_PIPELINE_CHECKS.json']:
+  receipt=read(p);assert receipt['GPU_worker_seconds']==0
+  for path,h in receipt['source_sha256'].items():assert sha(path)==h,(p,path)
+ pre=read('results/r31_ORACLE_CPU_INPUT_PREFLIGHT.json');assert pre['max_tokens']==15 and pre['input_audit']['position_uses']==548 and pre['real_MILP_or_LP_run'] is False
+ s=dict(status='DRAFT_PENDING_ROOT_ASTRA_REVIEW',source_sha256={p:sha(p) for p in SOURCES},input_sha256={p:sha(p) for p in INPUTS},inherited_GPU_ledgers=ledgers,inherited_GPU_total_seconds=20755.46525352029,remaining_GPU_seconds=844.5347464797087,solver_identity=versions(),resources=dict(CPU_only=True,hard_seconds=180,soft_seconds=175,kill_seconds=179,reap_seconds=1,new_question_reserve_seconds=8,MILP_seconds=3,LP_seconds=3,threads=1,CUDA_VISIBLE_DEVICES='',scope='Total includes proposal worker, independent certificate analyzer and process exits; no GPU-ledger debit'),oracle=dict(questions=24,candidates=96,position_uses=548,prefix_keys=421,cross_question_shared_keys=pre['input_audit']['cross_question_shared_keys'],choices='exact existing Fixed or C distributions, one shared binary per actual Q prefix; exact zero columns fixed0; no continuous coefficient/sign sweep',late='exact binary Fraction of stored late, unchanged',tau='1/100000000',domain='All LP finite exactly FP32 and nonpositive; n*u<1/2; S+gamma*S+n*2^-149<=FP32max',B='((n-1)*2^-24/(1-(n-1)*2^-24)*S+n*2^-149)/chars + 16*2^-52*(S/chars+abs(stored_late)+1), all Fraction',classification='reachable iff exact witness every lower margin>tau; unreachable iff genuine simplex exact upper<=tau; else undetermined',negative_dual_clip=1e-12,solver_status_is_not_certificate=True,strict_margin_not_argmax_tie=True),report_validity='All24 and independent exact certificates joined with final clean<=180s supervisor and unchanged18GPUledgers',scope='Exploratory retrospective capacity diagnostic only, not an inference selector, training, method gain, independent generalization test, GPU permit or automatic continuation',GPU_execution_authorized=False,real_oracle_execution_authorized_by_draft=False,heldout_access_authorized=False)
+ assert all('\\' not in p for g in ['source_sha256','input_sha256'] for p in s[g])
+ with (ROOT/'configs/r31_SHARED_PREFIX_ORACLE_REVIEW_DRAFT.json').open('x',encoding='utf8') as f:json.dump(s,f,indent=2);f.write('\n')
+ print('R31_DRAFT',sha('configs/r31_SHARED_PREFIX_ORACLE_REVIEW_DRAFT.json'))
+if __name__=='__main__':main()

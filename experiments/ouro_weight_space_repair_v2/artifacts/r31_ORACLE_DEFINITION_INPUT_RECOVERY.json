@@ -1,0 +1,98 @@
+{
+  "status": "complete_exact_CPU_input_recovery",
+  "inputs": [
+    {
+      "path": "r31_EXPLORATORY_IDENTIFIABILITY_DESIGN.md",
+      "sha256": "18b774c5357bf1e611d80f9efa2738b2fcf76a6577d07e705a4d78539779bc22",
+      "recovery": "existing_R30_archive_member",
+      "index": "artifacts/r30_RELEASE_INDEX.json",
+      "archive_sha256": "d8c00c1f0df92a8f79eb35506f022e917a1b16c7cab9c44295292104cc783cc1",
+      "member": "r31_EXPLORATORY_IDENTIFIABILITY_DESIGN.md"
+    },
+    {
+      "path": "r31_ROOT_ORACLE_SCOPE_REVIEW.md",
+      "sha256": "2e6c32123fee6ac569d131bef03e238ebfbd7656274175fd2d2d9ca5f7d76cd4",
+      "recovery": "ordinary_public_file",
+      "public_path": "experiments/ouro_weight_space_repair_v2/r31_ROOT_ORACLE_SCOPE_REVIEW.md"
+    },
+    {
+      "path": "configs/r30_SOURCE_CLOCK_PILOT_LOCK.json",
+      "sha256": "c2cb2bfbe0a81c27be9e4364fad4e92ab1d2e65e374c881c0d5cb05c8e55787a",
+      "recovery": "existing_R30_archive_member",
+      "index": "artifacts/r30_RELEASE_INDEX.json",
+      "archive_sha256": "d8c00c1f0df92a8f79eb35506f022e917a1b16c7cab9c44295292104cc783cc1",
+      "member": "configs/r30_SOURCE_CLOCK_PILOT_LOCK.json"
+    },
+    {
+      "path": "results/r30_COMPLETE.json",
+      "sha256": "f9c2390c48b97cfe58041191b96a3a505d4bc4a0914418febd0e0504627843d8",
+      "recovery": "existing_R30_archive_member",
+      "index": "artifacts/r30_RELEASE_INDEX.json",
+      "archive_sha256": "d8c00c1f0df92a8f79eb35506f022e917a1b16c7cab9c44295292104cc783cc1",
+      "member": "results/r30_COMPLETE.json"
+    },
+    {
+      "path": "results/r30_SCORES.json",
+      "sha256": "5f35d91b38c21648879019900d8f613274e505c0240b7b5063fb5a8c7737c677",
+      "recovery": "existing_R30_archive_member",
+      "index": "artifacts/r30_RELEASE_INDEX.json",
+      "archive_sha256": "d8c00c1f0df92a8f79eb35506f022e917a1b16c7cab9c44295292104cc783cc1",
+      "member": "results/r30_SCORES.json"
+    },
+    {
+      "path": "results/r30_ANALYSIS.json",
+      "sha256": "960a490cb46b4d5173bd2b17b821f38c3e5f938a93f97976f1f78dc2610922b2",
+      "recovery": "existing_R30_archive_member",
+      "index": "artifacts/r30_RELEASE_INDEX.json",
+      "archive_sha256": "d8c00c1f0df92a8f79eb35506f022e917a1b16c7cab9c44295292104cc783cc1",
+      "member": "results/r30_ANALYSIS.json"
+    },
+    {
+      "path": "configs/r28_TRUE_PREFIX_TASK_INVENTORY.json",
+      "sha256": "a70f50e70abf8af9a9af52d31271e8f8b7936c5ebe9214edfb3da2d37c3cf9f0",
+      "recovery": "existing_R28_definition_archive_member",
+      "index": "artifacts/r28_DEFINITION_INPUTS_INDEX.json",
+      "archive_sha256": "939ba7eccec84c55c34f14c548cd5a2d7f31b2300b3b684435f534116f847820",
+      "member": "configs/r28_TRUE_PREFIX_TASK_INVENTORY.json"
+    },
+    {
+      "path": "configs/r28_SANITIZED_REQUESTS.json",
+      "sha256": "c0dac89220461d22d13a6051993488b7c448dfd74bb928db8865e68b9f76c5c6",
+      "recovery": "existing_R28_definition_archive_member",
+      "index": "artifacts/r28_DEFINITION_INPUTS_INDEX.json",
+      "archive_sha256": "939ba7eccec84c55c34f14c548cd5a2d7f31b2300b3b684435f534116f847820",
+      "member": "configs/r28_SANITIZED_REQUESTS.json"
+    },
+    {
+      "path": "results/r31_ORACLE_CPU_SYNTHETIC_CHECKS.json",
+      "sha256": "aa20fbffd4cb0e0b282c3c3ffea5e290cb5cbec682b1e0497af12a4d188401d7",
+      "recovery": "ordinary_public_file",
+      "public_path": "experiments/ouro_weight_space_repair_v2/results/r31_ORACLE_CPU_SYNTHETIC_CHECKS.json"
+    },
+    {
+      "path": "results/r31_ORACLE_CPU_INPUT_PREFLIGHT.json",
+      "sha256": "3aa25924de57b2ac08f5e1492f95216d9777d5e181e138d73cb2e4256f9b8b9c",
+      "recovery": "ordinary_public_file",
+      "public_path": "experiments/ouro_weight_space_repair_v2/results/r31_ORACLE_CPU_INPUT_PREFLIGHT.json"
+    },
+    {
+      "path": "results/r31_ORACLE_CPU_PIPELINE_CHECKS.json",
+      "sha256": "2dd8979adb37100d0414b19a604b54bbc36e997cbba66626eca3d2e807841abb",
+      "recovery": "ordinary_public_file",
+      "public_path": "experiments/ouro_weight_space_repair_v2/results/r31_ORACLE_CPU_PIPELINE_CHECKS.json"
+    }
+  ],
+  "source_recovery": "Twelve ordinary source files in this definition",
+  "archive_reassembly": "Follow cited ordered binary part index, concatenate binary files, verify whole SHA, extract from experiment root and verify member SHA",
+  "historical_CPU_receipts": "Prepared v0/v1 receipts are preserved history; only unsuffixed receipt paths in LOCK are active",
+  "execution_environment": {
+    "python": "3.10.0",
+    "numpy": "2.2.6",
+    "scipy": "1.15.3",
+    "HiGHS": "1.8.0",
+    "platform": "Windows-10-10.0.26100-SP0",
+    "executable": "D:\\python-3.10\\python.exe"
+  },
+  "model_or_tokenizer_or_private_source_required": false,
+  "real_oracle_executed": false
+}
