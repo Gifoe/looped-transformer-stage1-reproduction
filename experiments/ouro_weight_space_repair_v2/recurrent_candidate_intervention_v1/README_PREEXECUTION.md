@@ -1,0 +1,9 @@
+# Experiment B frozen input intervention definition
+
+New branch inherits all2235 parent public blobs from e5764391; no A/R11 bytes are changed. EXECUTION_LOCK binds8 runtime/constructor/analyzer sources,42 inputs and20 inherited ledgers. This is a pre-effect definition, not a completed intervention experiment. Separate Root START follows public/server readback.
+
+Recover the four large static JSON inputs from INPUT_ARCHIVES_INDEX.json: verify archive SHA, only listed regular safe member names, extract here and verify member SHA. Inference numeric plan/texts are separated from the label/semantic constructor; worker never deserializes the latter. No model weights/tokenizer copies/upstream source/transport credentials are redistributed. DEPENDENCY_RECOVERY_INDEX describes public ancestor and pinned metadata recovery.
+
+CPU construction uses SHA256(UTF8("2021|"+fullID)), then ID, first64 population and first24 pilot. First4 bounded secondary/B5/B6 scopes are predeclared. Source and independent Root/Astra review cover exact prompts, tokens, mappings, semantic rejection/coverage and complete target scoring. Full24 plan has218 bodies/872 heads/1448 head positions; forecast523.9555901013214sec, hard680/TERM665/KILL679/reap1/reserve5; all20 prior actual ledgers sum20889.326696651056/21600. No warmup/profile/retry or other dataset.
+
+All24 unchanged P0 strict old native1/native4/Fixed checks precede interventions. Runtime admission uses the fixed1.5max-warm seconds/L² policy for all remaining194 tasks plus final/head-target reserve. Failure or incomplete matrix produces no intervention effects. All actual wall time is charged, including loading/hash/failed/save/exit. Original BF16/noKV/no-explicit-mask/depth4 native reads only; no calibration, learned gate or training. Statistics and numerical contracts are fixed in their named documents.

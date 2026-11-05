@@ -1,0 +1,105 @@
+{
+  "summary": {
+    "logical_groups": 196,
+    "logical_candidates": 784,
+    "unique_body_forwards": 218,
+    "baseline_body_forwards": 24,
+    "intervention_body_forwards": 194,
+    "native_head_calls": 872,
+    "native_head_prediction_positions": 1448,
+    "input_tokens": 415493,
+    "squared_input_tokens": 792321969,
+    "min_input_tokens": 1863,
+    "max_input_tokens": 2056,
+    "target_token_lengths": {
+      "1": 752,
+      "3": 8,
+      "5": 6,
+      "7": 8,
+      "8": 2,
+      "6": 4,
+      "4": 2,
+      "11": 2
+    },
+    "groups_by_condition": {
+      "P0": 24,
+      "P1": 24,
+      "P2": 24,
+      "P3": 24,
+      "Q_placeholder": 24,
+      "N_original": 24,
+      "N_placeholder": 24,
+      "Q_matched": 4,
+      "N_matched": 4,
+      "B5_L_full": 4,
+      "B5_F_letter": 4,
+      "B5_F_full": 4,
+      "B6_lookup": 4,
+      "B6_copy": 4
+    },
+    "secondary_eligible": 4,
+    "secondary_scope_not_attempted": 20,
+    "pilot_nchoices": {
+      "4": 24
+    },
+    "raw_all_heads_BF16_upper_bytes": 142344192,
+    "raw_native_states_BF16_upper_bytes": 5931008
+  },
+  "cost": {
+    "policy": "predeclared A7warm max(seconds/L\u00b2)*1.5shared-load safety*sum L\u00b2 +startup/cold60 +final60 +head-target reserve20+0.02sec per additional native head prediction position",
+    "A_warm_records": [
+      {
+        "purpose": "parity_native4",
+        "depth": 4,
+        "length": 1966,
+        "seconds": 1.1705243801698089
+      },
+      {
+        "purpose": "parity_native4",
+        "depth": 4,
+        "length": 1966,
+        "seconds": 1.2091597649268806
+      },
+      {
+        "purpose": "parity_native4",
+        "depth": 4,
+        "length": 1966,
+        "seconds": 1.2035620440728962
+      },
+      {
+        "purpose": "parity_native4",
+        "depth": 4,
+        "length": 1880,
+        "seconds": 1.1075769709423184
+      },
+      {
+        "purpose": "parity_native4",
+        "depth": 4,
+        "length": 1880,
+        "seconds": 1.081041385885328
+      },
+      {
+        "purpose": "parity_native4",
+        "depth": 4,
+        "length": 1880,
+        "seconds": 0.6529530230909586
+      },
+      {
+        "purpose": "parity_native4",
+        "depth": 4,
+        "length": 1880,
+        "seconds": 0.6450254390947521
+      }
+    ],
+    "A_warm_timing_sha256": "f07cd86e87a39c1569c6f2956ce003f9bc72ec6b2080ccbbc651010f7094e0ff",
+    "rate_seconds_per_L2": 3.133705780167266e-07,
+    "body_forecast_seconds": 372.4355901013214,
+    "startup_cold_reserve_seconds": 60.0,
+    "final_hash_IO_reserve_seconds": 60.0,
+    "head_target_reserve_seconds": 31.52,
+    "forecast_total_seconds": 523.9555901013214,
+    "proposed_hard_seconds": 680,
+    "remaining_global_seconds": 710.6733033489436,
+    "admission_not_a_physical_time_guarantee": true
+  }
+}

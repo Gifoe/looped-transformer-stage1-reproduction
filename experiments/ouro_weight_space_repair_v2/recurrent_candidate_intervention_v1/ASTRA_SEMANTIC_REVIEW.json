@@ -1,0 +1,94 @@
+{
+  "status": "independent_Astra_semantic_review_complete_no_model_outcomes_read",
+  "constructor_sha256": "6a172131e25fdcda93398e51a01047ddd78d8a1668dccc95af4addd178a8ca75",
+  "reviewer": "Astra",
+  "source_question_choice_gold_exact_rows": 24,
+  "wrong_slot_excludes_gold_rows": 24,
+  "secondary_approved": [
+    {
+      "id": "arc_challenge/train/Mercury_402211",
+      "rank": 0,
+      "fixed_wrong_index": 2,
+      "approved_text": "18",
+      "semantic_decision": "approved_before_inference",
+      "reason": "The specified mass number is 19+20=39; 18 is a distinct incorrect numerical answer. Correct choice 39 remains unchanged.",
+      "correct_option_unchanged": true,
+      "duplicate_existing_option": false,
+      "all_authored_candidates_semantically_incorrect": true,
+      "numeric_length_rejections": []
+    },
+    {
+      "id": "arc_challenge/train/Mercury_7168665",
+      "rank": 1,
+      "fixed_wrong_index": 0,
+      "approved_text": "increase in the population size",
+      "semantic_decision": "approved_before_inference",
+      "reason": "After severe loss of food species, increased population size is not the most likely outcome under the stated school-science scenario. Increased competition/aggression remains the intended correct answer. This is a comparative ecological judgment, not a universal causal law.",
+      "correct_option_unchanged": true,
+      "duplicate_existing_option": false,
+      "all_authored_candidates_semantically_incorrect": true,
+      "numeric_length_rejections": []
+    },
+    {
+      "id": "arc_challenge/train/MEA_2010_8_20-v1",
+      "rank": 2,
+      "fixed_wrong_index": 0,
+      "approved_text": "The Moon moves toward Earth.",
+      "semantic_decision": "approved_before_inference",
+      "reason": "Moving toward Earth contradicts the stated moving-away scenario. The intended decrease in tide magnitude remains unchanged. The replacement is conspicuously contradictory and is not difficulty-matched.",
+      "correct_option_unchanged": true,
+      "duplicate_existing_option": false,
+      "all_authored_candidates_semantically_incorrect": true,
+      "numeric_length_rejections": []
+    },
+    {
+      "id": "arc_challenge/train/Mercury_SC_415737",
+      "rank": 3,
+      "fixed_wrong_index": 3,
+      "approved_text": "below minus 28\u00b0C",
+      "semantic_decision": "approved_before_inference",
+      "reason": "Mixing water at 28 degrees C with melting ice at 0 degrees C cannot produce water below minus 28 degrees C in the stated situation. The original between-0-and-28 answer remains unchanged. The replacement is conspicuously physically impossible, not difficulty-matched.",
+      "correct_option_unchanged": true,
+      "duplicate_existing_option": false,
+      "all_authored_candidates_semantically_incorrect": true,
+      "numeric_length_rejections": [
+        "less than -1\u00b0C",
+        "less than minus 28\u00b0C"
+      ]
+    }
+  ],
+  "semantic_rejection_count": 0,
+  "token_length_rejection_count": 2,
+  "scope_excluded_not_semantically_rejected_ids": [
+    "arc_challenge/train/Mercury_7191153",
+    "arc_challenge/train/MCAS_2008_8_5719",
+    "arc_challenge/train/Mercury_7201688",
+    "arc_challenge/train/Mercury_7027020",
+    "arc_challenge/train/NCEOGA2013_8_50",
+    "arc_challenge/train/Mercury_SC_416523",
+    "arc_challenge/train/NCEOGA_2013_5_25",
+    "arc_challenge/train/Mercury_7189070",
+    "arc_challenge/train/CSZ_2004_5_CSZ20414",
+    "arc_challenge/train/Mercury_7016835",
+    "arc_challenge/train/Mercury_7207165",
+    "arc_challenge/train/VASoL_2007_5_39",
+    "arc_challenge/train/Mercury_SC_407137",
+    "arc_challenge/train/Mercury_7171920",
+    "arc_challenge/train/ACTAAP_2007_7_4",
+    "arc_challenge/train/Mercury_SC_405728",
+    "arc_challenge/train/Mercury_SC_416141",
+    "arc_challenge/train/LEAP_2009_4_10293",
+    "arc_challenge/train/Mercury_7210613",
+    "arc_challenge/train/MCAS_2011_5_17664"
+  ],
+  "primary_placeholder": {
+    "text": "Not a valid answer",
+    "scope": "Invalid meta-answer placeholder for every fixed wrong slot; preserves original correct option but changes lexical/format cues; not a semantic-isolation control."
+  },
+  "limits": [
+    "Secondary first4 is a bounded budget submatrix, pending explicit Root scope acceptance; it is not matched-length coverage of all24.",
+    "Token lengths are constructor-reported and separate from semantic approval. Whole-prompt same length alone does not prove suffix token IDs/positions unchanged; require task-audit check before shape-matched claim.",
+    "Semantic review is independent model-assisted reasoning, not a human participant annotation study or empirical guarantee.",
+    "No current model predictions or intervention outcomes were read. No replacement was chosen from outcome evidence."
+  ]
+}

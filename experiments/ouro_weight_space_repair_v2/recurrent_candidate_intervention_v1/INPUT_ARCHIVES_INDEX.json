@@ -1,0 +1,40 @@
+{
+  "status": "lossless_pre_effect_inputs",
+  "archives": [
+    {
+      "archive": "INFERENCE_INPUTS.tar.xz",
+      "bytes": 63784,
+      "sha256": "0280a33e94ae94e576a837d035abe9d26eb6d2bc5eabb372e8ae12f01aefab8c",
+      "members": [
+        {
+          "path": "INFERENCE_TASK_PLAN.json",
+          "bytes": 1950325,
+          "sha256": "9871054dff175fc3307557581beb37293f1e400a52ec327b238b787836521f60"
+        },
+        {
+          "path": "INFERENCE_REQUEST_TEXTS.json",
+          "bytes": 6478788,
+          "sha256": "dad646eb5f11f393bc96ba5e00ee2eaa52f056416b014264548961c96021240d"
+        }
+      ]
+    },
+    {
+      "archive": "CONSTRUCTION_AUDIT.tar.xz",
+      "bytes": 113724,
+      "sha256": "18e0002ef6fd7f2f1568bd230e2df76e99b2fd30c28e57ed745d5d52e6aee3da",
+      "members": [
+        {
+          "path": "CONSTRUCTOR_WITH_LABELS.json",
+          "bytes": 1938666,
+          "sha256": "fb15d70ed5f2d03e3850821ed8ac42167281e8f59c5ba7a401bcef6a8210941f"
+        },
+        {
+          "path": "prompt_and_target_audit.json",
+          "bytes": 643388,
+          "sha256": "4fbf9666667a9ef1593285b6bc25184e35168fe43a1e5c447addd4f7a2d66c3f"
+        }
+      ]
+    }
+  ],
+  "recovery": "Verify archive SHA and listed regular safe member paths, extract into this B directory, verify every member SHA. Label sidecar is separate; worker never deserializes it."
+}
