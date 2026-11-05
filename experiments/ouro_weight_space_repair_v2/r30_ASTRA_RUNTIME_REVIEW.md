@@ -1,0 +1,17 @@
+# R30 Astra CPU稿静态审查
+
+结论：**conditional pass；未发现阻断正确性/完整性错误。** 审查不授权GPU，700秒仍需Root明确冻结预算、公示readback及START。本文未修改任何旧文件，也未运行模型或真实heads。
+
+绑定draft SHA256 `22d4636651ef65234640f7a4b3c26ac0586dead216eb58f8cc07a60e0696f5e5`。本次核对71个本地source/input哈希一致；9个models路径只在server存在，不能称本地独立验证通过，须由server冻结preflight和运行gate继续核验。首次全路径脚本因这些文件缺失报错，其末尾无条件PASS文本无效；随后的显式存在检查已正确划清范围。
+
+重点审读worker、clock_hooks、native_replay、cache_abi、protocol、analyze、common、supervise及CPU receipts。没有复跑CPU合成测试；现有收据报告ABI、sourceclock、stream/preflight通过，stream的一ULP LP差及R6差异负例被拒绝。
+
+- native第一遍3597heads在任何CF body之前完成，11类baseline逐targetLP/sum/score/late/matchedR6严格0差，并核全部9个已保存代表fullV。第二遍用于流式计算，不假装从scalar恢复fullV；总7194 cache heads，785 bodies产生787 heads，总7981。未来fullV未持久缓存。
+- 新CF identity明确不同于旧空间CF。每layer只捕获自身loop1同143位置，loop4同位置覆盖；中途不改变source时钟、不跨prefix复用。identity写回当前loop4自身值，与真正clock_CF区分。scorer重新构造、configure invalidate与finally清理符合合同。
+- 所有778CF前三loop lastpos与native cache严格比较并保存可重审raw；首2代表有完整sequence/capture-only/identity/重复及source donor检查，另1个freshQ。没有把lastpos覆盖宣称为全任务所有token覆盖。
+- 全部native标量第二遍再次重建验证；数学沿已冻结R28 math_v2，target仅在fullV之后gather，主方法、matched_scale、generic/null/LOO门槛未变。analyzer完整账本/参数/任务/raw/schema/scalar检查之后才调用旧analyze_effects；unmatched不解封效果。
+- 17ledger继承20194.085665407125；hard700/soft685/kill699/reserve5不扩大总cap。两遍head及parity本身占时间，40秒余量不能被视为实测保证；不构成正确性阻断，但不能在运行中扩时限或遇timeout补跑。
+
+非阻断证据边界：capture-only与R28完整旧sequence/CF source donor相等在worker中真实断言；当前analyzer对部分代表依赖这些断言和hash绑定，而不是把每个跨文件代表关系重新实现一遍。因此发布时应区分worker验收与独立Root raw重算，不宣称已经有双份全栈独立实现。Root可按已有原始证据独立复核，不需新增模型调用。
+
+冻结前仅保留原条件：最终所有server-only依赖哈希、CPU receipts与当前源码一致，预算provisional改为明确审定值，新锁公示readback，Root单独START。若源码变更须刷新相应receipt/draft；不得拿本审查覆盖未读的新版本。
