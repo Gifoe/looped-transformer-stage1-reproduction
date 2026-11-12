@@ -1,0 +1,25 @@
+{
+  "run_id": "run-20261107T053919Z-6d01138e",
+  "pid": 231303,
+  "status": "FAILED",
+  "stage": "collect_test",
+  "updated_utc": "2026-11-08T17:17:49.699988+00:00",
+  "expected_commit": "33ff0322934bebf423c9f3d087f9c71b3ecaa982",
+  "note": "flock is not exclusive GPU ownership",
+  "resources": {
+    "gpu": {
+      "total_mib": 49140,
+      "used_mib": 486,
+      "free_mib": 48076,
+      "util_percent": 0,
+      "compute_pids": []
+    },
+    "disk_free_bytes": 253110202368,
+    "memory": {
+      "MemTotal": 101023842304,
+      "MemAvailable": 95822819328
+    }
+  },
+  "error": "RuntimeError('external GPU process or storage/memory reserve conflict')",
+  "traceback": "Traceback (most recent call last):\n  File \"/home/luansiyu/loop-latent/repo/experiments/ouro_latent_state_mechanism_v1/ouro_watch.py\", line 181, in run\n    stage('collect_'+split,[R/'cohort_runner.py','--split',split,'--gate',gate_dir/f'GPU_GATE_{split}.json','--out',shard],True)\n  File \"/home/luansiyu/loop-latent/repo/experiments/ouro_latent_state_mechanism_v1/ouro_watch.py\", line 156, in stage\n    if conflict or snap['disk_free_bytes']<20*GIB or snap['memory']['MemAvailable']<4*GIB:raise RuntimeError('external GPU process or storage/memory reserve conflict')\n                                                                                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nRuntimeError: external GPU process or storage/memory reserve conflict\n"
+}

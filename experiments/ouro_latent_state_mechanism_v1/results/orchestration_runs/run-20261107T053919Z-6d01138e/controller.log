@@ -1,0 +1,12 @@
+Traceback (most recent call last):
+  File "/home/luansiyu/loop-latent/repo/experiments/ouro_latent_state_mechanism_v1/ouro_watch.py", line 204, in <module>
+    if __name__=='__main__':main()
+                            ^^^^^^
+  File "/home/luansiyu/loop-latent/repo/experiments/ouro_latent_state_mechanism_v1/ouro_watch.py", line 202, in main
+    run(directory,a.expected_commit)
+  File "/home/luansiyu/loop-latent/repo/experiments/ouro_latent_state_mechanism_v1/ouro_watch.py", line 181, in run
+    stage('collect_'+split,[R/'cohort_runner.py','--split',split,'--gate',gate_dir/f'GPU_GATE_{split}.json','--out',shard],True)
+  File "/home/luansiyu/loop-latent/repo/experiments/ouro_latent_state_mechanism_v1/ouro_watch.py", line 156, in stage
+    if conflict or snap['disk_free_bytes']<20*GIB or snap['memory']['MemAvailable']<4*GIB:raise RuntimeError('external GPU process or storage/memory reserve conflict')
+                                                                                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: external GPU process or storage/memory reserve conflict

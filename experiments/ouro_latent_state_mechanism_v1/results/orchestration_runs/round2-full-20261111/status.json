@@ -1,0 +1,79 @@
+{
+  "status": "FAILED",
+  "kind": "ROUND2_FULL_INTERVENTION_NOT_MECHANISM",
+  "controller_sha256": "9756704f99a72bb2aa40cc8ca076979cbb75a8f66e45af35f0760e6c59d9350f",
+  "stage": "intervention_train",
+  "resources": {
+    "gpu": {
+      "total_mib": 49140,
+      "used_mib": 350,
+      "free_mib": 48212,
+      "util_percent": 0,
+      "compute_pids": []
+    },
+    "disk_free_bytes": 135345491968,
+    "memory": {
+      "MemTotal": 101023838208,
+      "MemAvailable": 97234661376
+    }
+  },
+  "required_bytes": 25576942030,
+  "probe_sha256": "c23966e801efdca4edf8cb61a72f212fac4b2a179f88e68f38a3cbac29c9cf9c",
+  "probe_replay_sha256": "f3da54231aae782b77320750a649adab34d001238119ce27b14ef59b293d7b2b",
+  "commit": "1d1f8c0fcaa7aadf5aece910b159f2f920ebb8f0",
+  "second_preflight": {
+    "gpu": {
+      "total_mib": 49140,
+      "used_mib": 350,
+      "free_mib": 48212,
+      "util_percent": 0,
+      "compute_pids": []
+    },
+    "disk_free_bytes": 135345483776,
+    "memory": {
+      "MemTotal": 101023838208,
+      "MemAvailable": 97260580864
+    }
+  },
+  "stage_preflight": {
+    "gpu": {
+      "total_mib": 49140,
+      "used_mib": 350,
+      "free_mib": 48212,
+      "util_percent": 0,
+      "compute_pids": []
+    },
+    "disk_free_bytes": 135345483776,
+    "memory": {
+      "MemTotal": 101023838208,
+      "MemAvailable": 97242370048
+    }
+  },
+  "interruption_resources": {
+    "gpu": {
+      "total_mib": 49140,
+      "used_mib": 4933,
+      "free_mib": 43628,
+      "util_percent": 99,
+      "compute_pids": [
+        17014,
+        20859
+      ]
+    },
+    "disk_free_bytes": 87071088640,
+    "memory": {
+      "MemTotal": 101023838208,
+      "MemAvailable": 95098929152
+    }
+  },
+  "interruption_conditions": {
+    "foreign_gpu_pids": [
+      20859
+    ],
+    "disk_under_20GiB": false,
+    "ram_under_4GiB": false,
+    "timeout_12h": false
+  },
+  "error": "RuntimeError('resource or timeout interruption')",
+  "traceback": "Traceback (most recent call last):\n  File \"/home/luansiyu/loop-latent/repo/experiments/ouro_latent_state_mechanism_v1/round2_full_controller.py\", line 54, in <module>\n    directory=run/split;stage('intervention_'+split,[P.with_name('round2_intervention_runner.py'),'--split',split,'--out',directory]);receipt=json.loads((directory/'_receipt.json').read_text());assert receipt['status']=='SPLIT_COMPLETE_PENDING_COVERAGE' and receipt['questions']==receipt['expected']==expected[split]\n                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/luansiyu/loop-latent/repo/experiments/ouro_latent_state_mechanism_v1/round2_full_controller.py\", line 49, in stage\n    if foreign or any(v for k,v in flags.items() if k!='foreign_gpu_pids'):update(interruption_resources=snap,interruption_conditions=flags);raise RuntimeError('resource or timeout interruption')\n                                                                                                                                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nRuntimeError: resource or timeout interruption\n"
+}

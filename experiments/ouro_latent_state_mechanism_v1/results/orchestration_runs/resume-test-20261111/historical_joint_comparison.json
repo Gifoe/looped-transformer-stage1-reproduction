@@ -1,0 +1,6181 @@
+{
+  "status": "DESCRIPTIVE_COMPARISON_NOT_PARITY",
+  "matched_questions": 1172,
+  "mismatch_questions": 36,
+  "by_K": {
+    "1": {
+      "old_wrong|new_wrong": 6,
+      "old_wrong|new_correct": 7,
+      "old_correct|new_wrong": 15
+    },
+    "4": {
+      "old_wrong|new_correct": 3,
+      "old_wrong|new_wrong": 2,
+      "old_correct|new_wrong": 4
+    }
+  },
+  "historical_archive_sha256": "b172b56ccaad87ba49344fdd20b9a77b6293a0dd2b3e10fc9571d97ab260a4ac",
+  "historical_raw_sha256": "93845afb6a449590e465dac8ed8430e22ee618e64559f19a8fec1ff805eff9da",
+  "historical_observation_sha256": "7eddd36cf1823d9a01c66072ef5b6fc7a416292980ce2d044c70abdee804edd9",
+  "new_behavior_sha256": "73ebd816d931556da08a74e22c8c74a28eafb8ac75a34160cd17b3a0a909b366",
+  "note": "Historical raw records contain text request hashes and continuation lengths, not full token IDs; equality of token sequences is not established solely by matching raw request hashes. Do not interpret causal mechanism.",
+  "records": [
+    {
+      "id": "Mercury_SC_408324",
+      "mismatched_K": [
+        1
+      ],
+      "gold": 3,
+      "labels": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "historical_joint": {
+        "1": {
+          "scores": [
+            -1.0203309059143066,
+            -1.0203309059143066,
+            -2.0828309059143066,
+            -2.1453309059143066
+          ],
+          "prediction": 0,
+          "gold": 3,
+          "correct": false,
+          "rank": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "gold_rank": 4,
+          "strongest_wrong": 0,
+          "gold_margin": -1.125,
+          "top_tie": true,
+          "any_tie": true,
+          "strict_pair_count": 5,
+          "strict_inversions": 3,
+          "strict_inversion_fraction": 0.6,
+          "pairs_with_exact_tie": 1,
+          "near_tie_pairs_at_either_depth_1e-6": 0
+        },
+        "4": {
+          "scores": [
+            -3.425074815750122,
+            -4.800075054168701,
+            -4.925075054168701,
+            -0.05007482320070267
+          ],
+          "prediction": 3,
+          "gold": 3,
+          "correct": true,
+          "rank": [
+            3,
+            0,
+            1,
+            2
+          ],
+          "gold_rank": 1,
+          "strongest_wrong": 0,
+          "gold_margin": 3.3749999925494194,
+          "top_tie": false,
+          "any_tie": false
+        }
+      },
+      "new_predictions": [
+        1,
+        3,
+        3,
+        3
+      ],
+      "new_scores_by_candidate": [
+        [
+          -1.050130844116211,
+          -2.2570135593414307,
+          -3.9091873168945312,
+          -3.427135467529297
+        ],
+        [
+          -0.9876309037208557,
+          -4.38201379776001,
+          -5.159187316894531,
+          -4.677135467529297
+        ],
+        [
+          -2.050130844116211,
+          -5.13201379776001,
+          -4.909187316894531,
+          -4.802135467529297
+        ],
+        [
+          -2.175130844116211,
+          -0.13201364874839783,
+          -0.034187257289886475,
+          -0.05213543400168419
+        ]
+      ],
+      "request_hashes_match_historical": true,
+      "historical_request_hashes": [
+        "140b47312d34c244ee0798ca0379d9c1be0b96986b4457055c3ad99a37e575a9",
+        "4cadf24bee531a06ddeed38dc16889757b76170628ece0d253413166394025de",
+        "42aca8481d9bcaa8e5e9e1a3869799f9c35093eaf4c6f17d51ca97f87aef775e",
+        "fd7459b2e09c28d2400012cbcc7b2ea50395b6cbf00b0ae1063ec89316cee6e6"
+      ],
+      "new_request_hashes": [
+        "140b47312d34c244ee0798ca0379d9c1be0b96986b4457055c3ad99a37e575a9",
+        "4cadf24bee531a06ddeed38dc16889757b76170628ece0d253413166394025de",
+        "42aca8481d9bcaa8e5e9e1a3869799f9c35093eaf4c6f17d51ca97f87aef775e",
+        "fd7459b2e09c28d2400012cbcc7b2ea50395b6cbf00b0ae1063ec89316cee6e6"
+      ],
+      "new_prompt_sha256": "91329d96f8062c07ecef82abcee69a65ebc90b1deb6fc36df9f2aace8c70d4df",
+      "new_input_ids_sha256": [
+        "c07ebffb896f2b965cfa77a4760d7818cf581727a2888840f389b1718e634275",
+        "c07ebffb896f2b965cfa77a4760d7818cf581727a2888840f389b1718e634275",
+        "c07ebffb896f2b965cfa77a4760d7818cf581727a2888840f389b1718e634275",
+        "c07ebffb896f2b965cfa77a4760d7818cf581727a2888840f389b1718e634275"
+      ],
+      "new_target_ids": [
+        [
+          330
+        ],
+        [
+          389
+        ],
+        [
+          340
+        ],
+        [
+          422
+        ]
+      ],
+      "new_predecessor_positions": [
+        [
+          1901
+        ],
+        [
+          1901
+        ],
+        [
+          1901
+        ],
+        [
+          1901
+        ]
+      ],
+      "historical_target_token_counts": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "historical_token_ids_available": false,
+      "new_runtime": {
+        "attention": "sdpa",
+        "cuda": "12.4",
+        "dtype": "bfloat16",
+        "gpu": "NVIDIA RTX A6000",
+        "torch": "2.5.1+cu124",
+        "use_cache": false
+      }
+    },
+    {
+      "id": "Mercury_416645",
+      "mismatched_K": [
+        1
+      ],
+      "gold": 3,
+      "labels": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "historical_joint": {
+        "1": {
+          "scores": [
+            -1.3239201307296753,
+            -1.5739201307296753,
+            -1.2614201307296753,
+            -1.5114201307296753
+          ],
+          "prediction": 2,
+          "gold": 3,
+          "correct": false,
+          "rank": [
+            2,
+            0,
+            3,
+            1
+          ],
+          "gold_rank": 3,
+          "strongest_wrong": 2,
+          "gold_margin": -0.25,
+          "top_tie": false,
+          "any_tie": false,
+          "strict_pair_count": 6,
+          "strict_inversions": 2,
+          "strict_inversion_fraction": 0.3333333333333333,
+          "pairs_with_exact_tie": 0,
+          "near_tie_pairs_at_either_depth_1e-6": 0
+        },
+        "4": {
+          "scores": [
+            -1.577912449836731,
+            -1.952912449836731,
+            -1.327912449836731,
+            -0.952912449836731
+          ],
+          "prediction": 3,
+          "gold": 3,
+          "correct": true,
+          "rank": [
+            3,
+            2,
+            0,
+            1
+          ],
+          "gold_rank": 1,
+          "strongest_wrong": 2,
+          "gold_margin": 0.375,
+          "top_tie": false,
+          "any_tie": false
+        }
+      },
+      "new_predictions": [
+        0,
+        3,
+        2,
+        3
+      ],
+      "new_scores_by_candidate": [
+        [
+          -1.2641189098358154,
+          -1.3257551193237305,
+          -1.7622696161270142,
+          -1.6127369403839111
+        ],
+        [
+          -1.6391189098358154,
+          -2.2007551193237305,
+          -1.5122696161270142,
+          -1.9877369403839111
+        ],
+        [
+          -1.2641189098358154,
+          -1.7007551193237305,
+          -0.8872696161270142,
+          -1.2377369403839111
+        ],
+        [
+          -1.5141189098358154,
+          -0.8257551789283752,
+          -1.6372696161270142,
+          -0.9877369999885559
+        ]
+      ],
+      "request_hashes_match_historical": true,
+      "historical_request_hashes": [
+        "55cbafd2333f598bb2f2e9c2a893c8f79ac1e01f39796b960a4171bc9a6efa2f",
+        "efa91aa6d9661a51902e84b1daa72a1805fe6a823a992439556a4c9e3feda062",
+        "5449e73b76e173eefe0657cf060ca41621874cdd2378d28e9c1ba1ca09da48c6",
+        "fe69f68bafb7a35143af839ae28126fa3828897ac59042e08a37680270e475c1"
+      ],
+      "new_request_hashes": [
+        "55cbafd2333f598bb2f2e9c2a893c8f79ac1e01f39796b960a4171bc9a6efa2f",
+        "efa91aa6d9661a51902e84b1daa72a1805fe6a823a992439556a4c9e3feda062",
+        "5449e73b76e173eefe0657cf060ca41621874cdd2378d28e9c1ba1ca09da48c6",
+        "fe69f68bafb7a35143af839ae28126fa3828897ac59042e08a37680270e475c1"
+      ],
+      "new_prompt_sha256": "3363f54343f8b6fabd6338cb3eedebb111ff58528ccf51b93ac7c9d2a71c7b36",
+      "new_input_ids_sha256": [
+        "03ac9433d5ef5e28354ff834fdeac313a991b6ffb6113a4b95409ec8ce677c6d",
+        "03ac9433d5ef5e28354ff834fdeac313a991b6ffb6113a4b95409ec8ce677c6d",
+        "03ac9433d5ef5e28354ff834fdeac313a991b6ffb6113a4b95409ec8ce677c6d",
+        "03ac9433d5ef5e28354ff834fdeac313a991b6ffb6113a4b95409ec8ce677c6d"
+      ],
+      "new_target_ids": [
+        [
+          330
+        ],
+        [
+          389
+        ],
+        [
+          340
+        ],
+        [
+          422
+        ]
+      ],
+      "new_predecessor_positions": [
+        [
+          1954
+        ],
+        [
+          1954
+        ],
+        [
+          1954
+        ],
+        [
+          1954
+        ]
+      ],
+      "historical_target_token_counts": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "historical_token_ids_available": false,
+      "new_runtime": {
+        "attention": "sdpa",
+        "cuda": "12.4",
+        "dtype": "bfloat16",
+        "gpu": "NVIDIA RTX A6000",
+        "torch": "2.5.1+cu124",
+        "use_cache": false
+      }
+    },
+    {
+      "id": "TIMSS_2003_4_pg7",
+      "mismatched_K": [
+        1
+      ],
+      "gold": 3,
+      "labels": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "historical_joint": {
+        "1": {
+          "scores": [
+            -1.6648502349853516,
+            -1.4148502349853516,
+            -1.3523502349853516,
+            -1.3523502349853516
+          ],
+          "prediction": 2,
+          "gold": 3,
+          "correct": false,
+          "rank": [
+            2,
+            3,
+            1,
+            0
+          ],
+          "gold_rank": 2,
+          "strongest_wrong": 2,
+          "gold_margin": 0.0,
+          "top_tie": true,
+          "any_tie": true,
+          "strict_pair_count": 5,
+          "strict_inversions": 3,
+          "strict_inversion_fraction": 0.6,
+          "pairs_with_exact_tie": 1,
+          "near_tie_pairs_at_either_depth_1e-6": 0
+        },
+        "4": {
+          "scores": [
+            -3.5721163749694824,
+            -3.6971163749694824,
+            -4.197116374969482,
+            -0.07211630791425705
+          ],
+          "prediction": 3,
+          "gold": 3,
+          "correct": true,
+          "rank": [
+            3,
+            0,
+            1,
+            2
+          ],
+          "gold_rank": 1,
+          "strongest_wrong": 0,
+          "gold_margin": 3.5000000670552254,
+          "top_tie": false,
+          "any_tie": false
+        }
+      },
+      "new_predictions": [
+        3,
+        3,
+        3,
+        3
+      ],
+      "new_scores_by_candidate": [
+        [
+          -1.6489737033843994,
+          -1.820446252822876,
+          -3.8148255348205566,
+          -3.3319380283355713
+        ],
+        [
+          -1.3989737033843994,
+          -1.945446252822876,
+          -3.6898255348205566,
+          -3.7069380283355713
+        ],
+        [
+          -1.3989737033843994,
+          -2.070446252822876,
+          -4.314825534820557,
+          -4.081937789916992
+        ],
+        [
+          -1.3364737033843994,
+          -0.570446252822876,
+          -0.06482552736997604,
+          -0.08193791657686234
+        ]
+      ],
+      "request_hashes_match_historical": true,
+      "historical_request_hashes": [
+        "2400f251be2c215fcfc23a2699c7d713ad5fb06b925a39d2f1134655c9cc5c15",
+        "69ad5c364fde9f7a06d279cce3cfeed8fca287cbd58c707be1df6fd7bff4d213",
+        "b4fdcea15fddb5552d4e127066c6513c2b5995897b9c514c5089527938bcce56",
+        "dcd0e5c6e896b0cf47b5a8ac727eb78bda185157f5f8f9c2494641be5e62e73a"
+      ],
+      "new_request_hashes": [
+        "2400f251be2c215fcfc23a2699c7d713ad5fb06b925a39d2f1134655c9cc5c15",
+        "69ad5c364fde9f7a06d279cce3cfeed8fca287cbd58c707be1df6fd7bff4d213",
+        "b4fdcea15fddb5552d4e127066c6513c2b5995897b9c514c5089527938bcce56",
+        "dcd0e5c6e896b0cf47b5a8ac727eb78bda185157f5f8f9c2494641be5e62e73a"
+      ],
+      "new_prompt_sha256": "46960423cadc1198e4224a206dcf575926fefbb88ce59c26a4855e84d9b45cee",
+      "new_input_ids_sha256": [
+        "7289678f27f2932b22ff00656a2d461ff269889e653d567c64524f6082f85b74",
+        "7289678f27f2932b22ff00656a2d461ff269889e653d567c64524f6082f85b74",
+        "7289678f27f2932b22ff00656a2d461ff269889e653d567c64524f6082f85b74",
+        "7289678f27f2932b22ff00656a2d461ff269889e653d567c64524f6082f85b74"
+      ],
+      "new_target_ids": [
+        [
+          330
+        ],
+        [
+          389
+        ],
+        [
+          340
+        ],
+        [
+          422
+        ]
+      ],
+      "new_predecessor_positions": [
+        [
+          1882
+        ],
+        [
+          1882
+        ],
+        [
+          1882
+        ],
+        [
+          1882
+        ]
+      ],
+      "historical_target_token_counts": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "historical_token_ids_available": false,
+      "new_runtime": {
+        "attention": "sdpa",
+        "cuda": "12.4",
+        "dtype": "bfloat16",
+        "gpu": "NVIDIA RTX A6000",
+        "torch": "2.5.1+cu124",
+        "use_cache": false
+      }
+    },
+    {
+      "id": "Mercury_7222793",
+      "mismatched_K": [
+        1
+      ],
+      "gold": 1,
+      "labels": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "historical_joint": {
+        "1": {
+          "scores": [
+            -1.2839733362197876,
+            -1.2839733362197876,
+            -1.7214733362197876,
+            -1.4089733362197876
+          ],
+          "prediction": 0,
+          "gold": 1,
+          "correct": false,
+          "rank": [
+            0,
+            1,
+            3,
+            2
+          ],
+          "gold_rank": 2,
+          "strongest_wrong": 0,
+          "gold_margin": 0.0,
+          "top_tie": true,
+          "any_tie": true,
+          "strict_pair_count": 5,
+          "strict_inversions": 1,
+          "strict_inversion_fraction": 0.2,
+          "pairs_with_exact_tie": 1,
+          "near_tie_pairs_at_either_depth_1e-6": 0
+        },
+        "4": {
+          "scores": [
+            -4.283535480499268,
+            -0.033535685390233994,
+            -4.408535480499268,
+            -5.033535480499268
+          ],
+          "prediction": 1,
+          "gold": 1,
+          "correct": true,
+          "rank": [
+            1,
+            0,
+            2,
+            3
+          ],
+          "gold_rank": 1,
+          "strongest_wrong": 0,
+          "gold_margin": 4.249999795109034,
+          "top_tie": false,
+          "any_tie": false
+        }
+      },
+      "new_predictions": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "new_scores_by_candidate": [
+        [
+          -1.312180995941162,
+          -4.277493953704834,
+          -4.158120632171631,
+          -4.528234481811523
+        ],
+        [
+          -1.249680995941162,
+          -0.02749374508857727,
+          -0.03312048688530922,
+          -0.028234442695975304
+        ],
+        [
+          -1.687180995941162,
+          -4.527493953704834,
+          -4.533120632171631,
+          -4.528234481811523
+        ],
+        [
+          -1.437180995941162,
+          -6.152493953704834,
+          -5.158120632171631,
+          -5.153234481811523
+        ]
+      ],
+      "request_hashes_match_historical": true,
+      "historical_request_hashes": [
+        "d35e4432d432b5cf039d0a6d104c186a04fcac0cea866a318833acc6613fbd8f",
+        "f423488bce26268b38db1a5b8388c9b7861d8dc109e44e1f1b349058fb52cf08",
+        "2a4bc538ae236359c907b5acae2e30bede8091b10ca4f5ba81c89c06cc03b306",
+        "01ea5b8fcd8dbd4b5fa0592d831669f09a2cf728eb834b60e26d20acef3137a7"
+      ],
+      "new_request_hashes": [
+        "d35e4432d432b5cf039d0a6d104c186a04fcac0cea866a318833acc6613fbd8f",
+        "f423488bce26268b38db1a5b8388c9b7861d8dc109e44e1f1b349058fb52cf08",
+        "2a4bc538ae236359c907b5acae2e30bede8091b10ca4f5ba81c89c06cc03b306",
+        "01ea5b8fcd8dbd4b5fa0592d831669f09a2cf728eb834b60e26d20acef3137a7"
+      ],
+      "new_prompt_sha256": "cad1c98c262957e447c6f3a6d4d3264dc1f63fad2bac34b648309a47b0cc803e",
+      "new_input_ids_sha256": [
+        "d748678d7ad34a1bfea72c20367b73ed87557e9db09bcc0d13ac36098a0ff7e9",
+        "d748678d7ad34a1bfea72c20367b73ed87557e9db09bcc0d13ac36098a0ff7e9",
+        "d748678d7ad34a1bfea72c20367b73ed87557e9db09bcc0d13ac36098a0ff7e9",
+        "d748678d7ad34a1bfea72c20367b73ed87557e9db09bcc0d13ac36098a0ff7e9"
+      ],
+      "new_target_ids": [
+        [
+          330
+        ],
+        [
+          389
+        ],
+        [
+          340
+        ],
+        [
+          422
+        ]
+      ],
+      "new_predecessor_positions": [
+        [
+          1919
+        ],
+        [
+          1919
+        ],
+        [
+          1919
+        ],
+        [
+          1919
+        ]
+      ],
+      "historical_target_token_counts": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "historical_token_ids_available": false,
+      "new_runtime": {
+        "attention": "sdpa",
+        "cuda": "12.4",
+        "dtype": "bfloat16",
+        "gpu": "NVIDIA RTX A6000",
+        "torch": "2.5.1+cu124",
+        "use_cache": false
+      }
+    },
+    {
+      "id": "Mercury_7198468",
+      "mismatched_K": [
+        1
+      ],
+      "gold": 0,
+      "labels": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "historical_joint": {
+        "1": {
+          "scores": [
+            -0.9030153751373291,
+            -1.903015375137329,
+            -3.340515375137329,
+            -0.9030153751373291
+          ],
+          "prediction": 0,
+          "gold": 0,
+          "correct": true,
+          "rank": [
+            0,
+            3,
+            1,
+            2
+          ],
+          "gold_rank": 1,
+          "strongest_wrong": 3,
+          "gold_margin": 0.0,
+          "top_tie": true,
+          "any_tie": true,
+          "strict_pair_count": 5,
+          "strict_inversions": 1,
+          "strict_inversion_fraction": 0.2,
+          "pairs_with_exact_tie": 1,
+          "near_tie_pairs_at_either_depth_1e-6": 0
+        },
+        "4": {
+          "scores": [
+            -0.7061808705329895,
+            -0.9561808705329895,
+            -3.0811808109283447,
+            -2.5811808109283447
+          ],
+          "prediction": 0,
+          "gold": 0,
+          "correct": true,
+          "rank": [
+            0,
+            1,
+            3,
+            2
+          ],
+          "gold_rank": 1,
+          "strongest_wrong": 1,
+          "gold_margin": 0.25,
+          "top_tie": false,
+          "any_tie": false
+        }
+      },
+      "new_predictions": [
+        3,
+        0,
+        0,
+        0
+      ],
+      "new_scores_by_candidate": [
+        [
+          -0.9553519487380981,
+          -0.6238524913787842,
+          -0.84896320104599,
+          -0.7061806321144104
+        ],
+        [
+          -1.9553519487380981,
+          -1.4988524913787842,
+          -0.84896320104599,
+          -0.9561806321144104
+        ],
+        [
+          -3.3928518295288086,
+          -2.748852491378784,
+          -3.3489632606506348,
+          -3.0811805725097656
+        ],
+        [
+          -0.8303519487380981,
+          -1.7488524913787842,
+          -2.2239632606506348,
+          -2.5811805725097656
+        ]
+      ],
+      "request_hashes_match_historical": true,
+      "historical_request_hashes": [
+        "2dfd51ce6c9ca9782b71831d871be6a5b9a1474e520b691947a1814872fd4c81",
+        "761e8d34ddecd31c3a170607004fdda6e38e8c81e3fb7fa7eb46f03d3f1378af",
+        "f196b7d4b6f104471ed038edd6090d6b6de06fd3378cbaac5d9abe633d932f58",
+        "a283fc1ef637c325edf9e2657debc75618756f4c3477ab9f4c1a6169d4046895"
+      ],
+      "new_request_hashes": [
+        "2dfd51ce6c9ca9782b71831d871be6a5b9a1474e520b691947a1814872fd4c81",
+        "761e8d34ddecd31c3a170607004fdda6e38e8c81e3fb7fa7eb46f03d3f1378af",
+        "f196b7d4b6f104471ed038edd6090d6b6de06fd3378cbaac5d9abe633d932f58",
+        "a283fc1ef637c325edf9e2657debc75618756f4c3477ab9f4c1a6169d4046895"
+      ],
+      "new_prompt_sha256": "4df6f401eaba1062f34c3375350d7a905dc41f9c741e35ebc4b1fb9f0791533a",
+      "new_input_ids_sha256": [
+        "19a6f3000ce2f950f0766768e7b09e619a6e55d1c3b741e90f881e64fd40a650",
+        "19a6f3000ce2f950f0766768e7b09e619a6e55d1c3b741e90f881e64fd40a650",
+        "19a6f3000ce2f950f0766768e7b09e619a6e55d1c3b741e90f881e64fd40a650",
+        "19a6f3000ce2f950f0766768e7b09e619a6e55d1c3b741e90f881e64fd40a650"
+      ],
+      "new_target_ids": [
+        [
+          330
+        ],
+        [
+          389
+        ],
+        [
+          340
+        ],
+        [
+          422
+        ]
+      ],
+      "new_predecessor_positions": [
+        [
+          1942
+        ],
+        [
+          1942
+        ],
+        [
+          1942
+        ],
+        [
+          1942
+        ]
+      ],
+      "historical_target_token_counts": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "historical_token_ids_available": false,
+      "new_runtime": {
+        "attention": "sdpa",
+        "cuda": "12.4",
+        "dtype": "bfloat16",
+        "gpu": "NVIDIA RTX A6000",
+        "torch": "2.5.1+cu124",
+        "use_cache": false
+      }
+    },
+    {
+      "id": "Mercury_7128555",
+      "mismatched_K": [
+        1
+      ],
+      "gold": 1,
+      "labels": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "historical_joint": {
+        "1": {
+          "scores": [
+            -1.2433946132659912,
+            -1.3058946132659912,
+            -1.9933946132659912,
+            -1.2433946132659912
+          ],
+          "prediction": 0,
+          "gold": 1,
+          "correct": false,
+          "rank": [
+            0,
+            3,
+            1,
+            2
+          ],
+          "gold_rank": 3,
+          "strongest_wrong": 0,
+          "gold_margin": -0.0625,
+          "top_tie": true,
+          "any_tie": true,
+          "strict_pair_count": 5,
+          "strict_inversions": 2,
+          "strict_inversion_fraction": 0.4,
+          "pairs_with_exact_tie": 1,
+          "near_tie_pairs_at_either_depth_1e-6": 0
+        },
+        "4": {
+          "scores": [
+            -0.4110904932022095,
+            -1.2860904932022095,
+            -3.16109037399292,
+            -4.03609037399292
+          ],
+          "prediction": 0,
+          "gold": 1,
+          "correct": false,
+          "rank": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "gold_rank": 2,
+          "strongest_wrong": 0,
+          "gold_margin": -0.875,
+          "top_tie": false,
+          "any_tie": false
+        }
+      },
+      "new_predictions": [
+        3,
+        0,
+        0,
+        0
+      ],
+      "new_scores_by_candidate": [
+        [
+          -1.2725837230682373,
+          -0.8073210716247559,
+          -0.2155989706516266,
+          -0.45205140113830566
+        ],
+        [
+          -1.3350837230682373,
+          -1.0573210716247559,
+          -1.8405989408493042,
+          -1.2020514011383057
+        ],
+        [
+          -1.9600837230682373,
+          -2.057321071624756,
+          -3.5905990600585938,
+          -3.2020514011383057
+        ],
+        [
+          -1.2100837230682373,
+          -2.619821071624756,
+          -4.965599060058594,
+          -3.8270514011383057
+        ]
+      ],
+      "request_hashes_match_historical": true,
+      "historical_request_hashes": [
+        "15230db5cf2afcb442b22c133ce955435dd68c7cddcc839dcb4a75a21494dd38",
+        "37dcb88cd0b07f4ab14829820a7b478d85b4b117d534543869c30f28e20e41dd",
+        "d6f3370f467568243693c8656590157a05bb5213816be102fec1d717e2a60671",
+        "e06285e48484e280a4601bc3810c38a406917d3d4f972e7eda046bf690b32aec"
+      ],
+      "new_request_hashes": [
+        "15230db5cf2afcb442b22c133ce955435dd68c7cddcc839dcb4a75a21494dd38",
+        "37dcb88cd0b07f4ab14829820a7b478d85b4b117d534543869c30f28e20e41dd",
+        "d6f3370f467568243693c8656590157a05bb5213816be102fec1d717e2a60671",
+        "e06285e48484e280a4601bc3810c38a406917d3d4f972e7eda046bf690b32aec"
+      ],
+      "new_prompt_sha256": "0de824f2025b711bffb4e5cb2ed21e12dc79ef937c0ec185db546de6b2164f68",
+      "new_input_ids_sha256": [
+        "ba3726d3296ba1b20112fe95a7ad1141e666ba8d9a834ef9ecf82f3f0d684051",
+        "ba3726d3296ba1b20112fe95a7ad1141e666ba8d9a834ef9ecf82f3f0d684051",
+        "ba3726d3296ba1b20112fe95a7ad1141e666ba8d9a834ef9ecf82f3f0d684051",
+        "ba3726d3296ba1b20112fe95a7ad1141e666ba8d9a834ef9ecf82f3f0d684051"
+      ],
+      "new_target_ids": [
+        [
+          330
+        ],
+        [
+          389
+        ],
+        [
+          340
+        ],
+        [
+          422
+        ]
+      ],
+      "new_predecessor_positions": [
+        [
+          1934
+        ],
+        [
+          1934
+        ],
+        [
+          1934
+        ],
+        [
+          1934
+        ]
+      ],
+      "historical_target_token_counts": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "historical_token_ids_available": false,
+      "new_runtime": {
+        "attention": "sdpa",
+        "cuda": "12.4",
+        "dtype": "bfloat16",
+        "gpu": "NVIDIA RTX A6000",
+        "torch": "2.5.1+cu124",
+        "use_cache": false
+      }
+    },
+    {
+      "id": "Mercury_SC_407138",
+      "mismatched_K": [
+        4
+      ],
+      "gold": 0,
+      "labels": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "historical_joint": {
+        "1": {
+          "scores": [
+            -1.655755877494812,
+            -1.155755877494812,
+            -1.718255877494812,
+            -1.280755877494812
+          ],
+          "prediction": 1,
+          "gold": 0,
+          "correct": false,
+          "rank": [
+            1,
+            3,
+            0,
+            2
+          ],
+          "gold_rank": 3,
+          "strongest_wrong": 1,
+          "gold_margin": -0.5,
+          "top_tie": false,
+          "any_tie": false,
+          "strict_pair_count": 6,
+          "strict_inversions": 2,
+          "strict_inversion_fraction": 0.3333333333333333,
+          "pairs_with_exact_tie": 0,
+          "near_tie_pairs_at_either_depth_1e-6": 0
+        },
+        "4": {
+          "scores": [
+            -1.1085928678512573,
+            -0.9835928678512573,
+            -1.6085928678512573,
+            -2.358592987060547
+          ],
+          "prediction": 1,
+          "gold": 0,
+          "correct": false,
+          "rank": [
+            1,
+            0,
+            2,
+            3
+          ],
+          "gold_rank": 2,
+          "strongest_wrong": 1,
+          "gold_margin": -0.125,
+          "top_tie": false,
+          "any_tie": false
+        }
+      },
+      "new_predictions": [
+        1,
+        3,
+        1,
+        0
+      ],
+      "new_scores_by_candidate": [
+        [
+          -1.6541099548339844,
+          -1.4880573749542236,
+          -1.3362829685211182,
+          -1.0635459423065186
+        ],
+        [
+          -1.1541099548339844,
+          -1.3630573749542236,
+          -1.2112829685211182,
+          -1.0635459423065186
+        ],
+        [
+          -1.7166099548339844,
+          -1.4880573749542236,
+          -1.2112829685211182,
+          -1.5635459423065186
+        ],
+        [
+          -1.2791099548339844,
+          -1.2380573749542236,
+          -1.9612829685211182,
+          -2.3135459423065186
+        ]
+      ],
+      "request_hashes_match_historical": true,
+      "historical_request_hashes": [
+        "522d5e2aff3d93dc9cd915185838d0e2b6a28850c1445a3e1b242736d56099ee",
+        "94f2a6c99d7bb35f71165cc2437aa7cbe3282529944ac0beaafdf7464a044c8f",
+        "ffd4ad4e9d9432787ba38734cdbbb09c232f6a75ac54fa95e6eae43a4a321e25",
+        "a42a23a8845df2d20ee27c4176c4c47db151091f0b6a0c1f4361d090e3d8e560"
+      ],
+      "new_request_hashes": [
+        "522d5e2aff3d93dc9cd915185838d0e2b6a28850c1445a3e1b242736d56099ee",
+        "94f2a6c99d7bb35f71165cc2437aa7cbe3282529944ac0beaafdf7464a044c8f",
+        "ffd4ad4e9d9432787ba38734cdbbb09c232f6a75ac54fa95e6eae43a4a321e25",
+        "a42a23a8845df2d20ee27c4176c4c47db151091f0b6a0c1f4361d090e3d8e560"
+      ],
+      "new_prompt_sha256": "be248de0ba750286b9aa739b8dda5454b9cd7fa5cff2cd5d007786ec773ea7fc",
+      "new_input_ids_sha256": [
+        "64d1b229b78a7e29a07f8c0110267a24568451652bf38f5aaf89c2339c4611dc",
+        "64d1b229b78a7e29a07f8c0110267a24568451652bf38f5aaf89c2339c4611dc",
+        "64d1b229b78a7e29a07f8c0110267a24568451652bf38f5aaf89c2339c4611dc",
+        "64d1b229b78a7e29a07f8c0110267a24568451652bf38f5aaf89c2339c4611dc"
+      ],
+      "new_target_ids": [
+        [
+          330
+        ],
+        [
+          389
+        ],
+        [
+          340
+        ],
+        [
+          422
+        ]
+      ],
+      "new_predecessor_positions": [
+        [
+          1891
+        ],
+        [
+          1891
+        ],
+        [
+          1891
+        ],
+        [
+          1891
+        ]
+      ],
+      "historical_target_token_counts": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "historical_token_ids_available": false,
+      "new_runtime": {
+        "attention": "sdpa",
+        "cuda": "12.4",
+        "dtype": "bfloat16",
+        "gpu": "NVIDIA RTX A6000",
+        "torch": "2.5.1+cu124",
+        "use_cache": false
+      }
+    },
+    {
+      "id": "Mercury_402207",
+      "mismatched_K": [
+        1
+      ],
+      "gold": 1,
+      "labels": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "historical_joint": {
+        "1": {
+          "scores": [
+            -1.1956955194473267,
+            -1.1331955194473267,
+            -1.6956955194473267,
+            -1.6956955194473267
+          ],
+          "prediction": 1,
+          "gold": 1,
+          "correct": true,
+          "rank": [
+            1,
+            0,
+            2,
+            3
+          ],
+          "gold_rank": 1,
+          "strongest_wrong": 0,
+          "gold_margin": 0.0625,
+          "top_tie": false,
+          "any_tie": true,
+          "strict_pair_count": 5,
+          "strict_inversions": 1,
+          "strict_inversion_fraction": 0.2,
+          "pairs_with_exact_tie": 1,
+          "near_tie_pairs_at_either_depth_1e-6": 0
+        },
+        "4": {
+          "scores": [
+            -0.6995351910591125,
+            -1.4495351314544678,
+            -2.0745351314544678,
+            -1.9495351314544678
+          ],
+          "prediction": 0,
+          "gold": 1,
+          "correct": false,
+          "rank": [
+            0,
+            1,
+            3,
+            2
+          ],
+          "gold_rank": 2,
+          "strongest_wrong": 0,
+          "gold_margin": -0.7499999403953552,
+          "top_tie": false,
+          "any_tie": false
+        }
+      },
+      "new_predictions": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "new_scores_by_candidate": [
+        [
+          -1.1644490957260132,
+          -0.9613641500473022,
+          -0.5162168741226196,
+          -0.7139743566513062
+        ],
+        [
+          -1.1644490957260132,
+          -1.2113641500473022,
+          -2.51621675491333,
+          -1.3389743566513062
+        ],
+        [
+          -1.6644490957260132,
+          -1.9613641500473022,
+          -1.8912168741226196,
+          -2.0889744758605957
+        ],
+        [
+          -1.7269490957260132,
+          -1.7738641500473022,
+          -1.7662168741226196,
+          -2.0889744758605957
+        ]
+      ],
+      "request_hashes_match_historical": true,
+      "historical_request_hashes": [
+        "70b74c599ef01e24be8baba58ac743cdc261c73da0259c577216ec38cd0dfc1a",
+        "404b5c5a9e2199c99b78ffb5b5377a7abc206bce10b57c91c3a8fa7d86dc5e64",
+        "3d8921212a62201175ae291aaf411ae592eb4e96ad57488d53e1e4f887deb9cb",
+        "dc8e6e15783c1a8e6534ccb26b3e62f1b15c9c94da6350bacf2889e3a21e242b"
+      ],
+      "new_request_hashes": [
+        "70b74c599ef01e24be8baba58ac743cdc261c73da0259c577216ec38cd0dfc1a",
+        "404b5c5a9e2199c99b78ffb5b5377a7abc206bce10b57c91c3a8fa7d86dc5e64",
+        "3d8921212a62201175ae291aaf411ae592eb4e96ad57488d53e1e4f887deb9cb",
+        "dc8e6e15783c1a8e6534ccb26b3e62f1b15c9c94da6350bacf2889e3a21e242b"
+      ],
+      "new_prompt_sha256": "161591dc1630519edca717e24da8fe86d9ef96e9ca9bd507ac8fbcb8fa1ec402",
+      "new_input_ids_sha256": [
+        "feb5cbc0c4578a37fecbe628a5baf2fd29268f0d7675494b7009a354ce3466ca",
+        "feb5cbc0c4578a37fecbe628a5baf2fd29268f0d7675494b7009a354ce3466ca",
+        "feb5cbc0c4578a37fecbe628a5baf2fd29268f0d7675494b7009a354ce3466ca",
+        "feb5cbc0c4578a37fecbe628a5baf2fd29268f0d7675494b7009a354ce3466ca"
+      ],
+      "new_target_ids": [
+        [
+          330
+        ],
+        [
+          389
+        ],
+        [
+          340
+        ],
+        [
+          422
+        ]
+      ],
+      "new_predecessor_positions": [
+        [
+          1940
+        ],
+        [
+          1940
+        ],
+        [
+          1940
+        ],
+        [
+          1940
+        ]
+      ],
+      "historical_target_token_counts": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "historical_token_ids_available": false,
+      "new_runtime": {
+        "attention": "sdpa",
+        "cuda": "12.4",
+        "dtype": "bfloat16",
+        "gpu": "NVIDIA RTX A6000",
+        "torch": "2.5.1+cu124",
+        "use_cache": false
+      }
+    },
+    {
+      "id": "Mercury_SC_415006",
+      "mismatched_K": [
+        4
+      ],
+      "gold": 0,
+      "labels": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "historical_joint": {
+        "1": {
+          "scores": [
+            -1.9128015041351318,
+            -0.8503015637397766,
+            -1.2253015041351318,
+            -2.287801504135132
+          ],
+          "prediction": 1,
+          "gold": 0,
+          "correct": false,
+          "rank": [
+            1,
+            2,
+            0,
+            3
+          ],
+          "gold_rank": 3,
+          "strongest_wrong": 1,
+          "gold_margin": -1.0624999403953552,
+          "top_tie": false,
+          "any_tie": false,
+          "strict_pair_count": 5,
+          "strict_inversions": 0,
+          "strict_inversion_fraction": 0.0,
+          "pairs_with_exact_tie": 1,
+          "near_tie_pairs_at_either_depth_1e-6": 0
+        },
+        "4": {
+          "scores": [
+            -1.4129282236099243,
+            -1.1629282236099243,
+            -1.1629282236099243,
+            -2.0379281044006348
+          ],
+          "prediction": 1,
+          "gold": 0,
+          "correct": false,
+          "rank": [
+            1,
+            2,
+            0,
+            3
+          ],
+          "gold_rank": 3,
+          "strongest_wrong": 1,
+          "gold_margin": -0.25,
+          "top_tie": true,
+          "any_tie": true
+        }
+      },
+      "new_predictions": [
+        1,
+        0,
+        1,
+        2
+      ],
+      "new_scores_by_candidate": [
+        [
+          -1.8868014812469482,
+          -1.0174044370651245,
+          -1.25408935546875,
+          -1.3754949569702148
+        ],
+        [
+          -0.824301540851593,
+          -1.3924044370651245,
+          -1.12908935546875,
+          -1.2504949569702148
+        ],
+        [
+          -1.2618014812469482,
+          -1.6424044370651245,
+          -1.25408935546875,
+          -1.1254949569702148
+        ],
+        [
+          -2.3243014812469482,
+          -1.6424044370651245,
+          -2.25408935546875,
+          -2.000494956970215
+        ]
+      ],
+      "request_hashes_match_historical": true,
+      "historical_request_hashes": [
+        "524e295ceab03cc51c03b4d68cf95e724028355025fc3a77c91c7c573e020d75",
+        "31d7114903c3071dd3e7e97691c51bd341848bf76bd4d26355d18fff108b966c",
+        "38713a44ed689a0b444a76dc8fa65b1559b4f33e47301d858bde5deec1a510cd",
+        "3491fad827301d1496c52782330819eb97733030d54a81048dedbf44f4a18a3a"
+      ],
+      "new_request_hashes": [
+        "524e295ceab03cc51c03b4d68cf95e724028355025fc3a77c91c7c573e020d75",
+        "31d7114903c3071dd3e7e97691c51bd341848bf76bd4d26355d18fff108b966c",
+        "38713a44ed689a0b444a76dc8fa65b1559b4f33e47301d858bde5deec1a510cd",
+        "3491fad827301d1496c52782330819eb97733030d54a81048dedbf44f4a18a3a"
+      ],
+      "new_prompt_sha256": "2c564973ae0e75743867aff211eeb3e5dd549c3fb2fbcc491dd61bf5a74c8a81",
+      "new_input_ids_sha256": [
+        "4b69cd95a60da9b3c166a6e90f30bfd9caea020dae888d3d16b62d557083ef18",
+        "4b69cd95a60da9b3c166a6e90f30bfd9caea020dae888d3d16b62d557083ef18",
+        "4b69cd95a60da9b3c166a6e90f30bfd9caea020dae888d3d16b62d557083ef18",
+        "4b69cd95a60da9b3c166a6e90f30bfd9caea020dae888d3d16b62d557083ef18"
+      ],
+      "new_target_ids": [
+        [
+          330
+        ],
+        [
+          389
+        ],
+        [
+          340
+        ],
+        [
+          422
+        ]
+      ],
+      "new_predecessor_positions": [
+        [
+          1904
+        ],
+        [
+          1904
+        ],
+        [
+          1904
+        ],
+        [
+          1904
+        ]
+      ],
+      "historical_target_token_counts": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "historical_token_ids_available": false,
+      "new_runtime": {
+        "attention": "sdpa",
+        "cuda": "12.4",
+        "dtype": "bfloat16",
+        "gpu": "NVIDIA RTX A6000",
+        "torch": "2.5.1+cu124",
+        "use_cache": false
+      }
+    },
+    {
+      "id": "Mercury_7230318",
+      "mismatched_K": [
+        4
+      ],
+      "gold": 3,
+      "labels": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "historical_joint": {
+        "1": {
+          "scores": [
+            -1.0138221979141235,
+            -1.2638221979141235,
+            -2.388822078704834,
+            -1.4513221979141235
+          ],
+          "prediction": 0,
+          "gold": 3,
+          "correct": false,
+          "rank": [
+            0,
+            1,
+            3,
+            2
+          ],
+          "gold_rank": 3,
+          "strongest_wrong": 0,
+          "gold_margin": -0.4375,
+          "top_tie": false,
+          "any_tie": false,
+          "strict_pair_count": 6,
+          "strict_inversions": 2,
+          "strict_inversion_fraction": 0.3333333333333333,
+          "pairs_with_exact_tie": 0,
+          "near_tie_pairs_at_either_depth_1e-6": 0
+        },
+        "4": {
+          "scores": [
+            -0.7780598998069763,
+            -4.278059959411621,
+            -5.153059959411621,
+            -0.6530598998069763
+          ],
+          "prediction": 3,
+          "gold": 3,
+          "correct": true,
+          "rank": [
+            3,
+            0,
+            1,
+            2
+          ],
+          "gold_rank": 1,
+          "strongest_wrong": 0,
+          "gold_margin": 0.125,
+          "top_tie": false,
+          "any_tie": false
+        }
+      },
+      "new_predictions": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "new_scores_by_candidate": [
+        [
+          -0.9882956147193909,
+          -0.10619770735502243,
+          -0.4299929738044739,
+          -0.714942216873169
+        ],
+        [
+          -1.300795555114746,
+          -3.9811975955963135,
+          -3.429992914199829,
+          -4.21494197845459
+        ],
+        [
+          -2.425795555114746,
+          -4.856197834014893,
+          -4.679993152618408,
+          -5.08994197845459
+        ],
+        [
+          -1.425795555114746,
+          -2.6061975955963135,
+          -1.179992914199829,
+          -0.714942216873169
+        ]
+      ],
+      "request_hashes_match_historical": true,
+      "historical_request_hashes": [
+        "19666c53bb930bc68188d0d4bdcea705873c1c6fe1cdf2f2cb1b471f0dfa0cc4",
+        "decf7fb74fbbab5d8dcdc13de308cb0d5a07e6ec30be5ef8c01409057d6cf756",
+        "e282c20b91749ce819b7453e57df0bb764819d159bf0f305d449d3f9c448f529",
+        "45ebbe22c73137c3ae9cfe1899dc7e17a55aca17dc5c90165f31c44c31dbcd6d"
+      ],
+      "new_request_hashes": [
+        "19666c53bb930bc68188d0d4bdcea705873c1c6fe1cdf2f2cb1b471f0dfa0cc4",
+        "decf7fb74fbbab5d8dcdc13de308cb0d5a07e6ec30be5ef8c01409057d6cf756",
+        "e282c20b91749ce819b7453e57df0bb764819d159bf0f305d449d3f9c448f529",
+        "45ebbe22c73137c3ae9cfe1899dc7e17a55aca17dc5c90165f31c44c31dbcd6d"
+      ],
+      "new_prompt_sha256": "2398e299459bd7f7f181368e2379c9d139ca96bb75ff20943e393159dafa4c34",
+      "new_input_ids_sha256": [
+        "6a12d7e40edea538a47a6a7ade4bbc06003448c59dbfc5c63130b56fa8b1c492",
+        "6a12d7e40edea538a47a6a7ade4bbc06003448c59dbfc5c63130b56fa8b1c492",
+        "6a12d7e40edea538a47a6a7ade4bbc06003448c59dbfc5c63130b56fa8b1c492",
+        "6a12d7e40edea538a47a6a7ade4bbc06003448c59dbfc5c63130b56fa8b1c492"
+      ],
+      "new_target_ids": [
+        [
+          330
+        ],
+        [
+          389
+        ],
+        [
+          340
+        ],
+        [
+          422
+        ]
+      ],
+      "new_predecessor_positions": [
+        [
+          1891
+        ],
+        [
+          1891
+        ],
+        [
+          1891
+        ],
+        [
+          1891
+        ]
+      ],
+      "historical_target_token_counts": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "historical_token_ids_available": false,
+      "new_runtime": {
+        "attention": "sdpa",
+        "cuda": "12.4",
+        "dtype": "bfloat16",
+        "gpu": "NVIDIA RTX A6000",
+        "torch": "2.5.1+cu124",
+        "use_cache": false
+      }
+    },
+    {
+      "id": "Mercury_405876",
+      "mismatched_K": [
+        4
+      ],
+      "gold": 3,
+      "labels": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "historical_joint": {
+        "1": {
+          "scores": [
+            -1.5766652822494507,
+            -0.6391652822494507,
+            -1.8891652822494507,
+            -2.2641654014587402
+          ],
+          "prediction": 1,
+          "gold": 3,
+          "correct": false,
+          "rank": [
+            1,
+            0,
+            2,
+            3
+          ],
+          "gold_rank": 4,
+          "strongest_wrong": 1,
+          "gold_margin": -1.6250001192092896,
+          "top_tie": false,
+          "any_tie": false,
+          "strict_pair_count": 6,
+          "strict_inversions": 3,
+          "strict_inversion_fraction": 0.5,
+          "pairs_with_exact_tie": 0,
+          "near_tie_pairs_at_either_depth_1e-6": 0
+        },
+        "4": {
+          "scores": [
+            -3.4259490966796875,
+            -0.800948977470398,
+            -4.6759490966796875,
+            -0.675948977470398
+          ],
+          "prediction": 3,
+          "gold": 3,
+          "correct": true,
+          "rank": [
+            3,
+            1,
+            0,
+            2
+          ],
+          "gold_rank": 1,
+          "strongest_wrong": 1,
+          "gold_margin": 0.125,
+          "top_tie": false,
+          "any_tie": false
+        }
+      },
+      "new_predictions": [
+        1,
+        3,
+        1,
+        1
+      ],
+      "new_scores_by_candidate": [
+        [
+          -1.5367109775543213,
+          -3.9543204307556152,
+          -3.9129137992858887,
+          -3.4840049743652344
+        ],
+        [
+          -0.6617109775543213,
+          -3.0793204307556152,
+          -0.6629139184951782,
+          -0.7340049743652344
+        ],
+        [
+          -1.8492109775543213,
+          -4.579320430755615,
+          -4.662913799285889,
+          -4.734004974365234
+        ],
+        [
+          -2.2867109775543213,
+          -0.07932040840387344,
+          -0.7879139184951782,
+          -0.7340049743652344
+        ]
+      ],
+      "request_hashes_match_historical": true,
+      "historical_request_hashes": [
+        "e67000c10115206fa164d3b8d3754f7e163652f7a017756cced62ca6f21cd98e",
+        "9c39abcf371b5a091cac724c0b36462bf97d1f000df9706e717cc52b1da6985b",
+        "e325c1f78ab0c45b1fc22115db0b3061ae873ca0dd2a1f0e8eed10403aeae402",
+        "5e27bb0a34b2da34b0d350eacc7980fdb32d719637130b5ab84dd09da9beeb53"
+      ],
+      "new_request_hashes": [
+        "e67000c10115206fa164d3b8d3754f7e163652f7a017756cced62ca6f21cd98e",
+        "9c39abcf371b5a091cac724c0b36462bf97d1f000df9706e717cc52b1da6985b",
+        "e325c1f78ab0c45b1fc22115db0b3061ae873ca0dd2a1f0e8eed10403aeae402",
+        "5e27bb0a34b2da34b0d350eacc7980fdb32d719637130b5ab84dd09da9beeb53"
+      ],
+      "new_prompt_sha256": "a46b3d13c812ea414cb5e622da52cd7672a1afbed9a59787d8ba9adb745c0864",
+      "new_input_ids_sha256": [
+        "e09d67ce8d448c48ec57f97a9297e463780aaaa7f794bad978ad4d7b7de4986e",
+        "e09d67ce8d448c48ec57f97a9297e463780aaaa7f794bad978ad4d7b7de4986e",
+        "e09d67ce8d448c48ec57f97a9297e463780aaaa7f794bad978ad4d7b7de4986e",
+        "e09d67ce8d448c48ec57f97a9297e463780aaaa7f794bad978ad4d7b7de4986e"
+      ],
+      "new_target_ids": [
+        [
+          330
+        ],
+        [
+          389
+        ],
+        [
+          340
+        ],
+        [
+          422
+        ]
+      ],
+      "new_predecessor_positions": [
+        [
+          1918
+        ],
+        [
+          1918
+        ],
+        [
+          1918
+        ],
+        [
+          1918
+        ]
+      ],
+      "historical_target_token_counts": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "historical_token_ids_available": false,
+      "new_runtime": {
+        "attention": "sdpa",
+        "cuda": "12.4",
+        "dtype": "bfloat16",
+        "gpu": "NVIDIA RTX A6000",
+        "torch": "2.5.1+cu124",
+        "use_cache": false
+      }
+    },
+    {
+      "id": "Mercury_7214498",
+      "mismatched_K": [
+        4
+      ],
+      "gold": 2,
+      "labels": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "historical_joint": {
+        "1": {
+          "scores": [
+            -2.276238203048706,
+            -1.776238203048706,
+            -0.5887382626533508,
+            -2.088738203048706
+          ],
+          "prediction": 2,
+          "gold": 2,
+          "correct": true,
+          "rank": [
+            2,
+            1,
+            3,
+            0
+          ],
+          "gold_rank": 1,
+          "strongest_wrong": 1,
+          "gold_margin": 1.1874999403953552,
+          "top_tie": false,
+          "any_tie": false,
+          "strict_pair_count": 5,
+          "strict_inversions": 2,
+          "strict_inversion_fraction": 0.4,
+          "pairs_with_exact_tie": 1,
+          "near_tie_pairs_at_either_depth_1e-6": 0
+        },
+        "4": {
+          "scores": [
+            -1.0332190990447998,
+            -1.6582190990447998,
+            -1.0332190990447998,
+            -2.4082190990448
+          ],
+          "prediction": 0,
+          "gold": 2,
+          "correct": false,
+          "rank": [
+            0,
+            2,
+            1,
+            3
+          ],
+          "gold_rank": 2,
+          "strongest_wrong": 0,
+          "gold_margin": 0.0,
+          "top_tie": true,
+          "any_tie": true
+        }
+      },
+      "new_predictions": [
+        2,
+        2,
+        0,
+        2
+      ],
+      "new_scores_by_candidate": [
+        [
+          -2.266321897506714,
+          -1.6755211353302002,
+          -0.9331204891204834,
+          -1.115045189857483
+        ],
+        [
+          -1.7663218975067139,
+          -1.1755211353302002,
+          -2.0581204891204834,
+          -1.615045189857483
+        ],
+        [
+          -0.5788218975067139,
+          -1.0505211353302002,
+          -1.0581204891204834,
+          -0.9900451898574829
+        ],
+        [
+          -2.141321897506714,
+          -1.9255211353302002,
+          -2.0581204891204834,
+          -2.3650450706481934
+        ]
+      ],
+      "request_hashes_match_historical": true,
+      "historical_request_hashes": [
+        "1af8b1c7ba63488aaeb6ebc5e49e18ff17aeb9a059d1e2f85ccb4a4a0c0c2747",
+        "b0432b38f8a8c44841d9814944bbe6fbeb6b1d1e0e432d2f80d6a6793f83d8cc",
+        "901e61ca807b61a15db1a579e7b3477bb68cdfc6ce08b62752bb69a325381d28",
+        "5a157c51619be50bd683e1a28da0168853731cfa80f6572de4cd28dd4b9f2648"
+      ],
+      "new_request_hashes": [
+        "1af8b1c7ba63488aaeb6ebc5e49e18ff17aeb9a059d1e2f85ccb4a4a0c0c2747",
+        "b0432b38f8a8c44841d9814944bbe6fbeb6b1d1e0e432d2f80d6a6793f83d8cc",
+        "901e61ca807b61a15db1a579e7b3477bb68cdfc6ce08b62752bb69a325381d28",
+        "5a157c51619be50bd683e1a28da0168853731cfa80f6572de4cd28dd4b9f2648"
+      ],
+      "new_prompt_sha256": "a04bedd1d8d2bb2a29abfcc2a6bdfe723b9c8949a257e16cc76ff6872160bb4b",
+      "new_input_ids_sha256": [
+        "ae806840c047ca19bfbe6515a098b04db72df1aa7d8e5768d8f05e2fc7b7d382",
+        "ae806840c047ca19bfbe6515a098b04db72df1aa7d8e5768d8f05e2fc7b7d382",
+        "ae806840c047ca19bfbe6515a098b04db72df1aa7d8e5768d8f05e2fc7b7d382",
+        "ae806840c047ca19bfbe6515a098b04db72df1aa7d8e5768d8f05e2fc7b7d382"
+      ],
+      "new_target_ids": [
+        [
+          330
+        ],
+        [
+          389
+        ],
+        [
+          340
+        ],
+        [
+          422
+        ]
+      ],
+      "new_predecessor_positions": [
+        [
+          1876
+        ],
+        [
+          1876
+        ],
+        [
+          1876
+        ],
+        [
+          1876
+        ]
+      ],
+      "historical_target_token_counts": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "historical_token_ids_available": false,
+      "new_runtime": {
+        "attention": "sdpa",
+        "cuda": "12.4",
+        "dtype": "bfloat16",
+        "gpu": "NVIDIA RTX A6000",
+        "torch": "2.5.1+cu124",
+        "use_cache": false
+      }
+    },
+    {
+      "id": "Mercury_SC_413143",
+      "mismatched_K": [
+        1
+      ],
+      "gold": 2,
+      "labels": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "historical_joint": {
+        "1": {
+          "scores": [
+            -3.4242758750915527,
+            -0.8617759943008423,
+            -0.7367759943008423,
+            -3.1117758750915527
+          ],
+          "prediction": 2,
+          "gold": 2,
+          "correct": true,
+          "rank": [
+            2,
+            1,
+            3,
+            0
+          ],
+          "gold_rank": 1,
+          "strongest_wrong": 1,
+          "gold_margin": 0.125,
+          "top_tie": false,
+          "any_tie": false,
+          "strict_pair_count": 6,
+          "strict_inversions": 2,
+          "strict_inversion_fraction": 0.3333333333333333,
+          "pairs_with_exact_tie": 0,
+          "near_tie_pairs_at_either_depth_1e-6": 0
+        },
+        "4": {
+          "scores": [
+            -4.278379917144775,
+            -4.653379917144775,
+            -0.028379758819937706,
+            -5.528379917144775
+          ],
+          "prediction": 2,
+          "gold": 2,
+          "correct": true,
+          "rank": [
+            2,
+            0,
+            1,
+            3
+          ],
+          "gold_rank": 1,
+          "strongest_wrong": 0,
+          "gold_margin": 4.250000158324838,
+          "top_tie": false,
+          "any_tie": false
+        }
+      },
+      "new_predictions": [
+        1,
+        2,
+        2,
+        2
+      ],
+      "new_scores_by_candidate": [
+        [
+          -3.421713352203369,
+          -4.666961193084717,
+          -4.283418655395508,
+          -4.400568008422852
+        ],
+        [
+          -0.7967133522033691,
+          -4.166961193084717,
+          -4.408418655395508,
+          -4.775568008422852
+        ],
+        [
+          -0.7967133522033691,
+          -0.041961368173360825,
+          -0.033418674021959305,
+          -0.02556784264743328
+        ],
+        [
+          -3.109213352203369,
+          -4.166961193084717,
+          -5.033418655395508,
+          -5.525568008422852
+        ]
+      ],
+      "request_hashes_match_historical": true,
+      "historical_request_hashes": [
+        "d76dddf7e986b27de74f478b1867e817127d175130e396545fd80079b061b142",
+        "84ca2b5292d41f9a089e00a256cf8d1de5bea311afcc1b4b8cf7809a6715b47c",
+        "994a664289a4641bb2ad88eafa52172b920bdba59ac26776ad09e81068eb02bf",
+        "e153eaccd885c2a7a68a2b485b75384f400579c2780eb50dd153d65c346230c9"
+      ],
+      "new_request_hashes": [
+        "d76dddf7e986b27de74f478b1867e817127d175130e396545fd80079b061b142",
+        "84ca2b5292d41f9a089e00a256cf8d1de5bea311afcc1b4b8cf7809a6715b47c",
+        "994a664289a4641bb2ad88eafa52172b920bdba59ac26776ad09e81068eb02bf",
+        "e153eaccd885c2a7a68a2b485b75384f400579c2780eb50dd153d65c346230c9"
+      ],
+      "new_prompt_sha256": "24eee1b9cd6f6839caee00d5142bc9e27f445cae21d23985d5b71f8ab0fe9669",
+      "new_input_ids_sha256": [
+        "87991bd2019d48751bba85523b6b59d5d3b644c75aa9039b6f79939c4a86e733",
+        "87991bd2019d48751bba85523b6b59d5d3b644c75aa9039b6f79939c4a86e733",
+        "87991bd2019d48751bba85523b6b59d5d3b644c75aa9039b6f79939c4a86e733",
+        "87991bd2019d48751bba85523b6b59d5d3b644c75aa9039b6f79939c4a86e733"
+      ],
+      "new_target_ids": [
+        [
+          330
+        ],
+        [
+          389
+        ],
+        [
+          340
+        ],
+        [
+          422
+        ]
+      ],
+      "new_predecessor_positions": [
+        [
+          1879
+        ],
+        [
+          1879
+        ],
+        [
+          1879
+        ],
+        [
+          1879
+        ]
+      ],
+      "historical_target_token_counts": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "historical_token_ids_available": false,
+      "new_runtime": {
+        "attention": "sdpa",
+        "cuda": "12.4",
+        "dtype": "bfloat16",
+        "gpu": "NVIDIA RTX A6000",
+        "torch": "2.5.1+cu124",
+        "use_cache": false
+      }
+    },
+    {
+      "id": "CSZ10358",
+      "mismatched_K": [
+        4
+      ],
+      "gold": 0,
+      "labels": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "historical_joint": {
+        "1": {
+          "scores": [
+            -3.3729820251464844,
+            -1.3729819059371948,
+            -0.6854819059371948,
+            -1.6854819059371948
+          ],
+          "prediction": 2,
+          "gold": 0,
+          "correct": false,
+          "rank": [
+            2,
+            1,
+            3,
+            0
+          ],
+          "gold_rank": 4,
+          "strongest_wrong": 2,
+          "gold_margin": -2.6875001192092896,
+          "top_tie": false,
+          "any_tie": false,
+          "strict_pair_count": 5,
+          "strict_inversions": 2,
+          "strict_inversion_fraction": 0.4,
+          "pairs_with_exact_tie": 1,
+          "near_tie_pairs_at_either_depth_1e-6": 0
+        },
+        "4": {
+          "scores": [
+            -1.275341510772705,
+            -1.400341510772705,
+            -1.275341510772705,
+            -1.650341510772705
+          ],
+          "prediction": 0,
+          "gold": 0,
+          "correct": true,
+          "rank": [
+            0,
+            2,
+            1,
+            3
+          ],
+          "gold_rank": 1,
+          "strongest_wrong": 2,
+          "gold_margin": 0.0,
+          "top_tie": true,
+          "any_tie": true
+        }
+      },
+      "new_predictions": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "new_scores_by_candidate": [
+        [
+          -3.3738417625427246,
+          -1.7185688018798828,
+          -1.449798822402954,
+          -1.2836449146270752
+        ],
+        [
+          -1.3738418817520142,
+          -2.343568801879883,
+          -1.449798822402954,
+          -1.5336449146270752
+        ],
+        [
+          -0.6863418817520142,
+          -0.718568742275238,
+          -0.9497987627983093,
+          -1.1586449146270752
+        ],
+        [
+          -1.6863418817520142,
+          -1.4685688018798828,
+          -1.949798822402954,
+          -1.6586449146270752
+        ]
+      ],
+      "request_hashes_match_historical": true,
+      "historical_request_hashes": [
+        "1aae800c5fd2324bdda9271008839790f28f0a15a93f27d0c5f5f819b58c9831",
+        "b225b7a99521aeea20578a0fa56b127b4a0d797cc1e7bbac58ba1087dc45121c",
+        "e14b2dd010b8f2ff5843e8174676491d3bdbf5266951c8cf2ef8b9a830b165b7",
+        "fc2999b5c2ec67b22a81ba458671d0fff34a158c160ecc5a97dd3617b39d9551"
+      ],
+      "new_request_hashes": [
+        "1aae800c5fd2324bdda9271008839790f28f0a15a93f27d0c5f5f819b58c9831",
+        "b225b7a99521aeea20578a0fa56b127b4a0d797cc1e7bbac58ba1087dc45121c",
+        "e14b2dd010b8f2ff5843e8174676491d3bdbf5266951c8cf2ef8b9a830b165b7",
+        "fc2999b5c2ec67b22a81ba458671d0fff34a158c160ecc5a97dd3617b39d9551"
+      ],
+      "new_prompt_sha256": "ad4ddf385972c936eb63a6ea1c25c4840457566a0ea90bc329fb138128572cd2",
+      "new_input_ids_sha256": [
+        "09f17ca4c6d0b06c03dc08d0bebf92580c01c77752cc212750fd61f046e0e2ac",
+        "09f17ca4c6d0b06c03dc08d0bebf92580c01c77752cc212750fd61f046e0e2ac",
+        "09f17ca4c6d0b06c03dc08d0bebf92580c01c77752cc212750fd61f046e0e2ac",
+        "09f17ca4c6d0b06c03dc08d0bebf92580c01c77752cc212750fd61f046e0e2ac"
+      ],
+      "new_target_ids": [
+        [
+          330
+        ],
+        [
+          389
+        ],
+        [
+          340
+        ],
+        [
+          422
+        ]
+      ],
+      "new_predecessor_positions": [
+        [
+          1868
+        ],
+        [
+          1868
+        ],
+        [
+          1868
+        ],
+        [
+          1868
+        ]
+      ],
+      "historical_target_token_counts": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "historical_token_ids_available": false,
+      "new_runtime": {
+        "attention": "sdpa",
+        "cuda": "12.4",
+        "dtype": "bfloat16",
+        "gpu": "NVIDIA RTX A6000",
+        "torch": "2.5.1+cu124",
+        "use_cache": false
+      }
+    },
+    {
+      "id": "MCAS_2015_5_14",
+      "mismatched_K": [
+        1
+      ],
+      "gold": 0,
+      "labels": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "historical_joint": {
+        "1": {
+          "scores": [
+            -1.3272539377212524,
+            -1.6397539377212524,
+            -1.5772539377212524,
+            -1.2647539377212524
+          ],
+          "prediction": 3,
+          "gold": 0,
+          "correct": false,
+          "rank": [
+            3,
+            0,
+            2,
+            1
+          ],
+          "gold_rank": 2,
+          "strongest_wrong": 3,
+          "gold_margin": -0.0625,
+          "top_tie": false,
+          "any_tie": false,
+          "strict_pair_count": 6,
+          "strict_inversions": 3,
+          "strict_inversion_fraction": 0.5,
+          "pairs_with_exact_tie": 0,
+          "near_tie_pairs_at_either_depth_1e-6": 0
+        },
+        "4": {
+          "scores": [
+            -0.01662660390138626,
+            -6.016626834869385,
+            -4.391626834869385,
+            -6.516626834869385
+          ],
+          "prediction": 0,
+          "gold": 0,
+          "correct": true,
+          "rank": [
+            0,
+            2,
+            1,
+            3
+          ],
+          "gold_rank": 1,
+          "strongest_wrong": 2,
+          "gold_margin": 4.3750002309679985,
+          "top_tie": false,
+          "any_tie": false
+        }
+      },
+      "new_predictions": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "new_scores_by_candidate": [
+        [
+          -1.2924413681030273,
+          -0.03164553642272949,
+          -0.01026446558535099,
+          -0.014436205849051476
+        ],
+        [
+          -1.6674413681030273,
+          -5.906645774841309,
+          -6.5102643966674805,
+          -6.2644362449646
+        ],
+        [
+          -1.5424413681030273,
+          -3.6566455364227295,
+          -4.8852643966674805,
+          -4.5144362449646
+        ],
+        [
+          -1.2924413681030273,
+          -6.031645774841309,
+          -6.8852643966674805,
+          -6.6394362449646
+        ]
+      ],
+      "request_hashes_match_historical": true,
+      "historical_request_hashes": [
+        "f41a87832d374607ac62c39cda8366995bad71383a93b401be35fb846a99243c",
+        "95853bb7b202ac54fc0625cd290f4b770546789262c1e3f45f6456fb574906cf",
+        "2289372520eba2702b2f04fca1c32893a9c1690d4abd7b28c2f9fd6e7b70aa99",
+        "249c9d4bbee74eef1b7efede04e317cb6b669e27ee0a8e9486da86a6483bcfab"
+      ],
+      "new_request_hashes": [
+        "f41a87832d374607ac62c39cda8366995bad71383a93b401be35fb846a99243c",
+        "95853bb7b202ac54fc0625cd290f4b770546789262c1e3f45f6456fb574906cf",
+        "2289372520eba2702b2f04fca1c32893a9c1690d4abd7b28c2f9fd6e7b70aa99",
+        "249c9d4bbee74eef1b7efede04e317cb6b669e27ee0a8e9486da86a6483bcfab"
+      ],
+      "new_prompt_sha256": "9d9666e28a5e21b7c0670a62c939fb339060eaf5b91387116c99aef19c989e93",
+      "new_input_ids_sha256": [
+        "4a328dd8753c1ef903392b66f7583b877fdd903571a32c28b5d36e6c127ed924",
+        "4a328dd8753c1ef903392b66f7583b877fdd903571a32c28b5d36e6c127ed924",
+        "4a328dd8753c1ef903392b66f7583b877fdd903571a32c28b5d36e6c127ed924",
+        "4a328dd8753c1ef903392b66f7583b877fdd903571a32c28b5d36e6c127ed924"
+      ],
+      "new_target_ids": [
+        [
+          330
+        ],
+        [
+          389
+        ],
+        [
+          340
+        ],
+        [
+          422
+        ]
+      ],
+      "new_predecessor_positions": [
+        [
+          1888
+        ],
+        [
+          1888
+        ],
+        [
+          1888
+        ],
+        [
+          1888
+        ]
+      ],
+      "historical_target_token_counts": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "historical_token_ids_available": false,
+      "new_runtime": {
+        "attention": "sdpa",
+        "cuda": "12.4",
+        "dtype": "bfloat16",
+        "gpu": "NVIDIA RTX A6000",
+        "torch": "2.5.1+cu124",
+        "use_cache": false
+      }
+    },
+    {
+      "id": "Mercury_7133245",
+      "mismatched_K": [
+        1
+      ],
+      "gold": 1,
+      "labels": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "historical_joint": {
+        "1": {
+          "scores": [
+            -1.2780758142471313,
+            -1.2155758142471313,
+            -1.4030758142471313,
+            -1.9030758142471313
+          ],
+          "prediction": 1,
+          "gold": 1,
+          "correct": true,
+          "rank": [
+            1,
+            0,
+            2,
+            3
+          ],
+          "gold_rank": 1,
+          "strongest_wrong": 0,
+          "gold_margin": 0.0625,
+          "top_tie": false,
+          "any_tie": false,
+          "strict_pair_count": 6,
+          "strict_inversions": 5,
+          "strict_inversion_fraction": 0.8333333333333334,
+          "pairs_with_exact_tie": 0,
+          "near_tie_pairs_at_either_depth_1e-6": 0
+        },
+        "4": {
+          "scores": [
+            -1.1261401176452637,
+            -2.2511401176452637,
+            -1.8761401176452637,
+            -0.8761401176452637
+          ],
+          "prediction": 3,
+          "gold": 1,
+          "correct": false,
+          "rank": [
+            3,
+            0,
+            2,
+            1
+          ],
+          "gold_rank": 4,
+          "strongest_wrong": 3,
+          "gold_margin": -1.375,
+          "top_tie": false,
+          "any_tie": false
+        }
+      },
+      "new_predictions": [
+        0,
+        0,
+        3,
+        3
+      ],
+      "new_scores_by_candidate": [
+        [
+          -1.205304503440857,
+          -1.129027247428894,
+          -1.4327373504638672,
+          -1.0434914827346802
+        ],
+        [
+          -1.267804503440857,
+          -1.879027247428894,
+          -2.057737350463867,
+          -2.2934913635253906
+        ],
+        [
+          -1.392804503440857,
+          -1.629027247428894,
+          -1.6827373504638672,
+          -1.9184914827346802
+        ],
+        [
+          -1.955304503440857,
+          -1.129027247428894,
+          -0.807737410068512,
+          -0.9184914827346802
+        ]
+      ],
+      "request_hashes_match_historical": true,
+      "historical_request_hashes": [
+        "aa331697a2634ae7155804bba324f3fc57656cad7abbe9d7d362bbbe6f6f2606",
+        "7b6ad49151904c2e1fc234513ea829161df4fb9275895e2ecd24119eab448f3b",
+        "12ddcec70a17093161c9998823a1bb1e05fe9e3619cc3d87d12d005a53341d83",
+        "98097c7e1714b119a358ede76ccbe1a3ecec19657c99ef91cd9dd7bdfbaecca8"
+      ],
+      "new_request_hashes": [
+        "aa331697a2634ae7155804bba324f3fc57656cad7abbe9d7d362bbbe6f6f2606",
+        "7b6ad49151904c2e1fc234513ea829161df4fb9275895e2ecd24119eab448f3b",
+        "12ddcec70a17093161c9998823a1bb1e05fe9e3619cc3d87d12d005a53341d83",
+        "98097c7e1714b119a358ede76ccbe1a3ecec19657c99ef91cd9dd7bdfbaecca8"
+      ],
+      "new_prompt_sha256": "16575ad46162b53523f8ec9c6364af6acaf1f2d11f00b4f497f12297094f5c55",
+      "new_input_ids_sha256": [
+        "0f435346dd840c414cb0df4d5f975daa54a665a4a8dc898ab6230942260a0b44",
+        "0f435346dd840c414cb0df4d5f975daa54a665a4a8dc898ab6230942260a0b44",
+        "0f435346dd840c414cb0df4d5f975daa54a665a4a8dc898ab6230942260a0b44",
+        "0f435346dd840c414cb0df4d5f975daa54a665a4a8dc898ab6230942260a0b44"
+      ],
+      "new_target_ids": [
+        [
+          330
+        ],
+        [
+          389
+        ],
+        [
+          340
+        ],
+        [
+          422
+        ]
+      ],
+      "new_predecessor_positions": [
+        [
+          1919
+        ],
+        [
+          1919
+        ],
+        [
+          1919
+        ],
+        [
+          1919
+        ]
+      ],
+      "historical_target_token_counts": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "historical_token_ids_available": false,
+      "new_runtime": {
+        "attention": "sdpa",
+        "cuda": "12.4",
+        "dtype": "bfloat16",
+        "gpu": "NVIDIA RTX A6000",
+        "torch": "2.5.1+cu124",
+        "use_cache": false
+      }
+    },
+    {
+      "id": "VASoL_2009_3_22",
+      "mismatched_K": [
+        1,
+        4
+      ],
+      "gold": 3,
+      "labels": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "historical_joint": {
+        "1": {
+          "scores": [
+            -1.8318589925765991,
+            -1.7068589925765991,
+            -1.2068589925765991,
+            -1.1443589925765991
+          ],
+          "prediction": 3,
+          "gold": 3,
+          "correct": true,
+          "rank": [
+            3,
+            2,
+            1,
+            0
+          ],
+          "gold_rank": 1,
+          "strongest_wrong": 2,
+          "gold_margin": 0.0625,
+          "top_tie": false,
+          "any_tie": false,
+          "strict_pair_count": 5,
+          "strict_inversions": 3,
+          "strict_inversion_fraction": 0.6,
+          "pairs_with_exact_tie": 1,
+          "near_tie_pairs_at_either_depth_1e-6": 0
+        },
+        "4": {
+          "scores": [
+            -1.1963222026824951,
+            -1.3213222026824951,
+            -2.071322202682495,
+            -1.1963222026824951
+          ],
+          "prediction": 0,
+          "gold": 3,
+          "correct": false,
+          "rank": [
+            0,
+            3,
+            1,
+            2
+          ],
+          "gold_rank": 2,
+          "strongest_wrong": 0,
+          "gold_margin": 0.0,
+          "top_tie": true,
+          "any_tie": true
+        }
+      },
+      "new_predictions": [
+        2,
+        3,
+        1,
+        1
+      ],
+      "new_scores_by_candidate": [
+        [
+          -1.8623883724212646,
+          -1.4900541305541992,
+          -1.7282912731170654,
+          -1.3380167484283447
+        ],
+        [
+          -1.6748883724212646,
+          -1.9900541305541992,
+          -1.1032912731170654,
+          -1.2130167484283447
+        ],
+        [
+          -1.1748883724212646,
+          -2.365054130554199,
+          -1.8532912731170654,
+          -1.9630167484283447
+        ],
+        [
+          -1.1748883724212646,
+          -0.6150541305541992,
+          -1.1032912731170654,
+          -1.2130167484283447
+        ]
+      ],
+      "request_hashes_match_historical": true,
+      "historical_request_hashes": [
+        "9f940bb2ea708761cabf186181355897b4eabb8a6093d9f35ffdbda79a5e7523",
+        "c30596c8c03190173e8b2df2952d44fd0838c1d1c153c18d3cdc67f1d4d7ed61",
+        "9973244ecf26f41c6b567fd2b04b7eed9d70486b9cede66e47aec471b542eff2",
+        "3d3729059e5c9c551804566a69c73e9ce691a71a69d6c39261d042ea2b6ac0d6"
+      ],
+      "new_request_hashes": [
+        "9f940bb2ea708761cabf186181355897b4eabb8a6093d9f35ffdbda79a5e7523",
+        "c30596c8c03190173e8b2df2952d44fd0838c1d1c153c18d3cdc67f1d4d7ed61",
+        "9973244ecf26f41c6b567fd2b04b7eed9d70486b9cede66e47aec471b542eff2",
+        "3d3729059e5c9c551804566a69c73e9ce691a71a69d6c39261d042ea2b6ac0d6"
+      ],
+      "new_prompt_sha256": "2b3a155cd91f37e944174c505de73872907d5303b262ad529132149e10cab567",
+      "new_input_ids_sha256": [
+        "29264f08ca595b3c115bc849d69a855d5aff09b118b31dfef470a56154690807",
+        "29264f08ca595b3c115bc849d69a855d5aff09b118b31dfef470a56154690807",
+        "29264f08ca595b3c115bc849d69a855d5aff09b118b31dfef470a56154690807",
+        "29264f08ca595b3c115bc849d69a855d5aff09b118b31dfef470a56154690807"
+      ],
+      "new_target_ids": [
+        [
+          330
+        ],
+        [
+          389
+        ],
+        [
+          340
+        ],
+        [
+          422
+        ]
+      ],
+      "new_predecessor_positions": [
+        [
+          1882
+        ],
+        [
+          1882
+        ],
+        [
+          1882
+        ],
+        [
+          1882
+        ]
+      ],
+      "historical_target_token_counts": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "historical_token_ids_available": false,
+      "new_runtime": {
+        "attention": "sdpa",
+        "cuda": "12.4",
+        "dtype": "bfloat16",
+        "gpu": "NVIDIA RTX A6000",
+        "torch": "2.5.1+cu124",
+        "use_cache": false
+      }
+    },
+    {
+      "id": "MCAS_2000_8_29",
+      "mismatched_K": [
+        1
+      ],
+      "gold": 1,
+      "labels": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "historical_joint": {
+        "1": {
+          "scores": [
+            -1.0542035102844238,
+            -0.991703450679779,
+            -2.054203510284424,
+            -2.054203510284424
+          ],
+          "prediction": 1,
+          "gold": 1,
+          "correct": true,
+          "rank": [
+            1,
+            0,
+            2,
+            3
+          ],
+          "gold_rank": 1,
+          "strongest_wrong": 0,
+          "gold_margin": 0.06250005960464478,
+          "top_tie": false,
+          "any_tie": true,
+          "strict_pair_count": 5,
+          "strict_inversions": 0,
+          "strict_inversion_fraction": 0.0,
+          "pairs_with_exact_tie": 1,
+          "near_tie_pairs_at_either_depth_1e-6": 0
+        },
+        "4": {
+          "scores": [
+            -2.059537172317505,
+            -0.18453723192214966,
+            -3.684537172317505,
+            -4.184537410736084
+          ],
+          "prediction": 1,
+          "gold": 1,
+          "correct": true,
+          "rank": [
+            1,
+            0,
+            2,
+            3
+          ],
+          "gold_rank": 1,
+          "strongest_wrong": 0,
+          "gold_margin": 1.8749999403953552,
+          "top_tie": false,
+          "any_tie": false
+        }
+      },
+      "new_predictions": [
+        0,
+        1,
+        1,
+        1
+      ],
+      "new_scores_by_candidate": [
+        [
+          -1.0149731636047363,
+          -1.1976720094680786,
+          -2.501746892929077,
+          -2.054800033569336
+        ],
+        [
+          -1.0149731636047363,
+          -0.5726720094680786,
+          -0.12674680352210999,
+          -0.17979992926120758
+        ],
+        [
+          -2.0774731636047363,
+          -2.697671890258789,
+          -3.626746892929077,
+          -3.804800033569336
+        ],
+        [
+          -2.0774731636047363,
+          -2.760171890258789,
+          -4.626746654510498,
+          -4.304800033569336
+        ]
+      ],
+      "request_hashes_match_historical": true,
+      "historical_request_hashes": [
+        "62934c088887ffcddbba1005e8eb097bc61b7d6f1f0abb9a316a67cfe0049d76",
+        "d0212664a90ca7c840aee52c9777bfa599dc793a6b666d4a15b1b779e35a133b",
+        "39ae1cc69f7731dab1df7ce1eb4a2fac8dd5d9ec09077e0788c0aadb08354f63",
+        "33f32b003fa74233c3da66d97842346822c5daf7057f6882d9d57237a141b799"
+      ],
+      "new_request_hashes": [
+        "62934c088887ffcddbba1005e8eb097bc61b7d6f1f0abb9a316a67cfe0049d76",
+        "d0212664a90ca7c840aee52c9777bfa599dc793a6b666d4a15b1b779e35a133b",
+        "39ae1cc69f7731dab1df7ce1eb4a2fac8dd5d9ec09077e0788c0aadb08354f63",
+        "33f32b003fa74233c3da66d97842346822c5daf7057f6882d9d57237a141b799"
+      ],
+      "new_prompt_sha256": "5581cb8d9db670a63545dca99ea782652764643e807900ef6a7e55f8bf6db07f",
+      "new_input_ids_sha256": [
+        "e2054a2ffed070f2f2e9f7d5398c3a6a495131f27e0157367deb26663276b05c",
+        "e2054a2ffed070f2f2e9f7d5398c3a6a495131f27e0157367deb26663276b05c",
+        "e2054a2ffed070f2f2e9f7d5398c3a6a495131f27e0157367deb26663276b05c",
+        "e2054a2ffed070f2f2e9f7d5398c3a6a495131f27e0157367deb26663276b05c"
+      ],
+      "new_target_ids": [
+        [
+          330
+        ],
+        [
+          389
+        ],
+        [
+          340
+        ],
+        [
+          422
+        ]
+      ],
+      "new_predecessor_positions": [
+        [
+          1939
+        ],
+        [
+          1939
+        ],
+        [
+          1939
+        ],
+        [
+          1939
+        ]
+      ],
+      "historical_target_token_counts": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "historical_token_ids_available": false,
+      "new_runtime": {
+        "attention": "sdpa",
+        "cuda": "12.4",
+        "dtype": "bfloat16",
+        "gpu": "NVIDIA RTX A6000",
+        "torch": "2.5.1+cu124",
+        "use_cache": false
+      }
+    },
+    {
+      "id": "Mercury_7268328",
+      "mismatched_K": [
+        4
+      ],
+      "gold": 2,
+      "labels": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "historical_joint": {
+        "1": {
+          "scores": [
+            -2.531158924102783,
+            -3.093658924102783,
+            -0.406158983707428,
+            -1.5936589241027832
+          ],
+          "prediction": 2,
+          "gold": 2,
+          "correct": true,
+          "rank": [
+            2,
+            3,
+            0,
+            1
+          ],
+          "gold_rank": 1,
+          "strongest_wrong": 3,
+          "gold_margin": 1.1874999403953552,
+          "top_tie": false,
+          "any_tie": false,
+          "strict_pair_count": 5,
+          "strict_inversions": 0,
+          "strict_inversion_fraction": 0.0,
+          "pairs_with_exact_tie": 1,
+          "near_tie_pairs_at_either_depth_1e-6": 0
+        },
+        "4": {
+          "scores": [
+            -2.7715306282043457,
+            -4.396530628204346,
+            -0.7715305685997009,
+            -0.7715305685997009
+          ],
+          "prediction": 2,
+          "gold": 2,
+          "correct": true,
+          "rank": [
+            2,
+            3,
+            0,
+            1
+          ],
+          "gold_rank": 1,
+          "strongest_wrong": 3,
+          "gold_margin": 0.0,
+          "top_tie": true,
+          "any_tie": true
+        }
+      },
+      "new_predictions": [
+        2,
+        2,
+        3,
+        3
+      ],
+      "new_scores_by_candidate": [
+        [
+          -2.531215190887451,
+          -2.329845428466797,
+          -3.318207263946533,
+          -2.7127840518951416
+        ],
+        [
+          -3.093715190887451,
+          -3.204845428466797,
+          -4.943207263946533,
+          -4.5877838134765625
+        ],
+        [
+          -0.40621522068977356,
+          -0.5798455476760864,
+          -0.9432071447372437,
+          -0.8377840518951416
+        ],
+        [
+          -1.5937151908874512,
+          -1.2048455476760864,
+          -0.5682071447372437,
+          -0.7127840518951416
+        ]
+      ],
+      "request_hashes_match_historical": true,
+      "historical_request_hashes": [
+        "ad696fdc910b27137fa83cf472672d691d764be9ab1aa95a891f76930b9deba3",
+        "2e87f8d2613b5755a5767257db28c1480109048ea2142c2a5e811cf634018f5b",
+        "bdbe00e5452378644fabdae6505e0834aed18959531549d5d567c28f59ddd8dc",
+        "883b48689ce0dbbe0b511f99f71c5a436b7f8c0e927c9254649484d9a528545d"
+      ],
+      "new_request_hashes": [
+        "ad696fdc910b27137fa83cf472672d691d764be9ab1aa95a891f76930b9deba3",
+        "2e87f8d2613b5755a5767257db28c1480109048ea2142c2a5e811cf634018f5b",
+        "bdbe00e5452378644fabdae6505e0834aed18959531549d5d567c28f59ddd8dc",
+        "883b48689ce0dbbe0b511f99f71c5a436b7f8c0e927c9254649484d9a528545d"
+      ],
+      "new_prompt_sha256": "40289b6fc67a0eb7bcb8d617eea0795932b946f6e607e9543ec68fde56e3a8ea",
+      "new_input_ids_sha256": [
+        "b5b36dbb371b1011755c98fd98414169b9f1f016a7d98e546e2b0e84bf15dfcb",
+        "b5b36dbb371b1011755c98fd98414169b9f1f016a7d98e546e2b0e84bf15dfcb",
+        "b5b36dbb371b1011755c98fd98414169b9f1f016a7d98e546e2b0e84bf15dfcb",
+        "b5b36dbb371b1011755c98fd98414169b9f1f016a7d98e546e2b0e84bf15dfcb"
+      ],
+      "new_target_ids": [
+        [
+          330
+        ],
+        [
+          389
+        ],
+        [
+          340
+        ],
+        [
+          422
+        ]
+      ],
+      "new_predecessor_positions": [
+        [
+          1902
+        ],
+        [
+          1902
+        ],
+        [
+          1902
+        ],
+        [
+          1902
+        ]
+      ],
+      "historical_target_token_counts": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "historical_token_ids_available": false,
+      "new_runtime": {
+        "attention": "sdpa",
+        "cuda": "12.4",
+        "dtype": "bfloat16",
+        "gpu": "NVIDIA RTX A6000",
+        "torch": "2.5.1+cu124",
+        "use_cache": false
+      }
+    },
+    {
+      "id": "Mercury_7012880",
+      "mismatched_K": [
+        1
+      ],
+      "gold": 0,
+      "labels": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "historical_joint": {
+        "1": {
+          "scores": [
+            -1.0480118989944458,
+            -1.0480118989944458,
+            -1.7355118989944458,
+            -2.2980117797851562
+          ],
+          "prediction": 0,
+          "gold": 0,
+          "correct": true,
+          "rank": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "gold_rank": 1,
+          "strongest_wrong": 1,
+          "gold_margin": 0.0,
+          "top_tie": true,
+          "any_tie": true,
+          "strict_pair_count": 5,
+          "strict_inversions": 1,
+          "strict_inversion_fraction": 0.2,
+          "pairs_with_exact_tie": 1,
+          "near_tie_pairs_at_either_depth_1e-6": 0
+        },
+        "4": {
+          "scores": [
+            -0.034983448684215546,
+            -4.7849836349487305,
+            -3.9099833965301514,
+            -5.1599836349487305
+          ],
+          "prediction": 0,
+          "gold": 0,
+          "correct": true,
+          "rank": [
+            0,
+            2,
+            1,
+            3
+          ],
+          "gold_rank": 1,
+          "strongest_wrong": 2,
+          "gold_margin": 3.874999947845936,
+          "top_tie": false,
+          "any_tie": false
+        }
+      },
+      "new_predictions": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "new_scores_by_candidate": [
+        [
+          -1.0888882875442505,
+          -0.028841525316238403,
+          -0.022069688886404037,
+          -0.03497987985610962
+        ],
+        [
+          -1.0263882875442505,
+          -4.028841495513916,
+          -4.647069454193115,
+          -4.784979820251465
+        ],
+        [
+          -1.7138882875442505,
+          -5.153841495513916,
+          -4.897069454193115,
+          -3.909979820251465
+        ],
+        [
+          -2.276388168334961,
+          -5.403841495513916,
+          -5.397069454193115,
+          -5.159979820251465
+        ]
+      ],
+      "request_hashes_match_historical": true,
+      "historical_request_hashes": [
+        "971ac7e9a73d1310d219f2944103dd4d654900a9f3b80e19a28c3b7634b28642",
+        "521578feca6ba4ab9f16e566717455f077530b6f811dd6c55902ad2b5c40fce9",
+        "ef3be5b46687eacf6d06df7a46e6ae0fe61800bd14b9d9112266501734dabf4d",
+        "766edc2dbb9646c59b3d15e315da0e825da54385e071ba22e74a7673c5cc8236"
+      ],
+      "new_request_hashes": [
+        "971ac7e9a73d1310d219f2944103dd4d654900a9f3b80e19a28c3b7634b28642",
+        "521578feca6ba4ab9f16e566717455f077530b6f811dd6c55902ad2b5c40fce9",
+        "ef3be5b46687eacf6d06df7a46e6ae0fe61800bd14b9d9112266501734dabf4d",
+        "766edc2dbb9646c59b3d15e315da0e825da54385e071ba22e74a7673c5cc8236"
+      ],
+      "new_prompt_sha256": "af4f5111c85667e4f503702eedc0d599b60d8065a8e4a1cadcc357a2ddf7be26",
+      "new_input_ids_sha256": [
+        "906efe6dbffd038c1012627743d8e7d5fb0a91239dd4ace2a51ca4922331b2bd",
+        "906efe6dbffd038c1012627743d8e7d5fb0a91239dd4ace2a51ca4922331b2bd",
+        "906efe6dbffd038c1012627743d8e7d5fb0a91239dd4ace2a51ca4922331b2bd",
+        "906efe6dbffd038c1012627743d8e7d5fb0a91239dd4ace2a51ca4922331b2bd"
+      ],
+      "new_target_ids": [
+        [
+          330
+        ],
+        [
+          389
+        ],
+        [
+          340
+        ],
+        [
+          422
+        ]
+      ],
+      "new_predecessor_positions": [
+        [
+          1911
+        ],
+        [
+          1911
+        ],
+        [
+          1911
+        ],
+        [
+          1911
+        ]
+      ],
+      "historical_target_token_counts": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "historical_token_ids_available": false,
+      "new_runtime": {
+        "attention": "sdpa",
+        "cuda": "12.4",
+        "dtype": "bfloat16",
+        "gpu": "NVIDIA RTX A6000",
+        "torch": "2.5.1+cu124",
+        "use_cache": false
+      }
+    },
+    {
+      "id": "MCAS_2004_8_7",
+      "mismatched_K": [
+        1
+      ],
+      "gold": 3,
+      "labels": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "historical_joint": {
+        "1": {
+          "scores": [
+            -1.5709559917449951,
+            -1.2584559917449951,
+            -1.6959559917449951,
+            -1.1959559917449951
+          ],
+          "prediction": 3,
+          "gold": 3,
+          "correct": true,
+          "rank": [
+            3,
+            1,
+            0,
+            2
+          ],
+          "gold_rank": 1,
+          "strongest_wrong": 1,
+          "gold_margin": 0.0625,
+          "top_tie": false,
+          "any_tie": false,
+          "strict_pair_count": 6,
+          "strict_inversions": 3,
+          "strict_inversion_fraction": 0.5,
+          "pairs_with_exact_tie": 0,
+          "near_tie_pairs_at_either_depth_1e-6": 0
+        },
+        "4": {
+          "scores": [
+            -1.207971215248108,
+            -0.4579712152481079,
+            -2.8329710960388184,
+            -4.707971096038818
+          ],
+          "prediction": 1,
+          "gold": 3,
+          "correct": false,
+          "rank": [
+            1,
+            0,
+            2,
+            3
+          ],
+          "gold_rank": 4,
+          "strongest_wrong": 1,
+          "gold_margin": -4.2499998807907104,
+          "top_tie": false,
+          "any_tie": false
+        }
+      },
+      "new_predictions": [
+        1,
+        0,
+        1,
+        1
+      ],
+      "new_scores_by_candidate": [
+        [
+          -1.5523645877838135,
+          -0.7199468016624451,
+          -2.4263508319854736,
+          -1.2009565830230713
+        ],
+        [
+          -1.2398645877838135,
+          -1.4699468612670898,
+          -0.17635080218315125,
+          -0.45095664262771606
+        ],
+        [
+          -1.6773645877838135,
+          -1.4699468612670898,
+          -3.0513508319854736,
+          -2.9509565830230713
+        ],
+        [
+          -1.2398645877838135,
+          -2.96994686126709,
+          -3.6763508319854736,
+          -4.70095682144165
+        ]
+      ],
+      "request_hashes_match_historical": true,
+      "historical_request_hashes": [
+        "70f29f9faee6f160d6326264ea68fde7e485881eac320609c865cd32c89e8d87",
+        "bc0c2b93fcd2fcd6ebd255c76e3fd35a23c372c2bd8f2a07985721ca6d800534",
+        "d024e6c97ac76955b11e61ccf2ca2a0b199a1e878924258c099ed0dad1904d94",
+        "e4563eab9cf505b67aee988deae0c2312b93b270949c6ee952fcf003ffca8a16"
+      ],
+      "new_request_hashes": [
+        "70f29f9faee6f160d6326264ea68fde7e485881eac320609c865cd32c89e8d87",
+        "bc0c2b93fcd2fcd6ebd255c76e3fd35a23c372c2bd8f2a07985721ca6d800534",
+        "d024e6c97ac76955b11e61ccf2ca2a0b199a1e878924258c099ed0dad1904d94",
+        "e4563eab9cf505b67aee988deae0c2312b93b270949c6ee952fcf003ffca8a16"
+      ],
+      "new_prompt_sha256": "6fe55ae79d1ee0236a304736668d6058f472314de1fa36a2d3fdfffe1a203884",
+      "new_input_ids_sha256": [
+        "bded57e051d7dfc0f6076a25885a1e8e67aff0cfff29fa09d85b9870e28c0784",
+        "bded57e051d7dfc0f6076a25885a1e8e67aff0cfff29fa09d85b9870e28c0784",
+        "bded57e051d7dfc0f6076a25885a1e8e67aff0cfff29fa09d85b9870e28c0784",
+        "bded57e051d7dfc0f6076a25885a1e8e67aff0cfff29fa09d85b9870e28c0784"
+      ],
+      "new_target_ids": [
+        [
+          330
+        ],
+        [
+          389
+        ],
+        [
+          340
+        ],
+        [
+          422
+        ]
+      ],
+      "new_predecessor_positions": [
+        [
+          1963
+        ],
+        [
+          1963
+        ],
+        [
+          1963
+        ],
+        [
+          1963
+        ]
+      ],
+      "historical_target_token_counts": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "historical_token_ids_available": false,
+      "new_runtime": {
+        "attention": "sdpa",
+        "cuda": "12.4",
+        "dtype": "bfloat16",
+        "gpu": "NVIDIA RTX A6000",
+        "torch": "2.5.1+cu124",
+        "use_cache": false
+      }
+    },
+    {
+      "id": "Mercury_SC_415457",
+      "mismatched_K": [
+        1
+      ],
+      "gold": 3,
+      "labels": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "historical_joint": {
+        "1": {
+          "scores": [
+            -2.047818660736084,
+            -1.1103185415267944,
+            -1.9228185415267944,
+            -1.0478185415267944
+          ],
+          "prediction": 3,
+          "gold": 3,
+          "correct": true,
+          "rank": [
+            3,
+            1,
+            2,
+            0
+          ],
+          "gold_rank": 1,
+          "strongest_wrong": 1,
+          "gold_margin": 0.0625,
+          "top_tie": false,
+          "any_tie": false,
+          "strict_pair_count": 5,
+          "strict_inversions": 2,
+          "strict_inversion_fraction": 0.4,
+          "pairs_with_exact_tie": 1,
+          "near_tie_pairs_at_either_depth_1e-6": 0
+        },
+        "4": {
+          "scores": [
+            -1.8600984811782837,
+            -1.3600984811782837,
+            -1.1100984811782837,
+            -1.3600984811782837
+          ],
+          "prediction": 2,
+          "gold": 3,
+          "correct": false,
+          "rank": [
+            2,
+            1,
+            3,
+            0
+          ],
+          "gold_rank": 3,
+          "strongest_wrong": 2,
+          "gold_margin": -0.25,
+          "top_tie": false,
+          "any_tie": true
+        }
+      },
+      "new_predictions": [
+        1,
+        1,
+        3,
+        2
+      ],
+      "new_scores_by_candidate": [
+        [
+          -2.068695306777954,
+          -1.4378716945648193,
+          -1.7252905368804932,
+          -1.935293197631836
+        ],
+        [
+          -1.068695306777954,
+          -1.1878716945648193,
+          -1.4752905368804932,
+          -1.435293197631836
+        ],
+        [
+          -1.943695306777954,
+          -1.6878716945648193,
+          -1.3502905368804932,
+          -1.060293197631836
+        ],
+        [
+          -1.068695306777954,
+          -1.3128716945648193,
+          -1.1002905368804932,
+          -1.310293197631836
+        ]
+      ],
+      "request_hashes_match_historical": true,
+      "historical_request_hashes": [
+        "9a24f4e2048bd95508d16a72a3af8e6fde7f617f016266040bad6e26da9bd590",
+        "2e40caf3651a203f996fbd992cdff5533f9fce6abf5e3bd2938d84b612a165d3",
+        "a36d3707f52f05abf1e0a92f0995fd68dde65fe44886c62eae4cbfcafc1d2076",
+        "57322b9ce01d910f9f38f275535872aad7e0a6704b5604803696412ab44a19e8"
+      ],
+      "new_request_hashes": [
+        "9a24f4e2048bd95508d16a72a3af8e6fde7f617f016266040bad6e26da9bd590",
+        "2e40caf3651a203f996fbd992cdff5533f9fce6abf5e3bd2938d84b612a165d3",
+        "a36d3707f52f05abf1e0a92f0995fd68dde65fe44886c62eae4cbfcafc1d2076",
+        "57322b9ce01d910f9f38f275535872aad7e0a6704b5604803696412ab44a19e8"
+      ],
+      "new_prompt_sha256": "eb9f59bba63d822641c65fcc6876718a8254e1eac9942fd51b125453de3da543",
+      "new_input_ids_sha256": [
+        "500d38ede93c28f4b2c0c30c2b9395111d31dfb9c64ed2d6201f23d625ee7966",
+        "500d38ede93c28f4b2c0c30c2b9395111d31dfb9c64ed2d6201f23d625ee7966",
+        "500d38ede93c28f4b2c0c30c2b9395111d31dfb9c64ed2d6201f23d625ee7966",
+        "500d38ede93c28f4b2c0c30c2b9395111d31dfb9c64ed2d6201f23d625ee7966"
+      ],
+      "new_target_ids": [
+        [
+          330
+        ],
+        [
+          389
+        ],
+        [
+          340
+        ],
+        [
+          422
+        ]
+      ],
+      "new_predecessor_positions": [
+        [
+          1872
+        ],
+        [
+          1872
+        ],
+        [
+          1872
+        ],
+        [
+          1872
+        ]
+      ],
+      "historical_target_token_counts": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "historical_token_ids_available": false,
+      "new_runtime": {
+        "attention": "sdpa",
+        "cuda": "12.4",
+        "dtype": "bfloat16",
+        "gpu": "NVIDIA RTX A6000",
+        "torch": "2.5.1+cu124",
+        "use_cache": false
+      }
+    },
+    {
+      "id": "MDSA_2008_4_19",
+      "mismatched_K": [
+        1
+      ],
+      "gold": 1,
+      "labels": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "historical_joint": {
+        "1": {
+          "scores": [
+            -1.6152881383895874,
+            -1.1777881383895874,
+            -1.1777881383895874,
+            -1.7402881383895874
+          ],
+          "prediction": 1,
+          "gold": 1,
+          "correct": true,
+          "rank": [
+            1,
+            2,
+            0,
+            3
+          ],
+          "gold_rank": 1,
+          "strongest_wrong": 2,
+          "gold_margin": 0.0,
+          "top_tie": true,
+          "any_tie": true,
+          "strict_pair_count": 5,
+          "strict_inversions": 1,
+          "strict_inversion_fraction": 0.2,
+          "pairs_with_exact_tie": 1,
+          "near_tie_pairs_at_either_depth_1e-6": 0
+        },
+        "4": {
+          "scores": [
+            -2.111717700958252,
+            -1.361717700958252,
+            -0.8617176413536072,
+            -1.611717700958252
+          ],
+          "prediction": 2,
+          "gold": 1,
+          "correct": false,
+          "rank": [
+            2,
+            1,
+            3,
+            0
+          ],
+          "gold_rank": 2,
+          "strongest_wrong": 2,
+          "gold_margin": -0.5000000596046448,
+          "top_tie": false,
+          "any_tie": false
+        }
+      },
+      "new_predictions": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "new_scores_by_candidate": [
+        [
+          -1.6350973844528198,
+          -1.6118818521499634,
+          -1.9848260879516602,
+          -2.1117124557495117
+        ],
+        [
+          -1.1975973844528198,
+          -2.111881732940674,
+          -1.8598260879516602,
+          -1.3617124557495117
+        ],
+        [
+          -1.1350973844528198,
+          -0.7368818521499634,
+          -0.7348261475563049,
+          -0.8617123961448669
+        ],
+        [
+          -1.7600973844528198,
+          -1.6118818521499634,
+          -1.4848260879516602,
+          -1.6117124557495117
+        ]
+      ],
+      "request_hashes_match_historical": true,
+      "historical_request_hashes": [
+        "fdf8ea08b1ff1fc3f4199afe187e2f8a08038d0cee763ff819fa4c7b0adee779",
+        "c0003c352c2168a2877ebdabff77c9cc703cc458bd94da3f34cbc26c5c10cbb2",
+        "296290257be5ea1c19f5724b87fa16e7da4df4e38a9a688648373da8cb147420",
+        "9f0fe0c25d1fb35c68e6893319d9409db07a7374ab3d0483f3ac8c67f4383d0f"
+      ],
+      "new_request_hashes": [
+        "fdf8ea08b1ff1fc3f4199afe187e2f8a08038d0cee763ff819fa4c7b0adee779",
+        "c0003c352c2168a2877ebdabff77c9cc703cc458bd94da3f34cbc26c5c10cbb2",
+        "296290257be5ea1c19f5724b87fa16e7da4df4e38a9a688648373da8cb147420",
+        "9f0fe0c25d1fb35c68e6893319d9409db07a7374ab3d0483f3ac8c67f4383d0f"
+      ],
+      "new_prompt_sha256": "c67c1351bfcf67756481f164a370292acbdc97f18dec901af83939973ea97691",
+      "new_input_ids_sha256": [
+        "8dd2276239f0d756620899ba7288d4ce2e25a4f5ae39c2a7d999320bbdd665b6",
+        "8dd2276239f0d756620899ba7288d4ce2e25a4f5ae39c2a7d999320bbdd665b6",
+        "8dd2276239f0d756620899ba7288d4ce2e25a4f5ae39c2a7d999320bbdd665b6",
+        "8dd2276239f0d756620899ba7288d4ce2e25a4f5ae39c2a7d999320bbdd665b6"
+      ],
+      "new_target_ids": [
+        [
+          330
+        ],
+        [
+          389
+        ],
+        [
+          340
+        ],
+        [
+          422
+        ]
+      ],
+      "new_predecessor_positions": [
+        [
+          1897
+        ],
+        [
+          1897
+        ],
+        [
+          1897
+        ],
+        [
+          1897
+        ]
+      ],
+      "historical_target_token_counts": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "historical_token_ids_available": false,
+      "new_runtime": {
+        "attention": "sdpa",
+        "cuda": "12.4",
+        "dtype": "bfloat16",
+        "gpu": "NVIDIA RTX A6000",
+        "torch": "2.5.1+cu124",
+        "use_cache": false
+      }
+    },
+    {
+      "id": "Mercury_7024395",
+      "mismatched_K": [
+        1
+      ],
+      "gold": 0,
+      "labels": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "historical_joint": {
+        "1": {
+          "scores": [
+            -1.233572006225586,
+            -1.546072006225586,
+            -1.733572006225586,
+            -1.233572006225586
+          ],
+          "prediction": 0,
+          "gold": 0,
+          "correct": true,
+          "rank": [
+            0,
+            3,
+            1,
+            2
+          ],
+          "gold_rank": 1,
+          "strongest_wrong": 3,
+          "gold_margin": 0.0,
+          "top_tie": true,
+          "any_tie": true,
+          "strict_pair_count": 5,
+          "strict_inversions": 3,
+          "strict_inversion_fraction": 0.6,
+          "pairs_with_exact_tie": 1,
+          "near_tie_pairs_at_either_depth_1e-6": 0
+        },
+        "4": {
+          "scores": [
+            -1.2997068166732788,
+            -2.7997069358825684,
+            -0.5497068166732788,
+            -2.4247069358825684
+          ],
+          "prediction": 2,
+          "gold": 0,
+          "correct": false,
+          "rank": [
+            2,
+            0,
+            3,
+            1
+          ],
+          "gold_rank": 2,
+          "strongest_wrong": 2,
+          "gold_margin": -0.75,
+          "top_tie": false,
+          "any_tie": false
+        }
+      },
+      "new_predictions": [
+        3,
+        2,
+        2,
+        2
+      ],
+      "new_scores_by_candidate": [
+        [
+          -1.2768205404281616,
+          -1.3987929821014404,
+          -1.2181313037872314,
+          -1.2997219562530518
+        ],
+        [
+          -1.5268205404281616,
+          -2.6487929821014404,
+          -2.7181313037872314,
+          -2.7997219562530518
+        ],
+        [
+          -1.7143205404281616,
+          -0.7737929821014404,
+          -0.5931312441825867,
+          -0.549721896648407
+        ],
+        [
+          -1.2143205404281616,
+          -1.5237929821014404,
+          -2.4681313037872314,
+          -2.4247219562530518
+        ]
+      ],
+      "request_hashes_match_historical": true,
+      "historical_request_hashes": [
+        "e5c2c63410dbf675331bb1e947832ff424b2c5a9cd39a684aadfd4bbefad631a",
+        "bc281d038cc1460ec3710f50b97d08fee113b49717da38c01361bea2cff55c92",
+        "1381ab52eda0c5aa7f8b7313b981bf532302bc320bb81bc33654e119678b8e2f",
+        "230bdd64b55e4018ab061ec55e3304c3a41eba7c4295414c18046881706dc4d2"
+      ],
+      "new_request_hashes": [
+        "e5c2c63410dbf675331bb1e947832ff424b2c5a9cd39a684aadfd4bbefad631a",
+        "bc281d038cc1460ec3710f50b97d08fee113b49717da38c01361bea2cff55c92",
+        "1381ab52eda0c5aa7f8b7313b981bf532302bc320bb81bc33654e119678b8e2f",
+        "230bdd64b55e4018ab061ec55e3304c3a41eba7c4295414c18046881706dc4d2"
+      ],
+      "new_prompt_sha256": "4ba53d6cad54458e4ff4576e0bcd9b184f7390eb5b1df1052464cc6da36fbdf9",
+      "new_input_ids_sha256": [
+        "aafc5197c766e2cd5360e3fcfcbf69e9d5b76a4347b8d7b3ce40dd72b1a05022",
+        "aafc5197c766e2cd5360e3fcfcbf69e9d5b76a4347b8d7b3ce40dd72b1a05022",
+        "aafc5197c766e2cd5360e3fcfcbf69e9d5b76a4347b8d7b3ce40dd72b1a05022",
+        "aafc5197c766e2cd5360e3fcfcbf69e9d5b76a4347b8d7b3ce40dd72b1a05022"
+      ],
+      "new_target_ids": [
+        [
+          330
+        ],
+        [
+          389
+        ],
+        [
+          340
+        ],
+        [
+          422
+        ]
+      ],
+      "new_predecessor_positions": [
+        [
+          1948
+        ],
+        [
+          1948
+        ],
+        [
+          1948
+        ],
+        [
+          1948
+        ]
+      ],
+      "historical_target_token_counts": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "historical_token_ids_available": false,
+      "new_runtime": {
+        "attention": "sdpa",
+        "cuda": "12.4",
+        "dtype": "bfloat16",
+        "gpu": "NVIDIA RTX A6000",
+        "torch": "2.5.1+cu124",
+        "use_cache": false
+      }
+    },
+    {
+      "id": "NYSEDREGENTS_2012_8_28",
+      "mismatched_K": [
+        1
+      ],
+      "gold": 2,
+      "labels": [
+        "1",
+        "2",
+        "3",
+        "4"
+      ],
+      "historical_joint": {
+        "1": {
+          "scores": [
+            -1.0008752346038818,
+            -1.0008752346038818,
+            -1.7508752346038818,
+            -2.500875234603882
+          ],
+          "prediction": 0,
+          "gold": 2,
+          "correct": false,
+          "rank": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "gold_rank": 3,
+          "strongest_wrong": 0,
+          "gold_margin": -0.75,
+          "top_tie": true,
+          "any_tie": true,
+          "strict_pair_count": 5,
+          "strict_inversions": 3,
+          "strict_inversion_fraction": 0.6,
+          "pairs_with_exact_tie": 1,
+          "near_tie_pairs_at_either_depth_1e-6": 0
+        },
+        "4": {
+          "scores": [
+            -1.4911503791809082,
+            -3.741150379180908,
+            -0.3661503493785858,
+            -2.866150379180908
+          ],
+          "prediction": 2,
+          "gold": 2,
+          "correct": true,
+          "rank": [
+            2,
+            0,
+            3,
+            1
+          ],
+          "gold_rank": 1,
+          "strongest_wrong": 0,
+          "gold_margin": 1.1250000298023224,
+          "top_tie": false,
+          "any_tie": false
+        }
+      },
+      "new_predictions": [
+        1,
+        2,
+        2,
+        2
+      ],
+      "new_scores_by_candidate": [
+        [
+          -1.0349440574645996,
+          -1.4336401224136353,
+          -0.9879578948020935,
+          -1.5892651081085205
+        ],
+        [
+          -0.9724440574645996,
+          -2.8711400032043457,
+          -3.3629579544067383,
+          -3.7142651081085205
+        ],
+        [
+          -1.7224440574645996,
+          -0.5586401224136353,
+          -0.6129578948020935,
+          -0.3392651379108429
+        ],
+        [
+          -2.5349440574645996,
+          -2.0586400032043457,
+          -2.9879579544067383,
+          -2.8392651081085205
+        ]
+      ],
+      "request_hashes_match_historical": true,
+      "historical_request_hashes": [
+        "d78759cb19f080775c1467970e24c92173acc4aece6a787e7715acd425923c8f",
+        "66b8e9de67485b09a13ef61afd8e460492d6b73f636c116023504a7d18678a0f",
+        "ec374447c9305f37e3435353c7eee2337e0c340dc197fed32a8903067b239ad6",
+        "41e1e332d7ba1597719a5ce87cf88c2a51e76e1c7a7eacbf4a81698eecbf4c2c"
+      ],
+      "new_request_hashes": [
+        "d78759cb19f080775c1467970e24c92173acc4aece6a787e7715acd425923c8f",
+        "66b8e9de67485b09a13ef61afd8e460492d6b73f636c116023504a7d18678a0f",
+        "ec374447c9305f37e3435353c7eee2337e0c340dc197fed32a8903067b239ad6",
+        "41e1e332d7ba1597719a5ce87cf88c2a51e76e1c7a7eacbf4a81698eecbf4c2c"
+      ],
+      "new_prompt_sha256": "82764d494057ed9cd8c1bb5a1b3571ea3f6f095768d3e2cef09c1c136e7a6159",
+      "new_input_ids_sha256": [
+        "4029e40dc95179bce7aa2faa276dacf43a3932123ee416e988d9d8ca44f1b320",
+        "4029e40dc95179bce7aa2faa276dacf43a3932123ee416e988d9d8ca44f1b320",
+        "4029e40dc95179bce7aa2faa276dacf43a3932123ee416e988d9d8ca44f1b320",
+        "4029e40dc95179bce7aa2faa276dacf43a3932123ee416e988d9d8ca44f1b320"
+      ],
+      "new_target_ids": [
+        [
+          330
+        ],
+        [
+          389
+        ],
+        [
+          340
+        ],
+        [
+          422
+        ]
+      ],
+      "new_predecessor_positions": [
+        [
+          1926
+        ],
+        [
+          1926
+        ],
+        [
+          1926
+        ],
+        [
+          1926
+        ]
+      ],
+      "historical_target_token_counts": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "historical_token_ids_available": false,
+      "new_runtime": {
+        "attention": "sdpa",
+        "cuda": "12.4",
+        "dtype": "bfloat16",
+        "gpu": "NVIDIA RTX A6000",
+        "torch": "2.5.1+cu124",
+        "use_cache": false
+      }
+    },
+    {
+      "id": "NAEP_2005_8_S11+1",
+      "mismatched_K": [
+        1
+      ],
+      "gold": 2,
+      "labels": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "historical_joint": {
+        "1": {
+          "scores": [
+            -1.897632122039795,
+            -1.585132122039795,
+            -1.210132122039795,
+            -1.210132122039795
+          ],
+          "prediction": 2,
+          "gold": 2,
+          "correct": true,
+          "rank": [
+            2,
+            3,
+            1,
+            0
+          ],
+          "gold_rank": 1,
+          "strongest_wrong": 3,
+          "gold_margin": 0.0,
+          "top_tie": true,
+          "any_tie": true,
+          "strict_pair_count": 5,
+          "strict_inversions": 1,
+          "strict_inversion_fraction": 0.2,
+          "pairs_with_exact_tie": 1,
+          "near_tie_pairs_at_either_depth_1e-6": 0
+        },
+        "4": {
+          "scores": [
+            -3.4793009757995605,
+            -2.2293009757995605,
+            -0.22930093109607697,
+            -2.7293009757995605
+          ],
+          "prediction": 2,
+          "gold": 2,
+          "correct": true,
+          "rank": [
+            2,
+            1,
+            3,
+            0
+          ],
+          "gold_rank": 1,
+          "strongest_wrong": 1,
+          "gold_margin": 2.0000000447034836,
+          "top_tie": false,
+          "any_tie": false
+        }
+      },
+      "new_predictions": [
+        3,
+        2,
+        2,
+        2
+      ],
+      "new_scores_by_candidate": [
+        [
+          -1.8612158298492432,
+          -3.0462934970855713,
+          -3.2667605876922607,
+          -3.4586269855499268
+        ],
+        [
+          -1.6112158298492432,
+          -2.0462934970855713,
+          -2.2667605876922607,
+          -2.3336269855499268
+        ],
+        [
+          -1.2362158298492432,
+          -0.2962934374809265,
+          -0.26676061749458313,
+          -0.20862695574760437
+        ],
+        [
+          -1.1737158298492432,
+          -2.5462934970855713,
+          -2.3917605876922607,
+          -2.8336269855499268
+        ]
+      ],
+      "request_hashes_match_historical": true,
+      "historical_request_hashes": [
+        "80695b009977cab72884acabe12e248b400ca1186c337133114c780f8ffa3416",
+        "6a38254c42b189c6dc79fce50791cad9014b637d3fa85b07706aac8e6b8543c4",
+        "d4239399cc77130e068efe55a1c5c49d69bfd47a8f76c65e406d0ea19e0e370f",
+        "a9eec099625de58ad2bf1e6cca630c579a068171e81b0516a7598c7419be5ea6"
+      ],
+      "new_request_hashes": [
+        "80695b009977cab72884acabe12e248b400ca1186c337133114c780f8ffa3416",
+        "6a38254c42b189c6dc79fce50791cad9014b637d3fa85b07706aac8e6b8543c4",
+        "d4239399cc77130e068efe55a1c5c49d69bfd47a8f76c65e406d0ea19e0e370f",
+        "a9eec099625de58ad2bf1e6cca630c579a068171e81b0516a7598c7419be5ea6"
+      ],
+      "new_prompt_sha256": "a4a5cb904408ca5977dbfe6e08d16556babcc76f6d1c67971821f4cbb2fb8471",
+      "new_input_ids_sha256": [
+        "af0fc88cb875b2865c052e39e16de52f1041c3cf8d5130e5c5032c8f79b07ed5",
+        "af0fc88cb875b2865c052e39e16de52f1041c3cf8d5130e5c5032c8f79b07ed5",
+        "af0fc88cb875b2865c052e39e16de52f1041c3cf8d5130e5c5032c8f79b07ed5",
+        "af0fc88cb875b2865c052e39e16de52f1041c3cf8d5130e5c5032c8f79b07ed5"
+      ],
+      "new_target_ids": [
+        [
+          330
+        ],
+        [
+          389
+        ],
+        [
+          340
+        ],
+        [
+          422
+        ]
+      ],
+      "new_predecessor_positions": [
+        [
+          1910
+        ],
+        [
+          1910
+        ],
+        [
+          1910
+        ],
+        [
+          1910
+        ]
+      ],
+      "historical_target_token_counts": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "historical_token_ids_available": false,
+      "new_runtime": {
+        "attention": "sdpa",
+        "cuda": "12.4",
+        "dtype": "bfloat16",
+        "gpu": "NVIDIA RTX A6000",
+        "torch": "2.5.1+cu124",
+        "use_cache": false
+      }
+    },
+    {
+      "id": "Mercury_7042945",
+      "mismatched_K": [
+        4
+      ],
+      "gold": 1,
+      "labels": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "historical_joint": {
+        "1": {
+          "scores": [
+            -1.1198657751083374,
+            -0.9948657751083374,
+            -2.369865894317627,
+            -1.6198657751083374
+          ],
+          "prediction": 1,
+          "gold": 1,
+          "correct": true,
+          "rank": [
+            1,
+            0,
+            3,
+            2
+          ],
+          "gold_rank": 1,
+          "strongest_wrong": 0,
+          "gold_margin": 0.125,
+          "top_tie": false,
+          "any_tie": false,
+          "strict_pair_count": 5,
+          "strict_inversions": 1,
+          "strict_inversion_fraction": 0.2,
+          "pairs_with_exact_tie": 1,
+          "near_tie_pairs_at_either_depth_1e-6": 0
+        },
+        "4": {
+          "scores": [
+            -0.7841303944587708,
+            -0.7841303944587708,
+            -3.034130334854126,
+            -3.284130334854126
+          ],
+          "prediction": 0,
+          "gold": 1,
+          "correct": false,
+          "rank": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "gold_rank": 2,
+          "strongest_wrong": 0,
+          "gold_margin": 0.0,
+          "top_tie": true,
+          "any_tie": true
+        }
+      },
+      "new_predictions": [
+        1,
+        0,
+        0,
+        1
+      ],
+      "new_scores_by_candidate": [
+        [
+          -1.1127071380615234,
+          -0.8479123711585999,
+          -0.6459142565727234,
+          -0.849381685256958
+        ],
+        [
+          -0.9877071380615234,
+          -0.9729123711585999,
+          -0.8959142565727234,
+          -0.724381685256958
+        ],
+        [
+          -2.4252071380615234,
+          -2.222912311553955,
+          -3.020914316177368,
+          -2.974381685256958
+        ],
+        [
+          -1.6127071380615234,
+          -2.535412311553955,
+          -4.020914077758789,
+          -3.349381685256958
+        ]
+      ],
+      "request_hashes_match_historical": true,
+      "historical_request_hashes": [
+        "bc8e740225a8294bfd0c391156b260c89b296ae412af041e1c6f7149d457fd0a",
+        "0de4ff03a1a4e8caf0dc9cd1c44385de5f042dd63d8f093e0f242e305c582925",
+        "8357aa838950786c0044a326c7fde59646f1c6e1ea8b8cf66897d43faf830106",
+        "0f6bf977fda770badda51474733c3745fa894d3e24a249ae2a6bb85cc39042f3"
+      ],
+      "new_request_hashes": [
+        "bc8e740225a8294bfd0c391156b260c89b296ae412af041e1c6f7149d457fd0a",
+        "0de4ff03a1a4e8caf0dc9cd1c44385de5f042dd63d8f093e0f242e305c582925",
+        "8357aa838950786c0044a326c7fde59646f1c6e1ea8b8cf66897d43faf830106",
+        "0f6bf977fda770badda51474733c3745fa894d3e24a249ae2a6bb85cc39042f3"
+      ],
+      "new_prompt_sha256": "a00db162dc61f6f9076645c000a74b3bcc41fca836ca4b44577083876bac3292",
+      "new_input_ids_sha256": [
+        "f70bc979f12b62137f8085e9e17e351e7d2be5d0b267c2d1660872625c0495a8",
+        "f70bc979f12b62137f8085e9e17e351e7d2be5d0b267c2d1660872625c0495a8",
+        "f70bc979f12b62137f8085e9e17e351e7d2be5d0b267c2d1660872625c0495a8",
+        "f70bc979f12b62137f8085e9e17e351e7d2be5d0b267c2d1660872625c0495a8"
+      ],
+      "new_target_ids": [
+        [
+          330
+        ],
+        [
+          389
+        ],
+        [
+          340
+        ],
+        [
+          422
+        ]
+      ],
+      "new_predecessor_positions": [
+        [
+          1909
+        ],
+        [
+          1909
+        ],
+        [
+          1909
+        ],
+        [
+          1909
+        ]
+      ],
+      "historical_target_token_counts": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "historical_token_ids_available": false,
+      "new_runtime": {
+        "attention": "sdpa",
+        "cuda": "12.4",
+        "dtype": "bfloat16",
+        "gpu": "NVIDIA RTX A6000",
+        "torch": "2.5.1+cu124",
+        "use_cache": false
+      }
+    },
+    {
+      "id": "Mercury_SC_415719",
+      "mismatched_K": [
+        1
+      ],
+      "gold": 0,
+      "labels": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "historical_joint": {
+        "1": {
+          "scores": [
+            -1.4835532903671265,
+            -1.0460532903671265,
+            -1.0460532903671265,
+            -2.921053409576416
+          ],
+          "prediction": 1,
+          "gold": 0,
+          "correct": false,
+          "rank": [
+            1,
+            2,
+            0,
+            3
+          ],
+          "gold_rank": 3,
+          "strongest_wrong": 1,
+          "gold_margin": -0.4375,
+          "top_tie": true,
+          "any_tie": true,
+          "strict_pair_count": 5,
+          "strict_inversions": 2,
+          "strict_inversion_fraction": 0.4,
+          "pairs_with_exact_tie": 1,
+          "near_tie_pairs_at_either_depth_1e-6": 0
+        },
+        "4": {
+          "scores": [
+            -0.26184892654418945,
+            -5.1368489265441895,
+            -1.5118489265441895,
+            -5.6368489265441895
+          ],
+          "prediction": 0,
+          "gold": 0,
+          "correct": true,
+          "rank": [
+            0,
+            2,
+            1,
+            3
+          ],
+          "gold_rank": 1,
+          "strongest_wrong": 2,
+          "gold_margin": 1.25,
+          "top_tie": false,
+          "any_tie": false
+        }
+      },
+      "new_predictions": [
+        2,
+        2,
+        2,
+        0
+      ],
+      "new_scores_by_candidate": [
+        [
+          -1.4584951400756836,
+          -1.0663347244262695,
+          -0.8481776118278503,
+          -0.2355911284685135
+        ],
+        [
+          -1.0834951400756836,
+          -2.3163347244262695,
+          -4.473177433013916,
+          -5.110590934753418
+        ],
+        [
+          -1.0209951400756836,
+          -0.6913346648216248,
+          -0.5981776118278503,
+          -1.610591173171997
+        ],
+        [
+          -2.9584951400756836,
+          -2.9413347244262695,
+          -4.598177433013916,
+          -5.610590934753418
+        ]
+      ],
+      "request_hashes_match_historical": true,
+      "historical_request_hashes": [
+        "114dad655efa79c658d356f69f4d52a994b8735be44eb8fb7f1eab9626ae1614",
+        "2a43a90e8e6083137890328a3661902b960c3f8d0022966559d119b343815da6",
+        "03efe7592e74a13282ea35d6ff3fbc55c5ea04fae872a3577274e935defdc2f6",
+        "121efdef977385b0ca3b1def82b97fee0bacffd1b1ec7edbe854a444c5acbc4c"
+      ],
+      "new_request_hashes": [
+        "114dad655efa79c658d356f69f4d52a994b8735be44eb8fb7f1eab9626ae1614",
+        "2a43a90e8e6083137890328a3661902b960c3f8d0022966559d119b343815da6",
+        "03efe7592e74a13282ea35d6ff3fbc55c5ea04fae872a3577274e935defdc2f6",
+        "121efdef977385b0ca3b1def82b97fee0bacffd1b1ec7edbe854a444c5acbc4c"
+      ],
+      "new_prompt_sha256": "0f1bb6a6bb6b8451f14cf5157750110aec5a242ec9e7d4d3356a04ded98cb6cd",
+      "new_input_ids_sha256": [
+        "d3b6607a146fcd3570c2e7b7900c0c674e992efad39dbc72f90317fa527ba062",
+        "d3b6607a146fcd3570c2e7b7900c0c674e992efad39dbc72f90317fa527ba062",
+        "d3b6607a146fcd3570c2e7b7900c0c674e992efad39dbc72f90317fa527ba062",
+        "d3b6607a146fcd3570c2e7b7900c0c674e992efad39dbc72f90317fa527ba062"
+      ],
+      "new_target_ids": [
+        [
+          330
+        ],
+        [
+          389
+        ],
+        [
+          340
+        ],
+        [
+          422
+        ]
+      ],
+      "new_predecessor_positions": [
+        [
+          1912
+        ],
+        [
+          1912
+        ],
+        [
+          1912
+        ],
+        [
+          1912
+        ]
+      ],
+      "historical_target_token_counts": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "historical_token_ids_available": false,
+      "new_runtime": {
+        "attention": "sdpa",
+        "cuda": "12.4",
+        "dtype": "bfloat16",
+        "gpu": "NVIDIA RTX A6000",
+        "torch": "2.5.1+cu124",
+        "use_cache": false
+      }
+    },
+    {
+      "id": "Mercury_7017045",
+      "mismatched_K": [
+        1
+      ],
+      "gold": 1,
+      "labels": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "historical_joint": {
+        "1": {
+          "scores": [
+            -1.2595795392990112,
+            -1.1970795392990112,
+            -1.8220795392990112,
+            -1.6345795392990112
+          ],
+          "prediction": 1,
+          "gold": 1,
+          "correct": true,
+          "rank": [
+            1,
+            0,
+            3,
+            2
+          ],
+          "gold_rank": 1,
+          "strongest_wrong": 0,
+          "gold_margin": 0.0625,
+          "top_tie": false,
+          "any_tie": false,
+          "strict_pair_count": 6,
+          "strict_inversions": 1,
+          "strict_inversion_fraction": 0.16666666666666666,
+          "pairs_with_exact_tie": 0,
+          "near_tie_pairs_at_either_depth_1e-6": 0
+        },
+        "4": {
+          "scores": [
+            -4.032203197479248,
+            -0.03220334276556969,
+            -4.782203197479248,
+            -5.469703197479248
+          ],
+          "prediction": 1,
+          "gold": 1,
+          "correct": true,
+          "rank": [
+            1,
+            0,
+            2,
+            3
+          ],
+          "gold_rank": 1,
+          "strongest_wrong": 0,
+          "gold_margin": 3.9999998547136784,
+          "top_tie": false,
+          "any_tie": false
+        }
+      },
+      "new_predictions": [
+        0,
+        1,
+        1,
+        1
+      ],
+      "new_scores_by_candidate": [
+        [
+          -1.2279268503189087,
+          -1.7922077178955078,
+          -3.3048861026763916,
+          -4.03190279006958
+        ],
+        [
+          -1.2279268503189087,
+          -0.5422077178955078,
+          -0.054886143654584885,
+          -0.031902942806482315
+        ],
+        [
+          -1.8529268503189087,
+          -2.042207717895508,
+          -4.554886341094971,
+          -4.78190279006958
+        ],
+        [
+          -1.6029268503189087,
+          -2.167207717895508,
+          -5.179886341094971,
+          -5.53190279006958
+        ]
+      ],
+      "request_hashes_match_historical": true,
+      "historical_request_hashes": [
+        "c69dc45a1a530bfe23a803c6fe067c47a4910ea72484be6f44dfcb98185a1cfe",
+        "f37a28abad33601fe0dcc0ffe31d516c4ed0a2042bc121ff7b460dd384c18100",
+        "04a5c584a33cb3ea67679e6a62235e086edd0241557c3524cab1aa63c796dd09",
+        "8749360502f66365d560437ceb0893c8887b0e6d8292c8f60ec087239b3ccf8a"
+      ],
+      "new_request_hashes": [
+        "c69dc45a1a530bfe23a803c6fe067c47a4910ea72484be6f44dfcb98185a1cfe",
+        "f37a28abad33601fe0dcc0ffe31d516c4ed0a2042bc121ff7b460dd384c18100",
+        "04a5c584a33cb3ea67679e6a62235e086edd0241557c3524cab1aa63c796dd09",
+        "8749360502f66365d560437ceb0893c8887b0e6d8292c8f60ec087239b3ccf8a"
+      ],
+      "new_prompt_sha256": "8392e78b03f53531ea1e7cb797a0925a0149c2240a9f480d0a3f5a979c7e74ac",
+      "new_input_ids_sha256": [
+        "4d9d2d4cf9c66c7d91673ec4c91d15e9340bdee48873a0e4931cef493cbcaba7",
+        "4d9d2d4cf9c66c7d91673ec4c91d15e9340bdee48873a0e4931cef493cbcaba7",
+        "4d9d2d4cf9c66c7d91673ec4c91d15e9340bdee48873a0e4931cef493cbcaba7",
+        "4d9d2d4cf9c66c7d91673ec4c91d15e9340bdee48873a0e4931cef493cbcaba7"
+      ],
+      "new_target_ids": [
+        [
+          330
+        ],
+        [
+          389
+        ],
+        [
+          340
+        ],
+        [
+          422
+        ]
+      ],
+      "new_predecessor_positions": [
+        [
+          1880
+        ],
+        [
+          1880
+        ],
+        [
+          1880
+        ],
+        [
+          1880
+        ]
+      ],
+      "historical_target_token_counts": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "historical_token_ids_available": false,
+      "new_runtime": {
+        "attention": "sdpa",
+        "cuda": "12.4",
+        "dtype": "bfloat16",
+        "gpu": "NVIDIA RTX A6000",
+        "torch": "2.5.1+cu124",
+        "use_cache": false
+      }
+    },
+    {
+      "id": "Mercury_7086520",
+      "mismatched_K": [
+        1
+      ],
+      "gold": 0,
+      "labels": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "historical_joint": {
+        "1": {
+          "scores": [
+            -0.9261332750320435,
+            -0.9886332750320435,
+            -2.113633155822754,
+            -2.488633155822754
+          ],
+          "prediction": 0,
+          "gold": 0,
+          "correct": true,
+          "rank": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "gold_rank": 1,
+          "strongest_wrong": 1,
+          "gold_margin": 0.0625,
+          "top_tie": false,
+          "any_tie": false,
+          "strict_pair_count": 6,
+          "strict_inversions": 0,
+          "strict_inversion_fraction": 0.0,
+          "pairs_with_exact_tie": 0,
+          "near_tie_pairs_at_either_depth_1e-6": 0
+        },
+        "4": {
+          "scores": [
+            -0.17746245861053467,
+            -2.052462577819824,
+            -3.677462577819824,
+            -4.802462577819824
+          ],
+          "prediction": 0,
+          "gold": 0,
+          "correct": true,
+          "rank": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "gold_rank": 1,
+          "strongest_wrong": 1,
+          "gold_margin": 1.8750001192092896,
+          "top_tie": false,
+          "any_tie": false
+        }
+      },
+      "new_predictions": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "new_scores_by_candidate": [
+        [
+          -0.9886506199836731,
+          -0.10717027634382248,
+          -0.23396393656730652,
+          -0.1774470955133438
+        ],
+        [
+          -0.9261506199836731,
+          -2.482170343399048,
+          -1.858963966369629,
+          -2.0524470806121826
+        ],
+        [
+          -2.1136505603790283,
+          -4.357170104980469,
+          -3.233963966369629,
+          -3.6774470806121826
+        ],
+        [
+          -2.4886505603790283,
+          -5.357170104980469,
+          -4.358963966369629,
+          -4.802447319030762
+        ]
+      ],
+      "request_hashes_match_historical": true,
+      "historical_request_hashes": [
+        "8b59d4359658ec413eda933b0b288f96596d1213b3af7591ea8d1da5ed4ee942",
+        "960cb651906dc41899881b1e8c072595b8f6e783ad6374d90d9f746ed742e723",
+        "8859034881548cc8fd2a76c3f4ad02a3057a05c7833d629232085a962f082541",
+        "535905f4278681ee636290f8932337dcc948460a542d3514a9effeb1ea314a2c"
+      ],
+      "new_request_hashes": [
+        "8b59d4359658ec413eda933b0b288f96596d1213b3af7591ea8d1da5ed4ee942",
+        "960cb651906dc41899881b1e8c072595b8f6e783ad6374d90d9f746ed742e723",
+        "8859034881548cc8fd2a76c3f4ad02a3057a05c7833d629232085a962f082541",
+        "535905f4278681ee636290f8932337dcc948460a542d3514a9effeb1ea314a2c"
+      ],
+      "new_prompt_sha256": "a2b0430001ebc7369737d75c8ac5bc972474c6bbf79c0bad5eceb6348251e2c2",
+      "new_input_ids_sha256": [
+        "18f262d8392cf1c3b7bd3a904b099cacafba88693a2b29252a1682ed6459783f",
+        "18f262d8392cf1c3b7bd3a904b099cacafba88693a2b29252a1682ed6459783f",
+        "18f262d8392cf1c3b7bd3a904b099cacafba88693a2b29252a1682ed6459783f",
+        "18f262d8392cf1c3b7bd3a904b099cacafba88693a2b29252a1682ed6459783f"
+      ],
+      "new_target_ids": [
+        [
+          330
+        ],
+        [
+          389
+        ],
+        [
+          340
+        ],
+        [
+          422
+        ]
+      ],
+      "new_predecessor_positions": [
+        [
+          1902
+        ],
+        [
+          1902
+        ],
+        [
+          1902
+        ],
+        [
+          1902
+        ]
+      ],
+      "historical_target_token_counts": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "historical_token_ids_available": false,
+      "new_runtime": {
+        "attention": "sdpa",
+        "cuda": "12.4",
+        "dtype": "bfloat16",
+        "gpu": "NVIDIA RTX A6000",
+        "torch": "2.5.1+cu124",
+        "use_cache": false
+      }
+    },
+    {
+      "id": "Mercury_7142800",
+      "mismatched_K": [
+        1
+      ],
+      "gold": 1,
+      "labels": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "historical_joint": {
+        "1": {
+          "scores": [
+            -1.4748992919921875,
+            -1.2873992919921875,
+            -1.7248992919921875,
+            -1.2248992919921875
+          ],
+          "prediction": 3,
+          "gold": 1,
+          "correct": false,
+          "rank": [
+            3,
+            1,
+            0,
+            2
+          ],
+          "gold_rank": 2,
+          "strongest_wrong": 3,
+          "gold_margin": -0.0625,
+          "top_tie": false,
+          "any_tie": false,
+          "strict_pair_count": 6,
+          "strict_inversions": 4,
+          "strict_inversion_fraction": 0.6666666666666666,
+          "pairs_with_exact_tie": 0,
+          "near_tie_pairs_at_either_depth_1e-6": 0
+        },
+        "4": {
+          "scores": [
+            -3.8213367462158203,
+            -0.3213367760181427,
+            -1.4463367462158203,
+            -4.07133674621582
+          ],
+          "prediction": 1,
+          "gold": 1,
+          "correct": true,
+          "rank": [
+            1,
+            2,
+            0,
+            3
+          ],
+          "gold_rank": 1,
+          "strongest_wrong": 2,
+          "gold_margin": 1.1249999701976776,
+          "top_tie": false,
+          "any_tie": false
+        }
+      },
+      "new_predictions": [
+        1,
+        2,
+        1,
+        1
+      ],
+      "new_scores_by_candidate": [
+        [
+          -1.4818320274353027,
+          -2.2230892181396484,
+          -4.2567572593688965,
+          -3.7638306617736816
+        ],
+        [
+          -1.2318320274353027,
+          -0.9730890989303589,
+          -0.2567574381828308,
+          -0.3888305425643921
+        ],
+        [
+          -1.7943320274353027,
+          -0.8480890989303589,
+          -1.6317574977874756,
+          -1.263830542564392
+        ],
+        [
+          -1.2318320274353027,
+          -2.4730892181396484,
+          -4.1317572593688965,
+          -4.138830661773682
+        ]
+      ],
+      "request_hashes_match_historical": true,
+      "historical_request_hashes": [
+        "bcbfbde5e97bdf47ff3c008c08335d32cbbbb1f39d59ac3ff690ab7cf5bf1aef",
+        "3d5e55f13a4efa4d3ba8b64c9b629c1499c2f0e3e46c9a769530fb41e062940d",
+        "99c3ceb86b7288fb0245e6ddfe9205eb0242508fbb7a97bbc549ee81484159df",
+        "bdd4878bab9b00fccdb45e95f92e14356f2eb23573ea1ea340d05b58403f9cbb"
+      ],
+      "new_request_hashes": [
+        "bcbfbde5e97bdf47ff3c008c08335d32cbbbb1f39d59ac3ff690ab7cf5bf1aef",
+        "3d5e55f13a4efa4d3ba8b64c9b629c1499c2f0e3e46c9a769530fb41e062940d",
+        "99c3ceb86b7288fb0245e6ddfe9205eb0242508fbb7a97bbc549ee81484159df",
+        "bdd4878bab9b00fccdb45e95f92e14356f2eb23573ea1ea340d05b58403f9cbb"
+      ],
+      "new_prompt_sha256": "053addcb4b642052a8a2c04c1d04ac0691f445755acb8e616b02cf89594f0237",
+      "new_input_ids_sha256": [
+        "68dfbeb3eb109fe06085791f7ea3432e1e45619efecf39bae5c5e8ae65ad8093",
+        "68dfbeb3eb109fe06085791f7ea3432e1e45619efecf39bae5c5e8ae65ad8093",
+        "68dfbeb3eb109fe06085791f7ea3432e1e45619efecf39bae5c5e8ae65ad8093",
+        "68dfbeb3eb109fe06085791f7ea3432e1e45619efecf39bae5c5e8ae65ad8093"
+      ],
+      "new_target_ids": [
+        [
+          330
+        ],
+        [
+          389
+        ],
+        [
+          340
+        ],
+        [
+          422
+        ]
+      ],
+      "new_predecessor_positions": [
+        [
+          1916
+        ],
+        [
+          1916
+        ],
+        [
+          1916
+        ],
+        [
+          1916
+        ]
+      ],
+      "historical_target_token_counts": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "historical_token_ids_available": false,
+      "new_runtime": {
+        "attention": "sdpa",
+        "cuda": "12.4",
+        "dtype": "bfloat16",
+        "gpu": "NVIDIA RTX A6000",
+        "torch": "2.5.1+cu124",
+        "use_cache": false
+      }
+    },
+    {
+      "id": "Mercury_7202843",
+      "mismatched_K": [
+        1
+      ],
+      "gold": 0,
+      "labels": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "historical_joint": {
+        "1": {
+          "scores": [
+            -0.9214802980422974,
+            -2.421480178833008,
+            -2.983980178833008,
+            -0.7964802980422974
+          ],
+          "prediction": 3,
+          "gold": 0,
+          "correct": false,
+          "rank": [
+            3,
+            0,
+            1,
+            2
+          ],
+          "gold_rank": 2,
+          "strongest_wrong": 3,
+          "gold_margin": -0.125,
+          "top_tie": false,
+          "any_tie": false,
+          "strict_pair_count": 5,
+          "strict_inversions": 3,
+          "strict_inversion_fraction": 0.6,
+          "pairs_with_exact_tie": 1,
+          "near_tie_pairs_at_either_depth_1e-6": 0
+        },
+        "4": {
+          "scores": [
+            -0.0031901916954666376,
+            -6.753190040588379,
+            -6.753190040588379,
+            -7.253190040588379
+          ],
+          "prediction": 0,
+          "gold": 0,
+          "correct": true,
+          "rank": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "gold_rank": 1,
+          "strongest_wrong": 1,
+          "gold_margin": 6.749999848892912,
+          "top_tie": false,
+          "any_tie": true
+        }
+      },
+      "new_predictions": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "new_scores_by_candidate": [
+        [
+          -0.8609349727630615,
+          -0.006648207549005747,
+          -0.002691220724955201,
+          -0.003185557434335351
+        ],
+        [
+          -2.4234349727630615,
+          -5.506648063659668,
+          -6.877691268920898,
+          -6.753185749053955
+        ],
+        [
+          -2.9234349727630615,
+          -6.256648063659668,
+          -7.002691268920898,
+          -6.753185749053955
+        ],
+        [
+          -0.8609349727630615,
+          -7.694148063659668,
+          -7.377691268920898,
+          -7.253185749053955
+        ]
+      ],
+      "request_hashes_match_historical": true,
+      "historical_request_hashes": [
+        "bd3da62bd286e1179a1256bbff0e31564df5f4a53d5e6e58fa966774466719c9",
+        "46db17225239f4b7b68ce594bbf8d8de34f5b81dd5c99325c5d7c0edb0e6124c",
+        "f0c898202365be9ef90186f96539ab43840e79854dbd665f7abb8eed50f3c213",
+        "7da2be8cf862468d92b6671a20b38f98600d0947f610dd6e82d4964adf60f5ff"
+      ],
+      "new_request_hashes": [
+        "bd3da62bd286e1179a1256bbff0e31564df5f4a53d5e6e58fa966774466719c9",
+        "46db17225239f4b7b68ce594bbf8d8de34f5b81dd5c99325c5d7c0edb0e6124c",
+        "f0c898202365be9ef90186f96539ab43840e79854dbd665f7abb8eed50f3c213",
+        "7da2be8cf862468d92b6671a20b38f98600d0947f610dd6e82d4964adf60f5ff"
+      ],
+      "new_prompt_sha256": "a07a1a6c1c8017fedae3ada34492eacc2d570bfaae69d9757a280351b08fce2f",
+      "new_input_ids_sha256": [
+        "3376a958e5779e180fd8f888efd6c55d2ea5b85d5346a654c8a4b175f4728374",
+        "3376a958e5779e180fd8f888efd6c55d2ea5b85d5346a654c8a4b175f4728374",
+        "3376a958e5779e180fd8f888efd6c55d2ea5b85d5346a654c8a4b175f4728374",
+        "3376a958e5779e180fd8f888efd6c55d2ea5b85d5346a654c8a4b175f4728374"
+      ],
+      "new_target_ids": [
+        [
+          330
+        ],
+        [
+          389
+        ],
+        [
+          340
+        ],
+        [
+          422
+        ]
+      ],
+      "new_predecessor_positions": [
+        [
+          1936
+        ],
+        [
+          1936
+        ],
+        [
+          1936
+        ],
+        [
+          1936
+        ]
+      ],
+      "historical_target_token_counts": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "historical_token_ids_available": false,
+      "new_runtime": {
+        "attention": "sdpa",
+        "cuda": "12.4",
+        "dtype": "bfloat16",
+        "gpu": "NVIDIA RTX A6000",
+        "torch": "2.5.1+cu124",
+        "use_cache": false
+      }
+    },
+    {
+      "id": "Mercury_SC_406458",
+      "mismatched_K": [
+        1
+      ],
+      "gold": 3,
+      "labels": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "historical_joint": {
+        "1": {
+          "scores": [
+            -1.2647695541381836,
+            -1.2647695541381836,
+            -1.7022695541381836,
+            -1.4522695541381836
+          ],
+          "prediction": 0,
+          "gold": 3,
+          "correct": false,
+          "rank": [
+            0,
+            1,
+            3,
+            2
+          ],
+          "gold_rank": 3,
+          "strongest_wrong": 0,
+          "gold_margin": -0.1875,
+          "top_tie": true,
+          "any_tie": true,
+          "strict_pair_count": 5,
+          "strict_inversions": 2,
+          "strict_inversion_fraction": 0.4,
+          "pairs_with_exact_tie": 1,
+          "near_tie_pairs_at_either_depth_1e-6": 0
+        },
+        "4": {
+          "scores": [
+            -4.5431952476501465,
+            -3.7931952476501465,
+            -4.7931952476501465,
+            -0.043195273727178574
+          ],
+          "prediction": 3,
+          "gold": 3,
+          "correct": true,
+          "rank": [
+            3,
+            1,
+            0,
+            2
+          ],
+          "gold_rank": 1,
+          "strongest_wrong": 1,
+          "gold_margin": 3.749999973922968,
+          "top_tie": false,
+          "any_tie": false
+        }
+      },
+      "new_predictions": [
+        1,
+        3,
+        3,
+        3
+      ],
+      "new_scores_by_candidate": [
+        [
+          -1.2967473268508911,
+          -2.4917593002319336,
+          -4.529102802276611,
+          -4.416965484619141
+        ],
+        [
+          -1.2342473268508911,
+          -2.6167593002319336,
+          -4.529102802276611,
+          -3.9169657230377197
+        ],
+        [
+          -1.7342473268508911,
+          -2.8667593002319336,
+          -5.029102802276611,
+          -4.791965484619141
+        ],
+        [
+          -1.4217473268508911,
+          -0.24175925552845,
+          -0.02910301275551319,
+          -0.04196571186184883
+        ]
+      ],
+      "request_hashes_match_historical": true,
+      "historical_request_hashes": [
+        "8c77ce646ec0bfaba23fd0513460b3ce8bf5489691f320a36ec3581070a23d9e",
+        "94d8b273653907bcad4431dccac035f8ef443b2b15cac9d6ea6158e2cc8dd677",
+        "99afbc1cd6042e7ae8ad44b9674583ddefdd61f614c572f92f7cdf2289742382",
+        "82153b8e4968fb3878ad9298135364ab9ad9a1e6b368ae8493150eed3eb61b2d"
+      ],
+      "new_request_hashes": [
+        "8c77ce646ec0bfaba23fd0513460b3ce8bf5489691f320a36ec3581070a23d9e",
+        "94d8b273653907bcad4431dccac035f8ef443b2b15cac9d6ea6158e2cc8dd677",
+        "99afbc1cd6042e7ae8ad44b9674583ddefdd61f614c572f92f7cdf2289742382",
+        "82153b8e4968fb3878ad9298135364ab9ad9a1e6b368ae8493150eed3eb61b2d"
+      ],
+      "new_prompt_sha256": "d4d901f3be77c3b6c378dabb333bffcdc662259d3e0cdcaf37d0310f4e1b2141",
+      "new_input_ids_sha256": [
+        "5c0b741148dc6f1d2d371656c9b91cda0de9ec4dfe4597ab951a0b33b5464dbd",
+        "5c0b741148dc6f1d2d371656c9b91cda0de9ec4dfe4597ab951a0b33b5464dbd",
+        "5c0b741148dc6f1d2d371656c9b91cda0de9ec4dfe4597ab951a0b33b5464dbd",
+        "5c0b741148dc6f1d2d371656c9b91cda0de9ec4dfe4597ab951a0b33b5464dbd"
+      ],
+      "new_target_ids": [
+        [
+          330
+        ],
+        [
+          389
+        ],
+        [
+          340
+        ],
+        [
+          422
+        ]
+      ],
+      "new_predecessor_positions": [
+        [
+          1920
+        ],
+        [
+          1920
+        ],
+        [
+          1920
+        ],
+        [
+          1920
+        ]
+      ],
+      "historical_target_token_counts": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "historical_token_ids_available": false,
+      "new_runtime": {
+        "attention": "sdpa",
+        "cuda": "12.4",
+        "dtype": "bfloat16",
+        "gpu": "NVIDIA RTX A6000",
+        "torch": "2.5.1+cu124",
+        "use_cache": false
+      }
+    },
+    {
+      "id": "Mercury_SC_402981",
+      "mismatched_K": [
+        1
+      ],
+      "gold": 3,
+      "labels": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "historical_joint": {
+        "1": {
+          "scores": [
+            -1.8196756839752197,
+            -1.1946756839752197,
+            -1.6321756839752197,
+            -1.1946756839752197
+          ],
+          "prediction": 1,
+          "gold": 3,
+          "correct": false,
+          "rank": [
+            1,
+            3,
+            2,
+            0
+          ],
+          "gold_rank": 2,
+          "strongest_wrong": 1,
+          "gold_margin": 0.0,
+          "top_tie": true,
+          "any_tie": true,
+          "strict_pair_count": 5,
+          "strict_inversions": 5,
+          "strict_inversion_fraction": 1.0,
+          "pairs_with_exact_tie": 1,
+          "near_tie_pairs_at_either_depth_1e-6": 0
+        },
+        "4": {
+          "scores": [
+            -0.3199472725391388,
+            -3.8199472427368164,
+            -1.6949472427368164,
+            -2.6949472427368164
+          ],
+          "prediction": 0,
+          "gold": 3,
+          "correct": false,
+          "rank": [
+            0,
+            2,
+            3,
+            1
+          ],
+          "gold_rank": 3,
+          "strongest_wrong": 0,
+          "gold_margin": -2.3749999701976776,
+          "top_tie": false,
+          "any_tie": false
+        }
+      },
+      "new_predictions": [
+        3,
+        0,
+        0,
+        0
+      ],
+      "new_scores_by_candidate": [
+        [
+          -1.736913800239563,
+          -0.30617982149124146,
+          -0.16662122309207916,
+          -0.3199480473995209
+        ],
+        [
+          -1.236913800239563,
+          -2.1811797618865967,
+          -3.791621208190918,
+          -3.8199479579925537
+        ],
+        [
+          -1.674413800239563,
+          -2.1811797618865967,
+          -2.291621208190918,
+          -1.6949480772018433
+        ],
+        [
+          -1.174413800239563,
+          -3.3061797618865967,
+          -3.541621208190918,
+          -2.6949479579925537
+        ]
+      ],
+      "request_hashes_match_historical": true,
+      "historical_request_hashes": [
+        "e0e6798b45405ed0ae5c466d85b5b2327ff39a8a306ddb53a5b793948a9f7619",
+        "0eaac39fe0033b0c2b977c207855ca60e6c3175a284e9a360b3bb5c66b9d8b3f",
+        "a2e58b74fff763faf34059d64d5034e5bc81addfd8f6bad834f8b0ab57f12a60",
+        "c77db2d67ce83e5d7dc3b94567575e98a6005abc866992c4ccdca7fc8e3278e1"
+      ],
+      "new_request_hashes": [
+        "e0e6798b45405ed0ae5c466d85b5b2327ff39a8a306ddb53a5b793948a9f7619",
+        "0eaac39fe0033b0c2b977c207855ca60e6c3175a284e9a360b3bb5c66b9d8b3f",
+        "a2e58b74fff763faf34059d64d5034e5bc81addfd8f6bad834f8b0ab57f12a60",
+        "c77db2d67ce83e5d7dc3b94567575e98a6005abc866992c4ccdca7fc8e3278e1"
+      ],
+      "new_prompt_sha256": "f5d4a86a957fdef0ea33d920dd1fc2a47bbbec5b2287fba8e1e21bdd084a3af3",
+      "new_input_ids_sha256": [
+        "c243b6a61790dd4480c3907b19f94268182c5cb4420a4b259f957385a0b835c2",
+        "c243b6a61790dd4480c3907b19f94268182c5cb4420a4b259f957385a0b835c2",
+        "c243b6a61790dd4480c3907b19f94268182c5cb4420a4b259f957385a0b835c2",
+        "c243b6a61790dd4480c3907b19f94268182c5cb4420a4b259f957385a0b835c2"
+      ],
+      "new_target_ids": [
+        [
+          330
+        ],
+        [
+          389
+        ],
+        [
+          340
+        ],
+        [
+          422
+        ]
+      ],
+      "new_predecessor_positions": [
+        [
+          1886
+        ],
+        [
+          1886
+        ],
+        [
+          1886
+        ],
+        [
+          1886
+        ]
+      ],
+      "historical_target_token_counts": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "historical_token_ids_available": false,
+      "new_runtime": {
+        "attention": "sdpa",
+        "cuda": "12.4",
+        "dtype": "bfloat16",
+        "gpu": "NVIDIA RTX A6000",
+        "torch": "2.5.1+cu124",
+        "use_cache": false
+      }
+    },
+    {
+      "id": "NYSEDREGENTS_2008_8_5",
+      "mismatched_K": [
+        1
+      ],
+      "gold": 1,
+      "labels": [
+        "1",
+        "2",
+        "3",
+        "4"
+      ],
+      "historical_joint": {
+        "1": {
+          "scores": [
+            -2.230137825012207,
+            -1.1676379442214966,
+            -1.4176379442214966,
+            -1.1676379442214966
+          ],
+          "prediction": 1,
+          "gold": 1,
+          "correct": true,
+          "rank": [
+            1,
+            3,
+            2,
+            0
+          ],
+          "gold_rank": 1,
+          "strongest_wrong": 3,
+          "gold_margin": 0.0,
+          "top_tie": true,
+          "any_tie": true,
+          "strict_pair_count": 5,
+          "strict_inversions": 3,
+          "strict_inversion_fraction": 0.6,
+          "pairs_with_exact_tie": 1,
+          "near_tie_pairs_at_either_depth_1e-6": 0
+        },
+        "4": {
+          "scores": [
+            -1.467409610748291,
+            -0.34240958094596863,
+            -3.217409610748291,
+            -3.967409610748291
+          ],
+          "prediction": 1,
+          "gold": 1,
+          "correct": true,
+          "rank": [
+            1,
+            0,
+            2,
+            3
+          ],
+          "gold_rank": 1,
+          "strongest_wrong": 0,
+          "gold_margin": 1.1250000298023224,
+          "top_tie": false,
+          "any_tie": false
+        }
+      },
+      "new_predictions": [
+        3,
+        3,
+        0,
+        1
+      ],
+      "new_scores_by_candidate": [
+        [
+          -2.2646279335021973,
+          -4.419608116149902,
+          -0.8687096834182739,
+          -1.5577515363693237
+        ],
+        [
+          -1.2021279335021973,
+          -3.5446083545684814,
+          -0.9937096834182739,
+          -0.3077515661716461
+        ],
+        [
+          -1.3896279335021973,
+          -2.1696083545684814,
+          -2.6187095642089844,
+          -3.3077516555786133
+        ],
+        [
+          -1.1396279335021973,
+          -0.16960832476615906,
+          -1.993709683418274,
+          -4.057751655578613
+        ]
+      ],
+      "request_hashes_match_historical": true,
+      "historical_request_hashes": [
+        "342341dee6769733509105a3213ea51ddfef912d4b7de06d96a43d82ac6423cc",
+        "63a2c6892e09f62952687dd0a5a434fc74e54ab89d06867004a1e388fb712fef",
+        "e15707b13eb501c6841d4b36497bf5096b9454779094d3483a6378f1fc26a9e6",
+        "1a3523e02810124155d11d633fa000bb9baa0347abae6a170a463f385eabbd67"
+      ],
+      "new_request_hashes": [
+        "342341dee6769733509105a3213ea51ddfef912d4b7de06d96a43d82ac6423cc",
+        "63a2c6892e09f62952687dd0a5a434fc74e54ab89d06867004a1e388fb712fef",
+        "e15707b13eb501c6841d4b36497bf5096b9454779094d3483a6378f1fc26a9e6",
+        "1a3523e02810124155d11d633fa000bb9baa0347abae6a170a463f385eabbd67"
+      ],
+      "new_prompt_sha256": "97c80ccea7c1a735af12e5e8a46728c2900a413dd76d7f5cc94e34ac8d9472f5",
+      "new_input_ids_sha256": [
+        "4e79ccdbf3fce111e3a897c80d2d45df0d0caa091867feb01067c6c0039d457c",
+        "4e79ccdbf3fce111e3a897c80d2d45df0d0caa091867feb01067c6c0039d457c",
+        "4e79ccdbf3fce111e3a897c80d2d45df0d0caa091867feb01067c6c0039d457c",
+        "4e79ccdbf3fce111e3a897c80d2d45df0d0caa091867feb01067c6c0039d457c"
+      ],
+      "new_target_ids": [
+        [
+          330
+        ],
+        [
+          389
+        ],
+        [
+          340
+        ],
+        [
+          422
+        ]
+      ],
+      "new_predecessor_positions": [
+        [
+          1891
+        ],
+        [
+          1891
+        ],
+        [
+          1891
+        ],
+        [
+          1891
+        ]
+      ],
+      "historical_target_token_counts": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "historical_token_ids_available": false,
+      "new_runtime": {
+        "attention": "sdpa",
+        "cuda": "12.4",
+        "dtype": "bfloat16",
+        "gpu": "NVIDIA RTX A6000",
+        "torch": "2.5.1+cu124",
+        "use_cache": false
+      }
+    },
+    {
+      "id": "MDSA_2008_8_20",
+      "mismatched_K": [
+        1
+      ],
+      "gold": 2,
+      "labels": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "historical_joint": {
+        "1": {
+          "scores": [
+            -1.6721827983856201,
+            -1.2346827983856201,
+            -1.2346827983856201,
+            -1.7346827983856201
+          ],
+          "prediction": 1,
+          "gold": 2,
+          "correct": false,
+          "rank": [
+            1,
+            2,
+            0,
+            3
+          ],
+          "gold_rank": 2,
+          "strongest_wrong": 1,
+          "gold_margin": 0.0,
+          "top_tie": true,
+          "any_tie": true,
+          "strict_pair_count": 5,
+          "strict_inversions": 2,
+          "strict_inversion_fraction": 0.4,
+          "pairs_with_exact_tie": 1,
+          "near_tie_pairs_at_either_depth_1e-6": 0
+        },
+        "4": {
+          "scores": [
+            -3.678496837615967,
+            -5.053496837615967,
+            -0.05349687486886978,
+            -3.928496837615967
+          ],
+          "prediction": 2,
+          "gold": 2,
+          "correct": true,
+          "rank": [
+            2,
+            0,
+            3,
+            1
+          ],
+          "gold_rank": 1,
+          "strongest_wrong": 0,
+          "gold_margin": 3.624999962747097,
+          "top_tie": false,
+          "any_tie": false
+        }
+      },
+      "new_predictions": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "new_scores_by_candidate": [
+        [
+          -1.6625174283981323,
+          -2.8697657585144043,
+          -3.562042713165283,
+          -3.558725595474243
+        ],
+        [
+          -1.2875174283981323,
+          -3.7447657585144043,
+          -4.687042713165283,
+          -4.808725357055664
+        ],
+        [
+          -1.1625174283981323,
+          -0.24476565420627594,
+          -0.06204279512166977,
+          -0.058725569397211075
+        ],
+        [
+          -1.7875174283981323,
+          -1.9947656393051147,
+          -3.812042713165283,
+          -3.933725595474243
+        ]
+      ],
+      "request_hashes_match_historical": true,
+      "historical_request_hashes": [
+        "652120162b2b43ae75bf50b17fcb8bdf8d559bd96a6ca23a3f0d6dc823ee9262",
+        "3688ec0299dce89c6a3c6844f4d047dd4a824a8c9346fa18cf35093a9d57cfb0",
+        "e0f8e12443e3598a9f8f2d9d8ac89bfd460d5d612b39cb1076dc7779daf01558",
+        "8afdf18db603e77784358f5d49c798a35cb0d556d8147afcd48ec19bde45adb1"
+      ],
+      "new_request_hashes": [
+        "652120162b2b43ae75bf50b17fcb8bdf8d559bd96a6ca23a3f0d6dc823ee9262",
+        "3688ec0299dce89c6a3c6844f4d047dd4a824a8c9346fa18cf35093a9d57cfb0",
+        "e0f8e12443e3598a9f8f2d9d8ac89bfd460d5d612b39cb1076dc7779daf01558",
+        "8afdf18db603e77784358f5d49c798a35cb0d556d8147afcd48ec19bde45adb1"
+      ],
+      "new_prompt_sha256": "eae64399094055fc287860bd69995540c3f9e97e0772dffe1e65c34cfa6e5017",
+      "new_input_ids_sha256": [
+        "80732c3e0652b39ee7f9d863b5303f4cdb5ccbbf51e230051dd59346d3a6f89d",
+        "80732c3e0652b39ee7f9d863b5303f4cdb5ccbbf51e230051dd59346d3a6f89d",
+        "80732c3e0652b39ee7f9d863b5303f4cdb5ccbbf51e230051dd59346d3a6f89d",
+        "80732c3e0652b39ee7f9d863b5303f4cdb5ccbbf51e230051dd59346d3a6f89d"
+      ],
+      "new_target_ids": [
+        [
+          330
+        ],
+        [
+          389
+        ],
+        [
+          340
+        ],
+        [
+          422
+        ]
+      ],
+      "new_predecessor_positions": [
+        [
+          1896
+        ],
+        [
+          1896
+        ],
+        [
+          1896
+        ],
+        [
+          1896
+        ]
+      ],
+      "historical_target_token_counts": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "historical_token_ids_available": false,
+      "new_runtime": {
+        "attention": "sdpa",
+        "cuda": "12.4",
+        "dtype": "bfloat16",
+        "gpu": "NVIDIA RTX A6000",
+        "torch": "2.5.1+cu124",
+        "use_cache": false
+      }
+    }
+  ]
+}

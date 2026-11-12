@@ -1,0 +1,65 @@
+{
+  "status": "OBSERVATION_READY",
+  "original_run": "run-20261107T053919Z-6d01138e",
+  "commit": "33ff0322934bebf423c9f3d087f9c71b3ecaa982",
+  "audit_sha256": "27b6c328ab54d8a068d4798b1e16fdf5d8a4ca38ec571004d2d058bcd69b269d",
+  "stage": "awaiting_astra_review",
+  "preflight_resources": {
+    "gpu": {
+      "total_mib": 49140,
+      "used_mib": 323,
+      "free_mib": 48239,
+      "util_percent": 0,
+      "compute_pids": []
+    },
+    "disk_free_bytes": 176648998912,
+    "memory": {
+      "MemTotal": 101023838208,
+      "MemAvailable": 97235787776
+    }
+  },
+  "required_bytes": 71379060799,
+  "gate_evidence": {
+    "records": 12,
+    "ids": [
+      "MCAS_1998_8_13",
+      "NYSEDREGENTS_2014_4_19",
+      "TIMSS_2003_8_pg29"
+    ],
+    "evidence_sha256": "287b301c881a674b53ddc8d1045414727cfba4206986bd6ab57cbcbdab1fb3f6"
+  },
+  "second_preflight_resources": {
+    "gpu": {
+      "total_mib": 49140,
+      "used_mib": 323,
+      "free_mib": 48239,
+      "util_percent": 0,
+      "compute_pids": []
+    },
+    "disk_free_bytes": 176648998912,
+    "memory": {
+      "MemTotal": 101023838208,
+      "MemAvailable": 97220583424
+    }
+  },
+  "pre_stage": {
+    "gpu": {
+      "total_mib": 49140,
+      "used_mib": 323,
+      "free_mib": 48239,
+      "util_percent": 0,
+      "compute_pids": []
+    },
+    "disk_free_bytes": 135365353472,
+    "memory": {
+      "MemTotal": 101023838208,
+      "MemAvailable": 97226309632
+    }
+  },
+  "conditions": {
+    "disk_under_20GiB": false,
+    "ram_under_8GiB": false,
+    "gpu_ineligible": false
+  },
+  "message": "descriptive observations only; no mechanism claim"
+}
