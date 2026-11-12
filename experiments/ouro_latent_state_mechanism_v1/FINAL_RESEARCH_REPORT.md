@@ -1,6 +1,6 @@
 # Ouro-1.4B 循环状态研究报告（进行中）
 
-**状态：本报告是发布准备稿，不是最终结论。** 自然轨迹、Round 2/3 和 L18 双向干预已完成各自的覆盖与复核；QKV 全 2,590 题采集及独立 CUDA 重放已完成，train 分析已独立核算，validation/test 的效果与科学复核尚未纳入。原始大张量和其他大文件仍在陆续发布，不能据本报告推断它们已经全部上传。报告中的历史文档保留其当时状态；本文件以较新的证据为准。
+**状态：本报告是发布准备稿，不是最终机制结论。** 自然轨迹、Round 2/3、L18 双向干预和本轮 QKV 四角实验已完成各自的覆盖与独立科学核算。QKV CUDA 重放由独立进程运行同一冻结实现，不是独立实现。原始大张量和其他大文件仍在陆续发布，不能据本报告推断它们已经全部上传。报告中的历史文档保留其当时状态；本文件以较新的证据为准。
 
 ## 目标与范围
 
@@ -51,18 +51,26 @@ L18 真实干预在 `input_layernorm_2` 之后、残差相加之前，将同题�
 
 例如 test 的 `Mercury_407327` 自然 K1 正确、K2 错误，T12 将其引错而 T21 救回，说明效应并非逐题一致。K2 的 attention 增量本身依赖 K2 上游状态；用 K1 增量替换并非零消融，不能据此声称可省略 K2 或证明自然路径的必要性。Test 范数匹配 T12 的净增为 254，未匹配完整 T12 为 256，但两者有 27 题预测不同；总体净数相近不等于逐题干预等价。Fraction 精确计算为零而生产分数差非零的 L2/G1 分别有 32/9 题，因此对精确零和 BF16 生产结果须分开表述。
 
-## Q 与联合 KV：训练集四角干预
+## Q 与联合 KV：四角干预及跨分区检验
 
-在已披露此前自然与干预结果后，QKV 后续采集及[同实现独立 CUDA 重放](research_plans/NATURAL_QKV_INDEPENDENT_CUDA_REPLAY_20261112.json)覆盖全部 2,590 题。本节仅报告经独立核算的训练集非示例 1,094 题，不含尚未完成科学复核的 validation/test 结果。实验固定自然 K1 receiver，在物理 L18（索引17）只替换 R 位置的 query 或全可见序列的联合 K/V，仅将混合 SDPA 输出的 R 位置回写，再重算原局部归一化、MLP 与后缀。四角 F11/F21/F12/F22 分别为 Q1KV1、Q2KV1、Q1KV2、Q2KV2；F11 是 B1，F22 是 T12，并非自然 B2。正确数为 **589/663/800/850**。Q 两条边的净救回分别为 74/50，联合 KV 两条边为 211/187；按该训练集设定，联合 KV 的平均作用更大，但 Q 并非无效。逐题记录、[train summary](research_plans/natural_qkv_train_preliminary_20261112/summary.json) 和 [coverage](research_plans/natural_qkv_train_preliminary_20261112/coverage.json) 保留配对结果与 tie 定义，summary SHA-256 为 `2e57269d3fd13af2fe96847bb530d03a75b5acfd3e85e52c0ffe8dd6b9c0dc1e`。
+在已披露此前自然与干预结果后，QKV 后续采集及[同实现独立进程 CUDA 重放](research_plans/NATURAL_QKV_INDEPENDENT_CUDA_REPLAY_20261112.json)覆盖全部 2,590 题。实验固定自然 K1 receiver，在物理 L18（索引17）只替换 R 位置的 query 或全可见序列的联合 K/V，仅将混合 SDPA 输出的 R 位置回写，再重算原局部归一化、MLP 与后缀。四角 F11/F21/F12/F22 分别为 Q1KV1、Q2KV1、Q1KV2、Q2KV2；F11 是 B1，F22 是 T12，并非自然 B2。
 
-这些结果不能拆分联合 K 与 V 的各自作用，也不能忽略 Q 单换有效而 KV 单换失败、KV 损伤以及需联换才正确的反例。内部实际 SDPA_R 与局部归一化后 a_R 的向量交互非零，并不意味着末端 gap 交互必然非零：训练集非示例有 53 题的两个内部向量交互均非零，但对 BF16 target 原始 logits 用 Fraction 精确计算的题内 gold–全部非 gold 均值 gap 交互 `I=F22−F21−F12+F11` 为零。这不表示逐候选交互、全部 logits 或生产 FP32 分数交互均为零。后续验证分区分析与单独 K/V 干预仍须遵守其冻结判据，当前不预设结论。
+| 数据 | N | F11 / F21 / F12 / F22 正确 | Q两条边净救回 | 联合KV两条边净救回 |
+|---|---:|---|---|---|
+| train 非示例 | 1,094 | 589 / 663 / 800 / 850 | 74 / 50 | 211 / 187 |
+| validation | 299 | 150 / 172 / 202 / 225 | 22 / 23 | 52 / 53 |
+| test | 1,172 | 626 / 678 / 818 / 882 | 52 / 64 | 192 / 204 |
+
+表中 Q 两条边依次为 F21−F11、F22−F12；联合 KV 两条边依次为 F12−F11、F22−F21。训练集探索显示联合 KV 替换的平均作用大于 query 替换，且两条 Q 边和两条联合 KV 边的平均效应、净救回均为正；据此在 validation/test 效果揭示前冻结的判据，在两个后续分区及其自然无平分子集均保持。validation 的自然端点无平分子集为 287 题，test 为 1,107 题。此前 ARC 和前几轮实验已经暴露，不能把这两组称为完全独立的盲验证。完整分布、配对救回/损失、冻结判据、同实现重放与原 natural shard 复用边界见 [前瞻结果](research_plans/NATURAL_QKV_VAL_TEST_PROSPECTIVE_RESULTS_20261112.md)、[覆盖链接](research_plans/NATURAL_QKV_VAL_TEST_COVERAGE_LINK_20261112.json) 及 [train](research_plans/natural_qkv_train_preliminary_20261112/summary.json)、[validation](research_plans/natural_qkv_validation_preliminary_20261112/summary.json)、[test](research_plans/natural_qkv_test_preliminary_20261112/summary.json) summary。
+
+这些结果不能拆分联合 K 与 V 的各自作用，也不能忽略 Q 单换有效而 KV 单换失败、KV 损伤以及需联换才正确的反例。内部实际 SDPA_R 与局部归一化后 a_R 的向量交互非零，并不意味着末端 gap 交互必然非零：训练集非示例 53 题、validation 11 题、test 51 题的两个内部向量交互均非零，但对 BF16 target 原始 logits 用 Fraction 精确计算的题内 gold–全部非 gold 均值 gap 交互 `I=F22−F21−F12+F11` 为零。这不表示逐候选交互、全部 logits 或生产 FP32 分数交互均为零。自然救回子组的平均交互在 train 为 −0.017933、validation 为 +0.064725、test 为 +0.027364，不能把全组平均负交互写成普遍替代。单独 K/V 干预仍须遵守其冻结判据，当前不预设结论。
 
 ## 限制、失败路线与下一步
 
 - 本轮使用同一模型与任务；test 有历史接触，外部数据因用户暂停而未做模型测试。无法据此外推到其他模型或任务。
 - 自然读出是离线 lens；位置状态替换会产生人工混合状态，不能直接推出信息来源或自然路径的充分性。BF16 舍入和分数平分均需按各审计文件解释。
 - 原始 test 范数导出曾发生 NameError，之后以独立程序完整恢复；初始全队列采集亦曾资源中止后恢复。两者均保留原记录与审计，不应改写为一次无故障运行。
-- 局部 L18 结果仍留有未解释差异；QKV 已完成全量采集及 CUDA 重放，validation/test 分析已生成但科学复核尚未完成，不能预先报告其结论。联合 KV 的结果尚不能分离 K 与 V 的贡献。
+- 局部 L18 结果仍留有未解释差异；QKV 联合 KV 的结果尚不能分离 K 与 V 的贡献。自然分片的旧完整hash复用先前覆盖记录，本轮未再次全量重扫；CUDA 在独立进程运行同一冻结实现，注入来源仍依赖冻结collector，不能描述为独立实现。
 - 用户已要求上传全量 Round 1 原始自然激活（约 254 GB）及其他实验结果；服务器副本仍保留，大文件上传与逐文件远端校验正在进行，尚未完成。
 
 ## 模型身份与复现
