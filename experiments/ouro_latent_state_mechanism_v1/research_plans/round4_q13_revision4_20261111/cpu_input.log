@@ -1,0 +1,14 @@
+Traceback (most recent call last):
+  File "/home/luansiyu/loop-latent/research_plans/round4_q13_revision4_20261111/test_production_inputs.py", line 12, in <module>
+    x=read_question(root,split,ident,expected,{'id':ident,'split':split});assert x['targets']==[4] and set(x['prior_logits'])=={'211','212','221','222'}
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/luansiyu/loop-latent/research_plans/round4_q13_revision4_20261111/production_inputs.py", line 36, in read_question
+    return {'id':ident,'split':split,'ids':ids,'targets':targets,'natural_scores':[[r['scores'][k] for r in records] for k in (0,1)],'regions':regions,'prior_logits':mapping,'prior_scores':{k:prior['corners'][k]['scores'] for k in mapping},'gold':prior['gold'],'fixed_wrong':prior['fixed_wrong'],'source_hashes':{'natural_metadata':sha(nm),'pqr_metadata':sha(pm),'pqr_logits':sha(pt),'round2_metadata':sha(om),'round2_logits':sha(ot)}}
+                                                                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/luansiyu/loop-latent/research_plans/round4_q13_revision4_20261111/production_inputs.py", line 36, in <listcomp>
+    return {'id':ident,'split':split,'ids':ids,'targets':targets,'natural_scores':[[r['scores'][k] for r in records] for k in (0,1)],'regions':regions,'prior_logits':mapping,'prior_scores':{k:prior['corners'][k]['scores'] for k in mapping},'gold':prior['gold'],'fixed_wrong':prior['fixed_wrong'],'source_hashes':{'natural_metadata':sha(nm),'pqr_metadata':sha(pm),'pqr_logits':sha(pt),'round2_metadata':sha(om),'round2_logits':sha(ot)}}
+                                                                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/luansiyu/loop-latent/research_plans/round4_q13_revision4_20261111/production_inputs.py", line 36, in <listcomp>
+    return {'id':ident,'split':split,'ids':ids,'targets':targets,'natural_scores':[[r['scores'][k] for r in records] for k in (0,1)],'regions':regions,'prior_logits':mapping,'prior_scores':{k:prior['corners'][k]['scores'] for k in mapping},'gold':prior['gold'],'fixed_wrong':prior['fixed_wrong'],'source_hashes':{'natural_metadata':sha(nm),'pqr_metadata':sha(pm),'pqr_logits':sha(pt),'round2_metadata':sha(om),'round2_logits':sha(ot)}}
+                                                                                    ~^^^^^^^^^^
+KeyError: 'scores'

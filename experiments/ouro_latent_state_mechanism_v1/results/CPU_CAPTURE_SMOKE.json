@@ -1,0 +1,32 @@
+{
+  "scope": "CPU smoke only; not GPU parity or benchmark",
+  "input_token_ids": [
+    330,
+    389
+  ],
+  "depth": 2,
+  "layer_events": 48,
+  "norm_events": 2,
+  "selected_positions": [
+    0,
+    1
+  ],
+  "norm_to_next_layer_continuity": "exact at selected positions",
+  "restored_depth": 4,
+  "model_dtype": "bfloat16",
+  "torch": "2.5.1+cu124",
+  "transformers": "4.55.0",
+  "identity_writeback_logits_equal": true,
+  "identity_max_error": 0.0,
+  "identity_loop_depth": 4,
+  "identity_layer_events": 96,
+  "historical_scorer_scope": "one synthetic target; CPU BF16 only",
+  "historical_native_logprobs": [
+    -7.000246524810791,
+    -3.713301181793213,
+    -1.6216349601745605,
+    -1.7175065279006958
+  ],
+  "historical_logprob_max_abs_error": 0.0,
+  "norm_input_matches_layer24": true
+}

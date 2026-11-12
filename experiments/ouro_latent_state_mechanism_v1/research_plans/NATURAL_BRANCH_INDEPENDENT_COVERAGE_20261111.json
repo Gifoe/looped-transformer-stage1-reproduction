@@ -1,0 +1,39 @@
+{
+  "collector_receipt_sha256": "5f4f8f9597639ab8c5ac24f0e486dbd7de073d73443c561ce24f54102b19d13b",
+  "counts": {
+    "test": 1172,
+    "train": 1119,
+    "validation": 299
+  },
+  "cpu_scope": "state/logit bit anchors, residuals, continuity, source and independently recomputed FP64 lens/accounting",
+  "gpu_replay_sha256": "86d85b19c0c232587e3be566e1c30db9e4c1cab5a2fcb173c1f0ffebc6035202",
+  "gpu_runtime": {
+    "cuda": "12.4",
+    "gpu": "NVIDIA RTX A6000",
+    "torch": "2.5.1+cu124"
+  },
+  "gpu_scope": "saved full BF16 logits to same-runtime CUDA FP32 logsoftmax/gather/sum, exact scores, attention parameters/positions audit",
+  "limitation": "No causal identification; saved attention arguments, not underlying kernel identity.",
+  "script_sha256": "bfead1cc38d649ba5fed8330f292c765b7f42bbff490abb5c1e6b11859c803aa",
+  "splits": {
+    "test": {
+      "count": 1172,
+      "cpu_coverage_sha256": "68de9dd013c55d36d707969042ec465aa28959c28f544da346642512f3a411c2",
+      "rows_sha256": "fe76f4f75494916dff17708230f1fb8a8a1d2ec18968e20c9a17831f9522e76e",
+      "summary_sha256": "3ffe824e4004f719753db0dff404bd1df48d82767274871bb99564bed9531046"
+    },
+    "train": {
+      "count": 1119,
+      "cpu_coverage_sha256": "61132388ee5403a042cc1ab8fbca17c59192e168866ea6cbac084a49c368440f",
+      "rows_sha256": "c280f4ee3719c96d04e18742050b012e36a7361c197e3affd702c5ddc84bf4af",
+      "summary_sha256": "04d3b2328ba7f612ae50a1565db59fb5da695683466d2cf5c644f8686e91db50"
+    },
+    "validation": {
+      "count": 299,
+      "cpu_coverage_sha256": "9da053133e77f54f416c96d33a38ca54a2998d97a3005c0bd1bf77ab5883de73",
+      "rows_sha256": "31adc02b65b6a6396afd9c1ca56e843ed0606078de1c96b2bb1317510082a64a",
+      "summary_sha256": "78c025dddc114797963d4e8d6c1a789ec52d7184f0e526ff5e152eabeb5311f8"
+    }
+  },
+  "status": "INDEPENDENT_CPU_STATE_AND_GPU_LOGIT_REPLAY_PASSED"
+}

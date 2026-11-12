@@ -1,0 +1,30 @@
+{
+  "boundary_ledger_sha256": "a77258ade36415efb17ca09a886417f9b265ce53feec1589431dff6062f4e2bc",
+  "natural_prefix_audit_summary_sha256": "abb595c9a26dc7a7d38757b9c6631ff057a53dec5250df98f5408c57d3cea998",
+  "selection": {
+    "A": {
+      "id": "ACTAAP_2013_7_16",
+      "input_length": 1866,
+      "input_sha256": "9cb298a0531857289b89f5e4d4667652b16f0a4ae812f76a7e58f3aa42f79af1",
+      "prompt_sha256": "09f530bacc6b5955111bb9b118afda93b43db4f60efbad9b42775b629d7c9af1",
+      "split": "test"
+    },
+    "B": {
+      "id": "Mercury_405804",
+      "input_length": 1866,
+      "input_sha256": "8c06e64bc56ef2c0520c3f62e5eff26b9446c39c1e6faab029324a85d815f4a4",
+      "prompt_sha256": "ce8792d5faa710644ec6c7f167389ee4dc61552ec192fb5ea3e62ca9ff1e7094",
+      "split": "test"
+    },
+    "C": {
+      "id": "MSA_2012_8_30",
+      "input_length": 2032,
+      "input_sha256": "ad1f493f1adc92cc81f89a413f7bd4615312872b888854bf827045d7ac416aac",
+      "prompt_sha256": "fe0084291d1dd9e429c34eb7675c0bb03b95c1398ff2731466abcd86e3d4956a",
+      "split": "test"
+    }
+  },
+  "selection_rule": "A/B lexicographically smallest (length,idA,splitA,idB,splitB) with equal length and different full input hash; C maximum length then smallest (id,split). No gold, scores or outcomes used.",
+  "status": "INPUT_ONLY_SELECTION_FROZEN",
+  "utc": "2026-11-11T00:08:09.065739+00:00"
+}

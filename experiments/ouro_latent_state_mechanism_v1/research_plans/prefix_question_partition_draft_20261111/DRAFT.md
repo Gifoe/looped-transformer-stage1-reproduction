@@ -1,0 +1,9 @@
+# Draft only: prefix versus current-question context
+
+Awaiting Astra full instructions and review; not a registered protocol or authorization to run GPU. This was prepared after train/validation exploratory reveal, while test intervention outcomes remain blinded. Preserve all cohort denominators.
+
+On physical layer 12 output during second loop, R is the actual predecessor/readout position, P is the complete 25-shot prefix, Q is the current-question context excluding R. P/Q/R must be disjoint and exhaust every effective input token. Classify boundaries by actual saved token offsets, verify original metadata and inputs against the previously constructed ledger, and fail on crossing/zero offsets or inconsistent request/candidate. Do not share prefix state across questions.
+
+Use dynamically recaptured complete same-question independent K1 and K2 layer-11 full-sequence states, with R fixed K2. Reuse verified F22= P2Q2R2 original K2 and F11=P1Q1R2 previously audited C rollback. New conditions F12=P1Q2R2 and F21=P2Q1R2. For fixed K1 strongest wrong gap, F22−F11 must equal previous C|R2 effect, and F22−F11=(F22−F12)+(F12−F11)=(F22−F21)+(F21−F11) under recorded arithmetic; verify all candidate raw scores and exact endpoint provenance. Actual numerical equality of a rearranged floating-point arithmetic identity must be tested with explicit roundoff accounting, not assumed as a zero-tolerance model-output anchor.
+
+Before any actual GPU work, freeze detailed design with bidirectional restoration and identity anchors, full logits for every candidate and same-device independent zero-tolerance replay, per-question atomic storage, provenance, finite checks, failure ledger and all splits. Existing full sequence hook toy and boundary partition code are non-GPU drafts, not validated for production. Further interpretation awaits full test coverage and independent scientific review. No use of incomplete test intervention values.

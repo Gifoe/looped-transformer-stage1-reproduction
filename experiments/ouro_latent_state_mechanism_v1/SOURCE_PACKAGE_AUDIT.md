@@ -1,0 +1,13 @@
+# Supplied source package audit
+
+The user-supplied `Ouro_Latent_State_Discovery_Astra_Sol_v1.zip` is the full-data starting kit referenced in the task: README names this exact target directory and includes setup, checkpoint/data preparation, runtime verification, collection, analysis, hooks, inventory and storage planning. Archive size 36,381 bytes; SHA256 `7c3aa9cffd10c6caac13df60e3dba5cb12b21e089707652e0205baa91fe84485`. An unchanged copy resides at `/home/luansiyu/loop-latent/source_7c3aa9cffd10.zip`. CRC verification passed; all 18 members were extracted with exclusive creation and no-follow checks; each extracted file matched archive bytes. Per-file SHA256 is in `SOURCE_PACKAGE_MANIFEST.json`. Existing files were not replaced. No package script was executed.
+
+## Mandatory review before execution
+
+- `core.py` and README specify a 63-character checkpoint hash missing the leading 5. The actual downloaded checkpoint was rehashed as `58872a72616c736595b8b7662079c5b12c5a162ec16eae94f21c348dfa9885af`. The unmodified kit's integrity check cannot pass with its literal value.
+- `requirements.txt` specifies transformers 4.55.4; the project environment uses 4.55.0 and its runtime must be revalidated for any change. `prepare_arc.py` defaults to an unpinned dataset revision; existing ARC parquet uses revision `210d026faf9955653af8916fad021475a3f00453`.
+- `latent_hooks.py` identifies loops by per-layer call counts. The existing native capture additionally checks the explicit `current_ut` argument and strict layer sequence. The kit's `capture current` uses a 16-token common-prefix halo; it does not identify precise question, label and option spans.
+- `verify_runtime.py` checks a single request, no-op identity and independent K2; it does not cover all previously required K3, historical scorer, full state/head readback and repeated-score gates. Its results must not replace the project gate.
+- `collect.py` resumes based on recorded ID but does not verify each saved shard hash on resume; `analyze.py` test count alone does not prove exact ID coverage. Existing coverage/score replay checks address additional requirements. `target_log_likelihoods` saves only the last prediction-position head row for a multi-token continuation, although the current ARC manifest found single-token letters throughout.
+
+The package's fixed 25-shot Joint-Option prompt, label likelihood, BF16 SDPA, `use_cache=False`, and real four loop states match the requested direction, but identical behavior and compatibility remain unverified. Preserve the package as supplied; Astra must review any integration and the user-specified Terra executor remains in effect. GPU was occupied at extraction time; no gate or full experiment was run.

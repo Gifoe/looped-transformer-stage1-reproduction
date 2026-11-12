@@ -1,0 +1,111 @@
+{
+  "created_utc": "2026-11-10T22:57:50.528457+00:00",
+  "examples": {
+    "train:Mercury_7033583": {
+      "D": -1.166666676600774,
+      "K1C_K2R": {
+        "gold_vs_fixed_wrong_gap": 1.6249999403953552,
+        "prediction": 2,
+        "scores": [
+          -5.814943313598633,
+          -5.064943313598633,
+          -0.1899431347846985,
+          -1.8149430751800537
+        ],
+        "top_tie": false
+      },
+      "K2C_K1R": {
+        "gold_vs_fixed_wrong_gap": 2.500000089406967,
+        "prediction": 2,
+        "scores": [
+          -3.541639566421509,
+          -2.916639566421509,
+          -0.16663947701454163,
+          -2.666639566421509
+        ],
+        "top_tie": false
+      },
+      "fixed_wrong": 3,
+      "gold_index": 2,
+      "gold_logprob_delta": 0.02330365777015686,
+      "input_metadata_sha256": "b4bd7d55b1579078597cb715515786e5769bfe970d1a3d5c4d811f8c75c85d5e",
+      "n_options": 4
+    },
+    "validation:MCAS_2006_9_33": {
+      "D": 0.5833334525426229,
+      "K1C_K2R": {
+        "gold_vs_fixed_wrong_gap": 1.4999999403953552,
+        "prediction": 3,
+        "scores": [
+          -2.3402440547943115,
+          -3.5277440547943115,
+          -1.8402440547943115,
+          -0.3402441143989563
+        ],
+        "top_tie": false
+      },
+      "K2C_K1R": {
+        "gold_vs_fixed_wrong_gap": 0.6250000596046448,
+        "prediction": 3,
+        "scores": [
+          -4.02199649810791,
+          -4.70949649810791,
+          -1.0844964981079102,
+          -0.4594964385032654
+        ],
+        "top_tie": false
+      },
+      "fixed_wrong": 2,
+      "gold_index": 3,
+      "gold_logprob_delta": -0.11925232410430908,
+      "input_metadata_sha256": "3e3ba98cd4307d2ceb98d8bc61fa3732a50e3d54dff8c58537e0fa7846da1639",
+      "n_options": 4
+    }
+  },
+  "formula": "mean_{j != g} [(s21_g-s21_j)-(s12_g-s12_j)] = n/(n-1)*[(s21_g-s12_g)-mean_i(s21_i-s12_i)]",
+  "limit": "scores are log probabilities; differences alone do not prove a raw-logit change",
+  "rows_sha256": "c4be27d938b8945b4234f1d8c7a8be16ab2f2828548c2409767f20abc9a9364c",
+  "scope": "post-disclosure algebraic diagnostic; ARC train/validation, not original preregistration or independent validation",
+  "splits": {
+    "train": {
+      "compact_sha256": "cdf479811108ad63c017a694440d81e0e9b0866e30f9938245c87b0884ce5624",
+      "coverage_sha256": "1f8e4ecd92aee72fc36a71ff93e591f4479ba97b1cbeba3c538cc895d0fc236b",
+      "max_abs_roundoff": 8.881784197001252e-16,
+      "n": 1119,
+      "per_option_count": {
+        "3": {
+          "count": 1,
+          "max_abs_roundoff": 0.0
+        },
+        "4": {
+          "count": 1117,
+          "max_abs_roundoff": 8.881784197001252e-16
+        },
+        "5": {
+          "count": 1,
+          "max_abs_roundoff": 0.0
+        }
+      }
+    },
+    "validation": {
+      "compact_sha256": "7cae552b7fac1c1832247ac2a784314405c8526a83fb8729e7e5fa6f373bd8f5",
+      "coverage_sha256": "1f47ec3cad944aa47feda4a0c588cc8db60626e53b5943f6a728fa89d5eec507",
+      "max_abs_roundoff": 4.440892098500626e-16,
+      "n": 299,
+      "per_option_count": {
+        "3": {
+          "count": 3,
+          "max_abs_roundoff": 0.0
+        },
+        "4": {
+          "count": 295,
+          "max_abs_roundoff": 4.440892098500626e-16
+        },
+        "5": {
+          "count": 1,
+          "max_abs_roundoff": 6.938893903907228e-18
+        }
+      }
+    }
+  }
+}

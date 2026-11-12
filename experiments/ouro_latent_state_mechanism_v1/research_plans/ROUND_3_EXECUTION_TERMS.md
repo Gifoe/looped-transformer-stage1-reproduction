@@ -1,0 +1,11 @@
+# ROUND_3 execution terms (train/validation-informed; not original preregistration)
+
+Keep frozen eight corners F_pqr: P=complete 25-shot prefix, Q=all current-question input tokens except actual readout predecessor, R=actual readout predecessor. Add F122/F212/F121/F211. The original F111/F112/F221/F222 must each be exactly reproduced per question before reuse. Do not extrapolate R1 from R2.
+
+Sources must be the full BF16 state of the same question and same input, independently captured from natural K1 and K2 at the corresponding loop and physical layer-12 output. Start from K2 clone and choose K1 by three disjoint masks; never borrow prefix across questions or use a mixed receiver as a native donor. Fix total_ut_steps=2, use_cache=False and the original scoring protocol. Per question F111 must bridge original K1, F222 original K2; identity and final-layer C-only negative control must pass.
+
+Use a new run directory; do not modify the old frozen run. Only after the current run completes and the same global task lock is held may GPU work begin. First execute all new conditions on the longest complete question and independently replay logits. Until then only non-GPU preparation is permitted.
+
+Bind new files in advance to original coverage, per-question metadata and logits hashes, boundary ledger and saved_offset_coverage, model/source-package/environment fingerprints and the actual capture site. Failures cannot create success receipts or overwrite old results. Save true BF16 full-vocabulary logits and all candidate scores for all four new corners using the original production shape/device/dtype/order; independent coverage must re-score each question on CUDA with zero tolerance. Cover all 2,590 questions, without effect-based selection; report the train 25 examples separately.
+
+Any crossing, empty mask, missing partition, incorrect R or discrepancy in an original corner stops technical acceptance. A zero effect is not a technical failure. This execution plan was informed by train and validation ROUND_2 observations; test ROUND_2 intervention effects had not been revealed at this freeze. The saved-offset all-cohort receipt was provided by the executor and awaits independent review. Freeze final executable sources, exact anchors and resource gates after Astra review.

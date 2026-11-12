@@ -1,0 +1,9 @@
+import json,hashlib,pathlib,gzip,datetime
+P=pathlib.Path('/home/luansiyu/loop-latent');run=P/'orchestration_runs/round2-full-20261111';out=pathlib.Path(__file__).parent;cov=run/'coverage_test.json';sha=lambda p:hashlib.sha256(p.read_bytes()).hexdigest();ch=sha(cov);assert ch=='1cdee583defb6fd580001b532e9fefd11de8f46b7943707ebdb9a30c3d4da4a7';c=json.loads(cov.read_text());assert c['status']=='COMPLETE_CUDA_REPLAY_ZERO_TOLERANCE' and c['expected_questions']==c['complete_questions']==1172 and c['replayed_condition_logits']==12892;expected={x['id']:x for x in c['questions']};seen=set();f=out/'test_full_norms.jsonl.gz';counts={}
+with gzip.open(f,'rt') as src:
+ for line in src:
+  row=json.loads(line);ident=row['id'];assert ident not in seen and ident in expected;seen.add(ident);q=expected[ident];mp=run/'test'/(hashlib.sha256(ident.encode()).hexdigest()+'.json');assert sha(mp)==q['metadata_sha256']==row['metadata_sha256'];r=json.loads(mp.read_text())['payload']['result'];assert row['input_length']==r['input_length'] and row['norms']==r['norms'];counts[ident]=r['input_length']
+assert len(seen)==len(expected)==1172 and sha(cov)==ch
+receipt={'status':'RECOVERED_NORM_EXPORT_EXACT_SOURCE_MATCH','questions':len(seen),'total_token_positions':sum(counts.values()),'coverage_sha256':ch,'full_norms_sha256':sha(f),'original_export_code_sha256':sha(out/'export_norms.py'),'recovery_code_sha256':sha(pathlib.Path(__file__)),'note':'original export wrote gzip then raised NameError before receipt; independently checked all rows exactly, no overwrite','utc':datetime.datetime.now(datetime.timezone.utc).isoformat()}
+with (out/'test_full_norms_recovery_receipt.json').open('x') as h:json.dump(receipt,h,sort_keys=True,indent=2);h.write('\n')
+print(json.dumps(receipt));print('RECEIPT_SHA',sha(out/'test_full_norms_recovery_receipt.json'),'BYTES',f.stat().st_size)

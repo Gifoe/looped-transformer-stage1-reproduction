@@ -1,0 +1,65 @@
+{
+  "amendment_sha256": "3b8185a0a5c4994f4643dfa56f11365fe5e2caf3ec08418877e6dec0d94e9751",
+  "artifacts": {
+    "train_all.jsonl.gz": "a0b6c6ff67862bc17edf6e7cac58c1eee1734b3a2e548295562f867734307022",
+    "train_non_demo.jsonl.gz": "b4ce78e86932982f9d1639d5fafb3b6641c38caa4b5be643b6d2539f3246a207"
+  },
+  "counts": {
+    "all": 1119,
+    "demo": 25,
+    "non_demo": 1094
+  },
+  "coverage_sha256": "1f8e4ecd92aee72fc36a71ff93e591f4479ba97b1cbeba3c538cc895d0fc236b",
+  "created_utc": "2026-11-10T21:15:21.288661+00:00",
+  "note": "validation and test intervention outcomes not read; logits hash anchored to prior coverage, not re-read during export",
+  "source": {
+    "anchor_post_audit_sha256": "363e1ad6d3dee07cf548d41aad866d1be94c36ad176961d109526c6c302092aa",
+    "anchor_sha256": "28ff9b65a8b49e9bc8f5fff99c6f235ed97bad3631feaa3555fd703b5d27ad2a",
+    "bound_hashes": {
+      "conda-env/lib/python3.11/site-packages/lm_eval/api/model.py": "8f7104bc45cb388c8df049bc5938ea0d639b867fa8c4b9c36c0d255f5b7f4e3e",
+      "data/train.parquet": "e488c1587ffdcfc8443f916c53488a95cd471c5790e0746c6bfe4cecf20962cb",
+      "data/validation.parquet": "395a5c88d1580d69855fbaee9450270578df1ad5af6259771cd0a42c20e99f05",
+      "model/config.json": "ce9cc13da41591b8b4deca053d7dfee06424c0228628ee862ea86d725bc163f3",
+      "model/configuration_ouro.py": "950443e32929047aa08d02abad2e1888bc1914b3db988d3d675f70787f65dafb",
+      "model/merges.txt": "0b54e8aa4e53d5383e2e4bc635a56b43f9647f7b13832d5d9ecd8f82dac4f510",
+      "model/model.safetensors": "58872a72616c736595b8b7662079c5b12c5a162ec16eae94f21c348dfa9885af",
+      "model/modeling_ouro.py": "c5c68fbb368ce2909c257ae2afc50719be8c91539333d3295e19312c4316f413",
+      "model/special_tokens_map.json": "55087bb8409060d9cb0f80495e34f4e0d8a84f68a799a6b0cab3132be0aae319",
+      "model/tokenizer.json": "fcb808fe5e7642f5299be28aea07fc7f6d4f4364c3ac5e408e15a772cbc8fa8d",
+      "model/tokenizer_config.json": "7e010da95d71b0fa1aa809552922c74cc1dd98d628f21ba39ca6c35aa18d5d91",
+      "model/vocab.json": "7b9de3f47796abf8d00ab96be299fea0dc9afdf1827f34e7e0b9fb44593efe5c",
+      "repo/experiments/ouro_latent_state_mechanism_v1/audit_input_manifest.py": "400ecdc398e741e7a3cb740611cea1872743c44613225f3010b923edc6352ed4",
+      "repo/experiments/ouro_latent_state_mechanism_v1/cohort_runner.py": "93734acfb3ce3ea829a36bc01adebbdcd7648270aa89ceedade4217a3386b4b5",
+      "repo/experiments/ouro_latent_state_mechanism_v1/environment_conda_explicit.txt": "0c37201b8e350f35336a017391582be4941f3ba77b856c7056b1765d71ccb00a",
+      "repo/experiments/ouro_latent_state_mechanism_v1/environment_pip_freeze.txt": "bd2373326455ebeb63ae32e897edab382f0a22ce619777a8cf4d91961c7a7f3e",
+      "repo/experiments/ouro_latent_state_mechanism_v1/manifest_guard.py": "16e2fea1ec4662c3dc71530a599ced3ff50a25653328f885b2f02a41e56b60d5",
+      "repo/experiments/ouro_latent_state_mechanism_v1/native_capture.py": "f0628b46c971aa1f19d8f7e1dd8380e10d0c8bd60e1d14710fc44c52bc56ce75",
+      "repo/experiments/ouro_latent_state_mechanism_v1/prompt_spans.py": "b193fd46b02daf2e4a39b848875d0b60e61399feaa0f8c252485ab4429f44e92",
+      "repo/experiments/ouro_latent_state_mechanism_v1/results/INPUT_MANIFEST_SUMMARY.json": "e2a0bcf1b0ae1287598e192128451de986dfa7e08bd4c9cd6f77f4678eff5adc",
+      "repo/experiments/ouro_latent_state_mechanism_v1/results/INPUT_MANIFEST_test.jsonl": "bc12ffe86d77c02fd624133d97cc600a386dca0f444dc8aeff4c6f82975ed108",
+      "repo/experiments/ouro_latent_state_mechanism_v1/results/INPUT_MANIFEST_train.jsonl": "849639fbd3bc963f211c2d2e592671b2fe0e3d9342e98b3a1cb25290e4c39c71",
+      "repo/experiments/ouro_latent_state_mechanism_v1/results/INPUT_MANIFEST_validation.jsonl": "1c50ff31af4bad1ed00efd653e5c1d09c708e6917803b21c9e0e52b653e04d5e",
+      "repo/experiments/ouro_weight_space_repair_v2/data/slcd_fixed_demonstrations.json": "8cf4b70e7c07c67a589560d5fcbc1fa8feb85a0e7af3b348fa21f147271419da",
+      "repo/experiments/ouro_weight_space_repair_v2/scripts/ouro_cached_scoring.py": "2801db23cf20e574765aad7f94f1f4967af640b3af7cf6aa01cbe96500457901",
+      "repo/experiments/ouro_weight_space_repair_v2/scripts/r10_core.py": "0e1e6cc33edd6415cf30e1ef45279549f0a447a90789610f7fa695559ab26445",
+      "repo/experiments/ouro_weight_space_repair_v2/scripts/r7_core.py": "1e9265527fb4f9dbf3daabf0f69b41e0e303e372fd03780520ec02cc176e78c4",
+      "repo/experiments/ouro_weight_space_repair_v2/scripts/r7_inference.py": "9281aea93580a122f57767991b037267114ac965588b747990c7570099a672ae",
+      "repo/experiments/ouro_weight_space_repair_v2/scripts/r7_math.py": "76db195622775721c807f7a6fe639581e48557e51cb91e141c82d197dc9b6a97",
+      "repo/experiments/ouro_weight_space_repair_v2/scripts/runtime.py": "9ebbbdb2573a567cc6bb331a861490ebbdab85dd723a73036bf3813a7c8d85d1"
+    },
+    "commit": "1d1f8c0fcaa7aadf5aece910b159f2f920ebb8f0",
+    "coverage_sha256": "44b6bafcdcf7066859e56e4c83bfb77ec9d7c22f78c4c6952b6315b41e52f16f",
+    "cuda": "12.4",
+    "gpu": "NVIDIA RTX A6000",
+    "source_sha256": {
+      "/home/luansiyu/loop-latent/repo/experiments/ouro_latent_state_mechanism_v1/cohort_runner.py": "93734acfb3ce3ea829a36bc01adebbdcd7648270aa89ceedade4217a3386b4b5",
+      "/home/luansiyu/loop-latent/repo/experiments/ouro_latent_state_mechanism_v1/ledger_guard.py": "a94d70841e0d5ac59f7c0209f829020e5d27135bab56bdb364112bd5d2459483",
+      "/home/luansiyu/loop-latent/repo/experiments/ouro_latent_state_mechanism_v1/round2_full_sequence.py": "1a95387ebb9dc1dae8d960f88736cd87a3ccb0724a5d24527cc7aee9cb5dfd7d",
+      "/home/luansiyu/loop-latent/repo/experiments/ouro_latent_state_mechanism_v1/round2_intervention_core.py": "bbf0f90023708274db0d0cd0662d827186411cc899a4b93b7b1bbd48affacdf3",
+      "/home/luansiyu/loop-latent/repo/experiments/ouro_latent_state_mechanism_v1/round2_intervention_coverage.py": "04fcbe293d1d27ae70027a2074b3d7e1bc89e0d1377d9ab6b73e6c718ecc9f83",
+      "/home/luansiyu/loop-latent/repo/experiments/ouro_latent_state_mechanism_v1/round2_intervention_runner.py": "850be33e2e5171901f44994f66bfb5a94ec6c70cecdaf6d95c27e7852a727d14"
+    },
+    "torch": "2.5.1+cu124"
+  },
+  "status": "TRAIN_ONLY_DISCLOSED_COVERAGE_BOUND"
+}

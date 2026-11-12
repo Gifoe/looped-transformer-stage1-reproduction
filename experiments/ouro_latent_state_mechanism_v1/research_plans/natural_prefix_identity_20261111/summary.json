@@ -1,0 +1,55 @@
+{
+  "audit_source_sha256": "d9d490da970ab3e127fe22690b82c518e35da4cd067c38b9a316783cfee670b4",
+  "boundary_ledger_sha256": "a77258ade36415efb17ca09a886417f9b265ce53feec1589431dff6062f4e2bc",
+  "candidate_ledger_sha256": "6f6c74d4dd638614e53c0cb778eb1c4670c9728458793bfcfb961303f0dea590",
+  "cohort_source_sha256": "93734acfb3ce3ea829a36bc01adebbdcd7648270aa89ceedade4217a3386b4b5",
+  "config_layer_types": [
+    "full_attention"
+  ],
+  "config_rope_scaling": null,
+  "config_rope_theta": 1000000.0,
+  "created_utc": "2026-11-11T00:03:42.021355+00:00",
+  "first_issue": null,
+  "limits": "Actual effective attention-mask tensor, actual past_key_values argument and computed RoPE cos/sin were not stored in metadata. No hidden states are compared. Causal prefix invariance is conditional on actual strict causal no-cache execution, identical prefix positions and identical effective RoPE; dynamic RoPE needs separate consideration.",
+  "missing_metadata_fields": {
+    "effective_attention_mask": 10357,
+    "past_key_values_argument": 10357,
+    "rope_cos_sin": 10357
+  },
+  "model_config_sha256": "ce9cc13da41591b8b4deca053d7dfee06424c0228628ee862ea86d725bc163f3",
+  "model_source_sha256": "c5c68fbb368ce2909c257ae2afc50719be8c91539333d3295e19312c4316f413",
+  "reference_prefix_ids_file_sha256": "e984a118a098923ba87fab4ddd4a26d1f9da8c5dc9767c5ab073352cd3dfbf67",
+  "reference_prefix_sha256": "b7a217b349d810932bfe0771be45b4e0835a89e937f9d0e57854157d915ae132",
+  "reference_token_count": 1839,
+  "saved_offset_coverage_sha256": "5263cc8bf07900822b11954194b7e9fd60c3066c9f43d96baee092157445dba6",
+  "stats": {
+    "test": {
+      "candidate_errors": 0,
+      "candidates": 4687,
+      "first_issue": null,
+      "mask_omitted_batch_one": 4687,
+      "matching_prefix_ids": 4687,
+      "matching_prefix_positions": 4687,
+      "questions": 1172
+    },
+    "train": {
+      "candidate_errors": 0,
+      "candidates": 4476,
+      "first_issue": null,
+      "mask_omitted_batch_one": 4476,
+      "matching_prefix_ids": 4476,
+      "matching_prefix_positions": 4476,
+      "questions": 1119
+    },
+    "validation": {
+      "candidate_errors": 0,
+      "candidates": 1194,
+      "first_issue": null,
+      "mask_omitted_batch_one": 1194,
+      "matching_prefix_ids": 1194,
+      "matching_prefix_positions": 1194,
+      "questions": 299
+    }
+  },
+  "status": "NATURAL_PREFIX_INPUT_IDENTITY_AUDITED"
+}

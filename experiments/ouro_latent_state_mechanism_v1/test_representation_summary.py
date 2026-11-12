@@ -1,0 +1,2 @@
+from summarize_representations import Accumulator
+a=Accumulator();key=('layer00',(1,2),'question','all');a.add(key,{'mean_norm_before':1.,'mean_norm_after':2.,'mean_l2_change':1.,'mean_cosine':None});a.add(key,{'mean_norm_before':3.,'mean_norm_after':4.,'mean_l2_change':1.,'mean_cosine':0.5});x=a.finish()[0]['metrics'];assert x['mean_norm_before']=={'mean':2.0,'questions':2} and x['mean_cosine']=={'mean':0.5,'questions':1};print('PASS equal-question weighting and undefined-cosine denominator')

@@ -1,0 +1,3 @@
+# ROUND_3 interpretation boundaries addendum
+
+P and Q denote intervention positions, not information sources. At the cut, Q and R may already contain information from the demonstration prefix; an ineffective P rollback does not exclude earlier few-shot effects, and an effective Q rollback does not establish current-question semantic content. Eight corners distinguish position-state effects and dependence on the R background; they do not localize an attention or MLP path. Aggregate-C direction/norm results cannot be inherited as P-specific or Q-specific conclusions. This separate addendum preserves the original frozen plan and was recorded before reading test ROUND_2 intervention effects.
