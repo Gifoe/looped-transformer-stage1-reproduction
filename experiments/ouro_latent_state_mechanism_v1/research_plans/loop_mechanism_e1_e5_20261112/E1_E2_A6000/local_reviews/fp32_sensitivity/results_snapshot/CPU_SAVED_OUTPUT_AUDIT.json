@@ -1,0 +1,27 @@
+{
+  "status": "FULL_MODEL_FP32_SAVED_OUTPUT_CPU_AUDIT_PASSED",
+  "scope": "Independent saved FP32 logits hash/FP64 arithmetic score and identity/restore check; no independent GPU full-forward replay, no causal or rescue-group inference.",
+  "cases": [
+    {
+      "id": "ACTAAP_2010_7_7",
+      "conditions_checked": 18,
+      "profiler_ops": [
+        "aten::scaled_dot_product_attention",
+        "aten::_scaled_dot_product_efficient_attention"
+      ]
+    },
+    {
+      "id": "AKDE&ED_2008_4_41",
+      "conditions_checked": 18,
+      "profiler_ops": []
+    },
+    {
+      "id": "AKDE&ED_2008_8_32",
+      "conditions_checked": 18,
+      "profiler_ops": []
+    }
+  ],
+  "max_fp64_reference_vs_fp32_score_absolute_error": 4.5362297029782894e-07,
+  "source_pending_sha256": "dd684a41c48f5d8e0af92bcf2fdbd6fb82a375b0260bff2039a99e5284f33058",
+  "script_sha256": "6ffe1d159e2beae2cce4bf09357abbcedf1dae130f6f5801d5b45f87864529c1"
+}

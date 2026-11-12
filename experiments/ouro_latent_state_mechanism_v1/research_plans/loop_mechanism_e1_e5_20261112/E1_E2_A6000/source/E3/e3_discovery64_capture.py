@@ -1,0 +1,63 @@
+"""Re-capture natural K1/K2 Q/K/V for frozen64 and partition value-position interaction."""
+import os,json,hashlib,gzip,time,fcntl,uuid,torch,numpy as np
+os.environ['OPENBLAS_NUM_THREADS']='1';os.environ['OMP_NUM_THREADS']='1'
+from pathlib import Path
+from safetensors.torch import save_file,load_file
+from safetensors import safe_open
+from transformers import AutoModelForCausalLM
+import recovery_adapter,eight_observer,eight_runner,natural_l18_hook,technical,probe_eight,e1_fp64_attention,e3_value_partition,natural_sources,full_input,source_input,state_capture,qkv_runner,replay_eight
+from e1_fp64_attention import attention_row
+from e3_value_partition import split_value_interaction
+ROOT=Path('/home/luansiyu/loop-latent');B=ROOT/'repo/experiments/ouro_latent_state_mechanism_v1/research_plans/loop_mechanism_e1_e5_20261112';E=B/'E1';OUT=B/'E3/discovery64';SEL=B/'orders/E1_DISCOVERY64_FROZEN.json';AUDIT=E/'discovery64_cuda_audit.json';LED=ROOT/'research_plans/prompt_boundary_audit_20261111/boundary_ledger.jsonl';COV=ROOT/'research_plans/prefix_question_partition_draft_20261111/saved_offset_coverage.json';REF=ROOT/'research_plans/natural_prefix_identity_20261111/reference_prefix_ids.json';CAT=B/'results/compact_input_catalog.jsonl.gz';ORDER=B/'orders/E3_VALUE_PARTITION_ORDER.md'
+if not __debug__:raise RuntimeError('optimized Python forbidden')
+def sha(p):
+ h=hashlib.sha256()
+ with p.open('rb') as f:
+  for b in iter(lambda:f.read(2**20),b''):h.update(b)
+ return h.hexdigest()
+def need(x,s):
+ if not x:raise ValueError(s)
+def bits(a,b):return a.dtype==b.dtype and a.shape==b.shape and a.device==b.device and torch.equal(a.contiguous().view(torch.uint8),b.contiguous().view(torch.uint8))
+def vector(x):return x.detach().cpu().float().numpy().astype('float64')
+@torch.inference_mode()
+def case(model,ident,entry,ledger,cat,O,W,gamma,guard):
+ start=time.monotonic();mp=E/'train'/(hashlib.sha256(ident.encode()).hexdigest()+'.json');tp=mp.with_suffix('.safetensors');need(sha(mp)==entry['metadata_sha256'] and sha(tp)==entry['tensor_sha256'],'E1 audit shard');prior=json.loads(mp.read_text());t=load_file(str(tp));c=cat[ident];b=ledger[ident];ids=c['input_ids'];r=c['R'];need(prior['input_ids_sha256']==c['input_ids_sha256']==b['input_sha256'] and prior['R']==r==b['readout_position']==len(ids)-1 and b['input_length']==len(ids) and b['groups']['prefix']==list(range(1839)) and b['groups']['current']==list(range(1839,len(ids))) and not b['crossing_offsets'] and not b['groups']['crossing'],'offset partition');src,_,_=recovery_adapter.load('train',ident);e=src['natural'];need(e['ids']==ids and e['R']==r and e['metadata_sha256']==c['metadata_sha256'] and e['targets']==c['targets'] and e['gold']==c['gold_index'],'natural source');x=torch.tensor([ids],device='cuda');core=model.model;olddepth=core.total_ut_steps;caps={};saved={};meta={'id':ident,'split':'train','R':r,'input_ids_sha256':c['input_ids_sha256'],'natural_metadata_sha256':c['metadata_sha256'],'source_e1_metadata_sha256':sha(mp),'source_e1_tensor_sha256':sha(tp),'q':{}}
+ try:
+  for depth in (1,2):
+   guard();core.total_ut_steps=depth;own=src['states'][depth-1]
+   with eight_observer.observe_qkv(model,depth,r) as qr,natural_l18_hook.intervene(model,depth,r,own['x'],own['a']) as ar:y=model(x,labels=None,use_cache=False,exit_at_step=depth-1)
+   z=y.logits[0,r,:].unsqueeze(0);snap=eight_runner.snapshot(qr);d=eight_runner.descriptors(snap);need(d==prior['controls']['natural_capture'][str(depth)]['qkv'] and bits(z,e['logits'][depth-1].cuda()) and technical.score(z,e['targets'])==e['scores'][depth-1] and bits(qr['receiver_x'],own['x'].cuda()) and bits(ar['receiver_a'],own['a'].cuda()),'natural recapture bridge');caps[depth]=snap
+  k1,k2=vector(caps[1]['k']),vector(caps[2]['k']);v1,v2=vector(caps[1]['v']),vector(caps[2]['v']);need(k1.shape==k2.shape==v1.shape==v2.shape and k1.shape[1]==caps[1]['q'].shape[1],'actual expanded heads');targets=cat[ident]['targets'];gold=cat[ident]['gold_index'];wrong=[j for j in range(len(targets)) if j!=gold];w=(W[targets[gold]]-np.mean(W[[targets[j] for j in wrong]],axis=0))*gamma;oldmeta=ROOT/'research_plans/natural_qkv_eight_corner_20261112/train'/(hashlib.sha256(ident.encode()).hexdigest()+'.json');need(sha(oldmeta)==prior['controls']['old_eight_metadata_sha256'],'old metadata');om=json.loads(oldmeta.read_text());fw=om['fixed_wrong'];need(fw==max((j for j in range(len(targets)) if j!=gold),key=lambda j:e['scores'][0][j]),'fixedwrong');wfixed=(W[targets[gold]]-W[targets[fw]])*gamma
+  for q in (1,2):
+   qs=vector(caps[q]['q']);kw=caps[q]['kwargs'];need(not caps[q]['tail'] and kw['attn_mask'] is None and kw['is_causal'] is True and kw['dropout_p']==0,'SDPA kwargs');A1,_,good1=attention_row(qs,k1,v1,r,is_causal=True,scale=kw['scale'],enable_gqa=kw['enable_gqa']);A2,_,good2=attention_row(qs,k2,v1,r,is_causal=True,scale=kw['scale'],enable_gqa=kw['enable_gqa']);need(good1.all() and good2.all() and np.allclose(A1,t[f'q{q}_A1_fp64'].numpy(),atol=1e-12,rtol=1e-12) and np.allclose(A2,t[f'q{q}_A2_fp64'].numpy(),atol=1e-12,rtol=1e-12),'attention repeat');parts,total=split_value_interaction(A1,A2,v1,v2,r,1839);need(np.allclose(total,t[f'q{q}_interaction_fp64'].numpy(),atol=1e-10,rtol=1e-10),'ideal interaction');d=t[f'q{q}_delta_fp64'].numpy();pieces={**parts,'numeric_residual':d-total};need(np.allclose(sum(pieces.values()),d,atol=1e-10,rtol=1e-10),'delta accounting');projections={}
+   for name,a in pieces.items():
+    saved[f'q{q}_{name}']=torch.from_numpy(a.copy());u=O@a.ravel();projections[name]={'vector_l2':float(np.linalg.norm(a)),'oproj_linear_l2':float(np.linalg.norm(u)),'wgamma_allwrong':float(w@u),'wgamma_fixedwrong':float(wfixed@u)}
+   meta['q'][str(q)]={'component_diagnostics':projections,'A1_sha256':hashlib.sha256(A1.tobytes()).hexdigest(),'A2_sha256':hashlib.sha256(A2.tobytes()).hexdigest(),'qkv_descriptors':eight_runner.descriptors(caps[q]),'scope':'value-position interaction, not key information source; o_proj FP64 and Wgamma linear diagnostic, not native stage'}
+  torch.cuda.synchronize();meta['wall_seconds_cuda_synchronized_excludes_save']=time.monotonic()-start;guard();return meta,saved
+ finally:core.total_ut_steps=olddepth
+
+def main():
+ lock=os.open(ROOT/'ouro_watch.lock',os.O_CREAT|os.O_RDWR|os.O_NOFOLLOW,0o600)
+ try:
+  fcntl.flock(lock,fcntl.LOCK_EX|fcntl.LOCK_NB);need(sha(SEL)=='6faad196db958744780ee6477af8839c693798b8b24d2a01a2d450c856c720e1' and sha(AUDIT)=='df93e79df963ab9e1aa1f5fb6ffe18d11330f48fa759830f3f9c261afd2f6bf4' and sha(LED)=='a77258ade36415efb17ca09a886417f9b265ce53feec1589431dff6062f4e2bc' and sha(COV)=='5263cc8bf07900822b11954194b7e9fd60c3066c9f43d96baee092157445dba6' and sha(REF)=='e984a118a098923ba87fab4ddd4a26d1f9da8c5dc9767c5ab073352cd3dfbf67','frozen sources');a=json.loads(AUDIT.read_text());selection=json.loads(SEL.read_text());ids=[v['id'] for group in ('rescue','damage','stable_correct','stable_wrong') for v in selection['groups'][group]];entries={x['id']:x for x in a['questions']};need(a['status']=='DISCOVERY64_INDEPENDENT_CUDA_SCORE_AND_SOURCE_AUDIT_PASSED' and set(ids)==set(entries) and len(ids)==64,'audit IDs')
+  with LED.open() as f:ledger={r['id']:r for line in f if (r:=json.loads(line))['split']=='train' and r['id'] in entries}
+  with gzip.open(CAT,'rt') as f:cat={r['id']:r for line in f if (r:=json.loads(line))['split']=='train' and r['id'] in entries}
+  ref=json.loads(REF.read_text())['input_ids'];need(len(ref)==1839 and len(ledger)==len(cat)==64 and all(x['input_ids'][:1839]==ref for x in cat.values()),'prefix reference');recovery_adapter.initialize();OUT.mkdir(exist_ok=True);need(not (OUT/'receipt.json').exists(),'already complete');need(not list(OUT.glob('*.partial')),'orphan partial');ck=ROOT/'model/model.safetensors';need(sha(ck)=='58872a72616c736595b8b7662079c5b12c5a162ec16eae94f21c348dfa9885af','checkpoint');need(sha(CAT)=='a38218bfe0c9940f326663b8ecc0447f875a18c07f0091813ddfef4a3d12342d' and sha(ORDER)=='53224cd6025be5ec2c183d5aeb85cbab80bbfd341cd7bd20d674bebae4365644','catalog/order');mods=(recovery_adapter,eight_observer,eight_runner,natural_l18_hook,technical,probe_eight,e1_fp64_attention,e3_value_partition,natural_sources,full_input,source_input,state_capture,qkv_runner,replay_eight);files=[SEL,AUDIT,LED,COV,REF,CAT,ORDER,Path(__file__).resolve()]+[Path(m.__file__).resolve() for m in mods];sources={str(p):sha(p) for p in files}
+  with safe_open(str(ck),framework='pt',device='cpu') as f:O=f.get_tensor('model.layers.17.self_attn.o_proj.weight').float().numpy().astype('float64');W=f.get_tensor('lm_head.weight').float().numpy().astype('float64');gamma=f.get_tensor('model.norm.weight').float().numpy().astype('float64')
+  with torch.no_grad():model=AutoModelForCausalLM.from_pretrained(ROOT/'model',local_files_only=True,trust_remote_code=True,torch_dtype=torch.bfloat16,attn_implementation='sdpa').cuda().eval()
+  model.config.use_cache=False;model.model.config.use_cache=False;pending=json.loads((E/'technical_probe/pending.json').read_text());mh=probe_eight.model_hash(model);need(all(sources[str(Path(mod.__file__).resolve())]==pending['source_hashes'][str(Path(mod.__file__).resolve())] for mod in (recovery_adapter,eight_observer,eight_runner,natural_l18_hook,technical,probe_eight,e1_fp64_attention,natural_sources,full_input,source_input,state_capture,qkv_runner,replay_eight)),'actual import source drift');need(mh==pending['model_state_sha256'] and torch.__version__==pending['runtime']['torch'] and torch.version.cuda==pending['runtime']['cuda'] and torch.cuda.get_device_name()==pending['runtime']['gpu'],'model/runtime');params=lambda:[(n,id(v),v.data_ptr(),v._version) for n,v in list(model.named_parameters())+list(model.named_buffers())];vers=params()
+  def guard():need(params()==vers,'model mutation')
+  start=time.monotonic();n=0
+  for ident in ids:
+   key=hashlib.sha256(ident.encode()).hexdigest();mp=OUT/(key+'.json');tp=mp.with_suffix('.safetensors')
+   if mp.exists() or tp.exists():
+    need(mp.exists() and tp.exists(),'orphan');m=json.loads(mp.read_text());need(m['id']==ident and m['split']=='train' and m['R']==cat[ident]['R'] and m['input_ids_sha256']==cat[ident]['input_ids_sha256'] and m['source_e1_metadata_sha256']==entries[ident]['metadata_sha256'] and m['source_e1_tensor_sha256']==entries[ident]['tensor_sha256'] and m['tensor_sha256']==sha(tp) and m['source_hashes']==sources,'resume identity');stored=load_file(str(tp));need(set(stored)=={f'q{q}_{k}' for q in (1,2) for k in ('P','Q','R','numeric_residual')} and all(v.dtype==torch.float64 and v.ndim==3 and torch.isfinite(v).all() for v in stored.values()),'resume tensors');source=load_file(str(E/'train'/(key+'.safetensors')));need(all(torch.allclose(sum(stored[f'q{q}_{k}'] for k in ('P','Q','R','numeric_residual')),source[f'q{q}_delta_fp64'],atol=1e-10,rtol=1e-10) for q in (1,2)),'resume accounting');n+=1;continue
+   torch.cuda.synchronize();torch.cuda.reset_peak_memory_stats();m,t=case(model,ident,entries[ident],ledger,cat,O,W,gamma,guard);torch.cuda.synchronize();m['peak_allocated_bytes']=torch.cuda.max_memory_allocated();m['peak_reserved_bytes']=torch.cuda.max_memory_reserved();tmp=OUT/(key+'.'+uuid.uuid4().hex+'.partial')
+   try:
+    save_file(t,str(tmp));back=load_file(str(tmp));need(set(t)==set(back) and all(torch.equal(t[k],back[k]) for k in t),'readback');os.link(tmp,tp)
+   finally:
+    if tmp.exists():tmp.unlink()
+   m['tensor_sha256']=sha(tp);m['tensor_bytes']=tp.stat().st_size;m['source_hashes']=sources;probe_eight.write_json(mp,m);n+=1;print('E3_DISCOVERY_CAPTURE',n,ident,flush=True)
+  need(n==64 and all(sha(Path(k))==v for k,v in sources.items()) and sha(ck)=='58872a72616c736595b8b7662079c5b12c5a162ec16eae94f21c348dfa9885af' and probe_eight.model_hash(model)==mh,'final drift');probe_eight.write_json(OUT/'receipt.json',{'status':'E3_DISCOVERY64_PARTITION_CAPTURE_PENDING_INDEPENDENT_AUDIT','count':n,'selection_sha256':sha(SEL),'source_hashes':sources,'model_state_sha256':mh,'elapsed_seconds':time.monotonic()-start,'questions':[{'id':ident,'metadata_sha256':sha(OUT/(hashlib.sha256(ident.encode()).hexdigest()+'.json')),'tensor_sha256':sha(OUT/(hashlib.sha256(ident.encode()).hexdigest()+'.safetensors'))} for ident in ids],'scope':'Natural K1/K2 recapture matched prior full QKV descriptors; QKV streamed, not saved. P/Q/R allocates value-change terms only; softmax key competition is global. Wgamma/oproj are linear diagnostics; not a natural-path causal claim.'});print('E3_DISCOVERY64_PENDING_AUDIT',flush=True)
+ finally:os.close(lock)
+if __name__=='__main__':main()

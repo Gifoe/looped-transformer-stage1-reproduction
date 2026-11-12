@@ -1,0 +1,47 @@
+"""Post-audit E3 source64 descriptive analysis with exact BF16 target-gap sensitivity."""
+import json,gzip,hashlib,os,datetime
+from pathlib import Path
+from fractions import Fraction
+import numpy as np,torch
+from safetensors.torch import load_file
+from safetensors import safe_open
+R=Path('/home/luansiyu/loop-latent');B=R/'repo/experiments/ouro_latent_state_mechanism_v1/research_plans/loop_mechanism_e1_e5_20261112';E=B/'E3';RUN=E/'source_train64';A=E/'source64_independent_audit.json';SEL=B/'orders/E1_DISCOVERY64_FROZEN.json';OUT=E/'source64_analysis'
+if not __debug__:raise RuntimeError('optimized Python forbidden')
+def sha(p):
+ h=hashlib.sha256()
+ with p.open('rb') as f:
+  for b in iter(lambda:f.read(2**20),b''):h.update(b)
+ return h.hexdigest()
+def stats(vals):
+ a=np.array(vals,dtype='float64');return {'N':len(a),'mean':float(a.mean()) if len(a) else None,'median':float(np.median(a)) if len(a) else None,'q05':float(np.quantile(a,.05)) if len(a) else None,'q95':float(np.quantile(a,.95)) if len(a) else None,'positive':int((a>0).sum()),'negative':int((a<0).sum()),'zero':int((a==0).sum())}
+OLD=R/'research_plans/natural_qkv_eight_corner_20261112';GEOROW=OLD/'train_analysis/rows.jsonl.gz'; MODEL=R/'model/model.safetensors';assert sha(GEOROW)=='a8ac7510ec4bbad1a5b8e745a8d41d523ac984f4e2e3bdbc8c0d11b06b5a635e' and sha(MODEL)=='58872a72616c736595b8b7662079c5b12c5a162ec16eae94f21c348dfa9885af'
+with gzip.open(GEOROW,'rt') as f:natural={r['id']:r for line in f if not (r:=json.loads(line))['demo']}
+with safe_open(str(MODEL),framework='pt',device='cpu') as f:O=f.get_tensor('model.layers.17.self_attn.o_proj.weight').float().numpy().astype('float64');W=f.get_tensor('lm_head.weight').float().numpy().astype('float64');gamma=f.get_tensor('model.norm.weight').float().numpy().astype('float64')
+script_sha=sha(Path(__file__));a=json.loads(A.read_text());sel=json.loads(SEL.read_text());audit_sha=sha(A);selection_sha=sha(SEL);assert a['status']=='E3_SOURCE64_NATURAL_RECAPTURE_SDPA_CUDA_SCORE_AUDIT_PASSED' and a['count']==64 and a['selection_sha256']==selection_sha;groups={v['id']:g for g,vs in sel['groups'].items() for v in vs};assert len(groups)==64 and {x['id'] for x in a['questions']}==set(groups);rows=[]
+for z in a['questions']:
+ ident=z['id'];key=hashlib.sha256(ident.encode()).hexdigest();mp=RUN/(key+'.json');tp=mp.with_suffix('.safetensors');assert sha(mp)==z['metadata_sha256'] and sha(tp)==z['tensor_sha256'];m=json.loads(mp.read_text());t=load_file(str(tp));gold=m['gold'];targets=m['targets'];wrong=[j for j in range(len(targets)) if j!=gold];fixed=m['fixed_wrong'];row={'id':ident,'group':groups[ident],'gold':gold,'targets':targets,'fixed_wrong':fixed,'natural_no_top_tie':natural[ident]['natural_no_top_tie'],'metadata_sha256':sha(mp),'tensor_sha256':sha(tp),'q':{}}
+ for q in (1,2):
+  C=m['conditions'][str(q)];idsc=C['ID']['scores'];idz=t[f'q{q}_ID_logits'];ids=t[f'q{q}_ID_sdpa_R'];ida=t[f'q{q}_ID_a_R'];wg=(W[targets[gold]]-np.mean(W[[targets[j] for j in wrong]],axis=0))*gamma;idpred=max(range(len(targets)),key=lambda j:idsc[j]);res={}
+  for name in ('K_Q','V_Q','KV_Q','KV_P','K_Q_NORM','V_Q_NORM','V_Q_ROLL'):
+   c=C[name]
+   if c['control']['status']!='OK':res[name]={'status':c['control']['status']};continue
+   sc=c['scores'];z=t[f'q{q}_{name}_logits'];cand=[(idsc[gold]-idsc[j])-(sc[gold]-sc[j]) for j in wrong];exact=[(Fraction.from_float(float(idz[0,targets[gold]]))-Fraction.from_float(float(idz[0,targets[j]])))-(Fraction.from_float(float(z[0,targets[gold]]))-Fraction.from_float(float(z[0,targets[j]]))) for j in wrong];ex=sum(exact,Fraction())/len(exact);fx=exact[wrong.index(fixed)];pred=max(range(len(sc)),key=lambda j:sc[j]);ds=(ids.double()-t[f'q{q}_{name}_sdpa_R'].double()).numpy().ravel();da=(ida.double()-t[f'q{q}_{name}_a_R'].double()).numpy().ravel();proj=O@ds;res[name]={'target_logits_bf16':[float(z[0,j]) for j in targets],'sdpa_delta_l2':float(np.linalg.norm(ds)),'a_delta_l2':float(np.linalg.norm(da)),'sdpa_oproj_wgamma_linear':float(wg@proj),'a_wgamma_linear':float(wg@da),'status':'OK','loss_allwrong':float(np.mean(cand)),'loss_fixedwrong':float(cand[wrong.index(fixed)]),'loss_dynamic':float((idsc[gold]-max(idsc[j] for j in wrong))-(sc[gold]-max(sc[j] for j in wrong))),'candidate_losses':cand,'fraction_allwrong_sign':(ex>0)-(ex<0),'fraction_fixedwrong_sign':(fx>0)-(fx<0),'fraction_allwrong_exact':str(ex),'fraction_fixedwrong_exact':str(fx),'prediction':pred,'top_tie':sum(v==max(sc) for v in sc)>1,'scores':sc,'control':c['control'],'sdpa_R_sha256':c['sdpa_R_sha256'],'a_R_sha256':c['a_R_sha256']}
+  row['q'][str(q)]={'ID_prediction':idpred,'ID_correct':idpred==gold,'ID_scores':idsc,'ID_target_logits_bf16':[float(idz[0,j]) for j in targets],'ID_top_tie':sum(v==max(idsc) for v in idsc)>1,'conditions':res}
+ rows.append(row)
+assert len(rows)==64 and sha(A)==audit_sha and sha(SEL)==selection_sha and sha(Path(__file__))==script_sha and sha(GEOROW)=='a8ac7510ec4bbad1a5b8e745a8d41d523ac984f4e2e3bdbc8c0d11b06b5a635e' and sha(MODEL)=='58872a72616c736595b8b7662079c5b12c5a162ec16eae94f21c348dfa9885af';OUT.mkdir(exist_ok=False);rp=OUT/'rows.jsonl.gz'
+with gzip.open(rp,'xt') as f:
+ for x in rows:f.write(json.dumps(x,sort_keys=True,allow_nan=False)+'\n')
+out={'status':'E3_SOURCE64_STRATIFIED_EXPLORATORY_ANALYSIS','utc':datetime.datetime.now(datetime.timezone.utc).isoformat(),'audit_sha256':audit_sha,'selection_sha256':selection_sha,'rows_sha256':sha(rp),'script_sha256':script_sha,'scope':'16 train non-demo cases per natural group; not a population-weighted train result or independent blind test. K/V region interventions are mixed K1 carrier source rollbacks; softmax key effects are global and joint effect is not sum of separate effects.','groups':{}}
+for g in ('rescue','damage','stable_correct','stable_wrong','rescue_no_tie','damage_no_tie','stable_correct_no_tie','stable_wrong_no_tie'):
+ base=g.removesuffix('_no_tie');group=[x for x in rows if x['group']==base and (not g.endswith('_no_tie') or x['natural_no_top_tie'])];assert len(group)==16 or g.endswith('_no_tie');out['groups'][g]={}
+ for q in ('1','2'):
+  out['groups'][g][q]={}
+  for name in ('K_Q','V_Q','KV_Q','KV_P','K_Q_NORM','V_Q_NORM','V_Q_ROLL'):
+   valid=[(r['id'],r['q'][q],r['q'][q]['conditions'][name]) for r in group if r['q'][q]['conditions'][name]['status']=='OK'];x=[v for _,_,v in valid];d={'allwrong':stats([v['loss_allwrong'] for v in x]),'fixedwrong':stats([v['loss_fixedwrong'] for v in x]),'dynamic':stats([v['loss_dynamic'] for v in x]),'undefined_ids':sorted(r['id'] for r in group if r['q'][q]['conditions'][name]['status']!='OK'),'fraction_allwrong':{'positive':sum(v['fraction_allwrong_sign']>0 for v in x),'negative':sum(v['fraction_allwrong_sign']<0 for v in x),'zero':sum(v['fraction_allwrong_sign']==0 for v in x),'production_nonzero_exact_zero':sum(v['fraction_allwrong_sign']==0 and v['loss_allwrong']!=0 for v in x),'strict_reversal':sum(v['fraction_allwrong_sign']*((v['loss_allwrong']>0)-(v['loss_allwrong']<0))<0 for v in x)},'prediction':{'ID_correct_to_wrong':sum(z['ID_correct'] and v['prediction']!=r['gold'] for ident,z,v in valid for r in group if r['id']==ident),'ID_wrong_to_correct':sum(not z['ID_correct'] and v['prediction']==r['gold'] for ident,z,v in valid for r in group if r['id']==ident),'changed':sum(z['ID_prediction']!=v['prediction'] for _,z,v in valid),'ID_tie':sum(z['ID_top_tie'] for _,z,v in valid),'condition_tie':sum(v['top_tie'] for _,z,v in valid),'wrong_to_different_wrong':sum(not z['ID_correct'] and v['prediction']!=r['gold'] and z['ID_prediction']!=v['prediction'] for ident,z,v in valid for r in group if r['id']==ident)}};out['groups'][g][q][name]=d
+  out['groups'][g][q]['paired_controls']={}
+  for left,right in (('K_Q','K_Q_NORM'),('V_Q','V_Q_NORM'),('V_Q','V_Q_ROLL')):
+   vals=[(r['id'],r['q'][q]['conditions'][left]['loss_allwrong']-r['q'][q]['conditions'][right]['loss_allwrong']) for r in group if r['q'][q]['conditions'][left]['status']=='OK' and r['q'][q]['conditions'][right]['status']=='OK'];exacts=[(r['id'],Fraction(r['q'][q]['conditions'][left]['fraction_allwrong_exact'])-Fraction(r['q'][q]['conditions'][right]['fraction_allwrong_exact'])) for r in group if r['q'][q]['conditions'][left]['status']=='OK' and r['q'][q]['conditions'][right]['status']=='OK'];prod=dict(vals);out['groups'][g][q]['paired_controls'][left+'__'+right]={'difference':stats([v for _,v in vals]),'positive_ids':sorted(i for i,v in vals if v>0),'negative_ids':sorted(i for i,v in vals if v<0),'zero_ids':sorted(i for i,v in vals if v==0),'fraction_exact_positive_ids':sorted(i for i,v in exacts if v>0),'fraction_exact_negative_ids':sorted(i for i,v in exacts if v<0),'fraction_exact_zero_ids':sorted(i for i,v in exacts if v==0),'production_nonzero_exact_zero':sum(v==0 and prod[i]!=0 for i,v in exacts),'strict_reversal':sum(((v>0)-(v<0))*((prod[i]>0)-(prod[i]<0))<0 for i,v in exacts)}
+  vals=[r['q'][q]['conditions']['KV_Q']['loss_allwrong']-r['q'][q]['conditions']['K_Q']['loss_allwrong']-r['q'][q]['conditions']['V_Q']['loss_allwrong'] for r in group if all(r['q'][q]['conditions'][x]['status']=='OK' for x in ('KV_Q','K_Q','V_Q'))];out['groups'][g][q]['joint_minus_individual_losses']=stats(vals);out['groups'][g][q]['joint_interaction_sign_note']='loss joint-minus-individual equals negative of corresponding score interaction'
+p=OUT/'summary.json'
+with p.open('x') as f:json.dump(out,f,sort_keys=True,allow_nan=False);f.write('\n');f.flush();os.fsync(f.fileno())
+print('E3_SOURCE64_ANALYSIS_COMPLETE',sha(p),flush=True)

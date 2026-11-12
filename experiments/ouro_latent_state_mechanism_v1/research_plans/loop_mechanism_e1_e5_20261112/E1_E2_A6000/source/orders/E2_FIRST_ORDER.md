@@ -1,0 +1,6 @@
+# Astra E2 pre-observation order
+Freeze 2026-11-12 UTC prior to new supervised probe results. Prior ARC natural and interventions have been exposed; no independent blind-test claims.
+Two fixed R sites: physical L18/index17 input and loop-end post_norm; K1 and K2. Original natural metadata and natural_branch coverage bind all 2590. Layerwise x/a/y/b/z describe only stored R; gold never guides inference.
+Learned readout: train non-demo 1094 only, masked multiclass linear logistic. Independently K1-trained and K2-trained probes; shared train-derived transform for both loops; raw and unit-L2 feature axes same capacity. Train-only class mapping; absent classes OOV. Baselines constant/conditioned-letter prior and fixed-seed permuted-label probe.
+Fix L2 penalty candidates 1e-4,1e-2,1,1e2,1e4, sample-mean logloss, fixed unpenalized intercept, fixed solver/tolerance/max iterations. Select lambda using validation masked cross-entropy, ties choose larger lambda. Freeze models/transforms/mapping and selection before one test evaluation; no test-based layer, scale or parameter choice.
+Report own-loop and cross-loop accuracy/logloss/gaps/calibration, native final scores separately, groups and no-tie. Decodability is not proof of natural use. State intervention remains contingent on these findings and separate Astra order.
