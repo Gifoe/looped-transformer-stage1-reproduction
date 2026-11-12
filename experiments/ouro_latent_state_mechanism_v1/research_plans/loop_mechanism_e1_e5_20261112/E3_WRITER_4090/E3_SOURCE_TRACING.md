@@ -1,0 +1,5 @@
+# E3 source tracing
+
+Natural K1 and K2 are captured on the same 4090 model/site and input; N/P/PK are independently anchored to site-native scores and full logits. The L9 Q-only input substitution and subsequent per-site actual branch increments use matched input IDs/R and record source hashes. R-state and L18 x/a/SDPA changes are measured as diagnostics. The input region includes question, choices and formatting; this experiment does not identify which earlier token or computation first produced its content.
+
+A previously executed full attention-bundle × L18 Q-region K-to-R edge factorial provides an actual local causal edge intervention in its receiver. Its posthoc full Train/Validation summary is [here](results/parent_edge_factorial/RECEIPT.json). That parent-bundle experiment is not an independent mediation cut for new L-only effects. Original source code and provenance manifests: [4090 frozen source](frozen_4090_source/README.md), [tensor and audit receipts](results/tensor_manifests_and_audits/).

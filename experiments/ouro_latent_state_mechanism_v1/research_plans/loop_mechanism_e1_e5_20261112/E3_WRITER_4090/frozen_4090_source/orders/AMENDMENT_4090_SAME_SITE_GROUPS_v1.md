@@ -1,0 +1,5 @@
+# 4090 same-site natural-group clarification
+
+Parent order SHA256 `d0fc019924c6cb1f41a927b6d86bfa6b7e298ed2b90add4d27d7134d03a2349c`; site amendment SHA256 `1c331f1f4ec3f1f12bf00f081d2f79ddae486d1d27d646f6f04f8cfba00c0e2f`.
+
+The frozen discovery64 IDs and their four 16-question A6000 sampling labels are unchanged. On 4090, independently capture the full same-input native K1 and K2 candidate logits/scores for every discovery and holdout item, using the same model/runtime as its interventions. Derive actual natural rescue, damage, stable-correct, stable-wrong and natural no-tie from these 4090 native predictions. Preserve prior labels separately as `sampling_group_a6000`; report cross-site prediction and group differences per item. The six-direction discovery qualification uses the 4090 actual natural-rescue group and 4090 no-tie subset; the original stratification is a separately reported sampling sensitivity, never chosen by outcome. Apply the same-site grouping rule to Train1030 and Validation299. Do not subtract or pool A6000 native values with 4090 intervention scores. No treatment effect has been read at registration.

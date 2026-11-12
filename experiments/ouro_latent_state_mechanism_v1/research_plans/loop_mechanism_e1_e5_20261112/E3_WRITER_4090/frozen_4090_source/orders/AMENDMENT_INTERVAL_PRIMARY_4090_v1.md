@@ -1,0 +1,11 @@
+# Interval experiment primary execution site: 4090
+
+UTC frozen: 2026-11-12T16:23:11.037950+00:00
+Parent scientific order SHA256: d0fc019924c6cb1f41a927b6d86bfa6b7e298ed2b90add4d27d7134d03a2349c
+A6000 repeated-anchor accounting amendment SHA256: 1734900ae8dbeed79d20c807e7e7ba7ecfa75db74e811efce07ae07bbaa07d48
+
+Before any of the 64 discovery treatment effects are generated or revealed, designate the existing RTX 4090 server as the primary discovery and, if qualification criteria hold, the subsequent Train1030 and Validation299 execution site. Fixed 64 IDs, exactly 17 distinct conditions, masks, BF16, SDPA semantics, candidate scoring, donor selection, main outcomes, six qualification directions and bootstrap/holdout rules remain as in the parent order. No new head, token, layer, dose or outcome-based selection is authorized.
+
+The 4090 uses a new isolated namespace, pinned same checkpoint values, model code/config/tokenizer and exact input/target/offset catalog. It generates fresh same-site N/P/PK references, R branches and 64-recipient per-site donor pool, and freezes the resulting same-rule donor ledger before any treatment effects. A6000 reference tensors and score logits are retained as historical provenance and optional separately labelled descriptive comparisons; they are not asserted to be bit-identical 4090 anchors or silently combined into the 4090 baseline. Local natural identity, source guards, full logits/branch state and an independent bare-forward replay must pass at that site for three fixed technical questions before the complete frozen64 discovery. Record device, runtime, actual SDPA backend or unknown, and measured memory/wall cost.
+
+The A6000 validation and original Test chain continue independently. A6000 fixed-three interval technical work may finish for technical parity only; its effects are not used to select the 4090 protocol or discovery. The A6000 duplicate discovery64 treatment queue is paused before execution. Once the 4090 three-case site gate passes, cancel the unused A6000 duplicate and release the E1 Val-to-Test coordinator hold. If that gate fails or portability is materially slower, retain failure records and use the already approved A6000 protocol as fallback without changing scientific thresholds.

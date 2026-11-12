@@ -1,0 +1,3686 @@
+{
+  "scope": "Frozen 64 stratified exploratory sample, same-site groups, local counterfactuals; no effects ratios.",
+  "groups": {
+    "all64": {
+      "n": 64,
+      "factors": {
+        "E": {
+          "rest": {
+            "n": 64,
+            "mean": 0.021809899636233834,
+            "median": 0.031249980131784927,
+            "positive": 40,
+            "negative": 21,
+            "zero": 3,
+            "raw_fraction_mean": "67/3072"
+          },
+          "loss": {
+            "n": 64,
+            "mean": 0.013997399596216042,
+            "median": 0.01041671633720398,
+            "positive": 36,
+            "negative": 28,
+            "zero": 0,
+            "raw_fraction_mean": "43/3072"
+          },
+          "rest_norm": {
+            "n": 64,
+            "mean": 0.029296867549419417,
+            "median": 0.041666582226753346,
+            "positive": 41,
+            "negative": 22,
+            "zero": 1,
+            "raw_fraction_mean": "15/512"
+          },
+          "loss_norm": {
+            "n": 64,
+            "mean": 0.002929685940519705,
+            "median": 0.0,
+            "positive": 31,
+            "negative": 31,
+            "zero": 2,
+            "raw_fraction_mean": "3/1024"
+          },
+          "rest_unrelated": {
+            "n": 64,
+            "mean": 0.002278633997775628,
+            "median": 1.1175871117430347e-08,
+            "positive": 33,
+            "negative": 28,
+            "zero": 3,
+            "raw_fraction_mean": "7/3072"
+          },
+          "loss_unrelated": {
+            "n": 64,
+            "mean": 0.0003255234544970488,
+            "median": 0.0,
+            "positive": 31,
+            "negative": 30,
+            "zero": 3,
+            "raw_fraction_mean": "1/3072"
+          },
+          "rest_specific": {
+            "n": 64,
+            "mean": 0.019531265638458205,
+            "median": 9.313225746154785e-08,
+            "positive": 35,
+            "negative": 26,
+            "zero": 3,
+            "raw_fraction_mean": "5/256"
+          },
+          "loss_specific": {
+            "n": 64,
+            "mean": 0.013671876141718994,
+            "median": 0.0,
+            "positive": 31,
+            "negative": 30,
+            "zero": 3,
+            "raw_fraction_mean": "7/512"
+          }
+        },
+        "L": {
+          "rest": {
+            "n": 64,
+            "mean": 0.7799479121604236,
+            "median": 0.541666659216086,
+            "positive": 46,
+            "negative": 18,
+            "zero": 0,
+            "raw_fraction_mean": "599/768"
+          },
+          "loss": {
+            "n": 64,
+            "mean": 0.8391926983094891,
+            "median": 0.7187500397364299,
+            "positive": 48,
+            "negative": 16,
+            "zero": 0,
+            "raw_fraction_mean": "1289/1536"
+          },
+          "rest_norm": {
+            "n": 64,
+            "mean": 0.7796223939706881,
+            "median": 0.45833340411384904,
+            "positive": 47,
+            "negative": 17,
+            "zero": 0,
+            "raw_fraction_mean": "2395/3072"
+          },
+          "loss_norm": {
+            "n": 64,
+            "mean": 0.8365885521391949,
+            "median": 0.6979166368643442,
+            "positive": 50,
+            "negative": 14,
+            "zero": 0,
+            "raw_fraction_mean": "1285/1536"
+          },
+          "rest_unrelated": {
+            "n": 64,
+            "mean": -0.34602865247870795,
+            "median": -0.35416684548060107,
+            "positive": 21,
+            "negative": 43,
+            "zero": 0,
+            "raw_fraction_mean": "-1063/3072"
+          },
+          "loss_unrelated": {
+            "n": 64,
+            "mean": 0.0087890631463475,
+            "median": -0.09375004470348369,
+            "positive": 28,
+            "negative": 36,
+            "zero": 0,
+            "raw_fraction_mean": "9/1024"
+          },
+          "rest_specific": {
+            "n": 64,
+            "mean": 1.1259765646391315,
+            "median": 0.7187500298023224,
+            "positive": 52,
+            "negative": 12,
+            "zero": 0,
+            "raw_fraction_mean": "1153/1024"
+          },
+          "loss_specific": {
+            "n": 64,
+            "mean": 0.8304036351631415,
+            "median": 0.7291668074515957,
+            "positive": 50,
+            "negative": 14,
+            "zero": 0,
+            "raw_fraction_mean": "2551/3072"
+          }
+        }
+      },
+      "conditions": {
+        "N": {
+          "n": 64,
+          "rescue_ids": [],
+          "damage_ids": [],
+          "tie_count": 4,
+          "stage_median_delta_norm": {
+            "l9_post_mlp": null,
+            "l18_x": null,
+            "l18_a": null,
+            "l18_sdpa": null
+          }
+        },
+        "N_minus_E_main": {
+          "n": 64,
+          "rescue_ids": [],
+          "damage_ids": [],
+          "tie_count": 4,
+          "stage_median_delta_norm": {
+            "l9_post_mlp": 0.6332657236015689,
+            "l18_x": 0.4484739563262077,
+            "l18_a": 0.0731107161872259,
+            "l18_sdpa": 0.18627946119425431
+          }
+        },
+        "N_minus_E_norm": {
+          "n": 64,
+          "rescue_ids": [],
+          "damage_ids": [],
+          "tie_count": 3,
+          "stage_median_delta_norm": {
+            "l9_post_mlp": 0.6224968541389733,
+            "l18_x": 0.4505347079422978,
+            "l18_a": 0.07640437162295721,
+            "l18_sdpa": 0.19506596269381224
+          }
+        },
+        "N_minus_E_unrelated": {
+          "n": 64,
+          "rescue_ids": [],
+          "damage_ids": [],
+          "tie_count": 3,
+          "stage_median_delta_norm": {
+            "l9_post_mlp": 0.6319932348335023,
+            "l18_x": 0.4476017515508006,
+            "l18_a": 0.07833047257121145,
+            "l18_sdpa": 0.19130048505629266
+          }
+        },
+        "N_minus_L_main": {
+          "n": 64,
+          "rescue_ids": [
+            "Mercury_7247835",
+            "Mercury_417154",
+            "MCAS_2006_9_20",
+            "MCAS_2004_8_36",
+            "Mercury_7196263",
+            "Mercury_SC_402085",
+            "Mercury_SC_400160",
+            "AKDE&ED_2012_8_37",
+            "Mercury_7214673"
+          ],
+          "damage_ids": [
+            "NCEOGA_2013_8_44",
+            "MDSA_2007_8_29",
+            "Mercury_183750",
+            "Mercury_186218",
+            "Mercury_SC_LBS10674",
+            "Mercury_SC_415542"
+          ],
+          "tie_count": 4,
+          "stage_median_delta_norm": {
+            "l9_post_mlp": 0.0,
+            "l18_x": 3.006388483140744,
+            "l18_a": 0.6242319836739303,
+            "l18_sdpa": 1.624893040011095
+          }
+        },
+        "N_minus_L_norm": {
+          "n": 64,
+          "rescue_ids": [
+            "Mercury_417154",
+            "MCAS_2006_9_20",
+            "Mercury_7196263",
+            "MCAS_2004_9_15",
+            "Mercury_SC_402085",
+            "AKDE&ED_2012_8_37",
+            "Mercury_7214673"
+          ],
+          "damage_ids": [
+            "NCEOGA_2013_8_44",
+            "MDSA_2007_8_29",
+            "Mercury_186218",
+            "Mercury_SC_LBS10674",
+            "Mercury_SC_415542"
+          ],
+          "tie_count": 4,
+          "stage_median_delta_norm": {
+            "l9_post_mlp": 0.0,
+            "l18_x": 2.9700325929329985,
+            "l18_a": 0.6203948804108255,
+            "l18_sdpa": 1.5954030259239014
+          }
+        },
+        "N_minus_L_unrelated": {
+          "n": 64,
+          "rescue_ids": [
+            "Mercury_417154",
+            "Mercury_184293",
+            "MCAS_2004_8_36",
+            "Mercury_SC_402085",
+            "Mercury_SC_400160",
+            "Mercury_7192448",
+            "Mercury_403967"
+          ],
+          "damage_ids": [
+            "Mercury_SC_415542"
+          ],
+          "tie_count": 5,
+          "stage_median_delta_norm": {
+            "l9_post_mlp": 0.0,
+            "l18_x": 2.5735768312391993,
+            "l18_a": 0.4716380405816384,
+            "l18_sdpa": 1.0872056257631073
+          }
+        },
+        "N_minus_full": {
+          "n": 64,
+          "rescue_ids": [
+            "Mercury_7247835",
+            "Mercury_417154",
+            "MCAS_2006_9_20",
+            "MCAS_2004_8_36",
+            "Mercury_7196263",
+            "MCAS_2004_9_15",
+            "Mercury_SC_402085",
+            "AKDE&ED_2012_8_37",
+            "Mercury_7214673"
+          ],
+          "damage_ids": [
+            "NCEOGA_2013_8_44",
+            "MDSA_2007_8_29",
+            "Mercury_186218",
+            "Mercury_SC_LBS10674",
+            "Mercury_SC_415542"
+          ],
+          "tie_count": 3,
+          "stage_median_delta_norm": {
+            "l9_post_mlp": null,
+            "l18_x": null,
+            "l18_a": null,
+            "l18_sdpa": null
+          }
+        },
+        "P": {
+          "n": 64,
+          "rescue_ids": [
+            "ACTAAP_2010_7_7",
+            "Mercury_7247835",
+            "Mercury_417154",
+            "Mercury_406808",
+            "MCAS_2006_9_20",
+            "Mercury_7196263",
+            "Mercury_7189070",
+            "MCAS_2004_9_15"
+          ],
+          "damage_ids": [
+            "Mercury_7227938",
+            "Mercury_182718",
+            "Mercury_SC_401765",
+            "Mercury_7233555",
+            "NCEOGA_2013_8_44",
+            "MDSA_2007_8_29",
+            "Mercury_183750",
+            "Mercury_186218",
+            "Mercury_7001418",
+            "Mercury_SC_LBS10674",
+            "Mercury_SC_415542",
+            "MCAS_2003_8_8",
+            "MSA_2015_8_37"
+          ],
+          "tie_count": 7,
+          "stage_median_delta_norm": {
+            "l9_post_mlp": null,
+            "l18_x": null,
+            "l18_a": null,
+            "l18_sdpa": null
+          }
+        },
+        "P_plus_E_main": {
+          "n": 64,
+          "rescue_ids": [
+            "Mercury_7142853"
+          ],
+          "damage_ids": [
+            "MCAS_2004_9_15"
+          ],
+          "tie_count": 7,
+          "stage_median_delta_norm": {
+            "l9_post_mlp": 0.0,
+            "l18_x": 2.455227501120443,
+            "l18_a": 1.1150486140811608,
+            "l18_sdpa": 2.7823949337684937
+          }
+        },
+        "P_plus_E_norm": {
+          "n": 64,
+          "rescue_ids": [
+            "Mercury_SC_402085",
+            "Mercury_7142853"
+          ],
+          "damage_ids": [
+            "MCAS_2004_9_15"
+          ],
+          "tie_count": 4,
+          "stage_median_delta_norm": {
+            "l9_post_mlp": 0.05170110769935901,
+            "l18_x": 2.4539200385005415,
+            "l18_a": 1.1164520523838757,
+            "l18_sdpa": 2.782154638406232
+          }
+        },
+        "P_plus_E_unrelated": {
+          "n": 64,
+          "rescue_ids": [
+            "MSA_2013_8_4"
+          ],
+          "damage_ids": [
+            "Mercury_406732"
+          ],
+          "tie_count": 7,
+          "stage_median_delta_norm": {
+            "l9_post_mlp": 0.6435900192170521,
+            "l18_x": 2.529805932655375,
+            "l18_a": 1.1344669114485524,
+            "l18_sdpa": 2.839929733868119
+          }
+        },
+        "P_plus_L_main": {
+          "n": 64,
+          "rescue_ids": [
+            "Mercury_7227938",
+            "Mercury_182718",
+            "Mercury_SC_401765",
+            "Mercury_7233555",
+            "NCEOGA_2013_8_44",
+            "MDSA_2007_8_29",
+            "Mercury_183750",
+            "Mercury_186218",
+            "Mercury_7001418",
+            "Mercury_SC_LBS10674",
+            "Mercury_SC_415542",
+            "Mercury_7090773",
+            "Mercury_184293",
+            "Mercury_7271285",
+            "MSA_2015_8_37",
+            "AKDE&ED_2008_8_32"
+          ],
+          "damage_ids": [
+            "Mercury_7247835",
+            "Mercury_406808",
+            "MCAS_2006_9_20",
+            "Mercury_7189070",
+            "MCAS_2004_9_15"
+          ],
+          "tie_count": 2,
+          "stage_median_delta_norm": {
+            "l9_post_mlp": 0.6332657236015689,
+            "l18_x": 1.178121905983542,
+            "l18_a": 0.8927453229292677,
+            "l18_sdpa": 2.151679062631221
+          }
+        },
+        "P_plus_L_norm": {
+          "n": 64,
+          "rescue_ids": [
+            "Mercury_7227938",
+            "Mercury_182718",
+            "Mercury_SC_401765",
+            "Mercury_7233555",
+            "NCEOGA_2013_8_44",
+            "MDSA_2007_8_29",
+            "Mercury_183750",
+            "Mercury_186218",
+            "Mercury_7001418",
+            "Mercury_SC_LBS10674",
+            "Mercury_SC_415542",
+            "Mercury_184293",
+            "Mercury_7271285",
+            "MSA_2015_8_37",
+            "AKDE&ED_2008_8_32"
+          ],
+          "damage_ids": [
+            "Mercury_406808",
+            "MCAS_2006_9_20",
+            "Mercury_7189070",
+            "MCAS_2004_9_15"
+          ],
+          "tie_count": 2,
+          "stage_median_delta_norm": {
+            "l9_post_mlp": 0.6332657236015689,
+            "l18_x": 1.1486051199377856,
+            "l18_a": 0.9007267581780345,
+            "l18_sdpa": 2.1411469495009037
+          }
+        },
+        "P_plus_L_unrelated": {
+          "n": 64,
+          "rescue_ids": [
+            "Mercury_7271285",
+            "Mercury_7142853",
+            "AKDE&ED_2012_8_37"
+          ],
+          "damage_ids": [
+            "Mercury_SC_LBS10647",
+            "Mercury_7269168",
+            "Mercury_7247835",
+            "Mercury_417154",
+            "Mercury_406808",
+            "MCAS_2006_9_20",
+            "Mercury_7189070",
+            "MCAS_2004_9_15",
+            "Mercury_406732"
+          ],
+          "tie_count": 0,
+          "stage_median_delta_norm": {
+            "l9_post_mlp": 0.6332657236015689,
+            "l18_x": 3.1887348794332944,
+            "l18_a": 1.1502769051754504,
+            "l18_sdpa": 2.661401752626409
+          }
+        },
+        "P_plus_full": {
+          "n": 64,
+          "rescue_ids": [
+            "Mercury_182718",
+            "Mercury_SC_401765",
+            "Mercury_7233555",
+            "NCEOGA_2013_8_44",
+            "MDSA_2007_8_29",
+            "Mercury_183750",
+            "Mercury_186218",
+            "Mercury_7001418",
+            "Mercury_SC_LBS10674",
+            "Mercury_SC_415542",
+            "Mercury_7090773",
+            "Mercury_184293",
+            "Mercury_7271285",
+            "MSA_2015_8_37",
+            "Mercury_7236600",
+            "AKDE&ED_2008_8_32"
+          ],
+          "damage_ids": [
+            "Mercury_7247835",
+            "Mercury_406808",
+            "MCAS_2006_9_20",
+            "Mercury_7189070",
+            "MCAS_2004_9_15"
+          ],
+          "tie_count": 4,
+          "stage_median_delta_norm": {
+            "l9_post_mlp": null,
+            "l18_x": null,
+            "l18_a": null,
+            "l18_sdpa": null
+          }
+        }
+      }
+    },
+    "rescue": {
+      "n": 15,
+      "factors": {
+        "E": {
+          "rest": {
+            "n": 15,
+            "mean": 0.038888897664017194,
+            "median": 0.04166668156782771,
+            "positive": 12,
+            "negative": 3,
+            "zero": 0,
+            "raw_fraction_mean": "7/180"
+          },
+          "loss": {
+            "n": 15,
+            "mean": -0.011111101342572028,
+            "median": 1.1920928955078125e-07,
+            "positive": 8,
+            "negative": 7,
+            "zero": 0,
+            "raw_fraction_mean": "-1/90"
+          },
+          "rest_norm": {
+            "n": 15,
+            "mean": 0.03611111938953404,
+            "median": 0.04166674613952637,
+            "positive": 10,
+            "negative": 4,
+            "zero": 1,
+            "raw_fraction_mean": "13/360"
+          },
+          "loss_norm": {
+            "n": 15,
+            "mean": -0.041666683326992734,
+            "median": -0.04166648785273264,
+            "positive": 6,
+            "negative": 9,
+            "zero": 0,
+            "raw_fraction_mean": "-1/24"
+          },
+          "rest_unrelated": {
+            "n": 15,
+            "mean": 0.01666665706369619,
+            "median": 0.020833313465118408,
+            "positive": 9,
+            "negative": 5,
+            "zero": 1,
+            "raw_fraction_mean": "1/60"
+          },
+          "loss_unrelated": {
+            "n": 15,
+            "mean": -0.023611119782759062,
+            "median": 0.0,
+            "positive": 7,
+            "negative": 7,
+            "zero": 1,
+            "raw_fraction_mean": "-17/720"
+          },
+          "rest_specific": {
+            "n": 15,
+            "mean": 0.02222224060032101,
+            "median": 0.04166666666666652,
+            "positive": 9,
+            "negative": 5,
+            "zero": 1,
+            "raw_fraction_mean": "1/45"
+          },
+          "loss_specific": {
+            "n": 15,
+            "mean": 0.012500018440187036,
+            "median": -1.4901161193847656e-08,
+            "positive": 7,
+            "negative": 8,
+            "zero": 0,
+            "raw_fraction_mean": "1/80"
+          }
+        },
+        "L": {
+          "rest": {
+            "n": 15,
+            "mean": 1.8194444496184587,
+            "median": 1.7499999354283016,
+            "positive": 14,
+            "negative": 1,
+            "zero": 0,
+            "raw_fraction_mean": "131/72"
+          },
+          "loss": {
+            "n": 15,
+            "mean": 1.9041666306555272,
+            "median": 1.729166602094968,
+            "positive": 15,
+            "negative": 0,
+            "zero": 0,
+            "raw_fraction_mean": "457/240"
+          },
+          "rest_norm": {
+            "n": 15,
+            "mean": 1.811111107096076,
+            "median": 1.7500000695387523,
+            "positive": 15,
+            "negative": 0,
+            "zero": 0,
+            "raw_fraction_mean": "163/90"
+          },
+          "loss_norm": {
+            "n": 15,
+            "mean": 1.8444444369110797,
+            "median": 1.5624998162190118,
+            "positive": 15,
+            "negative": 0,
+            "zero": 0,
+            "raw_fraction_mean": "83/45"
+          },
+          "rest_unrelated": {
+            "n": 15,
+            "mean": -0.27638888495663794,
+            "median": -0.4166666666666665,
+            "positive": 4,
+            "negative": 11,
+            "zero": 0,
+            "raw_fraction_mean": "-199/720"
+          },
+          "loss_unrelated": {
+            "n": 15,
+            "mean": 0.3138888503735263,
+            "median": 0.45833309988180826,
+            "positive": 9,
+            "negative": 6,
+            "zero": 0,
+            "raw_fraction_mean": "113/360"
+          },
+          "rest_specific": {
+            "n": 15,
+            "mean": 2.095833334575097,
+            "median": 1.7499999701976776,
+            "positive": 15,
+            "negative": 0,
+            "zero": 0,
+            "raw_fraction_mean": "503/240"
+          },
+          "loss_specific": {
+            "n": 15,
+            "mean": 1.5902777802820007,
+            "median": 1.8124999391535916,
+            "positive": 13,
+            "negative": 2,
+            "zero": 0,
+            "raw_fraction_mean": "229/144"
+          }
+        }
+      },
+      "conditions": {
+        "N": {
+          "n": 15,
+          "rescue_ids": [],
+          "damage_ids": [],
+          "tie_count": 1,
+          "stage_median_delta_norm": {
+            "l9_post_mlp": null,
+            "l18_x": null,
+            "l18_a": null,
+            "l18_sdpa": null
+          }
+        },
+        "N_minus_E_main": {
+          "n": 15,
+          "rescue_ids": [],
+          "damage_ids": [],
+          "tie_count": 1,
+          "stage_median_delta_norm": {
+            "l9_post_mlp": 0.6327273494039801,
+            "l18_x": 0.43565428215612234,
+            "l18_a": 0.06756758949720938,
+            "l18_sdpa": 0.17109787239408888
+          }
+        },
+        "N_minus_E_norm": {
+          "n": 15,
+          "rescue_ids": [],
+          "damage_ids": [],
+          "tie_count": 0,
+          "stage_median_delta_norm": {
+            "l9_post_mlp": 0.6281670495600448,
+            "l18_x": 0.42807670044760293,
+            "l18_a": 0.07415449360466281,
+            "l18_sdpa": 0.18618105689604134
+          }
+        },
+        "N_minus_E_unrelated": {
+          "n": 15,
+          "rescue_ids": [],
+          "damage_ids": [],
+          "tie_count": 1,
+          "stage_median_delta_norm": {
+            "l9_post_mlp": 0.6325409729438789,
+            "l18_x": 0.45411399931950674,
+            "l18_a": 0.08346491827279981,
+            "l18_sdpa": 0.19449836553083444
+          }
+        },
+        "N_minus_L_main": {
+          "n": 15,
+          "rescue_ids": [],
+          "damage_ids": [
+            "NCEOGA_2013_8_44",
+            "MDSA_2007_8_29",
+            "Mercury_183750",
+            "Mercury_186218",
+            "Mercury_SC_LBS10674",
+            "Mercury_SC_415542"
+          ],
+          "tie_count": 0,
+          "stage_median_delta_norm": {
+            "l9_post_mlp": 0.0,
+            "l18_x": 3.6947424433286686,
+            "l18_a": 0.8741197521729172,
+            "l18_sdpa": 2.279910397667874
+          }
+        },
+        "N_minus_L_norm": {
+          "n": 15,
+          "rescue_ids": [],
+          "damage_ids": [
+            "NCEOGA_2013_8_44",
+            "MDSA_2007_8_29",
+            "Mercury_186218",
+            "Mercury_SC_LBS10674",
+            "Mercury_SC_415542"
+          ],
+          "tie_count": 1,
+          "stage_median_delta_norm": {
+            "l9_post_mlp": 0.0,
+            "l18_x": 3.6519018572066875,
+            "l18_a": 0.8143587378357626,
+            "l18_sdpa": 2.1495246314411807
+          }
+        },
+        "N_minus_L_unrelated": {
+          "n": 15,
+          "rescue_ids": [],
+          "damage_ids": [
+            "Mercury_SC_415542"
+          ],
+          "tie_count": 1,
+          "stage_median_delta_norm": {
+            "l9_post_mlp": 0.0,
+            "l18_x": 2.7973315028255636,
+            "l18_a": 0.47023213678724574,
+            "l18_sdpa": 1.2170903976833447
+          }
+        },
+        "N_minus_full": {
+          "n": 15,
+          "rescue_ids": [],
+          "damage_ids": [
+            "NCEOGA_2013_8_44",
+            "MDSA_2007_8_29",
+            "Mercury_186218",
+            "Mercury_SC_LBS10674",
+            "Mercury_SC_415542"
+          ],
+          "tie_count": 1,
+          "stage_median_delta_norm": {
+            "l9_post_mlp": null,
+            "l18_x": null,
+            "l18_a": null,
+            "l18_sdpa": null
+          }
+        },
+        "P": {
+          "n": 15,
+          "rescue_ids": [],
+          "damage_ids": [
+            "Mercury_7227938",
+            "Mercury_182718",
+            "Mercury_SC_401765",
+            "Mercury_7233555",
+            "NCEOGA_2013_8_44",
+            "MDSA_2007_8_29",
+            "Mercury_183750",
+            "Mercury_186218",
+            "Mercury_7001418",
+            "Mercury_SC_LBS10674",
+            "Mercury_SC_415542"
+          ],
+          "tie_count": 2,
+          "stage_median_delta_norm": {
+            "l9_post_mlp": null,
+            "l18_x": null,
+            "l18_a": null,
+            "l18_sdpa": null
+          }
+        },
+        "P_plus_E_main": {
+          "n": 15,
+          "rescue_ids": [],
+          "damage_ids": [],
+          "tie_count": 2,
+          "stage_median_delta_norm": {
+            "l9_post_mlp": 0.0,
+            "l18_x": 2.865075319887331,
+            "l18_a": 1.5255739052254933,
+            "l18_sdpa": 3.416174924210147
+          }
+        },
+        "P_plus_E_norm": {
+          "n": 15,
+          "rescue_ids": [],
+          "damage_ids": [],
+          "tie_count": 2,
+          "stage_median_delta_norm": {
+            "l9_post_mlp": 0.05504288165123004,
+            "l18_x": 2.862278043804908,
+            "l18_a": 1.5322488412753457,
+            "l18_sdpa": 3.3897218443059107
+          }
+        },
+        "P_plus_E_unrelated": {
+          "n": 15,
+          "rescue_ids": [],
+          "damage_ids": [],
+          "tie_count": 2,
+          "stage_median_delta_norm": {
+            "l9_post_mlp": 0.6315925356772503,
+            "l18_x": 2.865007019125861,
+            "l18_a": 1.5219134530536649,
+            "l18_sdpa": 3.396552859540612
+          }
+        },
+        "P_plus_L_main": {
+          "n": 15,
+          "rescue_ids": [
+            "Mercury_7227938",
+            "Mercury_182718",
+            "Mercury_SC_401765",
+            "Mercury_7233555",
+            "NCEOGA_2013_8_44",
+            "MDSA_2007_8_29",
+            "Mercury_183750",
+            "Mercury_186218",
+            "Mercury_7001418",
+            "Mercury_SC_LBS10674",
+            "Mercury_SC_415542"
+          ],
+          "damage_ids": [],
+          "tie_count": 1,
+          "stage_median_delta_norm": {
+            "l9_post_mlp": 0.6327273494039801,
+            "l18_x": 1.3104521536893718,
+            "l18_a": 1.1949928344030385,
+            "l18_sdpa": 2.581551765626242
+          }
+        },
+        "P_plus_L_norm": {
+          "n": 15,
+          "rescue_ids": [
+            "Mercury_7227938",
+            "Mercury_182718",
+            "Mercury_SC_401765",
+            "Mercury_7233555",
+            "NCEOGA_2013_8_44",
+            "MDSA_2007_8_29",
+            "Mercury_183750",
+            "Mercury_186218",
+            "Mercury_7001418",
+            "Mercury_SC_LBS10674",
+            "Mercury_SC_415542"
+          ],
+          "damage_ids": [],
+          "tie_count": 0,
+          "stage_median_delta_norm": {
+            "l9_post_mlp": 0.6327273494039801,
+            "l18_x": 1.187594174766072,
+            "l18_a": 1.1951932361979656,
+            "l18_sdpa": 2.579121035860398
+          }
+        },
+        "P_plus_L_unrelated": {
+          "n": 15,
+          "rescue_ids": [],
+          "damage_ids": [
+            "Mercury_SC_LBS10647",
+            "Mercury_7269168"
+          ],
+          "tie_count": 0,
+          "stage_median_delta_norm": {
+            "l9_post_mlp": 0.6327273494039801,
+            "l18_x": 3.674511592764278,
+            "l18_a": 1.451229420592187,
+            "l18_sdpa": 3.2829189849299625
+          }
+        },
+        "P_plus_full": {
+          "n": 15,
+          "rescue_ids": [
+            "Mercury_182718",
+            "Mercury_SC_401765",
+            "Mercury_7233555",
+            "NCEOGA_2013_8_44",
+            "MDSA_2007_8_29",
+            "Mercury_183750",
+            "Mercury_186218",
+            "Mercury_7001418",
+            "Mercury_SC_LBS10674",
+            "Mercury_SC_415542"
+          ],
+          "damage_ids": [],
+          "tie_count": 1,
+          "stage_median_delta_norm": {
+            "l9_post_mlp": null,
+            "l18_x": null,
+            "l18_a": null,
+            "l18_sdpa": null
+          }
+        }
+      }
+    },
+    "damage": {
+      "n": 15,
+      "factors": {
+        "E": {
+          "rest": {
+            "n": 15,
+            "mean": 0.016666653421189996,
+            "median": 0.0,
+            "positive": 7,
+            "negative": 6,
+            "zero": 2,
+            "raw_fraction_mean": "1/60"
+          },
+          "loss": {
+            "n": 15,
+            "mean": 0.013888894735525067,
+            "median": -0.02083333333333326,
+            "positive": 7,
+            "negative": 8,
+            "zero": 0,
+            "raw_fraction_mean": "1/72"
+          },
+          "rest_norm": {
+            "n": 15,
+            "mean": 0.008333325386047334,
+            "median": 0.04166654745737719,
+            "positive": 9,
+            "negative": 6,
+            "zero": 0,
+            "raw_fraction_mean": "1/120"
+          },
+          "loss_norm": {
+            "n": 15,
+            "mean": 0.008333327528089286,
+            "median": 0.0,
+            "positive": 7,
+            "negative": 7,
+            "zero": 1,
+            "raw_fraction_mean": "1/120"
+          },
+          "rest_unrelated": {
+            "n": 15,
+            "mean": 0.0180555469459957,
+            "median": 3.9736429924275285e-08,
+            "positive": 9,
+            "negative": 6,
+            "zero": 0,
+            "raw_fraction_mean": "13/720"
+          },
+          "loss_unrelated": {
+            "n": 15,
+            "mean": 0.013888889095849436,
+            "median": 7.947285940446136e-08,
+            "positive": 8,
+            "negative": 6,
+            "zero": 1,
+            "raw_fraction_mean": "1/72"
+          },
+          "rest_specific": {
+            "n": 15,
+            "mean": -0.0013888935248057047,
+            "median": -0.02083333333333348,
+            "positive": 6,
+            "negative": 8,
+            "zero": 1,
+            "raw_fraction_mean": "-1/720"
+          },
+          "loss_specific": {
+            "n": 15,
+            "mean": 5.639675630201661e-09,
+            "median": -3.9736429924275285e-08,
+            "positive": 6,
+            "negative": 8,
+            "zero": 1,
+            "raw_fraction_mean": "0"
+          }
+        },
+        "L": {
+          "rest": {
+            "n": 15,
+            "mean": -0.4430555674557885,
+            "median": -0.6666666269302368,
+            "positive": 5,
+            "negative": 10,
+            "zero": 0,
+            "raw_fraction_mean": "-319/720"
+          },
+          "loss": {
+            "n": 15,
+            "mean": -0.40555554589049686,
+            "median": -0.3333333830038705,
+            "positive": 6,
+            "negative": 9,
+            "zero": 0,
+            "raw_fraction_mean": "-73/180"
+          },
+          "rest_norm": {
+            "n": 15,
+            "mean": -0.40416667506926596,
+            "median": -0.6666666269302368,
+            "positive": 5,
+            "negative": 10,
+            "zero": 0,
+            "raw_fraction_mean": "-97/240"
+          },
+          "loss_norm": {
+            "n": 15,
+            "mean": -0.38472223110083076,
+            "median": -0.25000008940696716,
+            "positive": 6,
+            "negative": 9,
+            "zero": 0,
+            "raw_fraction_mean": "-277/720"
+          },
+          "rest_unrelated": {
+            "n": 15,
+            "mean": -0.5583333391282294,
+            "median": -0.47916666666666674,
+            "positive": 3,
+            "negative": 12,
+            "zero": 0,
+            "raw_fraction_mean": "-67/120"
+          },
+          "loss_unrelated": {
+            "n": 15,
+            "mean": -0.5222222205044494,
+            "median": -0.37500003973643015,
+            "positive": 2,
+            "negative": 13,
+            "zero": 0,
+            "raw_fraction_mean": "-47/90"
+          },
+          "rest_specific": {
+            "n": 15,
+            "mean": 0.11527777167244085,
+            "median": 0.20833333333333348,
+            "positive": 9,
+            "negative": 6,
+            "zero": 0,
+            "raw_fraction_mean": "83/720"
+          },
+          "loss_specific": {
+            "n": 15,
+            "mean": 0.1166666746139526,
+            "median": 0.12499994039535522,
+            "positive": 9,
+            "negative": 6,
+            "zero": 0,
+            "raw_fraction_mean": "7/60"
+          }
+        }
+      },
+      "conditions": {
+        "N": {
+          "n": 15,
+          "rescue_ids": [],
+          "damage_ids": [],
+          "tie_count": 1,
+          "stage_median_delta_norm": {
+            "l9_post_mlp": null,
+            "l18_x": null,
+            "l18_a": null,
+            "l18_sdpa": null
+          }
+        },
+        "N_minus_E_main": {
+          "n": 15,
+          "rescue_ids": [],
+          "damage_ids": [],
+          "tie_count": 1,
+          "stage_median_delta_norm": {
+            "l9_post_mlp": 0.6152360922263416,
+            "l18_x": 0.4667475611639234,
+            "l18_a": 0.08744149644280433,
+            "l18_sdpa": 0.19898476123433534
+          }
+        },
+        "N_minus_E_norm": {
+          "n": 15,
+          "rescue_ids": [],
+          "damage_ids": [],
+          "tie_count": 1,
+          "stage_median_delta_norm": {
+            "l9_post_mlp": 0.6105859484764673,
+            "l18_x": 0.449150839433016,
+            "l18_a": 0.07738964652594883,
+            "l18_sdpa": 0.2040475057919612
+          }
+        },
+        "N_minus_E_unrelated": {
+          "n": 15,
+          "rescue_ids": [],
+          "damage_ids": [],
+          "tie_count": 0,
+          "stage_median_delta_norm": {
+            "l9_post_mlp": 0.6170668899582998,
+            "l18_x": 0.44140133825983174,
+            "l18_a": 0.09849170775149552,
+            "l18_sdpa": 0.25163658620597884
+          }
+        },
+        "N_minus_L_main": {
+          "n": 15,
+          "rescue_ids": [
+            "Mercury_7247835",
+            "Mercury_417154",
+            "MCAS_2006_9_20",
+            "MCAS_2004_8_36",
+            "Mercury_7196263",
+            "Mercury_SC_402085"
+          ],
+          "damage_ids": [],
+          "tie_count": 2,
+          "stage_median_delta_norm": {
+            "l9_post_mlp": 0.0,
+            "l18_x": 3.0195469974236775,
+            "l18_a": 0.6690510351712674,
+            "l18_sdpa": 1.5673367240061653
+          }
+        },
+        "N_minus_L_norm": {
+          "n": 15,
+          "rescue_ids": [
+            "Mercury_417154",
+            "MCAS_2006_9_20",
+            "Mercury_7196263",
+            "MCAS_2004_9_15",
+            "Mercury_SC_402085"
+          ],
+          "damage_ids": [],
+          "tie_count": 1,
+          "stage_median_delta_norm": {
+            "l9_post_mlp": 0.0,
+            "l18_x": 3.005857200003359,
+            "l18_a": 0.6166798816218698,
+            "l18_sdpa": 1.383081054487246
+          }
+        },
+        "N_minus_L_unrelated": {
+          "n": 15,
+          "rescue_ids": [
+            "Mercury_417154",
+            "MCAS_2004_8_36",
+            "Mercury_SC_402085"
+          ],
+          "damage_ids": [],
+          "tie_count": 0,
+          "stage_median_delta_norm": {
+            "l9_post_mlp": 0.0,
+            "l18_x": 2.546735339654123,
+            "l18_a": 0.4762730178140745,
+            "l18_sdpa": 1.069307445503798
+          }
+        },
+        "N_minus_full": {
+          "n": 15,
+          "rescue_ids": [
+            "Mercury_7247835",
+            "Mercury_417154",
+            "MCAS_2006_9_20",
+            "MCAS_2004_8_36",
+            "Mercury_7196263",
+            "MCAS_2004_9_15",
+            "Mercury_SC_402085"
+          ],
+          "damage_ids": [],
+          "tie_count": 1,
+          "stage_median_delta_norm": {
+            "l9_post_mlp": null,
+            "l18_x": null,
+            "l18_a": null,
+            "l18_sdpa": null
+          }
+        },
+        "P": {
+          "n": 15,
+          "rescue_ids": [
+            "ACTAAP_2010_7_7",
+            "Mercury_7247835",
+            "Mercury_417154",
+            "Mercury_406808",
+            "MCAS_2006_9_20",
+            "Mercury_7196263",
+            "Mercury_7189070",
+            "MCAS_2004_9_15"
+          ],
+          "damage_ids": [],
+          "tie_count": 3,
+          "stage_median_delta_norm": {
+            "l9_post_mlp": null,
+            "l18_x": null,
+            "l18_a": null,
+            "l18_sdpa": null
+          }
+        },
+        "P_plus_E_main": {
+          "n": 15,
+          "rescue_ids": [],
+          "damage_ids": [
+            "MCAS_2004_9_15"
+          ],
+          "tie_count": 2,
+          "stage_median_delta_norm": {
+            "l9_post_mlp": 0.0,
+            "l18_x": 2.4236779457485422,
+            "l18_a": 1.1540854823644864,
+            "l18_sdpa": 2.581681327549587
+          }
+        },
+        "P_plus_E_norm": {
+          "n": 15,
+          "rescue_ids": [
+            "Mercury_SC_402085"
+          ],
+          "damage_ids": [
+            "MCAS_2004_9_15"
+          ],
+          "tie_count": 1,
+          "stage_median_delta_norm": {
+            "l9_post_mlp": 0.05291234995820481,
+            "l18_x": 2.4212843040974357,
+            "l18_a": 1.1531735144844715,
+            "l18_sdpa": 2.57632892436687
+          }
+        },
+        "P_plus_E_unrelated": {
+          "n": 15,
+          "rescue_ids": [
+            "MSA_2013_8_4"
+          ],
+          "damage_ids": [],
+          "tie_count": 3,
+          "stage_median_delta_norm": {
+            "l9_post_mlp": 0.6095450634724704,
+            "l18_x": 2.520618360272216,
+            "l18_a": 1.1394531932743257,
+            "l18_sdpa": 2.5701785058988134
+          }
+        },
+        "P_plus_L_main": {
+          "n": 15,
+          "rescue_ids": [
+            "Mercury_7090773",
+            "Mercury_7271285"
+          ],
+          "damage_ids": [
+            "Mercury_7247835",
+            "Mercury_406808",
+            "MCAS_2006_9_20",
+            "Mercury_7189070",
+            "MCAS_2004_9_15"
+          ],
+          "tie_count": 1,
+          "stage_median_delta_norm": {
+            "l9_post_mlp": 0.6152360922263416,
+            "l18_x": 1.1713695292555255,
+            "l18_a": 0.8712260760144078,
+            "l18_sdpa": 1.922063488819978
+          }
+        },
+        "P_plus_L_norm": {
+          "n": 15,
+          "rescue_ids": [
+            "Mercury_7271285"
+          ],
+          "damage_ids": [
+            "Mercury_406808",
+            "MCAS_2006_9_20",
+            "Mercury_7189070",
+            "MCAS_2004_9_15"
+          ],
+          "tie_count": 1,
+          "stage_median_delta_norm": {
+            "l9_post_mlp": 0.6152360922263416,
+            "l18_x": 1.1533225729572536,
+            "l18_a": 0.859164594059805,
+            "l18_sdpa": 2.085473505735608
+          }
+        },
+        "P_plus_L_unrelated": {
+          "n": 15,
+          "rescue_ids": [
+            "Mercury_7271285"
+          ],
+          "damage_ids": [
+            "Mercury_7247835",
+            "Mercury_417154",
+            "Mercury_406808",
+            "MCAS_2006_9_20",
+            "Mercury_7189070",
+            "MCAS_2004_9_15"
+          ],
+          "tie_count": 0,
+          "stage_median_delta_norm": {
+            "l9_post_mlp": 0.6152360922263416,
+            "l18_x": 3.172415795940825,
+            "l18_a": 1.2091000154761065,
+            "l18_sdpa": 2.629565209627521
+          }
+        },
+        "P_plus_full": {
+          "n": 15,
+          "rescue_ids": [
+            "Mercury_7090773",
+            "Mercury_7271285"
+          ],
+          "damage_ids": [
+            "Mercury_7247835",
+            "Mercury_406808",
+            "MCAS_2006_9_20",
+            "Mercury_7189070",
+            "MCAS_2004_9_15"
+          ],
+          "tie_count": 2,
+          "stage_median_delta_norm": {
+            "l9_post_mlp": null,
+            "l18_x": null,
+            "l18_a": null,
+            "l18_sdpa": null
+          }
+        }
+      }
+    },
+    "stable_correct": {
+      "n": 16,
+      "factors": {
+        "E": {
+          "rest": {
+            "n": 16,
+            "mean": 0.03906251800556973,
+            "median": 0.041666629413763756,
+            "positive": 10,
+            "negative": 6,
+            "zero": 0,
+            "raw_fraction_mean": "5/128"
+          },
+          "loss": {
+            "n": 16,
+            "mean": 0.03124999047819657,
+            "median": 0.04166673123836517,
+            "positive": 10,
+            "negative": 6,
+            "zero": 0,
+            "raw_fraction_mean": "1/32"
+          },
+          "rest_norm": {
+            "n": 16,
+            "mean": 0.045572890434414176,
+            "median": 0.041666557391484726,
+            "positive": 11,
+            "negative": 5,
+            "zero": 0,
+            "raw_fraction_mean": "35/768"
+          },
+          "loss_norm": {
+            "n": 16,
+            "mean": 0.019531238125637035,
+            "median": 0.020833509974181652,
+            "positive": 9,
+            "negative": 6,
+            "zero": 1,
+            "raw_fraction_mean": "5/256"
+          },
+          "rest_unrelated": {
+            "n": 16,
+            "mean": -0.02213541806365049,
+            "median": 1.1175871117430347e-08,
+            "positive": 9,
+            "negative": 7,
+            "zero": 0,
+            "raw_fraction_mean": "-17/768"
+          },
+          "loss_unrelated": {
+            "n": 16,
+            "mean": -0.007812503931442477,
+            "median": -0.010416807606816292,
+            "positive": 5,
+            "negative": 10,
+            "zero": 1,
+            "raw_fraction_mean": "-1/128"
+          },
+          "rest_specific": {
+            "n": 16,
+            "mean": 0.06119793606922022,
+            "median": 0.08333343888322498,
+            "positive": 12,
+            "negative": 3,
+            "zero": 1,
+            "raw_fraction_mean": "47/768"
+          },
+          "loss_specific": {
+            "n": 16,
+            "mean": 0.03906249440963905,
+            "median": 0.03124994101623657,
+            "positive": 10,
+            "negative": 6,
+            "zero": 0,
+            "raw_fraction_mean": "5/128"
+          }
+        },
+        "L": {
+          "rest": {
+            "n": 16,
+            "mean": 1.5494791670547177,
+            "median": 1.3437499416371184,
+            "positive": 14,
+            "negative": 2,
+            "zero": 0,
+            "raw_fraction_mean": "595/384"
+          },
+          "loss": {
+            "n": 16,
+            "mean": 1.6119791630674927,
+            "median": 1.4791666160648065,
+            "positive": 15,
+            "negative": 1,
+            "zero": 0,
+            "raw_fraction_mean": "619/384"
+          },
+          "rest_norm": {
+            "n": 16,
+            "mean": 1.5286458465270698,
+            "median": 1.3020832979430752,
+            "positive": 15,
+            "negative": 1,
+            "zero": 0,
+            "raw_fraction_mean": "587/384"
+          },
+          "loss_norm": {
+            "n": 16,
+            "mean": 1.6367188038614888,
+            "median": 1.5416666835856934,
+            "positive": 15,
+            "negative": 1,
+            "zero": 0,
+            "raw_fraction_mean": "419/256"
+          },
+          "rest_unrelated": {
+            "n": 16,
+            "mean": -0.05338542023673658,
+            "median": 0.11458320667346311,
+            "positive": 9,
+            "negative": 7,
+            "zero": 0,
+            "raw_fraction_mean": "-41/768"
+          },
+          "loss_unrelated": {
+            "n": 16,
+            "mean": 0.35156252932210896,
+            "median": 0.23958346433937505,
+            "positive": 11,
+            "negative": 5,
+            "zero": 0,
+            "raw_fraction_mean": "45/128"
+          },
+          "rest_specific": {
+            "n": 16,
+            "mean": 1.6028645872914542,
+            "median": 1.2812500819563863,
+            "positive": 15,
+            "negative": 1,
+            "zero": 0,
+            "raw_fraction_mean": "1231/768"
+          },
+          "loss_specific": {
+            "n": 16,
+            "mean": 1.2604166337453837,
+            "median": 1.1145833134651184,
+            "positive": 14,
+            "negative": 2,
+            "zero": 0,
+            "raw_fraction_mean": "121/96"
+          }
+        }
+      },
+      "conditions": {
+        "N": {
+          "n": 16,
+          "rescue_ids": [],
+          "damage_ids": [],
+          "tie_count": 0,
+          "stage_median_delta_norm": {
+            "l9_post_mlp": null,
+            "l18_x": null,
+            "l18_a": null,
+            "l18_sdpa": null
+          }
+        },
+        "N_minus_E_main": {
+          "n": 16,
+          "rescue_ids": [],
+          "damage_ids": [],
+          "tie_count": 0,
+          "stage_median_delta_norm": {
+            "l9_post_mlp": 0.6515104013613859,
+            "l18_x": 0.46906159418926263,
+            "l18_a": 0.06604976422229894,
+            "l18_sdpa": 0.17643347844499996
+          }
+        },
+        "N_minus_E_norm": {
+          "n": 16,
+          "rescue_ids": [],
+          "damage_ids": [],
+          "tie_count": 0,
+          "stage_median_delta_norm": {
+            "l9_post_mlp": 0.6396208127369429,
+            "l18_x": 0.46873629298206854,
+            "l18_a": 0.06989853432346682,
+            "l18_sdpa": 0.18321643503900267
+          }
+        },
+        "N_minus_E_unrelated": {
+          "n": 16,
+          "rescue_ids": [],
+          "damage_ids": [],
+          "tie_count": 0,
+          "stage_median_delta_norm": {
+            "l9_post_mlp": 0.6545907765140382,
+            "l18_x": 0.4398255260580862,
+            "l18_a": 0.06477483679750472,
+            "l18_sdpa": 0.17525603024677003
+          }
+        },
+        "N_minus_L_main": {
+          "n": 16,
+          "rescue_ids": [],
+          "damage_ids": [],
+          "tie_count": 0,
+          "stage_median_delta_norm": {
+            "l9_post_mlp": 0.0,
+            "l18_x": 3.13813336625925,
+            "l18_a": 0.583777228000296,
+            "l18_sdpa": 1.7089746979589737
+          }
+        },
+        "N_minus_L_norm": {
+          "n": 16,
+          "rescue_ids": [],
+          "damage_ids": [],
+          "tie_count": 0,
+          "stage_median_delta_norm": {
+            "l9_post_mlp": 0.0,
+            "l18_x": 3.128588469302147,
+            "l18_a": 0.582762508637067,
+            "l18_sdpa": 1.6080936057934632
+          }
+        },
+        "N_minus_L_unrelated": {
+          "n": 16,
+          "rescue_ids": [],
+          "damage_ids": [],
+          "tie_count": 0,
+          "stage_median_delta_norm": {
+            "l9_post_mlp": 0.0,
+            "l18_x": 2.5782117714258925,
+            "l18_a": 0.4036100985524973,
+            "l18_sdpa": 1.102827370306433
+          }
+        },
+        "N_minus_full": {
+          "n": 16,
+          "rescue_ids": [],
+          "damage_ids": [],
+          "tie_count": 0,
+          "stage_median_delta_norm": {
+            "l9_post_mlp": null,
+            "l18_x": null,
+            "l18_a": null,
+            "l18_sdpa": null
+          }
+        },
+        "P": {
+          "n": 16,
+          "rescue_ids": [],
+          "damage_ids": [
+            "MCAS_2003_8_8",
+            "MSA_2015_8_37"
+          ],
+          "tie_count": 1,
+          "stage_median_delta_norm": {
+            "l9_post_mlp": null,
+            "l18_x": null,
+            "l18_a": null,
+            "l18_sdpa": null
+          }
+        },
+        "P_plus_E_main": {
+          "n": 16,
+          "rescue_ids": [],
+          "damage_ids": [],
+          "tie_count": 0,
+          "stage_median_delta_norm": {
+            "l9_post_mlp": 0.0,
+            "l18_x": 2.720201765862034,
+            "l18_a": 1.1150486140811608,
+            "l18_sdpa": 2.9276681083066824
+          }
+        },
+        "P_plus_E_norm": {
+          "n": 16,
+          "rescue_ids": [],
+          "damage_ids": [],
+          "tie_count": 0,
+          "stage_median_delta_norm": {
+            "l9_post_mlp": 0.040102706537318344,
+            "l18_x": 2.7091052519025043,
+            "l18_a": 1.1164520523838757,
+            "l18_sdpa": 2.937443122072932
+          }
+        },
+        "P_plus_E_unrelated": {
+          "n": 16,
+          "rescue_ids": [],
+          "damage_ids": [
+            "Mercury_406732"
+          ],
+          "tie_count": 0,
+          "stage_median_delta_norm": {
+            "l9_post_mlp": 0.6559823831276663,
+            "l18_x": 2.7621157078106116,
+            "l18_a": 1.1209125818569192,
+            "l18_sdpa": 2.9177903864023893
+          }
+        },
+        "P_plus_L_main": {
+          "n": 16,
+          "rescue_ids": [
+            "MSA_2015_8_37"
+          ],
+          "damage_ids": [],
+          "tie_count": 0,
+          "stage_median_delta_norm": {
+            "l9_post_mlp": 0.6515104013613859,
+            "l18_x": 1.2347927331367132,
+            "l18_a": 0.9028326689030264,
+            "l18_sdpa": 2.144937061584488
+          }
+        },
+        "P_plus_L_norm": {
+          "n": 16,
+          "rescue_ids": [
+            "MSA_2015_8_37"
+          ],
+          "damage_ids": [],
+          "tie_count": 1,
+          "stage_median_delta_norm": {
+            "l9_post_mlp": 0.6515104013613859,
+            "l18_x": 1.1982655292334727,
+            "l18_a": 0.9072411379732931,
+            "l18_sdpa": 2.127086709257761
+          }
+        },
+        "P_plus_L_unrelated": {
+          "n": 16,
+          "rescue_ids": [],
+          "damage_ids": [
+            "Mercury_406732"
+          ],
+          "tie_count": 0,
+          "stage_median_delta_norm": {
+            "l9_post_mlp": 0.6515104013613859,
+            "l18_x": 3.2926208097058334,
+            "l18_a": 1.0820612407386099,
+            "l18_sdpa": 2.5735113194361436
+          }
+        },
+        "P_plus_full": {
+          "n": 16,
+          "rescue_ids": [
+            "MSA_2015_8_37"
+          ],
+          "damage_ids": [],
+          "tie_count": 0,
+          "stage_median_delta_norm": {
+            "l9_post_mlp": null,
+            "l18_x": null,
+            "l18_a": null,
+            "l18_sdpa": null
+          }
+        }
+      }
+    },
+    "stable_wrong": {
+      "n": 18,
+      "factors": {
+        "E": {
+          "rest": {
+            "n": 18,
+            "mean": -0.0034722209804587895,
+            "median": 2.9802322387695312e-08,
+            "positive": 11,
+            "negative": 6,
+            "zero": 1,
+            "raw_fraction_mean": "-1/288"
+          },
+          "loss": {
+            "n": 18,
+            "mean": 0.019675934756243667,
+            "median": 0.020833323399225945,
+            "positive": 11,
+            "negative": 7,
+            "zero": 0,
+            "raw_fraction_mean": "17/864"
+          },
+          "rest_norm": {
+            "n": 18,
+            "mean": 0.026620366921027514,
+            "median": 0.02083338424563419,
+            "positive": 11,
+            "negative": 7,
+            "zero": 0,
+            "raw_fraction_mean": "23/864"
+          },
+          "loss_norm": {
+            "n": 18,
+            "mean": 0.02083335706481224,
+            "median": 0.02083333333333326,
+            "positive": 9,
+            "negative": 9,
+            "zero": 0,
+            "raw_fraction_mean": "1/48"
+          },
+          "rest_unrelated": {
+            "n": 18,
+            "mean": -0.0011574330705183484,
+            "median": -2.980232227667301e-08,
+            "positive": 6,
+            "negative": 10,
+            "zero": 2,
+            "raw_fraction_mean": "-1/864"
+          },
+          "loss_unrelated": {
+            "n": 18,
+            "mean": 0.01620372357191862,
+            "median": 0.010416706403096554,
+            "positive": 11,
+            "negative": 7,
+            "zero": 0,
+            "raw_fraction_mean": "7/432"
+          },
+          "rest_specific": {
+            "n": 18,
+            "mean": -0.002314787909940441,
+            "median": -0.010416686534881592,
+            "positive": 8,
+            "negative": 10,
+            "zero": 0,
+            "raw_fraction_mean": "-1/432"
+          },
+          "loss_specific": {
+            "n": 18,
+            "mean": 0.003472211184325046,
+            "median": 0.0,
+            "positive": 8,
+            "negative": 8,
+            "zero": 2,
+            "raw_fraction_mean": "1/288"
+          }
+        },
+        "L": {
+          "rest": {
+            "n": 18,
+            "mean": 0.24884258183064284,
+            "median": 0.26041666169961286,
+            "positive": 13,
+            "negative": 5,
+            "zero": 0,
+            "raw_fraction_mean": "215/864"
+          },
+          "loss": {
+            "n": 18,
+            "mean": 0.302083322847331,
+            "median": 0.3437499701976776,
+            "positive": 12,
+            "negative": 6,
+            "zero": 0,
+            "raw_fraction_mean": "29/96"
+          },
+          "rest_norm": {
+            "n": 18,
+            "mean": 0.24074073273826524,
+            "median": 0.3020833358168602,
+            "positive": 12,
+            "negative": 6,
+            "zero": 0,
+            "raw_fraction_mean": "13/54"
+          },
+          "loss_norm": {
+            "n": 18,
+            "mean": 0.3032407437761625,
+            "median": 0.322916696468989,
+            "positive": 14,
+            "negative": 4,
+            "zero": 0,
+            "raw_fraction_mean": "131/432"
+          },
+          "rest_unrelated": {
+            "n": 18,
+            "mean": -0.48726853742091747,
+            "median": -0.3645833830038707,
+            "positive": 5,
+            "negative": 13,
+            "zero": 0,
+            "raw_fraction_mean": "-421/864"
+          },
+          "loss_unrelated": {
+            "n": 18,
+            "mean": -0.10763888199020316,
+            "median": -0.13541672130425764,
+            "positive": 6,
+            "negative": 12,
+            "zero": 0,
+            "raw_fraction_mean": "-31/288"
+          },
+          "rest_specific": {
+            "n": 18,
+            "mean": 0.7361111192515603,
+            "median": 0.4375000298023223,
+            "positive": 13,
+            "negative": 5,
+            "zero": 0,
+            "raw_fraction_mean": "53/72"
+          },
+          "loss_specific": {
+            "n": 18,
+            "mean": 0.4097222048375342,
+            "median": 0.36458333333333337,
+            "positive": 14,
+            "negative": 4,
+            "zero": 0,
+            "raw_fraction_mean": "59/144"
+          }
+        }
+      },
+      "conditions": {
+        "N": {
+          "n": 18,
+          "rescue_ids": [],
+          "damage_ids": [],
+          "tie_count": 2,
+          "stage_median_delta_norm": {
+            "l9_post_mlp": null,
+            "l18_x": null,
+            "l18_a": null,
+            "l18_sdpa": null
+          }
+        },
+        "N_minus_E_main": {
+          "n": 18,
+          "rescue_ids": [],
+          "damage_ids": [],
+          "tie_count": 2,
+          "stage_median_delta_norm": {
+            "l9_post_mlp": 0.6385368918114158,
+            "l18_x": 0.4455687919592004,
+            "l18_a": 0.08111311647666603,
+            "l18_sdpa": 0.2132617742818721
+          }
+        },
+        "N_minus_E_norm": {
+          "n": 18,
+          "rescue_ids": [],
+          "damage_ids": [],
+          "tie_count": 2,
+          "stage_median_delta_norm": {
+            "l9_post_mlp": 0.6257181821927845,
+            "l18_x": 0.447651778338815,
+            "l18_a": 0.07840280379198125,
+            "l18_sdpa": 0.2108210054336831
+          }
+        },
+        "N_minus_E_unrelated": {
+          "n": 18,
+          "rescue_ids": [],
+          "damage_ids": [],
+          "tie_count": 2,
+          "stage_median_delta_norm": {
+            "l9_post_mlp": 0.636130850697284,
+            "l18_x": 0.4677196867614381,
+            "l18_a": 0.07186758098601265,
+            "l18_sdpa": 0.17841453242612793
+          }
+        },
+        "N_minus_L_main": {
+          "n": 18,
+          "rescue_ids": [
+            "Mercury_SC_400160",
+            "AKDE&ED_2012_8_37",
+            "Mercury_7214673"
+          ],
+          "damage_ids": [],
+          "tie_count": 2,
+          "stage_median_delta_norm": {
+            "l9_post_mlp": 0.0,
+            "l18_x": 2.4968730037510167,
+            "l18_a": 0.5712486220293372,
+            "l18_sdpa": 1.3696216028807187
+          }
+        },
+        "N_minus_L_norm": {
+          "n": 18,
+          "rescue_ids": [
+            "AKDE&ED_2012_8_37",
+            "Mercury_7214673"
+          ],
+          "damage_ids": [],
+          "tie_count": 2,
+          "stage_median_delta_norm": {
+            "l9_post_mlp": 0.0,
+            "l18_x": 2.4833595974135556,
+            "l18_a": 0.5495201465155968,
+            "l18_sdpa": 1.3092257756759458
+          }
+        },
+        "N_minus_L_unrelated": {
+          "n": 18,
+          "rescue_ids": [
+            "Mercury_184293",
+            "Mercury_SC_400160",
+            "Mercury_7192448",
+            "Mercury_403967"
+          ],
+          "damage_ids": [],
+          "tie_count": 4,
+          "stage_median_delta_norm": {
+            "l9_post_mlp": 0.0,
+            "l18_x": 2.2951759557321827,
+            "l18_a": 0.48499976841875386,
+            "l18_sdpa": 1.1074499836860379
+          }
+        },
+        "N_minus_full": {
+          "n": 18,
+          "rescue_ids": [
+            "AKDE&ED_2012_8_37",
+            "Mercury_7214673"
+          ],
+          "damage_ids": [],
+          "tie_count": 1,
+          "stage_median_delta_norm": {
+            "l9_post_mlp": null,
+            "l18_x": null,
+            "l18_a": null,
+            "l18_sdpa": null
+          }
+        },
+        "P": {
+          "n": 18,
+          "rescue_ids": [],
+          "damage_ids": [],
+          "tie_count": 1,
+          "stage_median_delta_norm": {
+            "l9_post_mlp": null,
+            "l18_x": null,
+            "l18_a": null,
+            "l18_sdpa": null
+          }
+        },
+        "P_plus_E_main": {
+          "n": 18,
+          "rescue_ids": [
+            "Mercury_7142853"
+          ],
+          "damage_ids": [],
+          "tie_count": 3,
+          "stage_median_delta_norm": {
+            "l9_post_mlp": 0.0,
+            "l18_x": 2.1325605162294092,
+            "l18_a": 0.9989339593002515,
+            "l18_sdpa": 2.3735327975528087
+          }
+        },
+        "P_plus_E_norm": {
+          "n": 18,
+          "rescue_ids": [
+            "Mercury_7142853"
+          ],
+          "damage_ids": [],
+          "tie_count": 1,
+          "stage_median_delta_norm": {
+            "l9_post_mlp": 0.05666054167201333,
+            "l18_x": 2.1309086885055937,
+            "l18_a": 0.9997295177004947,
+            "l18_sdpa": 2.376881988970987
+          }
+        },
+        "P_plus_E_unrelated": {
+          "n": 18,
+          "rescue_ids": [],
+          "damage_ids": [],
+          "tie_count": 2,
+          "stage_median_delta_norm": {
+            "l9_post_mlp": 0.6480546124429016,
+            "l18_x": 2.2013528443675616,
+            "l18_a": 0.9837317309207225,
+            "l18_sdpa": 2.357714537502039
+          }
+        },
+        "P_plus_L_main": {
+          "n": 18,
+          "rescue_ids": [
+            "Mercury_184293",
+            "AKDE&ED_2008_8_32"
+          ],
+          "damage_ids": [],
+          "tie_count": 0,
+          "stage_median_delta_norm": {
+            "l9_post_mlp": 0.6385368918114158,
+            "l18_x": 1.1059320434002466,
+            "l18_a": 0.8698448041712217,
+            "l18_sdpa": 2.0114114313014126
+          }
+        },
+        "P_plus_L_norm": {
+          "n": 18,
+          "rescue_ids": [
+            "Mercury_184293",
+            "AKDE&ED_2008_8_32"
+          ],
+          "damage_ids": [],
+          "tie_count": 0,
+          "stage_median_delta_norm": {
+            "l9_post_mlp": 0.6385368918114158,
+            "l18_x": 1.063454562324242,
+            "l18_a": 0.8657076941129229,
+            "l18_sdpa": 2.0032928527287632
+          }
+        },
+        "P_plus_L_unrelated": {
+          "n": 18,
+          "rescue_ids": [
+            "Mercury_7142853",
+            "AKDE&ED_2012_8_37"
+          ],
+          "damage_ids": [],
+          "tie_count": 0,
+          "stage_median_delta_norm": {
+            "l9_post_mlp": 0.6385368918114158,
+            "l18_x": 2.938035700178943,
+            "l18_a": 1.0376790677289547,
+            "l18_sdpa": 2.545791092406928
+          }
+        },
+        "P_plus_full": {
+          "n": 18,
+          "rescue_ids": [
+            "Mercury_184293",
+            "Mercury_7236600",
+            "AKDE&ED_2008_8_32"
+          ],
+          "damage_ids": [],
+          "tie_count": 1,
+          "stage_median_delta_norm": {
+            "l9_post_mlp": null,
+            "l18_x": null,
+            "l18_a": null,
+            "l18_sdpa": null
+          }
+        }
+      }
+    },
+    "rescue_no_tie": {
+      "n": 14,
+      "factors": {
+        "E": {
+          "rest": {
+            "n": 14,
+            "mean": 0.03720238893514592,
+            "median": 0.04166667411724723,
+            "positive": 11,
+            "negative": 3,
+            "zero": 0,
+            "raw_fraction_mean": "25/672"
+          },
+          "loss": {
+            "n": 14,
+            "mean": -0.0059523733244055054,
+            "median": 0.020833400388558854,
+            "positive": 8,
+            "negative": 6,
+            "zero": 0,
+            "raw_fraction_mean": "-1/168"
+          },
+          "rest_norm": {
+            "n": 14,
+            "mean": 0.04017858029831028,
+            "median": 0.06250003973642992,
+            "positive": 10,
+            "negative": 3,
+            "zero": 1,
+            "raw_fraction_mean": "9/224"
+          },
+          "loss_norm": {
+            "n": 14,
+            "mean": -0.03571430072631866,
+            "median": -0.02083333333333348,
+            "positive": 6,
+            "negative": 8,
+            "zero": 0,
+            "raw_fraction_mean": "-1/28"
+          },
+          "rest_unrelated": {
+            "n": 14,
+            "mean": 0.016369035910992463,
+            "median": 0.020833303531010983,
+            "positive": 8,
+            "negative": 5,
+            "zero": 1,
+            "raw_fraction_mean": "11/672"
+          },
+          "loss_unrelated": {
+            "n": 14,
+            "mean": -0.025297628338670424,
+            "median": -5.6500236045309293e-08,
+            "positive": 7,
+            "negative": 7,
+            "zero": 0,
+            "raw_fraction_mean": "-17/672"
+          },
+          "rest_specific": {
+            "n": 14,
+            "mean": 0.020833353024153456,
+            "median": 0.031250009934107426,
+            "positive": 8,
+            "negative": 5,
+            "zero": 1,
+            "raw_fraction_mean": "1/48"
+          },
+          "loss_specific": {
+            "n": 14,
+            "mean": 0.01934525501426492,
+            "median": 0.020833313465118408,
+            "positive": 7,
+            "negative": 7,
+            "zero": 0,
+            "raw_fraction_mean": "13/672"
+          }
+        },
+        "L": {
+          "rest": {
+            "n": 14,
+            "mean": 1.870535718410143,
+            "median": 1.8333333258827529,
+            "positive": 13,
+            "negative": 1,
+            "zero": 0,
+            "raw_fraction_mean": "419/224"
+          },
+          "loss": {
+            "n": 14,
+            "mean": 1.96130948522616,
+            "median": 1.8437498907248178,
+            "positive": 14,
+            "negative": 0,
+            "zero": 0,
+            "raw_fraction_mean": "659/336"
+          },
+          "rest_norm": {
+            "n": 14,
+            "mean": 1.8601190390597497,
+            "median": 1.7812500496705372,
+            "positive": 14,
+            "negative": 0,
+            "zero": 0,
+            "raw_fraction_mean": "625/336"
+          },
+          "loss_norm": {
+            "n": 14,
+            "mean": 1.9002976109761567,
+            "median": 1.7604165002703667,
+            "positive": 14,
+            "negative": 0,
+            "zero": 0,
+            "raw_fraction_mean": "1277/672"
+          },
+          "rest_unrelated": {
+            "n": 14,
+            "mean": -0.36160714148233325,
+            "median": -0.4374999875823655,
+            "positive": 3,
+            "negative": 11,
+            "zero": 0,
+            "raw_fraction_mean": "-81/224"
+          },
+          "loss_unrelated": {
+            "n": 14,
+            "mean": 0.26488091111449247,
+            "median": 0.24999983360370015,
+            "positive": 8,
+            "negative": 6,
+            "zero": 0,
+            "raw_fraction_mean": "89/336"
+          },
+          "rest_specific": {
+            "n": 14,
+            "mean": 2.2321428598924764,
+            "median": 1.7499999900658925,
+            "positive": 14,
+            "negative": 0,
+            "zero": 0,
+            "raw_fraction_mean": "125/56"
+          },
+          "loss_specific": {
+            "n": 14,
+            "mean": 1.6964285741116676,
+            "median": 1.8854166933645802,
+            "positive": 12,
+            "negative": 2,
+            "zero": 0,
+            "raw_fraction_mean": "95/56"
+          }
+        }
+      },
+      "conditions": {
+        "N": {
+          "n": 14,
+          "rescue_ids": [],
+          "damage_ids": [],
+          "tie_count": 0,
+          "stage_median_delta_norm": {
+            "l9_post_mlp": null,
+            "l18_x": null,
+            "l18_a": null,
+            "l18_sdpa": null
+          }
+        },
+        "N_minus_E_main": {
+          "n": 14,
+          "rescue_ids": [],
+          "damage_ids": [],
+          "tie_count": 0,
+          "stage_median_delta_norm": {
+            "l9_post_mlp": 0.638269073055038,
+            "l18_x": 0.4327718227706078,
+            "l18_a": 0.06608798703381896,
+            "l18_sdpa": 0.16493278226963942
+          }
+        },
+        "N_minus_E_norm": {
+          "n": 14,
+          "rescue_ids": [],
+          "damage_ids": [],
+          "tie_count": 0,
+          "stage_median_delta_norm": {
+            "l9_post_mlp": 0.6307074075538959,
+            "l18_x": 0.4267300458350385,
+            "l18_a": 0.07303255033531567,
+            "l18_sdpa": 0.18590022463855144
+          }
+        },
+        "N_minus_E_unrelated": {
+          "n": 14,
+          "rescue_ids": [],
+          "damage_ids": [],
+          "tie_count": 0,
+          "stage_median_delta_norm": {
+            "l9_post_mlp": 0.6330528632850743,
+            "l18_x": 0.4541701404674172,
+            "l18_a": 0.08409517967468001,
+            "l18_sdpa": 0.19525117779969636
+          }
+        },
+        "N_minus_L_main": {
+          "n": 14,
+          "rescue_ids": [],
+          "damage_ids": [
+            "NCEOGA_2013_8_44",
+            "MDSA_2007_8_29",
+            "Mercury_183750",
+            "Mercury_186218",
+            "Mercury_SC_LBS10674"
+          ],
+          "tie_count": 0,
+          "stage_median_delta_norm": {
+            "l9_post_mlp": 0.0,
+            "l18_x": 3.7129107351480726,
+            "l18_a": 0.9028303598905495,
+            "l18_sdpa": 2.2994575403604243
+          }
+        },
+        "N_minus_L_norm": {
+          "n": 14,
+          "rescue_ids": [],
+          "damage_ids": [
+            "NCEOGA_2013_8_44",
+            "MDSA_2007_8_29",
+            "Mercury_186218",
+            "Mercury_SC_LBS10674"
+          ],
+          "tie_count": 1,
+          "stage_median_delta_norm": {
+            "l9_post_mlp": 0.0,
+            "l18_x": 3.6617711598094713,
+            "l18_a": 0.8645557358980501,
+            "l18_sdpa": 2.182530322951841
+          }
+        },
+        "N_minus_L_unrelated": {
+          "n": 14,
+          "rescue_ids": [],
+          "damage_ids": [],
+          "tie_count": 0,
+          "stage_median_delta_norm": {
+            "l9_post_mlp": 0.0,
+            "l18_x": 2.8582597345894722,
+            "l18_a": 0.45620620279381385,
+            "l18_sdpa": 1.1403011235104374
+          }
+        },
+        "N_minus_full": {
+          "n": 14,
+          "rescue_ids": [],
+          "damage_ids": [
+            "NCEOGA_2013_8_44",
+            "MDSA_2007_8_29",
+            "Mercury_186218",
+            "Mercury_SC_LBS10674"
+          ],
+          "tie_count": 1,
+          "stage_median_delta_norm": {
+            "l9_post_mlp": null,
+            "l18_x": null,
+            "l18_a": null,
+            "l18_sdpa": null
+          }
+        },
+        "P": {
+          "n": 14,
+          "rescue_ids": [],
+          "damage_ids": [
+            "Mercury_7227938",
+            "Mercury_182718",
+            "Mercury_SC_401765",
+            "Mercury_7233555",
+            "NCEOGA_2013_8_44",
+            "MDSA_2007_8_29",
+            "Mercury_183750",
+            "Mercury_186218",
+            "Mercury_7001418",
+            "Mercury_SC_LBS10674"
+          ],
+          "tie_count": 2,
+          "stage_median_delta_norm": {
+            "l9_post_mlp": null,
+            "l18_x": null,
+            "l18_a": null,
+            "l18_sdpa": null
+          }
+        },
+        "P_plus_E_main": {
+          "n": 14,
+          "rescue_ids": [],
+          "damage_ids": [],
+          "tie_count": 2,
+          "stage_median_delta_norm": {
+            "l9_post_mlp": 0.0,
+            "l18_x": 2.9467602210764783,
+            "l18_a": 1.5331523664259756,
+            "l18_sdpa": 3.499079442330391
+          }
+        },
+        "P_plus_E_norm": {
+          "n": 14,
+          "rescue_ids": [],
+          "damage_ids": [],
+          "tie_count": 2,
+          "stage_median_delta_norm": {
+            "l9_post_mlp": 0.05036640792226029,
+            "l18_x": 2.933107331690271,
+            "l18_a": 1.5372155443083375,
+            "l18_sdpa": 3.485033912188917
+          }
+        },
+        "P_plus_E_unrelated": {
+          "n": 14,
+          "rescue_ids": [],
+          "damage_ids": [],
+          "tie_count": 2,
+          "stage_median_delta_norm": {
+            "l9_post_mlp": 0.6439440783287171,
+            "l18_x": 2.9307566095497153,
+            "l18_a": 1.528381551594785,
+            "l18_sdpa": 3.4336009101792664
+          }
+        },
+        "P_plus_L_main": {
+          "n": 14,
+          "rescue_ids": [
+            "Mercury_7227938",
+            "Mercury_182718",
+            "Mercury_SC_401765",
+            "Mercury_7233555",
+            "NCEOGA_2013_8_44",
+            "MDSA_2007_8_29",
+            "Mercury_183750",
+            "Mercury_186218",
+            "Mercury_7001418",
+            "Mercury_SC_LBS10674"
+          ],
+          "damage_ids": [],
+          "tie_count": 1,
+          "stage_median_delta_norm": {
+            "l9_post_mlp": 0.638269073055038,
+            "l18_x": 1.3528699006490281,
+            "l18_a": 1.2051693257884217,
+            "l18_sdpa": 2.6858343495210253
+          }
+        },
+        "P_plus_L_norm": {
+          "n": 14,
+          "rescue_ids": [
+            "Mercury_7227938",
+            "Mercury_182718",
+            "Mercury_SC_401765",
+            "Mercury_7233555",
+            "NCEOGA_2013_8_44",
+            "MDSA_2007_8_29",
+            "Mercury_183750",
+            "Mercury_186218",
+            "Mercury_7001418",
+            "Mercury_SC_LBS10674"
+          ],
+          "damage_ids": [],
+          "tie_count": 0,
+          "stage_median_delta_norm": {
+            "l9_post_mlp": 0.638269073055038,
+            "l18_x": 1.2736316756832964,
+            "l18_a": 1.2044151700265546,
+            "l18_sdpa": 2.669369207202167
+          }
+        },
+        "P_plus_L_unrelated": {
+          "n": 14,
+          "rescue_ids": [],
+          "damage_ids": [
+            "Mercury_SC_LBS10647",
+            "Mercury_7269168"
+          ],
+          "tie_count": 0,
+          "stage_median_delta_norm": {
+            "l9_post_mlp": 0.638269073055038,
+            "l18_x": 3.6859729006999924,
+            "l18_a": 1.4526286303862355,
+            "l18_sdpa": 3.331818518045591
+          }
+        },
+        "P_plus_full": {
+          "n": 14,
+          "rescue_ids": [
+            "Mercury_182718",
+            "Mercury_SC_401765",
+            "Mercury_7233555",
+            "NCEOGA_2013_8_44",
+            "MDSA_2007_8_29",
+            "Mercury_183750",
+            "Mercury_186218",
+            "Mercury_7001418",
+            "Mercury_SC_LBS10674"
+          ],
+          "damage_ids": [],
+          "tie_count": 0,
+          "stage_median_delta_norm": {
+            "l9_post_mlp": null,
+            "l18_x": null,
+            "l18_a": null,
+            "l18_sdpa": null
+          }
+        }
+      }
+    },
+    "damage_no_tie": {
+      "n": 14,
+      "factors": {
+        "E": {
+          "rest": {
+            "n": 14,
+            "mean": 0.020833317722592972,
+            "median": 1.986821485111534e-08,
+            "positive": 7,
+            "negative": 5,
+            "zero": 2,
+            "raw_fraction_mean": "1/48"
+          },
+          "loss": {
+            "n": 14,
+            "mean": 0.020833333920953545,
+            "median": -0.01041666169961275,
+            "positive": 7,
+            "negative": 7,
+            "zero": 0,
+            "raw_fraction_mean": "1/48"
+          },
+          "rest_norm": {
+            "n": 14,
+            "mean": 0.017857134342193572,
+            "median": 0.041666607062021854,
+            "positive": 9,
+            "negative": 5,
+            "zero": 0,
+            "raw_fraction_mean": "1/56"
+          },
+          "loss_norm": {
+            "n": 14,
+            "mean": 0.017857133798922096,
+            "median": 0.010416656732559204,
+            "positive": 7,
+            "negative": 6,
+            "zero": 1,
+            "raw_fraction_mean": "1/56"
+          },
+          "rest_unrelated": {
+            "n": 14,
+            "mean": 0.016369036975360993,
+            "median": 3.973642981325298e-08,
+            "positive": 8,
+            "negative": 6,
+            "zero": 0,
+            "raw_fraction_mean": "11/672"
+          },
+          "loss_unrelated": {
+            "n": 14,
+            "mean": 0.017857141659728088,
+            "median": 0.020833318432172065,
+            "positive": 8,
+            "negative": 5,
+            "zero": 1,
+            "raw_fraction_mean": "1/56"
+          },
+          "rest_specific": {
+            "n": 14,
+            "mean": 0.004464280747231978,
+            "median": -0.01041666666666674,
+            "positive": 6,
+            "negative": 7,
+            "zero": 1,
+            "raw_fraction_mean": "1/224"
+          },
+          "loss_specific": {
+            "n": 14,
+            "mean": 0.0029761922612254583,
+            "median": -1.9868214962137642e-08,
+            "positive": 6,
+            "negative": 7,
+            "zero": 1,
+            "raw_fraction_mean": "1/336"
+          }
+        },
+        "L": {
+          "rest": {
+            "n": 14,
+            "mean": -0.47470239086431415,
+            "median": -0.6666666269302368,
+            "positive": 5,
+            "negative": 9,
+            "zero": 0,
+            "raw_fraction_mean": "-319/672"
+          },
+          "loss": {
+            "n": 14,
+            "mean": -0.41666665631124666,
+            "median": -0.35416669150193525,
+            "positive": 6,
+            "negative": 8,
+            "zero": 0,
+            "raw_fraction_mean": "-5/12"
+          },
+          "rest_norm": {
+            "n": 14,
+            "mean": -0.4270833451744347,
+            "median": -0.6666666269302369,
+            "positive": 5,
+            "negative": 9,
+            "zero": 0,
+            "raw_fraction_mean": "-41/96"
+          },
+          "loss_norm": {
+            "n": 14,
+            "mean": -0.40029763281788855,
+            "median": -0.3437500149011612,
+            "positive": 6,
+            "negative": 8,
+            "zero": 0,
+            "raw_fraction_mean": "-269/672"
+          },
+          "rest_unrelated": {
+            "n": 14,
+            "mean": -0.5505952443040553,
+            "median": -0.4270834525426229,
+            "positive": 3,
+            "negative": 11,
+            "zero": 0,
+            "raw_fraction_mean": "-185/336"
+          },
+          "loss_unrelated": {
+            "n": 14,
+            "mean": -0.5000000024170038,
+            "median": -0.3125000000000001,
+            "positive": 2,
+            "negative": 12,
+            "zero": 0,
+            "raw_fraction_mean": "-1/2"
+          },
+          "rest_specific": {
+            "n": 14,
+            "mean": 0.07589285343974114,
+            "median": 0.12500001986821496,
+            "positive": 8,
+            "negative": 6,
+            "zero": 0,
+            "raw_fraction_mean": "17/224"
+          },
+          "loss_specific": {
+            "n": 14,
+            "mean": 0.08333334610575717,
+            "median": 0.10416661699612928,
+            "positive": 8,
+            "negative": 6,
+            "zero": 0,
+            "raw_fraction_mean": "1/12"
+          }
+        }
+      },
+      "conditions": {
+        "N": {
+          "n": 14,
+          "rescue_ids": [],
+          "damage_ids": [],
+          "tie_count": 0,
+          "stage_median_delta_norm": {
+            "l9_post_mlp": null,
+            "l18_x": null,
+            "l18_a": null,
+            "l18_sdpa": null
+          }
+        },
+        "N_minus_E_main": {
+          "n": 14,
+          "rescue_ids": [],
+          "damage_ids": [],
+          "tie_count": 1,
+          "stage_median_delta_norm": {
+            "l9_post_mlp": 0.6127914999851426,
+            "l18_x": 0.4526596834260973,
+            "l18_a": 0.08461684058031813,
+            "l18_sdpa": 0.19851749720770673
+          }
+        },
+        "N_minus_E_norm": {
+          "n": 14,
+          "rescue_ids": [],
+          "damage_ids": [],
+          "tie_count": 1,
+          "stage_median_delta_norm": {
+            "l9_post_mlp": 0.6098633467710062,
+            "l18_x": 0.4413144384401434,
+            "l18_a": 0.07697396503270655,
+            "l18_sdpa": 0.19954734861749832
+          }
+        },
+        "N_minus_E_unrelated": {
+          "n": 14,
+          "rescue_ids": [],
+          "damage_ids": [],
+          "tie_count": 0,
+          "stage_median_delta_norm": {
+            "l9_post_mlp": 0.6168932537058527,
+            "l18_x": 0.44077312094134713,
+            "l18_a": 0.0995214288763579,
+            "l18_sdpa": 0.25566179859896276
+          }
+        },
+        "N_minus_L_main": {
+          "n": 14,
+          "rescue_ids": [
+            "Mercury_7247835",
+            "Mercury_417154",
+            "MCAS_2006_9_20",
+            "MCAS_2004_8_36",
+            "Mercury_7196263",
+            "Mercury_SC_402085"
+          ],
+          "damage_ids": [],
+          "tie_count": 2,
+          "stage_median_delta_norm": {
+            "l9_post_mlp": 0.0,
+            "l18_x": 3.058708112995191,
+            "l18_a": 0.69391872647623,
+            "l18_sdpa": 1.7721061928968718
+          }
+        },
+        "N_minus_L_norm": {
+          "n": 14,
+          "rescue_ids": [
+            "Mercury_417154",
+            "MCAS_2006_9_20",
+            "Mercury_7196263",
+            "MCAS_2004_9_15",
+            "Mercury_SC_402085"
+          ],
+          "damage_ids": [],
+          "tie_count": 1,
+          "stage_median_delta_norm": {
+            "l9_post_mlp": 0.0,
+            "l18_x": 3.0084497496757514,
+            "l18_a": 0.6590657320097089,
+            "l18_sdpa": 1.6696786876965646
+          }
+        },
+        "N_minus_L_unrelated": {
+          "n": 14,
+          "rescue_ids": [
+            "Mercury_417154",
+            "MCAS_2004_8_36",
+            "Mercury_SC_402085"
+          ],
+          "damage_ids": [],
+          "tie_count": 0,
+          "stage_median_delta_norm": {
+            "l9_post_mlp": 0.0,
+            "l18_x": 2.5674275966285927,
+            "l18_a": 0.4493435599326837,
+            "l18_sdpa": 1.0499078541875186
+          }
+        },
+        "N_minus_full": {
+          "n": 14,
+          "rescue_ids": [
+            "Mercury_7247835",
+            "Mercury_417154",
+            "MCAS_2006_9_20",
+            "MCAS_2004_8_36",
+            "Mercury_7196263",
+            "MCAS_2004_9_15",
+            "Mercury_SC_402085"
+          ],
+          "damage_ids": [],
+          "tie_count": 1,
+          "stage_median_delta_norm": {
+            "l9_post_mlp": null,
+            "l18_x": null,
+            "l18_a": null,
+            "l18_sdpa": null
+          }
+        },
+        "P": {
+          "n": 14,
+          "rescue_ids": [
+            "ACTAAP_2010_7_7",
+            "Mercury_7247835",
+            "Mercury_417154",
+            "Mercury_406808",
+            "MCAS_2006_9_20",
+            "Mercury_7196263",
+            "Mercury_7189070",
+            "MCAS_2004_9_15"
+          ],
+          "damage_ids": [],
+          "tie_count": 3,
+          "stage_median_delta_norm": {
+            "l9_post_mlp": null,
+            "l18_x": null,
+            "l18_a": null,
+            "l18_sdpa": null
+          }
+        },
+        "P_plus_E_main": {
+          "n": 14,
+          "rescue_ids": [],
+          "damage_ids": [
+            "MCAS_2004_9_15"
+          ],
+          "tie_count": 2,
+          "stage_median_delta_norm": {
+            "l9_post_mlp": 0.0,
+            "l18_x": 2.455227501120443,
+            "l18_a": 1.1552174309806027,
+            "l18_sdpa": 2.778604235879617
+          }
+        },
+        "P_plus_E_norm": {
+          "n": 14,
+          "rescue_ids": [
+            "Mercury_SC_402085"
+          ],
+          "damage_ids": [
+            "MCAS_2004_9_15"
+          ],
+          "tie_count": 1,
+          "stage_median_delta_norm": {
+            "l9_post_mlp": 0.04791340323243259,
+            "l18_x": 2.4539200385005415,
+            "l18_a": 1.1577285645033568,
+            "l18_sdpa": 2.794379442699112
+          }
+        },
+        "P_plus_E_unrelated": {
+          "n": 14,
+          "rescue_ids": [
+            "MSA_2013_8_4"
+          ],
+          "damage_ids": [],
+          "tie_count": 3,
+          "stage_median_delta_norm": {
+            "l9_post_mlp": 0.6070834638834806,
+            "l18_x": 2.529805932655375,
+            "l18_a": 1.1488811858912147,
+            "l18_sdpa": 2.8405491773739744
+          }
+        },
+        "P_plus_L_main": {
+          "n": 14,
+          "rescue_ids": [
+            "Mercury_7090773",
+            "Mercury_7271285"
+          ],
+          "damage_ids": [
+            "Mercury_7247835",
+            "Mercury_406808",
+            "MCAS_2006_9_20",
+            "Mercury_7189070",
+            "MCAS_2004_9_15"
+          ],
+          "tie_count": 0,
+          "stage_median_delta_norm": {
+            "l9_post_mlp": 0.6127914999851426,
+            "l18_x": 1.194265840849702,
+            "l18_a": 0.8782640703407225,
+            "l18_sdpa": 1.992366427196521
+          }
+        },
+        "P_plus_L_norm": {
+          "n": 14,
+          "rescue_ids": [
+            "Mercury_7271285"
+          ],
+          "damage_ids": [
+            "Mercury_406808",
+            "MCAS_2006_9_20",
+            "Mercury_7189070",
+            "MCAS_2004_9_15"
+          ],
+          "tie_count": 1,
+          "stage_median_delta_norm": {
+            "l9_post_mlp": 0.6127914999851426,
+            "l18_x": 1.1790010539726166,
+            "l18_a": 0.8759705934869413,
+            "l18_sdpa": 2.0906319058791283
+          }
+        },
+        "P_plus_L_unrelated": {
+          "n": 14,
+          "rescue_ids": [
+            "Mercury_7271285"
+          ],
+          "damage_ids": [
+            "Mercury_7247835",
+            "Mercury_417154",
+            "Mercury_406808",
+            "MCAS_2006_9_20",
+            "Mercury_7189070",
+            "MCAS_2004_9_15"
+          ],
+          "tie_count": 0,
+          "stage_median_delta_norm": {
+            "l9_post_mlp": 0.6127914999851426,
+            "l18_x": 3.2658086680470477,
+            "l18_a": 1.2171076808287693,
+            "l18_sdpa": 2.7091054208640934
+          }
+        },
+        "P_plus_full": {
+          "n": 14,
+          "rescue_ids": [
+            "Mercury_7090773",
+            "Mercury_7271285"
+          ],
+          "damage_ids": [
+            "Mercury_7247835",
+            "Mercury_406808",
+            "MCAS_2006_9_20",
+            "Mercury_7189070",
+            "MCAS_2004_9_15"
+          ],
+          "tie_count": 1,
+          "stage_median_delta_norm": {
+            "l9_post_mlp": null,
+            "l18_x": null,
+            "l18_a": null,
+            "l18_sdpa": null
+          }
+        }
+      }
+    },
+    "stable_correct_no_tie": {
+      "n": 15,
+      "factors": {
+        "E": {
+          "rest": {
+            "n": 15,
+            "mean": 0.03472224142816328,
+            "median": 0.041666577259699356,
+            "positive": 9,
+            "negative": 6,
+            "zero": 0,
+            "raw_fraction_mean": "5/144"
+          },
+          "loss": {
+            "n": 15,
+            "mean": 0.027777756072787547,
+            "median": 0.04166653255621622,
+            "positive": 9,
+            "negative": 6,
+            "zero": 0,
+            "raw_fraction_mean": "1/36"
+          },
+          "rest_norm": {
+            "n": 15,
+            "mean": 0.0388888635569149,
+            "median": 0.04166653752326965,
+            "positive": 10,
+            "negative": 5,
+            "zero": 0,
+            "raw_fraction_mean": "7/180"
+          },
+          "loss_norm": {
+            "n": 15,
+            "mean": 0.022222209680411383,
+            "median": 0.041666701436042786,
+            "positive": 9,
+            "negative": 5,
+            "zero": 1,
+            "raw_fraction_mean": "1/45"
+          },
+          "rest_unrelated": {
+            "n": 15,
+            "mean": -0.023611115250322518,
+            "median": 2.4835271617007493e-09,
+            "positive": 8,
+            "negative": 7,
+            "zero": 0,
+            "raw_fraction_mean": "-17/720"
+          },
+          "loss_unrelated": {
+            "n": 15,
+            "mean": 0.0013888637095482122,
+            "median": -8.940696716308594e-08,
+            "positive": 5,
+            "negative": 9,
+            "zero": 1,
+            "raw_fraction_mean": "1/720"
+          },
+          "rest_specific": {
+            "n": 15,
+            "mean": 0.0583333566784858,
+            "median": 0.08333335320154811,
+            "positive": 11,
+            "negative": 3,
+            "zero": 1,
+            "raw_fraction_mean": "7/120"
+          },
+          "loss_specific": {
+            "n": 15,
+            "mean": 0.026388892363239335,
+            "median": 0.020833334575096174,
+            "positive": 9,
+            "negative": 6,
+            "zero": 0,
+            "raw_fraction_mean": "19/720"
+          }
+        },
+        "L": {
+          "rest": {
+            "n": 15,
+            "mean": 1.399999990562598,
+            "median": 1.2916665375232692,
+            "positive": 13,
+            "negative": 2,
+            "zero": 0,
+            "raw_fraction_mean": "7/5"
+          },
+          "loss": {
+            "n": 15,
+            "mean": 1.461111101766841,
+            "median": 1.4583332488934198,
+            "positive": 14,
+            "negative": 1,
+            "zero": 0,
+            "raw_fraction_mean": "263/180"
+          },
+          "rest_norm": {
+            "n": 15,
+            "mean": 1.3777777943346234,
+            "median": 1.2499999403953548,
+            "positive": 14,
+            "negative": 1,
+            "zero": 0,
+            "raw_fraction_mean": "62/45"
+          },
+          "loss_norm": {
+            "n": 15,
+            "mean": 1.4902778204530476,
+            "median": 1.5416666573534408,
+            "positive": 14,
+            "negative": 1,
+            "zero": 0,
+            "raw_fraction_mean": "1073/720"
+          },
+          "rest_unrelated": {
+            "n": 15,
+            "mean": -0.1819444502393405,
+            "median": 0.10416659216086055,
+            "positive": 8,
+            "negative": 7,
+            "zero": 0,
+            "raw_fraction_mean": "-131/720"
+          },
+          "loss_unrelated": {
+            "n": 15,
+            "mean": 0.18472224269579662,
+            "median": 0.12500023593505194,
+            "positive": 10,
+            "negative": 5,
+            "zero": 0,
+            "raw_fraction_mean": "133/720"
+          },
+          "rest_specific": {
+            "n": 15,
+            "mean": 1.5819444408019383,
+            "median": 1.1666667362054188,
+            "positive": 14,
+            "negative": 1,
+            "zero": 0,
+            "raw_fraction_mean": "1139/720"
+          },
+          "loss_specific": {
+            "n": 15,
+            "mean": 1.2763888590710444,
+            "median": 1.2083333730697632,
+            "positive": 13,
+            "negative": 2,
+            "zero": 0,
+            "raw_fraction_mean": "919/720"
+          }
+        }
+      },
+      "conditions": {
+        "N": {
+          "n": 15,
+          "rescue_ids": [],
+          "damage_ids": [],
+          "tie_count": 0,
+          "stage_median_delta_norm": {
+            "l9_post_mlp": null,
+            "l18_x": null,
+            "l18_a": null,
+            "l18_sdpa": null
+          }
+        },
+        "N_minus_E_main": {
+          "n": 15,
+          "rescue_ids": [],
+          "damage_ids": [],
+          "tie_count": 0,
+          "stage_median_delta_norm": {
+            "l9_post_mlp": 0.6571580730616698,
+            "l18_x": 0.46992193464427834,
+            "l18_a": 0.06545314964772193,
+            "l18_sdpa": 0.17266836039344183
+          }
+        },
+        "N_minus_E_norm": {
+          "n": 15,
+          "rescue_ids": [],
+          "damage_ids": [],
+          "tie_count": 0,
+          "stage_median_delta_norm": {
+            "l9_post_mlp": 0.6420399704028281,
+            "l18_x": 0.4690465523020776,
+            "l18_a": 0.0660853719474917,
+            "l18_sdpa": 0.1825032065028568
+          }
+        },
+        "N_minus_E_unrelated": {
+          "n": 15,
+          "rescue_ids": [],
+          "damage_ids": [],
+          "tie_count": 0,
+          "stage_median_delta_norm": {
+            "l9_post_mlp": 0.6613291479881293,
+            "l18_x": 0.446175254570455,
+            "l18_a": 0.06455091159271162,
+            "l18_sdpa": 0.17384638536863067
+          }
+        },
+        "N_minus_L_main": {
+          "n": 15,
+          "rescue_ids": [],
+          "damage_ids": [],
+          "tie_count": 0,
+          "stage_median_delta_norm": {
+            "l9_post_mlp": 0.0,
+            "l18_x": 3.1231802411049396,
+            "l18_a": 0.5806978792554479,
+            "l18_sdpa": 1.6720563142964826
+          }
+        },
+        "N_minus_L_norm": {
+          "n": 15,
+          "rescue_ids": [],
+          "damage_ids": [],
+          "tie_count": 0,
+          "stage_median_delta_norm": {
+            "l9_post_mlp": 0.0,
+            "l18_x": 3.118677705157263,
+            "l18_a": 0.5814141655348765,
+            "l18_sdpa": 1.5886514147193156
+          }
+        },
+        "N_minus_L_unrelated": {
+          "n": 15,
+          "rescue_ids": [],
+          "damage_ids": [],
+          "tie_count": 0,
+          "stage_median_delta_norm": {
+            "l9_post_mlp": 0.0,
+            "l18_x": 2.574383284946481,
+            "l18_a": 0.3898730997328891,
+            "l18_sdpa": 0.9997008309185835
+          }
+        },
+        "N_minus_full": {
+          "n": 15,
+          "rescue_ids": [],
+          "damage_ids": [],
+          "tie_count": 0,
+          "stage_median_delta_norm": {
+            "l9_post_mlp": null,
+            "l18_x": null,
+            "l18_a": null,
+            "l18_sdpa": null
+          }
+        },
+        "P": {
+          "n": 15,
+          "rescue_ids": [],
+          "damage_ids": [
+            "MCAS_2003_8_8",
+            "MSA_2015_8_37"
+          ],
+          "tie_count": 0,
+          "stage_median_delta_norm": {
+            "l9_post_mlp": null,
+            "l18_x": null,
+            "l18_a": null,
+            "l18_sdpa": null
+          }
+        },
+        "P_plus_E_main": {
+          "n": 15,
+          "rescue_ids": [],
+          "damage_ids": [],
+          "tie_count": 0,
+          "stage_median_delta_norm": {
+            "l9_post_mlp": 0.0,
+            "l18_x": 2.7099195244885337,
+            "l18_a": 1.1060633495360812,
+            "l18_sdpa": 2.8948940952708946
+          }
+        },
+        "P_plus_E_norm": {
+          "n": 15,
+          "rescue_ids": [],
+          "damage_ids": [],
+          "tie_count": 0,
+          "stage_median_delta_norm": {
+            "l9_post_mlp": 0.041901873898781326,
+            "l18_x": 2.699782549860833,
+            "l18_a": 1.0996360643954244,
+            "l18_sdpa": 2.8893101251055606
+          }
+        },
+        "P_plus_E_unrelated": {
+          "n": 15,
+          "rescue_ids": [],
+          "damage_ids": [
+            "Mercury_406732"
+          ],
+          "tie_count": 0,
+          "stage_median_delta_norm": {
+            "l9_post_mlp": 0.6560152868233035,
+            "l18_x": 2.750121135771621,
+            "l18_a": 1.1067684991118,
+            "l18_sdpa": 2.857811635210068
+          }
+        },
+        "P_plus_L_main": {
+          "n": 15,
+          "rescue_ids": [
+            "MSA_2015_8_37"
+          ],
+          "damage_ids": [],
+          "tie_count": 0,
+          "stage_median_delta_norm": {
+            "l9_post_mlp": 0.6571580730616698,
+            "l18_x": 1.3059851000124276,
+            "l18_a": 0.9300123170654876,
+            "l18_sdpa": 2.149632224069102
+          }
+        },
+        "P_plus_L_norm": {
+          "n": 15,
+          "rescue_ids": [
+            "MSA_2015_8_37"
+          ],
+          "damage_ids": [],
+          "tie_count": 1,
+          "stage_median_delta_norm": {
+            "l9_post_mlp": 0.6571580730616698,
+            "l18_x": 1.238774671100333,
+            "l18_a": 0.9441303240101117,
+            "l18_sdpa": 2.140969736255212
+          }
+        },
+        "P_plus_L_unrelated": {
+          "n": 15,
+          "rescue_ids": [],
+          "damage_ids": [
+            "Mercury_406732"
+          ],
+          "tie_count": 0,
+          "stage_median_delta_norm": {
+            "l9_post_mlp": 0.6571580730616698,
+            "l18_x": 3.3210498110910387,
+            "l18_a": 1.1076627163409711,
+            "l18_sdpa": 2.526315639162558
+          }
+        },
+        "P_plus_full": {
+          "n": 15,
+          "rescue_ids": [
+            "MSA_2015_8_37"
+          ],
+          "damage_ids": [],
+          "tie_count": 0,
+          "stage_median_delta_norm": {
+            "l9_post_mlp": null,
+            "l18_x": null,
+            "l18_a": null,
+            "l18_sdpa": null
+          }
+        }
+      }
+    },
+    "stable_wrong_no_tie": {
+      "n": 12,
+      "factors": {
+        "E": {
+          "rest": {
+            "n": 12,
+            "mean": -0.008680557004279573,
+            "median": 2.856055891786724e-08,
+            "positive": 7,
+            "negative": 4,
+            "zero": 1,
+            "raw_fraction_mean": "-5/576"
+          },
+          "loss": {
+            "n": 12,
+            "mean": 0.026041688190566126,
+            "median": 0.031249990065892463,
+            "positive": 8,
+            "negative": 4,
+            "zero": 0,
+            "raw_fraction_mean": "5/192"
+          },
+          "rest_norm": {
+            "n": 12,
+            "mean": 0.012152772603763498,
+            "median": -4.967053723881065e-08,
+            "positive": 6,
+            "negative": 6,
+            "zero": 0,
+            "raw_fraction_mean": "7/576"
+          },
+          "loss_norm": {
+            "n": 12,
+            "mean": 0.024305601086881384,
+            "median": 0.02083333333333326,
+            "positive": 6,
+            "negative": 6,
+            "zero": 0,
+            "raw_fraction_mean": "7/288"
+          },
+          "rest_unrelated": {
+            "n": 12,
+            "mean": 0.006944405949778039,
+            "median": -6.457169843265831e-08,
+            "positive": 5,
+            "negative": 7,
+            "zero": 0,
+            "raw_fraction_mean": "1/144"
+          },
+          "loss_unrelated": {
+            "n": 12,
+            "mean": 0.015625043047798975,
+            "median": 0.010416756073633904,
+            "positive": 8,
+            "negative": 4,
+            "zero": 0,
+            "raw_fraction_mean": "1/64"
+          },
+          "rest_specific": {
+            "n": 12,
+            "mean": -0.015624962954057612,
+            "median": -0.02083333333333326,
+            "positive": 5,
+            "negative": 7,
+            "zero": 0,
+            "raw_fraction_mean": "-1/64"
+          },
+          "loss_specific": {
+            "n": 12,
+            "mean": 0.010416645142767153,
+            "median": 0.02083333333333326,
+            "positive": 6,
+            "negative": 5,
+            "zero": 1,
+            "raw_fraction_mean": "1/96"
+          }
+        },
+        "L": {
+          "rest": {
+            "n": 12,
+            "mean": 0.2725694216787815,
+            "median": 0.35416658222675323,
+            "positive": 10,
+            "negative": 2,
+            "zero": 0,
+            "raw_fraction_mean": "157/576"
+          },
+          "loss": {
+            "n": 12,
+            "mean": 0.34201388971673113,
+            "median": 0.4062500074505805,
+            "positive": 9,
+            "negative": 3,
+            "zero": 0,
+            "raw_fraction_mean": "197/576"
+          },
+          "rest_norm": {
+            "n": 12,
+            "mean": 0.26562498716844446,
+            "median": 0.3541666194796562,
+            "positive": 9,
+            "negative": 3,
+            "zero": 0,
+            "raw_fraction_mean": "17/64"
+          },
+          "loss_norm": {
+            "n": 12,
+            "mean": 0.3576389066874981,
+            "median": 0.3437500794728596,
+            "positive": 10,
+            "negative": 2,
+            "zero": 0,
+            "raw_fraction_mean": "103/288"
+          },
+          "rest_unrelated": {
+            "n": 12,
+            "mean": -0.4322916768077347,
+            "median": -0.3645833830038707,
+            "positive": 2,
+            "negative": 10,
+            "zero": 0,
+            "raw_fraction_mean": "-83/192"
+          },
+          "loss_unrelated": {
+            "n": 12,
+            "mean": -0.21354164555668834,
+            "median": -0.1562500149011613,
+            "positive": 3,
+            "negative": 9,
+            "zero": 0,
+            "raw_fraction_mean": "-41/192"
+          },
+          "rest_specific": {
+            "n": 12,
+            "mean": 0.7048610984865162,
+            "median": 0.5625000496705372,
+            "positive": 10,
+            "negative": 2,
+            "zero": 0,
+            "raw_fraction_mean": "203/288"
+          },
+          "loss_specific": {
+            "n": 12,
+            "mean": 0.5555555352734195,
+            "median": 0.36458333333333337,
+            "positive": 10,
+            "negative": 2,
+            "zero": 0,
+            "raw_fraction_mean": "5/9"
+          }
+        }
+      },
+      "conditions": {
+        "N": {
+          "n": 12,
+          "rescue_ids": [],
+          "damage_ids": [],
+          "tie_count": 0,
+          "stage_median_delta_norm": {
+            "l9_post_mlp": null,
+            "l18_x": null,
+            "l18_a": null,
+            "l18_sdpa": null
+          }
+        },
+        "N_minus_E_main": {
+          "n": 12,
+          "rescue_ids": [],
+          "damage_ids": [],
+          "tie_count": 0,
+          "stage_median_delta_norm": {
+            "l9_post_mlp": 0.6438393893610488,
+            "l18_x": 0.4500778078833475,
+            "l18_a": 0.093242525064473,
+            "l18_sdpa": 0.22785637828406657
+          }
+        },
+        "N_minus_E_norm": {
+          "n": 12,
+          "rescue_ids": [],
+          "damage_ids": [],
+          "tie_count": 0,
+          "stage_median_delta_norm": {
+            "l9_post_mlp": 0.6315615995796389,
+            "l18_x": 0.46105638997099485,
+            "l18_a": 0.09122335424077924,
+            "l18_sdpa": 0.21479735823087737
+          }
+        },
+        "N_minus_E_unrelated": {
+          "n": 12,
+          "rescue_ids": [],
+          "damage_ids": [],
+          "tie_count": 0,
+          "stage_median_delta_norm": {
+            "l9_post_mlp": 0.6459468270907596,
+            "l18_x": 0.4677196867614381,
+            "l18_a": 0.08123725840935729,
+            "l18_sdpa": 0.19573843375996572
+          }
+        },
+        "N_minus_L_main": {
+          "n": 12,
+          "rescue_ids": [
+            "Mercury_7214673"
+          ],
+          "damage_ids": [],
+          "tie_count": 1,
+          "stage_median_delta_norm": {
+            "l9_post_mlp": 0.0,
+            "l18_x": 2.4968730037510167,
+            "l18_a": 0.5712486220293372,
+            "l18_sdpa": 1.3696216028807187
+          }
+        },
+        "N_minus_L_norm": {
+          "n": 12,
+          "rescue_ids": [
+            "Mercury_7214673"
+          ],
+          "damage_ids": [],
+          "tie_count": 1,
+          "stage_median_delta_norm": {
+            "l9_post_mlp": 0.0,
+            "l18_x": 2.4833595974135556,
+            "l18_a": 0.5495201465155968,
+            "l18_sdpa": 1.3092257756759458
+          }
+        },
+        "N_minus_L_unrelated": {
+          "n": 12,
+          "rescue_ids": [
+            "Mercury_7192448",
+            "Mercury_403967"
+          ],
+          "damage_ids": [],
+          "tie_count": 3,
+          "stage_median_delta_norm": {
+            "l9_post_mlp": 0.0,
+            "l18_x": 2.29145297954067,
+            "l18_a": 0.48499976841875386,
+            "l18_sdpa": 1.1074499836860379
+          }
+        },
+        "N_minus_full": {
+          "n": 12,
+          "rescue_ids": [
+            "Mercury_7214673"
+          ],
+          "damage_ids": [],
+          "tie_count": 1,
+          "stage_median_delta_norm": {
+            "l9_post_mlp": null,
+            "l18_x": null,
+            "l18_a": null,
+            "l18_sdpa": null
+          }
+        },
+        "P": {
+          "n": 12,
+          "rescue_ids": [],
+          "damage_ids": [],
+          "tie_count": 0,
+          "stage_median_delta_norm": {
+            "l9_post_mlp": null,
+            "l18_x": null,
+            "l18_a": null,
+            "l18_sdpa": null
+          }
+        },
+        "P_plus_E_main": {
+          "n": 12,
+          "rescue_ids": [
+            "Mercury_7142853"
+          ],
+          "damage_ids": [],
+          "tie_count": 2,
+          "stage_median_delta_norm": {
+            "l9_post_mlp": 0.0,
+            "l18_x": 2.103564450427643,
+            "l18_a": 1.0001500053810026,
+            "l18_sdpa": 2.491202937074668
+          }
+        },
+        "P_plus_E_norm": {
+          "n": 12,
+          "rescue_ids": [
+            "Mercury_7142853"
+          ],
+          "damage_ids": [],
+          "tie_count": 1,
+          "stage_median_delta_norm": {
+            "l9_post_mlp": 0.06517245670780028,
+            "l18_x": 2.1049956652865296,
+            "l18_a": 0.9997295177004947,
+            "l18_sdpa": 2.4873255934618443
+          }
+        },
+        "P_plus_E_unrelated": {
+          "n": 12,
+          "rescue_ids": [],
+          "damage_ids": [],
+          "tie_count": 1,
+          "stage_median_delta_norm": {
+            "l9_post_mlp": 0.6480546124429016,
+            "l18_x": 2.1358234928821513,
+            "l18_a": 0.9932288409991858,
+            "l18_sdpa": 2.4022034644550274
+          }
+        },
+        "P_plus_L_main": {
+          "n": 12,
+          "rescue_ids": [],
+          "damage_ids": [],
+          "tie_count": 0,
+          "stage_median_delta_norm": {
+            "l9_post_mlp": 0.6438393893610488,
+            "l18_x": 1.1584587158277775,
+            "l18_a": 0.8808816566199008,
+            "l18_sdpa": 2.0920808586914585
+          }
+        },
+        "P_plus_L_norm": {
+          "n": 12,
+          "rescue_ids": [],
+          "damage_ids": [],
+          "tie_count": 0,
+          "stage_median_delta_norm": {
+            "l9_post_mlp": 0.6438393893610488,
+            "l18_x": 1.1349898494675559,
+            "l18_a": 0.8709521156728064,
+            "l18_sdpa": 2.0743421118991865
+          }
+        },
+        "P_plus_L_unrelated": {
+          "n": 12,
+          "rescue_ids": [
+            "Mercury_7142853"
+          ],
+          "damage_ids": [],
+          "tie_count": 0,
+          "stage_median_delta_norm": {
+            "l9_post_mlp": 0.6438393893610488,
+            "l18_x": 2.938035700178943,
+            "l18_a": 1.0541406983737451,
+            "l18_sdpa": 2.6459091985218794
+          }
+        },
+        "P_plus_full": {
+          "n": 12,
+          "rescue_ids": [
+            "Mercury_7236600"
+          ],
+          "damage_ids": [],
+          "tie_count": 1,
+          "stage_median_delta_norm": {
+            "l9_post_mlp": null,
+            "l18_x": null,
+            "l18_a": null,
+            "l18_sdpa": null
+          }
+        }
+      }
+    }
+  },
+  "qualification": {
+    "E": {
+      "checks": {
+        "rest": true,
+        "loss": false,
+        "rest_norm": true,
+        "loss_norm": false,
+        "rest_specific": true,
+        "loss_specific": true
+      },
+      "qualifies": false
+    },
+    "L": {
+      "checks": {
+        "rest": true,
+        "loss": true,
+        "rest_norm": true,
+        "loss_norm": true,
+        "rest_specific": true,
+        "loss_specific": true
+      },
+      "qualifies": true
+    }
+  }
+}

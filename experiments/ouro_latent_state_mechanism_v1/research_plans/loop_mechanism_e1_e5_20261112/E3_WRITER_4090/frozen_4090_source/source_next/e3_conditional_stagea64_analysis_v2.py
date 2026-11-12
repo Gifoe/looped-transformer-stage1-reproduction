@@ -1,0 +1,48 @@
+"""Analyze audited conditional Stage A, fixed 64; no selection outside frozen rules."""
+import pathlib,json,hashlib,statistics,torch
+from fractions import Fraction
+from safetensors.torch import load_file
+R=pathlib.Path('/root/autodl-tmp/ouro-e1-e3-offload-20261113');Q=R/'results/conditional_stage_a_train64_v2';OLD=R/'results/treatment_train64';PRIOR=R/'results/analysis_train64/rows.jsonl';OUT=R/'results/conditional_stage_a_analysis';sha=lambda p:hashlib.sha256(p.read_bytes()).hexdigest()
+def pred(v):
+ m=max(v);ties=[i for i,x in enumerate(v) if x==m];return ties[0],ties
+def gap(v,g,fw):return {'allwrong':v[g]-sum(x for i,x in enumerate(v) if i!=g)/(len(v)-1),'fixedwrong':v[g]-v[fw],'dynamic':v[g]-max(x for i,x in enumerate(v) if i!=g)}
+def main():
+ ps=[Q/'PENDING.json',Q/'CUDA_REPLAY.json',Q/'INDEPENDENT_CPU_MATH_AUDIT.json',OLD/'PENDING.json',PRIOR,pathlib.Path(__file__),OLD/'CUDA_REPLAY.json',OLD/'INDEPENDENT_CPU_MATH_AUDIT.json',R/'results/analysis_train64/SOURCE.json',R/'results/analysis_train64/summary.json'];hashes={str(p):sha(p) for p in ps};p,b,a,op=[json.loads(x.read_text()) for x in ps[:4]];assert sha(PRIOR)=='fc64d0ce964bcd40d659accdb9c2c0e47e68791ab4c7ea0b01eb89568c0fc732' and sha(ps[9])=='0884393d3f6e30aaa7d06e70294e862d9f7c169e55b950a4d49e3d5c4d1842dd';ob=json.loads(ps[6].read_text());oa=json.loads(ps[7].read_text());assert ob['status']=='4090_TREATMENT_64_BARE_PASSED' and ob['pending_sha256']==sha(ps[3]) and oa['status']=='4090_TREATMENT_64_CPU_MATH_PASSED' and oa['pending_sha256']==sha(ps[3]) and oa['cuda_replay_sha256']==sha(ps[6]);prior={x['id']:x for line in PRIOR.read_text().splitlines() if (x:=json.loads(line))};assert p['status']=='4090_CONDITIONAL_64_PENDING_INDEPENDENT_BARE' and b['status']=='4090_CONDITIONAL_64_BARE_PASSED' and b['pending_sha256']==sha(ps[0]) and a['status']=='4090_CONDITIONAL_64_CPU_MATH_PASSED' and a['pending_sha256']==sha(ps[0]) and a['cuda_replay_sha256']==sha(ps[1]) and len(prior)==64 and [x['id'] for x in p['cases']]==[x['id'] for x in op['cases']] and set(prior)=={x['id'] for x in p['cases']} and all(sha(pathlib.Path(k))==v for k,v in p['source_sha256'].items());oldproof={x['id']:x for x in op['cases']};rows=[]
+ for c in p['cases']:
+  ident=c['id'];stem=hashlib.sha256(ident.encode()).hexdigest();mp=Q/(stem+'.json');tp=Q/(stem+'.safetensors');omp=OLD/(stem+'.json');otp=OLD/(stem+'.safetensors');assert sha(mp)==c['metadata_sha256'] and sha(tp)==c['tensor_sha256'] and sha(omp)==oldproof[ident]['metadata_sha256'] and sha(otp)==oldproof[ident]['tensor_sha256'];m=json.loads(mp.read_text());t=load_file(str(tp));o=json.loads(omp.read_text());ot=load_file(str(otp));old=prior[ident];g=old['gold'];fw=old['fixedwrong'];r={'id':ident,'gold':g,'actual_group_4090':old['actual_group_4090'],'sampling_group_a6000':old['sampling_group_a6000'],'natural_no_tie':old['natural_no_tie'],'conditions':{},'contrasts':{},'stage_diagnostics':{}};
+  for name,e in m['conditions'].items():
+   if e['status']!='OK':continue
+   for stage,key,base in [('l9_post_mlp',name+'_l9_post_mlp_R',t['N_l9_post_mlp_R']),('l18_x',name+'_target_x_R',ot['N_x_R']),('l18_a',name+'_target_a_R',ot['N_a_R']),('l18_sdpa',name+'_sdpa_R',ot['N_sdpa_R'])]:
+    x=t[key].double().flatten();y=base.double().flatten();r['stage_diagnostics'].setdefault(name,{})[stage]={'delta_norm':float((x-y).norm()),'cosine':float(torch.nn.functional.cosine_similarity(x,y,dim=0)) if x.norm()>0 and y.norm()>0 else None}
+  entries={'N':(old['conditions']['N']['scores'],ot['N_logits']),'P':(old['conditions']['P']['scores'],ot['P_logits']),'P_plus_full':(o['conditions']['P_plus_a_main']['scores'],ot['P_plus_a_main_logits']),'N_minus_full':(o['conditions']['N_minus_a_main']['scores'],ot['N_minus_a_main_logits'])};entries.update({name:(v['scores'],t[name+'_logits']) for name,v in m['conditions'].items() if v['status']=='OK'})
+  for name,(values,z) in entries.items():
+   p0,ties=pred(values);raw=[Fraction(float(z[0,token])) for token in m['targets']];r['conditions'][name]={'scores':values,'prediction':p0,'ties':ties,'correct':p0==g,'gaps':gap(values,g,fw),'raw_fraction_gaps':{k:str(v) for k,v in gap(raw,g,fw).items()}}
+  C=r['conditions']
+  for fac in ('E','L'):
+   names={'rest':(f'P_plus_{fac}_main','P'),'loss':('N',f'N_minus_{fac}_main'),'rest_norm':(f'P_plus_{fac}_norm','P'),'loss_norm':('N',f'N_minus_{fac}_norm'),'rest_unrelated':(f'P_plus_{fac}_unrelated','P'),'loss_unrelated':('N',f'N_minus_{fac}_unrelated')};d={};fr={}
+   for name,(x,y) in names.items():
+    d[name]=None if x not in C or y not in C else {k:C[x]['gaps'][k]-C[y]['gaps'][k] for k in ('allwrong','fixedwrong','dynamic')};fr[name]=None if x not in C or y not in C else {k:str(Fraction(C[x]['raw_fraction_gaps'][k])-Fraction(C[y]['raw_fraction_gaps'][k])) for k in ('allwrong','fixedwrong','dynamic')}
+   for nm,x,y in [('rest_specific','rest','rest_unrelated'),('loss_specific','loss','loss_unrelated')]:
+    d[nm]=None if d[x] is None or d[y] is None else {k:d[x][k]-d[y][k] for k in ('allwrong','fixedwrong','dynamic')};fr[nm]=None if fr[x] is None or fr[y] is None else {k:str(Fraction(fr[x][k])-Fraction(fr[y][k])) for k in ('allwrong','fixedwrong','dynamic')}
+   r['contrasts'][fac]={'production':d,'raw_fraction':fr}
+  r['factorial']={};edges={'E_given_L0':('P_plus_E_main','P'),'E_given_L1':('P_plus_full','P_plus_L_main'),'L_given_E0':('P_plus_L_main','P'),'L_given_E1':('P_plus_full','P_plus_E_main'),'remove_E_given_L0':('N','N_minus_E_main'),'remove_E_given_L1':('N_minus_L_main','N_minus_full'),'remove_L_given_E0':('N','N_minus_L_main'),'remove_L_given_E1':('N_minus_E_main','N_minus_full')};
+  for k in ('allwrong','fixedwrong','dynamic'):
+   x={nm:(C[a]['gaps'][k]-C[b]['gaps'][k] if a in C and b in C else None) for nm,(a,b) in edges.items()};f={nm:(str(Fraction(C[a]['raw_fraction_gaps'][k])-Fraction(C[b]['raw_fraction_gaps'][k])) if a in C and b in C else None) for nm,(a,b) in edges.items()};x['rest_interaction']=(x['E_given_L1']-x['E_given_L0']) if x['E_given_L1'] is not None and x['E_given_L0'] is not None else None;x['removal_interaction']=(x['remove_E_given_L0']-x['remove_E_given_L1']) if x['remove_E_given_L0'] is not None and x['remove_E_given_L1'] is not None else None;f['rest_interaction']=str(Fraction(f['E_given_L1'])-Fraction(f['E_given_L0'])) if f['E_given_L1'] is not None and f['E_given_L0'] is not None else None;f['removal_interaction']=str(Fraction(f['remove_E_given_L0'])-Fraction(f['remove_E_given_L1'])) if f['remove_E_given_L0'] is not None and f['remove_E_given_L1'] is not None else None;r['factorial'][k]={'production':x,'raw_fraction_edges':f}
+  rows.append(r)
+ result={'scope':'Frozen 64 stratified exploratory sample, same-site groups, local counterfactuals; no effects ratios.','groups':{},'qualification':{}}
+ for group in ('all64','rescue','damage','stable_correct','stable_wrong','rescue_no_tie','damage_no_tie','stable_correct_no_tie','stable_wrong_no_tie'):
+  subset=[x for x in rows if group=='all64' or (x['actual_group_4090']==group[:-7] and x['natural_no_tie'] if group.endswith('_no_tie') else x['actual_group_4090']==group)];result['groups'][group]={'n':len(subset),'factors':{},'conditions':{}};
+  for name in sorted({k for x in subset for k in x['conditions']}):
+   valid=[x for x in subset if name in x['conditions']];base='P' if name.startswith('P_plus_') else 'N';result['groups'][group]['conditions'][name]={'n':len(valid),'rescue_ids':[x['id'] for x in valid if not x['conditions'][base]['correct'] and x['conditions'][name]['correct']],'damage_ids':[x['id'] for x in valid if x['conditions'][base]['correct'] and not x['conditions'][name]['correct']],'tie_count':sum(len(x['conditions'][name]['ties'])>1 for x in valid),'stage_median_delta_norm':{stage:(statistics.median(x['stage_diagnostics'][name][stage]['delta_norm'] for x in valid if name in x['stage_diagnostics']) if any(name in x['stage_diagnostics'] for x in valid) else None) for stage in ('l9_post_mlp','l18_x','l18_a','l18_sdpa')}}
+  for fac in ('E','L'):
+   r={}
+   for k in ('rest','loss','rest_norm','loss_norm','rest_unrelated','loss_unrelated','rest_specific','loss_specific'):
+    vals=[x['contrasts'][fac]['production'][k]['allwrong'] for x in subset if x['contrasts'][fac]['production'][k] is not None];raw=[Fraction(x['contrasts'][fac]['raw_fraction'][k]['allwrong']) for x in subset if x['contrasts'][fac]['raw_fraction'][k] is not None];r[k]={'n':len(vals),'mean':statistics.mean(vals) if vals else None,'median':statistics.median(vals) if vals else None,'positive':sum(v>0 for v in vals),'negative':sum(v<0 for v in vals),'zero':sum(v==0 for v in vals),'raw_fraction_mean':str(sum(raw,Fraction())/len(raw)) if raw else None}
+   result['groups'][group]['factors'][fac]=r
+ for fac in ('E','L'):
+  rr=result['groups']['rescue'];nt=result['groups']['rescue_no_tie'];checks={}
+  for k in ('rest','loss','rest_norm','loss_norm','rest_specific','loss_specific'):
+   x=rr['factors'][fac][k];y=nt['factors'][fac][k];checks[k]=bool(x['n']==rr['n'] and x['n']>0 and x['mean']>0 and y['n']==nt['n'] and y['n']>0 and y['mean']>=0)
+  result['qualification'][fac]={'checks':checks,'qualifies':all(checks.values())}
+ assert all(sha(pathlib.Path(k))==v for k,v in hashes.items()) and not OUT.exists();OUT.mkdir();(OUT/'rows.jsonl').write_text(''.join(json.dumps(x,allow_nan=False)+'\n' for x in rows));(OUT/'summary.json').write_text(json.dumps(result,indent=2,allow_nan=False)+'\n');(OUT/'SOURCE.json').write_text(json.dumps({'status':'4090_CONDITIONAL_STAGEA64_ANALYSIS','source_sha256':hashes},indent=2)+'\n');print(json.dumps(result['qualification']))
+if __name__=='__main__':main()

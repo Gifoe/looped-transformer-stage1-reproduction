@@ -1,0 +1,12 @@
+# E3 execution and resource ledger
+
+The user requested approximately two hours of 4090 work as a planning estimate, not a deadline that truncates samples or changes conditions. Recorded per-question CUDA-synchronized wall, collector runtime, independent replay time and overall research elapsed time are different quantities. Do not add only per-question wall and call it end-to-end project time.
+
+| Namespace | Cohort | Actual work per case | Status |
+|---|---:|---|---|
+| L9/L10–16 Stage A v2 technical | 3 fixed technical questions | 2 N/P reference forwards + 12 E/L treatments + 2 joint-KV endpoint forwards; independent bare treatment replay 2 anchors +12 treatments; separately 4 endpoint bare forwards | Completed; no scientific selection on these questions |
+| Stage A v2 discovery | 64 frozen Train cases | 2 N/P references +12 treatments; independent bare replay 2 anchors +12 treatments | Collected; independent forward and CPU arithmetic audits passed; E fails and L qualifies |
+| L-only nested Train | 1030 non-demo cases | 3 N/P/PK recaptures +6 selected treatments; independent bare replay 2 N/P anchors +6 treatments; same-site K1 and original references/donor map reused under SHA/bit checks | Completed; bare and CPU arithmetic audits passed |
+| L-only nested Validation | 299 cases | Same 3 recaptures +6 treatments and 2+6 independent bare replay; frozen IDs and donor map; starts only after Train complete and audited | Completed; bare and CPU arithmetic audits passed |
+
+The parent full-bundle Train1030/Validation299 was independently audited before these stages; its exact runtime and resource receipts are referenced from `results/tensor_manifests_and_audits/`. Observed CUDA-synchronized question wall means excluding save: Stage A technical 2.030 s and discovery64 1.664 s; L Train 1.208 s and Validation 1.216 s. Peak allocated: technical 4,454,787,584 B; Stage A discovery 3,944,077,824 B; L Train 3,721,380,352 B and Validation 3,714,347,520 B. L reserved peaks: Train 6,901,727,232 B and Validation 5,802,819,584 B; Stage A reserved was not recorded. CPU RSS was not recorded. The final 4090 check found GPU 0%/1 MiB, no compute process or PID 19369, and approximately 17 GiB disk free. These are per-question measurements or endpoint snapshots, not model-load or project-wall peaks. Full Q/K/V are streamed as needed; the small publication package includes source and tensor SHA ledgers, not the raw checkpoint or all large activations.

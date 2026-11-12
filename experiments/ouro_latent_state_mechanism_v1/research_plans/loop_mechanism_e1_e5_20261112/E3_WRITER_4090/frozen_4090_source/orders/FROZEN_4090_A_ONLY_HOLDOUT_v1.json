@@ -1,0 +1,47 @@
+{
+  "status": "FROZEN_A_ONLY_BEFORE_HOLDOUT_TREATMENTS",
+  "utc": "2026-11-12T16:45:24.652320+00:00",
+  "parent_order_sha256": "d0fc019924c6cb1f41a927b6d86bfa6b7e298ed2b90add4d27d7134d03a2349c",
+  "site_amendment_sha256": "1c331f1f4ec3f1f12bf00f081d2f79ddae486d1d27d646f6f04f8cfba00c0e2f",
+  "groups_amendment_sha256": "6e22ef3c828954cbb474d5dbe8599f62ab5b7ae8988e4327aca5ecbc53b3733a",
+  "conditions": [
+    "N",
+    "P",
+    "PK",
+    "P_plus_a_main",
+    "P_plus_a_norm",
+    "P_plus_a_unrelated",
+    "N_minus_a_main",
+    "N_minus_a_norm",
+    "N_minus_a_unrelated",
+    "P_plus_a_main_plus_key"
+  ],
+  "claims": [
+    "rest",
+    "loss",
+    "rest_norm",
+    "loss_norm",
+    "rest_specific",
+    "loss_specific"
+  ],
+  "discovery_actual_rescue_n": 15,
+  "discovery_rescue_no_tie_n": 14,
+  "selection_rule": "six strictly positive rescue mean directions, no no-tie reversal; raw exact Fraction signs checked",
+  "bootstrap": {
+    "resamples": 5000,
+    "seed": 20261112,
+    "interval": "two-sided 95 percent percentile",
+    "required": "six lower bounds strictly above zero in both Train1030 and Validation299; no-tie mean no reversal"
+  },
+  "source_sha256": {
+    "/root/autodl-tmp/ouro-e1-e3-offload-20261113/results/analysis_train64/SOURCE.json": "7de620e694c7b8a9feccf6340494d168f05bae834cb3113811b9aee2a8173328",
+    "/root/autodl-tmp/ouro-e1-e3-offload-20261113/results/analysis_train64/summary.json": "0884393d3f6e30aaa7d06e70294e862d9f7c169e55b950a4d49e3d5c4d1842dd",
+    "/root/autodl-tmp/ouro-e1-e3-offload-20261113/results/analysis_train64/rows.jsonl": "fc64d0ce964bcd40d659accdb9c2c0e47e68791ab4c7ea0b01eb89568c0fc732",
+    "/root/autodl-tmp/ouro-e1-e3-offload-20261113/results/analysis_train64/qualification_fraction_sensitivity.json": "e8dd080f0e6100b9242b04b1e2599081aa985080f1decd03fc23ecc47c95cf11",
+    "/root/autodl-tmp/ouro-e1-e3-offload-20261113/results/analysis_train64/paired_decisions.json": "4f01b5b1ec0858b1001ec8dc18605473b0083ba0f97df8cdbd132f4c99259218",
+    "/root/autodl-tmp/ouro-e1-e3-offload-20261113/results/treatment_train64/PENDING.json": "c8aa19b99157b419b51d6654d00a58e9cb860302778b1bd614684df026b23e56",
+    "/root/autodl-tmp/ouro-e1-e3-offload-20261113/results/treatment_train64/CUDA_REPLAY.json": "de054e18f9c7abe9ab3eb5c2657e94eef5a614e0f50a292e0bc23febe62d06c1",
+    "/root/autodl-tmp/ouro-e1-e3-offload-20261113/results/treatment_train64/INDEPENDENT_CPU_MATH_AUDIT.json": "1fb8f5dffbd33d5da955ddbc496891b7112e5bdf9711883f3b13a4f95e45ead1"
+  },
+  "scope": "A attention-localnorm branch only. Discovery is stratified exploration; holdouts internal, previously exposed. No natural-path proof or mechanism percentage."
+}

@@ -1,0 +1,47 @@
+{
+  "status": "RAW_FRACTION_COUNTEREXAMPLE_COUNTS_RECOMPUTED",
+  "input_rows_sha256": "105044162ab2dcb8cad772a18a38f5dbf5b6db332f772f28fb43e1accbbec67b",
+  "definitions": "rescue natural no-tie; any of six per-question contrasts <=0; production original scores, Fraction exact BF16 target-logit contrast; descriptive, not frozen mean/CI pass criterion",
+  "splits": {
+    "train": {
+      "n": 306,
+      "production_any_nonpositive_count": 63,
+      "fraction_any_nonpositive_count": 65,
+      "fraction_only_ids": [
+        "AKDE&ED_2012_4_21",
+        "Mercury_SC_415540"
+      ],
+      "production_only_ids": [],
+      "examples": [
+        {
+          "id": "AKDE&ED_2012_4_21",
+          "mismatching_contrasts": [
+            {
+              "name": "loss_specific",
+              "production": 7.450580596923828e-08,
+              "fraction": "0"
+            }
+          ]
+        },
+        {
+          "id": "Mercury_SC_415540",
+          "mismatching_contrasts": [
+            {
+              "name": "loss_specific",
+              "production": 2.9802322387695312e-08,
+              "fraction": "0"
+            }
+          ]
+        }
+      ]
+    },
+    "validation": {
+      "n": 100,
+      "production_any_nonpositive_count": 14,
+      "fraction_any_nonpositive_count": 14,
+      "fraction_only_ids": [],
+      "production_only_ids": [],
+      "examples": []
+    }
+  }
+}

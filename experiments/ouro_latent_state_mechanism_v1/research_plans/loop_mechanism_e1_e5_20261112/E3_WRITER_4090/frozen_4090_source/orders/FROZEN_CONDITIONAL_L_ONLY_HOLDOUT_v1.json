@@ -1,0 +1,53 @@
+{
+  "status": "FROZEN_L_ONLY_BEFORE_NESTED_HOLDOUT",
+  "utc": "2026-11-12T18:17:08.461915+00:00",
+  "parent_order_sha256": "94469c7fe667e7bf46bf5bb03117436d8163a08987144f0331d34c5a20b9bb00",
+  "factor": "L",
+  "physical_indices": [
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15
+  ],
+  "conditions": [
+    "N",
+    "P",
+    "P_plus_L_main",
+    "P_plus_L_norm",
+    "P_plus_L_unrelated",
+    "N_minus_L_main",
+    "N_minus_L_norm",
+    "N_minus_L_unrelated"
+  ],
+  "claims": [
+    "rest",
+    "loss",
+    "rest_norm",
+    "loss_norm",
+    "rest_specific",
+    "loss_specific"
+  ],
+  "E_failed": [
+    "loss",
+    "loss_norm"
+  ],
+  "stage_B": "FORBIDDEN_E_DID_NOT_QUALIFY",
+  "bootstrap": {
+    "resamples": 5000,
+    "seed": 20261112,
+    "two_sided_percentile": 0.95,
+    "required": "six lower bounds above zero in both splits and no-tie means no reversal"
+  },
+  "source_sha256": {
+    "/root/autodl-tmp/ouro-e1-e3-offload-20261113/results/conditional_stage_a_analysis/SOURCE.json": "a87776b5231504b0c7cc669aba2a48f3c796ed7985a38ebb407553a482fff8dd",
+    "/root/autodl-tmp/ouro-e1-e3-offload-20261113/results/conditional_stage_a_analysis/summary.json": "7d5fb604152059988f653e4fb826e1a39b7f7f0b068383171d2b098ed01f961c",
+    "/root/autodl-tmp/ouro-e1-e3-offload-20261113/results/conditional_stage_a_analysis/rows.jsonl": "3fff848fc796921e8a8102b16a64cef001cde68442c9f0356039df95e0bd7250",
+    "/root/autodl-tmp/ouro-e1-e3-offload-20261113/results/conditional_stage_a_train64_v2/PENDING.json": "24c6dcaffbf8217fe9599d628a1094760f095fbe9c3cc7b048ec29bcf00d777c",
+    "/root/autodl-tmp/ouro-e1-e3-offload-20261113/results/conditional_stage_a_train64_v2/CUDA_REPLAY.json": "5c19787189b27405149092d46271a9509a06b0f80d353ed232fe53e22fd937d3",
+    "/root/autodl-tmp/ouro-e1-e3-offload-20261113/results/conditional_stage_a_train64_v2/INDEPENDENT_CPU_MATH_AUDIT.json": "071a818dd5305585d2f845dba27104f54a0dc6b47e9cad84f8ea188213011b37"
+  },
+  "scope": "Nested internal confirmation on previously exposed datasets; not untouched external replication."
+}
