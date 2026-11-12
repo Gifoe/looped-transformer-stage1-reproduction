@@ -1,0 +1,113 @@
+{
+  "status": "PASS_PARTIAL",
+  "n_expected": 128,
+  "n_observed": 2,
+  "requested_scope_n": 2,
+  "scope": "NATIVE_K1_K4_IDENTITY_K1_K4_K2_KV_TARGET_NORM_UNRELATED_ONLY",
+  "failures": [],
+  "summary": [
+    {
+      "condition": "norm_only",
+      "n": 2,
+      "correct": 2,
+      "ties": 0,
+      "rescue": 0,
+      "damage": 0,
+      "meanwrong_delta": {
+        "mean": 1.0710209608078003e-07,
+        "median": 1.0710209608078003e-07
+      },
+      "fixedwrong_delta": {
+        "mean": 1.0710209608078003e-07,
+        "median": 1.0710209608078003e-07
+      },
+      "dynamicmargin_delta": {
+        "mean": 1.0710209608078003e-07,
+        "median": 1.0710209608078003e-07
+      },
+      "global_K1_fixedwrong_delta": {
+        "mean": 1.0710209608078003e-07,
+        "median": 1.0710209608078003e-07
+      }
+    },
+    {
+      "condition": "target",
+      "n": 2,
+      "correct": 2,
+      "ties": 0,
+      "rescue": 0,
+      "damage": 0,
+      "meanwrong_delta": {
+        "mean": -0.10416655909890915,
+        "median": -0.10416655909890915
+      },
+      "fixedwrong_delta": {
+        "mean": -0.06249989243224263,
+        "median": -0.06249989243224263
+      },
+      "dynamicmargin_delta": {
+        "mean": -0.06249989243224263,
+        "median": -0.06249989243224263
+      },
+      "global_K1_fixedwrong_delta": {
+        "mean": -0.06249989243224263,
+        "median": -0.06249989243224263
+      }
+    },
+    {
+      "condition": "unrelated_delta",
+      "n": 2,
+      "correct": 2,
+      "ties": 0,
+      "rescue": 0,
+      "damage": 0,
+      "meanwrong_delta": {
+        "mean": -0.1458333861858896,
+        "median": -0.1458333861858896
+      },
+      "fixedwrong_delta": {
+        "mean": 0.06249994714744389,
+        "median": 0.06249994714744389
+      },
+      "dynamicmargin_delta": {
+        "mean": 0.06249994714744389,
+        "median": 0.06249994714744389
+      },
+      "global_K1_fixedwrong_delta": {
+        "mean": 0.06249994714744389,
+        "median": 0.06249994714744389
+      }
+    }
+  ],
+  "control_math_bounds": [
+    {
+      "id": "ACTAAP_2007_7_24",
+      "condition": "norm_only",
+      "max_abs_error_vs_FP64_ideal": 0.001940354576988157,
+      "max_FP32_plus_BF16_bound": 0.004332183094258736,
+      "inside_all_component_bounds": true
+    },
+    {
+      "id": "ACTAAP_2007_7_24",
+      "condition": "unrelated_delta",
+      "max_abs_error_vs_FP64_ideal": 0.0019243550184517844,
+      "max_FP32_plus_BF16_bound": 0.0050410299735997996,
+      "inside_all_component_bounds": true
+    },
+    {
+      "id": "ACTAAP_2008_7_10",
+      "condition": "norm_only",
+      "max_abs_error_vs_FP64_ideal": 0.0018986714152167128,
+      "max_FP32_plus_BF16_bound": 0.003781484863175229,
+      "inside_all_component_bounds": true
+    },
+    {
+      "id": "ACTAAP_2008_7_10",
+      "condition": "unrelated_delta",
+      "max_abs_error_vs_FP64_ideal": 0.0009272550613662611,
+      "max_FP32_plus_BF16_bound": 0.0029449360553025976,
+      "inside_all_component_bounds": true
+    }
+  ],
+  "producer_imports": false
+}

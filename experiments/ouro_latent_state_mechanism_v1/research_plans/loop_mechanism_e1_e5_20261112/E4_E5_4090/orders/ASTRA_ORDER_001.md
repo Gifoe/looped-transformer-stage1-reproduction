@@ -1,0 +1,13 @@
+# Astra Order 001 — 2026-11-12
+
+Scope: execute new E4 local natural-receiver tests and exploratory E5; do not claim an E3 path exists. This order supersedes the preliminary suggestion to repeat full attention-increment swaps. Historical bidirectional whole-increment swaps and all eight K1-receiver corners are already complete and must be reused when numerically compatible.
+
+1. Read E4_CAUSAL_PROTOCOL.md. Freeze identity manifest and train discovery IDs before running interventions. Do one technical batch spanning changed loop-index, SDPA replacement, and control code paths. Report time/memory; no repetitive smoke suites.
+2. Capture missing same-question natural L18 post-RoPE Q/K, V, SDPA_R, attention increment and final candidate logits for K1–K4 using actual complete forwards. Full QKV may remain transient; retain sufficient compact outputs, tensor hashes, masks/configuration and code for reproduction. Never treat K1 receiver G222 as natural K2.
+3. Implement joint KV rollback/restore in recipient's actual final loop at physical layer 17: retain recipient Q; compute full-shape SDPA with donor KV from adjacent native loop; write only R output row, then run recipient downstream. Maintain causal mask/GQA/scale/dropout exactly. Target recipient loop explicitly, not first occurrence of the shared layer.
+4. Collect 64 frozen train-nondemo discovery questions (16 per historical natural K1/K2 group; sort by SHA256('ouro-e4-v1|'+ID)). Selection uses historical group only; intervention is identical and label-blind for every selected item. Preserve ties and exclusions. This enriched pilot is not a population accuracy estimate.
+5. Conditions for all three adjacent pairs: native recipient; identity; joint KV rollback and restore; matching controls defined in protocol. Reuse historical K1→K2 restore where current-hardware identity is validated, otherwise keep a separately named refreshed baseline.
+6. Send raw pilot rows, tensor/schema samples, exact command, receipt and cost projection to Astra. Expand unchanged design to all 299 Validation questions once technical gates pass; scientific failures do not block completing the matched design. Test already exposed, never label blind.
+7. Pending actual E3 evidence, E4 mediation and E5 mechanistic explanation remain unproven. Preserve counterexamples and negative outcomes. No external benchmarks, model modification, historical overwrite or HF upload.
+
+Execution ledger must distinguish planned, executed, failed and reused. Save actual command strings and launch timestamps, not just this prose order. Sol owns implementation; Astra owns protocol and scientific review.

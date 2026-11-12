@@ -1,0 +1,1877 @@
+{
+  "status": "PASS_COMPLETE",
+  "n_expected": 128,
+  "n_observed": 128,
+  "requested_scope_n": 128,
+  "scope": "NATIVE_K1_K4_IDENTITY_K1_K4_K2_KV_TARGET_NORM_UNRELATED_ONLY",
+  "failures": [],
+  "summary": [
+    {
+      "condition": "norm_only",
+      "n": 128,
+      "correct": 103,
+      "ties": 3,
+      "rescue": 0,
+      "damage": 0,
+      "meanwrong_delta": {
+        "mean": 0.0009765528881568331,
+        "median": 0.0
+      },
+      "fixedwrong_delta": {
+        "mean": 0.0019531241969161783,
+        "median": 0.0
+      },
+      "dynamicmargin_delta": {
+        "mean": 0.0019531241969161783,
+        "median": 0.0
+      },
+      "global_K1_fixedwrong_delta": {
+        "mean": 0.003906255308720574,
+        "median": 7.450580596923828e-09
+      }
+    },
+    {
+      "condition": "target",
+      "n": 128,
+      "correct": 101,
+      "ties": 6,
+      "rescue": 1,
+      "damage": 3,
+      "meanwrong_delta": {
+        "mean": -0.2963460292333669,
+        "median": -0.24999998137354873
+      },
+      "fixedwrong_delta": {
+        "mean": -0.2836914074196102,
+        "median": -0.24999994039535522
+      },
+      "dynamicmargin_delta": {
+        "mean": -0.3134765636696102,
+        "median": -0.2500000298023224
+      },
+      "global_K1_fixedwrong_delta": {
+        "mean": -0.3857421904740477,
+        "median": -0.375
+      }
+    },
+    {
+      "condition": "unrelated_delta",
+      "n": 128,
+      "correct": 100,
+      "ties": 2,
+      "rescue": 2,
+      "damage": 5,
+      "meanwrong_delta": {
+        "mean": 0.028035464601998687,
+        "median": 0.06250000093132257
+      },
+      "fixedwrong_delta": {
+        "mean": 0.02685546481370693,
+        "median": -5.960464477539063e-08
+      },
+      "dynamicmargin_delta": {
+        "mean": -0.10400391204893822,
+        "median": -0.12499992549419403
+      },
+      "global_K1_fixedwrong_delta": {
+        "mean": -0.012207036757899914,
+        "median": -0.12499991059303284
+      }
+    }
+  ],
+  "control_math_bounds": [
+    {
+      "id": "Mercury_7159758",
+      "condition": "norm_only",
+      "max_abs_error_vs_FP64_ideal": 0.002374297507798051,
+      "max_FP32_plus_BF16_bound": 0.007874488389913153,
+      "inside_all_component_bounds": true
+    },
+    {
+      "id": "Mercury_7159758",
+      "condition": "unrelated_delta",
+      "max_abs_error_vs_FP64_ideal": 0.0018296907872885626,
+      "max_FP32_plus_BF16_bound": 0.00900195491942971,
+      "inside_all_component_bounds": true
+    },
+    {
+      "id": "NCEOGA_2013_5_26",
+      "condition": "norm_only",
+      "max_abs_error_vs_FP64_ideal": 0.0035351598333854817,
+      "max_FP32_plus_BF16_bound": 0.006290284342344693,
+      "inside_all_component_bounds": true
+    },
+    {
+      "id": "NCEOGA_2013_5_26",
+      "condition": "unrelated_delta",
+      "max_abs_error_vs_FP64_ideal": 0.002115414012268335,
+      "max_FP32_plus_BF16_bound": 0.007381177964618546,
+      "inside_all_component_bounds": true
+    },
+    {
+      "id": "ACTAAP_2009_7_17",
+      "condition": "norm_only",
+      "max_abs_error_vs_FP64_ideal": 0.0029946808631053923,
+      "max_FP32_plus_BF16_bound": 0.0070545370227093635,
+      "inside_all_component_bounds": true
+    },
+    {
+      "id": "ACTAAP_2009_7_17",
+      "condition": "unrelated_delta",
+      "max_abs_error_vs_FP64_ideal": 0.0035847779169755345,
+      "max_FP32_plus_BF16_bound": 0.008532422760490665,
+      "inside_all_component_bounds": true
+    },
+    {
+      "id": "Mercury_7041160",
+      "condition": "norm_only",
+      "max_abs_error_vs_FP64_ideal": 0.0013840970827964094,
+      "max_FP32_plus_BF16_bound": 0.0037066775162218164,
+      "inside_all_component_bounds": true
+    },
+    {
+      "id": "Mercury_7041160",
+      "condition": "unrelated_delta",
+      "max_abs_error_vs_FP64_ideal": 0.0017649789276248384,
+      "max_FP32_plus_BF16_bound": 0.003709988733664373,
+      "inside_all_component_bounds": true
+    },
+    {
+      "id": "NYSEDREGENTS_2007_8_28",
+      "condition": "norm_only",
+      "max_abs_error_vs_FP64_ideal": 0.0017222338826262673,
+      "max_FP32_plus_BF16_bound": 0.004569451146518208,
+      "inside_all_component_bounds": true
+    },
+    {
+      "id": "NYSEDREGENTS_2007_8_28",
+      "condition": "unrelated_delta",
+      "max_abs_error_vs_FP64_ideal": 0.0018954621757945045,
+      "max_FP32_plus_BF16_bound": 0.008739159127406481,
+      "inside_all_component_bounds": true
+    },
+    {
+      "id": "TIMSS_1995_8_N3",
+      "condition": "norm_only",
+      "max_abs_error_vs_FP64_ideal": 0.003271821091421101,
+      "max_FP32_plus_BF16_bound": 0.00873595163591807,
+      "inside_all_component_bounds": true
+    },
+    {
+      "id": "TIMSS_1995_8_N3",
+      "condition": "unrelated_delta",
+      "max_abs_error_vs_FP64_ideal": 0.0018469505725773327,
+      "max_FP32_plus_BF16_bound": 0.007470470571559086,
+      "inside_all_component_bounds": true
+    },
+    {
+      "id": "NYSEDREGENTS_2004_4_5",
+      "condition": "norm_only",
+      "max_abs_error_vs_FP64_ideal": 0.0012976991491613354,
+      "max_FP32_plus_BF16_bound": 0.007591332216577358,
+      "inside_all_component_bounds": true
+    },
+    {
+      "id": "NYSEDREGENTS_2004_4_5",
+      "condition": "unrelated_delta",
+      "max_abs_error_vs_FP64_ideal": 0.0019474361317475264,
+      "max_FP32_plus_BF16_bound": 0.004658056794452339,
+      "inside_all_component_bounds": true
+    },
+    {
+      "id": "MDSA_2008_5_30",
+      "condition": "norm_only",
+      "max_abs_error_vs_FP64_ideal": 0.001662811141394216,
+      "max_FP32_plus_BF16_bound": 0.0034936588711444983,
+      "inside_all_component_bounds": true
+    },
+    {
+      "id": "MDSA_2008_5_30",
+      "condition": "unrelated_delta",
+      "max_abs_error_vs_FP64_ideal": 0.001803223738244708,
+      "max_FP32_plus_BF16_bound": 0.004033685068201009,
+      "inside_all_component_bounds": true
+    },
+    {
+      "id": "Mercury_7183505",
+      "condition": "norm_only",
+      "max_abs_error_vs_FP64_ideal": 0.0017093981124820523,
+      "max_FP32_plus_BF16_bound": 0.005374033073255438,
+      "inside_all_component_bounds": true
+    },
+    {
+      "id": "Mercury_7183505",
+      "condition": "unrelated_delta",
+      "max_abs_error_vs_FP64_ideal": 0.00387418083144464,
+      "max_FP32_plus_BF16_bound": 0.007239672599293777,
+      "inside_all_component_bounds": true
+    },
+    {
+      "id": "Mercury_7071908",
+      "condition": "norm_only",
+      "max_abs_error_vs_FP64_ideal": 0.0009519178461954159,
+      "max_FP32_plus_BF16_bound": 0.0027831033455408324,
+      "inside_all_component_bounds": true
+    },
+    {
+      "id": "Mercury_7071908",
+      "condition": "unrelated_delta",
+      "max_abs_error_vs_FP64_ideal": 0.0018753443648258372,
+      "max_FP32_plus_BF16_bound": 0.00436522265788737,
+      "inside_all_component_bounds": true
+    },
+    {
+      "id": "NCEOGA_2013_8_14",
+      "condition": "norm_only",
+      "max_abs_error_vs_FP64_ideal": 0.0011227484234803686,
+      "max_FP32_plus_BF16_bound": 0.0032613584550200496,
+      "inside_all_component_bounds": true
+    },
+    {
+      "id": "NCEOGA_2013_8_14",
+      "condition": "unrelated_delta",
+      "max_abs_error_vs_FP64_ideal": 0.0037745367475241487,
+      "max_FP32_plus_BF16_bound": 0.006316385713125368,
+      "inside_all_component_bounds": true
+    },
+    {
+      "id": "Mercury_SC_401304",
+      "condition": "norm_only",
+      "max_abs_error_vs_FP64_ideal": 0.0016611885076889266,
+      "max_FP32_plus_BF16_bound": 0.004286243130934355,
+      "inside_all_component_bounds": true
+    },
+    {
+      "id": "Mercury_SC_401304",
+      "condition": "unrelated_delta",
+      "max_abs_error_vs_FP64_ideal": 0.0017164218935653563,
+      "max_FP32_plus_BF16_bound": 0.004815769446929752,
+      "inside_all_component_bounds": true
+    },
+    {
+      "id": "Mercury_SC_405455",
+      "condition": "norm_only",
+      "max_abs_error_vs_FP64_ideal": 0.000956664851108957,
+      "max_FP32_plus_BF16_bound": 0.003887627546277181,
+      "inside_all_component_bounds": true
+    },
+    {
+      "id": "Mercury_SC_405455",
+      "condition": "unrelated_delta",
+      "max_abs_error_vs_FP64_ideal": 0.0017161002851671103,
+      "max_FP32_plus_BF16_bound": 0.0033907680499123544,
+      "inside_all_component_bounds": true
+    },
+    {
+      "id": "NYSEDREGENTS_2009_8_20",
+      "condition": "norm_only",
+      "max_abs_error_vs_FP64_ideal": 0.0037142820362203732,
+      "max_FP32_plus_BF16_bound": 0.005860722933833941,
+      "inside_all_component_bounds": true
+    },
+    {
+      "id": "NYSEDREGENTS_2009_8_20",
+      "condition": "unrelated_delta",
+      "max_abs_error_vs_FP64_ideal": 0.002542500999015651,
+      "max_FP32_plus_BF16_bound": 0.005917689900127221,
+      "inside_all_component_bounds": true
+    },
+    {
+      "id": "Mercury_7154648",
+      "condition": "norm_only",
+      "max_abs_error_vs_FP64_ideal": 0.001881925532380091,
+      "max_FP32_plus_BF16_bound": 0.003418482959332283,
+      "inside_all_component_bounds": true
+    },
+    {
+      "id": "Mercury_7154648",
+      "condition": "unrelated_delta",
+      "max_abs_error_vs_FP64_ideal": 0.0018947794740387103,
+      "max_FP32_plus_BF16_bound": 0.004029576908141492,
+      "inside_all_component_bounds": true
+    },
+    {
+      "id": "Mercury_7216878",
+      "condition": "norm_only",
+      "max_abs_error_vs_FP64_ideal": 0.0009172220221339011,
+      "max_FP32_plus_BF16_bound": 0.00562041308745242,
+      "inside_all_component_bounds": true
+    },
+    {
+      "id": "Mercury_7216878",
+      "condition": "unrelated_delta",
+      "max_abs_error_vs_FP64_ideal": 0.0014871422372371157,
+      "max_FP32_plus_BF16_bound": 0.007553869119380075,
+      "inside_all_component_bounds": true
+    },
+    {
+      "id": "MEA_2016_8_1",
+      "condition": "norm_only",
+      "max_abs_error_vs_FP64_ideal": 0.0012358337215173654,
+      "max_FP32_plus_BF16_bound": 0.004792160712270349,
+      "inside_all_component_bounds": true
+    },
+    {
+      "id": "MEA_2016_8_1",
+      "condition": "unrelated_delta",
+      "max_abs_error_vs_FP64_ideal": 0.0015552701013914483,
+      "max_FP32_plus_BF16_bound": 0.0031924030844217607,
+      "inside_all_component_bounds": true
+    },
+    {
+      "id": "Mercury_7038868",
+      "condition": "norm_only",
+      "max_abs_error_vs_FP64_ideal": 0.0017730648418874395,
+      "max_FP32_plus_BF16_bound": 0.008063676460444957,
+      "inside_all_component_bounds": true
+    },
+    {
+      "id": "Mercury_7038868",
+      "condition": "unrelated_delta",
+      "max_abs_error_vs_FP64_ideal": 0.0019183399729147954,
+      "max_FP32_plus_BF16_bound": 0.00813007386235666,
+      "inside_all_component_bounds": true
+    },
+    {
+      "id": "Mercury_400749",
+      "condition": "norm_only",
+      "max_abs_error_vs_FP64_ideal": 0.001579846013095243,
+      "max_FP32_plus_BF16_bound": 0.0034784835296741592,
+      "inside_all_component_bounds": true
+    },
+    {
+      "id": "Mercury_400749",
+      "condition": "unrelated_delta",
+      "max_abs_error_vs_FP64_ideal": 0.0012955933064150438,
+      "max_FP32_plus_BF16_bound": 0.004160928668559838,
+      "inside_all_component_bounds": true
+    },
+    {
+      "id": "Mercury_LBS10257",
+      "condition": "norm_only",
+      "max_abs_error_vs_FP64_ideal": 0.0017224468349865685,
+      "max_FP32_plus_BF16_bound": 0.00342062199071808,
+      "inside_all_component_bounds": true
+    },
+    {
+      "id": "Mercury_LBS10257",
+      "condition": "unrelated_delta",
+      "max_abs_error_vs_FP64_ideal": 0.003640449285183589,
+      "max_FP32_plus_BF16_bound": 0.00620122252236671,
+      "inside_all_component_bounds": true
+    },
+    {
+      "id": "Mercury_412647",
+      "condition": "norm_only",
+      "max_abs_error_vs_FP64_ideal": 0.0009756380984119462,
+      "max_FP32_plus_BF16_bound": 0.0024745472168697497,
+      "inside_all_component_bounds": true
+    },
+    {
+      "id": "Mercury_412647",
+      "condition": "unrelated_delta",
+      "max_abs_error_vs_FP64_ideal": 0.001789146222581084,
+      "max_FP32_plus_BF16_bound": 0.0039198687447561335,
+      "inside_all_component_bounds": true
+    },
+    {
+      "id": "ACTAAP_2010_5_6",
+      "condition": "norm_only",
+      "max_abs_error_vs_FP64_ideal": 0.0017128325765887187,
+      "max_FP32_plus_BF16_bound": 0.008397660721697708,
+      "inside_all_component_bounds": true
+    },
+    {
+      "id": "ACTAAP_2010_5_6",
+      "condition": "unrelated_delta",
+      "max_abs_error_vs_FP64_ideal": 0.0019168296427355402,
+      "max_FP32_plus_BF16_bound": 0.008472126578138698,
+      "inside_all_component_bounds": true
+    },
+    {
+      "id": "Mercury_412775",
+      "condition": "norm_only",
+      "max_abs_error_vs_FP64_ideal": 0.0018349035157240179,
+      "max_FP32_plus_BF16_bound": 0.008580177770342106,
+      "inside_all_component_bounds": true
+    },
+    {
+      "id": "Mercury_412775",
+      "condition": "unrelated_delta",
+      "max_abs_error_vs_FP64_ideal": 0.003880789763063053,
+      "max_FP32_plus_BF16_bound": 0.010685960787758362,
+      "inside_all_component_bounds": true
+    },
+    {
+      "id": "Mercury_7263148",
+      "condition": "norm_only",
+      "max_abs_error_vs_FP64_ideal": 0.0017341028238062606,
+      "max_FP32_plus_BF16_bound": 0.005007055644598973,
+      "inside_all_component_bounds": true
+    },
+    {
+      "id": "Mercury_7263148",
+      "condition": "unrelated_delta",
+      "max_abs_error_vs_FP64_ideal": 0.0019064113653149972,
+      "max_FP32_plus_BF16_bound": 0.004722680159813603,
+      "inside_all_component_bounds": true
+    },
+    {
+      "id": "MCAS_8_2015_9",
+      "condition": "norm_only",
+      "max_abs_error_vs_FP64_ideal": 0.00194193265383924,
+      "max_FP32_plus_BF16_bound": 0.009632855204064398,
+      "inside_all_component_bounds": true
+    },
+    {
+      "id": "MCAS_8_2015_9",
+      "condition": "unrelated_delta",
+      "max_abs_error_vs_FP64_ideal": 0.005714426781989523,
+      "max_FP32_plus_BF16_bound": 0.010522652630298907,
+      "inside_all_component_bounds": true
+    },
+    {
+      "id": "Mercury_7181965",
+      "condition": "norm_only",
+      "max_abs_error_vs_FP64_ideal": 0.0016735963525157382,
+      "max_FP32_plus_BF16_bound": 0.004416312722206364,
+      "inside_all_component_bounds": true
+    },
+    {
+      "id": "Mercury_7181965",
+      "condition": "unrelated_delta",
+      "max_abs_error_vs_FP64_ideal": 0.005853418475385563,
+      "max_FP32_plus_BF16_bound": 0.009971774625327546,
+      "inside_all_component_bounds": true
+    },
+    {
+      "id": "Mercury_7038430",
+      "condition": "norm_only",
+      "max_abs_error_vs_FP64_ideal": 0.0018117689212603372,
+      "max_FP32_plus_BF16_bound": 0.002749805144269604,
+      "inside_all_component_bounds": true
+    },
+    {
+      "id": "Mercury_7038430",
+      "condition": "unrelated_delta",
+      "max_abs_error_vs_FP64_ideal": 0.0017048218619467592,
+      "max_FP32_plus_BF16_bound": 0.003315562433000304,
+      "inside_all_component_bounds": true
+    },
+    {
+      "id": "Mercury_415753",
+      "condition": "norm_only",
+      "max_abs_error_vs_FP64_ideal": 0.001837312487371845,
+      "max_FP32_plus_BF16_bound": 0.004102584467492146,
+      "inside_all_component_bounds": true
+    },
+    {
+      "id": "Mercury_415753",
+      "condition": "unrelated_delta",
+      "max_abs_error_vs_FP64_ideal": 0.003647853981114002,
+      "max_FP32_plus_BF16_bound": 0.0058577344516229065,
+      "inside_all_component_bounds": true
+    },
+    {
+      "id": "Mercury_7044818",
+      "condition": "norm_only",
+      "max_abs_error_vs_FP64_ideal": 0.0025216835831185502,
+      "max_FP32_plus_BF16_bound": 0.006766586502474195,
+      "inside_all_component_bounds": true
+    },
+    {
+      "id": "Mercury_7044818",
+      "condition": "unrelated_delta",
+      "max_abs_error_vs_FP64_ideal": 0.00659476451473795,
+      "max_FP32_plus_BF16_bound": 0.010120830090576686,
+      "inside_all_component_bounds": true
+    },
+    {
+      "id": "MDSA_2011_8_10",
+      "condition": "norm_only",
+      "max_abs_error_vs_FP64_ideal": 0.0015253475187535503,
+      "max_FP32_plus_BF16_bound": 0.004646723391778437,
+      "inside_all_component_bounds": true
+    },
+    {
+      "id": "MDSA_2011_8_10",
+      "condition": "unrelated_delta",
+      "max_abs_error_vs_FP64_ideal": 0.002303570917905562,
+      "max_FP32_plus_BF16_bound": 0.005599641539660005,
+      "inside_all_component_bounds": true
+    },
+    {
+      "id": "Mercury_7068845",
+      "condition": "norm_only",
+      "max_abs_error_vs_FP64_ideal": 0.0012864914907421143,
+      "max_FP32_plus_BF16_bound": 0.0034166866685227575,
+      "inside_all_component_bounds": true
+    },
+    {
+      "id": "Mercury_7068845",
+      "condition": "unrelated_delta",
+      "max_abs_error_vs_FP64_ideal": 0.0018735307254018618,
+      "max_FP32_plus_BF16_bound": 0.00511339355178562,
+      "inside_all_component_bounds": true
+    },
+    {
+      "id": "NCEOGA_2013_5_25",
+      "condition": "norm_only",
+      "max_abs_error_vs_FP64_ideal": 0.0008581408517356337,
+      "max_FP32_plus_BF16_bound": 0.0044332433738602005,
+      "inside_all_component_bounds": true
+    },
+    {
+      "id": "NCEOGA_2013_5_25",
+      "condition": "unrelated_delta",
+      "max_abs_error_vs_FP64_ideal": 0.001785646648920891,
+      "max_FP32_plus_BF16_bound": 0.004788130087664601,
+      "inside_all_component_bounds": true
+    },
+    {
+      "id": "Mercury_7081270",
+      "condition": "norm_only",
+      "max_abs_error_vs_FP64_ideal": 0.0019205939339488332,
+      "max_FP32_plus_BF16_bound": 0.004048201170736598,
+      "inside_all_component_bounds": true
+    },
+    {
+      "id": "Mercury_7081270",
+      "condition": "unrelated_delta",
+      "max_abs_error_vs_FP64_ideal": 0.0019121971298591278,
+      "max_FP32_plus_BF16_bound": 0.004848608762473803,
+      "inside_all_component_bounds": true
+    },
+    {
+      "id": "Mercury_SC_406088",
+      "condition": "norm_only",
+      "max_abs_error_vs_FP64_ideal": 0.0013789752157085111,
+      "max_FP32_plus_BF16_bound": 0.0036658375096006524,
+      "inside_all_component_bounds": true
+    },
+    {
+      "id": "Mercury_SC_406088",
+      "condition": "unrelated_delta",
+      "max_abs_error_vs_FP64_ideal": 0.0017743087542737568,
+      "max_FP32_plus_BF16_bound": 0.0034536464253308347,
+      "inside_all_component_bounds": true
+    },
+    {
+      "id": "Mercury_406549",
+      "condition": "norm_only",
+      "max_abs_error_vs_FP64_ideal": 0.0013513071891466666,
+      "max_FP32_plus_BF16_bound": 0.00500676826289252,
+      "inside_all_component_bounds": true
+    },
+    {
+      "id": "Mercury_406549",
+      "condition": "unrelated_delta",
+      "max_abs_error_vs_FP64_ideal": 0.003771030958840793,
+      "max_FP32_plus_BF16_bound": 0.005134439671870305,
+      "inside_all_component_bounds": true
+    },
+    {
+      "id": "Mercury_7013545",
+      "condition": "norm_only",
+      "max_abs_error_vs_FP64_ideal": 0.0014927920019585095,
+      "max_FP32_plus_BF16_bound": 0.003128659880845734,
+      "inside_all_component_bounds": true
+    },
+    {
+      "id": "Mercury_7013545",
+      "condition": "unrelated_delta",
+      "max_abs_error_vs_FP64_ideal": 0.0019438981771049413,
+      "max_FP32_plus_BF16_bound": 0.004383644291092344,
+      "inside_all_component_bounds": true
+    },
+    {
+      "id": "LEAP__7_10343",
+      "condition": "norm_only",
+      "max_abs_error_vs_FP64_ideal": 0.001252299832882664,
+      "max_FP32_plus_BF16_bound": 0.002716142954765889,
+      "inside_all_component_bounds": true
+    },
+    {
+      "id": "LEAP__7_10343",
+      "condition": "unrelated_delta",
+      "max_abs_error_vs_FP64_ideal": 0.0009556659882228313,
+      "max_FP32_plus_BF16_bound": 0.0032476481244219277,
+      "inside_all_component_bounds": true
+    },
+    {
+      "id": "Mercury_SC_400607",
+      "condition": "norm_only",
+      "max_abs_error_vs_FP64_ideal": 0.0016094709348245528,
+      "max_FP32_plus_BF16_bound": 0.0038782859160795824,
+      "inside_all_component_bounds": true
+    },
+    {
+      "id": "Mercury_SC_400607",
+      "condition": "unrelated_delta",
+      "max_abs_error_vs_FP64_ideal": 0.0018124879368307534,
+      "max_FP32_plus_BF16_bound": 0.006263014915266738,
+      "inside_all_component_bounds": true
+    },
+    {
+      "id": "Mercury_7166618",
+      "condition": "norm_only",
+      "max_abs_error_vs_FP64_ideal": 0.0014313487739756603,
+      "max_FP32_plus_BF16_bound": 0.006006132243145467,
+      "inside_all_component_bounds": true
+    },
+    {
+      "id": "Mercury_7166618",
+      "condition": "unrelated_delta",
+      "max_abs_error_vs_FP64_ideal": 0.001913062921794717,
+      "max_FP32_plus_BF16_bound": 0.007093901924956822,
+      "inside_all_component_bounds": true
+    },
+    {
+      "id": "Mercury_7216843",
+      "condition": "norm_only",
+      "max_abs_error_vs_FP64_ideal": 0.0018006718186830417,
+      "max_FP32_plus_BF16_bound": 0.002833330206385097,
+      "inside_all_component_bounds": true
+    },
+    {
+      "id": "Mercury_7216843",
+      "condition": "unrelated_delta",
+      "max_abs_error_vs_FP64_ideal": 0.0019252915811920346,
+      "max_FP32_plus_BF16_bound": 0.004585809868533167,
+      "inside_all_component_bounds": true
+    },
+    {
+      "id": "Mercury_7100468",
+      "condition": "norm_only",
+      "max_abs_error_vs_FP64_ideal": 0.0016020554891225114,
+      "max_FP32_plus_BF16_bound": 0.0032522228003331478,
+      "inside_all_component_bounds": true
+    },
+    {
+      "id": "Mercury_7100468",
+      "condition": "unrelated_delta",
+      "max_abs_error_vs_FP64_ideal": 0.0018024312540650955,
+      "max_FP32_plus_BF16_bound": 0.003464770023753174,
+      "inside_all_component_bounds": true
+    },
+    {
+      "id": "Mercury_417145",
+      "condition": "norm_only",
+      "max_abs_error_vs_FP64_ideal": 0.0016286755922257923,
+      "max_FP32_plus_BF16_bound": 0.005057199221728609,
+      "inside_all_component_bounds": true
+    },
+    {
+      "id": "Mercury_417145",
+      "condition": "unrelated_delta",
+      "max_abs_error_vs_FP64_ideal": 0.0025545332992060743,
+      "max_FP32_plus_BF16_bound": 0.006499017662667414,
+      "inside_all_component_bounds": true
+    },
+    {
+      "id": "Mercury_7159670",
+      "condition": "norm_only",
+      "max_abs_error_vs_FP64_ideal": 0.0018353175491130358,
+      "max_FP32_plus_BF16_bound": 0.004800372696952289,
+      "inside_all_component_bounds": true
+    },
+    {
+      "id": "Mercury_7159670",
+      "condition": "unrelated_delta",
+      "max_abs_error_vs_FP64_ideal": 0.0018650751101241259,
+      "max_FP32_plus_BF16_bound": 0.004924970074917247,
+      "inside_all_component_bounds": true
+    },
+    {
+      "id": "NYSEDREGENTS_2007_8_21",
+      "condition": "norm_only",
+      "max_abs_error_vs_FP64_ideal": 0.0022551613660544145,
+      "max_FP32_plus_BF16_bound": 0.0058577895013019665,
+      "inside_all_component_bounds": true
+    },
+    {
+      "id": "NYSEDREGENTS_2007_8_21",
+      "condition": "unrelated_delta",
+      "max_abs_error_vs_FP64_ideal": 0.0018089693273604102,
+      "max_FP32_plus_BF16_bound": 0.007557383925547188,
+      "inside_all_component_bounds": true
+    },
+    {
+      "id": "Mercury_7283955",
+      "condition": "norm_only",
+      "max_abs_error_vs_FP64_ideal": 0.0018602370295813797,
+      "max_FP32_plus_BF16_bound": 0.004209800789524846,
+      "inside_all_component_bounds": true
+    },
+    {
+      "id": "Mercury_7283955",
+      "condition": "unrelated_delta",
+      "max_abs_error_vs_FP64_ideal": 0.001815845955908113,
+      "max_FP32_plus_BF16_bound": 0.006074790697275616,
+      "inside_all_component_bounds": true
+    },
+    {
+      "id": "Mercury_SC_406669",
+      "condition": "norm_only",
+      "max_abs_error_vs_FP64_ideal": 0.0013560642491708963,
+      "max_FP32_plus_BF16_bound": 0.0033069593968727716,
+      "inside_all_component_bounds": true
+    },
+    {
+      "id": "Mercury_SC_406669",
+      "condition": "unrelated_delta",
+      "max_abs_error_vs_FP64_ideal": 0.0019410799027363979,
+      "max_FP32_plus_BF16_bound": 0.004382053984396896,
+      "inside_all_component_bounds": true
+    },
+    {
+      "id": "Mercury_7246873",
+      "condition": "norm_only",
+      "max_abs_error_vs_FP64_ideal": 0.0029425355592682667,
+      "max_FP32_plus_BF16_bound": 0.0053675035989109755,
+      "inside_all_component_bounds": true
+    },
+    {
+      "id": "Mercury_7246873",
+      "condition": "unrelated_delta",
+      "max_abs_error_vs_FP64_ideal": 0.0030154232287513683,
+      "max_FP32_plus_BF16_bound": 0.0049004105770863015,
+      "inside_all_component_bounds": true
+    },
+    {
+      "id": "Mercury_7185448",
+      "condition": "norm_only",
+      "max_abs_error_vs_FP64_ideal": 0.001576301740931818,
+      "max_FP32_plus_BF16_bound": 0.004698867035738282,
+      "inside_all_component_bounds": true
+    },
+    {
+      "id": "Mercury_7185448",
+      "condition": "unrelated_delta",
+      "max_abs_error_vs_FP64_ideal": 0.001740226505402953,
+      "max_FP32_plus_BF16_bound": 0.004738623596839934,
+      "inside_all_component_bounds": true
+    },
+    {
+      "id": "Mercury_410707",
+      "condition": "norm_only",
+      "max_abs_error_vs_FP64_ideal": 0.0015372471207395488,
+      "max_FP32_plus_BF16_bound": 0.003231886325649474,
+      "inside_all_component_bounds": true
+    },
+    {
+      "id": "Mercury_410707",
+      "condition": "unrelated_delta",
+      "max_abs_error_vs_FP64_ideal": 0.0019073724571812,
+      "max_FP32_plus_BF16_bound": 0.0031579266683133297,
+      "inside_all_component_bounds": true
+    },
+    {
+      "id": "Mercury_7215268",
+      "condition": "norm_only",
+      "max_abs_error_vs_FP64_ideal": 0.0018745067725238762,
+      "max_FP32_plus_BF16_bound": 0.00432679644866186,
+      "inside_all_component_bounds": true
+    },
+    {
+      "id": "Mercury_7215268",
+      "condition": "unrelated_delta",
+      "max_abs_error_vs_FP64_ideal": 0.0023035368722144067,
+      "max_FP32_plus_BF16_bound": 0.006823922683797688,
+      "inside_all_component_bounds": true
+    },
+    {
+      "id": "Mercury_7219643",
+      "condition": "norm_only",
+      "max_abs_error_vs_FP64_ideal": 0.001557624077800468,
+      "max_FP32_plus_BF16_bound": 0.0043504780170605245,
+      "inside_all_component_bounds": true
+    },
+    {
+      "id": "Mercury_7219643",
+      "condition": "unrelated_delta",
+      "max_abs_error_vs_FP64_ideal": 0.0038897464009857163,
+      "max_FP32_plus_BF16_bound": 0.005935685206804968,
+      "inside_all_component_bounds": true
+    },
+    {
+      "id": "Mercury_417140",
+      "condition": "norm_only",
+      "max_abs_error_vs_FP64_ideal": 0.0009692998780758688,
+      "max_FP32_plus_BF16_bound": 0.0024423406616249513,
+      "inside_all_component_bounds": true
+    },
+    {
+      "id": "Mercury_417140",
+      "condition": "unrelated_delta",
+      "max_abs_error_vs_FP64_ideal": 0.0015532926367988198,
+      "max_FP32_plus_BF16_bound": 0.0040057247673430255,
+      "inside_all_component_bounds": true
+    },
+    {
+      "id": "Mercury_409819",
+      "condition": "norm_only",
+      "max_abs_error_vs_FP64_ideal": 0.001674718613054127,
+      "max_FP32_plus_BF16_bound": 0.003203834343345315,
+      "inside_all_component_bounds": true
+    },
+    {
+      "id": "Mercury_409819",
+      "condition": "unrelated_delta",
+      "max_abs_error_vs_FP64_ideal": 0.0019523173147061312,
+      "max_FP32_plus_BF16_bound": 0.003662186075921229,
+      "inside_all_component_bounds": true
+    },
+    {
+      "id": "Mercury_SC_407571",
+      "condition": "norm_only",
+      "max_abs_error_vs_FP64_ideal": 0.0009748638524009201,
+      "max_FP32_plus_BF16_bound": 0.003251187220753495,
+      "inside_all_component_bounds": true
+    },
+    {
+      "id": "Mercury_SC_407571",
+      "condition": "unrelated_delta",
+      "max_abs_error_vs_FP64_ideal": 0.001743251133133783,
+      "max_FP32_plus_BF16_bound": 0.004194154018047265,
+      "inside_all_component_bounds": true
+    },
+    {
+      "id": "Mercury_SC_400064",
+      "condition": "norm_only",
+      "max_abs_error_vs_FP64_ideal": 0.0009430420141360307,
+      "max_FP32_plus_BF16_bound": 0.0023435140204225266,
+      "inside_all_component_bounds": true
+    },
+    {
+      "id": "Mercury_SC_400064",
+      "condition": "unrelated_delta",
+      "max_abs_error_vs_FP64_ideal": 0.0012055108072900333,
+      "max_FP32_plus_BF16_bound": 0.004007256338402017,
+      "inside_all_component_bounds": true
+    },
+    {
+      "id": "Mercury_7086223",
+      "condition": "norm_only",
+      "max_abs_error_vs_FP64_ideal": 0.0009743179740508978,
+      "max_FP32_plus_BF16_bound": 0.002362511832120894,
+      "inside_all_component_bounds": true
+    },
+    {
+      "id": "Mercury_7086223",
+      "condition": "unrelated_delta",
+      "max_abs_error_vs_FP64_ideal": 0.000915728088043577,
+      "max_FP32_plus_BF16_bound": 0.002595400178675594,
+      "inside_all_component_bounds": true
+    },
+    {
+      "id": "Mercury_7214463",
+      "condition": "norm_only",
+      "max_abs_error_vs_FP64_ideal": 0.0017042280151799982,
+      "max_FP32_plus_BF16_bound": 0.006263424072207372,
+      "inside_all_component_bounds": true
+    },
+    {
+      "id": "Mercury_7214463",
+      "condition": "unrelated_delta",
+      "max_abs_error_vs_FP64_ideal": 0.002848092285583803,
+      "max_FP32_plus_BF16_bound": 0.007914972559581455,
+      "inside_all_component_bounds": true
+    },
+    {
+      "id": "Mercury_SC_400986",
+      "condition": "norm_only",
+      "max_abs_error_vs_FP64_ideal": 0.001932685146032287,
+      "max_FP32_plus_BF16_bound": 0.004551596419545317,
+      "inside_all_component_bounds": true
+    },
+    {
+      "id": "Mercury_SC_400986",
+      "condition": "unrelated_delta",
+      "max_abs_error_vs_FP64_ideal": 0.0016966694832514229,
+      "max_FP32_plus_BF16_bound": 0.004337313615376892,
+      "inside_all_component_bounds": true
+    },
+    {
+      "id": "Mercury_401242",
+      "condition": "norm_only",
+      "max_abs_error_vs_FP64_ideal": 0.0016831531098193686,
+      "max_FP32_plus_BF16_bound": 0.0040263937933087135,
+      "inside_all_component_bounds": true
+    },
+    {
+      "id": "Mercury_401242",
+      "condition": "unrelated_delta",
+      "max_abs_error_vs_FP64_ideal": 0.0035137298233083314,
+      "max_FP32_plus_BF16_bound": 0.008007191020803143,
+      "inside_all_component_bounds": true
+    },
+    {
+      "id": "NCEOGA_2013_5_29",
+      "condition": "norm_only",
+      "max_abs_error_vs_FP64_ideal": 0.0011601311206250742,
+      "max_FP32_plus_BF16_bound": 0.004775668599464388,
+      "inside_all_component_bounds": true
+    },
+    {
+      "id": "NCEOGA_2013_5_29",
+      "condition": "unrelated_delta",
+      "max_abs_error_vs_FP64_ideal": 0.001316476755822582,
+      "max_FP32_plus_BF16_bound": 0.00462221422989977,
+      "inside_all_component_bounds": true
+    },
+    {
+      "id": "Mercury_400761",
+      "condition": "norm_only",
+      "max_abs_error_vs_FP64_ideal": 0.0018794122398780866,
+      "max_FP32_plus_BF16_bound": 0.003792366976220582,
+      "inside_all_component_bounds": true
+    },
+    {
+      "id": "Mercury_400761",
+      "condition": "unrelated_delta",
+      "max_abs_error_vs_FP64_ideal": 0.0019472014360241152,
+      "max_FP32_plus_BF16_bound": 0.0032022124812698376,
+      "inside_all_component_bounds": true
+    },
+    {
+      "id": "Mercury_416594",
+      "condition": "norm_only",
+      "max_abs_error_vs_FP64_ideal": 0.0010167143904794562,
+      "max_FP32_plus_BF16_bound": 0.005810616753794118,
+      "inside_all_component_bounds": true
+    },
+    {
+      "id": "Mercury_416594",
+      "condition": "unrelated_delta",
+      "max_abs_error_vs_FP64_ideal": 0.0018842222774504425,
+      "max_FP32_plus_BF16_bound": 0.008330126370322603,
+      "inside_all_component_bounds": true
+    },
+    {
+      "id": "Mercury_7165060",
+      "condition": "norm_only",
+      "max_abs_error_vs_FP64_ideal": 0.0017995134827551995,
+      "max_FP32_plus_BF16_bound": 0.0033275236473853187,
+      "inside_all_component_bounds": true
+    },
+    {
+      "id": "Mercury_7165060",
+      "condition": "unrelated_delta",
+      "max_abs_error_vs_FP64_ideal": 0.0037028813967285856,
+      "max_FP32_plus_BF16_bound": 0.006127176010959045,
+      "inside_all_component_bounds": true
+    },
+    {
+      "id": "Mercury_SC_416112",
+      "condition": "norm_only",
+      "max_abs_error_vs_FP64_ideal": 0.000932524675664459,
+      "max_FP32_plus_BF16_bound": 0.003518013511262758,
+      "inside_all_component_bounds": true
+    },
+    {
+      "id": "Mercury_SC_416112",
+      "condition": "unrelated_delta",
+      "max_abs_error_vs_FP64_ideal": 0.001855218629188915,
+      "max_FP32_plus_BF16_bound": 0.0034626242496513613,
+      "inside_all_component_bounds": true
+    },
+    {
+      "id": "CSZ20059",
+      "condition": "norm_only",
+      "max_abs_error_vs_FP64_ideal": 0.0015909690999389436,
+      "max_FP32_plus_BF16_bound": 0.0032076389968081305,
+      "inside_all_component_bounds": true
+    },
+    {
+      "id": "CSZ20059",
+      "condition": "unrelated_delta",
+      "max_abs_error_vs_FP64_ideal": 0.001645986412732059,
+      "max_FP32_plus_BF16_bound": 0.0037586284021488134,
+      "inside_all_component_bounds": true
+    },
+    {
+      "id": "Mercury_7041860",
+      "condition": "norm_only",
+      "max_abs_error_vs_FP64_ideal": 0.0014016020817982922,
+      "max_FP32_plus_BF16_bound": 0.005754424696118671,
+      "inside_all_component_bounds": true
+    },
+    {
+      "id": "Mercury_7041860",
+      "condition": "unrelated_delta",
+      "max_abs_error_vs_FP64_ideal": 0.0019610010951456314,
+      "max_FP32_plus_BF16_bound": 0.005849493031268892,
+      "inside_all_component_bounds": true
+    },
+    {
+      "id": "AKDE&ED_2008_8_12",
+      "condition": "norm_only",
+      "max_abs_error_vs_FP64_ideal": 0.0018851571319044025,
+      "max_FP32_plus_BF16_bound": 0.004132135566346661,
+      "inside_all_component_bounds": true
+    },
+    {
+      "id": "AKDE&ED_2008_8_12",
+      "condition": "unrelated_delta",
+      "max_abs_error_vs_FP64_ideal": 0.0017253318021374087,
+      "max_FP32_plus_BF16_bound": 0.006797539994511884,
+      "inside_all_component_bounds": true
+    },
+    {
+      "id": "NYSEDREGENTS_2004_4_12",
+      "condition": "norm_only",
+      "max_abs_error_vs_FP64_ideal": 0.001945750666994095,
+      "max_FP32_plus_BF16_bound": 0.005092602658831668,
+      "inside_all_component_bounds": true
+    },
+    {
+      "id": "NYSEDREGENTS_2004_4_12",
+      "condition": "unrelated_delta",
+      "max_abs_error_vs_FP64_ideal": 0.003133483314841534,
+      "max_FP32_plus_BF16_bound": 0.006007898845501875,
+      "inside_all_component_bounds": true
+    },
+    {
+      "id": "VASoL_2010_3_18",
+      "condition": "norm_only",
+      "max_abs_error_vs_FP64_ideal": 0.0018605072149548985,
+      "max_FP32_plus_BF16_bound": 0.0036684328696214258,
+      "inside_all_component_bounds": true
+    },
+    {
+      "id": "VASoL_2010_3_18",
+      "condition": "unrelated_delta",
+      "max_abs_error_vs_FP64_ideal": 0.0009353374718801266,
+      "max_FP32_plus_BF16_bound": 0.0028652851628569427,
+      "inside_all_component_bounds": true
+    },
+    {
+      "id": "Mercury_SC_415706",
+      "condition": "norm_only",
+      "max_abs_error_vs_FP64_ideal": 0.0018860651958680918,
+      "max_FP32_plus_BF16_bound": 0.0030436788956542853,
+      "inside_all_component_bounds": true
+    },
+    {
+      "id": "Mercury_SC_415706",
+      "condition": "unrelated_delta",
+      "max_abs_error_vs_FP64_ideal": 0.0018352253667337504,
+      "max_FP32_plus_BF16_bound": 0.003598305965859752,
+      "inside_all_component_bounds": true
+    },
+    {
+      "id": "Mercury_7188703",
+      "condition": "norm_only",
+      "max_abs_error_vs_FP64_ideal": 0.001865359769910091,
+      "max_FP32_plus_BF16_bound": 0.003829634395139097,
+      "inside_all_component_bounds": true
+    },
+    {
+      "id": "Mercury_7188703",
+      "condition": "unrelated_delta",
+      "max_abs_error_vs_FP64_ideal": 0.0018377016609990582,
+      "max_FP32_plus_BF16_bound": 0.00634138994491071,
+      "inside_all_component_bounds": true
+    },
+    {
+      "id": "Mercury_7245070",
+      "condition": "norm_only",
+      "max_abs_error_vs_FP64_ideal": 0.0017422085028475642,
+      "max_FP32_plus_BF16_bound": 0.0030181554633436445,
+      "inside_all_component_bounds": true
+    },
+    {
+      "id": "Mercury_7245070",
+      "condition": "unrelated_delta",
+      "max_abs_error_vs_FP64_ideal": 0.0018631227237418946,
+      "max_FP32_plus_BF16_bound": 0.0035692142914395385,
+      "inside_all_component_bounds": true
+    },
+    {
+      "id": "Mercury_7197225",
+      "condition": "norm_only",
+      "max_abs_error_vs_FP64_ideal": 0.0009542362506804181,
+      "max_FP32_plus_BF16_bound": 0.005195625045977499,
+      "inside_all_component_bounds": true
+    },
+    {
+      "id": "Mercury_7197225",
+      "condition": "unrelated_delta",
+      "max_abs_error_vs_FP64_ideal": 0.001547475491043948,
+      "max_FP32_plus_BF16_bound": 0.004408625055922882,
+      "inside_all_component_bounds": true
+    },
+    {
+      "id": "Mercury_177328",
+      "condition": "norm_only",
+      "max_abs_error_vs_FP64_ideal": 0.003664729819755408,
+      "max_FP32_plus_BF16_bound": 0.007684200388041394,
+      "inside_all_component_bounds": true
+    },
+    {
+      "id": "Mercury_177328",
+      "condition": "unrelated_delta",
+      "max_abs_error_vs_FP64_ideal": 0.0033985675092123024,
+      "max_FP32_plus_BF16_bound": 0.009563905267734181,
+      "inside_all_component_bounds": true
+    },
+    {
+      "id": "Mercury_SC_407137",
+      "condition": "norm_only",
+      "max_abs_error_vs_FP64_ideal": 0.0015822437428445468,
+      "max_FP32_plus_BF16_bound": 0.005752096736245077,
+      "inside_all_component_bounds": true
+    },
+    {
+      "id": "Mercury_SC_407137",
+      "condition": "unrelated_delta",
+      "max_abs_error_vs_FP64_ideal": 0.0018662398349761355,
+      "max_FP32_plus_BF16_bound": 0.007129537055309417,
+      "inside_all_component_bounds": true
+    },
+    {
+      "id": "MSA_2013_5_33",
+      "condition": "norm_only",
+      "max_abs_error_vs_FP64_ideal": 0.0025835716055426783,
+      "max_FP32_plus_BF16_bound": 0.006421627380361615,
+      "inside_all_component_bounds": true
+    },
+    {
+      "id": "MSA_2013_5_33",
+      "condition": "unrelated_delta",
+      "max_abs_error_vs_FP64_ideal": 0.0023071556949236793,
+      "max_FP32_plus_BF16_bound": 0.007813446955248916,
+      "inside_all_component_bounds": true
+    },
+    {
+      "id": "MDSA_2009_5_17",
+      "condition": "norm_only",
+      "max_abs_error_vs_FP64_ideal": 0.0014269491987741745,
+      "max_FP32_plus_BF16_bound": 0.005662917856718441,
+      "inside_all_component_bounds": true
+    },
+    {
+      "id": "MDSA_2009_5_17",
+      "condition": "unrelated_delta",
+      "max_abs_error_vs_FP64_ideal": 0.0020714077279528897,
+      "max_FP32_plus_BF16_bound": 0.008140194093914857,
+      "inside_all_component_bounds": true
+    },
+    {
+      "id": "NYSEDREGENTS_2007_8_23",
+      "condition": "norm_only",
+      "max_abs_error_vs_FP64_ideal": 0.0016430207854226664,
+      "max_FP32_plus_BF16_bound": 0.004505415590820255,
+      "inside_all_component_bounds": true
+    },
+    {
+      "id": "NYSEDREGENTS_2007_8_23",
+      "condition": "unrelated_delta",
+      "max_abs_error_vs_FP64_ideal": 0.003847375155368482,
+      "max_FP32_plus_BF16_bound": 0.008655886838106133,
+      "inside_all_component_bounds": true
+    },
+    {
+      "id": "MEA_2010_8_20-v1",
+      "condition": "norm_only",
+      "max_abs_error_vs_FP64_ideal": 0.0007081483473879158,
+      "max_FP32_plus_BF16_bound": 0.002140252340745927,
+      "inside_all_component_bounds": true
+    },
+    {
+      "id": "MEA_2010_8_20-v1",
+      "condition": "unrelated_delta",
+      "max_abs_error_vs_FP64_ideal": 0.0019301431162697114,
+      "max_FP32_plus_BF16_bound": 0.003928632214851379,
+      "inside_all_component_bounds": true
+    },
+    {
+      "id": "Mercury_SC_402170",
+      "condition": "norm_only",
+      "max_abs_error_vs_FP64_ideal": 0.001428925595111652,
+      "max_FP32_plus_BF16_bound": 0.004263582186556394,
+      "inside_all_component_bounds": true
+    },
+    {
+      "id": "Mercury_SC_402170",
+      "condition": "unrelated_delta",
+      "max_abs_error_vs_FP64_ideal": 0.0018235911513916347,
+      "max_FP32_plus_BF16_bound": 0.0037452554531055837,
+      "inside_all_component_bounds": true
+    },
+    {
+      "id": "MSA_2015_8_31",
+      "condition": "norm_only",
+      "max_abs_error_vs_FP64_ideal": 0.0008851594764016646,
+      "max_FP32_plus_BF16_bound": 0.0032274738320261574,
+      "inside_all_component_bounds": true
+    },
+    {
+      "id": "MSA_2015_8_31",
+      "condition": "unrelated_delta",
+      "max_abs_error_vs_FP64_ideal": 0.0019040360909284848,
+      "max_FP32_plus_BF16_bound": 0.0033892349175066536,
+      "inside_all_component_bounds": true
+    },
+    {
+      "id": "LEAP_2001_4_10241",
+      "condition": "norm_only",
+      "max_abs_error_vs_FP64_ideal": 0.001767503059800224,
+      "max_FP32_plus_BF16_bound": 0.002740560079400832,
+      "inside_all_component_bounds": true
+    },
+    {
+      "id": "LEAP_2001_4_10241",
+      "condition": "unrelated_delta",
+      "max_abs_error_vs_FP64_ideal": 0.00143255482531357,
+      "max_FP32_plus_BF16_bound": 0.003279801055165447,
+      "inside_all_component_bounds": true
+    },
+    {
+      "id": "MEA_2016_5_1",
+      "condition": "norm_only",
+      "max_abs_error_vs_FP64_ideal": 0.0018054566803180627,
+      "max_FP32_plus_BF16_bound": 0.004729161916564424,
+      "inside_all_component_bounds": true
+    },
+    {
+      "id": "MEA_2016_5_1",
+      "condition": "unrelated_delta",
+      "max_abs_error_vs_FP64_ideal": 0.000967468081451428,
+      "max_FP32_plus_BF16_bound": 0.003669270029608928,
+      "inside_all_component_bounds": true
+    },
+    {
+      "id": "Mercury_SC_415702",
+      "condition": "norm_only",
+      "max_abs_error_vs_FP64_ideal": 0.0012161453963701607,
+      "max_FP32_plus_BF16_bound": 0.00839256271987086,
+      "inside_all_component_bounds": true
+    },
+    {
+      "id": "Mercury_SC_415702",
+      "condition": "unrelated_delta",
+      "max_abs_error_vs_FP64_ideal": 0.0014999405125069032,
+      "max_FP32_plus_BF16_bound": 0.006319590400964405,
+      "inside_all_component_bounds": true
+    },
+    {
+      "id": "Mercury_7212030",
+      "condition": "norm_only",
+      "max_abs_error_vs_FP64_ideal": 0.0009595485476988075,
+      "max_FP32_plus_BF16_bound": 0.0023976378271042807,
+      "inside_all_component_bounds": true
+    },
+    {
+      "id": "Mercury_7212030",
+      "condition": "unrelated_delta",
+      "max_abs_error_vs_FP64_ideal": 0.0009637311659372316,
+      "max_FP32_plus_BF16_bound": 0.0025584546499275544,
+      "inside_all_component_bounds": true
+    },
+    {
+      "id": "CSZ_2004_5_CSZ10003",
+      "condition": "norm_only",
+      "max_abs_error_vs_FP64_ideal": 0.0016735096257702864,
+      "max_FP32_plus_BF16_bound": 0.00389056372377181,
+      "inside_all_component_bounds": true
+    },
+    {
+      "id": "CSZ_2004_5_CSZ10003",
+      "condition": "unrelated_delta",
+      "max_abs_error_vs_FP64_ideal": 0.0014107696282286142,
+      "max_FP32_plus_BF16_bound": 0.0037028947285282386,
+      "inside_all_component_bounds": true
+    },
+    {
+      "id": "MEAP_2005_8_17",
+      "condition": "norm_only",
+      "max_abs_error_vs_FP64_ideal": 0.001522876202878054,
+      "max_FP32_plus_BF16_bound": 0.005977164434720276,
+      "inside_all_component_bounds": true
+    },
+    {
+      "id": "MEAP_2005_8_17",
+      "condition": "unrelated_delta",
+      "max_abs_error_vs_FP64_ideal": 0.0018275735327331066,
+      "max_FP32_plus_BF16_bound": 0.007475416244869347,
+      "inside_all_component_bounds": true
+    },
+    {
+      "id": "Mercury_SC_401369",
+      "condition": "norm_only",
+      "max_abs_error_vs_FP64_ideal": 0.000840940055048367,
+      "max_FP32_plus_BF16_bound": 0.003121696412151751,
+      "inside_all_component_bounds": true
+    },
+    {
+      "id": "Mercury_SC_401369",
+      "condition": "unrelated_delta",
+      "max_abs_error_vs_FP64_ideal": 0.0017924616682509775,
+      "max_FP32_plus_BF16_bound": 0.004556651809846896,
+      "inside_all_component_bounds": true
+    },
+    {
+      "id": "Mercury_7027353",
+      "condition": "norm_only",
+      "max_abs_error_vs_FP64_ideal": 0.0013322933945618676,
+      "max_FP32_plus_BF16_bound": 0.0026844307835775464,
+      "inside_all_component_bounds": true
+    },
+    {
+      "id": "Mercury_7027353",
+      "condition": "unrelated_delta",
+      "max_abs_error_vs_FP64_ideal": 0.0009632079144178962,
+      "max_FP32_plus_BF16_bound": 0.0031679419037169776,
+      "inside_all_component_bounds": true
+    },
+    {
+      "id": "MDSA_2009_8_44",
+      "condition": "norm_only",
+      "max_abs_error_vs_FP64_ideal": 0.0016881032401256935,
+      "max_FP32_plus_BF16_bound": 0.0040922256823135855,
+      "inside_all_component_bounds": true
+    },
+    {
+      "id": "MDSA_2009_8_44",
+      "condition": "unrelated_delta",
+      "max_abs_error_vs_FP64_ideal": 0.0016916048900919023,
+      "max_FP32_plus_BF16_bound": 0.003581447759140127,
+      "inside_all_component_bounds": true
+    },
+    {
+      "id": "NCEOGA_2013_8_8",
+      "condition": "norm_only",
+      "max_abs_error_vs_FP64_ideal": 0.0017088269298010106,
+      "max_FP32_plus_BF16_bound": 0.003917266838622445,
+      "inside_all_component_bounds": true
+    },
+    {
+      "id": "NCEOGA_2013_8_8",
+      "condition": "unrelated_delta",
+      "max_abs_error_vs_FP64_ideal": 0.0037297961200013496,
+      "max_FP32_plus_BF16_bound": 0.007539310865959551,
+      "inside_all_component_bounds": true
+    },
+    {
+      "id": "Mercury_7038150",
+      "condition": "norm_only",
+      "max_abs_error_vs_FP64_ideal": 0.0012401006472730902,
+      "max_FP32_plus_BF16_bound": 0.0032410003132586182,
+      "inside_all_component_bounds": true
+    },
+    {
+      "id": "Mercury_7038150",
+      "condition": "unrelated_delta",
+      "max_abs_error_vs_FP64_ideal": 0.0017844780696631979,
+      "max_FP32_plus_BF16_bound": 0.004083276410882806,
+      "inside_all_component_bounds": true
+    },
+    {
+      "id": "ACTAAP_2008_7_2",
+      "condition": "norm_only",
+      "max_abs_error_vs_FP64_ideal": 0.0019008326011049625,
+      "max_FP32_plus_BF16_bound": 0.0034360559546995264,
+      "inside_all_component_bounds": true
+    },
+    {
+      "id": "ACTAAP_2008_7_2",
+      "condition": "unrelated_delta",
+      "max_abs_error_vs_FP64_ideal": 0.0018857795971309876,
+      "max_FP32_plus_BF16_bound": 0.004090716172591115,
+      "inside_all_component_bounds": true
+    },
+    {
+      "id": "Mercury_406888",
+      "condition": "norm_only",
+      "max_abs_error_vs_FP64_ideal": 0.0018745323041099438,
+      "max_FP32_plus_BF16_bound": 0.004835258518603328,
+      "inside_all_component_bounds": true
+    },
+    {
+      "id": "Mercury_406888",
+      "condition": "unrelated_delta",
+      "max_abs_error_vs_FP64_ideal": 0.0019443493107386134,
+      "max_FP32_plus_BF16_bound": 0.0051091991430687825,
+      "inside_all_component_bounds": true
+    },
+    {
+      "id": "ACTAAP_2015_7_2",
+      "condition": "norm_only",
+      "max_abs_error_vs_FP64_ideal": 0.0017236765078039173,
+      "max_FP32_plus_BF16_bound": 0.004454463911462769,
+      "inside_all_component_bounds": true
+    },
+    {
+      "id": "ACTAAP_2015_7_2",
+      "condition": "unrelated_delta",
+      "max_abs_error_vs_FP64_ideal": 0.003663791894710222,
+      "max_FP32_plus_BF16_bound": 0.0054378378706408945,
+      "inside_all_component_bounds": true
+    },
+    {
+      "id": "Mercury_7012670",
+      "condition": "norm_only",
+      "max_abs_error_vs_FP64_ideal": 0.0014082657754865835,
+      "max_FP32_plus_BF16_bound": 0.003009428669329127,
+      "inside_all_component_bounds": true
+    },
+    {
+      "id": "Mercury_7012670",
+      "condition": "unrelated_delta",
+      "max_abs_error_vs_FP64_ideal": 0.0018635693348687532,
+      "max_FP32_plus_BF16_bound": 0.0039696760953699985,
+      "inside_all_component_bounds": true
+    },
+    {
+      "id": "ACTAAP_2007_7_24",
+      "condition": "norm_only",
+      "max_abs_error_vs_FP64_ideal": 0.001940354576988157,
+      "max_FP32_plus_BF16_bound": 0.004332183094258736,
+      "inside_all_component_bounds": true
+    },
+    {
+      "id": "ACTAAP_2007_7_24",
+      "condition": "unrelated_delta",
+      "max_abs_error_vs_FP64_ideal": 0.0019243550184517844,
+      "max_FP32_plus_BF16_bound": 0.0050410299735997996,
+      "inside_all_component_bounds": true
+    },
+    {
+      "id": "Mercury_7168665",
+      "condition": "norm_only",
+      "max_abs_error_vs_FP64_ideal": 0.0015822980963910993,
+      "max_FP32_plus_BF16_bound": 0.004806766553718605,
+      "inside_all_component_bounds": true
+    },
+    {
+      "id": "Mercury_7168665",
+      "condition": "unrelated_delta",
+      "max_abs_error_vs_FP64_ideal": 0.001814526433531416,
+      "max_FP32_plus_BF16_bound": 0.004489355079777156,
+      "inside_all_component_bounds": true
+    },
+    {
+      "id": "NCEOGA_2013_5_10",
+      "condition": "norm_only",
+      "max_abs_error_vs_FP64_ideal": 0.0018540881213728877,
+      "max_FP32_plus_BF16_bound": 0.003918497474900983,
+      "inside_all_component_bounds": true
+    },
+    {
+      "id": "NCEOGA_2013_5_10",
+      "condition": "unrelated_delta",
+      "max_abs_error_vs_FP64_ideal": 0.0018909599014321765,
+      "max_FP32_plus_BF16_bound": 0.004354377761514501,
+      "inside_all_component_bounds": true
+    },
+    {
+      "id": "ACTAAP_2008_7_10",
+      "condition": "norm_only",
+      "max_abs_error_vs_FP64_ideal": 0.0018986714152167128,
+      "max_FP32_plus_BF16_bound": 0.003781484863175229,
+      "inside_all_component_bounds": true
+    },
+    {
+      "id": "ACTAAP_2008_7_10",
+      "condition": "unrelated_delta",
+      "max_abs_error_vs_FP64_ideal": 0.0019136352771927934,
+      "max_FP32_plus_BF16_bound": 0.003995464928612689,
+      "inside_all_component_bounds": true
+    },
+    {
+      "id": "Mercury_7139125",
+      "condition": "norm_only",
+      "max_abs_error_vs_FP64_ideal": 0.0019294503886320147,
+      "max_FP32_plus_BF16_bound": 0.006014615010949413,
+      "inside_all_component_bounds": true
+    },
+    {
+      "id": "Mercury_7139125",
+      "condition": "unrelated_delta",
+      "max_abs_error_vs_FP64_ideal": 0.0018322961788976855,
+      "max_FP32_plus_BF16_bound": 0.00767131134162323,
+      "inside_all_component_bounds": true
+    },
+    {
+      "id": "Mercury_7099365",
+      "condition": "norm_only",
+      "max_abs_error_vs_FP64_ideal": 0.0019323292337015685,
+      "max_FP32_plus_BF16_bound": 0.007153091201920432,
+      "inside_all_component_bounds": true
+    },
+    {
+      "id": "Mercury_7099365",
+      "condition": "unrelated_delta",
+      "max_abs_error_vs_FP64_ideal": 0.0020291379817869437,
+      "max_FP32_plus_BF16_bound": 0.009011712235482177,
+      "inside_all_component_bounds": true
+    },
+    {
+      "id": "Mercury_7154350",
+      "condition": "norm_only",
+      "max_abs_error_vs_FP64_ideal": 0.0019270701889582131,
+      "max_FP32_plus_BF16_bound": 0.0036613953530111533,
+      "inside_all_component_bounds": true
+    },
+    {
+      "id": "Mercury_7154350",
+      "condition": "unrelated_delta",
+      "max_abs_error_vs_FP64_ideal": 0.0017180067114808129,
+      "max_FP32_plus_BF16_bound": 0.005003715735844447,
+      "inside_all_component_bounds": true
+    },
+    {
+      "id": "Mercury_7027020",
+      "condition": "norm_only",
+      "max_abs_error_vs_FP64_ideal": 0.0017183032372205531,
+      "max_FP32_plus_BF16_bound": 0.007663113541821321,
+      "inside_all_component_bounds": true
+    },
+    {
+      "id": "Mercury_7027020",
+      "condition": "unrelated_delta",
+      "max_abs_error_vs_FP64_ideal": 0.0022330131274843623,
+      "max_FP32_plus_BF16_bound": 0.007795675759787407,
+      "inside_all_component_bounds": true
+    },
+    {
+      "id": "MDSA_2007_8_19",
+      "condition": "norm_only",
+      "max_abs_error_vs_FP64_ideal": 0.0018097092665516623,
+      "max_FP32_plus_BF16_bound": 0.006270319366113712,
+      "inside_all_component_bounds": true
+    },
+    {
+      "id": "MDSA_2007_8_19",
+      "condition": "unrelated_delta",
+      "max_abs_error_vs_FP64_ideal": 0.0019032430089281904,
+      "max_FP32_plus_BF16_bound": 0.006832516574010827,
+      "inside_all_component_bounds": true
+    },
+    {
+      "id": "CSZ30771",
+      "condition": "norm_only",
+      "max_abs_error_vs_FP64_ideal": 0.0009490073799757193,
+      "max_FP32_plus_BF16_bound": 0.0027538842665780806,
+      "inside_all_component_bounds": true
+    },
+    {
+      "id": "CSZ30771",
+      "condition": "unrelated_delta",
+      "max_abs_error_vs_FP64_ideal": 0.0019043044653831442,
+      "max_FP32_plus_BF16_bound": 0.003955047365602845,
+      "inside_all_component_bounds": true
+    },
+    {
+      "id": "Mercury_7163258",
+      "condition": "norm_only",
+      "max_abs_error_vs_FP64_ideal": 0.0014217812754814263,
+      "max_FP32_plus_BF16_bound": 0.003297460426132662,
+      "inside_all_component_bounds": true
+    },
+    {
+      "id": "Mercury_7163258",
+      "condition": "unrelated_delta",
+      "max_abs_error_vs_FP64_ideal": 0.0016575722658529468,
+      "max_FP32_plus_BF16_bound": 0.004190531329507862,
+      "inside_all_component_bounds": true
+    },
+    {
+      "id": "Mercury_7044048",
+      "condition": "norm_only",
+      "max_abs_error_vs_FP64_ideal": 0.0013066870185676205,
+      "max_FP32_plus_BF16_bound": 0.0032091529100286543,
+      "inside_all_component_bounds": true
+    },
+    {
+      "id": "Mercury_7044048",
+      "condition": "unrelated_delta",
+      "max_abs_error_vs_FP64_ideal": 0.0029533471402167777,
+      "max_FP32_plus_BF16_bound": 0.005014615375862857,
+      "inside_all_component_bounds": true
+    },
+    {
+      "id": "Mercury_SC_412487",
+      "condition": "norm_only",
+      "max_abs_error_vs_FP64_ideal": 0.0009740942814001063,
+      "max_FP32_plus_BF16_bound": 0.0037530069691531537,
+      "inside_all_component_bounds": true
+    },
+    {
+      "id": "Mercury_SC_412487",
+      "condition": "unrelated_delta",
+      "max_abs_error_vs_FP64_ideal": 0.002515118598572341,
+      "max_FP32_plus_BF16_bound": 0.00506423693378463,
+      "inside_all_component_bounds": true
+    },
+    {
+      "id": "NYSEDREGENTS_2005_8_1",
+      "condition": "norm_only",
+      "max_abs_error_vs_FP64_ideal": 0.0029169392968266816,
+      "max_FP32_plus_BF16_bound": 0.009463354717191466,
+      "inside_all_component_bounds": true
+    },
+    {
+      "id": "NYSEDREGENTS_2005_8_1",
+      "condition": "unrelated_delta",
+      "max_abs_error_vs_FP64_ideal": 0.0018412751011092077,
+      "max_FP32_plus_BF16_bound": 0.008260712191988356,
+      "inside_all_component_bounds": true
+    },
+    {
+      "id": "Mercury_7126683",
+      "condition": "norm_only",
+      "max_abs_error_vs_FP64_ideal": 0.001972849016570244,
+      "max_FP32_plus_BF16_bound": 0.0078081646744413,
+      "inside_all_component_bounds": true
+    },
+    {
+      "id": "Mercury_7126683",
+      "condition": "unrelated_delta",
+      "max_abs_error_vs_FP64_ideal": 0.003337147131193152,
+      "max_FP32_plus_BF16_bound": 0.006097414937525841,
+      "inside_all_component_bounds": true
+    },
+    {
+      "id": "Mercury_7026338",
+      "condition": "norm_only",
+      "max_abs_error_vs_FP64_ideal": 0.0009701140563210808,
+      "max_FP32_plus_BF16_bound": 0.004283872973037669,
+      "inside_all_component_bounds": true
+    },
+    {
+      "id": "Mercury_7026338",
+      "condition": "unrelated_delta",
+      "max_abs_error_vs_FP64_ideal": 0.0016737252122673851,
+      "max_FP32_plus_BF16_bound": 0.0032695119066771918,
+      "inside_all_component_bounds": true
+    },
+    {
+      "id": "Mercury_7214603",
+      "condition": "norm_only",
+      "max_abs_error_vs_FP64_ideal": 0.0009717466349018489,
+      "max_FP32_plus_BF16_bound": 0.004041969874715985,
+      "inside_all_component_bounds": true
+    },
+    {
+      "id": "Mercury_7214603",
+      "condition": "unrelated_delta",
+      "max_abs_error_vs_FP64_ideal": 0.001804332598607239,
+      "max_FP32_plus_BF16_bound": 0.003101451061784223,
+      "inside_all_component_bounds": true
+    },
+    {
+      "id": "Mercury_SC_405460",
+      "condition": "norm_only",
+      "max_abs_error_vs_FP64_ideal": 0.0009163579786621301,
+      "max_FP32_plus_BF16_bound": 0.0028930043467222904,
+      "inside_all_component_bounds": true
+    },
+    {
+      "id": "Mercury_SC_405460",
+      "condition": "unrelated_delta",
+      "max_abs_error_vs_FP64_ideal": 0.0009664178523232092,
+      "max_FP32_plus_BF16_bound": 0.003053007310128131,
+      "inside_all_component_bounds": true
+    },
+    {
+      "id": "TIMSS_2011_8_pg100",
+      "condition": "norm_only",
+      "max_abs_error_vs_FP64_ideal": 0.0011736057570425062,
+      "max_FP32_plus_BF16_bound": 0.002760152164976955,
+      "inside_all_component_bounds": true
+    },
+    {
+      "id": "TIMSS_2011_8_pg100",
+      "condition": "unrelated_delta",
+      "max_abs_error_vs_FP64_ideal": 0.0018202589358680132,
+      "max_FP32_plus_BF16_bound": 0.002968316947396127,
+      "inside_all_component_bounds": true
+    },
+    {
+      "id": "MCAS_2013_5_29405",
+      "condition": "norm_only",
+      "max_abs_error_vs_FP64_ideal": 0.0025252280605572164,
+      "max_FP32_plus_BF16_bound": 0.008805034924856799,
+      "inside_all_component_bounds": true
+    },
+    {
+      "id": "MCAS_2013_5_29405",
+      "condition": "unrelated_delta",
+      "max_abs_error_vs_FP64_ideal": 0.0019242335299258784,
+      "max_FP32_plus_BF16_bound": 0.006779493864184461,
+      "inside_all_component_bounds": true
+    },
+    {
+      "id": "Mercury_7133700",
+      "condition": "norm_only",
+      "max_abs_error_vs_FP64_ideal": 0.002632765775491208,
+      "max_FP32_plus_BF16_bound": 0.005298551945105587,
+      "inside_all_component_bounds": true
+    },
+    {
+      "id": "Mercury_7133700",
+      "condition": "unrelated_delta",
+      "max_abs_error_vs_FP64_ideal": 0.0017566253120656627,
+      "max_FP32_plus_BF16_bound": 0.0036556284860832875,
+      "inside_all_component_bounds": true
+    },
+    {
+      "id": "Mercury_415546",
+      "condition": "norm_only",
+      "max_abs_error_vs_FP64_ideal": 0.0019041809531448184,
+      "max_FP32_plus_BF16_bound": 0.0039866213553176495,
+      "inside_all_component_bounds": true
+    },
+    {
+      "id": "Mercury_415546",
+      "condition": "unrelated_delta",
+      "max_abs_error_vs_FP64_ideal": 0.0018279927200527402,
+      "max_FP32_plus_BF16_bound": 0.004040412495412634,
+      "inside_all_component_bounds": true
+    },
+    {
+      "id": "Mercury_7219345",
+      "condition": "norm_only",
+      "max_abs_error_vs_FP64_ideal": 0.001842528305465052,
+      "max_FP32_plus_BF16_bound": 0.004184371123268804,
+      "inside_all_component_bounds": true
+    },
+    {
+      "id": "Mercury_7219345",
+      "condition": "unrelated_delta",
+      "max_abs_error_vs_FP64_ideal": 0.0037363573658424354,
+      "max_FP32_plus_BF16_bound": 0.00837734466718426,
+      "inside_all_component_bounds": true
+    },
+    {
+      "id": "TIMSS_2007_8_pg128",
+      "condition": "norm_only",
+      "max_abs_error_vs_FP64_ideal": 0.001780328392044006,
+      "max_FP32_plus_BF16_bound": 0.005196360968108859,
+      "inside_all_component_bounds": true
+    },
+    {
+      "id": "TIMSS_2007_8_pg128",
+      "condition": "unrelated_delta",
+      "max_abs_error_vs_FP64_ideal": 0.001771879770951057,
+      "max_FP32_plus_BF16_bound": 0.006030119663906587,
+      "inside_all_component_bounds": true
+    },
+    {
+      "id": "Mercury_SC_401284",
+      "condition": "norm_only",
+      "max_abs_error_vs_FP64_ideal": 0.00201748774922339,
+      "max_FP32_plus_BF16_bound": 0.005212957891439545,
+      "inside_all_component_bounds": true
+    },
+    {
+      "id": "Mercury_SC_401284",
+      "condition": "unrelated_delta",
+      "max_abs_error_vs_FP64_ideal": 0.0009672810539485543,
+      "max_FP32_plus_BF16_bound": 0.004293546035891658,
+      "inside_all_component_bounds": true
+    },
+    {
+      "id": "MCAS_2008_8_5719",
+      "condition": "norm_only",
+      "max_abs_error_vs_FP64_ideal": 0.001648446045874996,
+      "max_FP32_plus_BF16_bound": 0.003661371819370228,
+      "inside_all_component_bounds": true
+    },
+    {
+      "id": "MCAS_2008_8_5719",
+      "condition": "unrelated_delta",
+      "max_abs_error_vs_FP64_ideal": 0.0033601500062587775,
+      "max_FP32_plus_BF16_bound": 0.0065868828165119644,
+      "inside_all_component_bounds": true
+    },
+    {
+      "id": "MCAS_1998_8_25",
+      "condition": "norm_only",
+      "max_abs_error_vs_FP64_ideal": 0.0018311163235393835,
+      "max_FP32_plus_BF16_bound": 0.007252193329073285,
+      "inside_all_component_bounds": true
+    },
+    {
+      "id": "MCAS_1998_8_25",
+      "condition": "unrelated_delta",
+      "max_abs_error_vs_FP64_ideal": 0.0029760773560683074,
+      "max_FP32_plus_BF16_bound": 0.008449968905434797,
+      "inside_all_component_bounds": true
+    },
+    {
+      "id": "Mercury_SC_401836",
+      "condition": "norm_only",
+      "max_abs_error_vs_FP64_ideal": 0.001026075177399166,
+      "max_FP32_plus_BF16_bound": 0.0034111447235089486,
+      "inside_all_component_bounds": true
+    },
+    {
+      "id": "Mercury_SC_401836",
+      "condition": "unrelated_delta",
+      "max_abs_error_vs_FP64_ideal": 0.0019446087890596653,
+      "max_FP32_plus_BF16_bound": 0.004502357611060917,
+      "inside_all_component_bounds": true
+    },
+    {
+      "id": "Mercury_7080535",
+      "condition": "norm_only",
+      "max_abs_error_vs_FP64_ideal": 0.0018924023254129896,
+      "max_FP32_plus_BF16_bound": 0.005009431940920817,
+      "inside_all_component_bounds": true
+    },
+    {
+      "id": "Mercury_7080535",
+      "condition": "unrelated_delta",
+      "max_abs_error_vs_FP64_ideal": 0.002207099464268447,
+      "max_FP32_plus_BF16_bound": 0.005180249898719477,
+      "inside_all_component_bounds": true
+    },
+    {
+      "id": "Mercury_SC_LBS10034",
+      "condition": "norm_only",
+      "max_abs_error_vs_FP64_ideal": 0.0018572483285228536,
+      "max_FP32_plus_BF16_bound": 0.0047488128689730374,
+      "inside_all_component_bounds": true
+    },
+    {
+      "id": "Mercury_SC_LBS10034",
+      "condition": "unrelated_delta",
+      "max_abs_error_vs_FP64_ideal": 0.003883826648289457,
+      "max_FP32_plus_BF16_bound": 0.008571034867601805,
+      "inside_all_component_bounds": true
+    },
+    {
+      "id": "Mercury_7216125",
+      "condition": "norm_only",
+      "max_abs_error_vs_FP64_ideal": 0.00170803304392253,
+      "max_FP32_plus_BF16_bound": 0.0031813347117529314,
+      "inside_all_component_bounds": true
+    },
+    {
+      "id": "Mercury_7216125",
+      "condition": "unrelated_delta",
+      "max_abs_error_vs_FP64_ideal": 0.0019450964382641267,
+      "max_FP32_plus_BF16_bound": 0.004125172806564311,
+      "inside_all_component_bounds": true
+    },
+    {
+      "id": "AIMS_2009_8_9",
+      "condition": "norm_only",
+      "max_abs_error_vs_FP64_ideal": 0.0008234137320581314,
+      "max_FP32_plus_BF16_bound": 0.00225601522502366,
+      "inside_all_component_bounds": true
+    },
+    {
+      "id": "AIMS_2009_8_9",
+      "condition": "unrelated_delta",
+      "max_abs_error_vs_FP64_ideal": 0.0008899097241980014,
+      "max_FP32_plus_BF16_bound": 0.001994616905378847,
+      "inside_all_component_bounds": true
+    }
+  ],
+  "producer_imports": false
+}

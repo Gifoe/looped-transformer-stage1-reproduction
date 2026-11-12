@@ -1,0 +1,17 @@
+# Final Astra E4 scientific review
+
+Final status, 2026-11-13: all fixed E4/E5 experiments through Orders 005/006 are complete and independently audited. No further GPU intervention is authorized by this review. The remaining generating-component uncertainty is an explicit scientific limit, not unfinished E4/E5 execution.
+
+The confirmation 128 supports a controlled local R→attention decision route for two cases specific against all four controls, plus a substantial continuous residual/suffix effect when native attention is held fixed. It does not reproduce299's strict KV necessity cases. This is partial mechanistic support with explicit failed generalization, not a complete account of natural K1→K2 reasoning.
+
+On299 KV restoration gives 57/3 rescue/damage, rollback4/14,9 strict natural losses. On128 rollback gives 1/3 versus unrelated2/5; strict KV losses0. Query-only and joint rollback each retain 3 strict natural losses in128. Historical fixed-K1 K×V and new natural K2 Q×joint-KV are different causal estimands.
+
+R2 confirmation N/U/restored-U/A-only=103/98/105/101. U loses 9 of 40 natural corrections;6 recover;2 pass all-control/no-tie specificity. Meanwrong total/direct/restore=−1.394368/−1.353923/+0.040446. The restore interval[-0.0160,+0.0970] spans zero; dynamic-margin interval does not. The observed discrete recovery remains reportable, while a universal positive mean effect is unwarranted.
+
+The original KV299 followed Train 64 discovery. Later Q/R operators and the late-depth extension were selected after viewing299, so those results are exposed-cohort analyses. Order 006 froze a label-blind remaining-Train 128 by ID hash before its new interventions, excluding25 demonstrations, both discovery64 sets and token-identical inputs in the prior64/299/peer64. There were 975 eligible IDs and 144 excluded Train IDs. The128 questions were not used to choose this task's new causal operators, but had historical full-cohort/eight-corner exposure and may have entered peer probes. This is not a globally unseen or blind test. Cohorts are never pooled.
+
+Production uses BF16 model arithmetic and FP32 log-softmax, with raw candidate logits, exact top ties and same-hardware native baselines preserved. The pilot scoped FP32-SDPA/BF16-writeback diagnostics changed one of 48 KV predictions and one of 8 Query predictions; pilot R changed0/8. Late299 R changed0/8 at each depth, and confirmation 128 Query/R2/R3/R4 each changed0/8. These small diagnostics are not full-model FP32 guarantees. Two Validation mediator-control vectors differed by one BF16 element under cross-CPU FP32 recomputation; independent FP64 rounding bounds and exact same-environment recomputation passed. Identity and intended four-corner tensor bridges remain exact.
+
+The earlier attention/MLP component that generated the useful R or KV state is still TARGET_UNRESOLVED. One-site mixed-state interventions identify a controlled local path, not the complete origin of the second-loop benefit. Unrelated controls cover one frozen direction per question, not every off-manifold explanation. No mediated percentage, skipped-loop shortcut, pure-MLP attribution, semantic information-origin claim or global hidden-state convergence follows.
+
+All frozen experiments are complete. See FINAL_RESEARCH_REPORT.md and E4_MEDIATION_ANALYSIS.md for exact four-corner definitions, continuous/decision distinctions, controls, counterexamples and complete appendices.

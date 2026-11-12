@@ -1,0 +1,100 @@
+{
+  "source_sha256": "2caf5cfcf1f096792a0a1425ec52d3f697ba9e12497f02f2faa7443529b5f3b4",
+  "generated_sha256": "15297ecacbea07c5c1a775bf5a5268385ba0357aa0b482295c060d7b74c0622b",
+  "changes": [
+    {
+      "before": "Order004: actual L18 R-state block and attention mediator factorial.",
+      "after": "Order005: matched late-depth L18 R-state and attention mediator factorial.",
+      "count": 1
+    },
+    {
+      "before": "ROOT=Path(__file__).resolve().parent",
+      "after": "ROOT=Path(__file__).resolve().parent\nRECEIVER=2  # Required CLI --receiver selects 3 or 4 before any model operation.",
+      "count": 1
+    },
+    {
+      "before": "input_r_block(model,2,q['R'],x)",
+      "after": "input_r_block(model,RECEIVER,q['R'],x)",
+      "count": 1
+    },
+    {
+      "before": "r.run(model,q,2,patch=a,capture=capture)",
+      "after": "r.run(model,q,RECEIVER,patch=a,capture=capture)",
+      "count": 1
+    },
+    {
+      "before": "p['native']['2']",
+      "after": "p['native'][str(RECEIVER)]",
+      "count": 2
+    },
+    {
+      "before": "pt['K2_'+name]",
+      "after": "pt[f'K{RECEIVER}_'+name]",
+      "count": 1
+    },
+    {
+      "before": "pt['K1_x_R']",
+      "after": "pt[f'K{RECEIVER-1}_x_R']",
+      "count": 3
+    },
+    {
+      "before": "pt['K1_O']",
+      "after": "pt[f'K{RECEIVER-1}_O']",
+      "count": 1
+    },
+    {
+      "before": "'native':{'2':n}",
+      "after": "'native':{str(RECEIVER):n}",
+      "count": 1
+    },
+    {
+      "before": "'reused_K1_native':p['native']['1']",
+      "after": "'reused_K1_native':p['native']['1'],'reused_donor_native':p['native'][str(RECEIVER-1)],'receiver_loop':RECEIVER,'donor_loop':RECEIVER-1,'X1_A1_alias_definition':'X1/A1 mean preceding native donor; reused_K1_native remains true global K1'",
+      "count": 1
+    },
+    {
+      "before": "m['native']['2']",
+      "after": "m['native'][str(RECEIVER)]",
+      "count": 3
+    },
+    {
+      "before": "'pair':'1-2'",
+      "after": "'pair':f'{RECEIVER-1}-{RECEIVER}'",
+      "count": 2
+    },
+    {
+      "before": "'receiver_loop':2",
+      "after": "'receiver_loop':RECEIVER",
+      "count": 2
+    },
+    {
+      "before": "'donor_loop':1",
+      "after": "'donor_loop':RECEIVER-1",
+      "count": 2
+    },
+    {
+      "before": "def main():",
+      "after": "def main():\n global RECEIVER",
+      "count": 1
+    },
+    {
+      "before": "a.add_argument('--limit',type=int);args=a.parse_args();out=Path(args.output)",
+      "after": "a.add_argument('--limit',type=int);a.add_argument('--receiver',required=True,type=int,choices=[3,4]);args=a.parse_args();RECEIVER=args.receiver;out=Path(args.output)",
+      "count": 1
+    },
+    {
+      "before": "precision=sorted({i for v in groups.values() for i in v[:2]}.intersection(ordered))",
+      "after": "precision=sorted(set(sorted(cohort['ids'])[:8]).intersection(ordered))",
+      "count": 1
+    },
+    {
+      "before": "'experiment':'ASTRA_ORDER004_R_STATE_ATTENTION_MEDIATION'",
+      "after": "'experiment':'ASTRA_ORDER005_MATCHED_LATE_R_STATE_ATTENTION_MEDIATION','receiver_loop':RECEIVER,'donor_loop':RECEIVER-1,'precision_rule':'FIRST_EIGHT_LEXICOGRAPHIC_VALIDATION_IDS','X1_A1_alias_definition':'preceding native donor; global K1 is separately reused_K1_native'",
+      "count": 1
+    }
+  ],
+  "generated_normalized_LF_sha256": "337d28e1addd3ecd3ba466e26f2783a9f843b0448f4614d2cac6147659e7ab87",
+  "hash_scope": "RAW_FILE_BYTES",
+  "line_endings": "Explicit CRLF, matching executed producer; no producer bytes changed",
+  "initial_receipt_correction": "Initial auxiliary generator receipt hashed normalized LF text rather than generated CRLF bytes. Runtime execution_identity always hashes raw bytes correctly. Preliminary receipt retained separately."
+}

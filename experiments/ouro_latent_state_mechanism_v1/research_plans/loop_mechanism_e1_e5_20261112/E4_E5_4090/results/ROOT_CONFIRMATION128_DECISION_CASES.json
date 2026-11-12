@@ -1,0 +1,5795 @@
+{
+  "n": 128,
+  "scope": "Frozen128 paired decision accounting; no new inference, operator selection, pooling, or mediated-percentage interpretation.",
+  "native_groups": {
+    "stable_correct": 63,
+    "rescue": 40,
+    "stable_wrong": 19,
+    "damage": 6
+  },
+  "kv_natural_rescue_losses": 2,
+  "kv_both_controls_preserve": 1,
+  "kv_both_controls_preserve_and_no_native_target_ties": 0,
+  "kv_strict_ids": [],
+  "query": {
+    "q_only": {
+      "natural_rescue_losses": 4,
+      "control_specific": 4,
+      "control_specific_no_native_or_target_tie": 3
+    },
+    "joint_qkv": {
+      "natural_rescue_losses": 5,
+      "control_specific": 3,
+      "control_specific_no_native_or_target_tie": 3
+    }
+  },
+  "query_audit_sha256": "f90f9a6b98e12e2c7990ea5ba8052962109ac76cb49b97f1b97f9f906699f3c0",
+  "script_sha256": "48967e3b705ba0c7b645fc4cb04918013be0082e28a826af016e4b98dd196676",
+  "rows": [
+    {
+      "id": "Mercury_7159758",
+      "split": "train",
+      "group": "stable_correct",
+      "native1_correct": true,
+      "native2_correct": true,
+      "native_no_tie": true,
+      "target_correct": true,
+      "target_tie": false,
+      "norm_correct": true,
+      "unrelated_correct": true,
+      "native1_logits": [
+        14.6875,
+        15.3125,
+        18.375,
+        16.875
+      ],
+      "native2_logits": [
+        16.5,
+        15.9375,
+        22.875,
+        17.75
+      ],
+      "gold": 2,
+      "intervention_logits": {
+        "target": [
+          16.25,
+          15.875,
+          22.875,
+          17.375
+        ],
+        "norm_only": [
+          16.5,
+          15.9375,
+          22.875,
+          17.75
+        ],
+        "unrelated_delta": [
+          16.125,
+          15.75,
+          22.875,
+          17.5
+        ]
+      }
+    },
+    {
+      "id": "NCEOGA_2013_5_26",
+      "split": "train",
+      "group": "rescue",
+      "native1_correct": false,
+      "native2_correct": true,
+      "native_no_tie": true,
+      "target_correct": true,
+      "target_tie": false,
+      "norm_correct": true,
+      "unrelated_correct": true,
+      "native1_logits": [
+        14.4375,
+        15.3125,
+        14.4375,
+        14.375
+      ],
+      "native2_logits": [
+        19.5,
+        18.125,
+        21.625,
+        17.5
+      ],
+      "gold": 2,
+      "intervention_logits": {
+        "target": [
+          16.5,
+          16.25,
+          17.5,
+          15.25
+        ],
+        "norm_only": [
+          19.5,
+          18.125,
+          21.625,
+          17.5
+        ],
+        "unrelated_delta": [
+          20.0,
+          17.25,
+          21.5,
+          17.0
+        ]
+      }
+    },
+    {
+      "id": "ACTAAP_2009_7_17",
+      "split": "train",
+      "group": "stable_correct",
+      "native1_correct": true,
+      "native2_correct": true,
+      "native_no_tie": true,
+      "target_correct": true,
+      "target_tie": false,
+      "norm_correct": true,
+      "unrelated_correct": true,
+      "native1_logits": [
+        13.0625,
+        14.25,
+        16.0,
+        14.25
+      ],
+      "native2_logits": [
+        17.0,
+        16.875,
+        21.125,
+        17.75
+      ],
+      "gold": 2,
+      "intervention_logits": {
+        "target": [
+          16.75,
+          17.0,
+          20.75,
+          17.5
+        ],
+        "norm_only": [
+          17.0,
+          16.875,
+          21.0,
+          17.75
+        ],
+        "unrelated_delta": [
+          16.75,
+          16.875,
+          20.875,
+          17.5
+        ]
+      }
+    },
+    {
+      "id": "Mercury_7041160",
+      "split": "train",
+      "group": "stable_correct",
+      "native1_correct": true,
+      "native2_correct": true,
+      "native_no_tie": true,
+      "target_correct": true,
+      "target_tie": false,
+      "norm_correct": true,
+      "unrelated_correct": true,
+      "native1_logits": [
+        13.8125,
+        13.0625,
+        11.375,
+        11.8125
+      ],
+      "native2_logits": [
+        23.5,
+        16.875,
+        16.125,
+        15.375
+      ],
+      "gold": 0,
+      "intervention_logits": {
+        "target": [
+          23.375,
+          16.875,
+          15.75,
+          15.125
+        ],
+        "norm_only": [
+          23.5,
+          16.875,
+          16.125,
+          15.375
+        ],
+        "unrelated_delta": [
+          23.5,
+          17.125,
+          16.125,
+          15.1875
+        ]
+      }
+    },
+    {
+      "id": "NYSEDREGENTS_2007_8_28",
+      "split": "train",
+      "group": "stable_correct",
+      "native1_correct": true,
+      "native2_correct": true,
+      "native_no_tie": true,
+      "target_correct": true,
+      "target_tie": false,
+      "norm_correct": true,
+      "unrelated_correct": true,
+      "native1_logits": [
+        12.875,
+        14.5,
+        13.4375,
+        12.375
+      ],
+      "native2_logits": [
+        15.375,
+        22.125,
+        15.1875,
+        15.5
+      ],
+      "gold": 1,
+      "intervention_logits": {
+        "target": [
+          16.5,
+          22.25,
+          16.25,
+          15.6875
+        ],
+        "norm_only": [
+          15.4375,
+          22.25,
+          15.25,
+          15.5
+        ],
+        "unrelated_delta": [
+          16.0,
+          22.25,
+          15.1875,
+          14.5
+        ]
+      }
+    },
+    {
+      "id": "TIMSS_1995_8_N3",
+      "split": "train",
+      "group": "stable_correct",
+      "native1_correct": true,
+      "native2_correct": true,
+      "native_no_tie": true,
+      "target_correct": true,
+      "target_tie": false,
+      "norm_correct": true,
+      "unrelated_correct": true,
+      "native1_logits": [
+        15.75,
+        14.875,
+        17.375,
+        15.25,
+        14.6875
+      ],
+      "native2_logits": [
+        16.875,
+        15.5,
+        20.375,
+        16.5,
+        17.0
+      ],
+      "gold": 2,
+      "intervention_logits": {
+        "target": [
+          17.125,
+          15.3125,
+          20.25,
+          16.5,
+          17.0
+        ],
+        "norm_only": [
+          16.875,
+          15.5,
+          20.375,
+          16.5,
+          17.0
+        ],
+        "unrelated_delta": [
+          17.0,
+          15.1875,
+          20.375,
+          16.625,
+          17.125
+        ]
+      }
+    },
+    {
+      "id": "NYSEDREGENTS_2004_4_5",
+      "split": "train",
+      "group": "stable_correct",
+      "native1_correct": true,
+      "native2_correct": true,
+      "native_no_tie": true,
+      "target_correct": true,
+      "target_tie": false,
+      "norm_correct": true,
+      "unrelated_correct": true,
+      "native1_logits": [
+        17.0,
+        17.375,
+        22.125,
+        17.25
+      ],
+      "native2_logits": [
+        17.125,
+        16.75,
+        23.375,
+        16.875
+      ],
+      "gold": 2,
+      "intervention_logits": {
+        "target": [
+          16.875,
+          16.875,
+          23.25,
+          16.625
+        ],
+        "norm_only": [
+          17.125,
+          16.75,
+          23.375,
+          16.875
+        ],
+        "unrelated_delta": [
+          17.25,
+          17.25,
+          23.5,
+          16.875
+        ]
+      }
+    },
+    {
+      "id": "MDSA_2008_5_30",
+      "split": "train",
+      "group": "stable_correct",
+      "native1_correct": true,
+      "native2_correct": true,
+      "native_no_tie": true,
+      "target_correct": true,
+      "target_tie": false,
+      "norm_correct": true,
+      "unrelated_correct": true,
+      "native1_logits": [
+        15.625,
+        14.875,
+        14.75,
+        14.5
+      ],
+      "native2_logits": [
+        23.25,
+        17.0,
+        17.0,
+        15.75
+      ],
+      "gold": 0,
+      "intervention_logits": {
+        "target": [
+          23.125,
+          17.25,
+          16.875,
+          15.4375
+        ],
+        "norm_only": [
+          23.25,
+          17.0,
+          17.0,
+          15.75
+        ],
+        "unrelated_delta": [
+          23.125,
+          17.125,
+          16.125,
+          15.5625
+        ]
+      }
+    },
+    {
+      "id": "Mercury_7183505",
+      "split": "train",
+      "group": "stable_correct",
+      "native1_correct": true,
+      "native2_correct": true,
+      "native_no_tie": true,
+      "target_correct": true,
+      "target_tie": false,
+      "norm_correct": true,
+      "unrelated_correct": true,
+      "native1_logits": [
+        13.0625,
+        12.5625,
+        14.0,
+        14.25
+      ],
+      "native2_logits": [
+        16.125,
+        15.5,
+        16.375,
+        22.875
+      ],
+      "gold": 3,
+      "intervention_logits": {
+        "target": [
+          16.625,
+          16.125,
+          17.125,
+          23.0
+        ],
+        "norm_only": [
+          16.125,
+          15.5,
+          16.375,
+          22.875
+        ],
+        "unrelated_delta": [
+          17.375,
+          14.25,
+          16.375,
+          22.75
+        ]
+      }
+    },
+    {
+      "id": "Mercury_7071908",
+      "split": "train",
+      "group": "stable_wrong",
+      "native1_correct": false,
+      "native2_correct": false,
+      "native_no_tie": true,
+      "target_correct": false,
+      "target_tie": false,
+      "norm_correct": false,
+      "unrelated_correct": false,
+      "native1_logits": [
+        16.25,
+        18.25,
+        16.25,
+        16.25
+      ],
+      "native2_logits": [
+        19.625,
+        18.125,
+        17.375,
+        19.5
+      ],
+      "gold": 3,
+      "intervention_logits": {
+        "target": [
+          19.0,
+          18.25,
+          16.875,
+          18.625
+        ],
+        "norm_only": [
+          19.625,
+          18.125,
+          17.375,
+          19.5
+        ],
+        "unrelated_delta": [
+          19.875,
+          17.25,
+          17.875,
+          19.625
+        ]
+      }
+    },
+    {
+      "id": "NCEOGA_2013_8_14",
+      "split": "train",
+      "group": "stable_correct",
+      "native1_correct": true,
+      "native2_correct": true,
+      "native_no_tie": true,
+      "target_correct": true,
+      "target_tie": false,
+      "norm_correct": true,
+      "unrelated_correct": true,
+      "native1_logits": [
+        13.25,
+        14.3125,
+        14.5625,
+        15.4375
+      ],
+      "native2_logits": [
+        17.125,
+        16.75,
+        17.25,
+        23.375
+      ],
+      "gold": 3,
+      "intervention_logits": {
+        "target": [
+          17.5,
+          17.375,
+          17.625,
+          23.25
+        ],
+        "norm_only": [
+          17.25,
+          16.75,
+          17.25,
+          23.5
+        ],
+        "unrelated_delta": [
+          18.0,
+          15.0,
+          17.625,
+          23.5
+        ]
+      }
+    },
+    {
+      "id": "Mercury_SC_401304",
+      "split": "train",
+      "group": "rescue",
+      "native1_correct": false,
+      "native2_correct": true,
+      "native_no_tie": true,
+      "target_correct": true,
+      "target_tie": false,
+      "norm_correct": true,
+      "unrelated_correct": true,
+      "native1_logits": [
+        12.5,
+        13.3125,
+        12.9375,
+        13.75
+      ],
+      "native2_logits": [
+        18.875,
+        18.0,
+        21.375,
+        19.625
+      ],
+      "gold": 2,
+      "intervention_logits": {
+        "target": [
+          18.0,
+          17.125,
+          20.125,
+          18.875
+        ],
+        "norm_only": [
+          18.875,
+          18.0,
+          21.5,
+          19.625
+        ],
+        "unrelated_delta": [
+          19.375,
+          18.625,
+          21.625,
+          19.125
+        ]
+      }
+    },
+    {
+      "id": "Mercury_SC_405455",
+      "split": "train",
+      "group": "stable_wrong",
+      "native1_correct": false,
+      "native2_correct": false,
+      "native_no_tie": false,
+      "target_correct": false,
+      "target_tie": false,
+      "norm_correct": false,
+      "unrelated_correct": false,
+      "native1_logits": [
+        14.0,
+        14.3125,
+        14.6875,
+        14.125
+      ],
+      "native2_logits": [
+        18.625,
+        17.625,
+        18.0,
+        18.625
+      ],
+      "gold": 3,
+      "intervention_logits": {
+        "target": [
+          18.625,
+          17.5,
+          17.875,
+          18.0
+        ],
+        "norm_only": [
+          18.625,
+          17.625,
+          18.0,
+          18.625
+        ],
+        "unrelated_delta": [
+          18.75,
+          17.875,
+          18.0,
+          18.125
+        ]
+      }
+    },
+    {
+      "id": "NYSEDREGENTS_2009_8_20",
+      "split": "train",
+      "group": "rescue",
+      "native1_correct": false,
+      "native2_correct": true,
+      "native_no_tie": true,
+      "target_correct": true,
+      "target_tie": false,
+      "norm_correct": true,
+      "unrelated_correct": true,
+      "native1_logits": [
+        12.6875,
+        15.0,
+        12.5,
+        14.0
+      ],
+      "native2_logits": [
+        15.5,
+        15.875,
+        16.375,
+        22.625
+      ],
+      "gold": 3,
+      "intervention_logits": {
+        "target": [
+          16.125,
+          16.375,
+          16.5,
+          22.625
+        ],
+        "norm_only": [
+          15.5,
+          15.875,
+          16.375,
+          22.625
+        ],
+        "unrelated_delta": [
+          16.125,
+          16.0,
+          15.75,
+          22.625
+        ]
+      }
+    },
+    {
+      "id": "Mercury_7154648",
+      "split": "train",
+      "group": "stable_correct",
+      "native1_correct": true,
+      "native2_correct": true,
+      "native_no_tie": true,
+      "target_correct": true,
+      "target_tie": false,
+      "norm_correct": true,
+      "unrelated_correct": true,
+      "native1_logits": [
+        15.3125,
+        14.9375,
+        14.0,
+        14.0
+      ],
+      "native2_logits": [
+        22.875,
+        18.375,
+        18.25,
+        16.0
+      ],
+      "gold": 0,
+      "intervention_logits": {
+        "target": [
+          22.625,
+          18.75,
+          18.0,
+          16.25
+        ],
+        "norm_only": [
+          22.875,
+          18.375,
+          18.25,
+          16.0
+        ],
+        "unrelated_delta": [
+          22.875,
+          18.375,
+          18.0,
+          15.75
+        ]
+      }
+    },
+    {
+      "id": "Mercury_7216878",
+      "split": "train",
+      "group": "rescue",
+      "native1_correct": false,
+      "native2_correct": true,
+      "native_no_tie": true,
+      "target_correct": true,
+      "target_tie": false,
+      "norm_correct": true,
+      "unrelated_correct": true,
+      "native1_logits": [
+        14.4375,
+        13.875,
+        14.25,
+        13.0
+      ],
+      "native2_logits": [
+        17.875,
+        16.5,
+        22.5,
+        17.375
+      ],
+      "gold": 2,
+      "intervention_logits": {
+        "target": [
+          18.375,
+          16.75,
+          22.125,
+          17.25
+        ],
+        "norm_only": [
+          17.875,
+          16.5,
+          22.5,
+          17.375
+        ],
+        "unrelated_delta": [
+          18.75,
+          15.375,
+          22.375,
+          17.25
+        ]
+      }
+    },
+    {
+      "id": "MEA_2016_8_1",
+      "split": "train",
+      "group": "stable_correct",
+      "native1_correct": true,
+      "native2_correct": true,
+      "native_no_tie": true,
+      "target_correct": true,
+      "target_tie": false,
+      "norm_correct": true,
+      "unrelated_correct": true,
+      "native1_logits": [
+        17.875,
+        17.5,
+        21.125,
+        17.5
+      ],
+      "native2_logits": [
+        18.0,
+        17.0,
+        23.0,
+        16.375
+      ],
+      "gold": 2,
+      "intervention_logits": {
+        "target": [
+          18.125,
+          17.0,
+          22.875,
+          16.25
+        ],
+        "norm_only": [
+          17.875,
+          17.0,
+          22.875,
+          16.25
+        ],
+        "unrelated_delta": [
+          18.125,
+          17.125,
+          22.625,
+          16.625
+        ]
+      }
+    },
+    {
+      "id": "Mercury_7038868",
+      "split": "train",
+      "group": "stable_wrong",
+      "native1_correct": false,
+      "native2_correct": false,
+      "native_no_tie": false,
+      "target_correct": false,
+      "target_tie": true,
+      "norm_correct": false,
+      "unrelated_correct": false,
+      "native1_logits": [
+        14.0625,
+        14.375,
+        14.0625,
+        14.1875
+      ],
+      "native2_logits": [
+        19.375,
+        19.0,
+        19.0,
+        19.375
+      ],
+      "gold": 2,
+      "intervention_logits": {
+        "target": [
+          19.125,
+          18.875,
+          18.75,
+          19.125
+        ],
+        "norm_only": [
+          19.5,
+          19.0,
+          19.125,
+          19.5
+        ],
+        "unrelated_delta": [
+          18.875,
+          19.125,
+          19.125,
+          19.5
+        ]
+      }
+    },
+    {
+      "id": "Mercury_400749",
+      "split": "train",
+      "group": "stable_wrong",
+      "native1_correct": false,
+      "native2_correct": false,
+      "native_no_tie": true,
+      "target_correct": false,
+      "target_tie": false,
+      "norm_correct": false,
+      "unrelated_correct": false,
+      "native1_logits": [
+        17.25,
+        18.25,
+        15.0,
+        15.375
+      ],
+      "native2_logits": [
+        19.75,
+        20.5,
+        15.375,
+        15.6875
+      ],
+      "gold": 0,
+      "intervention_logits": {
+        "target": [
+          19.25,
+          19.75,
+          15.0,
+          15.25
+        ],
+        "norm_only": [
+          19.625,
+          20.5,
+          15.375,
+          15.625
+        ],
+        "unrelated_delta": [
+          19.0,
+          19.125,
+          14.75,
+          14.75
+        ]
+      }
+    },
+    {
+      "id": "Mercury_LBS10257",
+      "split": "train",
+      "group": "stable_correct",
+      "native1_correct": true,
+      "native2_correct": true,
+      "native_no_tie": true,
+      "target_correct": true,
+      "target_tie": false,
+      "norm_correct": true,
+      "unrelated_correct": true,
+      "native1_logits": [
+        13.875,
+        14.0625,
+        13.25,
+        12.6875
+      ],
+      "native2_logits": [
+        18.625,
+        20.75,
+        17.0,
+        16.375
+      ],
+      "gold": 1,
+      "intervention_logits": {
+        "target": [
+          17.375,
+          18.5,
+          15.5625,
+          14.5625
+        ],
+        "norm_only": [
+          18.625,
+          20.625,
+          17.0,
+          16.375
+        ],
+        "unrelated_delta": [
+          18.5,
+          20.75,
+          17.125,
+          15.875
+        ]
+      }
+    },
+    {
+      "id": "Mercury_412647",
+      "split": "train",
+      "group": "damage",
+      "native1_correct": true,
+      "native2_correct": false,
+      "native_no_tie": true,
+      "target_correct": false,
+      "target_tie": true,
+      "norm_correct": false,
+      "unrelated_correct": true,
+      "native1_logits": [
+        15.125,
+        15.5625,
+        14.75,
+        15.0625
+      ],
+      "native2_logits": [
+        19.5,
+        19.5,
+        19.875,
+        19.625
+      ],
+      "gold": 1,
+      "intervention_logits": {
+        "target": [
+          19.5,
+          19.625,
+          19.75,
+          19.75
+        ],
+        "norm_only": [
+          19.5,
+          19.5,
+          19.875,
+          19.625
+        ],
+        "unrelated_delta": [
+          19.875,
+          20.125,
+          19.625,
+          20.0
+        ]
+      }
+    },
+    {
+      "id": "ACTAAP_2010_5_6",
+      "split": "train",
+      "group": "stable_correct",
+      "native1_correct": true,
+      "native2_correct": true,
+      "native_no_tie": true,
+      "target_correct": true,
+      "target_tie": false,
+      "norm_correct": true,
+      "unrelated_correct": true,
+      "native1_logits": [
+        15.6875,
+        17.75,
+        15.3125,
+        16.25
+      ],
+      "native2_logits": [
+        17.375,
+        19.125,
+        16.625,
+        16.375
+      ],
+      "gold": 1,
+      "intervention_logits": {
+        "target": [
+          17.5,
+          19.375,
+          16.625,
+          16.625
+        ],
+        "norm_only": [
+          17.375,
+          19.125,
+          16.625,
+          16.375
+        ],
+        "unrelated_delta": [
+          17.125,
+          18.0,
+          15.8125,
+          15.5625
+        ]
+      }
+    },
+    {
+      "id": "Mercury_412775",
+      "split": "train",
+      "group": "rescue",
+      "native1_correct": false,
+      "native2_correct": true,
+      "native_no_tie": false,
+      "target_correct": true,
+      "target_tie": false,
+      "norm_correct": true,
+      "unrelated_correct": true,
+      "native1_logits": [
+        14.125,
+        14.5,
+        14.5,
+        13.3125
+      ],
+      "native2_logits": [
+        19.0,
+        17.5,
+        21.625,
+        17.75
+      ],
+      "gold": 2,
+      "intervention_logits": {
+        "target": [
+          19.0,
+          17.125,
+          20.625,
+          16.75
+        ],
+        "norm_only": [
+          19.0,
+          17.5,
+          21.625,
+          17.75
+        ],
+        "unrelated_delta": [
+          18.875,
+          17.125,
+          21.625,
+          17.5
+        ]
+      }
+    },
+    {
+      "id": "Mercury_7263148",
+      "split": "train",
+      "group": "stable_correct",
+      "native1_correct": true,
+      "native2_correct": true,
+      "native_no_tie": true,
+      "target_correct": true,
+      "target_tie": false,
+      "norm_correct": true,
+      "unrelated_correct": true,
+      "native1_logits": [
+        16.875,
+        15.5625,
+        14.625,
+        14.625
+      ],
+      "native2_logits": [
+        22.5,
+        20.125,
+        19.125,
+        17.375
+      ],
+      "gold": 0,
+      "intervention_logits": {
+        "target": [
+          22.5,
+          20.125,
+          18.625,
+          17.125
+        ],
+        "norm_only": [
+          22.625,
+          20.125,
+          19.125,
+          17.5
+        ],
+        "unrelated_delta": [
+          22.625,
+          20.125,
+          19.125,
+          16.875
+        ]
+      }
+    },
+    {
+      "id": "MCAS_8_2015_9",
+      "split": "train",
+      "group": "rescue",
+      "native1_correct": false,
+      "native2_correct": true,
+      "native_no_tie": true,
+      "target_correct": true,
+      "target_tie": false,
+      "norm_correct": true,
+      "unrelated_correct": true,
+      "native1_logits": [
+        14.375,
+        14.875,
+        14.8125,
+        14.5625
+      ],
+      "native2_logits": [
+        18.75,
+        18.375,
+        21.875,
+        18.375
+      ],
+      "gold": 2,
+      "intervention_logits": {
+        "target": [
+          19.0,
+          18.375,
+          21.75,
+          18.25
+        ],
+        "norm_only": [
+          18.75,
+          18.375,
+          21.875,
+          18.375
+        ],
+        "unrelated_delta": [
+          19.0,
+          18.125,
+          21.75,
+          18.125
+        ]
+      }
+    },
+    {
+      "id": "Mercury_7181965",
+      "split": "train",
+      "group": "rescue",
+      "native1_correct": false,
+      "native2_correct": true,
+      "native_no_tie": true,
+      "target_correct": true,
+      "target_tie": false,
+      "norm_correct": true,
+      "unrelated_correct": true,
+      "native1_logits": [
+        13.8125,
+        13.75,
+        15.0625,
+        14.125
+      ],
+      "native2_logits": [
+        16.75,
+        22.375,
+        17.125,
+        15.125
+      ],
+      "gold": 1,
+      "intervention_logits": {
+        "target": [
+          16.875,
+          20.5,
+          17.75,
+          14.1875
+        ],
+        "norm_only": [
+          16.75,
+          22.375,
+          17.125,
+          15.125
+        ],
+        "unrelated_delta": [
+          17.625,
+          22.375,
+          18.0,
+          13.1875
+        ]
+      }
+    },
+    {
+      "id": "Mercury_7038430",
+      "split": "train",
+      "group": "damage",
+      "native1_correct": true,
+      "native2_correct": false,
+      "native_no_tie": false,
+      "target_correct": false,
+      "target_tie": false,
+      "norm_correct": false,
+      "unrelated_correct": true,
+      "native1_logits": [
+        13.0,
+        13.4375,
+        14.125,
+        14.0
+      ],
+      "native2_logits": [
+        17.625,
+        16.625,
+        17.625,
+        17.0
+      ],
+      "gold": 2,
+      "intervention_logits": {
+        "target": [
+          17.375,
+          16.5,
+          17.25,
+          16.5
+        ],
+        "norm_only": [
+          17.625,
+          16.625,
+          17.625,
+          16.875
+        ],
+        "unrelated_delta": [
+          17.375,
+          16.625,
+          17.625,
+          16.5
+        ]
+      }
+    },
+    {
+      "id": "Mercury_415753",
+      "split": "train",
+      "group": "rescue",
+      "native1_correct": false,
+      "native2_correct": true,
+      "native_no_tie": true,
+      "target_correct": true,
+      "target_tie": false,
+      "norm_correct": true,
+      "unrelated_correct": true,
+      "native1_logits": [
+        14.5,
+        14.75,
+        16.375,
+        14.9375
+      ],
+      "native2_logits": [
+        22.75,
+        17.0,
+        19.625,
+        16.75
+      ],
+      "gold": 0,
+      "intervention_logits": {
+        "target": [
+          21.375,
+          16.125,
+          19.5,
+          14.9375
+        ],
+        "norm_only": [
+          22.875,
+          17.0,
+          19.625,
+          16.75
+        ],
+        "unrelated_delta": [
+          23.125,
+          17.875,
+          18.5,
+          17.0
+        ]
+      }
+    },
+    {
+      "id": "Mercury_7044818",
+      "split": "train",
+      "group": "rescue",
+      "native1_correct": false,
+      "native2_correct": true,
+      "native_no_tie": true,
+      "target_correct": false,
+      "target_tie": true,
+      "norm_correct": true,
+      "unrelated_correct": true,
+      "native1_logits": [
+        14.0,
+        13.6875,
+        13.125,
+        13.6875
+      ],
+      "native2_logits": [
+        18.875,
+        17.625,
+        19.375,
+        18.0
+      ],
+      "gold": 2,
+      "intervention_logits": {
+        "target": [
+          17.5,
+          16.75,
+          17.5,
+          16.875
+        ],
+        "norm_only": [
+          18.875,
+          17.625,
+          19.25,
+          18.0
+        ],
+        "unrelated_delta": [
+          19.625,
+          17.0,
+          19.75,
+          18.25
+        ]
+      }
+    },
+    {
+      "id": "MDSA_2011_8_10",
+      "split": "train",
+      "group": "stable_correct",
+      "native1_correct": true,
+      "native2_correct": true,
+      "native_no_tie": true,
+      "target_correct": true,
+      "target_tie": false,
+      "norm_correct": true,
+      "unrelated_correct": true,
+      "native1_logits": [
+        12.0625,
+        13.375,
+        13.625,
+        13.9375
+      ],
+      "native2_logits": [
+        17.5,
+        17.0,
+        17.875,
+        22.375
+      ],
+      "gold": 3,
+      "intervention_logits": {
+        "target": [
+          17.25,
+          17.25,
+          18.125,
+          22.125
+        ],
+        "norm_only": [
+          17.5,
+          17.0,
+          17.875,
+          22.375
+        ],
+        "unrelated_delta": [
+          18.125,
+          17.875,
+          17.125,
+          22.5
+        ]
+      }
+    },
+    {
+      "id": "Mercury_7068845",
+      "split": "train",
+      "group": "stable_correct",
+      "native1_correct": true,
+      "native2_correct": true,
+      "native_no_tie": true,
+      "target_correct": true,
+      "target_tie": false,
+      "norm_correct": true,
+      "unrelated_correct": true,
+      "native1_logits": [
+        14.25,
+        15.5,
+        14.25,
+        14.5
+      ],
+      "native2_logits": [
+        18.375,
+        21.25,
+        18.0,
+        18.75
+      ],
+      "gold": 1,
+      "intervention_logits": {
+        "target": [
+          18.625,
+          20.875,
+          17.75,
+          18.375
+        ],
+        "norm_only": [
+          18.375,
+          21.375,
+          18.0,
+          18.75
+        ],
+        "unrelated_delta": [
+          18.25,
+          21.375,
+          17.875,
+          18.25
+        ]
+      }
+    },
+    {
+      "id": "NCEOGA_2013_5_25",
+      "split": "train",
+      "group": "rescue",
+      "native1_correct": false,
+      "native2_correct": true,
+      "native_no_tie": true,
+      "target_correct": true,
+      "target_tie": false,
+      "norm_correct": true,
+      "unrelated_correct": true,
+      "native1_logits": [
+        14.3125,
+        14.6875,
+        14.5,
+        14.1875
+      ],
+      "native2_logits": [
+        15.9375,
+        16.375,
+        17.875,
+        18.25
+      ],
+      "gold": 3,
+      "intervention_logits": {
+        "target": [
+          15.9375,
+          16.375,
+          17.5,
+          18.0
+        ],
+        "norm_only": [
+          15.9375,
+          16.375,
+          17.875,
+          18.25
+        ],
+        "unrelated_delta": [
+          16.5,
+          17.5,
+          17.625,
+          18.875
+        ]
+      }
+    },
+    {
+      "id": "Mercury_7081270",
+      "split": "train",
+      "group": "stable_correct",
+      "native1_correct": true,
+      "native2_correct": true,
+      "native_no_tie": true,
+      "target_correct": true,
+      "target_tie": false,
+      "norm_correct": true,
+      "unrelated_correct": true,
+      "native1_logits": [
+        17.125,
+        18.375,
+        16.875,
+        15.9375
+      ],
+      "native2_logits": [
+        18.625,
+        20.625,
+        19.5,
+        16.625
+      ],
+      "gold": 1,
+      "intervention_logits": {
+        "target": [
+          18.75,
+          19.875,
+          19.0,
+          16.375
+        ],
+        "norm_only": [
+          18.625,
+          20.625,
+          19.5,
+          16.625
+        ],
+        "unrelated_delta": [
+          18.125,
+          20.0,
+          18.875,
+          16.75
+        ]
+      }
+    },
+    {
+      "id": "Mercury_SC_406088",
+      "split": "train",
+      "group": "stable_correct",
+      "native1_correct": true,
+      "native2_correct": true,
+      "native_no_tie": true,
+      "target_correct": true,
+      "target_tie": false,
+      "norm_correct": true,
+      "unrelated_correct": true,
+      "native1_logits": [
+        15.125,
+        15.3125,
+        16.125,
+        17.375
+      ],
+      "native2_logits": [
+        16.75,
+        15.8125,
+        17.625,
+        22.75
+      ],
+      "gold": 3,
+      "intervention_logits": {
+        "target": [
+          17.0,
+          16.125,
+          17.875,
+          22.75
+        ],
+        "norm_only": [
+          16.75,
+          15.8125,
+          17.625,
+          22.75
+        ],
+        "unrelated_delta": [
+          17.0,
+          15.9375,
+          17.625,
+          22.75
+        ]
+      }
+    },
+    {
+      "id": "Mercury_406549",
+      "split": "train",
+      "group": "stable_correct",
+      "native1_correct": true,
+      "native2_correct": true,
+      "native_no_tie": true,
+      "target_correct": true,
+      "target_tie": false,
+      "norm_correct": true,
+      "unrelated_correct": true,
+      "native1_logits": [
+        17.25,
+        17.375,
+        21.25,
+        17.75
+      ],
+      "native2_logits": [
+        19.125,
+        17.0,
+        22.375,
+        17.375
+      ],
+      "gold": 2,
+      "intervention_logits": {
+        "target": [
+          19.0,
+          17.125,
+          22.375,
+          17.25
+        ],
+        "norm_only": [
+          19.125,
+          17.0,
+          22.375,
+          17.375
+        ],
+        "unrelated_delta": [
+          19.125,
+          16.625,
+          22.25,
+          17.25
+        ]
+      }
+    },
+    {
+      "id": "Mercury_7013545",
+      "split": "train",
+      "group": "rescue",
+      "native1_correct": false,
+      "native2_correct": true,
+      "native_no_tie": true,
+      "target_correct": true,
+      "target_tie": false,
+      "norm_correct": true,
+      "unrelated_correct": true,
+      "native1_logits": [
+        12.75,
+        14.625,
+        13.625,
+        13.9375
+      ],
+      "native2_logits": [
+        16.625,
+        17.0,
+        19.875,
+        21.75
+      ],
+      "gold": 3,
+      "intervention_logits": {
+        "target": [
+          16.5,
+          17.0,
+          19.125,
+          20.875
+        ],
+        "norm_only": [
+          16.625,
+          17.125,
+          19.875,
+          21.75
+        ],
+        "unrelated_delta": [
+          17.25,
+          17.875,
+          19.25,
+          22.0
+        ]
+      }
+    },
+    {
+      "id": "LEAP__7_10343",
+      "split": "train",
+      "group": "stable_correct",
+      "native1_correct": true,
+      "native2_correct": true,
+      "native_no_tie": true,
+      "target_correct": true,
+      "target_tie": false,
+      "norm_correct": true,
+      "unrelated_correct": true,
+      "native1_logits": [
+        14.1875,
+        15.0625,
+        13.8125,
+        13.375
+      ],
+      "native2_logits": [
+        19.5,
+        20.5,
+        17.0,
+        14.8125
+      ],
+      "gold": 1,
+      "intervention_logits": {
+        "target": [
+          19.125,
+          19.875,
+          16.375,
+          14.25
+        ],
+        "norm_only": [
+          19.5,
+          20.5,
+          17.0,
+          14.875
+        ],
+        "unrelated_delta": [
+          19.0,
+          19.875,
+          16.625,
+          14.5625
+        ]
+      }
+    },
+    {
+      "id": "Mercury_SC_400607",
+      "split": "train",
+      "group": "stable_correct",
+      "native1_correct": true,
+      "native2_correct": true,
+      "native_no_tie": true,
+      "target_correct": true,
+      "target_tie": false,
+      "norm_correct": true,
+      "unrelated_correct": true,
+      "native1_logits": [
+        18.625,
+        20.25,
+        17.375,
+        17.625
+      ],
+      "native2_logits": [
+        18.375,
+        22.125,
+        17.375,
+        16.125
+      ],
+      "gold": 1,
+      "intervention_logits": {
+        "target": [
+          19.375,
+          21.75,
+          17.375,
+          16.125
+        ],
+        "norm_only": [
+          18.375,
+          22.125,
+          17.375,
+          16.25
+        ],
+        "unrelated_delta": [
+          18.625,
+          22.125,
+          16.875,
+          15.8125
+        ]
+      }
+    },
+    {
+      "id": "Mercury_7166618",
+      "split": "train",
+      "group": "rescue",
+      "native1_correct": false,
+      "native2_correct": true,
+      "native_no_tie": true,
+      "target_correct": true,
+      "target_tie": false,
+      "norm_correct": true,
+      "unrelated_correct": true,
+      "native1_logits": [
+        14.375,
+        13.9375,
+        14.5625,
+        14.875
+      ],
+      "native2_logits": [
+        17.125,
+        15.8125,
+        22.625,
+        16.75
+      ],
+      "gold": 2,
+      "intervention_logits": {
+        "target": [
+          17.5,
+          15.9375,
+          22.875,
+          17.25
+        ],
+        "norm_only": [
+          17.25,
+          15.875,
+          22.625,
+          16.75
+        ],
+        "unrelated_delta": [
+          17.125,
+          16.5,
+          22.625,
+          16.125
+        ]
+      }
+    },
+    {
+      "id": "Mercury_7216843",
+      "split": "train",
+      "group": "stable_correct",
+      "native1_correct": true,
+      "native2_correct": true,
+      "native_no_tie": true,
+      "target_correct": true,
+      "target_tie": false,
+      "norm_correct": true,
+      "unrelated_correct": true,
+      "native1_logits": [
+        20.125,
+        17.25,
+        16.0,
+        16.25
+      ],
+      "native2_logits": [
+        23.125,
+        15.5625,
+        15.375,
+        14.5
+      ],
+      "gold": 0,
+      "intervention_logits": {
+        "target": [
+          23.25,
+          15.8125,
+          15.3125,
+          14.375
+        ],
+        "norm_only": [
+          23.125,
+          15.5625,
+          15.375,
+          14.4375
+        ],
+        "unrelated_delta": [
+          23.0,
+          15.9375,
+          14.5,
+          14.75
+        ]
+      }
+    },
+    {
+      "id": "Mercury_7100468",
+      "split": "train",
+      "group": "stable_correct",
+      "native1_correct": true,
+      "native2_correct": true,
+      "native_no_tie": true,
+      "target_correct": true,
+      "target_tie": false,
+      "norm_correct": true,
+      "unrelated_correct": true,
+      "native1_logits": [
+        15.1875,
+        14.4375,
+        12.8125,
+        12.8125
+      ],
+      "native2_logits": [
+        21.875,
+        18.375,
+        17.25,
+        17.625
+      ],
+      "gold": 0,
+      "intervention_logits": {
+        "target": [
+          21.875,
+          18.25,
+          17.0,
+          17.25
+        ],
+        "norm_only": [
+          21.875,
+          18.375,
+          17.375,
+          17.625
+        ],
+        "unrelated_delta": [
+          22.125,
+          18.5,
+          16.125,
+          17.5
+        ]
+      }
+    },
+    {
+      "id": "Mercury_417145",
+      "split": "train",
+      "group": "rescue",
+      "native1_correct": false,
+      "native2_correct": true,
+      "native_no_tie": true,
+      "target_correct": true,
+      "target_tie": false,
+      "norm_correct": true,
+      "unrelated_correct": true,
+      "native1_logits": [
+        12.6875,
+        13.75,
+        13.1875,
+        14.125
+      ],
+      "native2_logits": [
+        16.25,
+        18.0,
+        20.375,
+        17.625
+      ],
+      "gold": 2,
+      "intervention_logits": {
+        "target": [
+          14.4375,
+          16.0,
+          17.375,
+          15.875
+        ],
+        "norm_only": [
+          16.25,
+          18.0,
+          20.375,
+          17.5
+        ],
+        "unrelated_delta": [
+          15.9375,
+          17.625,
+          19.625,
+          16.75
+        ]
+      }
+    },
+    {
+      "id": "Mercury_7159670",
+      "split": "train",
+      "group": "stable_correct",
+      "native1_correct": true,
+      "native2_correct": true,
+      "native_no_tie": true,
+      "target_correct": true,
+      "target_tie": false,
+      "norm_correct": true,
+      "unrelated_correct": true,
+      "native1_logits": [
+        13.6875,
+        14.6875,
+        15.8125,
+        14.1875
+      ],
+      "native2_logits": [
+        18.625,
+        17.375,
+        20.875,
+        18.625
+      ],
+      "gold": 2,
+      "intervention_logits": {
+        "target": [
+          18.625,
+          17.375,
+          20.875,
+          18.375
+        ],
+        "norm_only": [
+          18.625,
+          17.375,
+          20.875,
+          18.625
+        ],
+        "unrelated_delta": [
+          18.375,
+          17.25,
+          20.625,
+          18.25
+        ]
+      }
+    },
+    {
+      "id": "NYSEDREGENTS_2007_8_21",
+      "split": "train",
+      "group": "rescue",
+      "native1_correct": false,
+      "native2_correct": true,
+      "native_no_tie": true,
+      "target_correct": true,
+      "target_tie": false,
+      "norm_correct": true,
+      "unrelated_correct": true,
+      "native1_logits": [
+        13.6875,
+        14.375,
+        13.8125,
+        13.4375
+      ],
+      "native2_logits": [
+        19.125,
+        18.75,
+        21.0,
+        18.625
+      ],
+      "gold": 2,
+      "intervention_logits": {
+        "target": [
+          17.375,
+          17.375,
+          18.375,
+          16.625
+        ],
+        "norm_only": [
+          19.125,
+          18.75,
+          21.0,
+          18.625
+        ],
+        "unrelated_delta": [
+          19.375,
+          19.375,
+          21.0,
+          18.0
+        ]
+      }
+    },
+    {
+      "id": "Mercury_7283955",
+      "split": "train",
+      "group": "stable_wrong",
+      "native1_correct": false,
+      "native2_correct": false,
+      "native_no_tie": true,
+      "target_correct": false,
+      "target_tie": false,
+      "norm_correct": false,
+      "unrelated_correct": false,
+      "native1_logits": [
+        16.875,
+        17.25,
+        16.5,
+        18.75
+      ],
+      "native2_logits": [
+        18.0,
+        18.125,
+        17.125,
+        21.0
+      ],
+      "gold": 2,
+      "intervention_logits": {
+        "target": [
+          18.0,
+          17.875,
+          16.75,
+          20.625
+        ],
+        "norm_only": [
+          18.0,
+          18.125,
+          17.125,
+          20.875
+        ],
+        "unrelated_delta": [
+          18.625,
+          17.0,
+          17.25,
+          20.75
+        ]
+      }
+    },
+    {
+      "id": "Mercury_SC_406669",
+      "split": "train",
+      "group": "stable_correct",
+      "native1_correct": true,
+      "native2_correct": true,
+      "native_no_tie": true,
+      "target_correct": true,
+      "target_tie": false,
+      "norm_correct": true,
+      "unrelated_correct": true,
+      "native1_logits": [
+        18.0,
+        16.875,
+        16.875,
+        20.375
+      ],
+      "native2_logits": [
+        19.0,
+        17.75,
+        18.25,
+        21.5
+      ],
+      "gold": 3,
+      "intervention_logits": {
+        "target": [
+          18.875,
+          17.5,
+          17.875,
+          21.0
+        ],
+        "norm_only": [
+          19.0,
+          17.875,
+          18.25,
+          21.625
+        ],
+        "unrelated_delta": [
+          19.375,
+          18.25,
+          17.375,
+          21.5
+        ]
+      }
+    },
+    {
+      "id": "Mercury_7246873",
+      "split": "train",
+      "group": "stable_wrong",
+      "native1_correct": false,
+      "native2_correct": false,
+      "native_no_tie": true,
+      "target_correct": false,
+      "target_tie": false,
+      "norm_correct": false,
+      "unrelated_correct": false,
+      "native1_logits": [
+        14.5,
+        16.625,
+        18.75,
+        16.5
+      ],
+      "native2_logits": [
+        17.625,
+        18.0,
+        19.5,
+        17.625
+      ],
+      "gold": 3,
+      "intervention_logits": {
+        "target": [
+          17.25,
+          17.625,
+          19.125,
+          17.25
+        ],
+        "norm_only": [
+          17.75,
+          18.0,
+          19.5,
+          17.625
+        ],
+        "unrelated_delta": [
+          17.375,
+          17.75,
+          19.125,
+          17.125
+        ]
+      }
+    },
+    {
+      "id": "Mercury_7185448",
+      "split": "train",
+      "group": "stable_correct",
+      "native1_correct": true,
+      "native2_correct": true,
+      "native_no_tie": true,
+      "target_correct": true,
+      "target_tie": false,
+      "norm_correct": true,
+      "unrelated_correct": true,
+      "native1_logits": [
+        17.875,
+        20.125,
+        17.0,
+        16.875
+      ],
+      "native2_logits": [
+        16.875,
+        23.125,
+        16.125,
+        15.5625
+      ],
+      "gold": 1,
+      "intervention_logits": {
+        "target": [
+          17.75,
+          23.0,
+          16.125,
+          15.6875
+        ],
+        "norm_only": [
+          17.0,
+          23.125,
+          16.125,
+          15.625
+        ],
+        "unrelated_delta": [
+          17.25,
+          22.875,
+          16.0,
+          15.3125
+        ]
+      }
+    },
+    {
+      "id": "Mercury_410707",
+      "split": "train",
+      "group": "stable_correct",
+      "native1_correct": true,
+      "native2_correct": true,
+      "native_no_tie": true,
+      "target_correct": true,
+      "target_tie": false,
+      "norm_correct": true,
+      "unrelated_correct": true,
+      "native1_logits": [
+        16.625,
+        16.625,
+        16.0,
+        17.375
+      ],
+      "native2_logits": [
+        19.125,
+        18.5,
+        18.75,
+        20.875
+      ],
+      "gold": 3,
+      "intervention_logits": {
+        "target": [
+          19.125,
+          18.375,
+          18.125,
+          20.75
+        ],
+        "norm_only": [
+          19.125,
+          18.5,
+          18.75,
+          20.875
+        ],
+        "unrelated_delta": [
+          19.25,
+          18.625,
+          18.375,
+          21.0
+        ]
+      }
+    },
+    {
+      "id": "Mercury_7215268",
+      "split": "train",
+      "group": "rescue",
+      "native1_correct": false,
+      "native2_correct": true,
+      "native_no_tie": true,
+      "target_correct": true,
+      "target_tie": false,
+      "norm_correct": true,
+      "unrelated_correct": true,
+      "native1_logits": [
+        13.875,
+        14.375,
+        14.5625,
+        12.9375
+      ],
+      "native2_logits": [
+        17.0,
+        22.75,
+        18.0,
+        15.6875
+      ],
+      "gold": 1,
+      "intervention_logits": {
+        "target": [
+          17.5,
+          22.75,
+          18.125,
+          15.6875
+        ],
+        "norm_only": [
+          17.0,
+          22.75,
+          18.0,
+          15.6875
+        ],
+        "unrelated_delta": [
+          17.375,
+          22.75,
+          18.25,
+          14.875
+        ]
+      }
+    },
+    {
+      "id": "Mercury_7219643",
+      "split": "train",
+      "group": "stable_correct",
+      "native1_correct": true,
+      "native2_correct": true,
+      "native_no_tie": true,
+      "target_correct": true,
+      "target_tie": false,
+      "norm_correct": true,
+      "unrelated_correct": true,
+      "native1_logits": [
+        15.5,
+        15.8125,
+        15.4375,
+        16.625
+      ],
+      "native2_logits": [
+        16.375,
+        16.375,
+        16.875,
+        22.375
+      ],
+      "gold": 3,
+      "intervention_logits": {
+        "target": [
+          16.5,
+          16.5,
+          17.5,
+          22.5
+        ],
+        "norm_only": [
+          16.375,
+          16.375,
+          16.875,
+          22.375
+        ],
+        "unrelated_delta": [
+          16.75,
+          15.8125,
+          16.875,
+          22.375
+        ]
+      }
+    },
+    {
+      "id": "Mercury_417140",
+      "split": "train",
+      "group": "rescue",
+      "native1_correct": false,
+      "native2_correct": true,
+      "native_no_tie": false,
+      "target_correct": true,
+      "target_tie": false,
+      "norm_correct": true,
+      "unrelated_correct": true,
+      "native1_logits": [
+        15.0,
+        14.875,
+        15.0625,
+        15.0625
+      ],
+      "native2_logits": [
+        21.0,
+        18.75,
+        18.0,
+        18.375
+      ],
+      "gold": 0,
+      "intervention_logits": {
+        "target": [
+          20.25,
+          18.125,
+          18.0,
+          17.75
+        ],
+        "norm_only": [
+          21.0,
+          18.75,
+          18.0,
+          18.5
+        ],
+        "unrelated_delta": [
+          21.25,
+          19.125,
+          17.125,
+          19.0
+        ]
+      }
+    },
+    {
+      "id": "Mercury_409819",
+      "split": "train",
+      "group": "rescue",
+      "native1_correct": false,
+      "native2_correct": true,
+      "native_no_tie": true,
+      "target_correct": true,
+      "target_tie": false,
+      "norm_correct": true,
+      "unrelated_correct": true,
+      "native1_logits": [
+        15.375,
+        15.3125,
+        14.75,
+        14.125
+      ],
+      "native2_logits": [
+        18.625,
+        18.125,
+        18.5,
+        20.125
+      ],
+      "gold": 3,
+      "intervention_logits": {
+        "target": [
+          17.5,
+          17.125,
+          17.5,
+          18.625
+        ],
+        "norm_only": [
+          18.625,
+          18.125,
+          18.5,
+          20.125
+        ],
+        "unrelated_delta": [
+          18.5,
+          17.875,
+          18.0,
+          20.0
+        ]
+      }
+    },
+    {
+      "id": "Mercury_SC_407571",
+      "split": "train",
+      "group": "stable_correct",
+      "native1_correct": true,
+      "native2_correct": true,
+      "native_no_tie": true,
+      "target_correct": true,
+      "target_tie": false,
+      "norm_correct": true,
+      "unrelated_correct": true,
+      "native1_logits": [
+        13.6875,
+        14.8125,
+        13.875,
+        14.1875
+      ],
+      "native2_logits": [
+        17.25,
+        22.375,
+        17.5,
+        17.125
+      ],
+      "gold": 1,
+      "intervention_logits": {
+        "target": [
+          18.25,
+          22.25,
+          17.875,
+          17.375
+        ],
+        "norm_only": [
+          17.125,
+          22.5,
+          17.375,
+          17.0
+        ],
+        "unrelated_delta": [
+          17.5,
+          22.375,
+          17.0,
+          17.125
+        ]
+      }
+    },
+    {
+      "id": "Mercury_SC_400064",
+      "split": "train",
+      "group": "stable_correct",
+      "native1_correct": true,
+      "native2_correct": true,
+      "native_no_tie": true,
+      "target_correct": false,
+      "target_tie": false,
+      "norm_correct": true,
+      "unrelated_correct": false,
+      "native1_logits": [
+        13.6875,
+        14.0,
+        13.875,
+        14.3125
+      ],
+      "native2_logits": [
+        18.25,
+        17.375,
+        18.125,
+        18.375
+      ],
+      "gold": 3,
+      "intervention_logits": {
+        "target": [
+          18.0,
+          17.375,
+          18.125,
+          18.0
+        ],
+        "norm_only": [
+          18.25,
+          17.5,
+          18.25,
+          18.375
+        ],
+        "unrelated_delta": [
+          18.875,
+          16.875,
+          18.5,
+          18.75
+        ]
+      }
+    },
+    {
+      "id": "Mercury_7086223",
+      "split": "train",
+      "group": "stable_wrong",
+      "native1_correct": false,
+      "native2_correct": false,
+      "native_no_tie": true,
+      "target_correct": false,
+      "target_tie": false,
+      "norm_correct": false,
+      "unrelated_correct": false,
+      "native1_logits": [
+        14.0,
+        14.625,
+        14.625,
+        15.75
+      ],
+      "native2_logits": [
+        17.625,
+        17.25,
+        15.875,
+        15.75
+      ],
+      "gold": 1,
+      "intervention_logits": {
+        "target": [
+          17.25,
+          16.75,
+          15.5,
+          15.6875
+        ],
+        "norm_only": [
+          17.625,
+          17.25,
+          15.875,
+          15.6875
+        ],
+        "unrelated_delta": [
+          18.75,
+          18.375,
+          15.75,
+          16.875
+        ]
+      }
+    },
+    {
+      "id": "Mercury_7214463",
+      "split": "train",
+      "group": "stable_wrong",
+      "native1_correct": false,
+      "native2_correct": false,
+      "native_no_tie": true,
+      "target_correct": false,
+      "target_tie": false,
+      "norm_correct": false,
+      "unrelated_correct": false,
+      "native1_logits": [
+        12.5,
+        13.3125,
+        13.0625,
+        12.5
+      ],
+      "native2_logits": [
+        18.125,
+        15.5625,
+        19.125,
+        16.875
+      ],
+      "gold": 0,
+      "intervention_logits": {
+        "target": [
+          17.875,
+          15.5625,
+          18.625,
+          16.375
+        ],
+        "norm_only": [
+          18.125,
+          15.625,
+          19.125,
+          16.875
+        ],
+        "unrelated_delta": [
+          18.0,
+          15.875,
+          19.0,
+          16.375
+        ]
+      }
+    },
+    {
+      "id": "Mercury_SC_400986",
+      "split": "train",
+      "group": "rescue",
+      "native1_correct": false,
+      "native2_correct": true,
+      "native_no_tie": true,
+      "target_correct": true,
+      "target_tie": false,
+      "norm_correct": true,
+      "unrelated_correct": true,
+      "native1_logits": [
+        13.3125,
+        14.4375,
+        13.875,
+        12.9375
+      ],
+      "native2_logits": [
+        17.5,
+        16.0,
+        16.125,
+        14.1875
+      ],
+      "gold": 0,
+      "intervention_logits": {
+        "target": [
+          17.375,
+          16.25,
+          15.5,
+          13.625
+        ],
+        "norm_only": [
+          17.375,
+          16.0,
+          16.125,
+          14.1875
+        ],
+        "unrelated_delta": [
+          17.75,
+          16.75,
+          14.875,
+          14.5
+        ]
+      }
+    },
+    {
+      "id": "Mercury_401242",
+      "split": "train",
+      "group": "stable_correct",
+      "native1_correct": true,
+      "native2_correct": true,
+      "native_no_tie": true,
+      "target_correct": true,
+      "target_tie": false,
+      "norm_correct": true,
+      "unrelated_correct": true,
+      "native1_logits": [
+        15.25,
+        17.625,
+        16.5,
+        14.75
+      ],
+      "native2_logits": [
+        16.625,
+        22.0,
+        18.25,
+        17.0
+      ],
+      "gold": 1,
+      "intervention_logits": {
+        "target": [
+          17.75,
+          21.5,
+          18.625,
+          16.875
+        ],
+        "norm_only": [
+          16.625,
+          22.0,
+          18.25,
+          17.0
+        ],
+        "unrelated_delta": [
+          16.625,
+          22.125,
+          18.0,
+          16.75
+        ]
+      }
+    },
+    {
+      "id": "NCEOGA_2013_5_29",
+      "split": "train",
+      "group": "stable_wrong",
+      "native1_correct": false,
+      "native2_correct": false,
+      "native_no_tie": true,
+      "target_correct": false,
+      "target_tie": false,
+      "norm_correct": false,
+      "unrelated_correct": false,
+      "native1_logits": [
+        12.6875,
+        14.9375,
+        13.0,
+        13.9375
+      ],
+      "native2_logits": [
+        15.3125,
+        17.5,
+        16.125,
+        16.125
+      ],
+      "gold": 2,
+      "intervention_logits": {
+        "target": [
+          15.625,
+          17.5,
+          16.25,
+          16.125
+        ],
+        "norm_only": [
+          15.4375,
+          17.625,
+          16.375,
+          16.25
+        ],
+        "unrelated_delta": [
+          16.0,
+          18.125,
+          17.0,
+          16.25
+        ]
+      }
+    },
+    {
+      "id": "Mercury_400761",
+      "split": "train",
+      "group": "stable_correct",
+      "native1_correct": true,
+      "native2_correct": true,
+      "native_no_tie": true,
+      "target_correct": true,
+      "target_tie": false,
+      "norm_correct": true,
+      "unrelated_correct": true,
+      "native1_logits": [
+        17.25,
+        19.125,
+        16.25,
+        16.0
+      ],
+      "native2_logits": [
+        17.375,
+        22.625,
+        17.875,
+        17.0
+      ],
+      "gold": 1,
+      "intervention_logits": {
+        "target": [
+          17.75,
+          22.5,
+          18.0,
+          17.0
+        ],
+        "norm_only": [
+          17.375,
+          22.625,
+          17.875,
+          17.0
+        ],
+        "unrelated_delta": [
+          18.0,
+          22.375,
+          18.0,
+          17.125
+        ]
+      }
+    },
+    {
+      "id": "Mercury_416594",
+      "split": "train",
+      "group": "stable_correct",
+      "native1_correct": true,
+      "native2_correct": true,
+      "native_no_tie": true,
+      "target_correct": true,
+      "target_tie": false,
+      "norm_correct": true,
+      "unrelated_correct": false,
+      "native1_logits": [
+        16.625,
+        16.25,
+        14.6875,
+        14.75
+      ],
+      "native2_logits": [
+        19.375,
+        17.875,
+        19.125,
+        17.625
+      ],
+      "gold": 0,
+      "intervention_logits": {
+        "target": [
+          20.0,
+          18.375,
+          18.125,
+          17.75
+        ],
+        "norm_only": [
+          19.375,
+          17.875,
+          19.0,
+          17.625
+        ],
+        "unrelated_delta": [
+          19.125,
+          18.125,
+          19.5,
+          17.875
+        ]
+      }
+    },
+    {
+      "id": "Mercury_7165060",
+      "split": "train",
+      "group": "rescue",
+      "native1_correct": false,
+      "native2_correct": true,
+      "native_no_tie": true,
+      "target_correct": true,
+      "target_tie": false,
+      "norm_correct": true,
+      "unrelated_correct": true,
+      "native1_logits": [
+        13.625,
+        14.0,
+        12.875,
+        13.9375
+      ],
+      "native2_logits": [
+        18.125,
+        17.375,
+        17.125,
+        22.5
+      ],
+      "gold": 3,
+      "intervention_logits": {
+        "target": [
+          17.875,
+          16.875,
+          16.375,
+          21.0
+        ],
+        "norm_only": [
+          18.125,
+          17.375,
+          17.125,
+          22.5
+        ],
+        "unrelated_delta": [
+          18.875,
+          18.25,
+          16.25,
+          22.5
+        ]
+      }
+    },
+    {
+      "id": "Mercury_SC_416112",
+      "split": "train",
+      "group": "damage",
+      "native1_correct": true,
+      "native2_correct": false,
+      "native_no_tie": false,
+      "target_correct": false,
+      "target_tie": true,
+      "norm_correct": false,
+      "unrelated_correct": false,
+      "native1_logits": [
+        13.0,
+        13.6875,
+        13.125,
+        12.5
+      ],
+      "native2_logits": [
+        19.125,
+        19.125,
+        18.875,
+        18.625
+      ],
+      "gold": 1,
+      "intervention_logits": {
+        "target": [
+          19.0,
+          19.0,
+          18.75,
+          18.375
+        ],
+        "norm_only": [
+          19.25,
+          19.125,
+          19.0,
+          18.625
+        ],
+        "unrelated_delta": [
+          19.375,
+          18.375,
+          18.875,
+          19.0
+        ]
+      }
+    },
+    {
+      "id": "CSZ20059",
+      "split": "train",
+      "group": "rescue",
+      "native1_correct": false,
+      "native2_correct": true,
+      "native_no_tie": true,
+      "target_correct": true,
+      "target_tie": false,
+      "norm_correct": true,
+      "unrelated_correct": true,
+      "native1_logits": [
+        12.4375,
+        13.25,
+        12.625,
+        13.1875
+      ],
+      "native2_logits": [
+        17.375,
+        17.75,
+        17.375,
+        19.375
+      ],
+      "gold": 3,
+      "intervention_logits": {
+        "target": [
+          16.75,
+          17.0,
+          16.625,
+          18.125
+        ],
+        "norm_only": [
+          17.375,
+          17.75,
+          17.375,
+          19.375
+        ],
+        "unrelated_delta": [
+          16.125,
+          17.375,
+          16.875,
+          18.375
+        ]
+      }
+    },
+    {
+      "id": "Mercury_7041860",
+      "split": "train",
+      "group": "damage",
+      "native1_correct": true,
+      "native2_correct": false,
+      "native_no_tie": true,
+      "target_correct": false,
+      "target_tie": false,
+      "norm_correct": false,
+      "unrelated_correct": false,
+      "native1_logits": [
+        15.875,
+        16.25,
+        15.5,
+        15.375
+      ],
+      "native2_logits": [
+        19.625,
+        19.125,
+        18.75,
+        18.625
+      ],
+      "gold": 1,
+      "intervention_logits": {
+        "target": [
+          19.375,
+          19.25,
+          19.0,
+          18.5
+        ],
+        "norm_only": [
+          19.625,
+          19.125,
+          18.75,
+          18.625
+        ],
+        "unrelated_delta": [
+          19.75,
+          18.875,
+          19.125,
+          18.75
+        ]
+      }
+    },
+    {
+      "id": "AKDE&ED_2008_8_12",
+      "split": "train",
+      "group": "stable_correct",
+      "native1_correct": true,
+      "native2_correct": true,
+      "native_no_tie": true,
+      "target_correct": true,
+      "target_tie": false,
+      "norm_correct": true,
+      "unrelated_correct": true,
+      "native1_logits": [
+        15.625,
+        17.75,
+        15.75,
+        16.125
+      ],
+      "native2_logits": [
+        15.875,
+        22.25,
+        16.875,
+        15.6875
+      ],
+      "gold": 1,
+      "intervention_logits": {
+        "target": [
+          16.375,
+          22.125,
+          16.875,
+          15.875
+        ],
+        "norm_only": [
+          15.875,
+          22.25,
+          16.875,
+          15.75
+        ],
+        "unrelated_delta": [
+          16.125,
+          22.125,
+          16.625,
+          14.75
+        ]
+      }
+    },
+    {
+      "id": "NYSEDREGENTS_2004_4_12",
+      "split": "train",
+      "group": "stable_correct",
+      "native1_correct": true,
+      "native2_correct": true,
+      "native_no_tie": true,
+      "target_correct": true,
+      "target_tie": false,
+      "norm_correct": true,
+      "unrelated_correct": true,
+      "native1_logits": [
+        14.5,
+        14.9375,
+        15.4375,
+        16.875
+      ],
+      "native2_logits": [
+        18.375,
+        16.5,
+        17.0,
+        21.625
+      ],
+      "gold": 3,
+      "intervention_logits": {
+        "target": [
+          18.375,
+          16.75,
+          17.0,
+          21.125
+        ],
+        "norm_only": [
+          18.375,
+          16.5,
+          17.0,
+          21.625
+        ],
+        "unrelated_delta": [
+          17.875,
+          16.375,
+          16.375,
+          21.375
+        ]
+      }
+    },
+    {
+      "id": "VASoL_2010_3_18",
+      "split": "train",
+      "group": "stable_correct",
+      "native1_correct": true,
+      "native2_correct": true,
+      "native_no_tie": true,
+      "target_correct": true,
+      "target_tie": false,
+      "norm_correct": true,
+      "unrelated_correct": true,
+      "native1_logits": [
+        13.375,
+        14.25,
+        15.6875,
+        16.375
+      ],
+      "native2_logits": [
+        18.375,
+        17.625,
+        18.5,
+        19.875
+      ],
+      "gold": 3,
+      "intervention_logits": {
+        "target": [
+          18.375,
+          17.5,
+          18.25,
+          19.75
+        ],
+        "norm_only": [
+          18.375,
+          17.625,
+          18.5,
+          19.875
+        ],
+        "unrelated_delta": [
+          17.875,
+          17.375,
+          18.125,
+          19.125
+        ]
+      }
+    },
+    {
+      "id": "Mercury_SC_415706",
+      "split": "train",
+      "group": "stable_wrong",
+      "native1_correct": false,
+      "native2_correct": false,
+      "native_no_tie": false,
+      "target_correct": false,
+      "target_tie": false,
+      "norm_correct": false,
+      "unrelated_correct": false,
+      "native1_logits": [
+        14.3125,
+        14.0,
+        14.1875,
+        14.3125
+      ],
+      "native2_logits": [
+        18.0,
+        17.5,
+        18.25,
+        17.0
+      ],
+      "gold": 1,
+      "intervention_logits": {
+        "target": [
+          17.5,
+          17.375,
+          18.0,
+          16.875
+        ],
+        "norm_only": [
+          18.125,
+          17.5,
+          18.25,
+          17.125
+        ],
+        "unrelated_delta": [
+          17.875,
+          17.25,
+          18.0,
+          16.75
+        ]
+      }
+    },
+    {
+      "id": "Mercury_7188703",
+      "split": "train",
+      "group": "stable_correct",
+      "native1_correct": true,
+      "native2_correct": true,
+      "native_no_tie": true,
+      "target_correct": true,
+      "target_tie": false,
+      "norm_correct": true,
+      "unrelated_correct": true,
+      "native1_logits": [
+        14.8125,
+        15.6875,
+        14.3125,
+        14.125
+      ],
+      "native2_logits": [
+        17.5,
+        21.5,
+        18.625,
+        18.625
+      ],
+      "gold": 1,
+      "intervention_logits": {
+        "target": [
+          17.75,
+          21.125,
+          18.375,
+          18.25
+        ],
+        "norm_only": [
+          17.5,
+          21.5,
+          18.625,
+          18.625
+        ],
+        "unrelated_delta": [
+          17.625,
+          21.875,
+          18.0,
+          19.125
+        ]
+      }
+    },
+    {
+      "id": "Mercury_7245070",
+      "split": "train",
+      "group": "stable_correct",
+      "native1_correct": true,
+      "native2_correct": true,
+      "native_no_tie": true,
+      "target_correct": true,
+      "target_tie": false,
+      "norm_correct": true,
+      "unrelated_correct": true,
+      "native1_logits": [
+        12.5625,
+        13.625,
+        12.5,
+        13.125
+      ],
+      "native2_logits": [
+        17.875,
+        22.25,
+        16.5,
+        16.375
+      ],
+      "gold": 1,
+      "intervention_logits": {
+        "target": [
+          18.375,
+          22.125,
+          16.5,
+          16.5
+        ],
+        "norm_only": [
+          17.875,
+          22.25,
+          16.5,
+          16.375
+        ],
+        "unrelated_delta": [
+          17.5,
+          22.375,
+          16.125,
+          16.375
+        ]
+      }
+    },
+    {
+      "id": "Mercury_7197225",
+      "split": "train",
+      "group": "rescue",
+      "native1_correct": false,
+      "native2_correct": true,
+      "native_no_tie": true,
+      "target_correct": true,
+      "target_tie": false,
+      "norm_correct": true,
+      "unrelated_correct": true,
+      "native1_logits": [
+        14.4375,
+        15.0,
+        14.25,
+        13.875
+      ],
+      "native2_logits": [
+        20.75,
+        16.375,
+        21.375,
+        16.875
+      ],
+      "gold": 2,
+      "intervention_logits": {
+        "target": [
+          19.875,
+          16.5,
+          20.125,
+          16.5
+        ],
+        "norm_only": [
+          20.75,
+          16.375,
+          21.375,
+          16.875
+        ],
+        "unrelated_delta": [
+          20.625,
+          16.5,
+          21.0,
+          16.0
+        ]
+      }
+    },
+    {
+      "id": "Mercury_177328",
+      "split": "train",
+      "group": "stable_correct",
+      "native1_correct": true,
+      "native2_correct": true,
+      "native_no_tie": true,
+      "target_correct": true,
+      "target_tie": false,
+      "norm_correct": true,
+      "unrelated_correct": true,
+      "native1_logits": [
+        13.0625,
+        13.125,
+        13.5625,
+        13.3125
+      ],
+      "native2_logits": [
+        16.75,
+        16.375,
+        23.5,
+        17.75
+      ],
+      "gold": 2,
+      "intervention_logits": {
+        "target": [
+          16.5,
+          16.125,
+          23.375,
+          18.125
+        ],
+        "norm_only": [
+          16.75,
+          16.375,
+          23.5,
+          17.75
+        ],
+        "unrelated_delta": [
+          16.5,
+          15.3125,
+          23.5,
+          17.75
+        ]
+      }
+    },
+    {
+      "id": "Mercury_SC_407137",
+      "split": "train",
+      "group": "rescue",
+      "native1_correct": false,
+      "native2_correct": true,
+      "native_no_tie": true,
+      "target_correct": true,
+      "target_tie": false,
+      "norm_correct": true,
+      "unrelated_correct": true,
+      "native1_logits": [
+        11.875,
+        13.375,
+        12.6875,
+        12.8125
+      ],
+      "native2_logits": [
+        18.25,
+        18.375,
+        21.25,
+        18.375
+      ],
+      "gold": 2,
+      "intervention_logits": {
+        "target": [
+          16.875,
+          17.25,
+          19.25,
+          16.875
+        ],
+        "norm_only": [
+          18.25,
+          18.375,
+          21.125,
+          18.375
+        ],
+        "unrelated_delta": [
+          19.0,
+          17.5,
+          21.375,
+          18.625
+        ]
+      }
+    },
+    {
+      "id": "MSA_2013_5_33",
+      "split": "train",
+      "group": "rescue",
+      "native1_correct": false,
+      "native2_correct": true,
+      "native_no_tie": true,
+      "target_correct": true,
+      "target_tie": false,
+      "norm_correct": true,
+      "unrelated_correct": true,
+      "native1_logits": [
+        13.625,
+        14.125,
+        14.5,
+        14.9375
+      ],
+      "native2_logits": [
+        18.0,
+        18.25,
+        21.75,
+        19.75
+      ],
+      "gold": 2,
+      "intervention_logits": {
+        "target": [
+          17.25,
+          17.375,
+          20.125,
+          19.125
+        ],
+        "norm_only": [
+          18.0,
+          18.25,
+          21.75,
+          19.75
+        ],
+        "unrelated_delta": [
+          18.625,
+          16.25,
+          21.625,
+          20.0
+        ]
+      }
+    },
+    {
+      "id": "MDSA_2009_5_17",
+      "split": "train",
+      "group": "stable_correct",
+      "native1_correct": true,
+      "native2_correct": true,
+      "native_no_tie": true,
+      "target_correct": true,
+      "target_tie": false,
+      "norm_correct": true,
+      "unrelated_correct": true,
+      "native1_logits": [
+        14.5625,
+        14.0625,
+        15.4375,
+        14.0625
+      ],
+      "native2_logits": [
+        19.125,
+        17.5,
+        21.0,
+        17.625
+      ],
+      "gold": 2,
+      "intervention_logits": {
+        "target": [
+          19.0,
+          17.125,
+          20.375,
+          16.875
+        ],
+        "norm_only": [
+          19.0,
+          17.5,
+          21.0,
+          17.625
+        ],
+        "unrelated_delta": [
+          19.625,
+          18.25,
+          21.25,
+          16.75
+        ]
+      }
+    },
+    {
+      "id": "NYSEDREGENTS_2007_8_23",
+      "split": "train",
+      "group": "rescue",
+      "native1_correct": false,
+      "native2_correct": true,
+      "native_no_tie": false,
+      "target_correct": true,
+      "target_tie": false,
+      "norm_correct": true,
+      "unrelated_correct": true,
+      "native1_logits": [
+        12.875,
+        12.875,
+        12.5,
+        12.375
+      ],
+      "native2_logits": [
+        18.125,
+        18.875,
+        18.25,
+        21.375
+      ],
+      "gold": 3,
+      "intervention_logits": {
+        "target": [
+          17.375,
+          18.5,
+          17.5,
+          20.5
+        ],
+        "norm_only": [
+          18.125,
+          19.0,
+          18.25,
+          21.375
+        ],
+        "unrelated_delta": [
+          19.125,
+          17.25,
+          18.5,
+          21.125
+        ]
+      }
+    },
+    {
+      "id": "MEA_2010_8_20-v1",
+      "split": "train",
+      "group": "rescue",
+      "native1_correct": false,
+      "native2_correct": true,
+      "native_no_tie": true,
+      "target_correct": true,
+      "target_tie": false,
+      "norm_correct": true,
+      "unrelated_correct": true,
+      "native1_logits": [
+        13.6875,
+        13.5,
+        13.125,
+        13.375
+      ],
+      "native2_logits": [
+        17.875,
+        16.875,
+        16.625,
+        18.75
+      ],
+      "gold": 3,
+      "intervention_logits": {
+        "target": [
+          17.375,
+          16.375,
+          16.0,
+          17.75
+        ],
+        "norm_only": [
+          17.875,
+          16.875,
+          16.75,
+          18.875
+        ],
+        "unrelated_delta": [
+          17.0,
+          16.125,
+          16.125,
+          18.25
+        ]
+      }
+    },
+    {
+      "id": "Mercury_SC_402170",
+      "split": "train",
+      "group": "rescue",
+      "native1_correct": false,
+      "native2_correct": true,
+      "native_no_tie": true,
+      "target_correct": true,
+      "target_tie": false,
+      "norm_correct": true,
+      "unrelated_correct": true,
+      "native1_logits": [
+        14.4375,
+        14.875,
+        13.5,
+        14.9375
+      ],
+      "native2_logits": [
+        20.375,
+        17.125,
+        15.875,
+        19.875
+      ],
+      "gold": 0,
+      "intervention_logits": {
+        "target": [
+          19.5,
+          17.125,
+          15.625,
+          18.75
+        ],
+        "norm_only": [
+          20.375,
+          17.25,
+          15.875,
+          19.875
+        ],
+        "unrelated_delta": [
+          20.125,
+          16.75,
+          15.5625,
+          19.25
+        ]
+      }
+    },
+    {
+      "id": "MSA_2015_8_31",
+      "split": "train",
+      "group": "stable_correct",
+      "native1_correct": true,
+      "native2_correct": true,
+      "native_no_tie": false,
+      "target_correct": true,
+      "target_tie": false,
+      "norm_correct": true,
+      "unrelated_correct": true,
+      "native1_logits": [
+        14.5,
+        15.0625,
+        13.625,
+        15.0625
+      ],
+      "native2_logits": [
+        18.5,
+        20.875,
+        17.375,
+        17.75
+      ],
+      "gold": 1,
+      "intervention_logits": {
+        "target": [
+          17.625,
+          19.5,
+          16.25,
+          17.0
+        ],
+        "norm_only": [
+          18.5,
+          20.875,
+          17.375,
+          17.75
+        ],
+        "unrelated_delta": [
+          18.625,
+          21.0,
+          16.25,
+          18.375
+        ]
+      }
+    },
+    {
+      "id": "LEAP_2001_4_10241",
+      "split": "train",
+      "group": "stable_correct",
+      "native1_correct": true,
+      "native2_correct": true,
+      "native_no_tie": true,
+      "target_correct": true,
+      "target_tie": false,
+      "norm_correct": true,
+      "unrelated_correct": true,
+      "native1_logits": [
+        13.0,
+        13.25,
+        12.6875,
+        14.25
+      ],
+      "native2_logits": [
+        19.625,
+        17.25,
+        17.125,
+        20.375
+      ],
+      "gold": 3,
+      "intervention_logits": {
+        "target": [
+          19.375,
+          16.875,
+          16.375,
+          19.75
+        ],
+        "norm_only": [
+          19.625,
+          17.125,
+          17.125,
+          20.375
+        ],
+        "unrelated_delta": [
+          20.0,
+          16.5,
+          17.125,
+          20.75
+        ]
+      }
+    },
+    {
+      "id": "MEA_2016_5_1",
+      "split": "train",
+      "group": "stable_correct",
+      "native1_correct": true,
+      "native2_correct": true,
+      "native_no_tie": true,
+      "target_correct": true,
+      "target_tie": false,
+      "norm_correct": true,
+      "unrelated_correct": true,
+      "native1_logits": [
+        15.6875,
+        16.375,
+        21.5,
+        16.75
+      ],
+      "native2_logits": [
+        16.625,
+        16.375,
+        23.125,
+        16.625
+      ],
+      "gold": 2,
+      "intervention_logits": {
+        "target": [
+          16.375,
+          16.125,
+          23.0,
+          16.375
+        ],
+        "norm_only": [
+          16.625,
+          16.375,
+          23.125,
+          16.625
+        ],
+        "unrelated_delta": [
+          16.875,
+          16.375,
+          23.125,
+          16.625
+        ]
+      }
+    },
+    {
+      "id": "Mercury_SC_415702",
+      "split": "train",
+      "group": "rescue",
+      "native1_correct": false,
+      "native2_correct": true,
+      "native_no_tie": false,
+      "target_correct": true,
+      "target_tie": true,
+      "norm_correct": true,
+      "unrelated_correct": false,
+      "native1_logits": [
+        13.75,
+        14.4375,
+        13.625,
+        12.8125
+      ],
+      "native2_logits": [
+        20.25,
+        20.25,
+        19.375,
+        19.375
+      ],
+      "gold": 0,
+      "intervention_logits": {
+        "target": [
+          20.0,
+          20.0,
+          19.375,
+          19.0
+        ],
+        "norm_only": [
+          20.375,
+          20.25,
+          19.375,
+          19.375
+        ],
+        "unrelated_delta": [
+          20.0,
+          20.25,
+          19.25,
+          19.375
+        ]
+      }
+    },
+    {
+      "id": "Mercury_7212030",
+      "split": "train",
+      "group": "stable_wrong",
+      "native1_correct": false,
+      "native2_correct": false,
+      "native_no_tie": true,
+      "target_correct": true,
+      "target_tie": false,
+      "norm_correct": false,
+      "unrelated_correct": false,
+      "native1_logits": [
+        14.25,
+        17.0,
+        15.375,
+        15.0
+      ],
+      "native2_logits": [
+        17.625,
+        19.0,
+        19.75,
+        19.625
+      ],
+      "gold": 3,
+      "intervention_logits": {
+        "target": [
+          17.75,
+          19.125,
+          19.25,
+          19.375
+        ],
+        "norm_only": [
+          17.625,
+          19.0,
+          19.75,
+          19.625
+        ],
+        "unrelated_delta": [
+          17.75,
+          19.25,
+          19.625,
+          19.625
+        ]
+      }
+    },
+    {
+      "id": "CSZ_2004_5_CSZ10003",
+      "split": "train",
+      "group": "stable_wrong",
+      "native1_correct": false,
+      "native2_correct": false,
+      "native_no_tie": true,
+      "target_correct": false,
+      "target_tie": true,
+      "norm_correct": false,
+      "unrelated_correct": false,
+      "native1_logits": [
+        13.6875,
+        14.0625,
+        13.5,
+        13.375
+      ],
+      "native2_logits": [
+        18.5,
+        19.0,
+        17.75,
+        17.0
+      ],
+      "gold": 2,
+      "intervention_logits": {
+        "target": [
+          18.25,
+          18.25,
+          17.5,
+          16.75
+        ],
+        "norm_only": [
+          18.375,
+          19.0,
+          17.875,
+          17.0
+        ],
+        "unrelated_delta": [
+          18.75,
+          19.125,
+          17.75,
+          16.75
+        ]
+      }
+    },
+    {
+      "id": "MEAP_2005_8_17",
+      "split": "train",
+      "group": "stable_correct",
+      "native1_correct": true,
+      "native2_correct": true,
+      "native_no_tie": true,
+      "target_correct": true,
+      "target_tie": false,
+      "norm_correct": true,
+      "unrelated_correct": true,
+      "native1_logits": [
+        15.75,
+        16.125,
+        18.25,
+        16.125
+      ],
+      "native2_logits": [
+        17.875,
+        17.0,
+        21.125,
+        18.125
+      ],
+      "gold": 2,
+      "intervention_logits": {
+        "target": [
+          17.75,
+          17.0,
+          20.75,
+          17.75
+        ],
+        "norm_only": [
+          17.875,
+          17.0,
+          21.125,
+          18.125
+        ],
+        "unrelated_delta": [
+          18.25,
+          17.375,
+          21.125,
+          17.625
+        ]
+      }
+    },
+    {
+      "id": "Mercury_SC_401369",
+      "split": "train",
+      "group": "stable_correct",
+      "native1_correct": true,
+      "native2_correct": true,
+      "native_no_tie": true,
+      "target_correct": true,
+      "target_tie": false,
+      "norm_correct": true,
+      "unrelated_correct": true,
+      "native1_logits": [
+        14.375,
+        14.5,
+        13.9375,
+        14.9375
+      ],
+      "native2_logits": [
+        19.0,
+        17.5,
+        17.875,
+        20.875
+      ],
+      "gold": 3,
+      "intervention_logits": {
+        "target": [
+          18.375,
+          17.0,
+          17.0,
+          19.625
+        ],
+        "norm_only": [
+          19.0,
+          17.5,
+          17.875,
+          20.875
+        ],
+        "unrelated_delta": [
+          18.125,
+          17.25,
+          18.375,
+          20.75
+        ]
+      }
+    },
+    {
+      "id": "Mercury_7027353",
+      "split": "train",
+      "group": "stable_wrong",
+      "native1_correct": false,
+      "native2_correct": false,
+      "native_no_tie": true,
+      "target_correct": false,
+      "target_tie": false,
+      "norm_correct": false,
+      "unrelated_correct": false,
+      "native1_logits": [
+        11.9375,
+        12.375,
+        11.75,
+        12.5625
+      ],
+      "native2_logits": [
+        14.4375,
+        14.125,
+        14.0,
+        13.625
+      ],
+      "gold": 2,
+      "intervention_logits": {
+        "target": [
+          14.5625,
+          14.25,
+          13.5,
+          12.6875
+        ],
+        "norm_only": [
+          14.375,
+          14.125,
+          14.0,
+          13.5625
+        ],
+        "unrelated_delta": [
+          15.25,
+          15.0,
+          15.25,
+          13.0625
+        ]
+      }
+    },
+    {
+      "id": "MDSA_2009_8_44",
+      "split": "train",
+      "group": "rescue",
+      "native1_correct": false,
+      "native2_correct": true,
+      "native_no_tie": true,
+      "target_correct": true,
+      "target_tie": false,
+      "norm_correct": true,
+      "unrelated_correct": true,
+      "native1_logits": [
+        14.375,
+        14.6875,
+        15.5625,
+        14.75
+      ],
+      "native2_logits": [
+        17.875,
+        16.875,
+        19.875,
+        21.875
+      ],
+      "gold": 3,
+      "intervention_logits": {
+        "target": [
+          17.125,
+          16.125,
+          18.875,
+          20.125
+        ],
+        "norm_only": [
+          17.875,
+          16.875,
+          19.875,
+          21.875
+        ],
+        "unrelated_delta": [
+          16.5,
+          16.0,
+          18.5,
+          19.5
+        ]
+      }
+    },
+    {
+      "id": "NCEOGA_2013_8_8",
+      "split": "train",
+      "group": "rescue",
+      "native1_correct": false,
+      "native2_correct": true,
+      "native_no_tie": true,
+      "target_correct": true,
+      "target_tie": false,
+      "norm_correct": true,
+      "unrelated_correct": true,
+      "native1_logits": [
+        14.125,
+        14.8125,
+        14.8125,
+        14.9375
+      ],
+      "native2_logits": [
+        16.125,
+        20.375,
+        17.625,
+        18.75
+      ],
+      "gold": 1,
+      "intervention_logits": {
+        "target": [
+          15.75,
+          19.0,
+          17.0,
+          17.875
+        ],
+        "norm_only": [
+          16.125,
+          20.375,
+          17.5,
+          18.75
+        ],
+        "unrelated_delta": [
+          16.625,
+          20.5,
+          17.75,
+          18.25
+        ]
+      }
+    },
+    {
+      "id": "Mercury_7038150",
+      "split": "train",
+      "group": "stable_correct",
+      "native1_correct": true,
+      "native2_correct": true,
+      "native_no_tie": true,
+      "target_correct": true,
+      "target_tie": false,
+      "norm_correct": true,
+      "unrelated_correct": true,
+      "native1_logits": [
+        13.125,
+        13.75,
+        14.3125,
+        14.375
+      ],
+      "native2_logits": [
+        18.5,
+        19.375,
+        20.0,
+        20.75
+      ],
+      "gold": 3,
+      "intervention_logits": {
+        "target": [
+          18.125,
+          18.875,
+          19.625,
+          20.25
+        ],
+        "norm_only": [
+          18.375,
+          19.25,
+          20.0,
+          20.625
+        ],
+        "unrelated_delta": [
+          18.375,
+          19.25,
+          19.75,
+          20.625
+        ]
+      }
+    },
+    {
+      "id": "ACTAAP_2008_7_2",
+      "split": "train",
+      "group": "rescue",
+      "native1_correct": false,
+      "native2_correct": true,
+      "native_no_tie": true,
+      "target_correct": true,
+      "target_tie": false,
+      "norm_correct": true,
+      "unrelated_correct": true,
+      "native1_logits": [
+        12.9375,
+        14.0,
+        14.875,
+        13.6875
+      ],
+      "native2_logits": [
+        17.125,
+        20.875,
+        19.0,
+        16.125
+      ],
+      "gold": 1,
+      "intervention_logits": {
+        "target": [
+          15.125,
+          18.375,
+          17.25,
+          13.875
+        ],
+        "norm_only": [
+          17.125,
+          20.875,
+          19.125,
+          16.25
+        ],
+        "unrelated_delta": [
+          18.0,
+          22.0,
+          19.125,
+          17.25
+        ]
+      }
+    },
+    {
+      "id": "Mercury_406888",
+      "split": "train",
+      "group": "stable_correct",
+      "native1_correct": true,
+      "native2_correct": true,
+      "native_no_tie": true,
+      "target_correct": true,
+      "target_tie": false,
+      "norm_correct": true,
+      "unrelated_correct": true,
+      "native1_logits": [
+        12.5625,
+        14.25,
+        12.6875,
+        12.875
+      ],
+      "native2_logits": [
+        17.5,
+        22.625,
+        16.875,
+        15.9375
+      ],
+      "gold": 1,
+      "intervention_logits": {
+        "target": [
+          17.625,
+          22.5,
+          16.75,
+          15.9375
+        ],
+        "norm_only": [
+          17.5,
+          22.625,
+          16.875,
+          15.9375
+        ],
+        "unrelated_delta": [
+          18.0,
+          22.625,
+          17.0,
+          15.375
+        ]
+      }
+    },
+    {
+      "id": "ACTAAP_2015_7_2",
+      "split": "train",
+      "group": "stable_correct",
+      "native1_correct": true,
+      "native2_correct": true,
+      "native_no_tie": true,
+      "target_correct": true,
+      "target_tie": false,
+      "norm_correct": true,
+      "unrelated_correct": true,
+      "native1_logits": [
+        14.0,
+        15.25,
+        13.5625,
+        14.25
+      ],
+      "native2_logits": [
+        16.375,
+        21.875,
+        16.125,
+        16.25
+      ],
+      "gold": 1,
+      "intervention_logits": {
+        "target": [
+          17.375,
+          21.875,
+          16.375,
+          16.625
+        ],
+        "norm_only": [
+          16.375,
+          21.75,
+          16.125,
+          16.125
+        ],
+        "unrelated_delta": [
+          15.9375,
+          21.75,
+          16.0,
+          16.25
+        ]
+      }
+    },
+    {
+      "id": "Mercury_7012670",
+      "split": "train",
+      "group": "stable_correct",
+      "native1_correct": true,
+      "native2_correct": true,
+      "native_no_tie": true,
+      "target_correct": true,
+      "target_tie": false,
+      "norm_correct": true,
+      "unrelated_correct": true,
+      "native1_logits": [
+        19.5,
+        16.875,
+        14.9375,
+        15.625
+      ],
+      "native2_logits": [
+        23.125,
+        16.375,
+        15.5,
+        14.3125
+      ],
+      "gold": 0,
+      "intervention_logits": {
+        "target": [
+          23.0,
+          16.625,
+          15.25,
+          14.1875
+        ],
+        "norm_only": [
+          23.125,
+          16.375,
+          15.5,
+          14.375
+        ],
+        "unrelated_delta": [
+          23.25,
+          17.0,
+          15.375,
+          13.25
+        ]
+      }
+    },
+    {
+      "id": "ACTAAP_2007_7_24",
+      "split": "train",
+      "group": "stable_correct",
+      "native1_correct": true,
+      "native2_correct": true,
+      "native_no_tie": true,
+      "target_correct": true,
+      "target_tie": false,
+      "norm_correct": true,
+      "unrelated_correct": true,
+      "native1_logits": [
+        16.75,
+        17.125,
+        17.625,
+        21.25
+      ],
+      "native2_logits": [
+        16.875,
+        16.25,
+        17.25,
+        23.125
+      ],
+      "gold": 3,
+      "intervention_logits": {
+        "target": [
+          17.125,
+          16.5,
+          17.375,
+          23.125
+        ],
+        "norm_only": [
+          16.875,
+          16.25,
+          17.25,
+          23.125
+        ],
+        "unrelated_delta": [
+          16.875,
+          16.25,
+          16.875,
+          22.875
+        ]
+      }
+    },
+    {
+      "id": "Mercury_7168665",
+      "split": "train",
+      "group": "stable_wrong",
+      "native1_correct": false,
+      "native2_correct": false,
+      "native_no_tie": true,
+      "target_correct": false,
+      "target_tie": false,
+      "norm_correct": false,
+      "unrelated_correct": false,
+      "native1_logits": [
+        14.875,
+        15.3125,
+        13.375,
+        13.75
+      ],
+      "native2_logits": [
+        17.375,
+        16.75,
+        15.6875,
+        15.75
+      ],
+      "gold": 2,
+      "intervention_logits": {
+        "target": [
+          17.375,
+          17.25,
+          15.5625,
+          15.375
+        ],
+        "norm_only": [
+          17.375,
+          16.875,
+          15.75,
+          15.8125
+        ],
+        "unrelated_delta": [
+          18.625,
+          16.25,
+          17.125,
+          16.875
+        ]
+      }
+    },
+    {
+      "id": "NCEOGA_2013_5_10",
+      "split": "train",
+      "group": "stable_correct",
+      "native1_correct": true,
+      "native2_correct": true,
+      "native_no_tie": true,
+      "target_correct": true,
+      "target_tie": false,
+      "norm_correct": true,
+      "unrelated_correct": true,
+      "native1_logits": [
+        16.75,
+        15.6875,
+        14.4375,
+        14.125
+      ],
+      "native2_logits": [
+        22.0,
+        19.0,
+        17.5,
+        15.6875
+      ],
+      "gold": 0,
+      "intervention_logits": {
+        "target": [
+          21.75,
+          19.125,
+          17.0,
+          15.3125
+        ],
+        "norm_only": [
+          22.0,
+          19.0,
+          17.5,
+          15.6875
+        ],
+        "unrelated_delta": [
+          22.0,
+          19.0,
+          17.375,
+          15.6875
+        ]
+      }
+    },
+    {
+      "id": "ACTAAP_2008_7_10",
+      "split": "train",
+      "group": "stable_correct",
+      "native1_correct": true,
+      "native2_correct": true,
+      "native_no_tie": true,
+      "target_correct": true,
+      "target_tie": false,
+      "norm_correct": true,
+      "unrelated_correct": true,
+      "native1_logits": [
+        18.125,
+        17.5,
+        16.875,
+        21.625
+      ],
+      "native2_logits": [
+        17.125,
+        15.875,
+        16.75,
+        23.125
+      ],
+      "gold": 3,
+      "intervention_logits": {
+        "target": [
+          17.0,
+          16.0,
+          16.375,
+          23.0
+        ],
+        "norm_only": [
+          17.125,
+          15.875,
+          16.75,
+          23.125
+        ],
+        "unrelated_delta": [
+          16.875,
+          15.125,
+          17.125,
+          23.25
+        ]
+      }
+    },
+    {
+      "id": "Mercury_7139125",
+      "split": "train",
+      "group": "rescue",
+      "native1_correct": false,
+      "native2_correct": true,
+      "native_no_tie": true,
+      "target_correct": true,
+      "target_tie": false,
+      "norm_correct": true,
+      "unrelated_correct": true,
+      "native1_logits": [
+        13.9375,
+        14.9375,
+        14.5,
+        14.4375
+      ],
+      "native2_logits": [
+        18.625,
+        19.125,
+        21.0,
+        19.25
+      ],
+      "gold": 2,
+      "intervention_logits": {
+        "target": [
+          17.625,
+          18.375,
+          19.5,
+          18.125
+        ],
+        "norm_only": [
+          18.625,
+          19.125,
+          21.0,
+          19.25
+        ],
+        "unrelated_delta": [
+          19.0,
+          19.625,
+          21.125,
+          18.875
+        ]
+      }
+    },
+    {
+      "id": "Mercury_7099365",
+      "split": "train",
+      "group": "stable_correct",
+      "native1_correct": true,
+      "native2_correct": true,
+      "native_no_tie": true,
+      "target_correct": true,
+      "target_tie": false,
+      "norm_correct": true,
+      "unrelated_correct": true,
+      "native1_logits": [
+        12.625,
+        12.9375,
+        13.625,
+        12.1875
+      ],
+      "native2_logits": [
+        17.25,
+        16.75,
+        23.125,
+        18.25
+      ],
+      "gold": 2,
+      "intervention_logits": {
+        "target": [
+          17.625,
+          16.875,
+          23.25,
+          18.375
+        ],
+        "norm_only": [
+          17.25,
+          16.75,
+          23.125,
+          18.25
+        ],
+        "unrelated_delta": [
+          17.375,
+          16.625,
+          23.125,
+          17.875
+        ]
+      }
+    },
+    {
+      "id": "Mercury_7154350",
+      "split": "train",
+      "group": "stable_correct",
+      "native1_correct": true,
+      "native2_correct": true,
+      "native_no_tie": true,
+      "target_correct": true,
+      "target_tie": false,
+      "norm_correct": true,
+      "unrelated_correct": true,
+      "native1_logits": [
+        15.0,
+        15.5,
+        16.125,
+        17.5
+      ],
+      "native2_logits": [
+        16.25,
+        15.4375,
+        16.25,
+        22.625
+      ],
+      "gold": 3,
+      "intervention_logits": {
+        "target": [
+          16.625,
+          16.0,
+          16.625,
+          22.875
+        ],
+        "norm_only": [
+          16.25,
+          15.4375,
+          16.25,
+          22.5
+        ],
+        "unrelated_delta": [
+          15.4375,
+          15.8125,
+          16.375,
+          22.5
+        ]
+      }
+    },
+    {
+      "id": "Mercury_7027020",
+      "split": "train",
+      "group": "stable_wrong",
+      "native1_correct": false,
+      "native2_correct": false,
+      "native_no_tie": true,
+      "target_correct": false,
+      "target_tie": false,
+      "norm_correct": false,
+      "unrelated_correct": false,
+      "native1_logits": [
+        14.8125,
+        14.8125,
+        15.0,
+        14.375
+      ],
+      "native2_logits": [
+        19.5,
+        18.625,
+        21.5,
+        19.375
+      ],
+      "gold": 1,
+      "intervention_logits": {
+        "target": [
+          19.5,
+          18.875,
+          21.25,
+          19.125
+        ],
+        "norm_only": [
+          19.5,
+          18.625,
+          21.5,
+          19.375
+        ],
+        "unrelated_delta": [
+          19.625,
+          18.75,
+          21.5,
+          18.75
+        ]
+      }
+    },
+    {
+      "id": "MDSA_2007_8_19",
+      "split": "train",
+      "group": "rescue",
+      "native1_correct": false,
+      "native2_correct": true,
+      "native_no_tie": true,
+      "target_correct": true,
+      "target_tie": false,
+      "norm_correct": true,
+      "unrelated_correct": true,
+      "native1_logits": [
+        15.3125,
+        17.125,
+        15.8125,
+        15.5625
+      ],
+      "native2_logits": [
+        17.5,
+        18.625,
+        19.125,
+        18.0
+      ],
+      "gold": 2,
+      "intervention_logits": {
+        "target": [
+          17.25,
+          18.125,
+          18.375,
+          17.375
+        ],
+        "norm_only": [
+          17.5,
+          18.625,
+          19.125,
+          17.875
+        ],
+        "unrelated_delta": [
+          17.125,
+          19.0,
+          19.375,
+          18.125
+        ]
+      }
+    },
+    {
+      "id": "CSZ30771",
+      "split": "train",
+      "group": "stable_wrong",
+      "native1_correct": false,
+      "native2_correct": false,
+      "native_no_tie": true,
+      "target_correct": false,
+      "target_tie": false,
+      "norm_correct": false,
+      "unrelated_correct": false,
+      "native1_logits": [
+        14.5625,
+        14.3125,
+        13.5625,
+        13.625
+      ],
+      "native2_logits": [
+        20.0,
+        16.625,
+        16.125,
+        19.375
+      ],
+      "gold": 3,
+      "intervention_logits": {
+        "target": [
+          19.0,
+          16.5,
+          16.0,
+          18.125
+        ],
+        "norm_only": [
+          20.0,
+          16.5,
+          16.125,
+          19.375
+        ],
+        "unrelated_delta": [
+          20.125,
+          15.9375,
+          16.25,
+          19.375
+        ]
+      }
+    },
+    {
+      "id": "Mercury_7163258",
+      "split": "train",
+      "group": "stable_correct",
+      "native1_correct": true,
+      "native2_correct": true,
+      "native_no_tie": true,
+      "target_correct": true,
+      "target_tie": false,
+      "norm_correct": true,
+      "unrelated_correct": true,
+      "native1_logits": [
+        18.375,
+        17.875,
+        20.5,
+        17.5
+      ],
+      "native2_logits": [
+        20.0,
+        16.75,
+        21.25,
+        16.875
+      ],
+      "gold": 2,
+      "intervention_logits": {
+        "target": [
+          20.0,
+          17.0,
+          21.75,
+          17.0
+        ],
+        "norm_only": [
+          19.875,
+          16.75,
+          21.125,
+          16.75
+        ],
+        "unrelated_delta": [
+          20.5,
+          17.5,
+          21.5,
+          15.75
+        ]
+      }
+    },
+    {
+      "id": "Mercury_7044048",
+      "split": "train",
+      "group": "stable_correct",
+      "native1_correct": true,
+      "native2_correct": true,
+      "native_no_tie": true,
+      "target_correct": true,
+      "target_tie": false,
+      "norm_correct": true,
+      "unrelated_correct": true,
+      "native1_logits": [
+        15.1875,
+        16.75,
+        15.3125,
+        14.6875
+      ],
+      "native2_logits": [
+        18.875,
+        22.125,
+        17.125,
+        16.125
+      ],
+      "gold": 1,
+      "intervention_logits": {
+        "target": [
+          19.125,
+          21.875,
+          17.5,
+          15.875
+        ],
+        "norm_only": [
+          18.875,
+          22.125,
+          17.125,
+          16.125
+        ],
+        "unrelated_delta": [
+          19.0,
+          22.25,
+          15.9375,
+          16.25
+        ]
+      }
+    },
+    {
+      "id": "Mercury_SC_412487",
+      "split": "train",
+      "group": "stable_correct",
+      "native1_correct": true,
+      "native2_correct": true,
+      "native_no_tie": true,
+      "target_correct": true,
+      "target_tie": false,
+      "norm_correct": true,
+      "unrelated_correct": true,
+      "native1_logits": [
+        12.625,
+        13.875,
+        14.25,
+        13.75
+      ],
+      "native2_logits": [
+        17.875,
+        18.5,
+        19.75,
+        17.125
+      ],
+      "gold": 2,
+      "intervention_logits": {
+        "target": [
+          17.625,
+          18.25,
+          19.25,
+          16.875
+        ],
+        "norm_only": [
+          17.875,
+          18.5,
+          19.75,
+          17.25
+        ],
+        "unrelated_delta": [
+          17.875,
+          18.625,
+          20.25,
+          17.375
+        ]
+      }
+    },
+    {
+      "id": "NYSEDREGENTS_2005_8_1",
+      "split": "train",
+      "group": "stable_correct",
+      "native1_correct": true,
+      "native2_correct": true,
+      "native_no_tie": true,
+      "target_correct": true,
+      "target_tie": false,
+      "norm_correct": true,
+      "unrelated_correct": true,
+      "native1_logits": [
+        14.3125,
+        15.5,
+        16.125,
+        14.125
+      ],
+      "native2_logits": [
+        18.0,
+        18.375,
+        21.625,
+        18.5
+      ],
+      "gold": 2,
+      "intervention_logits": {
+        "target": [
+          16.875,
+          17.625,
+          20.375,
+          17.375
+        ],
+        "norm_only": [
+          18.0,
+          18.375,
+          21.625,
+          18.5
+        ],
+        "unrelated_delta": [
+          17.125,
+          17.5,
+          20.375,
+          17.25
+        ]
+      }
+    },
+    {
+      "id": "Mercury_7126683",
+      "split": "train",
+      "group": "stable_wrong",
+      "native1_correct": false,
+      "native2_correct": false,
+      "native_no_tie": true,
+      "target_correct": false,
+      "target_tie": false,
+      "norm_correct": false,
+      "unrelated_correct": false,
+      "native1_logits": [
+        13.9375,
+        12.9375,
+        13.0625,
+        12.5
+      ],
+      "native2_logits": [
+        19.5,
+        18.125,
+        22.625,
+        18.5
+      ],
+      "gold": 3,
+      "intervention_logits": {
+        "target": [
+          19.75,
+          17.75,
+          22.25,
+          17.875
+        ],
+        "norm_only": [
+          19.5,
+          18.125,
+          22.625,
+          18.5
+        ],
+        "unrelated_delta": [
+          19.75,
+          18.0,
+          22.25,
+          18.0
+        ]
+      }
+    },
+    {
+      "id": "Mercury_7026338",
+      "split": "train",
+      "group": "rescue",
+      "native1_correct": false,
+      "native2_correct": true,
+      "native_no_tie": true,
+      "target_correct": true,
+      "target_tie": false,
+      "norm_correct": true,
+      "unrelated_correct": true,
+      "native1_logits": [
+        14.0,
+        14.1875,
+        13.6875,
+        13.8125
+      ],
+      "native2_logits": [
+        18.25,
+        18.375,
+        20.0,
+        18.75
+      ],
+      "gold": 2,
+      "intervention_logits": {
+        "target": [
+          17.75,
+          18.0,
+          19.0,
+          18.125
+        ],
+        "norm_only": [
+          18.25,
+          18.375,
+          20.0,
+          18.75
+        ],
+        "unrelated_delta": [
+          17.5,
+          17.875,
+          18.75,
+          17.875
+        ]
+      }
+    },
+    {
+      "id": "Mercury_7214603",
+      "split": "train",
+      "group": "damage",
+      "native1_correct": true,
+      "native2_correct": false,
+      "native_no_tie": true,
+      "target_correct": false,
+      "target_tie": false,
+      "norm_correct": false,
+      "unrelated_correct": false,
+      "native1_logits": [
+        13.125,
+        14.4375,
+        14.25,
+        13.0
+      ],
+      "native2_logits": [
+        17.375,
+        18.875,
+        19.125,
+        18.25
+      ],
+      "gold": 1,
+      "intervention_logits": {
+        "target": [
+          17.375,
+          18.875,
+          19.0,
+          18.0
+        ],
+        "norm_only": [
+          17.375,
+          18.875,
+          19.125,
+          18.25
+        ],
+        "unrelated_delta": [
+          18.0,
+          19.0,
+          19.25,
+          18.375
+        ]
+      }
+    },
+    {
+      "id": "Mercury_SC_405460",
+      "split": "train",
+      "group": "rescue",
+      "native1_correct": false,
+      "native2_correct": true,
+      "native_no_tie": true,
+      "target_correct": false,
+      "target_tie": false,
+      "norm_correct": true,
+      "unrelated_correct": false,
+      "native1_logits": [
+        13.625,
+        14.8125,
+        13.625,
+        13.5625
+      ],
+      "native2_logits": [
+        16.375,
+        16.625,
+        15.3125,
+        17.375
+      ],
+      "gold": 3,
+      "intervention_logits": {
+        "target": [
+          16.25,
+          16.625,
+          15.0,
+          16.125
+        ],
+        "norm_only": [
+          16.375,
+          16.625,
+          15.3125,
+          17.25
+        ],
+        "unrelated_delta": [
+          16.375,
+          16.75,
+          15.25,
+          15.6875
+        ]
+      }
+    },
+    {
+      "id": "TIMSS_2011_8_pg100",
+      "split": "train",
+      "group": "rescue",
+      "native1_correct": false,
+      "native2_correct": true,
+      "native_no_tie": true,
+      "target_correct": true,
+      "target_tie": false,
+      "norm_correct": true,
+      "unrelated_correct": true,
+      "native1_logits": [
+        13.375,
+        14.0,
+        13.4375,
+        14.125
+      ],
+      "native2_logits": [
+        17.125,
+        17.75,
+        15.75,
+        16.625
+      ],
+      "gold": 1,
+      "intervention_logits": {
+        "target": [
+          17.125,
+          17.625,
+          15.6875,
+          16.25
+        ],
+        "norm_only": [
+          17.125,
+          17.75,
+          15.75,
+          16.625
+        ],
+        "unrelated_delta": [
+          17.125,
+          17.75,
+          15.625,
+          16.5
+        ]
+      }
+    },
+    {
+      "id": "MCAS_2013_5_29405",
+      "split": "train",
+      "group": "rescue",
+      "native1_correct": false,
+      "native2_correct": true,
+      "native_no_tie": true,
+      "target_correct": true,
+      "target_tie": false,
+      "norm_correct": true,
+      "unrelated_correct": true,
+      "native1_logits": [
+        13.4375,
+        13.9375,
+        13.625,
+        13.75
+      ],
+      "native2_logits": [
+        18.5,
+        17.75,
+        21.5,
+        19.5
+      ],
+      "gold": 2,
+      "intervention_logits": {
+        "target": [
+          17.75,
+          16.875,
+          20.25,
+          19.0
+        ],
+        "norm_only": [
+          18.5,
+          17.75,
+          21.625,
+          19.625
+        ],
+        "unrelated_delta": [
+          18.0,
+          17.125,
+          20.375,
+          18.75
+        ]
+      }
+    },
+    {
+      "id": "Mercury_7133700",
+      "split": "train",
+      "group": "stable_correct",
+      "native1_correct": true,
+      "native2_correct": true,
+      "native_no_tie": true,
+      "target_correct": true,
+      "target_tie": false,
+      "norm_correct": true,
+      "unrelated_correct": true,
+      "native1_logits": [
+        15.0625,
+        14.875,
+        17.375,
+        14.8125
+      ],
+      "native2_logits": [
+        18.0,
+        18.625,
+        22.5,
+        17.875
+      ],
+      "gold": 2,
+      "intervention_logits": {
+        "target": [
+          18.25,
+          18.625,
+          22.375,
+          17.75
+        ],
+        "norm_only": [
+          18.0,
+          18.625,
+          22.5,
+          17.875
+        ],
+        "unrelated_delta": [
+          18.125,
+          18.75,
+          22.375,
+          17.625
+        ]
+      }
+    },
+    {
+      "id": "Mercury_415546",
+      "split": "train",
+      "group": "stable_correct",
+      "native1_correct": true,
+      "native2_correct": true,
+      "native_no_tie": true,
+      "target_correct": true,
+      "target_tie": false,
+      "norm_correct": true,
+      "unrelated_correct": true,
+      "native1_logits": [
+        15.4375,
+        21.375,
+        17.125,
+        16.0
+      ],
+      "native2_logits": [
+        17.125,
+        22.5,
+        19.125,
+        16.625
+      ],
+      "gold": 1,
+      "intervention_logits": {
+        "target": [
+          17.0,
+          22.375,
+          18.625,
+          16.5
+        ],
+        "norm_only": [
+          17.125,
+          22.5,
+          19.125,
+          16.625
+        ],
+        "unrelated_delta": [
+          16.0,
+          22.5,
+          19.75,
+          16.5
+        ]
+      }
+    },
+    {
+      "id": "Mercury_7219345",
+      "split": "train",
+      "group": "stable_correct",
+      "native1_correct": true,
+      "native2_correct": true,
+      "native_no_tie": true,
+      "target_correct": true,
+      "target_tie": false,
+      "norm_correct": true,
+      "unrelated_correct": true,
+      "native1_logits": [
+        16.625,
+        20.625,
+        17.25,
+        17.375
+      ],
+      "native2_logits": [
+        16.875,
+        21.875,
+        16.75,
+        17.25
+      ],
+      "gold": 1,
+      "intervention_logits": {
+        "target": [
+          17.5,
+          21.625,
+          16.75,
+          17.0
+        ],
+        "norm_only": [
+          16.875,
+          21.875,
+          16.75,
+          17.25
+        ],
+        "unrelated_delta": [
+          17.125,
+          22.0,
+          17.25,
+          16.25
+        ]
+      }
+    },
+    {
+      "id": "TIMSS_2007_8_pg128",
+      "split": "train",
+      "group": "damage",
+      "native1_correct": true,
+      "native2_correct": false,
+      "native_no_tie": true,
+      "target_correct": false,
+      "target_tie": false,
+      "norm_correct": false,
+      "unrelated_correct": false,
+      "native1_logits": [
+        14.875,
+        14.9375,
+        14.5625,
+        14.25
+      ],
+      "native2_logits": [
+        17.0,
+        18.375,
+        20.25,
+        16.75
+      ],
+      "gold": 1,
+      "intervention_logits": {
+        "target": [
+          16.5,
+          16.875,
+          18.5,
+          16.0
+        ],
+        "norm_only": [
+          17.0,
+          18.375,
+          20.25,
+          16.625
+        ],
+        "unrelated_delta": [
+          17.375,
+          18.375,
+          20.5,
+          16.375
+        ]
+      }
+    },
+    {
+      "id": "Mercury_SC_401284",
+      "split": "train",
+      "group": "rescue",
+      "native1_correct": false,
+      "native2_correct": true,
+      "native_no_tie": false,
+      "target_correct": true,
+      "target_tie": false,
+      "norm_correct": true,
+      "unrelated_correct": true,
+      "native1_logits": [
+        14.3125,
+        14.6875,
+        14.6875,
+        13.8125
+      ],
+      "native2_logits": [
+        16.625,
+        15.375,
+        22.625,
+        16.0
+      ],
+      "gold": 2,
+      "intervention_logits": {
+        "target": [
+          17.0,
+          16.125,
+          22.625,
+          16.125
+        ],
+        "norm_only": [
+          16.625,
+          15.375,
+          22.625,
+          16.0
+        ],
+        "unrelated_delta": [
+          16.875,
+          15.5,
+          22.625,
+          16.375
+        ]
+      }
+    },
+    {
+      "id": "MCAS_2008_8_5719",
+      "split": "train",
+      "group": "rescue",
+      "native1_correct": false,
+      "native2_correct": true,
+      "native_no_tie": true,
+      "target_correct": true,
+      "target_tie": false,
+      "norm_correct": true,
+      "unrelated_correct": true,
+      "native1_logits": [
+        14.0625,
+        14.375,
+        14.1875,
+        15.25
+      ],
+      "native2_logits": [
+        17.875,
+        23.125,
+        16.0,
+        16.75
+      ],
+      "gold": 1,
+      "intervention_logits": {
+        "target": [
+          18.125,
+          22.875,
+          16.125,
+          17.125
+        ],
+        "norm_only": [
+          17.875,
+          23.125,
+          16.125,
+          16.875
+        ],
+        "unrelated_delta": [
+          18.25,
+          23.25,
+          14.75,
+          17.375
+        ]
+      }
+    },
+    {
+      "id": "MCAS_1998_8_25",
+      "split": "train",
+      "group": "stable_wrong",
+      "native1_correct": false,
+      "native2_correct": false,
+      "native_no_tie": true,
+      "target_correct": false,
+      "target_tie": false,
+      "norm_correct": false,
+      "unrelated_correct": false,
+      "native1_logits": [
+        13.0625,
+        13.75,
+        13.4375,
+        12.5625
+      ],
+      "native2_logits": [
+        17.75,
+        18.625,
+        17.875,
+        15.375
+      ],
+      "gold": 0,
+      "intervention_logits": {
+        "target": [
+          16.5,
+          17.375,
+          16.625,
+          14.5625
+        ],
+        "norm_only": [
+          17.75,
+          18.75,
+          17.75,
+          15.3125
+        ],
+        "unrelated_delta": [
+          17.0,
+          17.75,
+          17.0,
+          15.125
+        ]
+      }
+    },
+    {
+      "id": "Mercury_SC_401836",
+      "split": "train",
+      "group": "stable_wrong",
+      "native1_correct": false,
+      "native2_correct": false,
+      "native_no_tie": true,
+      "target_correct": false,
+      "target_tie": false,
+      "norm_correct": false,
+      "unrelated_correct": false,
+      "native1_logits": [
+        11.8125,
+        13.5,
+        12.5,
+        12.5625
+      ],
+      "native2_logits": [
+        19.25,
+        18.75,
+        18.0,
+        16.5
+      ],
+      "gold": 2,
+      "intervention_logits": {
+        "target": [
+          18.875,
+          18.5,
+          18.25,
+          16.375
+        ],
+        "norm_only": [
+          19.375,
+          18.75,
+          18.125,
+          16.625
+        ],
+        "unrelated_delta": [
+          19.625,
+          19.375,
+          18.625,
+          16.625
+        ]
+      }
+    },
+    {
+      "id": "Mercury_7080535",
+      "split": "train",
+      "group": "rescue",
+      "native1_correct": false,
+      "native2_correct": true,
+      "native_no_tie": true,
+      "target_correct": true,
+      "target_tie": false,
+      "norm_correct": true,
+      "unrelated_correct": true,
+      "native1_logits": [
+        13.875,
+        14.5,
+        14.625,
+        13.5625
+      ],
+      "native2_logits": [
+        18.125,
+        19.0,
+        18.375,
+        17.375
+      ],
+      "gold": 1,
+      "intervention_logits": {
+        "target": [
+          17.75,
+          18.25,
+          18.125,
+          16.75
+        ],
+        "norm_only": [
+          18.125,
+          19.125,
+          18.375,
+          17.375
+        ],
+        "unrelated_delta": [
+          18.125,
+          18.5,
+          18.125,
+          17.0
+        ]
+      }
+    },
+    {
+      "id": "Mercury_SC_LBS10034",
+      "split": "train",
+      "group": "stable_correct",
+      "native1_correct": true,
+      "native2_correct": true,
+      "native_no_tie": true,
+      "target_correct": true,
+      "target_tie": false,
+      "norm_correct": true,
+      "unrelated_correct": true,
+      "native1_logits": [
+        12.9375,
+        13.5,
+        11.9375,
+        13.125
+      ],
+      "native2_logits": [
+        16.75,
+        21.875,
+        16.0,
+        17.25
+      ],
+      "gold": 1,
+      "intervention_logits": {
+        "target": [
+          16.625,
+          20.875,
+          15.5625,
+          17.75
+        ],
+        "norm_only": [
+          16.75,
+          21.875,
+          16.0,
+          17.25
+        ],
+        "unrelated_delta": [
+          15.5,
+          21.875,
+          16.25,
+          17.375
+        ]
+      }
+    },
+    {
+      "id": "Mercury_7216125",
+      "split": "train",
+      "group": "rescue",
+      "native1_correct": false,
+      "native2_correct": true,
+      "native_no_tie": true,
+      "target_correct": true,
+      "target_tie": false,
+      "norm_correct": true,
+      "unrelated_correct": true,
+      "native1_logits": [
+        13.4375,
+        14.5,
+        14.75,
+        14.1875
+      ],
+      "native2_logits": [
+        16.875,
+        19.5,
+        17.25,
+        20.5
+      ],
+      "gold": 3,
+      "intervention_logits": {
+        "target": [
+          16.25,
+          18.75,
+          16.5,
+          19.25
+        ],
+        "norm_only": [
+          16.875,
+          19.5,
+          17.25,
+          20.5
+        ],
+        "unrelated_delta": [
+          15.9375,
+          19.375,
+          17.0,
+          20.25
+        ]
+      }
+    },
+    {
+      "id": "AIMS_2009_8_9",
+      "split": "train",
+      "group": "stable_correct",
+      "native1_correct": true,
+      "native2_correct": true,
+      "native_no_tie": true,
+      "target_correct": true,
+      "target_tie": false,
+      "norm_correct": true,
+      "unrelated_correct": false,
+      "native1_logits": [
+        14.9375,
+        17.125,
+        12.875,
+        14.3125
+      ],
+      "native2_logits": [
+        20.625,
+        20.875,
+        16.125,
+        15.5
+      ],
+      "gold": 1,
+      "intervention_logits": {
+        "target": [
+          20.5,
+          20.75,
+          15.9375,
+          15.5
+        ],
+        "norm_only": [
+          20.625,
+          20.875,
+          16.125,
+          15.5
+        ],
+        "unrelated_delta": [
+          20.625,
+          20.5,
+          16.0,
+          15.5
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,793 @@
+{
+  "method": "paired empirical question bootstrap, percentile 95% intervals",
+  "seed": 20261112,
+  "resamples": 10000,
+  "scope": "All questions within each named cohort; no pooling between cohorts. Question-resampling variability is not seed replication, globally blind confirmation, or multiplicity-corrected causal discovery. No threshold determines disclosure or further experiment selection.",
+  "script_sha256": "8198753fbdeb7b5b528391708d3d002b12fab0788fb126e2fcf8c94569ca150a",
+  "numpy_version": "2.2.6",
+  "runs": [
+    {
+      "audit_path": "D:\\ouro-e4-e5-20261112\\results\\ROOT_CONFIRMATION128_R2_EXTENDED_REVIEW.json",
+      "audit_sha256": "e5d1f6bc0e0dd342761647e313967134f14cf5490fafc94fde51f4255b833aad",
+      "receiver_loop": 2,
+      "n": 128,
+      "ordered_ids_sha256": "5bdd601b5228de8877c4868264a283ab073fbcc5962b362e023cdecbe24da937",
+      "estimates": [
+        {
+          "contrast": "total",
+          "metric": "meanwrong",
+          "mean": -1.3943684884209993,
+          "percentile95": [
+            -1.6180013107453002,
+            -1.1791829648804046
+          ]
+        },
+        {
+          "contrast": "total",
+          "metric": "fixedwrong",
+          "mean": -1.00488281471371,
+          "percentile95": [
+            -1.242187498045223,
+            -0.7748901310894327
+          ]
+        },
+        {
+          "contrast": "total",
+          "metric": "dynamicmargin",
+          "mean": -1.154785159860694,
+          "percentile95": [
+            -1.3979492164306067,
+            -0.9194335978474101
+          ]
+        },
+        {
+          "contrast": "total",
+          "metric": "global_fixedwrong",
+          "mean": -1.4399414054951194,
+          "percentile95": [
+            -1.675781253991636,
+            -1.2060424653690918
+          ]
+        },
+        {
+          "contrast": "attention_only",
+          "metric": "meanwrong",
+          "mean": -0.09269207293921983,
+          "percentile95": [
+            -0.14168497770551766,
+            -0.04345704591834569
+          ]
+        },
+        {
+          "contrast": "attention_only",
+          "metric": "fixedwrong",
+          "mean": -0.0507812646774255,
+          "percentile95": [
+            -0.11572267890669537,
+            0.014160145025243764
+          ]
+        },
+        {
+          "contrast": "attention_only",
+          "metric": "dynamicmargin",
+          "mean": -0.09277345078044164,
+          "percentile95": [
+            -0.1611328357805178,
+            -0.024401867333290462
+          ]
+        },
+        {
+          "contrast": "attention_only",
+          "metric": "global_fixedwrong",
+          "mean": -0.11816407036712917,
+          "percentile95": [
+            -0.1850585938104814,
+            -0.05371095667683221
+          ]
+        },
+        {
+          "contrast": "direct_at_native_attention",
+          "metric": "meanwrong",
+          "mean": -1.353922526402433,
+          "percentile95": [
+            -1.581551103621026,
+            -1.1350870739792907
+          ]
+        },
+        {
+          "contrast": "direct_at_native_attention",
+          "metric": "fixedwrong",
+          "mean": -0.9921875014861143,
+          "percentile95": [
+            -1.2280273300928457,
+            -0.7656250025599547
+          ]
+        },
+        {
+          "contrast": "direct_at_native_attention",
+          "metric": "dynamicmargin",
+          "mean": -1.0820312496234692,
+          "percentile95": [
+            -1.3261718862782346,
+            -0.8525390579180112
+          ]
+        },
+        {
+          "contrast": "direct_at_native_attention",
+          "metric": "global_fixedwrong",
+          "mean": -1.3725585921511083,
+          "percentile95": [
+            -1.6093749951787686,
+            -1.1435546830657586
+          ]
+        },
+        {
+          "contrast": "restore_effect",
+          "metric": "meanwrong",
+          "mean": 0.040445962018566185,
+          "percentile95": [
+            -0.016031889528918982,
+            0.09700520394641592
+          ]
+        },
+        {
+          "contrast": "restore_effect",
+          "metric": "fixedwrong",
+          "mean": 0.012695313227595761,
+          "percentile95": [
+            -0.0546874989355274,
+            0.07861326597740118
+          ]
+        },
+        {
+          "contrast": "restore_effect",
+          "metric": "dynamicmargin",
+          "mean": 0.07275391023722477,
+          "percentile95": [
+            0.001953148114262149,
+            0.1430786294033167
+          ]
+        },
+        {
+          "contrast": "restore_effect",
+          "metric": "global_fixedwrong",
+          "mean": 0.06738281334401108,
+          "percentile95": [
+            0.001953126510488801,
+            0.132812489771095
+          ]
+        },
+        {
+          "contrast": "interaction",
+          "metric": "meanwrong",
+          "mean": 0.052246110920653635,
+          "percentile95": [
+            0.02701823770892893,
+            0.07828776677733912
+          ]
+        },
+        {
+          "contrast": "interaction",
+          "metric": "fixedwrong",
+          "mean": 0.038085951449829736,
+          "percentile95": [
+            0.00878905738973117,
+            0.06787111773087418
+          ]
+        },
+        {
+          "contrast": "interaction",
+          "metric": "dynamicmargin",
+          "mean": 0.020019540543216863,
+          "percentile95": [
+            -0.017089823107562553,
+            0.05615235725558705
+          ]
+        },
+        {
+          "contrast": "interaction",
+          "metric": "global_fixedwrong",
+          "mean": 0.05078125702311809,
+          "percentile95": [
+            0.022460940744304027,
+            0.07910157859837455
+          ]
+        },
+        {
+          "contrast": "norm_restore_effect",
+          "metric": "meanwrong",
+          "mean": 0.00406901366659437,
+          "percentile95": [
+            -0.006184891590601202,
+            0.014485678826895295
+          ]
+        },
+        {
+          "contrast": "norm_restore_effect",
+          "metric": "fixedwrong",
+          "mean": 0.00439453954459168,
+          "percentile95": [
+            -0.007812481766450219,
+            0.01660157453516149
+          ]
+        },
+        {
+          "contrast": "norm_restore_effect",
+          "metric": "dynamicmargin",
+          "mean": 0.005859386088559404,
+          "percentile95": [
+            -0.005371095791997504,
+            0.017578130066976883
+          ]
+        },
+        {
+          "contrast": "norm_restore_effect",
+          "metric": "global_fixedwrong",
+          "mean": 0.003906256664777175,
+          "percentile95": [
+            -0.007812488707713783,
+            0.015625007653216016
+          ]
+        },
+        {
+          "contrast": "unrelated_restore_effect",
+          "metric": "meanwrong",
+          "mean": -0.01831054242696458,
+          "percentile95": [
+            -0.05770059364949702,
+            0.019938157545645176
+          ]
+        },
+        {
+          "contrast": "unrelated_restore_effect",
+          "metric": "fixedwrong",
+          "mean": -0.02246093390567694,
+          "percentile95": [
+            -0.076660157211154,
+            0.031249997761187844
+          ]
+        },
+        {
+          "contrast": "unrelated_restore_effect",
+          "metric": "dynamicmargin",
+          "mean": -0.06640625292493496,
+          "percentile95": [
+            -0.11962890316135599,
+            -0.014648439393204172
+          ]
+        },
+        {
+          "contrast": "unrelated_restore_effect",
+          "metric": "global_fixedwrong",
+          "mean": -0.028808590388507582,
+          "percentile95": [
+            -0.07714843564353942,
+            0.019042970608279575
+          ]
+        }
+      ]
+    },
+    {
+      "audit_path": "D:\\ouro-e4-e5-20261112\\results\\ROOT_CONFIRMATION128_R3_REVIEW.json",
+      "audit_sha256": "217de2166b31aef7b2086717203240c057018c45d6f3970c4121ce75d918aaf4",
+      "receiver_loop": 3,
+      "n": 128,
+      "ordered_ids_sha256": "5bdd601b5228de8877c4868264a283ab073fbcc5962b362e023cdecbe24da937",
+      "estimates": [
+        {
+          "contrast": "total",
+          "metric": "meanwrong",
+          "mean": -0.36393229820653983,
+          "percentile95": [
+            -0.4879638692362656,
+            -0.2451090737494346
+          ]
+        },
+        {
+          "contrast": "total",
+          "metric": "fixedwrong",
+          "mean": -0.3740234357355803,
+          "percentile95": [
+            -0.5117187261511844,
+            -0.24072267002825357
+          ]
+        },
+        {
+          "contrast": "total",
+          "metric": "dynamicmargin",
+          "mean": -0.43847656050274963,
+          "percentile95": [
+            -0.5771484169429868,
+            -0.3037109372096893
+          ]
+        },
+        {
+          "contrast": "total",
+          "metric": "global_fixedwrong",
+          "mean": -0.4345703093385964,
+          "percentile95": [
+            -0.5698242268119657,
+            -0.304687499783563
+          ]
+        },
+        {
+          "contrast": "attention_only",
+          "metric": "meanwrong",
+          "mean": 0.10974119508879693,
+          "percentile95": [
+            0.07230630430273478,
+            0.14729816448626712
+          ]
+        },
+        {
+          "contrast": "attention_only",
+          "metric": "fixedwrong",
+          "mean": 0.12744140328459252,
+          "percentile95": [
+            0.07861328134862333,
+            0.1743164136560722
+          ]
+        },
+        {
+          "contrast": "attention_only",
+          "metric": "dynamicmargin",
+          "mean": 0.11132812250025381,
+          "percentile95": [
+            0.062499991029073956,
+            0.15917969912992475
+          ]
+        },
+        {
+          "contrast": "attention_only",
+          "metric": "global_fixedwrong",
+          "mean": 0.10498046345628609,
+          "percentile95": [
+            0.062011711596619536,
+            0.14550782293944167
+          ]
+        },
+        {
+          "contrast": "direct_at_native_attention",
+          "metric": "meanwrong",
+          "mean": -0.506673175744254,
+          "percentile95": [
+            -0.623376489938543,
+            -0.3948567642148343
+          ]
+        },
+        {
+          "contrast": "direct_at_native_attention",
+          "metric": "fixedwrong",
+          "mean": -0.539550764854539,
+          "percentile95": [
+            -0.6718749638780082,
+            -0.41357419276998825
+          ]
+        },
+        {
+          "contrast": "direct_at_native_attention",
+          "metric": "dynamicmargin",
+          "mean": -0.5922851384575551,
+          "percentile95": [
+            -0.7270507809333366,
+            -0.46240232445061336
+          ]
+        },
+        {
+          "contrast": "direct_at_native_attention",
+          "metric": "global_fixedwrong",
+          "mean": -0.5639648349215349,
+          "percentile95": [
+            -0.6914062236209702,
+            -0.4404296890353862
+          ]
+        },
+        {
+          "contrast": "restore_effect",
+          "metric": "meanwrong",
+          "mean": -0.14274087753771408,
+          "percentile95": [
+            -0.18131508427686638,
+            -0.1031860314611929
+          ]
+        },
+        {
+          "contrast": "restore_effect",
+          "metric": "fixedwrong",
+          "mean": -0.16552732911895873,
+          "percentile95": [
+            -0.2168090853329204,
+            -0.11376952857681318
+          ]
+        },
+        {
+          "contrast": "restore_effect",
+          "metric": "dynamicmargin",
+          "mean": -0.15380857795480551,
+          "percentile95": [
+            -0.20898435624148987,
+            -0.09960935531603354
+          ]
+        },
+        {
+          "contrast": "restore_effect",
+          "metric": "global_fixedwrong",
+          "mean": -0.1293945255829385,
+          "percentile95": [
+            -0.17138671321674792,
+            -0.08544921203838385
+          ]
+        },
+        {
+          "contrast": "interaction",
+          "metric": "meanwrong",
+          "mean": 0.032999682448917135,
+          "percentile95": [
+            0.013424693753040664,
+            0.052859519965344645
+          ]
+        },
+        {
+          "contrast": "interaction",
+          "metric": "fixedwrong",
+          "mean": 0.03808592583436621,
+          "percentile95": [
+            0.014648433255842974,
+            0.06152343507136493
+          ]
+        },
+        {
+          "contrast": "interaction",
+          "metric": "dynamicmargin",
+          "mean": 0.0424804554545517,
+          "percentile95": [
+            0.01513668692863348,
+            0.07178956526523717
+          ]
+        },
+        {
+          "contrast": "interaction",
+          "metric": "global_fixedwrong",
+          "mean": 0.024414062126652425,
+          "percentile95": [
+            -0.0004882853965227696,
+            0.0488281281821628
+          ]
+        },
+        {
+          "contrast": "norm_restore_effect",
+          "metric": "meanwrong",
+          "mean": -0.00276693973773943,
+          "percentile95": [
+            -0.012695335586992427,
+            0.007324206200655676
+          ]
+        },
+        {
+          "contrast": "norm_restore_effect",
+          "metric": "fixedwrong",
+          "mean": -0.0034179772910647443,
+          "percentile95": [
+            -0.01562501153375706,
+            0.008789050234395291
+          ]
+        },
+        {
+          "contrast": "norm_restore_effect",
+          "metric": "dynamicmargin",
+          "mean": -0.002441414325403457,
+          "percentile95": [
+            -0.014648456466056814,
+            0.009765622667646311
+          ]
+        },
+        {
+          "contrast": "norm_restore_effect",
+          "metric": "global_fixedwrong",
+          "mean": -0.006835954306552594,
+          "percentile95": [
+            -0.018554700548020265,
+            0.004882799859046827
+          ]
+        },
+        {
+          "contrast": "unrelated_restore_effect",
+          "metric": "meanwrong",
+          "mean": 0.010009764237717423,
+          "percentile95": [
+            -0.0367858984263421,
+            0.0530598964732083
+          ]
+        },
+        {
+          "contrast": "unrelated_restore_effect",
+          "metric": "fixedwrong",
+          "mean": -0.06445313143194653,
+          "percentile95": [
+            -0.13281249237093107,
+            0.006359864485966505
+          ]
+        },
+        {
+          "contrast": "unrelated_restore_effect",
+          "metric": "dynamicmargin",
+          "mean": -0.11865234436118044,
+          "percentile95": [
+            -0.17382813945373526,
+            -0.06445312241780812
+          ]
+        },
+        {
+          "contrast": "unrelated_restore_effect",
+          "metric": "global_fixedwrong",
+          "mean": -0.01757812491268851,
+          "percentile95": [
+            -0.10058593713847586,
+            0.06640623579150998
+          ]
+        }
+      ]
+    },
+    {
+      "audit_path": "D:\\ouro-e4-e5-20261112\\results\\ROOT_CONFIRMATION128_R4_REVIEW.json",
+      "audit_sha256": "73c57885264022ebff0667e58f6c5818753ec665b93a056c3a26d5ce633f0914",
+      "receiver_loop": 4,
+      "n": 128,
+      "ordered_ids_sha256": "5bdd601b5228de8877c4868264a283ab073fbcc5962b362e023cdecbe24da937",
+      "estimates": [
+        {
+          "contrast": "total",
+          "metric": "meanwrong",
+          "mean": -0.03247070562595886,
+          "percentile95": [
+            -0.08357952243720396,
+            0.01969399981852198
+          ]
+        },
+        {
+          "contrast": "total",
+          "metric": "fixedwrong",
+          "mean": -0.02539063487392923,
+          "percentile95": [
+            -0.08251954703323464,
+            0.03369137772110662
+          ]
+        },
+        {
+          "contrast": "total",
+          "metric": "dynamicmargin",
+          "mean": -0.057128917055251804,
+          "percentile95": [
+            -0.11425783839727047,
+            0.0014648210510586068
+          ]
+        },
+        {
+          "contrast": "total",
+          "metric": "global_fixedwrong",
+          "mean": -0.04736328413900992,
+          "percentile95": [
+            -0.10644530922911599,
+            0.011242691473966993
+          ]
+        },
+        {
+          "contrast": "attention_only",
+          "metric": "meanwrong",
+          "mean": 0.031534810852766305,
+          "percentile95": [
+            0.014811187810695008,
+            0.04793394596031248
+          ]
+        },
+        {
+          "contrast": "attention_only",
+          "metric": "fixedwrong",
+          "mean": 0.03857420290933078,
+          "percentile95": [
+            0.01414791137131034,
+            0.062499985193699106
+          ]
+        },
+        {
+          "contrast": "attention_only",
+          "metric": "dynamicmargin",
+          "mean": 0.03564451540933078,
+          "percentile95": [
+            0.010742177842257662,
+            0.05908201100353381
+          ]
+        },
+        {
+          "contrast": "attention_only",
+          "metric": "global_fixedwrong",
+          "mean": 0.02978512830213731,
+          "percentile95": [
+            0.01123044138817022,
+            0.04736326182892299
+          ]
+        },
+        {
+          "contrast": "direct_at_native_attention",
+          "metric": "meanwrong",
+          "mean": -0.07539877965427877,
+          "percentile95": [
+            -0.12817588350665873,
+            -0.021035758934976934
+          ]
+        },
+        {
+          "contrast": "direct_at_native_attention",
+          "metric": "fixedwrong",
+          "mean": -0.06689454516708793,
+          "percentile95": [
+            -0.12695313549688764,
+            -0.005859394446088117
+          ]
+        },
+        {
+          "contrast": "direct_at_native_attention",
+          "metric": "dynamicmargin",
+          "mean": -0.09716798173576535,
+          "percentile95": [
+            -0.15527346425692484,
+            -0.03662109156239239
+          ]
+        },
+        {
+          "contrast": "direct_at_native_attention",
+          "metric": "global_fixedwrong",
+          "mean": -0.08642578725084604,
+          "percentile95": [
+            -0.152832036210566,
+            -0.021484408071319194
+          ]
+        },
+        {
+          "contrast": "restore_effect",
+          "metric": "meanwrong",
+          "mean": -0.04292807402831992,
+          "percentile95": [
+            -0.06180829330537562,
+            -0.02343752052744321
+          ]
+        },
+        {
+          "contrast": "restore_effect",
+          "metric": "fixedwrong",
+          "mean": -0.0415039102931587,
+          "percentile95": [
+            -0.06689453462136044,
+            -0.016589337031098418
+          ]
+        },
+        {
+          "contrast": "restore_effect",
+          "metric": "dynamicmargin",
+          "mean": -0.04003906468051355,
+          "percentile95": [
+            -0.0654296904238663,
+            -0.014160167811724023
+          ]
+        },
+        {
+          "contrast": "restore_effect",
+          "metric": "global_fixedwrong",
+          "mean": -0.03906250311183612,
+          "percentile95": [
+            -0.06250000440733175,
+            -0.01660157227754553
+          ]
+        },
+        {
+          "contrast": "interaction",
+          "metric": "meanwrong",
+          "mean": 0.01139326317555362,
+          "percentile95": [
+            -0.006510370572414141,
+            0.0292969037408132
+          ]
+        },
+        {
+          "contrast": "interaction",
+          "metric": "fixedwrong",
+          "mean": 0.0029297073838279175,
+          "percentile95": [
+            -0.018566916055465288,
+            0.024414118684774166
+          ]
+        },
+        {
+          "contrast": "interaction",
+          "metric": "dynamicmargin",
+          "mean": 0.004394549271182768,
+          "percentile95": [
+            -0.017089824270999542,
+            0.025878925297490696
+          ]
+        },
+        {
+          "contrast": "interaction",
+          "metric": "global_fixedwrong",
+          "mean": 0.009277374809698813,
+          "percentile95": [
+            -0.012695282630886595,
+            0.031250038051712184
+          ]
+        },
+        {
+          "contrast": "norm_restore_effect",
+          "metric": "meanwrong",
+          "mean": -0.0031738502648295096,
+          "percentile95": [
+            -0.012125671919648078,
+            0.006103489424701097
+          ]
+        },
+        {
+          "contrast": "norm_restore_effect",
+          "metric": "fixedwrong",
+          "mean": -0.004394549431708583,
+          "percentile95": [
+            -0.014648451011430553,
+            0.006347621824647831
+          ]
+        },
+        {
+          "contrast": "norm_restore_effect",
+          "metric": "dynamicmargin",
+          "mean": -0.0004882975690634339,
+          "percentile95": [
+            -0.011718754987305147,
+            0.010742172907202984
+          ]
+        },
+        {
+          "contrast": "norm_restore_effect",
+          "metric": "global_fixedwrong",
+          "mean": -0.0024414323479504674,
+          "percentile95": [
+            -0.013183640115198614,
+            0.008789048240328157
+          ]
+        },
+        {
+          "contrast": "unrelated_restore_effect",
+          "metric": "meanwrong",
+          "mean": 0.058349598436507236,
+          "percentile95": [
+            0.02994790192860819,
+            0.08390297768255553
+          ]
+        },
+        {
+          "contrast": "unrelated_restore_effect",
+          "metric": "fixedwrong",
+          "mean": 0.03906249138981366,
+          "percentile95": [
+            -0.00683594953723059,
+            0.08593749152994405
+          ]
+        },
+        {
+          "contrast": "unrelated_restore_effect",
+          "metric": "dynamicmargin",
+          "mean": -0.0034179736348960432,
+          "percentile95": [
+            -0.0375976526607019,
+            0.029296880456217877
+          ]
+        },
+        {
+          "contrast": "unrelated_restore_effect",
+          "metric": "global_fixedwrong",
+          "mean": 0.057617181916612026,
+          "percentile95": [
+            0.011718763360522643,
+            0.10498044197695436
+          ]
+        }
+      ]
+    }
+  ]
+}

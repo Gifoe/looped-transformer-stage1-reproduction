@@ -1,0 +1,37 @@
+{
+  "status": "SAME_ENV_PRODUCER_CONTROL_RECOMPUTATION_EXACT",
+  "scope": "CPU_ONLY_NO_MODEL_FORWARD_NO_GPU",
+  "torch": "2.5.1+cu124",
+  "python": "3.10.8 (main, Nov 24 2022, 14:13:03) [GCC 11.2.0]",
+  "OMP_NUM_THREADS": "1",
+  "MKL_NUM_THREADS": "1",
+  "torch_num_threads": 1,
+  "cases": [
+    {
+      "id": "MCAS_2010_5_11998",
+      "donor_id": "MCAS_2010_8_12010",
+      "exact_saved_vector_match": true,
+      "recomputed_sha256": "c357f646f0dc8120ab76f2f48a6df282bc57e11941467995d6b7751301b914f4",
+      "saved_sha256": "c357f646f0dc8120ab76f2f48a6df282bc57e11941467995d6b7751301b914f4",
+      "different_BF16_elements": 0,
+      "max_float_abs_difference": 0.0,
+      "target_delta_norm_FP32": 2.134977102279663,
+      "donor_delta_norm_FP32": 1.4210271835327148,
+      "saved_actual_delta_norm_FP32": 2.135514736175537,
+      "elementwise_FP32_precast_sha256": "e534c1af94b8d8d1c68c7175316d6af354d1e3d063b50966b370d387bfa5ba65"
+    },
+    {
+      "id": "Mercury_SC_406029",
+      "donor_id": "Mercury_SC_406705",
+      "exact_saved_vector_match": true,
+      "recomputed_sha256": "7caba1c7d3d3bdd8cb0c2eea0a3088d4f93a94073ce8f9de03b079e19d9917fb",
+      "saved_sha256": "7caba1c7d3d3bdd8cb0c2eea0a3088d4f93a94073ce8f9de03b079e19d9917fb",
+      "different_BF16_elements": 0,
+      "max_float_abs_difference": 0.0,
+      "target_delta_norm_FP32": 3.1420929431915283,
+      "donor_delta_norm_FP32": 2.720433235168457,
+      "saved_actual_delta_norm_FP32": 3.142556667327881,
+      "elementwise_FP32_precast_sha256": "5bf15a0fb6bde4f28784b7fe7d533806ced8b9e1702f2ccc3bcef990c54dba61"
+    }
+  ]
+}
