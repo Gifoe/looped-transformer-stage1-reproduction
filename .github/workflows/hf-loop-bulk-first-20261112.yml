@@ -1,0 +1,64 @@
+name: HF first large result
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  upload:
+    runs-on: ubuntu-latest
+    timeout-minutes: 330
+    steps:
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python -m pip install 'huggingface_hub>=0.36,<2' hf_xet
+      - name: Transfer and verify one reviewed archive
+        env:
+          HF_TOKEN: ${{ secrets.LOOP_HF_UPLOAD_20261112 }}
+          SSH_KEY: ${{ secrets.LOOP_EXPORT_KEY_20261112 }}
+          SSH_HOST: ${{ secrets.LOOP_EXPORT_HOST_20261112 }}
+          SSH_PORT: ${{ secrets.LOOP_EXPORT_PORT_20261112 }}
+          SSH_USER: ${{ secrets.LOOP_EXPORT_USER_20261112 }}
+          SSH_KNOWN_HOSTS: ${{ secrets.LOOP_EXPORT_KNOWN_HOSTS_20261112 }}
+        run: |
+          python - <<'PY'
+          import os,subprocess,hashlib,time,tempfile,pathlib,tarfile,gzip,re
+          for k in ('HTTP_PROXY','HTTPS_PROXY','ALL_PROXY','http_proxy','https_proxy','all_proxy'): os.environ.pop(k,None)
+          os.environ['NO_PROXY']='*'
+          from huggingface_hub import HfApi,hf_hub_download
+          name='research-remainder.tar.gz.part000'
+          expected='8da99805249452366b72389b2bc0a0d53863ae11de0a5b143575673cb53f4f72'
+          token=os.environ['HF_TOKEN'];api=HfApi(token=token);repo=api.whoami()['name']+'/loop'
+          if api.repo_info(repo,repo_type='dataset').private: raise RuntimeError('dataset is private')
+          target='artifacts/'+name
+          if api.file_exists(repo_id=repo,repo_type='dataset',filename=target): raise RuntimeError('target already exists; refusing overwrite')
+          with tempfile.TemporaryDirectory() as td:
+              p=pathlib.Path(td);key=p/'key';known=p/'known_hosts';out=p/name
+              key.write_text(os.environ['SSH_KEY']);key.chmod(0o600);known.write_text(os.environ['SSH_KNOWN_HOSTS'])
+              cmd=['ssh','-T','-i',str(key),'-p',os.environ['SSH_PORT'],'-o','IdentitiesOnly=yes','-o','StrictHostKeyChecking=yes','-o','UserKnownHostsFile='+str(known),'-o','ConnectTimeout=20',os.environ['SSH_USER']+'@'+os.environ['SSH_HOST'],'read 0']
+              begin=time.monotonic();h=hashlib.sha256();total=0
+              with out.open('wb') as f,subprocess.Popen(cmd,stdout=subprocess.PIPE) as proc:
+                  while chunk:=proc.stdout.read(1024*1024): f.write(chunk);h.update(chunk);total+=len(chunk)
+                  if proc.wait()!=0: raise RuntimeError('restricted export failed')
+              if total!=580146843 or h.hexdigest()!=expected: raise RuntimeError('source archive size or SHA mismatch')
+              print('SOURCE_VERIFIED bytes='+str(total)+' seconds='+str(round(time.monotonic()-begin,1)),flush=True)
+              patterns=[re.compile(x) for x in (rb'-----BEGIN (?:RSA |EC |OPENSSH )?PRIVATE KEY-----',rb'(?:ghp_[A-Za-z0-9]{30,}|github_pat_[A-Za-z0-9_]{40,})',rb'sk-[A-Za-z0-9]{32,}',rb'(?i)password\s*[:=]\s*["\x27][^"\x27\r\n]{8,}',rb'https?://[^\s/@:]+:[^\s/@]+@')]
+              scanned=0
+              with tarfile.open(out,'r|gz') as tf:
+                  for m in tf:
+                      if not m.isfile() or not m.name.lower().endswith(('.json','.jsonl','.json.gz','.jsonl.gz','.log','.py','.sh','.md','.txt')): continue
+                      f=tf.extractfile(m)
+                      if m.name.lower().endswith('.gz'): f=gzip.GzipFile(fileobj=f)
+                      for line in f:
+                          if any(p.search(line) for p in patterns): raise RuntimeError('Sensitive pattern in archive member '+m.name)
+                      scanned+=1
+              print('TEXT_SCAN_COMPLETE members='+str(scanned),flush=True)
+              start=time.monotonic();api.upload_file(path_or_fileobj=str(out),path_in_repo=target,repo_id=repo,repo_type='dataset',commit_message='Add reviewed research results archive')
+              print('UPLOAD_FINISHED seconds='+str(round(time.monotonic()-start,1)),flush=True)
+              path=hf_hub_download(repo_id=repo,repo_type='dataset',filename=target,token=token,force_download=True,local_dir=str(p/'verify'))
+              h=hashlib.sha256()
+              with open(path,'rb') as f:
+                  while chunk:=f.read(1024*1024): h.update(chunk)
+              if h.hexdigest()!=expected: raise RuntimeError('remote download SHA mismatch')
+              print('REMOTE_VERIFIED path='+target+' bytes='+str(total)+' sha256='+h.hexdigest(),flush=True)
+          PY
