@@ -1,0 +1,30 @@
+name: HF publication index
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  upload:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python -m pip install 'huggingface_hub>=0.36,<2'
+      - env:
+          HF_TOKEN: ${{ secrets.LOOP_HF_UPLOAD_20261112 }}
+          REPORT_B64: IyBPdXJvIGxvb3AgZXhwZXJpbWVudCBwdWJsaWNhdGlvbgoKVGhpcyBwdWJsaWMgZGF0YXNldCBpcyBiZWluZyBwb3B1bGF0ZWQuIEl0cyBleGlzdGVuY2UgZG9lcyAqKm5vdCoqIG1lYW4gdGhhdCBhbGwgZXhwZXJpbWVudHMgb3IgcmF3IGFjdGl2YXRpb25zIGhhdmUgYmVlbiB1cGxvYWRlZC4gRmlsZXMgYXJlIGFkZGVkIGluY3JlbWVudGFsbHkgYW5kIHZlcmlmaWVkIGFnYWluc3Qgc291cmNlIFNIQS0yNTYgYW5kIHNpemU7IGRvIG5vdCBpbmZlciBtaXNzaW5nIGZpbGVzIGFyZSBjb21wbGV0ZSBmcm9tIGEgbWFuaWZlc3Qgb3IgYSBzdWNjZXNzZnVsIHRlc3QgdXBsb2FkLgoKVGhlIHJldmlld2VkLCBpbi1wcm9ncmVzcyBDaGluZXNlIHJlcG9ydCBpcyBbRklOQUxfUkVTRUFSQ0hfUkVQT1JUX3Jldmlld2VkXzIwMjYxMTEyLm1kXShGSU5BTF9SRVNFQVJDSF9SRVBPUlRfcmV2aWV3ZWRfMjAyNjExMTIubWQpLiBJdCBkaXN0aW5ndWlzaGVzIG5hdHVyYWwtdHJhamVjdG9yeSBvYnNlcnZhdGlvbnMgZnJvbSBhY3RpdmF0aW9uIGludGVydmVudGlvbnMsIHJlY29yZHMgbmVnYXRpdmUgYW5kIGluY29tcGxldGUgb3V0Y29tZXMsIGFuZCBkZXNjcmliZXMgdGhlIGhpc3RvcmljYWwgZW5kcG9pbnQgZGlzY3JlcGFuY3kuIFRoZSBRS1YgdHJhaW4gYW5hbHlzaXMgaGFzIHNpbmNlIHByb2dyZXNzZWQ7IGl0cyBmdWxsIHJlcG9ydCBhbmQgbGF0ZXIgdmFsaWRhdGlvbi90ZXN0IGFuYWx5c2lzIHdpbGwgYmUgYWRkZWQgYWZ0ZXIgc2NpZW50aWZpYyByZXZpZXcuCgpUaGUgY3VycmVudCBjb2RlIGFuZCByZXBvcnQgc25hcHNob3QgaXMgb24gdGhlIEdpdEh1YiBbcmVzZWFyY2ggYnJhbmNoXShodHRwczovL2dpdGh1Yi5jb20vR2lmb2UvbG9vcGVkLXRyYW5zZm9ybWVyLXN0YWdlMS1yZXByb2R1Y3Rpb24vdHJlZS9yZXNlYXJjaC9vdXJvLWxhdGVudC1tZWNoYW5pc20tMjAyNjExMDcpLiBJdHMgY3VyYXRlZCBleHBvcnQgaWRlbnRpZmllcyBzb3VyY2UgY29tbWl0IGAxZDFmOGMwZmNhYTdhYWRmNWFlY2U5MTBiMTU5ZjJmOTIwZWJiOGYwYDsgaXQgZG9lcyBub3QgY2xhaW0gdG8gcmVwcm9kdWNlIGFsbCBvZiB0aGF0IGNvbW1pdCdzIHVucmV2aWV3ZWQgaGlzdG9yeS4gQSBmaXJzdCBjb2RlIGFuZCByZXNlYXJjaC1wbGFuIGFyY2hpdmUgaXMgYXZhaWxhYmxlIGF0IFtwdWJsaWNhdGlvbi9vdXJvLXB1YmxpY2F0aW9uLXNtYWxsLTIwMjYxMTExLnRhci5nel0ocHVibGljYXRpb24vb3Vyby1wdWJsaWNhdGlvbi1zbWFsbC0yMDI2MTExMS50YXIuZ3opLCBTSEEtMjU2IGAxNGUzMTI1N2NmNDVjZjFhM2UwOWY1ZWYwNjkyNzg1OTJlMjdmMGU4OThmNWEzZjRkZDAwZTlhOTU4YTUxMjhiYDsgaXQgaXMgYSBwYXJ0aWFsIHNuYXBzaG90LCBub3QgdGhlIGNvbXBsZXRlIHJlc3VsdHMuCgpFeHBlcmltZW50IGZpbGVzIGFyZSBiZWluZyBwdWJsaXNoZWQgdW5kZXIgYHJlc3VsdHMvYCB3aXRoIHByb2plY3QtcmVsYXRpdmUgcGF0aHMuIFJhdyB0ZW5zb3IsIHNjb3JlIGFuZCBtZXRhZGF0YSBmaWxlcyBhcmUgdHJhY2tlZCBhZ2FpbnN0IGEgZml4ZWQgcGVyLWZpbGUgbWFuaWZlc3Q7IHVwbG9hZCB0ZXN0cyB1bmRlciBgdHJhbnNwb3J0LXRlc3QvYCBjYW4gZHVwbGljYXRlIHRob3NlIHJlc3VsdHMgYW5kIG11c3Qgbm90IGJlIGNvdW50ZWQgYWdhaW4gYXMgdW5pcXVlIHNjaWVudGlmaWMgZGF0YS4gQSBmaW5hbCBjb21wbGV0ZSwgdmVyaWZpZWQgcGVyLWZpbGUgaW52ZW50b3J5IGFuZCByZXN0b3JhdGlvbiBpbnN0cnVjdGlvbnMgd2lsbCBiZSBzdXBwbGllZCBvbmNlIHRyYW5zZmVycyBmaW5pc2guIE1vZGVsIGNoZWNrcG9pbnRzIGFuZCBhdXRoZW50aWNhdGlvbiBtYXRlcmlhbCBhcmUgbm90IHBhcnQgb2YgdGhpcyBkYXRhc2V0Lgo=
+        run: |
+          python - <<'PY'
+          import os,base64,hashlib
+          for k in ('HTTP_PROXY','HTTPS_PROXY','ALL_PROXY','http_proxy','https_proxy','all_proxy'):os.environ.pop(k,None)
+          os.environ['NO_PROXY']='*'
+          from huggingface_hub import HfApi,hf_hub_download
+          token=os.environ['HF_TOKEN'];api=HfApi(token=token);repo=api.whoami()['name']+'/loop';name='PUBLICATION_INDEX.md'
+          if api.repo_info(repo,repo_type='dataset').private or api.file_exists(repo_id=repo,repo_type='dataset',filename=name):raise RuntimeError('private repo or report path exists')
+          content=base64.b64decode(os.environ['REPORT_B64']);api.upload_file(path_or_fileobj=content,path_in_repo=name,repo_id=repo,repo_type='dataset',commit_message='Add in-progress publication index')
+          path=hf_hub_download(repo_id=repo,repo_type='dataset',filename=name,token=token,force_download=True)
+          if hashlib.sha256(open(path,'rb').read()).digest()!=hashlib.sha256(content).digest():raise RuntimeError('SHA mismatch')
+          print('PUBLICATION_INDEX_VERIFIED https://huggingface.co/datasets/'+repo+'/blob/main/'+name+' sha256='+hashlib.sha256(content).hexdigest())
+          PY
