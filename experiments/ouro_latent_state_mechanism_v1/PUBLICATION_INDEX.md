@@ -1,6 +1,6 @@
 # Ouro 循环研究：代码与分析入口
 
-[已审研究报告](FINAL_RESEARCH_REPORT.md) 汇总自然 K1–K4、Round 2/3、L18 双向干预和 Q×KV 四角的三分区结果、反例与局限。[结果图和源数据](figures/README.md) 可从所附 CSV 和 summary 重绘。训练集是探索来源，validation/test 的前瞻判据在其效果揭示前冻结；该项目已有 ARC 接触，不是完全盲测。联合 KV 不能区分 K 与 V。新的 K×V 计划见 [后续方案](research_plans/NATURAL_QKV_EIGHT_CORNER_FOLLOWUP_20261112.md)，**尚未执行**。
+[已审研究报告](FINAL_RESEARCH_REPORT.md) 汇总自然 K1–K4、Round 2/3、L18 双向干预和 Q×KV 四角的三分区结果、反例与局限。[结果图和源数据](figures/README.md) 可从所附 CSV 和 summary 重绘。训练集是探索来源，validation/test 的前瞻判据在其效果揭示前冻结；该项目已有 ARC 接触，不是完全盲测。联合 KV 不能区分 K 与 V。新的 K×V 八角实验已完成：[本轮入口与九项产物](research_plans/natural_qkv_eight_corner_20261112/README.md)；此前后续方案保留为历史记录。
 
 | 阶段 | 核心代码 | 分析/覆盖 |
 |---|---|---|

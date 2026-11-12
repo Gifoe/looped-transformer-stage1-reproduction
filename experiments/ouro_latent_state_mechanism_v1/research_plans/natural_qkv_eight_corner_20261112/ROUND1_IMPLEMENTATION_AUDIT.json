@@ -1,0 +1,18 @@
+{
+  "cpu": "24-layer 4Q/2KV GQA eight-corner full-suffix oracle passed",
+  "limitations": "source adapter smoke train missing metadata, validation missing tensor, test retained; full train coverage pending",
+  "probe_sha256": "a31ee534d84f552e5c31986db97f82cca0ed4671611a16563708fa2c571a4459",
+  "recovery": "Actual metadata SHA versus natural coverage; actual branch 48 R states, norms/logits and old QKV files hashed against completed coverage. Missing natural whole tensors not reread; historical hashes inherited. Train deleted metadata via preserved ZIP.",
+  "source_sha256": {
+    "ROUND1_PROTOCOL.md": "db2aa903668d083404815923a5e25b3f1483ed2beac3e61da6c494bb4f363789",
+    "eight_observer.py": "02d580aea00a69ef15e18ae0325777e773bfa98555d8c1b2bb6f84a780581ccb",
+    "eight_runner.py": "7753291e6765818ffc7459cc50f55d817d12a66464a91b65bb4f9ab2462e8355",
+    "probe_eight.py": "3d46b58dbf9df51ebb452a299a465ffc877be6efc12524c436c2796e2204d752",
+    "recovery_adapter.py": "fc161ae1d1df29531210cf40d446339f08c5516a63b6486f848b62bf021b5816",
+    "replay_eight.py": "265ec6479017c6c2f770c687933f630a7edb0f6e8e9cac443ec7511a6054203d",
+    "test_eight_gqa.py": "e21735c481c8487cf0404025f9e8efd772081e34c3493eceb27e586518a821d3",
+    "train_eight.py": "14b6e7449ee2bdb11d38dbce872b994a3e5994a979d33bb6232db13f6ef46d31"
+  },
+  "status": "CPU_AND_PROBE_CORE_AUDITED_TRAIN_ONLY_APPROVED",
+  "timestamp_utc": "2026-11-12T09:05:41.298629+00:00"
+}
