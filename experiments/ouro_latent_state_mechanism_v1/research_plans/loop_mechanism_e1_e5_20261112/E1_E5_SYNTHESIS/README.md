@@ -3,7 +3,7 @@
 This directory is the cross-program entry point. Reports are separated by experiment and preserve their original evidence scope.
 
 - [E1/E2 audited results, code and compact rows](../E1_E2_A6000/README.md) — completed E1 Train/Validation/Test and E2 frozen Test and fixed discovery studies. The E1 Train damage q1 pre-frozen sign fails; the E2 probe and precision limitations are retained.
-- [E3 4090 writer and source interventions](../E3_WRITER_4090/README.md) — parent full-attention bundle Train/Validation and E/L discovery complete; see that package for the final status of L-only nested confirmation. L9 E failed two qualification criteria. No new L9 key/value Stage B or routing test is authorized by that failure.
+- [E3 4090 writer and source interventions](../E3_WRITER_4090/README.md) — parent full-attention bundle Train/Validation, E/L discovery, and L-only nested Train/Validation all completed; L passes all six frozen criteria in both splits. L9 E failed two qualification criteria. No new L9 key/value Stage B or routing test is authorized by that failure.
 - [E4/E5 previously published research](../E4_E5_4090/README.md) — independently scoped 299 and 128 controlled state/attention and depth experiments, including strict KV confirmation failure. It does not establish mediation of the new E3 L intervention.
 - [E1–E5 mechanistic model](FINAL_MECHANISTIC_MODEL.md), [research report](FINAL_RESEARCH_REPORT.md), [causal evidence map](CAUSAL_EVIDENCE_MAP.md), and [counterexamples](COUNTEREXAMPLES.md) — integrated synthesis with explicit scope and limitations.
 
