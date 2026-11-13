@@ -1,0 +1,1 @@
+Historical A6000 CPU recovery and original frozen evaluation. These are separate from fresh5090 outcomes in the parent. Initial prose may contain PENDING refresh markers; it is preserved as provenance and superseded by completed parent reports. Original historical driver build_reports.py is retained only as archival source.

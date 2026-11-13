@@ -1,0 +1,44 @@
+{
+  "utc": "2026-11-13T12:23:00.980901+00:00",
+  "source_sha256": "7570a197f8f584f9a55b48f58b2148c0ec6d711e27c85ad385c75479d95f572c",
+  "train_fixture_sha256": "fffede06daa2aeb7dab2aa514549d9238c586a8ff9771e528831c4f95eb40675",
+  "director_sha256": "63da325b437986174cf0a974de617cc4b95b152ff24ae3320425e33179041264",
+  "head": "Original class-balanced ridge, same standardization; softmax logits temperature1",
+  "alphas": [
+    0.1,
+    1.0,
+    10.0
+  ],
+  "primary": "4-class Brier (sum squared errors; lower better)",
+  "secondary": [
+    "logloss",
+    "utility macroF1",
+    "ECE10",
+    "closed-loop diagnostic action utility"
+  ],
+  "families": [
+    "output",
+    "combined",
+    "unrelated",
+    "shuffled"
+  ],
+  "outer": "5 hash folds, exact/known Train near duplicates same group",
+  "inner": "3 disjoint hash folds, only outer-training questions",
+  "family_dim": {
+    "output": 10,
+    "combined": 26,
+    "unrelated": 26,
+    "shuffled": 26
+  },
+  "complexity_note": "Same estimator and regularization, matched16 extra dimensions for latent/unrelated/shuffle; output-only has10 inputs, not falsely equal parameter count.",
+  "outcomes_seen_before_freeze": false,
+  "data_policy": "No Test or Validation examples loaded by this process; no method promotion from Test",
+  "fold_counts": {
+    "2": 228,
+    "1": 203,
+    "4": 212,
+    "0": 223,
+    "3": 228
+  },
+  "new_GPU_forwards": 0
+}

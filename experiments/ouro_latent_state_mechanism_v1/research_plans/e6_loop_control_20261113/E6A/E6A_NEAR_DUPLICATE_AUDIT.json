@@ -1,0 +1,57 @@
+{
+  "method": "label-free lexical audit: lowercased word TF-IDF uni/bigrams, max50000 features; cosine>=.95; not a proof of semantic uniqueness",
+  "n": 2590,
+  "near_duplicate_pairs": [
+    {
+      "left": [
+        "train",
+        "MEA_2011_8_8"
+      ],
+      "right": [
+        "train",
+        "MEA_2012_5_8"
+      ],
+      "cosine": 1.0000000000000009,
+      "cross_split": false
+    },
+    {
+      "left": [
+        "train",
+        "Mercury_7107380"
+      ],
+      "right": [
+        "test",
+        "Mercury_406136"
+      ],
+      "cosine": 0.9672437338585852,
+      "cross_split": true
+    },
+    {
+      "left": [
+        "test",
+        "LEAP_2000_8_2"
+      ],
+      "right": [
+        "test",
+        "LEAP__8_10365"
+      ],
+      "cosine": 0.9914692691569864,
+      "cross_split": false
+    },
+    {
+      "left": [
+        "test",
+        "LEAP_2002_4_10247"
+      ],
+      "right": [
+        "test",
+        "LEAP__4_10225"
+      ],
+      "cosine": 0.9931186437136449,
+      "cross_split": false
+    }
+  ],
+  "cross_split_pairs": 1,
+  "seconds": 0.8319637775421143,
+  "frozen_primary_evaluation": "Original complete split kept; audit is not a Test-driven method adjustment"
+}

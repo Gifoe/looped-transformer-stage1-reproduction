@@ -1,0 +1,38 @@
+{
+  "status": "FROZEN_BEFORE_ANY_FULL_ANSWER_RESULTS",
+  "protocol": "ARC question-only complete-answer conditional likelihood, same original25 demonstrations transformed to full text, no candidate options in context",
+  "primary_aggregation": "sum full-vocabulary FP32 token logprob / answer character count excluding leading continuation space",
+  "secondary_aggregations": [
+    "sum token logprob",
+    "mean token logprob"
+  ],
+  "token_boundary": "context encode must exactly prefix encode(context + leading-space full answer); no silent token slicing mismatches",
+  "dtype": "BF16",
+  "attention": "SDPA",
+  "cache": false,
+  "loops": [
+    1,
+    2,
+    3,
+    4
+  ],
+  "argmax": "first index",
+  "source_sha256": "30cb7ea58c1bc195c85c41b42dd9a7af90e7fe9b51d5ccc6bddac881aa751717",
+  "preparation_sha256": "11b88d1f44059f1b58499e06e132187aba01c4083992334d77ff5119cdfe7580",
+  "inputs_sha256": "d015abed0916704f9dac091c1a19deea1e50d8d2a3b40cc16553034b4c6fe0d7",
+  "n": 2590,
+  "prefix_sha256": "e181a54c18e9e1aaf4b336d7031c8647bb3dd0cf8f28d8cb0df735074485d7c9",
+  "normalized_text_duplicate_groups": [
+    [
+      [
+        "train",
+        "MEA_2011_8_8"
+      ],
+      [
+        "train",
+        "MEA_2012_5_8"
+      ]
+    ]
+  ],
+  "methods": "E6A original frozen candidates and parameters unchanged; no Full-Answer Test tuning; Cal remains labelled Joint-development calibrated transfer"
+}

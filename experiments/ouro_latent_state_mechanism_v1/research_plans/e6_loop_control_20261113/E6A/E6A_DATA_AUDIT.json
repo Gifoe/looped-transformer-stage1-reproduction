@@ -1,0 +1,257 @@
+{
+  "n": 2590,
+  "split_sizes_including_demonstrations": {
+    "train": 1119,
+    "validation": 299,
+    "test": 1172
+  },
+  "train_after_excluding_25_demonstrations": 1094,
+  "candidate_counts": {
+    "4": 2577,
+    "3": 8,
+    "5": 5
+  },
+  "hardware": "Fresh homogeneous RTX5090, historical A6000 separately preserved",
+  "native_identity": [
+    "NVIDIA GeForce RTX 5090",
+    "2.7.1+cu128",
+    "c5c68fbb368ce2909c257ae2afc50719be8c91539333d3295e19312c4316f413",
+    "c819bce14857bcdb680cbf69ac77501cd9b406096cacdd3381842bb32bbb79f9"
+  ],
+  "historical_input_and_label_identity_audit": "historical_A6000/E6A_DATA_AUDIT.json",
+  "near_duplicates": {
+    "method": "label-free lexical audit: lowercased word TF-IDF uni/bigrams, max50000 features; cosine>=.95; not a proof of semantic uniqueness",
+    "n": 2590,
+    "near_duplicate_pairs": [
+      {
+        "left": [
+          "train",
+          "MEA_2011_8_8"
+        ],
+        "right": [
+          "train",
+          "MEA_2012_5_8"
+        ],
+        "cosine": 1.0000000000000009,
+        "cross_split": false
+      },
+      {
+        "left": [
+          "train",
+          "Mercury_7107380"
+        ],
+        "right": [
+          "test",
+          "Mercury_406136"
+        ],
+        "cosine": 0.9672437338585852,
+        "cross_split": true
+      },
+      {
+        "left": [
+          "test",
+          "LEAP_2000_8_2"
+        ],
+        "right": [
+          "test",
+          "LEAP__8_10365"
+        ],
+        "cosine": 0.9914692691569864,
+        "cross_split": false
+      },
+      {
+        "left": [
+          "test",
+          "LEAP_2002_4_10247"
+        ],
+        "right": [
+          "test",
+          "LEAP__4_10225"
+        ],
+        "cosine": 0.9931186437136449,
+        "cross_split": false
+      }
+    ],
+    "cross_split_pairs": 1,
+    "seconds": 0.8319637775421143,
+    "frozen_primary_evaluation": "Original complete split kept; audit is not a Test-driven method adjustment"
+  },
+  "row_exclusions": "Only the predefined25 demonstrations from Train analysis; no duplicate/Test-driven exclusions",
+  "fresh_native_audits": {
+    "joint": {
+      "train": {
+        "n": 1094,
+        "native_correct": [
+          583,
+          889,
+          958,
+          966
+        ],
+        "rescues": [
+          358,
+          82,
+          19
+        ],
+        "damages": [
+          52,
+          13,
+          11
+        ],
+        "oracle_any_correct": 1014,
+        "K4_wrong_previously_correct": 48,
+        "all_wrong": 80,
+        "prediction_disagreement": 530,
+        "candidate_counts": {
+          "4": 1092,
+          "5": 1,
+          "3": 1
+        }
+      },
+      "validation": {
+        "n": 299,
+        "native_correct": [
+          149,
+          243,
+          259,
+          261
+        ],
+        "rescues": [
+          102,
+          20,
+          6
+        ],
+        "damages": [
+          8,
+          4,
+          4
+        ],
+        "oracle_any_correct": 271,
+        "K4_wrong_previously_correct": 10,
+        "all_wrong": 28,
+        "prediction_disagreement": 149,
+        "candidate_counts": {
+          "4": 295,
+          "3": 3,
+          "5": 1
+        }
+      },
+      "test": {
+        "n": 1172,
+        "native_correct": [
+          633,
+          954,
+          999,
+          1022
+        ],
+        "rescues": [
+          374,
+          82,
+          37
+        ],
+        "damages": [
+          53,
+          37,
+          14
+        ],
+        "oracle_any_correct": 1085,
+        "K4_wrong_previously_correct": 63,
+        "all_wrong": 87,
+        "prediction_disagreement": 574,
+        "candidate_counts": {
+          "4": 1165,
+          "3": 4,
+          "5": 3
+        }
+      }
+    },
+    "full_answer": {
+      "train": {
+        "n": 1094,
+        "native_correct": [
+          442,
+          612,
+          675,
+          673
+        ],
+        "rescues": [
+          234,
+          98,
+          30
+        ],
+        "damages": [
+          64,
+          35,
+          32
+        ],
+        "oracle_any_correct": 770,
+        "K4_wrong_previously_correct": 97,
+        "all_wrong": 324,
+        "prediction_disagreement": 525,
+        "candidate_counts": {
+          "4": 1092,
+          "5": 1,
+          "3": 1
+        }
+      },
+      "validation": {
+        "n": 299,
+        "native_correct": [
+          111,
+          154,
+          165,
+          162
+        ],
+        "rescues": [
+          57,
+          22,
+          7
+        ],
+        "damages": [
+          14,
+          11,
+          10
+        ],
+        "oracle_any_correct": 189,
+        "K4_wrong_previously_correct": 27,
+        "all_wrong": 110,
+        "prediction_disagreement": 133,
+        "candidate_counts": {
+          "4": 295,
+          "3": 3,
+          "5": 1
+        }
+      },
+      "test": {
+        "n": 1172,
+        "native_correct": [
+          438,
+          651,
+          697,
+          705
+        ],
+        "rescues": [
+          265,
+          82,
+          31
+        ],
+        "damages": [
+          52,
+          36,
+          23
+        ],
+        "oracle_any_correct": 791,
+        "K4_wrong_previously_correct": 86,
+        "all_wrong": 381,
+        "prediction_disagreement": 520,
+        "candidate_counts": {
+          "4": 1165,
+          "3": 4,
+          "5": 3
+        }
+      }
+    }
+  },
+  "gold_separation": "Gold-free capture inputs; labels only in offline analysis and allowed Train diagnostic fitting / Validation calibration",
+  "source_and_score_hashes": "Per-question capture records and frozen dev/Test receipts",
+  "historical_exposure": "E3 Train1030/Validation299 informed mechanism choice; ARC Test repeatedly exposed, not external blind confirmation"
+}

@@ -1,0 +1,1 @@
+Figures use only frozen TEST_SUMMARY.json files. Paired intervals:10000 bootstrap draws; no multiplicity correction. Cal identity selected on Joint Validation and transferred unchanged. Right panel is replay cost, not actual Full-Answer speed. All predeclared exit rules are shown; points are not a Test-selected policy.

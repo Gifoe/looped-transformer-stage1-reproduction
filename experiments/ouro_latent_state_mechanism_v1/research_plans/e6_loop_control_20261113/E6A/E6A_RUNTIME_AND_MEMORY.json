@@ -1,0 +1,584 @@
+{
+  "joint": {
+    "train": {
+      "n_including_demonstrations": 1119,
+      "actual_body_forwards": 1119,
+      "actual_full_shaped_head_calls": 4476,
+      "actual_physical_loop_applications": 4476,
+      "complete_receipt": {
+        "status": "COMPLETE",
+        "n": 1119,
+        "native_model_body_forwards": 1119,
+        "native_head_calls": 4476,
+        "technical_unhooked_native_forwards": 0,
+        "wall_seconds": 308.0996537208557,
+        "measured_seconds": 208.2839833823964,
+        "identity": {
+          "model_sha256": "58872a72616c736595b8b7662079c5b12c5a162ec16eae94f21c348dfa9885af",
+          "source_sha256": "c5c68fbb368ce2909c257ae2afc50719be8c91539333d3295e19312c4316f413",
+          "config_sha256": "ce9cc13da41591b8b4deca053d7dfee06424c0228628ee862ea86d725bc163f3",
+          "configuration_sha256": "950443e32929047aa08d02abad2e1888bc1914b3db988d3d675f70787f65dafb",
+          "collector_sha256": "c819bce14857bcdb680cbf69ac77501cd9b406096cacdd3381842bb32bbb79f9",
+          "inputs_sha256": "13a11643d1a7974b44e5df655bbfc9011af98414b7f06d0a2dd5ce94c9cec6bd",
+          "torch": "2.7.1+cu128",
+          "transformers": "4.55.0",
+          "gpu": "NVIDIA GeForce RTX 5090",
+          "dtype": "bfloat16",
+          "attention": "sdpa",
+          "use_cache": false,
+          "replica_baselines": {
+            "reference_depth": 1,
+            "adaptive_cap": 1.0,
+            "fixed_strength": 0.5,
+            "rule": "final.float()+strength*(final.float()-early.float()); adaptive strength=1-fullvocab probability top1top2 gap"
+          },
+          "features": [
+            "a_norm_mean",
+            "a_norm_std",
+            "a_norm_max",
+            "concentration",
+            "a_mean_norm",
+            "coordination",
+            "a_residual_cosine",
+            "residual_norm",
+            "delta_norm_mean",
+            "delta_norm_std",
+            "delta_norm_max",
+            "relative_delta",
+            "adjacent_a_cosine",
+            "delta_residual_cosine",
+            "successive_delta_cosine",
+            "relative_residual_delta"
+          ],
+          "target_layers": [
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16
+          ],
+          "control_layers": [
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8
+          ],
+          "defined_delta_depths": [
+            2,
+            3,
+            4
+          ],
+          "defined_successive_delta_depths": [
+            3,
+            4
+          ],
+          "loopcd_source_sha256": "3611a505185be5817876581f63b322b1d4c7785d25d5a3078546aba7fbc622bb",
+          "loopcd_protocol_sha256": "34041068b2fad3725166406f8360b21ea5cf7e3a91c9edcdabe5f7fd38e13246",
+          "loaded_source_verified": true
+        }
+      },
+      "sum_instrumented_seconds": 208.2839833823964,
+      "mean_instrumented_seconds": 0.1861340334069673,
+      "feature_cpu_and_storage_seconds": 97.6910392511636,
+      "saved_state_bytes": 332702257,
+      "peak_allocated_bytes": 3111874048
+    },
+    "validation": {
+      "n_including_demonstrations": 299,
+      "actual_body_forwards": 299,
+      "actual_full_shaped_head_calls": 1196,
+      "actual_physical_loop_applications": 1196,
+      "complete_receipt": {
+        "status": "COMPLETE",
+        "n": 299,
+        "native_model_body_forwards": 299,
+        "native_head_calls": 1196,
+        "technical_unhooked_native_forwards": 0,
+        "wall_seconds": 82.9482479095459,
+        "measured_seconds": 56.329431196674705,
+        "identity": {
+          "model_sha256": "58872a72616c736595b8b7662079c5b12c5a162ec16eae94f21c348dfa9885af",
+          "source_sha256": "c5c68fbb368ce2909c257ae2afc50719be8c91539333d3295e19312c4316f413",
+          "config_sha256": "ce9cc13da41591b8b4deca053d7dfee06424c0228628ee862ea86d725bc163f3",
+          "configuration_sha256": "950443e32929047aa08d02abad2e1888bc1914b3db988d3d675f70787f65dafb",
+          "collector_sha256": "c819bce14857bcdb680cbf69ac77501cd9b406096cacdd3381842bb32bbb79f9",
+          "inputs_sha256": "01d61caa0e1498b6a55322ae1c2cb7764e225174ea7763ed88a233eb63bc1ed5",
+          "torch": "2.7.1+cu128",
+          "transformers": "4.55.0",
+          "gpu": "NVIDIA GeForce RTX 5090",
+          "dtype": "bfloat16",
+          "attention": "sdpa",
+          "use_cache": false,
+          "replica_baselines": {
+            "reference_depth": 1,
+            "adaptive_cap": 1.0,
+            "fixed_strength": 0.5,
+            "rule": "final.float()+strength*(final.float()-early.float()); adaptive strength=1-fullvocab probability top1top2 gap"
+          },
+          "features": [
+            "a_norm_mean",
+            "a_norm_std",
+            "a_norm_max",
+            "concentration",
+            "a_mean_norm",
+            "coordination",
+            "a_residual_cosine",
+            "residual_norm",
+            "delta_norm_mean",
+            "delta_norm_std",
+            "delta_norm_max",
+            "relative_delta",
+            "adjacent_a_cosine",
+            "delta_residual_cosine",
+            "successive_delta_cosine",
+            "relative_residual_delta"
+          ],
+          "target_layers": [
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16
+          ],
+          "control_layers": [
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8
+          ],
+          "defined_delta_depths": [
+            2,
+            3,
+            4
+          ],
+          "defined_successive_delta_depths": [
+            3,
+            4
+          ],
+          "loopcd_source_sha256": "3611a505185be5817876581f63b322b1d4c7785d25d5a3078546aba7fbc622bb",
+          "loopcd_protocol_sha256": "34041068b2fad3725166406f8360b21ea5cf7e3a91c9edcdabe5f7fd38e13246",
+          "loaded_source_verified": true
+        }
+      },
+      "sum_instrumented_seconds": 56.329431196674705,
+      "mean_instrumented_seconds": 0.1883927464771729,
+      "feature_cpu_and_storage_seconds": 26.053439857438207,
+      "saved_state_bytes": 88895247,
+      "peak_allocated_bytes": 3109580288
+    },
+    "test": {
+      "n_including_demonstrations": 1172,
+      "actual_body_forwards": 1172,
+      "actual_full_shaped_head_calls": 4688,
+      "actual_physical_loop_applications": 4688,
+      "complete_receipt": {
+        "status": "COMPLETE",
+        "n": 1172,
+        "native_model_body_forwards": 1172,
+        "native_head_calls": 4688,
+        "technical_unhooked_native_forwards": 0,
+        "wall_seconds": 323.46443796157837,
+        "measured_seconds": 219.13606671150774,
+        "identity": {
+          "model_sha256": "58872a72616c736595b8b7662079c5b12c5a162ec16eae94f21c348dfa9885af",
+          "source_sha256": "c5c68fbb368ce2909c257ae2afc50719be8c91539333d3295e19312c4316f413",
+          "config_sha256": "ce9cc13da41591b8b4deca053d7dfee06424c0228628ee862ea86d725bc163f3",
+          "configuration_sha256": "950443e32929047aa08d02abad2e1888bc1914b3db988d3d675f70787f65dafb",
+          "collector_sha256": "c819bce14857bcdb680cbf69ac77501cd9b406096cacdd3381842bb32bbb79f9",
+          "inputs_sha256": "f6890faaa7429151d77526c40418add483d3e0c6110ce6bb9f4109b21202b70c",
+          "torch": "2.7.1+cu128",
+          "transformers": "4.55.0",
+          "gpu": "NVIDIA GeForce RTX 5090",
+          "dtype": "bfloat16",
+          "attention": "sdpa",
+          "use_cache": false,
+          "replica_baselines": {
+            "reference_depth": 1,
+            "adaptive_cap": 1.0,
+            "fixed_strength": 0.5,
+            "rule": "final.float()+strength*(final.float()-early.float()); adaptive strength=1-fullvocab probability top1top2 gap"
+          },
+          "features": [
+            "a_norm_mean",
+            "a_norm_std",
+            "a_norm_max",
+            "concentration",
+            "a_mean_norm",
+            "coordination",
+            "a_residual_cosine",
+            "residual_norm",
+            "delta_norm_mean",
+            "delta_norm_std",
+            "delta_norm_max",
+            "relative_delta",
+            "adjacent_a_cosine",
+            "delta_residual_cosine",
+            "successive_delta_cosine",
+            "relative_residual_delta"
+          ],
+          "target_layers": [
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16
+          ],
+          "control_layers": [
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8
+          ],
+          "defined_delta_depths": [
+            2,
+            3,
+            4
+          ],
+          "defined_successive_delta_depths": [
+            3,
+            4
+          ],
+          "loopcd_source_sha256": "3611a505185be5817876581f63b322b1d4c7785d25d5a3078546aba7fbc622bb",
+          "loopcd_protocol_sha256": "34041068b2fad3725166406f8360b21ea5cf7e3a91c9edcdabe5f7fd38e13246",
+          "loaded_source_verified": true
+        }
+      },
+      "sum_instrumented_seconds": 219.13606671150774,
+      "mean_instrumented_seconds": 0.18697616613609874,
+      "feature_cpu_and_storage_seconds": 102.07853455562145,
+      "saved_state_bytes": 348456252,
+      "peak_allocated_bytes": 3112463872
+    }
+  },
+  "full_answer": {
+    "train": {
+      "n_including_demonstrations": 1119,
+      "actual_body_forwards": 4476,
+      "actual_full_shaped_head_calls": 17904,
+      "actual_physical_loop_applications": 17904,
+      "complete_receipt": {
+        "status": "COMPLETE",
+        "n": 1119,
+        "native_model_body_forwards": 4476,
+        "native_head_calls": 17904,
+        "technical_unhooked_native_forwards": 0,
+        "logical_retained_native_body_forwards": 4476,
+        "wall_seconds": 634.6369211673737,
+        "measured_seconds": 535.4583123000339,
+        "identity": {
+          "model_sha256": "58872a72616c736595b8b7662079c5b12c5a162ec16eae94f21c348dfa9885af",
+          "source_sha256": "c5c68fbb368ce2909c257ae2afc50719be8c91539333d3295e19312c4316f413",
+          "config_sha256": "ce9cc13da41591b8b4deca053d7dfee06424c0228628ee862ea86d725bc163f3",
+          "configuration_sha256": "950443e32929047aa08d02abad2e1888bc1914b3db988d3d675f70787f65dafb",
+          "collector_sha256": "544863a116334d9b93bc1d53035bae068844a8231289889594cc186502a9a97a",
+          "inputs_sha256": "8c2f537458d03b395c746d0ddf9e6c3b171e806d122d5bcaac73df851366e073",
+          "torch": "2.7.1+cu128",
+          "transformers": "4.55.0",
+          "gpu": "NVIDIA GeForce RTX 5090",
+          "dtype": "bfloat16",
+          "attention": "sdpa",
+          "use_cache": false,
+          "score_protocol": "full_answer",
+          "primary_normalization": "answer_character_count",
+          "feature_prefix": "fixed_candidate0_at_context_R",
+          "replica_baselines": {
+            "reference_depth": 1,
+            "adaptive_cap": 1.0,
+            "fixed_strength": 0.5,
+            "rule": "fullvocab native K1/K4 contrast at every answer token; character-normalized sum primary"
+          },
+          "features": [
+            "a_norm_mean",
+            "a_norm_std",
+            "a_norm_max",
+            "concentration",
+            "a_mean_norm",
+            "coordination",
+            "a_residual_cosine",
+            "residual_norm",
+            "delta_norm_mean",
+            "delta_norm_std",
+            "delta_norm_max",
+            "relative_delta",
+            "adjacent_a_cosine",
+            "delta_residual_cosine",
+            "successive_delta_cosine",
+            "relative_residual_delta"
+          ],
+          "target_layers": [
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16
+          ],
+          "control_layers": [
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8
+          ],
+          "defined_delta_depths": [
+            2,
+            3,
+            4
+          ],
+          "defined_successive_delta_depths": [
+            3,
+            4
+          ],
+          "loopcd_source_sha256": "3611a505185be5817876581f63b322b1d4c7785d25d5a3078546aba7fbc622bb",
+          "loopcd_protocol_sha256": "34041068b2fad3725166406f8360b21ea5cf7e3a91c9edcdabe5f7fd38e13246",
+          "loaded_source_verified": true
+        }
+      },
+      "sum_instrumented_seconds": 535.4583123000339,
+      "mean_instrumented_seconds": 0.4785150243968131,
+      "feature_cpu_and_storage_seconds": 97.43056213948876,
+      "saved_state_bytes": 332809362,
+      "peak_allocated_bytes": 3031596544
+    },
+    "validation": {
+      "n_including_demonstrations": 299,
+      "actual_body_forwards": 1194,
+      "actual_full_shaped_head_calls": 4776,
+      "actual_physical_loop_applications": 4776,
+      "complete_receipt": {
+        "status": "COMPLETE",
+        "n": 299,
+        "native_model_body_forwards": 1194,
+        "native_head_calls": 4776,
+        "technical_unhooked_native_forwards": 0,
+        "logical_retained_native_body_forwards": 1194,
+        "wall_seconds": 169.99304103851318,
+        "measured_seconds": 143.45585902873427,
+        "identity": {
+          "model_sha256": "58872a72616c736595b8b7662079c5b12c5a162ec16eae94f21c348dfa9885af",
+          "source_sha256": "c5c68fbb368ce2909c257ae2afc50719be8c91539333d3295e19312c4316f413",
+          "config_sha256": "ce9cc13da41591b8b4deca053d7dfee06424c0228628ee862ea86d725bc163f3",
+          "configuration_sha256": "950443e32929047aa08d02abad2e1888bc1914b3db988d3d675f70787f65dafb",
+          "collector_sha256": "544863a116334d9b93bc1d53035bae068844a8231289889594cc186502a9a97a",
+          "inputs_sha256": "cafa3bcdc6894993ee4f75583fefbfbd8a35c8816ad9a21d8aea2259ba13a1ae",
+          "torch": "2.7.1+cu128",
+          "transformers": "4.55.0",
+          "gpu": "NVIDIA GeForce RTX 5090",
+          "dtype": "bfloat16",
+          "attention": "sdpa",
+          "use_cache": false,
+          "score_protocol": "full_answer",
+          "primary_normalization": "answer_character_count",
+          "feature_prefix": "fixed_candidate0_at_context_R",
+          "replica_baselines": {
+            "reference_depth": 1,
+            "adaptive_cap": 1.0,
+            "fixed_strength": 0.5,
+            "rule": "fullvocab native K1/K4 contrast at every answer token; character-normalized sum primary"
+          },
+          "features": [
+            "a_norm_mean",
+            "a_norm_std",
+            "a_norm_max",
+            "concentration",
+            "a_mean_norm",
+            "coordination",
+            "a_residual_cosine",
+            "residual_norm",
+            "delta_norm_mean",
+            "delta_norm_std",
+            "delta_norm_max",
+            "relative_delta",
+            "adjacent_a_cosine",
+            "delta_residual_cosine",
+            "successive_delta_cosine",
+            "relative_residual_delta"
+          ],
+          "target_layers": [
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16
+          ],
+          "control_layers": [
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8
+          ],
+          "defined_delta_depths": [
+            2,
+            3,
+            4
+          ],
+          "defined_successive_delta_depths": [
+            3,
+            4
+          ],
+          "loopcd_source_sha256": "3611a505185be5817876581f63b322b1d4c7785d25d5a3078546aba7fbc622bb",
+          "loopcd_protocol_sha256": "34041068b2fad3725166406f8360b21ea5cf7e3a91c9edcdabe5f7fd38e13246",
+          "loaded_source_verified": true
+        }
+      },
+      "sum_instrumented_seconds": 143.45585902873427,
+      "mean_instrumented_seconds": 0.4797854817014524,
+      "feature_cpu_and_storage_seconds": 26.0776803009212,
+      "saved_state_bytes": 88922807,
+      "peak_allocated_bytes": 3030318592
+    },
+    "test": {
+      "n_including_demonstrations": 1172,
+      "actual_body_forwards": 4687,
+      "actual_full_shaped_head_calls": 18748,
+      "actual_physical_loop_applications": 18748,
+      "complete_receipt": {
+        "status": "COMPLETE",
+        "n": 1172,
+        "native_model_body_forwards": 4687,
+        "native_head_calls": 18748,
+        "technical_unhooked_native_forwards": 0,
+        "logical_retained_native_body_forwards": 4687,
+        "wall_seconds": 666.8906626701355,
+        "measured_seconds": 562.8112701876089,
+        "identity": {
+          "model_sha256": "58872a72616c736595b8b7662079c5b12c5a162ec16eae94f21c348dfa9885af",
+          "source_sha256": "c5c68fbb368ce2909c257ae2afc50719be8c91539333d3295e19312c4316f413",
+          "config_sha256": "ce9cc13da41591b8b4deca053d7dfee06424c0228628ee862ea86d725bc163f3",
+          "configuration_sha256": "950443e32929047aa08d02abad2e1888bc1914b3db988d3d675f70787f65dafb",
+          "collector_sha256": "544863a116334d9b93bc1d53035bae068844a8231289889594cc186502a9a97a",
+          "inputs_sha256": "7131c6dcb8b2081bbb300f6e0eab98befdcf0ab89637e56596caab717ed5e341",
+          "torch": "2.7.1+cu128",
+          "transformers": "4.55.0",
+          "gpu": "NVIDIA GeForce RTX 5090",
+          "dtype": "bfloat16",
+          "attention": "sdpa",
+          "use_cache": false,
+          "score_protocol": "full_answer",
+          "primary_normalization": "answer_character_count",
+          "feature_prefix": "fixed_candidate0_at_context_R",
+          "replica_baselines": {
+            "reference_depth": 1,
+            "adaptive_cap": 1.0,
+            "fixed_strength": 0.5,
+            "rule": "fullvocab native K1/K4 contrast at every answer token; character-normalized sum primary"
+          },
+          "features": [
+            "a_norm_mean",
+            "a_norm_std",
+            "a_norm_max",
+            "concentration",
+            "a_mean_norm",
+            "coordination",
+            "a_residual_cosine",
+            "residual_norm",
+            "delta_norm_mean",
+            "delta_norm_std",
+            "delta_norm_max",
+            "relative_delta",
+            "adjacent_a_cosine",
+            "delta_residual_cosine",
+            "successive_delta_cosine",
+            "relative_residual_delta"
+          ],
+          "target_layers": [
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16
+          ],
+          "control_layers": [
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8
+          ],
+          "defined_delta_depths": [
+            2,
+            3,
+            4
+          ],
+          "defined_successive_delta_depths": [
+            3,
+            4
+          ],
+          "loopcd_source_sha256": "3611a505185be5817876581f63b322b1d4c7785d25d5a3078546aba7fbc622bb",
+          "loopcd_protocol_sha256": "34041068b2fad3725166406f8360b21ea5cf7e3a91c9edcdabe5f7fd38e13246",
+          "loaded_source_verified": true
+        }
+      },
+      "sum_instrumented_seconds": 562.8112701876089,
+      "mean_instrumented_seconds": 0.4802143943580281,
+      "feature_cpu_and_storage_seconds": 102.23521650303155,
+      "saved_state_bytes": 348575711,
+      "peak_allocated_bytes": 3032956416
+    }
+  },
+  "actual_online_Joint_Validation": {
+    "cal_early_0.99": {
+      "n": 299,
+      "correct": 261,
+      "actual_mean_loops": 3.7123745819397995,
+      "mean_seconds": 0.17315298591718625,
+      "median_seconds": 0.18115328717976809,
+      "mean_seconds_excluding_first_question": 0.17313233124804778,
+      "peak_allocated_bytes": 3130357248,
+      "actual_first_layer_calls_equal_depth": true
+    },
+    "early_fixed": {
+      "n": 299,
+      "correct": 260,
+      "actual_mean_loops": 3.1270903010033444,
+      "mean_seconds": 0.1466519699609499,
+      "median_seconds": 0.13771618250757456,
+      "mean_seconds_excluding_first_question": 0.1465405304916203,
+      "peak_allocated_bytes": 3130322432,
+      "actual_first_layer_calls_equal_depth": true
+    },
+    "native4": {
+      "n": 299,
+      "correct": 261,
+      "actual_mean_loops": 4.0,
+      "mean_seconds": 0.1817139349597503,
+      "median_seconds": 0.17487889807671309,
+      "mean_seconds_excluding_first_question": 0.17991304550719942,
+      "peak_allocated_bytes": 3108288000,
+      "actual_first_layer_calls_equal_depth": true
+    }
+  },
+  "actual_online_Full_Answer": "NOT RUN; replay only",
+  "weights_modified": false,
+  "Astra_used_for_E6_analysis_or_execution": false,
+  "Astra_next_step_director_authorized": true,
+  "hardware": "RTX5090",
+  "timing_scope": "Shared observers plus4 full-shaped heads and LoopCD controls; per-question CPU/storage time separately reported. Not each method standalone latency."
+}

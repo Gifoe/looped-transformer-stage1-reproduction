@@ -1,0 +1,3 @@
+# Existing baseline audit
+
+Found repository LoopCD implementation in extensions/arc_loopcd_ouro14_full_20261026/scripts/methods.py with full-vocabulary adaptive_logits, reference K1, cap1.0 and fixed coefficient0.5. Original configuration and scorer will be preserved with source hashes. It cannot be faithfully reconstructed from archived candidate-only vectors: its adaptive confidence uses the full vocabulary. Historical candidate-only A6000 comparison: NOT RUN for LoopCD. New5090 Joint and Full-Answer collectors will compute these explicitly as preset controls from the same native full-vocabulary logits, without new model-weight updates or additional body passes. No baseline numbers are fabricated.

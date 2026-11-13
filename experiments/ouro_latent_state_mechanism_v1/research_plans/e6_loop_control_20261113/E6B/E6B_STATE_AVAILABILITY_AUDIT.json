@@ -1,0 +1,48 @@
+{
+  "existing_coverage": {
+    "historical_A6000_native_scores": 2590,
+    "historical_E2_R_states": "24 physical layers, K1/K2 only, per pinned report; not full-token or all4-loop coverage",
+    "historical_E3_N_P_states": "counterfactual contexts, not natural K3/K4",
+    "historical_E4_K1_K4_L18": "selected cohorts and L18 only; insufficient full-cohort L10-L16 features"
+  },
+  "reuse_decision": "Fresh homogeneous5090 native capture required for E6B; no hardware splice",
+  "new_capture": {
+    "model": "fixed Ouro-1.4B",
+    "protocols": [
+      "joint_option_letter",
+      "independently frozen full_answer_character_mean"
+    ],
+    "selected_positions": "R only",
+    "attention_layers": [
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16
+    ],
+    "matched_unrelated_layers": [
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
+    "diagnostic_residual_layer": 18,
+    "technical_status": "PASS_JOINT3_AND_LONG_FAS3_AND_LONG",
+    "formal_capture_status": {
+      "joint/train": "COMPLETE",
+      "joint/validation": "COMPLETE",
+      "joint/test": "COMPLETE",
+      "full_answer/train": "COMPLETE",
+      "full_answer/validation": "COMPLETE",
+      "full_answer/test": "COMPLETE"
+    },
+    "state_storage": "Natural R-only float32 exact BF16 values in server NPZ; low-dimensional features released. No full-token tensors."
+  },
+  "labels": "isolated evaluation file; not input features or collector",
+  "source_references_manifest": "references/SOURCE_MANIFEST.json"
+}

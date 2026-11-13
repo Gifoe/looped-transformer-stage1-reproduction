@@ -1,0 +1,11 @@
+# E6B feature definitions (frozen before new Test method results)
+
+Sol analysis and execution; no Astra authorship of these E6 features. Astra was subsequently authorized only for next-step scientific direction. Natural adjacent-loop deltas are not E3 counterfactual N/P reference deltas.
+
+At each loop, capture real post-localnorm attention increments at final readout R, L10-L16, and matched unrelated physical layers L2-L8. Per family use 16 features: attention norm mean/std/max; maximum norm share; norm of layer-average increment; coordination (mean-vector norm / average norm); mean attention/residual cosine; mean residual norm; adjacent difference norm mean/std/max; relative difference norm; mean adjacent attention cosine; mean-difference/residual-difference cosine; consecutive-difference cosine; relative residual difference. Delta features undefined at K1 use explicit depth/defined-depth metadata and zero placeholders. Consecutive-difference cosine exists only at K3/K4. No gold, answer-semantic probe, or N/P reference enters extraction.
+
+Output features: candidate-normalized entropy, top-logit margin, candidate-relative maximum probability, agreement with preceding prediction, adjacent JSD, rank-array equality proportion, centered score standard deviation, candidate count, depth, consecutive prediction streak. Candidate-relative probabilities are not calibrated correctness probabilities.
+
+Diagnostics: output-only / latent-only / combined / output plus unrelated-family / output plus fixed sample-permuted latent. Same train-only standardization; very small balanced ridge-linear alpha grid 0.1/1/10 chosen on Validation. Supervised diagnostics never presented as zero-label controllers. Retrospective utility uses current transition states; prospective utility uses only current states to predict next transition.
+
+Zero-label controller thresholds are fixed medians of unlabeled nondemo Train features, independently for each depth. Rollback and agreement use complete K4 and incur four-loop budget. Stability selection may use earlier output but retains four-loop execution; only causal early_exit scans K2 then K3 and has prefix-replay expected depth. Measured latency is NOT RUN until an online validation actually executes those decisions.

@@ -1,0 +1,278 @@
+{
+  "created_utc": "2026-11-13T10:41:09.538237+00:00",
+  "primary_metric": "Test accuracy paired versus same-device Native K4",
+  "primary_ZL": "weighted4",
+  "primary_ZL_selection": "fixed before development evaluation; no task labels used",
+  "primary_Cal": "cal_early_0.99",
+  "Cal_selection": "highest Validation correct, then lower mean loops, then method name; Train/Val labels explicitly allowed",
+  "methods": {
+    "K1": {
+      "kind": "native",
+      "depth": 1,
+      "track": "ZL"
+    },
+    "K2": {
+      "kind": "native",
+      "depth": 2,
+      "track": "ZL"
+    },
+    "K3": {
+      "kind": "native",
+      "depth": 3,
+      "track": "ZL"
+    },
+    "K4": {
+      "kind": "native",
+      "depth": 4,
+      "track": "ZL"
+    },
+    "uniform34": {
+      "kind": "score",
+      "weights": [
+        0,
+        0,
+        1,
+        1
+      ],
+      "track": "ZL"
+    },
+    "uniform234": {
+      "kind": "score",
+      "weights": [
+        0,
+        1,
+        1,
+        1
+      ],
+      "track": "ZL"
+    },
+    "uniform1234": {
+      "kind": "score",
+      "weights": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "track": "ZL"
+    },
+    "weighted4": {
+      "kind": "score",
+      "weights": [
+        0,
+        1,
+        1,
+        2
+      ],
+      "track": "ZL"
+    },
+    "probability": {
+      "kind": "probability",
+      "weights": [
+        0,
+        1,
+        1,
+        1
+      ],
+      "track": "ZL"
+    },
+    "log_probability": {
+      "kind": "log_probability",
+      "weights": [
+        0,
+        1,
+        1,
+        1
+      ],
+      "track": "ZL"
+    },
+    "rank": {
+      "kind": "rank",
+      "weights": [
+        0,
+        1,
+        1,
+        1
+      ],
+      "track": "ZL"
+    },
+    "highest_margin": {
+      "kind": "confidence",
+      "signal": "margin",
+      "track": "ZL"
+    },
+    "highest_entropy": {
+      "kind": "confidence",
+      "signal": "entropy",
+      "track": "ZL"
+    },
+    "vote": {
+      "kind": "vote",
+      "track": "ZL"
+    },
+    "stability": {
+      "kind": "stability",
+      "track": "ZL"
+    },
+    "conservative": {
+      "kind": "conservative",
+      "track": "ZL"
+    },
+    "rollback": {
+      "kind": "rollback",
+      "track": "ZL"
+    },
+    "early_fixed": {
+      "kind": "early",
+      "threshold": 0.9,
+      "entropy": 0.3,
+      "track": "ZL"
+    },
+    "cal_weight_0012": {
+      "kind": "score",
+      "weights": [
+        0,
+        0,
+        1,
+        2
+      ],
+      "track": "Cal"
+    },
+    "cal_weight_0013": {
+      "kind": "score",
+      "weights": [
+        0,
+        0,
+        1,
+        3
+      ],
+      "track": "Cal"
+    },
+    "cal_weight_0113": {
+      "kind": "score",
+      "weights": [
+        0,
+        1,
+        1,
+        3
+      ],
+      "track": "Cal"
+    },
+    "cal_weight_0124": {
+      "kind": "score",
+      "weights": [
+        0,
+        1,
+        2,
+        4
+      ],
+      "track": "Cal"
+    },
+    "cal_weight_1114": {
+      "kind": "score",
+      "weights": [
+        1,
+        1,
+        1,
+        4
+      ],
+      "track": "Cal"
+    },
+    "cal_weight_1124": {
+      "kind": "score",
+      "weights": [
+        1,
+        1,
+        2,
+        4
+      ],
+      "track": "Cal"
+    },
+    "cal_weight_0122": {
+      "kind": "score",
+      "weights": [
+        0,
+        1,
+        2,
+        2
+      ],
+      "track": "Cal"
+    },
+    "cal_weight_0101": {
+      "kind": "score",
+      "weights": [
+        0,
+        1,
+        0,
+        1
+      ],
+      "track": "Cal"
+    },
+    "cal_early_0.6": {
+      "kind": "early",
+      "threshold": 0.6,
+      "entropy": 0.5,
+      "track": "Cal"
+    },
+    "cal_early_0.7": {
+      "kind": "early",
+      "threshold": 0.7,
+      "entropy": 0.5,
+      "track": "Cal"
+    },
+    "cal_early_0.8": {
+      "kind": "early",
+      "threshold": 0.8,
+      "entropy": 0.5,
+      "track": "Cal"
+    },
+    "cal_early_0.9": {
+      "kind": "early",
+      "threshold": 0.9,
+      "entropy": 0.5,
+      "track": "Cal"
+    },
+    "cal_early_0.95": {
+      "kind": "early",
+      "threshold": 0.95,
+      "entropy": 0.5,
+      "track": "Cal"
+    },
+    "cal_early_0.99": {
+      "kind": "early",
+      "threshold": 0.99,
+      "entropy": 0.5,
+      "track": "Cal"
+    }
+  },
+  "source_sha256": "e09441ac8ba1e009fb204d43d4cbdff697a31515d9bd43999921042dde01da1f",
+  "methods_sha256": "7d84d2ffac38eaf87304e96041fdd9e9fd6bf8032e6f7be0eeefeb0550c8c20f",
+  "data_audit_sha256": "bf762a1c1949fd13343059d516903f2bab38e2cd4984abd729f641b720217d2b",
+  "data_identity": {
+    "n": 2590,
+    "candidate_counts": {
+      "4": 2577,
+      "3": 8,
+      "5": 5
+    },
+    "hardware": "historical RTX A6000 only",
+    "scores": "full candidate FP32 log-softmax vectors recovered from original metadata, not predictions",
+    "input_file_sha256": "30cb7ea58c1bc195c85c41b42dd9a7af90e7fe9b51d5ccc6bddac881aa751717",
+    "labels_file_sha256": "56cdbd0b8ddd200b670b4eee668cd4d39ce1ac8b92751044e2ce3b5190d70d64",
+    "exact_duplicate_input_groups": [
+      [
+        [
+          "train",
+          "MEA_2011_8_8"
+        ],
+        [
+          "train",
+          "MEA_2012_5_8"
+        ]
+      ]
+    ],
+    "score_alignment": "same candidate target IDs/order and four native loops per question; variable candidate count retained",
+    "near_duplicates": "Pending normalized-text audit after tokenizer decode; no claim of semantic uniqueness."
+  },
+  "test_policy": "One frozen batch all candidates; no Test-tuned rules. Historical Test already exposed. Full-answer transfer separate freeze/baseline."
+}
