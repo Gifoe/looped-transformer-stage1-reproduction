@@ -1,0 +1,48 @@
+{
+  "status": "PASS",
+  "n": 2,
+  "scope": "R-only checkpoint candidate-row and FP32 operator check, not causal contribution or full-dataset accuracy",
+  "epsilon": 1e-06,
+  "torch": "2.7.1+cu128",
+  "numpy": "1.26.4",
+  "tolerances": {
+    "rtol": 2e-05,
+    "atol": 0.0002
+  },
+  "rows": [
+    {
+      "id": "ACTAAP_2007_7_23",
+      "checkpoint_row_mapping_verified": true,
+      "per_layer_states_shape": [
+        4,
+        7,
+        2048
+      ],
+      "actual_BF16_add_identity": true,
+      "independent_torch_vs_numpy_FP32_max_abs_error": {
+        "candidate": 3.516674041748047e-06,
+        "unrelated": 4.410743713378906e-06
+      },
+      "loop1_unavailable": true,
+      "all_remaining_features_finite": true
+    },
+    {
+      "id": "ACTAAP_2007_7_24",
+      "checkpoint_row_mapping_verified": true,
+      "per_layer_states_shape": [
+        4,
+        7,
+        2048
+      ],
+      "actual_BF16_add_identity": true,
+      "independent_torch_vs_numpy_FP32_max_abs_error": {
+        "candidate": 3.337860107421875e-06,
+        "unrelated": 4.0531158447265625e-06
+      },
+      "loop1_unavailable": true,
+      "all_remaining_features_finite": true
+    }
+  ],
+  "source_sha256": "1dfc4422095e4174dca6d970f436c7116c4f3a154a3aa58779eccd6496561fa6",
+  "GPU_forwards": 0
+}

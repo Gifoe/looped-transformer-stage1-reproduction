@@ -1,0 +1,803 @@
+{
+  "utc": "2026-11-13T14:53:41.956436+00:00",
+  "status": "PROTOCOL_ONLY_NOT_ONLINE_RESULTS",
+  "launch_gate": "G1 prospective candidate combined paired Brier improvement CI lower>0 vs output, low-layer, shuffle; all three required",
+  "cohort": "All1094 Train question-disjoint OOF models, then all299 Validation with Train-only final model; no chosen subsample, no Test",
+  "policies": [
+    "native_K4",
+    "supervised_output_only",
+    "supervised_H2_candidate",
+    "predeclared_early_output_frontier"
+  ],
+  "actions": {
+    "supervised_prospective": "AtK2/K3 predicted utility2 or3->stop;elsecontinue to4",
+    "supervised_retrospective": "At completedK4 class2->K3 elseK4; optional separate fixed-budget branch, never early exit"
+  },
+  "permission": "Supervised head separate from original no-new-training/label-calibrated E6 rules. No gold at inference.",
+  "frontier_rule": "8 predeclared rules (K4 plus7 early policies); choose smallest meanloops among training accuracy no more than0.5pp below trainingK4; thenhighercorrect/name ties. Selection per outer-training fold only; one final fullTrain choice for Val. Classified Cal, not ZL.",
+  "fold_output_frontiers": {
+    "0": {
+      "chosen": {
+        "method": "cal_early_0.6",
+        "spec": {
+          "kind": "early",
+          "threshold": 0.6,
+          "entropy": 0.5,
+          "track": "Cal"
+        },
+        "n_training_questions": 871,
+        "correct": 766,
+        "native_K4_correct": 766,
+        "mean_replay_loops": 2.8220436280137773,
+        "feasible": true
+      },
+      "all_fixed_candidates": [
+        {
+          "method": "K4",
+          "spec": {
+            "kind": "native",
+            "depth": 4,
+            "track": "ZL"
+          },
+          "n_training_questions": 871,
+          "correct": 766,
+          "native_K4_correct": 766,
+          "mean_replay_loops": 4.0,
+          "feasible": true
+        },
+        {
+          "method": "early_fixed",
+          "spec": {
+            "kind": "early",
+            "threshold": 0.9,
+            "entropy": 0.3,
+            "track": "ZL"
+          },
+          "n_training_questions": 871,
+          "correct": 768,
+          "native_K4_correct": 766,
+          "mean_replay_loops": 3.0367393800229623,
+          "feasible": true
+        },
+        {
+          "method": "cal_early_0.6",
+          "spec": {
+            "kind": "early",
+            "threshold": 0.6,
+            "entropy": 0.5,
+            "track": "Cal"
+          },
+          "n_training_questions": 871,
+          "correct": 766,
+          "native_K4_correct": 766,
+          "mean_replay_loops": 2.8220436280137773,
+          "feasible": true
+        },
+        {
+          "method": "cal_early_0.7",
+          "spec": {
+            "kind": "early",
+            "threshold": 0.7,
+            "entropy": 0.5,
+            "track": "Cal"
+          },
+          "n_training_questions": 871,
+          "correct": 766,
+          "native_K4_correct": 766,
+          "mean_replay_loops": 2.823191733639495,
+          "feasible": true
+        },
+        {
+          "method": "cal_early_0.8",
+          "spec": {
+            "kind": "early",
+            "threshold": 0.8,
+            "entropy": 0.5,
+            "track": "Cal"
+          },
+          "n_training_questions": 871,
+          "correct": 767,
+          "native_K4_correct": 766,
+          "mean_replay_loops": 2.8645235361653274,
+          "feasible": true
+        },
+        {
+          "method": "cal_early_0.9",
+          "spec": {
+            "kind": "early",
+            "threshold": 0.9,
+            "entropy": 0.5,
+            "track": "Cal"
+          },
+          "n_training_questions": 871,
+          "correct": 768,
+          "native_K4_correct": 766,
+          "mean_replay_loops": 3.028702640642939,
+          "feasible": true
+        },
+        {
+          "method": "cal_early_0.95",
+          "spec": {
+            "kind": "early",
+            "threshold": 0.95,
+            "entropy": 0.5,
+            "track": "Cal"
+          },
+          "n_training_questions": 871,
+          "correct": 766,
+          "native_K4_correct": 766,
+          "mean_replay_loops": 3.196326061997704,
+          "feasible": true
+        },
+        {
+          "method": "cal_early_0.99",
+          "spec": {
+            "kind": "early",
+            "threshold": 0.99,
+            "entropy": 0.5,
+            "track": "Cal"
+          },
+          "n_training_questions": 871,
+          "correct": 766,
+          "native_K4_correct": 766,
+          "mean_replay_loops": 3.6280137772675087,
+          "feasible": true
+        }
+      ]
+    },
+    "1": {
+      "chosen": {
+        "method": "cal_early_0.6",
+        "spec": {
+          "kind": "early",
+          "threshold": 0.6,
+          "entropy": 0.5,
+          "track": "Cal"
+        },
+        "n_training_questions": 891,
+        "correct": 791,
+        "native_K4_correct": 790,
+        "mean_replay_loops": 2.840628507295174,
+        "feasible": true
+      },
+      "all_fixed_candidates": [
+        {
+          "method": "K4",
+          "spec": {
+            "kind": "native",
+            "depth": 4,
+            "track": "ZL"
+          },
+          "n_training_questions": 891,
+          "correct": 790,
+          "native_K4_correct": 790,
+          "mean_replay_loops": 4.0,
+          "feasible": true
+        },
+        {
+          "method": "early_fixed",
+          "spec": {
+            "kind": "early",
+            "threshold": 0.9,
+            "entropy": 0.3,
+            "track": "ZL"
+          },
+          "n_training_questions": 891,
+          "correct": 792,
+          "native_K4_correct": 790,
+          "mean_replay_loops": 3.0673400673400675,
+          "feasible": true
+        },
+        {
+          "method": "cal_early_0.6",
+          "spec": {
+            "kind": "early",
+            "threshold": 0.6,
+            "entropy": 0.5,
+            "track": "Cal"
+          },
+          "n_training_questions": 891,
+          "correct": 791,
+          "native_K4_correct": 790,
+          "mean_replay_loops": 2.840628507295174,
+          "feasible": true
+        },
+        {
+          "method": "cal_early_0.7",
+          "spec": {
+            "kind": "early",
+            "threshold": 0.7,
+            "entropy": 0.5,
+            "track": "Cal"
+          },
+          "n_training_questions": 891,
+          "correct": 791,
+          "native_K4_correct": 790,
+          "mean_replay_loops": 2.8439955106621775,
+          "feasible": true
+        },
+        {
+          "method": "cal_early_0.8",
+          "spec": {
+            "kind": "early",
+            "threshold": 0.8,
+            "entropy": 0.5,
+            "track": "Cal"
+          },
+          "n_training_questions": 891,
+          "correct": 793,
+          "native_K4_correct": 790,
+          "mean_replay_loops": 2.88327721661055,
+          "feasible": true
+        },
+        {
+          "method": "cal_early_0.9",
+          "spec": {
+            "kind": "early",
+            "threshold": 0.9,
+            "entropy": 0.5,
+            "track": "Cal"
+          },
+          "n_training_questions": 891,
+          "correct": 792,
+          "native_K4_correct": 790,
+          "mean_replay_loops": 3.0628507295173963,
+          "feasible": true
+        },
+        {
+          "method": "cal_early_0.95",
+          "spec": {
+            "kind": "early",
+            "threshold": 0.95,
+            "entropy": 0.5,
+            "track": "Cal"
+          },
+          "n_training_questions": 891,
+          "correct": 790,
+          "native_K4_correct": 790,
+          "mean_replay_loops": 3.234567901234568,
+          "feasible": true
+        },
+        {
+          "method": "cal_early_0.99",
+          "spec": {
+            "kind": "early",
+            "threshold": 0.99,
+            "entropy": 0.5,
+            "track": "Cal"
+          },
+          "n_training_questions": 891,
+          "correct": 790,
+          "native_K4_correct": 790,
+          "mean_replay_loops": 3.655443322109989,
+          "feasible": true
+        }
+      ]
+    },
+    "2": {
+      "chosen": {
+        "method": "cal_early_0.6",
+        "spec": {
+          "kind": "early",
+          "threshold": 0.6,
+          "entropy": 0.5,
+          "track": "Cal"
+        },
+        "n_training_questions": 866,
+        "correct": 765,
+        "native_K4_correct": 767,
+        "mean_replay_loops": 2.8094688221709005,
+        "feasible": true
+      },
+      "all_fixed_candidates": [
+        {
+          "method": "K4",
+          "spec": {
+            "kind": "native",
+            "depth": 4,
+            "track": "ZL"
+          },
+          "n_training_questions": 866,
+          "correct": 767,
+          "native_K4_correct": 767,
+          "mean_replay_loops": 4.0,
+          "feasible": true
+        },
+        {
+          "method": "early_fixed",
+          "spec": {
+            "kind": "early",
+            "threshold": 0.9,
+            "entropy": 0.3,
+            "track": "ZL"
+          },
+          "n_training_questions": 866,
+          "correct": 769,
+          "native_K4_correct": 767,
+          "mean_replay_loops": 3.023094688221709,
+          "feasible": true
+        },
+        {
+          "method": "cal_early_0.6",
+          "spec": {
+            "kind": "early",
+            "threshold": 0.6,
+            "entropy": 0.5,
+            "track": "Cal"
+          },
+          "n_training_questions": 866,
+          "correct": 765,
+          "native_K4_correct": 767,
+          "mean_replay_loops": 2.8094688221709005,
+          "feasible": true
+        },
+        {
+          "method": "cal_early_0.7",
+          "spec": {
+            "kind": "early",
+            "threshold": 0.7,
+            "entropy": 0.5,
+            "track": "Cal"
+          },
+          "n_training_questions": 866,
+          "correct": 765,
+          "native_K4_correct": 767,
+          "mean_replay_loops": 2.812933025404157,
+          "feasible": true
+        },
+        {
+          "method": "cal_early_0.8",
+          "spec": {
+            "kind": "early",
+            "threshold": 0.8,
+            "entropy": 0.5,
+            "track": "Cal"
+          },
+          "n_training_questions": 866,
+          "correct": 768,
+          "native_K4_correct": 767,
+          "mean_replay_loops": 2.8579676674364896,
+          "feasible": true
+        },
+        {
+          "method": "cal_early_0.9",
+          "spec": {
+            "kind": "early",
+            "threshold": 0.9,
+            "entropy": 0.5,
+            "track": "Cal"
+          },
+          "n_training_questions": 866,
+          "correct": 769,
+          "native_K4_correct": 767,
+          "mean_replay_loops": 3.0173210161662816,
+          "feasible": true
+        },
+        {
+          "method": "cal_early_0.95",
+          "spec": {
+            "kind": "early",
+            "threshold": 0.95,
+            "entropy": 0.5,
+            "track": "Cal"
+          },
+          "n_training_questions": 866,
+          "correct": 767,
+          "native_K4_correct": 767,
+          "mean_replay_loops": 3.187066974595843,
+          "feasible": true
+        },
+        {
+          "method": "cal_early_0.99",
+          "spec": {
+            "kind": "early",
+            "threshold": 0.99,
+            "entropy": 0.5,
+            "track": "Cal"
+          },
+          "n_training_questions": 866,
+          "correct": 767,
+          "native_K4_correct": 767,
+          "mean_replay_loops": 3.6016166281755195,
+          "feasible": true
+        }
+      ]
+    },
+    "3": {
+      "chosen": {
+        "method": "cal_early_0.6",
+        "spec": {
+          "kind": "early",
+          "threshold": 0.6,
+          "entropy": 0.5,
+          "track": "Cal"
+        },
+        "n_training_questions": 866,
+        "correct": 761,
+        "native_K4_correct": 765,
+        "mean_replay_loops": 2.8371824480369514,
+        "feasible": true
+      },
+      "all_fixed_candidates": [
+        {
+          "method": "K4",
+          "spec": {
+            "kind": "native",
+            "depth": 4,
+            "track": "ZL"
+          },
+          "n_training_questions": 866,
+          "correct": 765,
+          "native_K4_correct": 765,
+          "mean_replay_loops": 4.0,
+          "feasible": true
+        },
+        {
+          "method": "early_fixed",
+          "spec": {
+            "kind": "early",
+            "threshold": 0.9,
+            "entropy": 0.3,
+            "track": "ZL"
+          },
+          "n_training_questions": 866,
+          "correct": 765,
+          "native_K4_correct": 765,
+          "mean_replay_loops": 3.056581986143187,
+          "feasible": true
+        },
+        {
+          "method": "cal_early_0.6",
+          "spec": {
+            "kind": "early",
+            "threshold": 0.6,
+            "entropy": 0.5,
+            "track": "Cal"
+          },
+          "n_training_questions": 866,
+          "correct": 761,
+          "native_K4_correct": 765,
+          "mean_replay_loops": 2.8371824480369514,
+          "feasible": true
+        },
+        {
+          "method": "cal_early_0.7",
+          "spec": {
+            "kind": "early",
+            "threshold": 0.7,
+            "entropy": 0.5,
+            "track": "Cal"
+          },
+          "n_training_questions": 866,
+          "correct": 761,
+          "native_K4_correct": 765,
+          "mean_replay_loops": 2.8394919168591226,
+          "feasible": true
+        },
+        {
+          "method": "cal_early_0.8",
+          "spec": {
+            "kind": "early",
+            "threshold": 0.8,
+            "entropy": 0.5,
+            "track": "Cal"
+          },
+          "n_training_questions": 866,
+          "correct": 763,
+          "native_K4_correct": 765,
+          "mean_replay_loops": 2.8752886836027716,
+          "feasible": true
+        },
+        {
+          "method": "cal_early_0.9",
+          "spec": {
+            "kind": "early",
+            "threshold": 0.9,
+            "entropy": 0.5,
+            "track": "Cal"
+          },
+          "n_training_questions": 866,
+          "correct": 765,
+          "native_K4_correct": 765,
+          "mean_replay_loops": 3.0508083140877598,
+          "feasible": true
+        },
+        {
+          "method": "cal_early_0.95",
+          "spec": {
+            "kind": "early",
+            "threshold": 0.95,
+            "entropy": 0.5,
+            "track": "Cal"
+          },
+          "n_training_questions": 866,
+          "correct": 765,
+          "native_K4_correct": 765,
+          "mean_replay_loops": 3.2136258660508084,
+          "feasible": true
+        },
+        {
+          "method": "cal_early_0.99",
+          "spec": {
+            "kind": "early",
+            "threshold": 0.99,
+            "entropy": 0.5,
+            "track": "Cal"
+          },
+          "n_training_questions": 866,
+          "correct": 765,
+          "native_K4_correct": 765,
+          "mean_replay_loops": 3.6454965357967666,
+          "feasible": true
+        }
+      ]
+    },
+    "4": {
+      "chosen": {
+        "method": "cal_early_0.6",
+        "spec": {
+          "kind": "early",
+          "threshold": 0.6,
+          "entropy": 0.5,
+          "track": "Cal"
+        },
+        "n_training_questions": 882,
+        "correct": 777,
+        "native_K4_correct": 776,
+        "mean_replay_loops": 2.826530612244898,
+        "feasible": true
+      },
+      "all_fixed_candidates": [
+        {
+          "method": "K4",
+          "spec": {
+            "kind": "native",
+            "depth": 4,
+            "track": "ZL"
+          },
+          "n_training_questions": 882,
+          "correct": 776,
+          "native_K4_correct": 776,
+          "mean_replay_loops": 4.0,
+          "feasible": true
+        },
+        {
+          "method": "early_fixed",
+          "spec": {
+            "kind": "early",
+            "threshold": 0.9,
+            "entropy": 0.3,
+            "track": "ZL"
+          },
+          "n_training_questions": 882,
+          "correct": 778,
+          "native_K4_correct": 776,
+          "mean_replay_loops": 3.04875283446712,
+          "feasible": true
+        },
+        {
+          "method": "cal_early_0.6",
+          "spec": {
+            "kind": "early",
+            "threshold": 0.6,
+            "entropy": 0.5,
+            "track": "Cal"
+          },
+          "n_training_questions": 882,
+          "correct": 777,
+          "native_K4_correct": 776,
+          "mean_replay_loops": 2.826530612244898,
+          "feasible": true
+        },
+        {
+          "method": "cal_early_0.7",
+          "spec": {
+            "kind": "early",
+            "threshold": 0.7,
+            "entropy": 0.5,
+            "track": "Cal"
+          },
+          "n_training_questions": 882,
+          "correct": 777,
+          "native_K4_correct": 776,
+          "mean_replay_loops": 2.8299319727891157,
+          "feasible": true
+        },
+        {
+          "method": "cal_early_0.8",
+          "spec": {
+            "kind": "early",
+            "threshold": 0.8,
+            "entropy": 0.5,
+            "track": "Cal"
+          },
+          "n_training_questions": 882,
+          "correct": 777,
+          "native_K4_correct": 776,
+          "mean_replay_loops": 2.865079365079365,
+          "feasible": true
+        },
+        {
+          "method": "cal_early_0.9",
+          "spec": {
+            "kind": "early",
+            "threshold": 0.9,
+            "entropy": 0.5,
+            "track": "Cal"
+          },
+          "n_training_questions": 882,
+          "correct": 778,
+          "native_K4_correct": 776,
+          "mean_replay_loops": 3.0408163265306123,
+          "feasible": true
+        },
+        {
+          "method": "cal_early_0.95",
+          "spec": {
+            "kind": "early",
+            "threshold": 0.95,
+            "entropy": 0.5,
+            "track": "Cal"
+          },
+          "n_training_questions": 882,
+          "correct": 776,
+          "native_K4_correct": 776,
+          "mean_replay_loops": 3.2006802721088436,
+          "feasible": true
+        },
+        {
+          "method": "cal_early_0.99",
+          "spec": {
+            "kind": "early",
+            "threshold": 0.99,
+            "entropy": 0.5,
+            "track": "Cal"
+          },
+          "n_training_questions": 882,
+          "correct": 776,
+          "native_K4_correct": 776,
+          "mean_replay_loops": 3.6405895691609977,
+          "feasible": true
+        }
+      ]
+    }
+  },
+  "validation_output_frontier": {
+    "chosen": {
+      "method": "cal_early_0.6",
+      "spec": {
+        "kind": "early",
+        "threshold": 0.6,
+        "entropy": 0.5,
+        "track": "Cal"
+      },
+      "n_training_questions": 1094,
+      "correct": 965,
+      "native_K4_correct": 966,
+      "mean_replay_loops": 2.827239488117002,
+      "feasible": true
+    },
+    "all_fixed_candidates": [
+      {
+        "method": "K4",
+        "spec": {
+          "kind": "native",
+          "depth": 4,
+          "track": "ZL"
+        },
+        "n_training_questions": 1094,
+        "correct": 966,
+        "native_K4_correct": 966,
+        "mean_replay_loops": 4.0,
+        "feasible": true
+      },
+      {
+        "method": "early_fixed",
+        "spec": {
+          "kind": "early",
+          "threshold": 0.9,
+          "entropy": 0.3,
+          "track": "ZL"
+        },
+        "n_training_questions": 1094,
+        "correct": 968,
+        "native_K4_correct": 966,
+        "mean_replay_loops": 3.046617915904936,
+        "feasible": true
+      },
+      {
+        "method": "cal_early_0.6",
+        "spec": {
+          "kind": "early",
+          "threshold": 0.6,
+          "entropy": 0.5,
+          "track": "Cal"
+        },
+        "n_training_questions": 1094,
+        "correct": 965,
+        "native_K4_correct": 966,
+        "mean_replay_loops": 2.827239488117002,
+        "feasible": true
+      },
+      {
+        "method": "cal_early_0.7",
+        "spec": {
+          "kind": "early",
+          "threshold": 0.7,
+          "entropy": 0.5,
+          "track": "Cal"
+        },
+        "n_training_questions": 1094,
+        "correct": 965,
+        "native_K4_correct": 966,
+        "mean_replay_loops": 2.829981718464351,
+        "feasible": true
+      },
+      {
+        "method": "cal_early_0.8",
+        "spec": {
+          "kind": "early",
+          "threshold": 0.8,
+          "entropy": 0.5,
+          "track": "Cal"
+        },
+        "n_training_questions": 1094,
+        "correct": 967,
+        "native_K4_correct": 966,
+        "mean_replay_loops": 2.8692870201096894,
+        "feasible": true
+      },
+      {
+        "method": "cal_early_0.9",
+        "spec": {
+          "kind": "early",
+          "threshold": 0.9,
+          "entropy": 0.5,
+          "track": "Cal"
+        },
+        "n_training_questions": 1094,
+        "correct": 968,
+        "native_K4_correct": 966,
+        "mean_replay_loops": 3.0402193784277878,
+        "feasible": true
+      },
+      {
+        "method": "cal_early_0.95",
+        "spec": {
+          "kind": "early",
+          "threshold": 0.95,
+          "entropy": 0.5,
+          "track": "Cal"
+        },
+        "n_training_questions": 1094,
+        "correct": 966,
+        "native_K4_correct": 966,
+        "mean_replay_loops": 3.206581352833638,
+        "feasible": true
+      },
+      {
+        "method": "cal_early_0.99",
+        "spec": {
+          "kind": "early",
+          "threshold": 0.99,
+          "entropy": 0.5,
+          "track": "Cal"
+        },
+        "n_training_questions": 1094,
+        "correct": 966,
+        "native_K4_correct": 966,
+        "mean_replay_loops": 3.63436928702011,
+        "feasible": true
+      }
+    ]
+  },
+  "timing": "Actual physical depth, extra heads/hooks/featureCPU/inference/controller/synchronization included; model loading separate; alternating policy order, firstcold retained and separately summarized; no subtraction of extra overhead",
+  "numeric_QA": "selected native fullvocab endpoint hash and H2 prefixfeatures vs capture; parameter versions unchanged",
+  "G2_success": {
+    "accuracy": "paired95 accuracy lower>0 vs K4 and strongest output under actual matchedbudget",
+    "efficiency": "observed accuracy>=strong output; paired95 difference lower>=\u22120.5pp and actualmeanlatency at least10%lower; not called accuracy improvement"
+  },
+  "weights_modified": false,
+  "source_sha256": "57319b21b3f00c8f7b2f772deb28db58837b2a4d470545e0e1122e05d28770b5",
+  "original_folds_sha256": "4ba1c2eb8e566703ae68ba75f744545e50d651e47a7c361bff4b07874adf1158"
+}

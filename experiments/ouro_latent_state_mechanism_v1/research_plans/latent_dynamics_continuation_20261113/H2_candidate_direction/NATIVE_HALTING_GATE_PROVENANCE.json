@@ -1,0 +1,133 @@
+{
+  "utc": "2026-11-13T15:00:05.700371+00:00",
+  "scope": "Read-only bytes/header and source audit, no GPU/model forward or new Test examples/raw statistics",
+  "checkpoint_path": "/root/autodl-tmp/ouro-e4-e5/model/model.safetensors",
+  "checkpoint_bytes": 2869336434,
+  "whole_checkpoint_sha256_source": "Existing verified staging receipt plus H2 capture identity; not rehashed in this header-only audit",
+  "staging_receipt": {
+    "status": "MODEL_VERIFIED_AND_STAGED",
+    "bytes": 2869336434,
+    "sha256": "58872a72616c736595b8b7662079c5b12c5a162ec16eae94f21c348dfa9885af",
+    "source": "Existing local independently hashed checkpoint; eight parallel SFTP streams",
+    "incomplete_previous_file_preserved": "model.safetensors.unowned-incomplete-20261112",
+    "previous_sha256": "c9568d0ae11e6a24c5e8d9374235a45d99a665e9ed5a692fc318a38de79aea84",
+    "utc": "2026-11-12T13:35:49.297986+00:00"
+  },
+  "snapshot_metadata": {
+    "repo": "ByteDance/Ouro-1.4B",
+    "sha": "574fa66cb8bf5abdc979642d01cf2b79b16bfab1"
+  },
+  "safetensors_header_sha256": "38ab308d21d6b195c10c1a7152a279e3bfdd7052e4188d71d05c018f656b9801",
+  "gate_tensors": {
+    "model.early_exit_gate.bias": {
+      "dtype": "BF16",
+      "shape": [
+        1
+      ],
+      "data_offsets": [
+        201326592,
+        201326594
+      ],
+      "checkpoint_payload_sha256": "ab2bc9800ff2d8b79cf751d7f6200ffb21b0ee75ae0d91e3017556e25cca8a3c",
+      "payload_bytes": 2
+    },
+    "model.early_exit_gate.weight": {
+      "dtype": "BF16",
+      "shape": [
+        1,
+        2048
+      ],
+      "data_offsets": [
+        201326594,
+        201330690
+      ],
+      "checkpoint_payload_sha256": "fa92644802e800123d4be3d7f18e08fe47e27ac89e6c15a4308cdd568479accc",
+      "payload_bytes": 4096
+    }
+  },
+  "sources": {
+    "/root/autodl-tmp/ouro-e4-e5/model/modeling_ouro.py": {
+      "bytes": 33350,
+      "sha256": "c5c68fbb368ce2909c257ae2afc50719be8c91539333d3295e19312c4316f413"
+    },
+    "/root/autodl-tmp/ouro-e4-e5/model/configuration_ouro.py": {
+      "bytes": 11550,
+      "sha256": "950443e32929047aa08d02abad2e1888bc1914b3db988d3d675f70787f65dafb"
+    },
+    "/root/autodl-tmp/ouro-e4-e5/model/config.json": {
+      "bytes": 1472,
+      "sha256": "ce9cc13da41591b8b4deca053d7dfee06424c0228628ee862ea86d725bc163f3"
+    },
+    "/root/autodl-tmp/ouro-e4-e5/model/snapshot_metadata.json": {
+      "bytes": 91,
+      "sha256": "6c6aeb014bbf31bdecf2efe30b370502bd5c8e260804b8d459cd48e9c301318b"
+    },
+    "/root/autodl-tmp/ouro-e4-e5/model/ROOT_STAGING_RECEIPT.json": {
+      "bytes": 460,
+      "sha256": "d513d03a439c8437f3db669b91b9f420aff6caea0c0b7f7f15ec9ff42f14aa8f"
+    },
+    "/root/autodl-tmp/ouro-e6a/repo/experiments/looped_stage1_trajectory_audit_seed2021_v1/sources/modeling_ouro.py": {
+      "bytes": 33350,
+      "sha256": "c5c68fbb368ce2909c257ae2afc50719be8c91539333d3295e19312c4316f413"
+    },
+    "/root/autodl-tmp/ouro-e6a/repo/experiments/looped_stage1_trajectory_audit_seed2021_v1/results/model_provenance/Ouro-1.4B__modeling_ouro.py": {
+      "bytes": 33350,
+      "sha256": "c5c68fbb368ce2909c257ae2afc50719be8c91539333d3295e19312c4316f413"
+    },
+    "/root/autodl-tmp/ouro-e6a/repo/experiments/looped_stage1_trajectory_audit_seed2021_v1/scripts/native_gate_probe.py": {
+      "bytes": 2101,
+      "sha256": "71f5434b52f896078ce6b6d0c248a3282ccc8c2b0836b2560820826c125f0f26"
+    },
+    "/root/autodl-tmp/ouro-e6a/repo/experiments/looped_stage1_trajectory_audit_seed2021_v1/scripts/analyze.py": {
+      "bytes": 13974,
+      "sha256": "9d42bb3d067ea496aeb39c30fe930a712d6ffd724ba6a28dafed3d6cc9f41e0c"
+    },
+    "/root/autodl-tmp/ouro-e6a/repo/experiments/looped_stage1_trajectory_audit_seed2021_v1/REPRODUCE.md": {
+      "bytes": 6995,
+      "sha256": "8cddbd021ffead3fb000175df1e9bc431e14a5000d5c55e9cec54054ae4e0f0c"
+    },
+    "/root/autodl-tmp/ouro-e6a/repo/experiments/looped_stage1_trajectory_audit_seed2021_v1/extensions/baseline_suite_20261025_seed2021/scripts/actual_halting.py": {
+      "bytes": 10098,
+      "sha256": "2a7c4f1601da0dff85963dba6b3503d0b7d2093f4b9c92b5f5c0a6b655dccf60"
+    },
+    "/root/autodl-tmp/ouro-e6a/repo/experiments/looped_stage1_trajectory_audit_seed2021_v1/extensions/baseline_suite_20261025_seed2021/scripts/policies.py": {
+      "bytes": 1174,
+      "sha256": "f764e61446a39898eb8215a6942bb3a05c00e769d2ddc134614f16e662e6111a"
+    },
+    "/root/autodl-tmp/ouro-e6a/repo/experiments/looped_stage1_trajectory_audit_seed2021_v1/extensions/baseline_suite_20261025_seed2021/scripts/audit_actual_halting.py": {
+      "bytes": 8403,
+      "sha256": "b64b1cf821086b93c0aecb2fd9e7d6f94c0367273b1e1acda45a762b621598e0"
+    }
+  },
+  "loaded_source_identity_from_completed_H2": {
+    "collector_sha256": "b7c8cb327e7a7c3348346b2bb5ab82bca1821d213845fb873f7e9f90f32e2520",
+    "input_sha256": "63ba0c832f6e868054b466614685f6613baa0cc4c9d15dd4c394ae8e048b89a7",
+    "model_sha256": "58872a72616c736595b8b7662079c5b12c5a162ec16eae94f21c348dfa9885af",
+    "loaded_model_source_sha256": "c5c68fbb368ce2909c257ae2afc50719be8c91539333d3295e19312c4316f413",
+    "torch": "2.7.1+cu128",
+    "gpu": "NVIDIA GeForce RTX 5090",
+    "lens": "CPU FP32 checkpoint final RMSnorm and candidate output rows; centered post-minus-pre; actual BF16 residual-add output observed",
+    "layers": {
+      "target": [
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16
+      ],
+      "control": [
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ]
+    },
+    "loop1": "unavailable None; diagnostics only depth2+"
+  },
+  "runtime_instantiated_gate_weight_hash": "NOT_MEASURED_THIS_AUDIT; checkpoint tensor payload hashes only, no fresh from_pretrained/load"
+}
