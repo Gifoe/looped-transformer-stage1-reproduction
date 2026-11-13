@@ -1,0 +1,68 @@
+{
+  "utc": "2026-11-13T16:19:27.165315+00:00",
+  "source_freeze_sha256": "a56ce38c2ec1e927fc73f98f28132923b1d59832841feb9546f17628eef8a1d7",
+  "source_hashes": {
+    "analysis_source": "ee261928369875a03748895062ec3961ce9753690a22ddc3cbeb3f959cff00eb",
+    "CPU_queue_source": "26760a50ad75ef5df3a2a1c0212cf1060bbe76b4f8feb0d9ec4f8dbe7026318f",
+    "synthetic_QA_source": "18a2fd26863de8b3cdd4d88716e22688df3e3fb704f916e9e0ea26cc4b896465",
+    "synthetic_QA_receipt": "e9377e6f9aa5eebabc303dc43f206d1710ac90935b98ca71d1b9e16166932216",
+    "Astra_formal_order": "99026fcfaba5e3446230c8ee22f67f9f4752c6945f92f9c05c59323ab99c2f52",
+    "E7_protocol": "c3af3208ea713ff6442ba852c052547d784af24bf1271c23e6742eb811b86ad3",
+    "E7_collector": "d668ff898870f672996e35e4cbada7d42dc178a0195ff984ae8b9389f7d5fe4f",
+    "E7_generator": "a22ef19bb6697a359a3ad2590f91caff1dfd39f5710f8ed3957885e6969227a1",
+    "variant_inputs": "fb41c2d613f912d1098c726fdce51fc525ba54824c0a43476f8e6bf9ef8b3196",
+    "variant_manifest": "15777695059d617881d46b1ba579043205c607b5f88cf25c376d223a0237b937",
+    "technical_complete": "cd14aae6807198e488efb285db4e33a8d854d9a755a7b38a74cb348833947846",
+    "independent_semantic_audit": "6b67a11931c7f69907476a7b965025e19efdd2e41bd943959cf2a83a8160e0b4",
+    "within_question_length_audit": "56ae402e7e598d7eb882f0ae51201288e6dd31a276d4d6bad72fff5c1050f6c0",
+    "old_Train_only_labels": "fffede06daa2aeb7dab2aa514549d9238c586a8ff9771e528831c4f95eb40675",
+    "old_exposed_Val_only_labels": "614e7998250c52abc3353c8cedad01d345dac2a7989d026ceacc06a54dcc60bc",
+    "E6A_methods": "7d84d2ffac38eaf87304e96041fdd9e9fd6bf8032e6f7be0eeefeb0550c8c20f",
+    "E6A_frozen_methods": "c7c9cdb7e6b197e66ac2276e044822e78544478bac0d467f17899529ee9c891a"
+  },
+  "identity_core": {
+    "collector_sha256": "d668ff898870f672996e35e4cbada7d42dc178a0195ff984ae8b9389f7d5fe4f",
+    "model_sha256": "58872a72616c736595b8b7662079c5b12c5a162ec16eae94f21c348dfa9885af",
+    "model_source_sha256": "c5c68fbb368ce2909c257ae2afc50719be8c91539333d3295e19312c4316f413",
+    "loaded_model_source_sha256": "c5c68fbb368ce2909c257ae2afc50719be8c91539333d3295e19312c4316f413",
+    "config_sha256": "ce9cc13da41591b8b4deca053d7dfee06424c0228628ee862ea86d725bc163f3",
+    "configuration_sha256": "950443e32929047aa08d02abad2e1888bc1914b3db988d3d675f70787f65dafb",
+    "loaded_configuration_sha256": "950443e32929047aa08d02abad2e1888bc1914b3db988d3d675f70787f65dafb",
+    "loaded_gate_parameter_sha256": {
+      "weight": "fa92644802e800123d4be3d7f18e08fe47e27ac89e6c15a4308cdd568479accc",
+      "bias": "ab2bc9800ff2d8b79cf751d7f6200ffb21b0ee75ae0d91e3017556e25cca8a3c"
+    },
+    "torch": "2.7.1+cu128",
+    "transformers": "4.55.0",
+    "gpu": "NVIDIA GeForce RTX 5090",
+    "dtype": "bfloat16",
+    "attention": "sdpa",
+    "use_cache": false,
+    "eval": true,
+    "loop_count": 4,
+    "head_shape": "full [batch,sequence,vocabulary] at every native depth",
+    "score_protocol": "Joint option label FP32 full-vocabulary log_softmax, candidate order=display",
+    "gate_thresholds": [
+      0.25,
+      0.5,
+      0.75,
+      1.0
+    ],
+    "gate_readout_scope": "Offline full-body R threshold readout; not true early termination",
+    "tie_rules": {
+      "production": "first displayed candidate index among exactly maximal original BF16 candidate logits",
+      "sensitivity": "minimum original semantic index among exact BF16 top set"
+    },
+    "native_root": "/root/autodl-tmp/ouro-e6a/joint"
+  },
+  "selected_gate_threshold": 0.25,
+  "pair_profile_eligible": false,
+  "pair_promotion_population": "fourchoiceTrain1092",
+  "selected_gate_population": "identityTrain1094",
+  "strong_output_fixed": "E6 cal_early_0.6 entropy.5, fixed from oldTrain before newvariant outcomes",
+  "E6_primary_ZL": "weighted4",
+  "E6_primary_Cal": "loopcd_adaptive_cap1",
+  "no_fit_or_new_grid": true,
+  "no_new_Val_or_Test_outcome_read": true,
+  "Train_capture_manifest_sha256": "f53713604d2893b796e3996152ee139c59da465c52f3c84bbd5c2c8894568a5a"
+}

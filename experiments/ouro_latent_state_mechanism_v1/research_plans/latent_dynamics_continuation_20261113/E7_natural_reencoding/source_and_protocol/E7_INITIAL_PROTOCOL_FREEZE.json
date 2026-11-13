@@ -1,0 +1,30 @@
+{
+  "utc": "2026-11-13T15:16:08.111496+00:00",
+  "director_sha256": "99026fcfaba5e3446230c8ee22f67f9f4752c6945f92f9c05c59323ab99c2f52",
+  "generator_sha256": "a22ef19bb6697a359a3ad2590f91caff1dfd39f5710f8ed3957885e6969227a1",
+  "renderer_sha256": "c780d245f0516f8f47f18a9d5b551cb7e001aca31f5396694fc6d9d0abee8a14",
+  "tokenizer_sha256": "fcb808fe5e7642f5299be28aea07fc7f6d4f4364c3ac5e408e15a772cbc8fa8d",
+  "structured_source_sha256": "1be18eeba61573431e35d6c9f36042bd55fc7a854e9b1b236624bd78fa6c34ba",
+  "folds_sha256": "4ba1c2eb8e566703ae68ba75f744545e50d651e47a7c361bff4b07874adf1158",
+  "technical_ids": [
+    "Mercury_SC_416112",
+    "MCAS_2009_5_6522",
+    "NYSEDREGENTS_2004_4_8",
+    "TIMSS_1995_8_N3"
+  ],
+  "expected_units": {
+    "train": 17504,
+    "validation": 4776,
+    "total": 22280,
+    "technical": 64
+  },
+  "P": "query-only leftrotatep; demonstrations order fixed",
+  "S": "global ABCD rotation s, Eidentity; all demos/query structural labels and demoanswers only",
+  "no_query_gold": true,
+  "analysis": "Astra formalorder fixed three K1to2 gaincontrasts;10000questionblockbootstrap95 and98.333333CI;Train/Val separate",
+  "pair": "identityK2 and p=floor(m/2),s0 K2;FP64 centered FP32LP semantic average equalweight;semanticfirst tie",
+  "strong_output_frontier": "Original cal_early_0.6 entropy0.5 fixed using existingTrain before variants; E6 original primary weighted4 and Cal LoopCDadaptive identities unchanged",
+  "stock_gate": "Identity only separate full-body fixedCDF thresholds.25,.5,.75,1.0; default1.0 parity technical; no claimed online stopping",
+  "input_execution_order": "Train then Validation, originalquestionIDs sorted; perquestion variants sorted by SHA256 of split:ID:p:s for labelblind execution order",
+  "Goal": "ACTIVE, no overall time deadline; no newTest or internalstate interventions"
+}
