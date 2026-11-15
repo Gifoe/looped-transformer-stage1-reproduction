@@ -1,0 +1,26 @@
+{
+  "status": "PASS",
+  "device": "cpu",
+  "dtype": "bfloat16",
+  "cases": {
+    "U": {
+      "inplace_exact_explicit_branch_sum": true,
+      "clone_return_wrong_elements": 0
+    },
+    "restore_x": {
+      "inplace_exact_explicit_branch_sum": true,
+      "clone_return_wrong_elements": 16
+    },
+    "restore_a": {
+      "inplace_exact_explicit_branch_sum": true,
+      "clone_return_wrong_elements": 15
+    },
+    "joint": {
+      "inplace_exact_explicit_branch_sum": true,
+      "clone_return_wrong_elements": 16
+    }
+  },
+  "source_sha256": "af8322093b5af4e8d0ecc3d683a00c3cefb0af87e7999067f940239aca318c82",
+  "torch": "2.7.1+cu128",
+  "scope": "Synthetic arithmetic/alias illustration only. Does not certify pinned Ouro layer, SDPA, full suffix or any scientific effect. Real technical endpoint acceptance is still required."
+}

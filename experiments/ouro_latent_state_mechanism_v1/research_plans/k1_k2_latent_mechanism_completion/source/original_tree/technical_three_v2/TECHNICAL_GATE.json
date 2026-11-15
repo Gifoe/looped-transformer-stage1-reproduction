@@ -1,0 +1,110 @@
+{
+  "status": "AB1_THREE_TECHNICAL_RECEIPT_AND_INDEPENDENT_REPLAY_GATE_PASSED",
+  "pending_sha256": "02d1f0433a690503d197cca1b217912c2ad1fd84a31f5e60140a14ae8c413747",
+  "script_sha256": "429bbf38835039a059f06478797ab13b658c6f6a92da91e759b2480151a0b7a8",
+  "cases": [
+    {
+      "id": "Mercury_7214673",
+      "metadata_sha256": "aee9d0e7440c5c591b3cfbaf4c7e36df4262753c573394a796a49310d7a5dda1",
+      "tensor_raw_sha256": "4a9d2e5a82b7f73117e83c2992e0acf7bf7cbf2f3fde7d308085001487ae5d28",
+      "tensor_archive_sha256": "e5236c9e680b6e822c3bfb2f40defa3a6fa7165d9567e3e48cfeff14890e44de",
+      "control_audit_sha256": "872117597d9bd2777794faefd80e2117c8540fb7559f3b984379802c733725ec",
+      "model_replay_sha256": "4e80ebaa59551053e28f7777e5627a01c10ce661a2450633389d1d4a90f00960",
+      "question_synchronized_wall_seconds": 4.456279311329126,
+      "archive_bytes": 27310150,
+      "peak_allocated_bytes": 3327025152,
+      "peak_reserved_bytes": 3642753024,
+      "sdpa_kwargs": {
+        "attn_mask": {
+          "dtype": "torch.bool",
+          "sha256": "12ea9c7b85a4ea82d5c0a26755e051ad29dcce578aedfdd30d5167f90382cc71",
+          "shape": [
+            1,
+            1,
+            1915,
+            1915
+          ],
+          "stride": [
+            3667225,
+            3667225,
+            1915,
+            1
+          ]
+        },
+        "dropout_p": 0.0,
+        "is_causal": false,
+        "scale": 0.08838834764831845
+      },
+      "sdpa_tail": []
+    },
+    {
+      "id": "Mercury_7090685",
+      "metadata_sha256": "bd373afa8b4b7ddb7f652d2f46f9aab8df03a1e0ea11eb44d53427f1121a5e16",
+      "tensor_raw_sha256": "9cac130bd6207587c99e1a3bfc2ee7fe2d8b530de16e94dd857312b039da3e04",
+      "tensor_archive_sha256": "b46e1222b949485d6ed4341cd7015c0d224a45a92403d27bbae232446dd19fc5",
+      "control_audit_sha256": "38fb458ac05f280037c95a0c985d7636d31d18330472edda574fd519934e6bd1",
+      "model_replay_sha256": "460c93ac827c7bcf029e41aa0b88bb7fa23109c5484c26609105edb004295ecd",
+      "question_synchronized_wall_seconds": 3.7163873203098774,
+      "archive_bytes": 26334158,
+      "peak_allocated_bytes": 3319406592,
+      "peak_reserved_bytes": 3642753024,
+      "sdpa_kwargs": {
+        "attn_mask": {
+          "dtype": "torch.bool",
+          "sha256": "8ea1980d2d3a2c099864c655fe2c5da15732a29f124f6db4a955d92298f87be5",
+          "shape": [
+            1,
+            1,
+            1885,
+            1885
+          ],
+          "stride": [
+            3553225,
+            3553225,
+            1885,
+            1
+          ]
+        },
+        "dropout_p": 0.0,
+        "is_causal": false,
+        "scale": 0.08838834764831845
+      },
+      "sdpa_tail": []
+    },
+    {
+      "id": "MSA_2013_8_4",
+      "metadata_sha256": "c3b860d89c22cb3d64926958092c2367478862d9c4cf711802508da9ebf8f726",
+      "tensor_raw_sha256": "8634301d3c25639f94fa4129bc8de7a7067d6064107d55936f33bebafbaeffeb",
+      "tensor_archive_sha256": "4453388972db9b4a0d6033e593dc78864b52fe8e4f3b166eadf03f5eefc7ad9b",
+      "control_audit_sha256": "0bc04737710904db57980dbe2ee779b2c13631310c288d4c069b576181ba8202",
+      "model_replay_sha256": "320d6c7ac8d82d6cfa8beb4338f50b45e8841280a9c5d4e1f3722fca57dfa5bc",
+      "question_synchronized_wall_seconds": 4.12929568067193,
+      "archive_bytes": 30846999,
+      "peak_allocated_bytes": 3353531392,
+      "peak_reserved_bytes": 3841982464,
+      "sdpa_kwargs": {
+        "attn_mask": {
+          "dtype": "torch.bool",
+          "sha256": "46cb430375387e8c3b6409b164e3c1b7d5ba26982c270ada95ae754eb3e28fda",
+          "shape": [
+            1,
+            1,
+            2024,
+            2024
+          ],
+          "stride": [
+            4096576,
+            4096576,
+            2024,
+            1
+          ]
+        },
+        "dropout_p": 0.0,
+        "is_causal": false,
+        "scale": 0.08838834764831845
+      },
+      "sdpa_tail": []
+    }
+  ],
+  "scope": "Independent receipt/source/control math and explicit-layer model replay; same checkpoint and native decoder; not a scientific effect analysis. Full source tensors retained."
+}

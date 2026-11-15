@@ -1,0 +1,35 @@
+# B2 candidate schema and review boundary
+
+Unlaunched, compilation checked only. Root review and three real technical independent explicit-layer replays are mandatory before scientific freeze. Dependencies are the new run's pinned ab1 modules and branch_interfaces_v2; there is no dependency on C1 cohorts/loaders. b2_controls.control is an exact extracted copy of the C1 CPU FP64 norm/unrelated arithmetic; b2_forward is a copied isolated bridge wrapper with norm_preserve forwarded.
+
+reference(model,q,abmeta,abtensors) returns one new T endpoint and provenance. Fresh N/U forwards re-anchor E/B, full Q9, logits, L10–16 increments, L18 x/a/y, final normalized R and non-R hashes to AB. They are provenance computation, never additional scientific conditions. N=H11, U=H01. d_i=FP64(N_a)-FP64(U_a) fixed at physical L10–16. T is natural receiver with current a minus fixed d. No Q9 donor is inserted.
+
+treatments(..., donor_ab,donor_t) expects donor envelopes {id,split,source_identity,tensors}. Before any T outcomes, caller freezes within-original-split ascending ID cyclic donor map and its hash. Full split B2 reference coverage must be externally audited before treatments; this kernel checks same split, distinct ID and same runtime identity but cannot certify full split coverage from one donor envelope.
+
+Fourteen slots: TX, TA, TXA, U_plus, upstream_norm, upstream_unrelated, and T/N × X/A × norm/unrelated. N/U from AB plus T plus14 =17 endpoints. Reciprocal controls use N receiver and target T; forward controls use T receiver and target N. Donor branch direction is donor N-minus-T. Zero donor direction at nonzero requested dose produces UNAVAILABLE, retained with reason. No replacements or alternate donors.
+
+All branch tensor fields, actual QKV/O, used x/a/y, MLP input/skip, afterMLP and finalnorm are saved under condition_branch_*. All upstream site before/after/exact_before_cast/cast_residual/scale/reference/effective deltas saved under condition_site_XX_*. Control raw operands/exact/cast/scale plus norm statistics are retained. Metadata retains full-vocabulary logits hashes/scores, non-R branch receipts, L10–16 input/output non-R hashes, L1/L9 kwargs and SDPA layout/mask descriptors. TXA must exactly match AB H11 full-vocabulary logits. Each branch intervention must preserve the actual T upstream/QKV/O. All conditions preserve non-R paths against appropriate N/U reference.
+
+Caller must bind q/AB/tensor/technical/runtime/source/donor-map manifest hashes and enforce complete audited AB split, full reference coverage, resources and scheduling. No serialization or source-freeze assertion is claimed by this pure kernel. Independent replay must recreate arithmetic and receiver history without calling this forward implementation. This candidate does not supply that new independent driver yet: existing planning bridge replay is a reference for implementing the required norm and donor-control replay coverage.
+
+Interpretation: boundary-induced H11-minus-H01 counterfactual, not natural K2-minus-K1, not original C1 Q9-conditioned delta, and not a unique information-source claim. Failed AB1 route specificity remains failed even if this bridge's structural identity passes.
+
+## MLP secondary comparator amendment
+
+forward adds mlp_delta=None, mlp_sign=-1, mlp_norm_preserve=False; its existing five returned objects remain unchanged. Every forward captures seven actual normalized MLP increments at post_attention_layernorm_2 physical L10–16, K2 only, into sites[i]['mlp_before'/'mlp_after'/...]. Active patches use FP64 proposal and once-BF16 writeback; norm control preserves each current receiver increment norm. Original attention patches and original17 endpoint definitions remain unchanged.
+
+reference saves N_mlp_XX, U_mlp_XX and d_mlp_XX (FP64 N-minus-U). Treatments add six secondary endpoints: M, U_M_plus, M_norm_preserve, M_unrelated, U_M_plus_norm_preserve, U_M_plus_unrelated. These apply only mlp_delta, never attention delta. Donor delta is the same frozen donor's d_mlp_XX with the receiver-requested norm; undefined zero directions are retained. There are now20 treatment slots, N/U/T+20=23 endpoints. Six directional MLP loss/restoration/norm/specificity tests form their own Bonferroni6 family, distinct from the attention primary family; no pooling into12.
+
+Compile and CPU 24-layer/two-loop hook toy PASS verifies capture-only identity, exact positive/negative arithmetic, norm preservation proposal, cast residuals and nonR scope. It does not validate real model wiring or independent suffix replay; candidate remains unlaunchable until root review and independent technical replay cover all20 treatment slots. No GPU or SSH was invoked.
+
+## FINAL25 contract (supersedes earlier17/23 counts)
+
+Only two attention controls added: U_plus_norm_preserve (U boundary, fixed attention delta, positive sign, current-site norm preserving) and U_plus_unrelated (U boundary, positive sign, same frozen norm-matched donor delta as upstream_unrelated). All U_plus* and U_M_plus* use U nonR receipt/trace. A zero upstream donor at nonzero dose makes both attention unrelated directions UNAVAILABLE; norm-proposal degeneracy is recorded separately per direction. No new sites, heads, combinations or scans.
+
+Final immutable condition set is N/U/T plus22 treatment slots =25 endpoints. Attention upstream family6 consists of N−T, U_plus−U, their two norm-preserving contrasts, and the two raw-minus-unrelated specificity contrasts. L18 branch family12 remains unchanged. MLP secondary family6 contains its corresponding two raw directions, two norm-preserving directions and two specificity contrasts. Apply Bonferroni separately within each family. Train1030 and Validation299 each use the fresh same-site natural-rescue primary, natural-no-tie reversal check and original BF16 exact sensitivity. TXA=N is a checked structural identity, never a discovered strict content route.
+
+The two added configurations compile; unchanged CPU hook test suite passes. No launch; independent manual replay/rootreview still required for final25.
+
+## Undefined norm witness and work accounting
+
+Local attention/MLP operators preserve successful arithmetic and add evidence only on exact zero norm proposal with nonzero actual receiver. UNDEFINED_WITNESS records component/site/sign/norm_preserve plus tensors mapping each before/proposal_before_norm/reference_delta to tensor_key,shape,dtype,sha256. Raw values are stored as CONDITION_UNDEFINED_KEY. Independent audit must prove proposal=FP64(before)+sign*reference_delta, proposal exactly zero and before nonzero. Unknown forward UndefinedControl without witness is raised, never silently accepted. Static donor/branch zero controls remain provable from archived references. All conditions record forward_attempted; work_counts distinguishes actual body attempts and successful head completions, with three completed reference forwards. Partial unsuccessful forwards count as attempts, not full suffix or full-body equivalents. CPU exact-degenerate witness and finally hook-cleanup tests PASS.

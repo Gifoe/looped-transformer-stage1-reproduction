@@ -1,0 +1,136 @@
+"""Bounded matched-case 1-vs-2 isolated-process test. Original job resumes finally."""
+import fcntl
+import hashlib
+import json
+import os
+import pathlib
+import shutil
+import signal
+import subprocess
+import time
+import traceback
+
+root = pathlib.Path(__file__).resolve().parents[1]
+PY = "/root/autodl-tmp/ouro-e6a/venv/bin/python"
+sha = lambda p: hashlib.sha256(pathlib.Path(p).read_bytes()).hexdigest()
+read = lambda p: json.loads(pathlib.Path(p).read_text())
+frozen_path = root / "B2_FULL_SOURCE_FREEZE.json"
+frozen = read(frozen_path)
+assert all(sha(root / p) == h for p, h in frozen["sources"].items())
+current = -1
+assert not pathlib.Path("/proc/12922").exists() or pathlib.Path("/proc/12922/stat").read_text().split()[2] == "Z"
+lock = (root / "parallel/benchmark.lock").open("a")
+fcntl.flock(lock, fcntl.LOCK_EX | fcntl.LOCK_NB)
+assert shutil.disk_usage(root).free > 8 * 1024**3 + 512 * 1024**2
+gpu = subprocess.check_output(["nvidia-smi", "--query-gpu=uuid,name,memory.free", "--format=csv,noheader,nounits"], text=True).strip().split(",")
+assert gpu[0].strip() == frozen["gpu_uuid"] and gpu[1].strip() == "NVIDIA GeForce RTX 4090"
+assert int(gpu[2]) >= 20480, "Two additional technical models plus stopped collector require12GiB free"
+
+
+def jobs():
+    return {int(v) for v in subprocess.check_output(["nvidia-smi", "--query-compute-apps=pid", "--format=csv,noheader,nounits"], text=True).split()}
+
+
+assert not jobs()
+ids = frozen["cohorts"]["train64"][:6]
+assert len(ids) == 6
+sources = {p: sha(root / p) for p in ("parallel/worker_v3.py", "parallel/parallel_storage.py", "parallel/benchmark_empty_gpu.py")}
+tech = {"status": "FROZEN_BEFORE_PARALLEL_TEST", "epoch": time.time(),
+        "science_freeze_sha256": sha(frozen_path), "sources": sources, "ids": ids,
+        "protocol": "Same6 completed original Train64 questions: one worker then two disjoint workers. All tensor byte checks plus all numerical kernel metadata; exclude only cross-process object IDs/allocation addresses while checking their schemas and original alias booleans, same22 original treatment slots, original AB/reference/donors. Isolated model/hook processes. Original scientific collector fully stopped and its committed evidence retained before this test. Verified PASS captures define completion; lingering interpreter teardown is bounded and recorded, never used to accept failed captures. No scientific result overwritten.",
+        "criterion": "All6 PASS in both modes and >5% matched-block throughput gain for considering production. No output-dependent question or condition selection."}
+tech_path = root / "parallel/TECH_FREEZE_EMPTY_GPU.json"
+with tech_path.open("x") as handle:
+    json.dump(tech, handle, indent=2)
+sources["parallel/TECH_FREEZE_EMPTY_GPU.json"] = sha(tech_path)
+children = []
+phases = []
+paused = False
+environment = dict(os.environ, OMP_NUM_THREADS="1", OPENBLAS_NUM_THREADS="1", MKL_NUM_THREADS="1")
+try:
+    assert not jobs()
+    for count in (1, 2):
+        directory = root / "parallel/benchmark_empty_gpu" / ("serial" if count == 1 else "two_workers")
+        directory.mkdir(parents=True, exist_ok=False)
+        output = directory / "evidence"
+        output.mkdir()
+        spec = {"mode": "benchmark", "split": "train", "science_freeze_sha256": sha(frozen_path),
+                "sources": sources, "assignments": [ids[i::count] for i in range(count)],
+                "control_dir": str(directory), "output_dir": str(output), "namespace_prefix": "worker_CAS"}
+        spec_path = directory / "SPEC.json"
+        spec_path.write_text(json.dumps(spec, indent=2))
+        active = []
+        for i in range(count):
+            logfile = (directory / f"worker{i}.log").open("x")
+            child = subprocess.Popen([PY, str(root / "parallel/worker_v3.py"), "--root", str(root),
+                                      "--spec", str(spec_path), "--index", str(i)], env=environment,
+                                     stdin=subprocess.DEVNULL, stdout=logfile, stderr=subprocess.STDOUT)
+            logfile.close(); active.append(child); children.append(child)
+        deadline = time.monotonic() + 150
+        while not all((directory / f"worker{i}_READY.json").exists() for i in range(count)):
+            assert all(child.poll() is None for child in active), "Worker failed during loading; read logs"
+            assert time.monotonic() < deadline, "Worker readiness timeout"
+            time.sleep(.25)
+        allowed = {current, *[child.pid for child in active]}
+        assert jobs() <= allowed
+        (directory / "GO.json").write_text(json.dumps({"spec_sha256": sha(spec_path)}))
+        start = time.perf_counter()
+        samples = []
+        while any(child.poll() is None for child in active):
+            completed_reports = [directory / f"worker{i}_RESULT.json" for i in range(count)]
+            if all(path.exists() for path in completed_reports):
+                assert all(read(path)["status"] == "PASS" for path in completed_reports)
+                break
+            assert time.perf_counter() - start < 180, "Matched-block phase timeout"
+            assert all(child.poll() in (None, 0) for child in active), "Worker failed; no production switch"
+            assert jobs() <= allowed
+            sample = subprocess.check_output(["nvidia-smi", "--query-gpu=utilization.gpu,memory.used,memory.free", "--format=csv,noheader,nounits"], text=True).strip()
+            samples.append([int(value.strip()) for value in sample.split(",")])
+            assert samples[-1][2] >= 1024, "Technical memory reserve crossed"
+            time.sleep(.5)
+        assert all(child.poll() in (None, 0) for child in active)
+        for child in active:
+            if child.poll() is None:
+                try: child.wait(timeout=2)
+                except subprocess.TimeoutExpired:
+                    child.terminate()
+                    try: child.wait(timeout=15)
+                    except subprocess.TimeoutExpired: child.kill(); child.wait()
+        assert jobs() <= {current}
+        reports = [read(directory / f"worker{i}_RESULT.json") for i in range(count)]
+        assert all(r["status"] == "PASS" and r["spec_sha256"] == sha(spec_path) for r in reports)
+        assert sorted(v["id"] for r in reports for v in r["records"]) == sorted(ids)
+        phase = {"workers": count, "n": len(ids), "coordinator_wall_seconds": time.perf_counter() - start,
+                 "steady_worker_wall_seconds": max(r["wall_seconds"] for r in reports),
+                 "gpu_mean_percent": sum(s[0] for s in samples) / len(samples),
+                 "peak_memory_MiB_including_paused_original": max(s[1] for s in samples),
+                 "minimum_free_memory_MiB": min(s[2] for s in samples), "samples": samples,
+                 "worker_report_sha256": {f"worker{i}_RESULT.json": sha(directory / f"worker{i}_RESULT.json") for i in range(count)}}
+        phases.append(phase)
+        print("PARALLEL_PHASE_PASS", json.dumps({k: v for k, v in phase.items() if k != "samples"}), flush=True)
+    ratio = phases[0]["steady_worker_wall_seconds"] / phases[1]["steady_worker_wall_seconds"]
+    result = {"status": "PASS", "n_matched_cases": 6, "phases": phases,
+              "observed_speedup_two_workers": ratio, "production_candidate": ratio > 1.05,
+              "technical_freeze_sha256": sha(tech_path),
+              "scope": "Matched6-case execution benchmark; full endpoint/capture/metadata equality to saved original serial evidence. Not new mechanism effects, full-split inference or a universal speed guarantee."}
+    (root / "parallel/BENCHMARK_EMPTY_GPU_RESULT.json").write_text(json.dumps(result, indent=2))
+except BaseException as error:
+    (root / "parallel/BENCHMARK_EMPTY_GPU_FAILURE.json").write_text(json.dumps({"status": "FAILED", "error": repr(error),
+             "traceback": traceback.format_exc(), "completed_phases": phases}, indent=2))
+    raise
+finally:
+    for child in children:
+        if child.poll() is None:
+            child.terminate()
+    for child in children:
+        try:
+            child.wait(timeout=15)
+        except subprocess.TimeoutExpired:
+            child.kill(); child.wait()
+    for _ in range(30):
+        if jobs() <= {current}:
+            break
+        time.sleep(.2)
+    if paused:
+        os.kill(current, signal.SIGCONT)
+        (root / "parallel/ORIGINAL_RESUMED_v3.json").write_text(json.dumps({"status": "SIGCONT_SENT", "pid": current, "epoch": time.time()}))

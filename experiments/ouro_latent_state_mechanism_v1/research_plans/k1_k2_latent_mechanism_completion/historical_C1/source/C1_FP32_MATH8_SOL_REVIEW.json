@@ -1,0 +1,1387 @@
+{
+  "status": "PASS",
+  "source_sha256": "487b94323e52609a065ce427a4e6c4c22abad801a31081e3b76926cd297bb0ea",
+  "n": 8,
+  "source_and_sample_freeze_sha256": "ca628c7b12da372743a434a94107527b7c24dc04904de7fec14153453e475213",
+  "records": [
+    {
+      "id": "Mercury_7040740",
+      "metadata_sha256": "2e4e26dc1cb796587ef2cd80cb963024050a8fdac9e2a17e86e99410a58b384d",
+      "tensor_sha256": "b795de7c616aeee78582ae58c7ca922d85352d5e3fa7e5f3f101c7207149bee4",
+      "endpoints": {
+        "K1": {
+          "FP32_CPU_logsoftmax_max_abs_difference": 2.1457672119140625e-06,
+          "BF16_CPU_logsoftmax_max_abs_difference": 7.152557373046875e-07,
+          "FP32_prediction": 2,
+          "BF16_prediction": 1,
+          "FP32_ties": [
+            2
+          ],
+          "BF16_ties": [
+            1,
+            2
+          ],
+          "prediction_changed": true,
+          "FP32_correct": false,
+          "BF16_correct": false,
+          "FP32_score_meanwrong": 0.09639390309651692,
+          "BF16_score_meanwrong": 0.125
+        },
+        "N": {
+          "FP32_CPU_logsoftmax_max_abs_difference": 8.344650268554688e-06,
+          "BF16_CPU_logsoftmax_max_abs_difference": 7.927417755126953e-06,
+          "FP32_prediction": 0,
+          "BF16_prediction": 0,
+          "FP32_ties": [
+            0
+          ],
+          "BF16_ties": [
+            0
+          ],
+          "prediction_changed": false,
+          "FP32_correct": true,
+          "BF16_correct": true,
+          "FP32_score_meanwrong": 3.5518171936273575,
+          "BF16_score_meanwrong": 3.479166547457377
+        },
+        "P": {
+          "FP32_CPU_logsoftmax_max_abs_difference": 2.014636993408203e-05,
+          "BF16_CPU_logsoftmax_max_abs_difference": 1.895427703857422e-05,
+          "FP32_prediction": 2,
+          "BF16_prediction": 2,
+          "FP32_ties": [
+            2
+          ],
+          "BF16_ties": [
+            2
+          ],
+          "prediction_changed": false,
+          "FP32_correct": false,
+          "BF16_correct": false,
+          "FP32_score_meanwrong": 0.09026304880777995,
+          "BF16_score_meanwrong": 0.041666666666666664
+        },
+        "U": {
+          "FP32_CPU_logsoftmax_max_abs_difference": 2.002716064453125e-05,
+          "BF16_CPU_logsoftmax_max_abs_difference": 1.9788742065429688e-05,
+          "FP32_prediction": 0,
+          "BF16_prediction": 0,
+          "FP32_ties": [
+            0
+          ],
+          "BF16_ties": [
+            0
+          ],
+          "prediction_changed": false,
+          "FP32_correct": true,
+          "BF16_correct": true,
+          "FP32_score_meanwrong": 1.2665050029754639,
+          "BF16_score_meanwrong": 1.3124999403953552
+        },
+        "UX": {
+          "FP32_CPU_logsoftmax_max_abs_difference": 9.655952453613281e-06,
+          "BF16_CPU_logsoftmax_max_abs_difference": 8.106231689453125e-06,
+          "FP32_prediction": 0,
+          "BF16_prediction": 0,
+          "FP32_ties": [
+            0
+          ],
+          "BF16_ties": [
+            0
+          ],
+          "prediction_changed": false,
+          "FP32_correct": true,
+          "BF16_correct": true,
+          "FP32_score_meanwrong": 3.346649080514908,
+          "BF16_score_meanwrong": 3.395833303531011
+        },
+        "UA": {
+          "FP32_CPU_logsoftmax_max_abs_difference": 2.09808349609375e-05,
+          "BF16_CPU_logsoftmax_max_abs_difference": 2.1457672119140625e-05,
+          "FP32_prediction": 0,
+          "BF16_prediction": 0,
+          "FP32_ties": [
+            0
+          ],
+          "BF16_ties": [
+            0
+          ],
+          "prediction_changed": false,
+          "FP32_correct": true,
+          "BF16_correct": true,
+          "FP32_score_meanwrong": 1.3953479727109273,
+          "BF16_score_meanwrong": 1.4166666666666667
+        },
+        "UXA": {
+          "FP32_CPU_logsoftmax_max_abs_difference": 8.344650268554688e-06,
+          "BF16_CPU_logsoftmax_max_abs_difference": 7.927417755126953e-06,
+          "FP32_prediction": 0,
+          "BF16_prediction": 0,
+          "FP32_ties": [
+            0
+          ],
+          "BF16_ties": [
+            0
+          ],
+          "prediction_changed": false,
+          "FP32_correct": true,
+          "BF16_correct": true,
+          "FP32_score_meanwrong": 3.5518171936273575,
+          "BF16_score_meanwrong": 3.479166547457377
+        }
+      },
+      "production_score_contrasts": {
+        "N-U": {
+          "FP32": 2.2853121906518936,
+          "BF16": 2.1666666070620217,
+          "FP32_sign": 1,
+          "BF16_sign": 1,
+          "sign_changed": false
+        },
+        "UX-U": {
+          "FP32": 2.080144077539444,
+          "BF16": 2.083333363135656,
+          "FP32_sign": 1,
+          "BF16_sign": 1,
+          "sign_changed": false
+        },
+        "N-UA": {
+          "FP32": 2.15646922091643,
+          "BF16": 2.0624998807907104,
+          "FP32_sign": 1,
+          "BF16_sign": 1,
+          "sign_changed": false
+        },
+        "UA-U": {
+          "FP32": 0.12884296973546347,
+          "BF16": 0.10416672627131145,
+          "FP32_sign": 1,
+          "BF16_sign": 1,
+          "sign_changed": false
+        },
+        "N-UX": {
+          "FP32": 0.20516811311244965,
+          "BF16": 0.08333324392636617,
+          "FP32_sign": 1,
+          "BF16_sign": 1,
+          "sign_changed": false
+        },
+        "interaction": {
+          "FP32": 0.07632514337698619,
+          "BF16": -0.02083348234494527,
+          "FP32_sign": 1,
+          "BF16_sign": -1,
+          "sign_changed": true
+        }
+      },
+      "archive_and_tensor_checks": "PASS",
+      "strict_runtime_donor_guard": "Successful frozen source asserts each P/U/UX/UA/UXA K1_Q against N; only N Q9_K1_Q archived, hence no independent perforward raw donor comparison available."
+    },
+    {
+      "id": "Mercury_7140035",
+      "metadata_sha256": "427e4b4f91fbfc119926f6adca1909373f386c7fe8f2dad53bb23c73b2d7625b",
+      "tensor_sha256": "9fa7f10b3ce166b90e490bb578bad736d5aa111c2d4ac16127b961bde97669dc",
+      "endpoints": {
+        "K1": {
+          "FP32_CPU_logsoftmax_max_abs_difference": 1.2099742889404297e-05,
+          "BF16_CPU_logsoftmax_max_abs_difference": 1.0967254638671875e-05,
+          "FP32_prediction": 0,
+          "BF16_prediction": 0,
+          "FP32_ties": [
+            0
+          ],
+          "BF16_ties": [
+            0
+          ],
+          "prediction_changed": false,
+          "FP32_correct": false,
+          "BF16_correct": false,
+          "FP32_score_meanwrong": -1.2014083067576091,
+          "BF16_score_meanwrong": -1.18749996026357
+        },
+        "N": {
+          "FP32_CPU_logsoftmax_max_abs_difference": 2.8908252716064453e-06,
+          "BF16_CPU_logsoftmax_max_abs_difference": 3.0100345611572266e-06,
+          "FP32_prediction": 2,
+          "BF16_prediction": 2,
+          "FP32_ties": [
+            2
+          ],
+          "BF16_ties": [
+            2
+          ],
+          "prediction_changed": false,
+          "FP32_correct": true,
+          "BF16_correct": true,
+          "FP32_score_meanwrong": 3.979643459121386,
+          "BF16_score_meanwrong": 4.041666651765506
+        },
+        "P": {
+          "FP32_CPU_logsoftmax_max_abs_difference": 1.1563301086425781e-05,
+          "BF16_CPU_logsoftmax_max_abs_difference": 1.1444091796875e-05,
+          "FP32_prediction": 0,
+          "BF16_prediction": 0,
+          "FP32_ties": [
+            0
+          ],
+          "BF16_ties": [
+            0
+          ],
+          "prediction_changed": false,
+          "FP32_correct": false,
+          "BF16_correct": false,
+          "FP32_score_meanwrong": -1.2868597606817882,
+          "BF16_score_meanwrong": -1.3124999801317851
+        },
+        "U": {
+          "FP32_CPU_logsoftmax_max_abs_difference": 7.867813110351562e-06,
+          "BF16_CPU_logsoftmax_max_abs_difference": 7.68899917602539e-06,
+          "FP32_prediction": 0,
+          "BF16_prediction": 0,
+          "FP32_ties": [
+            0
+          ],
+          "BF16_ties": [
+            0
+          ],
+          "prediction_changed": false,
+          "FP32_correct": false,
+          "BF16_correct": false,
+          "FP32_score_meanwrong": 1.8790597518285115,
+          "BF16_score_meanwrong": 1.9583333730697632
+        },
+        "UX": {
+          "FP32_CPU_logsoftmax_max_abs_difference": 3.814697265625e-06,
+          "BF16_CPU_logsoftmax_max_abs_difference": 3.844499588012695e-06,
+          "FP32_prediction": 2,
+          "BF16_prediction": 2,
+          "FP32_ties": [
+            2
+          ],
+          "BF16_ties": [
+            2
+          ],
+          "prediction_changed": false,
+          "FP32_correct": true,
+          "BF16_correct": true,
+          "FP32_score_meanwrong": 3.552475929260254,
+          "BF16_score_meanwrong": 3.6041665375232697
+        },
+        "UA": {
+          "FP32_CPU_logsoftmax_max_abs_difference": 6.198883056640625e-06,
+          "BF16_CPU_logsoftmax_max_abs_difference": 5.9604644775390625e-06,
+          "FP32_prediction": 2,
+          "BF16_prediction": 2,
+          "FP32_ties": [
+            2
+          ],
+          "BF16_ties": [
+            2
+          ],
+          "prediction_changed": false,
+          "FP32_correct": true,
+          "BF16_correct": true,
+          "FP32_score_meanwrong": 2.349214474360148,
+          "BF16_score_meanwrong": 2.4166667461395264
+        },
+        "UXA": {
+          "FP32_CPU_logsoftmax_max_abs_difference": 2.8908252716064453e-06,
+          "BF16_CPU_logsoftmax_max_abs_difference": 3.0100345611572266e-06,
+          "FP32_prediction": 2,
+          "BF16_prediction": 2,
+          "FP32_ties": [
+            2
+          ],
+          "BF16_ties": [
+            2
+          ],
+          "prediction_changed": false,
+          "FP32_correct": true,
+          "BF16_correct": true,
+          "FP32_score_meanwrong": 3.979643459121386,
+          "BF16_score_meanwrong": 4.041666651765506
+        }
+      },
+      "production_score_contrasts": {
+        "N-U": {
+          "FP32": 2.100583707292875,
+          "BF16": 2.083333278695742,
+          "FP32_sign": 1,
+          "BF16_sign": 1,
+          "sign_changed": false
+        },
+        "UX-U": {
+          "FP32": 1.6734161774317424,
+          "BF16": 1.6458331644535065,
+          "FP32_sign": 1,
+          "BF16_sign": 1,
+          "sign_changed": false
+        },
+        "N-UA": {
+          "FP32": 1.630428984761238,
+          "BF16": 1.6249999056259792,
+          "FP32_sign": 1,
+          "BF16_sign": 1,
+          "sign_changed": false
+        },
+        "UA-U": {
+          "FP32": 0.47015472253163654,
+          "BF16": 0.4583333730697632,
+          "FP32_sign": 1,
+          "BF16_sign": 1,
+          "sign_changed": false
+        },
+        "N-UX": {
+          "FP32": 0.4271675298611323,
+          "BF16": 0.43750011424223584,
+          "FP32_sign": 1,
+          "BF16_sign": 1,
+          "sign_changed": false
+        },
+        "interaction": {
+          "FP32": -0.04298719267050425,
+          "BF16": -0.020833258827527363,
+          "FP32_sign": -1,
+          "BF16_sign": -1,
+          "sign_changed": false
+        }
+      },
+      "archive_and_tensor_checks": "PASS",
+      "strict_runtime_donor_guard": "Successful frozen source asserts each P/U/UX/UA/UXA K1_Q against N; only N Q9_K1_Q archived, hence no independent perforward raw donor comparison available."
+    },
+    {
+      "id": "Mercury_405467",
+      "metadata_sha256": "52d77b9e37abe82aee6d10cce9b29004fdab79452686bfb9883d1d364448ee47",
+      "tensor_sha256": "18d98a0c4abf8330346cdee261f538cf4d33258c8c4667b1f46d974bdf135339",
+      "endpoints": {
+        "K1": {
+          "FP32_CPU_logsoftmax_max_abs_difference": 1.3113021850585938e-06,
+          "BF16_CPU_logsoftmax_max_abs_difference": 0.0,
+          "FP32_prediction": 1,
+          "BF16_prediction": 1,
+          "FP32_ties": [
+            1
+          ],
+          "BF16_ties": [
+            1
+          ],
+          "prediction_changed": false,
+          "FP32_correct": false,
+          "BF16_correct": false,
+          "FP32_score_meanwrong": 0.3080126444498698,
+          "BF16_score_meanwrong": 0.2708333333333333
+        },
+        "N": {
+          "FP32_CPU_logsoftmax_max_abs_difference": 5.9604644775390625e-06,
+          "BF16_CPU_logsoftmax_max_abs_difference": 5.5283308029174805e-06,
+          "FP32_prediction": 3,
+          "BF16_prediction": 3,
+          "FP32_ties": [
+            3
+          ],
+          "BF16_ties": [
+            3
+          ],
+          "prediction_changed": false,
+          "FP32_correct": true,
+          "BF16_correct": true,
+          "FP32_score_meanwrong": 2.8585350712140403,
+          "BF16_score_meanwrong": 2.8749999354283013
+        },
+        "P": {
+          "FP32_CPU_logsoftmax_max_abs_difference": 1.537799835205078e-05,
+          "BF16_CPU_logsoftmax_max_abs_difference": 1.6927719116210938e-05,
+          "FP32_prediction": 1,
+          "BF16_prediction": 1,
+          "FP32_ties": [
+            1
+          ],
+          "BF16_ties": [
+            1
+          ],
+          "prediction_changed": false,
+          "FP32_correct": false,
+          "BF16_correct": false,
+          "FP32_score_meanwrong": -0.20156733194986978,
+          "BF16_score_meanwrong": -0.20833333333333334
+        },
+        "U": {
+          "FP32_CPU_logsoftmax_max_abs_difference": 2.0742416381835938e-05,
+          "BF16_CPU_logsoftmax_max_abs_difference": 2.104043960571289e-05,
+          "FP32_prediction": 3,
+          "BF16_prediction": 3,
+          "FP32_ties": [
+            3
+          ],
+          "BF16_ties": [
+            3
+          ],
+          "prediction_changed": false,
+          "FP32_correct": true,
+          "BF16_correct": true,
+          "FP32_score_meanwrong": 1.2861785292625427,
+          "BF16_score_meanwrong": 1.2916666666666667
+        },
+        "UX": {
+          "FP32_CPU_logsoftmax_max_abs_difference": 9.775161743164062e-06,
+          "BF16_CPU_logsoftmax_max_abs_difference": 9.447336196899414e-06,
+          "FP32_prediction": 3,
+          "BF16_prediction": 3,
+          "FP32_ties": [
+            3
+          ],
+          "BF16_ties": [
+            3
+          ],
+          "prediction_changed": false,
+          "FP32_correct": true,
+          "BF16_correct": true,
+          "FP32_score_meanwrong": 2.3195928235848746,
+          "BF16_score_meanwrong": 2.3333332439263663
+        },
+        "UA": {
+          "FP32_CPU_logsoftmax_max_abs_difference": 1.52587890625e-05,
+          "BF16_CPU_logsoftmax_max_abs_difference": 1.621246337890625e-05,
+          "FP32_prediction": 3,
+          "BF16_prediction": 3,
+          "FP32_ties": [
+            3
+          ],
+          "BF16_ties": [
+            3
+          ],
+          "prediction_changed": false,
+          "FP32_correct": true,
+          "BF16_correct": true,
+          "FP32_score_meanwrong": 2.0528793931007385,
+          "BF16_score_meanwrong": 2.0416667560736337
+        },
+        "UXA": {
+          "FP32_CPU_logsoftmax_max_abs_difference": 5.9604644775390625e-06,
+          "BF16_CPU_logsoftmax_max_abs_difference": 5.5283308029174805e-06,
+          "FP32_prediction": 3,
+          "BF16_prediction": 3,
+          "FP32_ties": [
+            3
+          ],
+          "BF16_ties": [
+            3
+          ],
+          "prediction_changed": false,
+          "FP32_correct": true,
+          "BF16_correct": true,
+          "FP32_score_meanwrong": 2.8585350712140403,
+          "BF16_score_meanwrong": 2.8749999354283013
+        }
+      },
+      "production_score_contrasts": {
+        "N-U": {
+          "FP32": 1.5723565419514973,
+          "BF16": 1.5833332687616348,
+          "FP32_sign": 1,
+          "BF16_sign": 1,
+          "sign_changed": false
+        },
+        "UX-U": {
+          "FP32": 1.0334142943223317,
+          "BF16": 1.0416665772596996,
+          "FP32_sign": 1,
+          "BF16_sign": 1,
+          "sign_changed": false
+        },
+        "N-UA": {
+          "FP32": 0.8056556781133016,
+          "BF16": 0.8333331793546677,
+          "FP32_sign": 1,
+          "BF16_sign": 1,
+          "sign_changed": false
+        },
+        "UA-U": {
+          "FP32": 0.7667008638381958,
+          "BF16": 0.7500000894069672,
+          "FP32_sign": 1,
+          "BF16_sign": 1,
+          "sign_changed": false
+        },
+        "N-UX": {
+          "FP32": 0.5389422476291656,
+          "BF16": 0.5416666915019354,
+          "FP32_sign": 1,
+          "BF16_sign": 1,
+          "sign_changed": false
+        },
+        "interaction": {
+          "FP32": -0.22775861620903015,
+          "BF16": -0.20833339790503183,
+          "FP32_sign": -1,
+          "BF16_sign": -1,
+          "sign_changed": false
+        }
+      },
+      "archive_and_tensor_checks": "PASS",
+      "strict_runtime_donor_guard": "Successful frozen source asserts each P/U/UX/UA/UXA K1_Q against N; only N Q9_K1_Q archived, hence no independent perforward raw donor comparison available."
+    },
+    {
+      "id": "Mercury_SC_401004",
+      "metadata_sha256": "5982d91773fe00bb9e5f88a60b71ecf14d593cf33658197b5bd88e45724a971f",
+      "tensor_sha256": "4736c35430cbefee374aabbeccfb580fd07671bb5f07e510f4a1c6780c63fe47",
+      "endpoints": {
+        "K1": {
+          "FP32_CPU_logsoftmax_max_abs_difference": 1.3440847396850586e-05,
+          "BF16_CPU_logsoftmax_max_abs_difference": 1.621246337890625e-05,
+          "FP32_prediction": 1,
+          "BF16_prediction": 1,
+          "FP32_ties": [
+            1
+          ],
+          "BF16_ties": [
+            1
+          ],
+          "prediction_changed": false,
+          "FP32_correct": false,
+          "BF16_correct": false,
+          "FP32_score_meanwrong": -0.6028426289558411,
+          "BF16_score_meanwrong": -0.5833333333333334
+        },
+        "N": {
+          "FP32_CPU_logsoftmax_max_abs_difference": 1.430511474609375e-06,
+          "BF16_CPU_logsoftmax_max_abs_difference": 1.430511474609375e-06,
+          "FP32_prediction": 2,
+          "BF16_prediction": 2,
+          "FP32_ties": [
+            2
+          ],
+          "BF16_ties": [
+            2
+          ],
+          "prediction_changed": false,
+          "FP32_correct": true,
+          "BF16_correct": true,
+          "FP32_score_meanwrong": 6.381153193768114,
+          "BF16_score_meanwrong": 6.374999966938049
+        },
+        "P": {
+          "FP32_CPU_logsoftmax_max_abs_difference": 1.9073486328125e-05,
+          "BF16_CPU_logsoftmax_max_abs_difference": 1.8596649169921875e-05,
+          "FP32_prediction": 1,
+          "BF16_prediction": 1,
+          "FP32_ties": [
+            1
+          ],
+          "BF16_ties": [
+            1
+          ],
+          "prediction_changed": false,
+          "FP32_correct": false,
+          "BF16_correct": false,
+          "FP32_score_meanwrong": -0.38963892062505084,
+          "BF16_score_meanwrong": -0.3749999900658925
+        },
+        "U": {
+          "FP32_CPU_logsoftmax_max_abs_difference": 6.839632987976074e-06,
+          "BF16_CPU_logsoftmax_max_abs_difference": 6.9141387939453125e-06,
+          "FP32_prediction": 2,
+          "BF16_prediction": 2,
+          "FP32_ties": [
+            2
+          ],
+          "BF16_ties": [
+            2
+          ],
+          "prediction_changed": false,
+          "FP32_correct": true,
+          "BF16_correct": true,
+          "FP32_score_meanwrong": 3.3297620366017022,
+          "BF16_score_meanwrong": 3.2916666020949683
+        },
+        "UX": {
+          "FP32_CPU_logsoftmax_max_abs_difference": 1.0668300092220306e-06,
+          "BF16_CPU_logsoftmax_max_abs_difference": 1.430511474609375e-06,
+          "FP32_prediction": 2,
+          "BF16_prediction": 2,
+          "FP32_ties": [
+            2
+          ],
+          "BF16_ties": [
+            2
+          ],
+          "prediction_changed": false,
+          "FP32_correct": true,
+          "BF16_correct": true,
+          "FP32_score_meanwrong": 6.4220738170358045,
+          "BF16_score_meanwrong": 6.374999922700226
+        },
+        "UA": {
+          "FP32_CPU_logsoftmax_max_abs_difference": 6.198883056640625e-06,
+          "BF16_CPU_logsoftmax_max_abs_difference": 6.67572021484375e-06,
+          "FP32_prediction": 2,
+          "BF16_prediction": 2,
+          "FP32_ties": [
+            2
+          ],
+          "BF16_ties": [
+            2
+          ],
+          "prediction_changed": false,
+          "FP32_correct": true,
+          "BF16_correct": true,
+          "FP32_score_meanwrong": 3.415104458729426,
+          "BF16_score_meanwrong": 3.3333332439263663
+        },
+        "UXA": {
+          "FP32_CPU_logsoftmax_max_abs_difference": 1.430511474609375e-06,
+          "BF16_CPU_logsoftmax_max_abs_difference": 1.430511474609375e-06,
+          "FP32_prediction": 2,
+          "BF16_prediction": 2,
+          "FP32_ties": [
+            2
+          ],
+          "BF16_ties": [
+            2
+          ],
+          "prediction_changed": false,
+          "FP32_correct": true,
+          "BF16_correct": true,
+          "FP32_score_meanwrong": 6.381153193768114,
+          "BF16_score_meanwrong": 6.374999966938049
+        }
+      },
+      "production_score_contrasts": {
+        "N-U": {
+          "FP32": 3.0513911571664116,
+          "BF16": 3.0833333648430803,
+          "FP32_sign": 1,
+          "BF16_sign": 1,
+          "sign_changed": false
+        },
+        "UX-U": {
+          "FP32": 3.092311780434102,
+          "BF16": 3.083333320605258,
+          "FP32_sign": 1,
+          "BF16_sign": 1,
+          "sign_changed": false
+        },
+        "N-UA": {
+          "FP32": 2.966048735038688,
+          "BF16": 3.0416667230116823,
+          "FP32_sign": 1,
+          "BF16_sign": 1,
+          "sign_changed": false
+        },
+        "UA-U": {
+          "FP32": 0.0853424221277237,
+          "BF16": 0.04166664183139801,
+          "FP32_sign": 1,
+          "BF16_sign": 1,
+          "sign_changed": false
+        },
+        "N-UX": {
+          "FP32": -0.04092062326769034,
+          "BF16": 4.423782229423523e-08,
+          "FP32_sign": -1,
+          "BF16_sign": 1,
+          "sign_changed": true
+        },
+        "interaction": {
+          "FP32": -0.12626304539541403,
+          "BF16": -0.041666597593575716,
+          "FP32_sign": -1,
+          "BF16_sign": -1,
+          "sign_changed": false
+        }
+      },
+      "archive_and_tensor_checks": "PASS",
+      "strict_runtime_donor_guard": "Successful frozen source asserts each P/U/UX/UA/UXA K1_Q against N; only N Q9_K1_Q archived, hence no independent perforward raw donor comparison available."
+    },
+    {
+      "id": "MCAS_1999_4_12",
+      "metadata_sha256": "dbe75342cff7e16752cc52734b96438e724a510a6031569e14ac431e7ab44446",
+      "tensor_sha256": "b2bf3316527d09dd64229e04e38b0cb0b615512798f0db6522cfedb88b9fd983",
+      "endpoints": {
+        "K1": {
+          "FP32_CPU_logsoftmax_max_abs_difference": 1.4781951904296875e-05,
+          "BF16_CPU_logsoftmax_max_abs_difference": 1.3679265975952148e-05,
+          "FP32_prediction": 2,
+          "BF16_prediction": 2,
+          "FP32_ties": [
+            2
+          ],
+          "BF16_ties": [
+            2
+          ],
+          "prediction_changed": false,
+          "FP32_correct": true,
+          "BF16_correct": true,
+          "FP32_score_meanwrong": 2.9175991167624793,
+          "BF16_score_meanwrong": 2.9791666070620217
+        },
+        "N": {
+          "FP32_CPU_logsoftmax_max_abs_difference": 4.291534423828125e-06,
+          "BF16_CPU_logsoftmax_max_abs_difference": 3.961846232414246e-06,
+          "FP32_prediction": 2,
+          "BF16_prediction": 2,
+          "FP32_ties": [
+            2
+          ],
+          "BF16_ties": [
+            2
+          ],
+          "prediction_changed": false,
+          "FP32_correct": true,
+          "BF16_correct": true,
+          "FP32_score_meanwrong": 4.969359182442228,
+          "BF16_score_meanwrong": 4.999999890103936
+        },
+        "P": {
+          "FP32_CPU_logsoftmax_max_abs_difference": 5.811452865600586e-06,
+          "BF16_CPU_logsoftmax_max_abs_difference": 5.7220458984375e-06,
+          "FP32_prediction": 2,
+          "BF16_prediction": 2,
+          "FP32_ties": [
+            2
+          ],
+          "BF16_ties": [
+            2
+          ],
+          "prediction_changed": false,
+          "FP32_correct": true,
+          "BF16_correct": true,
+          "FP32_score_meanwrong": 3.8330084110299745,
+          "BF16_score_meanwrong": 3.749999995032946
+        },
+        "U": {
+          "FP32_CPU_logsoftmax_max_abs_difference": 3.814697265625e-06,
+          "BF16_CPU_logsoftmax_max_abs_difference": 3.814697265625e-06,
+          "FP32_prediction": 2,
+          "BF16_prediction": 2,
+          "FP32_ties": [
+            2
+          ],
+          "BF16_ties": [
+            2
+          ],
+          "prediction_changed": false,
+          "FP32_correct": true,
+          "BF16_correct": true,
+          "FP32_score_meanwrong": 4.747652061283588,
+          "BF16_score_meanwrong": 4.791666784013311
+        },
+        "UX": {
+          "FP32_CPU_logsoftmax_max_abs_difference": 3.814697265625e-06,
+          "BF16_CPU_logsoftmax_max_abs_difference": 3.4905970096588135e-06,
+          "FP32_prediction": 2,
+          "BF16_prediction": 2,
+          "FP32_ties": [
+            2
+          ],
+          "BF16_ties": [
+            2
+          ],
+          "prediction_changed": false,
+          "FP32_correct": true,
+          "BF16_correct": true,
+          "FP32_score_meanwrong": 4.938583394512534,
+          "BF16_score_meanwrong": 4.958333175008495
+        },
+        "UA": {
+          "FP32_CPU_logsoftmax_max_abs_difference": 4.291534423828125e-06,
+          "BF16_CPU_logsoftmax_max_abs_difference": 3.814697265625e-06,
+          "FP32_prediction": 2,
+          "BF16_prediction": 2,
+          "FP32_ties": [
+            2
+          ],
+          "BF16_ties": [
+            2
+          ],
+          "prediction_changed": false,
+          "FP32_correct": true,
+          "BF16_correct": true,
+          "FP32_score_meanwrong": 4.782903260861834,
+          "BF16_score_meanwrong": 4.833333392937978
+        },
+        "UXA": {
+          "FP32_CPU_logsoftmax_max_abs_difference": 4.291534423828125e-06,
+          "BF16_CPU_logsoftmax_max_abs_difference": 3.961846232414246e-06,
+          "FP32_prediction": 2,
+          "BF16_prediction": 2,
+          "FP32_ties": [
+            2
+          ],
+          "BF16_ties": [
+            2
+          ],
+          "prediction_changed": false,
+          "FP32_correct": true,
+          "BF16_correct": true,
+          "FP32_score_meanwrong": 4.969359182442228,
+          "BF16_score_meanwrong": 4.999999890103936
+        }
+      },
+      "production_score_contrasts": {
+        "N-U": {
+          "FP32": 0.22170712115863958,
+          "BF16": 0.20833310609062514,
+          "FP32_sign": 1,
+          "BF16_sign": 1,
+          "sign_changed": false
+        },
+        "UX-U": {
+          "FP32": 0.19093133322894573,
+          "BF16": 0.16666639099518457,
+          "FP32_sign": 1,
+          "BF16_sign": 1,
+          "sign_changed": false
+        },
+        "N-UA": {
+          "FP32": 0.18645592158039412,
+          "BF16": 0.16666649716595808,
+          "FP32_sign": 1,
+          "BF16_sign": 1,
+          "sign_changed": false
+        },
+        "UA-U": {
+          "FP32": 0.03525119957824548,
+          "BF16": 0.04166660892466704,
+          "FP32_sign": 1,
+          "BF16_sign": 1,
+          "sign_changed": false
+        },
+        "N-UX": {
+          "FP32": 0.03077578792969386,
+          "BF16": 0.041666715095440544,
+          "FP32_sign": 1,
+          "BF16_sign": 1,
+          "sign_changed": false
+        },
+        "interaction": {
+          "FP32": -0.004475411648551623,
+          "BF16": 1.0617077350616455e-07,
+          "FP32_sign": -1,
+          "BF16_sign": 1,
+          "sign_changed": true
+        }
+      },
+      "archive_and_tensor_checks": "PASS",
+      "strict_runtime_donor_guard": "Successful frozen source asserts each P/U/UX/UA/UXA K1_Q against N; only N Q9_K1_Q archived, hence no independent perforward raw donor comparison available."
+    },
+    {
+      "id": "VASoL_2007_5_39",
+      "metadata_sha256": "937b050b4cbc672c325e0caae3b0fd129e6be2cf29892c481683f4764b204357",
+      "tensor_sha256": "a3a985bce94307f74fc4c074083799c4fa0c0600b5744328951f46cda059e7a8",
+      "endpoints": {
+        "K1": {
+          "FP32_CPU_logsoftmax_max_abs_difference": 1.169741153717041e-05,
+          "BF16_CPU_logsoftmax_max_abs_difference": 1.239776611328125e-05,
+          "FP32_prediction": 1,
+          "BF16_prediction": 1,
+          "FP32_ties": [
+            1
+          ],
+          "BF16_ties": [
+            1
+          ],
+          "prediction_changed": false,
+          "FP32_correct": true,
+          "BF16_correct": true,
+          "FP32_score_meanwrong": 2.599222242832184,
+          "BF16_score_meanwrong": 2.5833334227403006
+        },
+        "N": {
+          "FP32_CPU_logsoftmax_max_abs_difference": 7.4356794357299805e-06,
+          "BF16_CPU_logsoftmax_max_abs_difference": 6.735324859619141e-06,
+          "FP32_prediction": 1,
+          "BF16_prediction": 1,
+          "FP32_ties": [
+            1
+          ],
+          "BF16_ties": [
+            1
+          ],
+          "prediction_changed": false,
+          "FP32_correct": true,
+          "BF16_correct": true,
+          "FP32_score_meanwrong": 2.690657208363215,
+          "BF16_score_meanwrong": 2.833333303531011
+        },
+        "P": {
+          "FP32_CPU_logsoftmax_max_abs_difference": 1.1920928955078125e-05,
+          "BF16_CPU_logsoftmax_max_abs_difference": 1.0967254638671875e-05,
+          "FP32_prediction": 1,
+          "BF16_prediction": 1,
+          "FP32_ties": [
+            1
+          ],
+          "BF16_ties": [
+            1
+          ],
+          "prediction_changed": false,
+          "FP32_correct": true,
+          "BF16_correct": true,
+          "FP32_score_meanwrong": 2.3882587055365243,
+          "BF16_score_meanwrong": 2.4999999552965164
+        },
+        "U": {
+          "FP32_CPU_logsoftmax_max_abs_difference": 7.331371307373047e-06,
+          "BF16_CPU_logsoftmax_max_abs_difference": 7.152557373046875e-06,
+          "FP32_prediction": 1,
+          "BF16_prediction": 1,
+          "FP32_ties": [
+            1
+          ],
+          "BF16_ties": [
+            1
+          ],
+          "prediction_changed": false,
+          "FP32_correct": true,
+          "BF16_correct": true,
+          "FP32_score_meanwrong": 2.627553860346476,
+          "BF16_score_meanwrong": 2.62499992052714
+        },
+        "UX": {
+          "FP32_CPU_logsoftmax_max_abs_difference": 7.3909759521484375e-06,
+          "BF16_CPU_logsoftmax_max_abs_difference": 7.316470146179199e-06,
+          "FP32_prediction": 1,
+          "BF16_prediction": 1,
+          "FP32_ties": [
+            1
+          ],
+          "BF16_ties": [
+            1
+          ],
+          "prediction_changed": false,
+          "FP32_correct": true,
+          "BF16_correct": true,
+          "FP32_score_meanwrong": 2.576397622625033,
+          "BF16_score_meanwrong": 2.6249999552965164
+        },
+        "UA": {
+          "FP32_CPU_logsoftmax_max_abs_difference": 7.152557373046875e-06,
+          "BF16_CPU_logsoftmax_max_abs_difference": 6.4373016357421875e-06,
+          "FP32_prediction": 1,
+          "BF16_prediction": 1,
+          "FP32_ties": [
+            1
+          ],
+          "BF16_ties": [
+            1
+          ],
+          "prediction_changed": false,
+          "FP32_correct": true,
+          "BF16_correct": true,
+          "FP32_score_meanwrong": 2.7513421227534614,
+          "BF16_score_meanwrong": 2.83333328862985
+        },
+        "UXA": {
+          "FP32_CPU_logsoftmax_max_abs_difference": 7.4356794357299805e-06,
+          "BF16_CPU_logsoftmax_max_abs_difference": 6.735324859619141e-06,
+          "FP32_prediction": 1,
+          "BF16_prediction": 1,
+          "FP32_ties": [
+            1
+          ],
+          "BF16_ties": [
+            1
+          ],
+          "prediction_changed": false,
+          "FP32_correct": true,
+          "BF16_correct": true,
+          "FP32_score_meanwrong": 2.690657208363215,
+          "BF16_score_meanwrong": 2.833333303531011
+        }
+      },
+      "production_score_contrasts": {
+        "N-U": {
+          "FP32": 0.06310334801673889,
+          "BF16": 0.20833338300387064,
+          "FP32_sign": 1,
+          "BF16_sign": 1,
+          "sign_changed": false
+        },
+        "UX-U": {
+          "FP32": -0.051156237721443176,
+          "BF16": 3.476937611897787e-08,
+          "FP32_sign": -1,
+          "BF16_sign": 1,
+          "sign_changed": true
+        },
+        "N-UA": {
+          "FP32": -0.06068491439024607,
+          "BF16": 1.4901161193847656e-08,
+          "FP32_sign": -1,
+          "BF16_sign": 1,
+          "sign_changed": true
+        },
+        "UA-U": {
+          "FP32": 0.12378826240698497,
+          "BF16": 0.20833336810270944,
+          "FP32_sign": 1,
+          "BF16_sign": 1,
+          "sign_changed": false
+        },
+        "N-UX": {
+          "FP32": 0.11425958573818207,
+          "BF16": 0.20833334823449454,
+          "FP32_sign": 1,
+          "BF16_sign": 1,
+          "sign_changed": false
+        },
+        "interaction": {
+          "FP32": -0.009528676668802897,
+          "BF16": -1.9868214925130207e-08,
+          "FP32_sign": -1,
+          "BF16_sign": -1,
+          "sign_changed": false
+        }
+      },
+      "archive_and_tensor_checks": "PASS",
+      "strict_runtime_donor_guard": "Successful frozen source asserts each P/U/UX/UA/UXA K1_Q against N; only N Q9_K1_Q archived, hence no independent perforward raw donor comparison available."
+    },
+    {
+      "id": "Mercury_7219643",
+      "metadata_sha256": "b3ebaf0ae25c491681e541b0bbe10dcf4c5496c44c8698a9803d9ddad18990f3",
+      "tensor_sha256": "f2397e611c275e2ebf2dce109f1cc166aee3f939371e1c353a7894945979e9dd",
+      "endpoints": {
+        "K1": {
+          "FP32_CPU_logsoftmax_max_abs_difference": 1.7404556274414062e-05,
+          "BF16_CPU_logsoftmax_max_abs_difference": 1.811981201171875e-05,
+          "FP32_prediction": 3,
+          "BF16_prediction": 3,
+          "FP32_ties": [
+            3
+          ],
+          "BF16_ties": [
+            3
+          ],
+          "prediction_changed": false,
+          "FP32_correct": true,
+          "BF16_correct": true,
+          "FP32_score_meanwrong": 0.9170884490013123,
+          "BF16_score_meanwrong": 0.9791667262713114
+        },
+        "N": {
+          "FP32_CPU_logsoftmax_max_abs_difference": 2.5993213057518005e-06,
+          "BF16_CPU_logsoftmax_max_abs_difference": 2.6011839509010315e-06,
+          "FP32_prediction": 3,
+          "BF16_prediction": 3,
+          "FP32_ties": [
+            3
+          ],
+          "BF16_ties": [
+            3
+          ],
+          "prediction_changed": false,
+          "FP32_correct": true,
+          "BF16_correct": true,
+          "FP32_score_meanwrong": 5.905934434694548,
+          "BF16_score_meanwrong": 5.958333349165817
+        },
+        "P": {
+          "FP32_CPU_logsoftmax_max_abs_difference": 1.4126300811767578e-05,
+          "BF16_CPU_logsoftmax_max_abs_difference": 1.4066696166992188e-05,
+          "FP32_prediction": 3,
+          "BF16_prediction": 3,
+          "FP32_ties": [
+            3
+          ],
+          "BF16_ties": [
+            3
+          ],
+          "prediction_changed": false,
+          "FP32_correct": true,
+          "BF16_correct": true,
+          "FP32_score_meanwrong": 0.9028688470522562,
+          "BF16_score_meanwrong": 0.9583333929379781
+        },
+        "U": {
+          "FP32_CPU_logsoftmax_max_abs_difference": 7.152557373046875e-06,
+          "BF16_CPU_logsoftmax_max_abs_difference": 7.152557373046875e-06,
+          "FP32_prediction": 3,
+          "BF16_prediction": 3,
+          "FP32_ties": [
+            3
+          ],
+          "BF16_ties": [
+            3
+          ],
+          "prediction_changed": false,
+          "FP32_correct": true,
+          "BF16_correct": true,
+          "FP32_score_meanwrong": 2.539040351907412,
+          "BF16_score_meanwrong": 2.7083334078391395
+        },
+        "UX": {
+          "FP32_CPU_logsoftmax_max_abs_difference": 1.9073486328125e-06,
+          "BF16_CPU_logsoftmax_max_abs_difference": 1.9073486328125e-06,
+          "FP32_prediction": 3,
+          "BF16_prediction": 3,
+          "FP32_ties": [
+            3
+          ],
+          "BF16_ties": [
+            3
+          ],
+          "prediction_changed": false,
+          "FP32_correct": true,
+          "BF16_correct": true,
+          "FP32_score_meanwrong": 5.962115116106967,
+          "BF16_score_meanwrong": 5.958333122854431
+        },
+        "UA": {
+          "FP32_CPU_logsoftmax_max_abs_difference": 6.273388862609863e-06,
+          "BF16_CPU_logsoftmax_max_abs_difference": 6.198883056640625e-06,
+          "FP32_prediction": 3,
+          "BF16_prediction": 3,
+          "FP32_ties": [
+            3
+          ],
+          "BF16_ties": [
+            3
+          ],
+          "prediction_changed": false,
+          "FP32_correct": true,
+          "BF16_correct": true,
+          "FP32_score_meanwrong": 2.5936540265878043,
+          "BF16_score_meanwrong": 2.6666666815678277
+        },
+        "UXA": {
+          "FP32_CPU_logsoftmax_max_abs_difference": 2.5993213057518005e-06,
+          "BF16_CPU_logsoftmax_max_abs_difference": 2.6011839509010315e-06,
+          "FP32_prediction": 3,
+          "BF16_prediction": 3,
+          "FP32_ties": [
+            3
+          ],
+          "BF16_ties": [
+            3
+          ],
+          "prediction_changed": false,
+          "FP32_correct": true,
+          "BF16_correct": true,
+          "FP32_score_meanwrong": 5.905934434694548,
+          "BF16_score_meanwrong": 5.958333349165817
+        }
+      },
+      "production_score_contrasts": {
+        "N-U": {
+          "FP32": 3.366894082787136,
+          "BF16": 3.249999941326678,
+          "FP32_sign": 1,
+          "BF16_sign": 1,
+          "sign_changed": false
+        },
+        "UX-U": {
+          "FP32": 3.423074764199555,
+          "BF16": 3.249999715015292,
+          "FP32_sign": 1,
+          "BF16_sign": 1,
+          "sign_changed": false
+        },
+        "N-UA": {
+          "FP32": 3.3122804081067443,
+          "BF16": 3.291666667597989,
+          "FP32_sign": 1,
+          "BF16_sign": 1,
+          "sign_changed": false
+        },
+        "UA-U": {
+          "FP32": 0.054613674680391945,
+          "BF16": -0.04166672627131144,
+          "FP32_sign": 1,
+          "BF16_sign": -1,
+          "sign_changed": true
+        },
+        "N-UX": {
+          "FP32": -0.056180681412418686,
+          "BF16": 2.2631138563156128e-07,
+          "FP32_sign": -1,
+          "BF16_sign": 1,
+          "sign_changed": true
+        },
+        "interaction": {
+          "FP32": -0.11079435609281063,
+          "BF16": 0.04166695258269707,
+          "FP32_sign": -1,
+          "BF16_sign": 1,
+          "sign_changed": true
+        }
+      },
+      "archive_and_tensor_checks": "PASS",
+      "strict_runtime_donor_guard": "Successful frozen source asserts each P/U/UX/UA/UXA K1_Q against N; only N Q9_K1_Q archived, hence no independent perforward raw donor comparison available."
+    },
+    {
+      "id": "Mercury_402062",
+      "metadata_sha256": "ba248cad5ded836c32d161afeb3b71f4aa13c8db939b1a79ae2c7871354421f0",
+      "tensor_sha256": "4a2c18878a20196c223b1b30396133ab914828c3fe6c1865b8cb109a9c1682d6",
+      "endpoints": {
+        "K1": {
+          "FP32_CPU_logsoftmax_max_abs_difference": 1.4573335647583008e-05,
+          "BF16_CPU_logsoftmax_max_abs_difference": 1.3589859008789062e-05,
+          "FP32_prediction": 3,
+          "BF16_prediction": 3,
+          "FP32_ties": [
+            3
+          ],
+          "BF16_ties": [
+            3
+          ],
+          "prediction_changed": false,
+          "FP32_correct": true,
+          "BF16_correct": true,
+          "FP32_score_meanwrong": 1.9872509340445201,
+          "BF16_score_meanwrong": 2.083333363135656
+        },
+        "N": {
+          "FP32_CPU_logsoftmax_max_abs_difference": 4.082918167114258e-06,
+          "BF16_CPU_logsoftmax_max_abs_difference": 3.814697265625e-06,
+          "FP32_prediction": 3,
+          "BF16_prediction": 3,
+          "FP32_ties": [
+            3
+          ],
+          "BF16_ties": [
+            3
+          ],
+          "prediction_changed": false,
+          "FP32_correct": true,
+          "BF16_correct": true,
+          "FP32_score_meanwrong": 4.101137645542622,
+          "BF16_score_meanwrong": 4.208333469927311
+        },
+        "P": {
+          "FP32_CPU_logsoftmax_max_abs_difference": 5.766749382019043e-06,
+          "BF16_CPU_logsoftmax_max_abs_difference": 6.0498714447021484e-06,
+          "FP32_prediction": 3,
+          "BF16_prediction": 3,
+          "FP32_ties": [
+            3
+          ],
+          "BF16_ties": [
+            3
+          ],
+          "prediction_changed": false,
+          "FP32_correct": true,
+          "BF16_correct": true,
+          "FP32_score_meanwrong": 2.839331309000651,
+          "BF16_score_meanwrong": 2.9166665772596994
+        },
+        "U": {
+          "FP32_CPU_logsoftmax_max_abs_difference": 3.3676624298095703e-06,
+          "BF16_CPU_logsoftmax_max_abs_difference": 3.337860107421875e-06,
+          "FP32_prediction": 3,
+          "BF16_prediction": 3,
+          "FP32_ties": [
+            3
+          ],
+          "BF16_ties": [
+            3
+          ],
+          "prediction_changed": false,
+          "FP32_correct": true,
+          "BF16_correct": true,
+          "FP32_score_meanwrong": 4.1552059563497705,
+          "BF16_score_meanwrong": 4.166666729996602
+        },
+        "UX": {
+          "FP32_CPU_logsoftmax_max_abs_difference": 3.814697265625e-06,
+          "BF16_CPU_logsoftmax_max_abs_difference": 3.814697265625e-06,
+          "FP32_prediction": 3,
+          "BF16_prediction": 3,
+          "FP32_ties": [
+            3
+          ],
+          "BF16_ties": [
+            3
+          ],
+          "prediction_changed": false,
+          "FP32_correct": true,
+          "BF16_correct": true,
+          "FP32_score_meanwrong": 4.014716354509194,
+          "BF16_score_meanwrong": 4.124999878307183
+        },
+        "UA": {
+          "FP32_CPU_logsoftmax_max_abs_difference": 3.337860107421875e-06,
+          "BF16_CPU_logsoftmax_max_abs_difference": 3.606081008911133e-06,
+          "FP32_prediction": 3,
+          "BF16_prediction": 3,
+          "FP32_ties": [
+            3
+          ],
+          "BF16_ties": [
+            3
+          ],
+          "prediction_changed": false,
+          "FP32_correct": true,
+          "BF16_correct": true,
+          "FP32_score_meanwrong": 4.2437762171030045,
+          "BF16_score_meanwrong": 4.208333236475785
+        },
+        "UXA": {
+          "FP32_CPU_logsoftmax_max_abs_difference": 4.082918167114258e-06,
+          "BF16_CPU_logsoftmax_max_abs_difference": 3.814697265625e-06,
+          "FP32_prediction": 3,
+          "BF16_prediction": 3,
+          "FP32_ties": [
+            3
+          ],
+          "BF16_ties": [
+            3
+          ],
+          "prediction_changed": false,
+          "FP32_correct": true,
+          "BF16_correct": true,
+          "FP32_score_meanwrong": 4.101137645542622,
+          "BF16_score_meanwrong": 4.208333469927311
+        }
+      },
+      "production_score_contrasts": {
+        "N-U": {
+          "FP32": -0.05406831080714861,
+          "BF16": 0.041666739930709205,
+          "FP32_sign": -1,
+          "BF16_sign": 1,
+          "sign_changed": true
+        },
+        "UX-U": {
+          "FP32": -0.14048960184057555,
+          "BF16": -0.04166685168941816,
+          "FP32_sign": -1,
+          "BF16_sign": -1,
+          "sign_changed": false
+        },
+        "N-UA": {
+          "FP32": -0.14263857156038284,
+          "BF16": 2.3345152537027994e-07,
+          "FP32_sign": -1,
+          "BF16_sign": 1,
+          "sign_changed": true
+        },
+        "UA-U": {
+          "FP32": 0.08857026075323422,
+          "BF16": 0.04166650647918383,
+          "FP32_sign": 1,
+          "BF16_sign": 1,
+          "sign_changed": false
+        },
+        "N-UX": {
+          "FP32": 0.08642129103342693,
+          "BF16": 0.08333359162012736,
+          "FP32_sign": 1,
+          "BF16_sign": 1,
+          "sign_changed": false
+        },
+        "interaction": {
+          "FP32": -0.0021489697198073068,
+          "BF16": 0.04166708514094353,
+          "FP32_sign": -1,
+          "BF16_sign": 1,
+          "sign_changed": true
+        }
+      },
+      "archive_and_tensor_checks": "PASS",
+      "strict_runtime_donor_guard": "Successful frozen source asserts each P/U/UX/UA/UXA K1_Q against N; only N Q9_K1_Q archived, hence no independent perforward raw donor comparison available."
+    }
+  ],
+  "no_model_or_GPU": true,
+  "primary_scope": "Exact rational arithmetic on stored FP32 production-score meanwrong contrasts; numerical/backend sensitivity, no population inference"
+}

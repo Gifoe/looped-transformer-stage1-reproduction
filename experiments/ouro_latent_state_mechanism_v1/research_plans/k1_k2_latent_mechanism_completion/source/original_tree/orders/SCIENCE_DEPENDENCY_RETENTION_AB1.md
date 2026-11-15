@@ -1,0 +1,12 @@
+# Preserve during HF upload and cleanup
+
+This list protects the immediate AB1 scientific dependencies. It is not permission to delete any file. Root/Terra own upload verification and the user's exact deletion authorization.
+
+1. Keep the exact checkpoint, config, tokenizer, custom model/attention source, environment/version manifests and original25-shot inputs/target mappings/region offsets. Keep the model available on the eventual authorized execution server; avoid an unnecessary re-download.
+2. Keep all C1 same-site N/P/U/K1 references, L18 actual x/a/post-add/MLP-skip evidence, full-vocabulary endpoints and normalizers, source/order/cohort/control maps, successful/failed receipts and independent audits. Losslessly compressed tensors plus verified raw and archive hashes are valid retention; a summary or old hash alone is not a replacement for bytes.
+3. Keep numeric8 BF16 counterparts, original failed FP32 efficient run and successful math/deterministic run with all backend/profiler/identity records. They support the numerical limitation, not generic dtype invariance.
+4. Keep recovered_E2_original/selected_models.npz (SHA204a3788301c7aa826a198b9e40ce495ef81284b6cd41a4758dfd942f8650890), complete train_val_selection.json (SHAe7b8823c6c29358077f357340252f298955b2087764b83fd89cf7a571fbe6759), technical span with its limited status, adapter/source and recovery receipts. Do not refit as a substitute for losing frozen coefficients.
+5. Keep historical E1–E6/C1 compact per-question results, source ledgers, reports, counterexamples, frozen protocols and audit scripts. Preserve original loop/physical-site and hardware identities. Old R-only tensors do not replace full-sequence recurrent boundary states.
+6. AB1 will create new actual E/B boundary and N/U Q9 source evidence. Until its full audit and publication/archive verification, preserve these source bytes, all injected-state/control bytes or their exact reconstructible operands, downstream target states, complete logits and coverage. Prefix deduplication requires actual byte equality. Do not delete streaming source material before the declared audit can be completed.
+
+Already verified remote archival may free local/old-server storage only if hashes, retrieval and provenance remain reproducible and the immediately needed execution copy is retained or explicitly staged. Do not silently reconstruct missing states from a different hardware run. Notify root before a cleanup would remove any required source that has no verified available substitute.

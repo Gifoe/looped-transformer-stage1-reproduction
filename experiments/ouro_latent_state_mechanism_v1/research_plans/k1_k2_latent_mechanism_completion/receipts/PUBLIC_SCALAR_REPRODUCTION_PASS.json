@@ -1,0 +1,29 @@
+{
+  "status": "PASS",
+  "stages": [
+    {
+      "stage": "train64",
+      "n": 64,
+      "scalar_checks": 9600,
+      "bootstrap_interval_checks": 240,
+      "frozen_E2_accuracy_cells": 240
+    },
+    {
+      "stage": "train1030",
+      "n": 1030,
+      "scalar_checks": 154500,
+      "bootstrap_interval_checks": 240,
+      "frozen_E2_accuracy_cells": 240
+    },
+    {
+      "stage": "validation299",
+      "n": 299,
+      "scalar_checks": 44850,
+      "bootstrap_interval_checks": 240,
+      "frozen_E2_accuracy_cells": 240
+    }
+  ],
+  "AB1_primary_intervals": 42,
+  "descriptive_interaction_intervals": 90,
+  "scope": "Public compact-scalar/manifest/table reproduction only. No model inference, raw-tensor audit, probe refit or recomputation of frozen coefficients on unpublished raw features."
+}
