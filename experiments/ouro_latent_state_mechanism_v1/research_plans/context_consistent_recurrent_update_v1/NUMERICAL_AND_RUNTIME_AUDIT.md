@@ -1,0 +1,9 @@
+# Numerical and runtime audit
+
+Original checkpoint/model/source hashes and runtime are in SOURCE_RUNTIME.json. Three fresh technical cases reproduce all four full49152 endpoints bitwise against unhooked native and previous same-GPU native captures. K1 is unchanged under every nonzero condition. All 96 layer/pass events, one K2L9 write, token-region preservation, storage independence, and actual per-token BF16 displacement<=10%receiver norm are asserted. See TECHNICAL_PASS.json and execution source freeze.
+
+Norm schema: [requested_L2,cap_L2,total_scale,actual_BF16_L2,receiver_L2]. For Random, requested/scale refer to the structured reference; randomized amplitudes and target/actual doses are in dose_matching. Requested eta*natural_delta is clipped per token; BF16 writeback is damped until the actual bound holds. Random feature permutations use outcome-free scalar norm matching; detailed target/actual/error/matched arrays are retained.
+
+Source hooks observe actual normalized attention increments at L10-16 R in K2/K3/K4; they do not overwrite them. All four complete recurrent passes and full-shaped heads execute in every condition. Matched capture costs and peak allocator memory are in NORMS_AND_COSTS.json. Per-condition seconds time synchronized backbone and four readout heads, including observation hooks, and exclude later score formatting, tensor transfers and storage. Study wall time includes those costs. No early-exit, exclusive GPU-hours or optimized-deployment speed claim.
+
+Science wall envelope 1216.855521 seconds; hard budget10800seconds. Complete development256x9 and confirmation512x5. No outcome-dependent reduction or additional experiments. CPU arithmetic/statistical replay receipts accompany publication; raw observation/full-vocabulary technical tensors stay on server under a hash manifest.
