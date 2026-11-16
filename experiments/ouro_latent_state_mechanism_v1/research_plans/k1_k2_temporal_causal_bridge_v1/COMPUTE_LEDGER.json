@@ -1,0 +1,76 @@
+{
+  "budget_minutes": 180,
+  "budget_start_utc": "2026-11-16T19:48:16.740076+00:00",
+  "hard_deadline_utc": "2026-11-16T22:48:16.740076+00:00",
+  "ledger_generated_utc": "2026-11-16T20:59:58.340004+00:00",
+  "elapsed_minutes_at_ledger": 71.69333213333333,
+  "gpu": "one NVIDIA GeForce RTX4090",
+  "gpu_uuid": "GPU-d4e36609-350a-a3be-5024-3eefc3ad01fc",
+  "loops_per_body_forward": 2,
+  "layers_per_loop": 24,
+  "formal": {
+    "A": {
+      "base_groups": 96,
+      "paired_units": 768,
+      "native_cache_body_forwards": 768,
+      "intervention_body_forwards": 2304,
+      "total_body_forwards": 3072,
+      "recorded_intervention_seconds": 197.05204624403268,
+      "recorded_native_seconds": 47.44264942873269,
+      "extra_original_full_SDPA_calls_interventions": 73728,
+      "note": "B/C native reference-cache forward durations not separately retained; body counts reconstructed exactly from collector code. A C11 and B0/7 reuse existing results."
+    },
+    "B": {
+      "base_groups": 96,
+      "paired_units": 768,
+      "native_cache_body_forwards": 768,
+      "intervention_body_forwards": 2048,
+      "total_body_forwards": 2816,
+      "recorded_intervention_seconds": 166.0265844911337,
+      "recorded_native_seconds": null,
+      "extra_original_full_SDPA_calls_interventions": 49152,
+      "note": "B/C native reference-cache forward durations not separately retained; body counts reconstructed exactly from collector code. A C11 and B0/7 reuse existing results."
+    },
+    "C": {
+      "base_groups": 96,
+      "paired_units": 768,
+      "native_cache_body_forwards": 768,
+      "intervention_body_forwards": 7680,
+      "total_body_forwards": 8448,
+      "recorded_intervention_seconds": 939.0708750495687,
+      "recorded_native_seconds": null,
+      "extra_original_full_SDPA_calls_interventions": 350208,
+      "note": "B/C native reference-cache forward durations not separately retained; body counts reconstructed exactly from collector code. A C11 and B0/7 reuse existing results."
+    }
+  },
+  "technical_body_forwards": {
+    "A_initial_native": 8,
+    "A_initial_unhooked_parity": 8,
+    "A_initial_interventions": 40,
+    "C_native": 8,
+    "C_Z_T": 16,
+    "C_interventions_including_full_restore": 72,
+    "post_run_layer_trace": 9
+  },
+  "total_documented_body_forwards": 14497,
+  "total_documented_layer_executions": 695856,
+  "recorded_formal_seconds_lower_bound": 1349.5921552134678,
+  "max_recorded_allocated_bytes_formal": 4442591232,
+  "formal_phase_completion_utc": {
+    "A_development": "2026-11-16T20:07:51.518881+00:00",
+    "A_confirmation": "2026-11-16T20:11:01.502656+00:00",
+    "B_development": "2026-11-16T20:16:23.147867+00:00",
+    "B_confirmation": "2026-11-16T20:17:52.802741+00:00",
+    "C_development": "2026-11-16T20:40:15.568553+00:00",
+    "C_confirmation": "2026-11-16T20:51:47.751566+00:00"
+  },
+  "last_gpu_audit_utc": "2026-11-16T20:52:33.110850+00:00",
+  "compute_accounting": "Measured wall times include Python/assertion/caching and are not hardware kernel profiler time. GPU compilation/loading and initial construction included in conservative overall clock. No claim that GPU duty cycle was100%. Sol only.",
+  "training_optimizer_steps": 0,
+  "ARC_Test_items": 0,
+  "additional_search": "none; three fixed C intervals, no head search or additional neural experiments after specified audit",
+  "failure_records": "No numerical gate failure in completed model runs. Initial prepare.py syntax errors corrected before generation (else64/else1/else3 missing spaces); technical/audit original logs preserved. A design symmetry found and disclosed without changing endpoints/gates.",
+  "prepublication_delivery_ready_utc": "2026-11-16T21:02:19.239361+00:00",
+  "elapsed_minutes_delivery_ready": 74.04165474999999,
+  "public_CPU_replay": "PASS; no new GPU experiment after layer trace audit"
+}

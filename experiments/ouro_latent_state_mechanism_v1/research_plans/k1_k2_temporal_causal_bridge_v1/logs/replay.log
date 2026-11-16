@@ -1,0 +1,18 @@
+TEMPORAL_A_SUMMARY development {'capacity': (0.571044921875, [0.5029296875, 0.63818359375], True), 'native': (0.571044921875, [0.5029296875, 0.63818359375], True), 'K1_prior_contribution': (1.167236328125, [0.90869140625, 1.4443359375], None), 'interaction': (0.0, [0.0, 0.0], None)}
+TEMPORAL_A_SUMMARY confirmation {'capacity': (0.653564453125, [0.5854476928710938, 0.7236328125], True), 'native': (0.653564453125, [0.5854476928710938, 0.7236328125], True), 'K1_prior_contribution': (1.427734375, [1.189080810546875, 1.680058288574219], None), 'interaction': (0.0, [0.0, 0.0], None)}
+B_ANALYSIS development {'0': (0.0, 0.0), '7': (0.571044921875, 1.0), '1': (0.537353515625, 0.9410004275331338), '2': (-0.009521484375, -0.016673792218896963), '3': (0.534423828125, 0.9358700299273194), '4': (0.03955078125, 0.06926036767849508), '5': (0.577880859375, 1.0119709277469005), '6': (0.035400390625, 0.061992304403591277)}
+B_ANALYSIS confirmation {'0': (0.0, 0.0), '7': (0.653564453125, 1.0), '1': (0.6368408203125, 0.9744116548375047)}
+C_ANALYSIS development {'restore_early_vs_block': (0.039794921875, [0.021484375, 0.057373046875], True), 'T_vs_reverse_early': (0.02880859375, [0.013112967354910715, 0.045654296875], True), 'restore_mid_vs_block': (0.50634765625, [0.44231218610491074, 0.572021484375], True), 'T_vs_reverse_mid': (0.494873046875, [0.42986101422991074, 0.5626412527901783], True), 'restore_late_vs_block': (0.00439453125, [-0.010568673270089285, 0.018798828125], False), 'T_vs_reverse_late': (-0.00146484375, [-0.0126953125, 0.010009765625], False), 'T_vs_matched_random': (0.529052734375, [0.4677734375, 0.588623046875], True)}
+C_ANALYSIS confirmation {'restore_early_vs_block': (0.034423828125, [0.021082850864955358, 0.04825308663504457], True), 'T_vs_reverse_early': (0.044189453125, [0.030604335239955358, 0.057861328125], True), 'restore_mid_vs_block': (0.593505859375, [0.5154323032924107, 0.6712485177176337], True), 'T_vs_reverse_mid': (0.593017578125, [0.5163221086774553, 0.6688585553850446], True), 'restore_late_vs_block': (-0.0048828125, [-0.0146484375, 0.00439453125], False), 'T_vs_reverse_late': (-0.000244140625, [-0.009923008510044642, 0.008946446010044573], False), 'T_vs_matched_random': (0.6474609375, [0.5589215959821429, 0.7359972272600446], True)}
+RECIPROCAL_DESIGN_IDENTITY_PASS {'development': {'pairs': 128, 'forward_mean_interaction': 0.03173828125, 'reverse_mean_interaction': -0.03173828125, 'mean_abs_interaction': 0.22998046875, 'max_abs_interaction': 1.0625}, 'confirmation': {'pairs': 256, 'forward_mean_interaction': 0.02001953125, 'reverse_mean_interaction': -0.02001953125, 'mean_abs_interaction': 0.2705078125, 'max_abs_interaction': 1.5}}
+SCALAR_CPU_PASS 31744 DOSE {'development': {'sites': 222720, 'matched_1pct_or_absolute': 205925, 'exceed_relative_10pct': 361, 'absolute_norm_error_sum_div_target_norm_sum': 0.00020772724303146962}, 'confirmation': {'sites': 445440, 'matched_1pct_or_absolute': 411110, 'exceed_relative_10pct': 816, 'absolute_norm_error_sum_div_target_norm_sum': 0.00020948383356509965}}
+{
+  "status": "PASS",
+  "all_public_bytes_verified": true,
+  "six_phase_summaries_exact": true,
+  "reciprocal_identities_and_scalar_inputs_exact": true,
+  "dose_distribution_exact": true,
+  "scope": "CPU scalar replay; does not re-execute neural model or recover unavailable raw KV tensors",
+  "python": "3.10.8 (main, Nov 24 2022, 14:13:03) [GCC 11.2.0]",
+  "numpy": "1.26.4"
+}

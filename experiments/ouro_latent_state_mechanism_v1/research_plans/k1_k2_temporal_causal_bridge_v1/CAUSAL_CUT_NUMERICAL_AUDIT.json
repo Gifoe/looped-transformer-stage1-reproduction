@@ -1,0 +1,2486 @@
+{
+  "status": "PASS",
+  "units": 8,
+  "native_worlds": 8,
+  "checks": [
+    "unhooked_vsopen_full49152_bothloops",
+    "sameworld_reference_fullnull",
+    "C00_eachlayerDinput/output_bothendpoints_W0_exact",
+    "K1closed_K2Dinput_W0norm_exact",
+    "allconditions_S_states_KV_andattentionoutputs_W1_exact",
+    "source_future_mapping_andoption_invariant_all24layers_bothloops",
+    "original_fullshaped_SDPA_backend_andlayouts_preserved"
+  ],
+  "records": [
+    {
+      "unit": "TB000_L0_M0_D0",
+      "condition": "allopen",
+      "record": {
+        "scores": {
+          "1": {
+            "candidate_logits": [
+              14.5625,
+              14.8125,
+              15.3125,
+              14.25
+            ],
+            "candidate_logprobs": [
+              -1.6613409519195557,
+              -1.4113409519195557,
+              -0.9113409519195557,
+              -1.9738409519195557
+            ],
+            "prediction": 2,
+            "ties": [
+              2
+            ],
+            "full49152_sha256": "7eb2e97455086025e3bcf1a40f050c7ce39fb25afc931f24155a9639b14347f2"
+          },
+          "2": {
+            "candidate_logits": [
+              17.5,
+              15.5625,
+              17.125,
+              15.75
+            ],
+            "candidate_logprobs": [
+              -0.7051008343696594,
+              -2.6426007747650146,
+              -1.0801007747650146,
+              -2.4551007747650146
+            ],
+            "prediction": 0,
+            "ties": [
+              0
+            ],
+            "full49152_sha256": "49ed9aac0419091fb9baa1cf745a95226c3eb50036c837d56c0f9958c2367edb"
+          }
+        },
+        "cut": {
+          "g1": 1,
+          "mask2": 7,
+          "extra_SDPA_calls": 0,
+          "closed_rows_per_pass": [
+            0,
+            0
+          ],
+          "source_exact_checks": 194,
+          "C00_D_norm_exact": [],
+          "g1closed_K2_input_exact": null
+        },
+        "seconds": 0.06910348031669855,
+        "peak_allocated_bytes": 4059872256
+      }
+    },
+    {
+      "unit": "TB000_L0_M0_D0",
+      "condition": "sameworld",
+      "record": {
+        "scores": {
+          "1": {
+            "candidate_logits": [
+              14.5625,
+              14.8125,
+              15.3125,
+              14.25
+            ],
+            "candidate_logprobs": [
+              -1.6613409519195557,
+              -1.4113409519195557,
+              -0.9113409519195557,
+              -1.9738409519195557
+            ],
+            "prediction": 2,
+            "ties": [
+              2
+            ],
+            "full49152_sha256": "7eb2e97455086025e3bcf1a40f050c7ce39fb25afc931f24155a9639b14347f2"
+          },
+          "2": {
+            "candidate_logits": [
+              17.5,
+              15.5625,
+              17.125,
+              15.75
+            ],
+            "candidate_logprobs": [
+              -0.7051008343696594,
+              -2.6426007747650146,
+              -1.0801007747650146,
+              -2.4551007747650146
+            ],
+            "prediction": 0,
+            "ties": [
+              0
+            ],
+            "full49152_sha256": "49ed9aac0419091fb9baa1cf745a95226c3eb50036c837d56c0f9958c2367edb"
+          }
+        },
+        "cut": {
+          "g1": 0,
+          "mask2": 0,
+          "extra_SDPA_calls": 48,
+          "closed_rows_per_pass": [
+            53,
+            53
+          ],
+          "source_exact_checks": 194,
+          "C00_D_norm_exact": [
+            1,
+            2
+          ],
+          "g1closed_K2_input_exact": true
+        },
+        "seconds": 0.10723117366433144,
+        "peak_allocated_bytes": 4060068864
+      }
+    },
+    {
+      "unit": "TB000_L0_M0_D0",
+      "condition": "C00",
+      "record": {
+        "scores": {
+          "1": {
+            "candidate_logits": [
+              14.625,
+              15.0,
+              15.625,
+              14.4375
+            ],
+            "candidate_logprobs": [
+              -1.8144044876098633,
+              -1.4394044876098633,
+              -0.8144045472145081,
+              -2.0019044876098633
+            ],
+            "prediction": 2,
+            "ties": [
+              2
+            ],
+            "full49152_sha256": "ac53ecea2c43ff26db508bc12de1fc4b0f671165d5ddf0a4771fb85334b926cb"
+          },
+          "2": {
+            "candidate_logits": [
+              17.125,
+              17.125,
+              19.625,
+              17.625
+            ],
+            "candidate_logprobs": [
+              -2.765575885772705,
+              -2.765575885772705,
+              -0.2655758857727051,
+              -2.265575885772705
+            ],
+            "prediction": 2,
+            "ties": [
+              2
+            ],
+            "full49152_sha256": "1d557e8ec813530addfe047a514f57e4814a16697f88bb0172f7d6e561737e9b"
+          }
+        },
+        "cut": {
+          "g1": 0,
+          "mask2": 0,
+          "extra_SDPA_calls": 48,
+          "closed_rows_per_pass": [
+            53,
+            53
+          ],
+          "source_exact_checks": 194,
+          "C00_D_norm_exact": [
+            1,
+            2
+          ],
+          "g1closed_K2_input_exact": true
+        },
+        "seconds": 0.10134848393499851,
+        "peak_allocated_bytes": 4060068864
+      }
+    },
+    {
+      "unit": "TB000_L0_M0_D0",
+      "condition": "C01",
+      "record": {
+        "scores": {
+          "1": {
+            "candidate_logits": [
+              14.625,
+              15.0,
+              15.625,
+              14.4375
+            ],
+            "candidate_logprobs": [
+              -1.8144044876098633,
+              -1.4394044876098633,
+              -0.8144045472145081,
+              -2.0019044876098633
+            ],
+            "prediction": 2,
+            "ties": [
+              2
+            ],
+            "full49152_sha256": "ac53ecea2c43ff26db508bc12de1fc4b0f671165d5ddf0a4771fb85334b926cb"
+          },
+          "2": {
+            "candidate_logits": [
+              17.25,
+              17.0,
+              18.625,
+              17.375
+            ],
+            "candidate_logprobs": [
+              -1.9329510927200317,
+              -2.182950973510742,
+              -0.5579510927200317,
+              -1.8079510927200317
+            ],
+            "prediction": 2,
+            "ties": [
+              2
+            ],
+            "full49152_sha256": "739ac8e4fc9b07c0895c80e6da18b19b11460e4c48a9c3dd717c922e4a761b9d"
+          }
+        },
+        "cut": {
+          "g1": 0,
+          "mask2": 7,
+          "extra_SDPA_calls": 24,
+          "closed_rows_per_pass": [
+            53,
+            0
+          ],
+          "source_exact_checks": 194,
+          "C00_D_norm_exact": [
+            1
+          ],
+          "g1closed_K2_input_exact": true
+        },
+        "seconds": 0.08719809167087078,
+        "peak_allocated_bytes": 4060068864
+      }
+    },
+    {
+      "unit": "TB000_L0_M0_D0",
+      "condition": "C10",
+      "record": {
+        "scores": {
+          "1": {
+            "candidate_logits": [
+              14.5625,
+              14.8125,
+              15.3125,
+              14.25
+            ],
+            "candidate_logprobs": [
+              -1.6613409519195557,
+              -1.4113409519195557,
+              -0.9113409519195557,
+              -1.9738409519195557
+            ],
+            "prediction": 2,
+            "ties": [
+              2
+            ],
+            "full49152_sha256": "7eb2e97455086025e3bcf1a40f050c7ce39fb25afc931f24155a9639b14347f2"
+          },
+          "2": {
+            "candidate_logits": [
+              17.5,
+              16.5,
+              18.375,
+              16.75
+            ],
+            "candidate_logprobs": [
+              -1.4506776332855225,
+              -2.4506776332855225,
+              -0.5756775736808777,
+              -2.2006776332855225
+            ],
+            "prediction": 2,
+            "ties": [
+              2
+            ],
+            "full49152_sha256": "c93fae67f410a631c1fa5e30876d6ce0aeaede1054c8e90ce65da8468c4c032f"
+          }
+        },
+        "cut": {
+          "g1": 1,
+          "mask2": 0,
+          "extra_SDPA_calls": 24,
+          "closed_rows_per_pass": [
+            0,
+            53
+          ],
+          "source_exact_checks": 194,
+          "C00_D_norm_exact": [],
+          "g1closed_K2_input_exact": null
+        },
+        "seconds": 0.08152930531650782,
+        "peak_allocated_bytes": 4060068864
+      }
+    },
+    {
+      "unit": "TB000_L0_M0_D1",
+      "condition": "allopen",
+      "record": {
+        "scores": {
+          "1": {
+            "candidate_logits": [
+              14.625,
+              15.0,
+              15.625,
+              14.4375
+            ],
+            "candidate_logprobs": [
+              -1.8144044876098633,
+              -1.4394044876098633,
+              -0.8144045472145081,
+              -2.0019044876098633
+            ],
+            "prediction": 2,
+            "ties": [
+              2
+            ],
+            "full49152_sha256": "ac53ecea2c43ff26db508bc12de1fc4b0f671165d5ddf0a4771fb85334b926cb"
+          },
+          "2": {
+            "candidate_logits": [
+              17.125,
+              17.125,
+              19.625,
+              17.625
+            ],
+            "candidate_logprobs": [
+              -2.765575885772705,
+              -2.765575885772705,
+              -0.2655758857727051,
+              -2.265575885772705
+            ],
+            "prediction": 2,
+            "ties": [
+              2
+            ],
+            "full49152_sha256": "1d557e8ec813530addfe047a514f57e4814a16697f88bb0172f7d6e561737e9b"
+          }
+        },
+        "cut": {
+          "g1": 1,
+          "mask2": 7,
+          "extra_SDPA_calls": 0,
+          "closed_rows_per_pass": [
+            0,
+            0
+          ],
+          "source_exact_checks": 194,
+          "C00_D_norm_exact": [],
+          "g1closed_K2_input_exact": null
+        },
+        "seconds": 0.07060892693698406,
+        "peak_allocated_bytes": 4060068864
+      }
+    },
+    {
+      "unit": "TB000_L0_M0_D1",
+      "condition": "sameworld",
+      "record": {
+        "scores": {
+          "1": {
+            "candidate_logits": [
+              14.625,
+              15.0,
+              15.625,
+              14.4375
+            ],
+            "candidate_logprobs": [
+              -1.8144044876098633,
+              -1.4394044876098633,
+              -0.8144045472145081,
+              -2.0019044876098633
+            ],
+            "prediction": 2,
+            "ties": [
+              2
+            ],
+            "full49152_sha256": "ac53ecea2c43ff26db508bc12de1fc4b0f671165d5ddf0a4771fb85334b926cb"
+          },
+          "2": {
+            "candidate_logits": [
+              17.125,
+              17.125,
+              19.625,
+              17.625
+            ],
+            "candidate_logprobs": [
+              -2.765575885772705,
+              -2.765575885772705,
+              -0.2655758857727051,
+              -2.265575885772705
+            ],
+            "prediction": 2,
+            "ties": [
+              2
+            ],
+            "full49152_sha256": "1d557e8ec813530addfe047a514f57e4814a16697f88bb0172f7d6e561737e9b"
+          }
+        },
+        "cut": {
+          "g1": 0,
+          "mask2": 0,
+          "extra_SDPA_calls": 48,
+          "closed_rows_per_pass": [
+            53,
+            53
+          ],
+          "source_exact_checks": 194,
+          "C00_D_norm_exact": [
+            1,
+            2
+          ],
+          "g1closed_K2_input_exact": true
+        },
+        "seconds": 0.10213295370340347,
+        "peak_allocated_bytes": 4060068864
+      }
+    },
+    {
+      "unit": "TB000_L0_M0_D1",
+      "condition": "C00",
+      "record": {
+        "scores": {
+          "1": {
+            "candidate_logits": [
+              14.5625,
+              14.8125,
+              15.3125,
+              14.25
+            ],
+            "candidate_logprobs": [
+              -1.6613409519195557,
+              -1.4113409519195557,
+              -0.9113409519195557,
+              -1.9738409519195557
+            ],
+            "prediction": 2,
+            "ties": [
+              2
+            ],
+            "full49152_sha256": "7eb2e97455086025e3bcf1a40f050c7ce39fb25afc931f24155a9639b14347f2"
+          },
+          "2": {
+            "candidate_logits": [
+              17.5,
+              15.5625,
+              17.125,
+              15.75
+            ],
+            "candidate_logprobs": [
+              -0.7051008343696594,
+              -2.6426007747650146,
+              -1.0801007747650146,
+              -2.4551007747650146
+            ],
+            "prediction": 0,
+            "ties": [
+              0
+            ],
+            "full49152_sha256": "49ed9aac0419091fb9baa1cf745a95226c3eb50036c837d56c0f9958c2367edb"
+          }
+        },
+        "cut": {
+          "g1": 0,
+          "mask2": 0,
+          "extra_SDPA_calls": 48,
+          "closed_rows_per_pass": [
+            53,
+            53
+          ],
+          "source_exact_checks": 194,
+          "C00_D_norm_exact": [
+            1,
+            2
+          ],
+          "g1closed_K2_input_exact": true
+        },
+        "seconds": 0.1020853715017438,
+        "peak_allocated_bytes": 4060068864
+      }
+    },
+    {
+      "unit": "TB000_L0_M0_D1",
+      "condition": "C01",
+      "record": {
+        "scores": {
+          "1": {
+            "candidate_logits": [
+              14.5625,
+              14.8125,
+              15.3125,
+              14.25
+            ],
+            "candidate_logprobs": [
+              -1.6613409519195557,
+              -1.4113409519195557,
+              -0.9113409519195557,
+              -1.9738409519195557
+            ],
+            "prediction": 2,
+            "ties": [
+              2
+            ],
+            "full49152_sha256": "7eb2e97455086025e3bcf1a40f050c7ce39fb25afc931f24155a9639b14347f2"
+          },
+          "2": {
+            "candidate_logits": [
+              17.5,
+              16.5,
+              18.375,
+              16.75
+            ],
+            "candidate_logprobs": [
+              -1.4506776332855225,
+              -2.4506776332855225,
+              -0.5756775736808777,
+              -2.2006776332855225
+            ],
+            "prediction": 2,
+            "ties": [
+              2
+            ],
+            "full49152_sha256": "c93fae67f410a631c1fa5e30876d6ce0aeaede1054c8e90ce65da8468c4c032f"
+          }
+        },
+        "cut": {
+          "g1": 0,
+          "mask2": 7,
+          "extra_SDPA_calls": 24,
+          "closed_rows_per_pass": [
+            53,
+            0
+          ],
+          "source_exact_checks": 194,
+          "C00_D_norm_exact": [
+            1
+          ],
+          "g1closed_K2_input_exact": true
+        },
+        "seconds": 0.08332312200218439,
+        "peak_allocated_bytes": 4060068864
+      }
+    },
+    {
+      "unit": "TB000_L0_M0_D1",
+      "condition": "C10",
+      "record": {
+        "scores": {
+          "1": {
+            "candidate_logits": [
+              14.625,
+              15.0,
+              15.625,
+              14.4375
+            ],
+            "candidate_logprobs": [
+              -1.8144044876098633,
+              -1.4394044876098633,
+              -0.8144045472145081,
+              -2.0019044876098633
+            ],
+            "prediction": 2,
+            "ties": [
+              2
+            ],
+            "full49152_sha256": "ac53ecea2c43ff26db508bc12de1fc4b0f671165d5ddf0a4771fb85334b926cb"
+          },
+          "2": {
+            "candidate_logits": [
+              17.25,
+              17.0,
+              18.625,
+              17.375
+            ],
+            "candidate_logprobs": [
+              -1.9329510927200317,
+              -2.182950973510742,
+              -0.5579510927200317,
+              -1.8079510927200317
+            ],
+            "prediction": 2,
+            "ties": [
+              2
+            ],
+            "full49152_sha256": "739ac8e4fc9b07c0895c80e6da18b19b11460e4c48a9c3dd717c922e4a761b9d"
+          }
+        },
+        "cut": {
+          "g1": 1,
+          "mask2": 0,
+          "extra_SDPA_calls": 24,
+          "closed_rows_per_pass": [
+            0,
+            53
+          ],
+          "source_exact_checks": 194,
+          "C00_D_norm_exact": [],
+          "g1closed_K2_input_exact": null
+        },
+        "seconds": 0.08122542779892683,
+        "peak_allocated_bytes": 4060068864
+      }
+    },
+    {
+      "unit": "TB000_L0_M1_D0",
+      "condition": "allopen",
+      "record": {
+        "scores": {
+          "1": {
+            "candidate_logits": [
+              13.875,
+              14.625,
+              13.9375,
+              13.6875
+            ],
+            "candidate_logprobs": [
+              -1.6470531225204468,
+              -0.8970531225204468,
+              -1.5845531225204468,
+              -1.8345531225204468
+            ],
+            "prediction": 1,
+            "ties": [
+              1
+            ],
+            "full49152_sha256": "e54a7ca0472060fb1bc07c68cd4613f28bbf5b5b40cfcf5cf5abcc53c7860f42"
+          },
+          "2": {
+            "candidate_logits": [
+              15.4375,
+              17.375,
+              15.75,
+              16.0
+            ],
+            "candidate_logprobs": [
+              -2.4136734008789062,
+              -0.4761733412742615,
+              -2.1011734008789062,
+              -1.8511734008789062
+            ],
+            "prediction": 1,
+            "ties": [
+              1
+            ],
+            "full49152_sha256": "7503b8b5a9bba94dbbe23379a1d2edc07c79235629af2c5dc138f6af36dc60a7"
+          }
+        },
+        "cut": {
+          "g1": 1,
+          "mask2": 7,
+          "extra_SDPA_calls": 0,
+          "closed_rows_per_pass": [
+            0,
+            0
+          ],
+          "source_exact_checks": 194,
+          "C00_D_norm_exact": [],
+          "g1closed_K2_input_exact": null
+        },
+        "seconds": 0.06863920390605927,
+        "peak_allocated_bytes": 4060068864
+      }
+    },
+    {
+      "unit": "TB000_L0_M1_D0",
+      "condition": "sameworld",
+      "record": {
+        "scores": {
+          "1": {
+            "candidate_logits": [
+              13.875,
+              14.625,
+              13.9375,
+              13.6875
+            ],
+            "candidate_logprobs": [
+              -1.6470531225204468,
+              -0.8970531225204468,
+              -1.5845531225204468,
+              -1.8345531225204468
+            ],
+            "prediction": 1,
+            "ties": [
+              1
+            ],
+            "full49152_sha256": "e54a7ca0472060fb1bc07c68cd4613f28bbf5b5b40cfcf5cf5abcc53c7860f42"
+          },
+          "2": {
+            "candidate_logits": [
+              15.4375,
+              17.375,
+              15.75,
+              16.0
+            ],
+            "candidate_logprobs": [
+              -2.4136734008789062,
+              -0.4761733412742615,
+              -2.1011734008789062,
+              -1.8511734008789062
+            ],
+            "prediction": 1,
+            "ties": [
+              1
+            ],
+            "full49152_sha256": "7503b8b5a9bba94dbbe23379a1d2edc07c79235629af2c5dc138f6af36dc60a7"
+          }
+        },
+        "cut": {
+          "g1": 0,
+          "mask2": 0,
+          "extra_SDPA_calls": 48,
+          "closed_rows_per_pass": [
+            53,
+            53
+          ],
+          "source_exact_checks": 194,
+          "C00_D_norm_exact": [
+            1,
+            2
+          ],
+          "g1closed_K2_input_exact": true
+        },
+        "seconds": 0.09860471542924643,
+        "peak_allocated_bytes": 4060068864
+      }
+    },
+    {
+      "unit": "TB000_L0_M1_D0",
+      "condition": "C00",
+      "record": {
+        "scores": {
+          "1": {
+            "candidate_logits": [
+              14.0625,
+              14.625,
+              14.125,
+              14.0
+            ],
+            "candidate_logprobs": [
+              -1.593155860900879,
+              -1.030655860900879,
+              -1.530655860900879,
+              -1.655655860900879
+            ],
+            "prediction": 1,
+            "ties": [
+              1
+            ],
+            "full49152_sha256": "82640cda80bd4acedfcfdad871a6ac0c2ee3ea3e5b7ab77bf3df2201d03642aa"
+          },
+          "2": {
+            "candidate_logits": [
+              16.0,
+              16.0,
+              16.125,
+              16.75
+            ],
+            "candidate_logprobs": [
+              -1.6697956323623657,
+              -1.6697956323623657,
+              -1.5447956323623657,
+              -0.9197956323623657
+            ],
+            "prediction": 3,
+            "ties": [
+              3
+            ],
+            "full49152_sha256": "14447d9f9f45832345787f0bf5c15aec04a684041de417362d7872023aa6ede8"
+          }
+        },
+        "cut": {
+          "g1": 0,
+          "mask2": 0,
+          "extra_SDPA_calls": 48,
+          "closed_rows_per_pass": [
+            53,
+            53
+          ],
+          "source_exact_checks": 194,
+          "C00_D_norm_exact": [
+            1,
+            2
+          ],
+          "g1closed_K2_input_exact": true
+        },
+        "seconds": 0.0983102647587657,
+        "peak_allocated_bytes": 4060068864
+      }
+    },
+    {
+      "unit": "TB000_L0_M1_D0",
+      "condition": "C01",
+      "record": {
+        "scores": {
+          "1": {
+            "candidate_logits": [
+              14.0625,
+              14.625,
+              14.125,
+              14.0
+            ],
+            "candidate_logprobs": [
+              -1.593155860900879,
+              -1.030655860900879,
+              -1.530655860900879,
+              -1.655655860900879
+            ],
+            "prediction": 1,
+            "ties": [
+              1
+            ],
+            "full49152_sha256": "82640cda80bd4acedfcfdad871a6ac0c2ee3ea3e5b7ab77bf3df2201d03642aa"
+          },
+          "2": {
+            "candidate_logits": [
+              16.875,
+              17.0,
+              16.875,
+              17.375
+            ],
+            "candidate_logprobs": [
+              -1.5736892223358154,
+              -1.4486892223358154,
+              -1.5736892223358154,
+              -1.0736892223358154
+            ],
+            "prediction": 3,
+            "ties": [
+              3
+            ],
+            "full49152_sha256": "2a8e80487e1ae7474a0be1802c643994f2cf710753994ff04c813acc83f38631"
+          }
+        },
+        "cut": {
+          "g1": 0,
+          "mask2": 7,
+          "extra_SDPA_calls": 24,
+          "closed_rows_per_pass": [
+            53,
+            0
+          ],
+          "source_exact_checks": 194,
+          "C00_D_norm_exact": [
+            1
+          ],
+          "g1closed_K2_input_exact": true
+        },
+        "seconds": 0.08393493387848139,
+        "peak_allocated_bytes": 4060068864
+      }
+    },
+    {
+      "unit": "TB000_L0_M1_D0",
+      "condition": "C10",
+      "record": {
+        "scores": {
+          "1": {
+            "candidate_logits": [
+              13.875,
+              14.625,
+              13.9375,
+              13.6875
+            ],
+            "candidate_logprobs": [
+              -1.6470531225204468,
+              -0.8970531225204468,
+              -1.5845531225204468,
+              -1.8345531225204468
+            ],
+            "prediction": 1,
+            "ties": [
+              1
+            ],
+            "full49152_sha256": "e54a7ca0472060fb1bc07c68cd4613f28bbf5b5b40cfcf5cf5abcc53c7860f42"
+          },
+          "2": {
+            "candidate_logits": [
+              15.1875,
+              16.125,
+              15.625,
+              15.6875
+            ],
+            "candidate_logprobs": [
+              -1.924776315689087,
+              -0.9872762560844421,
+              -1.487276315689087,
+              -1.424776315689087
+            ],
+            "prediction": 1,
+            "ties": [
+              1
+            ],
+            "full49152_sha256": "c45e7be36fae018911e5b2effa6886ed76d8b93b7f7840203f24f41fa3f88a64"
+          }
+        },
+        "cut": {
+          "g1": 1,
+          "mask2": 0,
+          "extra_SDPA_calls": 24,
+          "closed_rows_per_pass": [
+            0,
+            53
+          ],
+          "source_exact_checks": 194,
+          "C00_D_norm_exact": [],
+          "g1closed_K2_input_exact": null
+        },
+        "seconds": 0.08176562562584877,
+        "peak_allocated_bytes": 4060068864
+      }
+    },
+    {
+      "unit": "TB000_L0_M1_D1",
+      "condition": "allopen",
+      "record": {
+        "scores": {
+          "1": {
+            "candidate_logits": [
+              14.0625,
+              14.625,
+              14.125,
+              14.0
+            ],
+            "candidate_logprobs": [
+              -1.593155860900879,
+              -1.030655860900879,
+              -1.530655860900879,
+              -1.655655860900879
+            ],
+            "prediction": 1,
+            "ties": [
+              1
+            ],
+            "full49152_sha256": "82640cda80bd4acedfcfdad871a6ac0c2ee3ea3e5b7ab77bf3df2201d03642aa"
+          },
+          "2": {
+            "candidate_logits": [
+              16.0,
+              16.0,
+              16.125,
+              16.75
+            ],
+            "candidate_logprobs": [
+              -1.6697956323623657,
+              -1.6697956323623657,
+              -1.5447956323623657,
+              -0.9197956323623657
+            ],
+            "prediction": 3,
+            "ties": [
+              3
+            ],
+            "full49152_sha256": "14447d9f9f45832345787f0bf5c15aec04a684041de417362d7872023aa6ede8"
+          }
+        },
+        "cut": {
+          "g1": 1,
+          "mask2": 7,
+          "extra_SDPA_calls": 0,
+          "closed_rows_per_pass": [
+            0,
+            0
+          ],
+          "source_exact_checks": 194,
+          "C00_D_norm_exact": [],
+          "g1closed_K2_input_exact": null
+        },
+        "seconds": 0.06952422950416803,
+        "peak_allocated_bytes": 4060068864
+      }
+    },
+    {
+      "unit": "TB000_L0_M1_D1",
+      "condition": "sameworld",
+      "record": {
+        "scores": {
+          "1": {
+            "candidate_logits": [
+              14.0625,
+              14.625,
+              14.125,
+              14.0
+            ],
+            "candidate_logprobs": [
+              -1.593155860900879,
+              -1.030655860900879,
+              -1.530655860900879,
+              -1.655655860900879
+            ],
+            "prediction": 1,
+            "ties": [
+              1
+            ],
+            "full49152_sha256": "82640cda80bd4acedfcfdad871a6ac0c2ee3ea3e5b7ab77bf3df2201d03642aa"
+          },
+          "2": {
+            "candidate_logits": [
+              16.0,
+              16.0,
+              16.125,
+              16.75
+            ],
+            "candidate_logprobs": [
+              -1.6697956323623657,
+              -1.6697956323623657,
+              -1.5447956323623657,
+              -0.9197956323623657
+            ],
+            "prediction": 3,
+            "ties": [
+              3
+            ],
+            "full49152_sha256": "14447d9f9f45832345787f0bf5c15aec04a684041de417362d7872023aa6ede8"
+          }
+        },
+        "cut": {
+          "g1": 0,
+          "mask2": 0,
+          "extra_SDPA_calls": 48,
+          "closed_rows_per_pass": [
+            53,
+            53
+          ],
+          "source_exact_checks": 194,
+          "C00_D_norm_exact": [
+            1,
+            2
+          ],
+          "g1closed_K2_input_exact": true
+        },
+        "seconds": 0.09993060491979122,
+        "peak_allocated_bytes": 4060068864
+      }
+    },
+    {
+      "unit": "TB000_L0_M1_D1",
+      "condition": "C00",
+      "record": {
+        "scores": {
+          "1": {
+            "candidate_logits": [
+              13.875,
+              14.625,
+              13.9375,
+              13.6875
+            ],
+            "candidate_logprobs": [
+              -1.6470531225204468,
+              -0.8970531225204468,
+              -1.5845531225204468,
+              -1.8345531225204468
+            ],
+            "prediction": 1,
+            "ties": [
+              1
+            ],
+            "full49152_sha256": "e54a7ca0472060fb1bc07c68cd4613f28bbf5b5b40cfcf5cf5abcc53c7860f42"
+          },
+          "2": {
+            "candidate_logits": [
+              15.4375,
+              17.375,
+              15.75,
+              16.0
+            ],
+            "candidate_logprobs": [
+              -2.4136734008789062,
+              -0.4761733412742615,
+              -2.1011734008789062,
+              -1.8511734008789062
+            ],
+            "prediction": 1,
+            "ties": [
+              1
+            ],
+            "full49152_sha256": "7503b8b5a9bba94dbbe23379a1d2edc07c79235629af2c5dc138f6af36dc60a7"
+          }
+        },
+        "cut": {
+          "g1": 0,
+          "mask2": 0,
+          "extra_SDPA_calls": 48,
+          "closed_rows_per_pass": [
+            53,
+            53
+          ],
+          "source_exact_checks": 194,
+          "C00_D_norm_exact": [
+            1,
+            2
+          ],
+          "g1closed_K2_input_exact": true
+        },
+        "seconds": 0.10156113281846046,
+        "peak_allocated_bytes": 4060068864
+      }
+    },
+    {
+      "unit": "TB000_L0_M1_D1",
+      "condition": "C01",
+      "record": {
+        "scores": {
+          "1": {
+            "candidate_logits": [
+              13.875,
+              14.625,
+              13.9375,
+              13.6875
+            ],
+            "candidate_logprobs": [
+              -1.6470531225204468,
+              -0.8970531225204468,
+              -1.5845531225204468,
+              -1.8345531225204468
+            ],
+            "prediction": 1,
+            "ties": [
+              1
+            ],
+            "full49152_sha256": "e54a7ca0472060fb1bc07c68cd4613f28bbf5b5b40cfcf5cf5abcc53c7860f42"
+          },
+          "2": {
+            "candidate_logits": [
+              15.1875,
+              16.125,
+              15.625,
+              15.6875
+            ],
+            "candidate_logprobs": [
+              -1.924776315689087,
+              -0.9872762560844421,
+              -1.487276315689087,
+              -1.424776315689087
+            ],
+            "prediction": 1,
+            "ties": [
+              1
+            ],
+            "full49152_sha256": "c45e7be36fae018911e5b2effa6886ed76d8b93b7f7840203f24f41fa3f88a64"
+          }
+        },
+        "cut": {
+          "g1": 0,
+          "mask2": 7,
+          "extra_SDPA_calls": 24,
+          "closed_rows_per_pass": [
+            53,
+            0
+          ],
+          "source_exact_checks": 194,
+          "C00_D_norm_exact": [
+            1
+          ],
+          "g1closed_K2_input_exact": true
+        },
+        "seconds": 0.08434033114463091,
+        "peak_allocated_bytes": 4060068864
+      }
+    },
+    {
+      "unit": "TB000_L0_M1_D1",
+      "condition": "C10",
+      "record": {
+        "scores": {
+          "1": {
+            "candidate_logits": [
+              14.0625,
+              14.625,
+              14.125,
+              14.0
+            ],
+            "candidate_logprobs": [
+              -1.593155860900879,
+              -1.030655860900879,
+              -1.530655860900879,
+              -1.655655860900879
+            ],
+            "prediction": 1,
+            "ties": [
+              1
+            ],
+            "full49152_sha256": "82640cda80bd4acedfcfdad871a6ac0c2ee3ea3e5b7ab77bf3df2201d03642aa"
+          },
+          "2": {
+            "candidate_logits": [
+              16.875,
+              17.0,
+              16.875,
+              17.375
+            ],
+            "candidate_logprobs": [
+              -1.5736892223358154,
+              -1.4486892223358154,
+              -1.5736892223358154,
+              -1.0736892223358154
+            ],
+            "prediction": 3,
+            "ties": [
+              3
+            ],
+            "full49152_sha256": "2a8e80487e1ae7474a0be1802c643994f2cf710753994ff04c813acc83f38631"
+          }
+        },
+        "cut": {
+          "g1": 1,
+          "mask2": 0,
+          "extra_SDPA_calls": 24,
+          "closed_rows_per_pass": [
+            0,
+            53
+          ],
+          "source_exact_checks": 194,
+          "C00_D_norm_exact": [],
+          "g1closed_K2_input_exact": null
+        },
+        "seconds": 0.08281084336340427,
+        "peak_allocated_bytes": 4060068864
+      }
+    },
+    {
+      "unit": "TB000_L1_M0_D0",
+      "condition": "allopen",
+      "record": {
+        "scores": {
+          "1": {
+            "candidate_logits": [
+              14.75,
+              16.0,
+              14.5625,
+              14.375
+            ],
+            "candidate_logprobs": [
+              -1.8118529319763184,
+              -0.5618529319763184,
+              -1.9993529319763184,
+              -2.1868529319763184
+            ],
+            "prediction": 1,
+            "ties": [
+              1
+            ],
+            "full49152_sha256": "3371ebb3f54b7311a6cc5e6757a58245393027276a4c5472061c02678299ac7e"
+          },
+          "2": {
+            "candidate_logits": [
+              15.4375,
+              16.5,
+              14.875,
+              15.4375
+            ],
+            "candidate_logprobs": [
+              -1.7140202522277832,
+              -0.6515202522277832,
+              -2.276520252227783,
+              -1.7140202522277832
+            ],
+            "prediction": 1,
+            "ties": [
+              1
+            ],
+            "full49152_sha256": "d8681ca31696931d851de7d165d6dedff65e128c0f79a24c05ce62b6cf73b8b4"
+          }
+        },
+        "cut": {
+          "g1": 1,
+          "mask2": 7,
+          "extra_SDPA_calls": 0,
+          "closed_rows_per_pass": [
+            0,
+            0
+          ],
+          "source_exact_checks": 194,
+          "C00_D_norm_exact": [],
+          "g1closed_K2_input_exact": null
+        },
+        "seconds": 0.06921388767659664,
+        "peak_allocated_bytes": 4060068864
+      }
+    },
+    {
+      "unit": "TB000_L1_M0_D0",
+      "condition": "sameworld",
+      "record": {
+        "scores": {
+          "1": {
+            "candidate_logits": [
+              14.75,
+              16.0,
+              14.5625,
+              14.375
+            ],
+            "candidate_logprobs": [
+              -1.8118529319763184,
+              -0.5618529319763184,
+              -1.9993529319763184,
+              -2.1868529319763184
+            ],
+            "prediction": 1,
+            "ties": [
+              1
+            ],
+            "full49152_sha256": "3371ebb3f54b7311a6cc5e6757a58245393027276a4c5472061c02678299ac7e"
+          },
+          "2": {
+            "candidate_logits": [
+              15.4375,
+              16.5,
+              14.875,
+              15.4375
+            ],
+            "candidate_logprobs": [
+              -1.7140202522277832,
+              -0.6515202522277832,
+              -2.276520252227783,
+              -1.7140202522277832
+            ],
+            "prediction": 1,
+            "ties": [
+              1
+            ],
+            "full49152_sha256": "d8681ca31696931d851de7d165d6dedff65e128c0f79a24c05ce62b6cf73b8b4"
+          }
+        },
+        "cut": {
+          "g1": 0,
+          "mask2": 0,
+          "extra_SDPA_calls": 48,
+          "closed_rows_per_pass": [
+            53,
+            53
+          ],
+          "source_exact_checks": 194,
+          "C00_D_norm_exact": [
+            1,
+            2
+          ],
+          "g1closed_K2_input_exact": true
+        },
+        "seconds": 0.1001891391351819,
+        "peak_allocated_bytes": 4060068864
+      }
+    },
+    {
+      "unit": "TB000_L1_M0_D0",
+      "condition": "C00",
+      "record": {
+        "scores": {
+          "1": {
+            "candidate_logits": [
+              15.9375,
+              17.5,
+              15.6875,
+              15.625
+            ],
+            "candidate_logprobs": [
+              -1.9950523376464844,
+              -0.432552307844162,
+              -2.2450523376464844,
+              -2.3075523376464844
+            ],
+            "prediction": 1,
+            "ties": [
+              1
+            ],
+            "full49152_sha256": "ad85d8118125a2a49823f916bc2633b94f564eecfafa44a6497c392cdca69886"
+          },
+          "2": {
+            "candidate_logits": [
+              16.625,
+              18.875,
+              16.875,
+              17.375
+            ],
+            "candidate_logprobs": [
+              -2.636183261871338,
+              -0.38618332147598267,
+              -2.386183261871338,
+              -1.886183261871338
+            ],
+            "prediction": 1,
+            "ties": [
+              1
+            ],
+            "full49152_sha256": "436167208473febb9465119cb974297b731b46ce39b4d271e65b04d49c7def07"
+          }
+        },
+        "cut": {
+          "g1": 0,
+          "mask2": 0,
+          "extra_SDPA_calls": 48,
+          "closed_rows_per_pass": [
+            53,
+            53
+          ],
+          "source_exact_checks": 194,
+          "C00_D_norm_exact": [
+            1,
+            2
+          ],
+          "g1closed_K2_input_exact": true
+        },
+        "seconds": 0.1007527532055974,
+        "peak_allocated_bytes": 4060068864
+      }
+    },
+    {
+      "unit": "TB000_L1_M0_D0",
+      "condition": "C01",
+      "record": {
+        "scores": {
+          "1": {
+            "candidate_logits": [
+              15.9375,
+              17.5,
+              15.6875,
+              15.625
+            ],
+            "candidate_logprobs": [
+              -1.9950523376464844,
+              -0.432552307844162,
+              -2.2450523376464844,
+              -2.3075523376464844
+            ],
+            "prediction": 1,
+            "ties": [
+              1
+            ],
+            "full49152_sha256": "ad85d8118125a2a49823f916bc2633b94f564eecfafa44a6497c392cdca69886"
+          },
+          "2": {
+            "candidate_logits": [
+              16.875,
+              18.25,
+              16.75,
+              17.125
+            ],
+            "candidate_logprobs": [
+              -1.9709515571594238,
+              -0.5959516167640686,
+              -2.095951557159424,
+              -1.7209515571594238
+            ],
+            "prediction": 1,
+            "ties": [
+              1
+            ],
+            "full49152_sha256": "7ae1be1337fb75e701f07cc003636287a9e2383967a6b92161d8cf1adb38e5bd"
+          }
+        },
+        "cut": {
+          "g1": 0,
+          "mask2": 7,
+          "extra_SDPA_calls": 24,
+          "closed_rows_per_pass": [
+            53,
+            0
+          ],
+          "source_exact_checks": 194,
+          "C00_D_norm_exact": [
+            1
+          ],
+          "g1closed_K2_input_exact": true
+        },
+        "seconds": 0.08435648400336504,
+        "peak_allocated_bytes": 4060068864
+      }
+    },
+    {
+      "unit": "TB000_L1_M0_D0",
+      "condition": "C10",
+      "record": {
+        "scores": {
+          "1": {
+            "candidate_logits": [
+              14.75,
+              16.0,
+              14.5625,
+              14.375
+            ],
+            "candidate_logprobs": [
+              -1.8118529319763184,
+              -0.5618529319763184,
+              -1.9993529319763184,
+              -2.1868529319763184
+            ],
+            "prediction": 1,
+            "ties": [
+              1
+            ],
+            "full49152_sha256": "3371ebb3f54b7311a6cc5e6757a58245393027276a4c5472061c02678299ac7e"
+          },
+          "2": {
+            "candidate_logits": [
+              15.75,
+              17.5,
+              15.8125,
+              16.125
+            ],
+            "candidate_logprobs": [
+              -2.2366135120391846,
+              -0.48661354184150696,
+              -2.1741135120391846,
+              -1.8616135120391846
+            ],
+            "prediction": 1,
+            "ties": [
+              1
+            ],
+            "full49152_sha256": "d91565bd92b08be0f0a21cfb4659f9cb1b268036806c60b259ac42b34b452f41"
+          }
+        },
+        "cut": {
+          "g1": 1,
+          "mask2": 0,
+          "extra_SDPA_calls": 24,
+          "closed_rows_per_pass": [
+            0,
+            53
+          ],
+          "source_exact_checks": 194,
+          "C00_D_norm_exact": [],
+          "g1closed_K2_input_exact": null
+        },
+        "seconds": 0.08365958090871572,
+        "peak_allocated_bytes": 4060068864
+      }
+    },
+    {
+      "unit": "TB000_L1_M0_D1",
+      "condition": "allopen",
+      "record": {
+        "scores": {
+          "1": {
+            "candidate_logits": [
+              15.9375,
+              17.5,
+              15.6875,
+              15.625
+            ],
+            "candidate_logprobs": [
+              -1.9950523376464844,
+              -0.432552307844162,
+              -2.2450523376464844,
+              -2.3075523376464844
+            ],
+            "prediction": 1,
+            "ties": [
+              1
+            ],
+            "full49152_sha256": "ad85d8118125a2a49823f916bc2633b94f564eecfafa44a6497c392cdca69886"
+          },
+          "2": {
+            "candidate_logits": [
+              16.625,
+              18.875,
+              16.875,
+              17.375
+            ],
+            "candidate_logprobs": [
+              -2.636183261871338,
+              -0.38618332147598267,
+              -2.386183261871338,
+              -1.886183261871338
+            ],
+            "prediction": 1,
+            "ties": [
+              1
+            ],
+            "full49152_sha256": "436167208473febb9465119cb974297b731b46ce39b4d271e65b04d49c7def07"
+          }
+        },
+        "cut": {
+          "g1": 1,
+          "mask2": 7,
+          "extra_SDPA_calls": 0,
+          "closed_rows_per_pass": [
+            0,
+            0
+          ],
+          "source_exact_checks": 194,
+          "C00_D_norm_exact": [],
+          "g1closed_K2_input_exact": null
+        },
+        "seconds": 0.06923392601311207,
+        "peak_allocated_bytes": 4060068864
+      }
+    },
+    {
+      "unit": "TB000_L1_M0_D1",
+      "condition": "sameworld",
+      "record": {
+        "scores": {
+          "1": {
+            "candidate_logits": [
+              15.9375,
+              17.5,
+              15.6875,
+              15.625
+            ],
+            "candidate_logprobs": [
+              -1.9950523376464844,
+              -0.432552307844162,
+              -2.2450523376464844,
+              -2.3075523376464844
+            ],
+            "prediction": 1,
+            "ties": [
+              1
+            ],
+            "full49152_sha256": "ad85d8118125a2a49823f916bc2633b94f564eecfafa44a6497c392cdca69886"
+          },
+          "2": {
+            "candidate_logits": [
+              16.625,
+              18.875,
+              16.875,
+              17.375
+            ],
+            "candidate_logprobs": [
+              -2.636183261871338,
+              -0.38618332147598267,
+              -2.386183261871338,
+              -1.886183261871338
+            ],
+            "prediction": 1,
+            "ties": [
+              1
+            ],
+            "full49152_sha256": "436167208473febb9465119cb974297b731b46ce39b4d271e65b04d49c7def07"
+          }
+        },
+        "cut": {
+          "g1": 0,
+          "mask2": 0,
+          "extra_SDPA_calls": 48,
+          "closed_rows_per_pass": [
+            53,
+            53
+          ],
+          "source_exact_checks": 194,
+          "C00_D_norm_exact": [
+            1,
+            2
+          ],
+          "g1closed_K2_input_exact": true
+        },
+        "seconds": 0.09862515795975924,
+        "peak_allocated_bytes": 4060068864
+      }
+    },
+    {
+      "unit": "TB000_L1_M0_D1",
+      "condition": "C00",
+      "record": {
+        "scores": {
+          "1": {
+            "candidate_logits": [
+              14.75,
+              16.0,
+              14.5625,
+              14.375
+            ],
+            "candidate_logprobs": [
+              -1.8118529319763184,
+              -0.5618529319763184,
+              -1.9993529319763184,
+              -2.1868529319763184
+            ],
+            "prediction": 1,
+            "ties": [
+              1
+            ],
+            "full49152_sha256": "3371ebb3f54b7311a6cc5e6757a58245393027276a4c5472061c02678299ac7e"
+          },
+          "2": {
+            "candidate_logits": [
+              15.4375,
+              16.5,
+              14.875,
+              15.4375
+            ],
+            "candidate_logprobs": [
+              -1.7140202522277832,
+              -0.6515202522277832,
+              -2.276520252227783,
+              -1.7140202522277832
+            ],
+            "prediction": 1,
+            "ties": [
+              1
+            ],
+            "full49152_sha256": "d8681ca31696931d851de7d165d6dedff65e128c0f79a24c05ce62b6cf73b8b4"
+          }
+        },
+        "cut": {
+          "g1": 0,
+          "mask2": 0,
+          "extra_SDPA_calls": 48,
+          "closed_rows_per_pass": [
+            53,
+            53
+          ],
+          "source_exact_checks": 194,
+          "C00_D_norm_exact": [
+            1,
+            2
+          ],
+          "g1closed_K2_input_exact": true
+        },
+        "seconds": 0.09810478240251541,
+        "peak_allocated_bytes": 4060068864
+      }
+    },
+    {
+      "unit": "TB000_L1_M0_D1",
+      "condition": "C01",
+      "record": {
+        "scores": {
+          "1": {
+            "candidate_logits": [
+              14.75,
+              16.0,
+              14.5625,
+              14.375
+            ],
+            "candidate_logprobs": [
+              -1.8118529319763184,
+              -0.5618529319763184,
+              -1.9993529319763184,
+              -2.1868529319763184
+            ],
+            "prediction": 1,
+            "ties": [
+              1
+            ],
+            "full49152_sha256": "3371ebb3f54b7311a6cc5e6757a58245393027276a4c5472061c02678299ac7e"
+          },
+          "2": {
+            "candidate_logits": [
+              15.75,
+              17.5,
+              15.8125,
+              16.125
+            ],
+            "candidate_logprobs": [
+              -2.2366135120391846,
+              -0.48661354184150696,
+              -2.1741135120391846,
+              -1.8616135120391846
+            ],
+            "prediction": 1,
+            "ties": [
+              1
+            ],
+            "full49152_sha256": "d91565bd92b08be0f0a21cfb4659f9cb1b268036806c60b259ac42b34b452f41"
+          }
+        },
+        "cut": {
+          "g1": 0,
+          "mask2": 7,
+          "extra_SDPA_calls": 24,
+          "closed_rows_per_pass": [
+            53,
+            0
+          ],
+          "source_exact_checks": 194,
+          "C00_D_norm_exact": [
+            1
+          ],
+          "g1closed_K2_input_exact": true
+        },
+        "seconds": 0.083112639375031,
+        "peak_allocated_bytes": 4060068864
+      }
+    },
+    {
+      "unit": "TB000_L1_M0_D1",
+      "condition": "C10",
+      "record": {
+        "scores": {
+          "1": {
+            "candidate_logits": [
+              15.9375,
+              17.5,
+              15.6875,
+              15.625
+            ],
+            "candidate_logprobs": [
+              -1.9950523376464844,
+              -0.432552307844162,
+              -2.2450523376464844,
+              -2.3075523376464844
+            ],
+            "prediction": 1,
+            "ties": [
+              1
+            ],
+            "full49152_sha256": "ad85d8118125a2a49823f916bc2633b94f564eecfafa44a6497c392cdca69886"
+          },
+          "2": {
+            "candidate_logits": [
+              16.875,
+              18.25,
+              16.75,
+              17.125
+            ],
+            "candidate_logprobs": [
+              -1.9709515571594238,
+              -0.5959516167640686,
+              -2.095951557159424,
+              -1.7209515571594238
+            ],
+            "prediction": 1,
+            "ties": [
+              1
+            ],
+            "full49152_sha256": "7ae1be1337fb75e701f07cc003636287a9e2383967a6b92161d8cf1adb38e5bd"
+          }
+        },
+        "cut": {
+          "g1": 1,
+          "mask2": 0,
+          "extra_SDPA_calls": 24,
+          "closed_rows_per_pass": [
+            0,
+            53
+          ],
+          "source_exact_checks": 194,
+          "C00_D_norm_exact": [],
+          "g1closed_K2_input_exact": null
+        },
+        "seconds": 0.0815378949046135,
+        "peak_allocated_bytes": 4060068864
+      }
+    },
+    {
+      "unit": "TB000_L1_M1_D0",
+      "condition": "allopen",
+      "record": {
+        "scores": {
+          "1": {
+            "candidate_logits": [
+              14.75,
+              14.8125,
+              14.0,
+              13.625
+            ],
+            "candidate_logprobs": [
+              -1.0795212984085083,
+              -1.0170212984085083,
+              -1.8295212984085083,
+              -2.2045211791992188
+            ],
+            "prediction": 1,
+            "ties": [
+              1
+            ],
+            "full49152_sha256": "c07747dd25bfbb73c97590d87ac0bd9ed0fae0e176421d840ac07319cc8972f6"
+          },
+          "2": {
+            "candidate_logits": [
+              17.75,
+              16.625,
+              18.75,
+              16.5
+            ],
+            "candidate_logprobs": [
+              -1.4708210229873657,
+              -2.595820903778076,
+              -0.4708210229873657,
+              -2.720820903778076
+            ],
+            "prediction": 2,
+            "ties": [
+              2
+            ],
+            "full49152_sha256": "28784515d34c09958c5e3f395b96afccde8c7186cde73fbbbb2c8e0c0c8a718d"
+          }
+        },
+        "cut": {
+          "g1": 1,
+          "mask2": 7,
+          "extra_SDPA_calls": 0,
+          "closed_rows_per_pass": [
+            0,
+            0
+          ],
+          "source_exact_checks": 194,
+          "C00_D_norm_exact": [],
+          "g1closed_K2_input_exact": null
+        },
+        "seconds": 0.07182305213063955,
+        "peak_allocated_bytes": 4060068864
+      }
+    },
+    {
+      "unit": "TB000_L1_M1_D0",
+      "condition": "sameworld",
+      "record": {
+        "scores": {
+          "1": {
+            "candidate_logits": [
+              14.75,
+              14.8125,
+              14.0,
+              13.625
+            ],
+            "candidate_logprobs": [
+              -1.0795212984085083,
+              -1.0170212984085083,
+              -1.8295212984085083,
+              -2.2045211791992188
+            ],
+            "prediction": 1,
+            "ties": [
+              1
+            ],
+            "full49152_sha256": "c07747dd25bfbb73c97590d87ac0bd9ed0fae0e176421d840ac07319cc8972f6"
+          },
+          "2": {
+            "candidate_logits": [
+              17.75,
+              16.625,
+              18.75,
+              16.5
+            ],
+            "candidate_logprobs": [
+              -1.4708210229873657,
+              -2.595820903778076,
+              -0.4708210229873657,
+              -2.720820903778076
+            ],
+            "prediction": 2,
+            "ties": [
+              2
+            ],
+            "full49152_sha256": "28784515d34c09958c5e3f395b96afccde8c7186cde73fbbbb2c8e0c0c8a718d"
+          }
+        },
+        "cut": {
+          "g1": 0,
+          "mask2": 0,
+          "extra_SDPA_calls": 48,
+          "closed_rows_per_pass": [
+            53,
+            53
+          ],
+          "source_exact_checks": 194,
+          "C00_D_norm_exact": [
+            1,
+            2
+          ],
+          "g1closed_K2_input_exact": true
+        },
+        "seconds": 0.10096215177327394,
+        "peak_allocated_bytes": 4060068864
+      }
+    },
+    {
+      "unit": "TB000_L1_M1_D0",
+      "condition": "C00",
+      "record": {
+        "scores": {
+          "1": {
+            "candidate_logits": [
+              15.1875,
+              15.3125,
+              14.375,
+              14.1875
+            ],
+            "candidate_logprobs": [
+              -1.1019874811172485,
+              -0.9769874811172485,
+              -1.9144874811172485,
+              -2.101987361907959
+            ],
+            "prediction": 1,
+            "ties": [
+              1
+            ],
+            "full49152_sha256": "83ed297c73cbaed0cf17787d90a889e6b8c57377618861f2f11c4ed5f55f2fc8"
+          },
+          "2": {
+            "candidate_logits": [
+              18.375,
+              17.0,
+              16.5,
+              16.75
+            ],
+            "candidate_logprobs": [
+              -0.47790542244911194,
+              -1.8529053926467896,
+              -2.352905511856079,
+              -2.102905511856079
+            ],
+            "prediction": 0,
+            "ties": [
+              0
+            ],
+            "full49152_sha256": "4488b9a70aca8a157cd1b4abeb59520c316e3a76f4e0001e6d4fb949e65f1b03"
+          }
+        },
+        "cut": {
+          "g1": 0,
+          "mask2": 0,
+          "extra_SDPA_calls": 48,
+          "closed_rows_per_pass": [
+            53,
+            53
+          ],
+          "source_exact_checks": 194,
+          "C00_D_norm_exact": [
+            1,
+            2
+          ],
+          "g1closed_K2_input_exact": true
+        },
+        "seconds": 0.10037938319146633,
+        "peak_allocated_bytes": 4060068864
+      }
+    },
+    {
+      "unit": "TB000_L1_M1_D0",
+      "condition": "C01",
+      "record": {
+        "scores": {
+          "1": {
+            "candidate_logits": [
+              15.1875,
+              15.3125,
+              14.375,
+              14.1875
+            ],
+            "candidate_logprobs": [
+              -1.1019874811172485,
+              -0.9769874811172485,
+              -1.9144874811172485,
+              -2.101987361907959
+            ],
+            "prediction": 1,
+            "ties": [
+              1
+            ],
+            "full49152_sha256": "83ed297c73cbaed0cf17787d90a889e6b8c57377618861f2f11c4ed5f55f2fc8"
+          },
+          "2": {
+            "candidate_logits": [
+              17.75,
+              16.875,
+              16.875,
+              16.75
+            ],
+            "candidate_logprobs": [
+              -0.7981665134429932,
+              -1.6731665134429932,
+              -1.6731665134429932,
+              -1.7981665134429932
+            ],
+            "prediction": 0,
+            "ties": [
+              0
+            ],
+            "full49152_sha256": "4a5a7886c1134e496051b0953ff8a7a70544ad24376d1d06d1448bd3047c16be"
+          }
+        },
+        "cut": {
+          "g1": 0,
+          "mask2": 7,
+          "extra_SDPA_calls": 24,
+          "closed_rows_per_pass": [
+            53,
+            0
+          ],
+          "source_exact_checks": 194,
+          "C00_D_norm_exact": [
+            1
+          ],
+          "g1closed_K2_input_exact": true
+        },
+        "seconds": 0.08534658886492252,
+        "peak_allocated_bytes": 4060068864
+      }
+    },
+    {
+      "unit": "TB000_L1_M1_D0",
+      "condition": "C10",
+      "record": {
+        "scores": {
+          "1": {
+            "candidate_logits": [
+              14.75,
+              14.8125,
+              14.0,
+              13.625
+            ],
+            "candidate_logprobs": [
+              -1.0795212984085083,
+              -1.0170212984085083,
+              -1.8295212984085083,
+              -2.2045211791992188
+            ],
+            "prediction": 1,
+            "ties": [
+              1
+            ],
+            "full49152_sha256": "c07747dd25bfbb73c97590d87ac0bd9ed0fae0e176421d840ac07319cc8972f6"
+          },
+          "2": {
+            "candidate_logits": [
+              16.375,
+              15.375,
+              16.375,
+              15.125
+            ],
+            "candidate_logprobs": [
+              -0.9887218475341797,
+              -1.9887218475341797,
+              -0.9887218475341797,
+              -2.2387218475341797
+            ],
+            "prediction": 0,
+            "ties": [
+              0,
+              2
+            ],
+            "full49152_sha256": "cc4623a4256518c31e0e1ac208c3e2b0a5260d6d3fed0634d457d4526e528968"
+          }
+        },
+        "cut": {
+          "g1": 1,
+          "mask2": 0,
+          "extra_SDPA_calls": 24,
+          "closed_rows_per_pass": [
+            0,
+            53
+          ],
+          "source_exact_checks": 194,
+          "C00_D_norm_exact": [],
+          "g1closed_K2_input_exact": null
+        },
+        "seconds": 0.08202485460788012,
+        "peak_allocated_bytes": 4060068864
+      }
+    },
+    {
+      "unit": "TB000_L1_M1_D1",
+      "condition": "allopen",
+      "record": {
+        "scores": {
+          "1": {
+            "candidate_logits": [
+              15.1875,
+              15.3125,
+              14.375,
+              14.1875
+            ],
+            "candidate_logprobs": [
+              -1.1019874811172485,
+              -0.9769874811172485,
+              -1.9144874811172485,
+              -2.101987361907959
+            ],
+            "prediction": 1,
+            "ties": [
+              1
+            ],
+            "full49152_sha256": "83ed297c73cbaed0cf17787d90a889e6b8c57377618861f2f11c4ed5f55f2fc8"
+          },
+          "2": {
+            "candidate_logits": [
+              18.375,
+              17.0,
+              16.5,
+              16.75
+            ],
+            "candidate_logprobs": [
+              -0.47790542244911194,
+              -1.8529053926467896,
+              -2.352905511856079,
+              -2.102905511856079
+            ],
+            "prediction": 0,
+            "ties": [
+              0
+            ],
+            "full49152_sha256": "4488b9a70aca8a157cd1b4abeb59520c316e3a76f4e0001e6d4fb949e65f1b03"
+          }
+        },
+        "cut": {
+          "g1": 1,
+          "mask2": 7,
+          "extra_SDPA_calls": 0,
+          "closed_rows_per_pass": [
+            0,
+            0
+          ],
+          "source_exact_checks": 194,
+          "C00_D_norm_exact": [],
+          "g1closed_K2_input_exact": null
+        },
+        "seconds": 0.06942463666200638,
+        "peak_allocated_bytes": 4060068864
+      }
+    },
+    {
+      "unit": "TB000_L1_M1_D1",
+      "condition": "sameworld",
+      "record": {
+        "scores": {
+          "1": {
+            "candidate_logits": [
+              15.1875,
+              15.3125,
+              14.375,
+              14.1875
+            ],
+            "candidate_logprobs": [
+              -1.1019874811172485,
+              -0.9769874811172485,
+              -1.9144874811172485,
+              -2.101987361907959
+            ],
+            "prediction": 1,
+            "ties": [
+              1
+            ],
+            "full49152_sha256": "83ed297c73cbaed0cf17787d90a889e6b8c57377618861f2f11c4ed5f55f2fc8"
+          },
+          "2": {
+            "candidate_logits": [
+              18.375,
+              17.0,
+              16.5,
+              16.75
+            ],
+            "candidate_logprobs": [
+              -0.47790542244911194,
+              -1.8529053926467896,
+              -2.352905511856079,
+              -2.102905511856079
+            ],
+            "prediction": 0,
+            "ties": [
+              0
+            ],
+            "full49152_sha256": "4488b9a70aca8a157cd1b4abeb59520c316e3a76f4e0001e6d4fb949e65f1b03"
+          }
+        },
+        "cut": {
+          "g1": 0,
+          "mask2": 0,
+          "extra_SDPA_calls": 48,
+          "closed_rows_per_pass": [
+            53,
+            53
+          ],
+          "source_exact_checks": 194,
+          "C00_D_norm_exact": [
+            1,
+            2
+          ],
+          "g1closed_K2_input_exact": true
+        },
+        "seconds": 0.10161436256021261,
+        "peak_allocated_bytes": 4060068864
+      }
+    },
+    {
+      "unit": "TB000_L1_M1_D1",
+      "condition": "C00",
+      "record": {
+        "scores": {
+          "1": {
+            "candidate_logits": [
+              14.75,
+              14.8125,
+              14.0,
+              13.625
+            ],
+            "candidate_logprobs": [
+              -1.0795212984085083,
+              -1.0170212984085083,
+              -1.8295212984085083,
+              -2.2045211791992188
+            ],
+            "prediction": 1,
+            "ties": [
+              1
+            ],
+            "full49152_sha256": "c07747dd25bfbb73c97590d87ac0bd9ed0fae0e176421d840ac07319cc8972f6"
+          },
+          "2": {
+            "candidate_logits": [
+              17.75,
+              16.625,
+              18.75,
+              16.5
+            ],
+            "candidate_logprobs": [
+              -1.4708210229873657,
+              -2.595820903778076,
+              -0.4708210229873657,
+              -2.720820903778076
+            ],
+            "prediction": 2,
+            "ties": [
+              2
+            ],
+            "full49152_sha256": "28784515d34c09958c5e3f395b96afccde8c7186cde73fbbbb2c8e0c0c8a718d"
+          }
+        },
+        "cut": {
+          "g1": 0,
+          "mask2": 0,
+          "extra_SDPA_calls": 48,
+          "closed_rows_per_pass": [
+            53,
+            53
+          ],
+          "source_exact_checks": 194,
+          "C00_D_norm_exact": [
+            1,
+            2
+          ],
+          "g1closed_K2_input_exact": true
+        },
+        "seconds": 0.10209802258759737,
+        "peak_allocated_bytes": 4060068864
+      }
+    },
+    {
+      "unit": "TB000_L1_M1_D1",
+      "condition": "C01",
+      "record": {
+        "scores": {
+          "1": {
+            "candidate_logits": [
+              14.75,
+              14.8125,
+              14.0,
+              13.625
+            ],
+            "candidate_logprobs": [
+              -1.0795212984085083,
+              -1.0170212984085083,
+              -1.8295212984085083,
+              -2.2045211791992188
+            ],
+            "prediction": 1,
+            "ties": [
+              1
+            ],
+            "full49152_sha256": "c07747dd25bfbb73c97590d87ac0bd9ed0fae0e176421d840ac07319cc8972f6"
+          },
+          "2": {
+            "candidate_logits": [
+              16.375,
+              15.375,
+              16.375,
+              15.125
+            ],
+            "candidate_logprobs": [
+              -0.9887218475341797,
+              -1.9887218475341797,
+              -0.9887218475341797,
+              -2.2387218475341797
+            ],
+            "prediction": 0,
+            "ties": [
+              0,
+              2
+            ],
+            "full49152_sha256": "cc4623a4256518c31e0e1ac208c3e2b0a5260d6d3fed0634d457d4526e528968"
+          }
+        },
+        "cut": {
+          "g1": 0,
+          "mask2": 7,
+          "extra_SDPA_calls": 24,
+          "closed_rows_per_pass": [
+            53,
+            0
+          ],
+          "source_exact_checks": 194,
+          "C00_D_norm_exact": [
+            1
+          ],
+          "g1closed_K2_input_exact": true
+        },
+        "seconds": 0.08395808469504118,
+        "peak_allocated_bytes": 4060068864
+      }
+    },
+    {
+      "unit": "TB000_L1_M1_D1",
+      "condition": "C10",
+      "record": {
+        "scores": {
+          "1": {
+            "candidate_logits": [
+              15.1875,
+              15.3125,
+              14.375,
+              14.1875
+            ],
+            "candidate_logprobs": [
+              -1.1019874811172485,
+              -0.9769874811172485,
+              -1.9144874811172485,
+              -2.101987361907959
+            ],
+            "prediction": 1,
+            "ties": [
+              1
+            ],
+            "full49152_sha256": "83ed297c73cbaed0cf17787d90a889e6b8c57377618861f2f11c4ed5f55f2fc8"
+          },
+          "2": {
+            "candidate_logits": [
+              17.75,
+              16.875,
+              16.875,
+              16.75
+            ],
+            "candidate_logprobs": [
+              -0.7981665134429932,
+              -1.6731665134429932,
+              -1.6731665134429932,
+              -1.7981665134429932
+            ],
+            "prediction": 0,
+            "ties": [
+              0
+            ],
+            "full49152_sha256": "4a5a7886c1134e496051b0953ff8a7a70544ad24376d1d06d1448bd3047c16be"
+          }
+        },
+        "cut": {
+          "g1": 1,
+          "mask2": 0,
+          "extra_SDPA_calls": 24,
+          "closed_rows_per_pass": [
+            0,
+            53
+          ],
+          "source_exact_checks": 194,
+          "C00_D_norm_exact": [],
+          "g1closed_K2_input_exact": null
+        },
+        "seconds": 0.0816329987719655,
+        "peak_allocated_bytes": 4060068864
+      }
+    }
+  ],
+  "formal_group_estimated_seconds": 3.1830583103001118,
+  "full96group_estimated_seconds": 305.57359778881073,
+  "technical_wall_seconds": 6.178286004811525,
+  "utc": "2026-11-16T20:02:49.624166+00:00"
+}
