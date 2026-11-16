@@ -1,0 +1,26 @@
+SCIENCE_CPU_AUDIT_PASS confirmation 20480 65536
+REPORTS_BUILT 2560 2560 ['development', 'confirmation'] goal_still_active
+PUBLICATION_PACKAGED 168 165178758
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/root/miniconda3/lib/python3.10/runpy.py", line 289, in run_path
+    return _run_module_code(code, init_globals, run_name,
+  File "/root/miniconda3/lib/python3.10/runpy.py", line 96, in _run_module_code
+    _run_code(code, mod_globals, init_globals,
+  File "/root/miniconda3/lib/python3.10/runpy.py", line 86, in _run_code
+    exec(code, run_globals)
+  File "/tmp/semantic_read_cpu_gqvzq9nt/code/analyze.py", line 2, in <module>
+    FREEZE_SHA=verify()
+  File "/tmp/semantic_read_cpu_gqvzq9nt/code/freeze_guard.py", line 10, in verify
+    for name,digest in z['source_and_inputs_sha256'].items():assert sha(R/name)==digest,('frozen dependency changed',name)
+  File "/tmp/semantic_read_cpu_gqvzq9nt/code/freeze_guard.py", line 5, in sha
+    with p.open('rb') as f:
+  File "/root/miniconda3/lib/python3.10/pathlib.py", line 1119, in open
+    return self._accessor.open(self, mode, buffering, encoding, errors,
+FileNotFoundError: [Errno 2] No such file or directory: '/tmp/semantic_read_cpu_gqvzq9nt/ASTRA_V2_PROTOCOL.md'
+Traceback (most recent call last):
+  File "/root/ouro-semantic-read-sol-20261117/publication/code/reproduce_release.py", line 24, in <module>
+    subprocess.run([sys.executable,'-c',bootstrap,str(R/'code'),str(R),phase,stage],check=True,env=env);assert json.loads((R/target).read_text())==json.loads((P/target).read_text()),target;checked.append(target)
+  File "/root/miniconda3/lib/python3.10/subprocess.py", line 526, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['/root/autodl-tmp/ouro-e4-e5/venv/bin/python', '-c', "import sys,pathlib,runpy;sys.path.insert(0,sys.argv[1]);import freeze_guard;freeze_guard.R=pathlib.Path(sys.argv[2]);sys.argv=[str(freeze_guard.R/'code/analyze.py'),sys.argv[3],sys.argv[4]];runpy.run_path(sys.argv[0],run_name='__main__')", '/tmp/semantic_read_cpu_gqvzq9nt/code', '/tmp/semantic_read_cpu_gqvzq9nt', 'development', 'native']' returned non-zero exit status 1.

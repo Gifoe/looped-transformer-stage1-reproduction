@@ -1,0 +1,239 @@
+{
+  "SCIENCE_FREEZE": {
+    "utc": "2026-11-16T21:53:33.914357+00:00",
+    "version": "semanticpairedmessageV2R1",
+    "repository_start_commit": "fa9bb5bf1794cb11e7d0b504747c13c304fc5d00",
+    "research_goal_remains_active_after_this_study": true,
+    "design": "Astra revised after complete repo duplicate audit; Sol implements and executes",
+    "dev_basegroups": 16,
+    "confirmation_basegroups": 64,
+    "worlds_per_basegroup": 32,
+    "science_conditions": [
+      "native",
+      "semanticK1",
+      "semanticK2",
+      "randomK1",
+      "randomK2"
+    ],
+    "max_science_body_forwards": 12800,
+    "technical_body_forwards_already": {
+      "V1": 192,
+      "V2": 224,
+      "V2R1_diagnostic_extension": 224
+    },
+    "technical_note": "V1nativeKVrecomputeFAILretained; V2idealpairedmessagepassed; V2R1addsallsiteprojectiondiagnosticandrerunsoldtechnicalgate withoutsemanticdefinitionchange. No newtask neuraloutcomesyet.",
+    "seeds": {
+      "development": 2026111731,
+      "confirmation": 2026111732,
+      "bootstrap": 2026111733,
+      "random_direction": "sha256paired-gaussian-v2|id|arm|layer; seededGaussian no label search"
+    },
+    "sites": {
+      "loops_separate": [
+        1,
+        2
+      ],
+      "layers_inclusive": [
+        9,
+        16
+      ],
+      "source": "2wholeequal-tokenmappingrecords",
+      "receiver": "allH strictlyafterG",
+      "heads": "all"
+    },
+    "estimand": "BF16(actualoriginalSDPA_H+FP64idealpairedmessagedelta) onactualcurrenttrajectory, notnativeBF16KVrecompute",
+    "primary": "sevencontrastsinASTRA_V2_PROTOCOL.md;10000basegroupbootstrapBonferroni7two-sided99.2857%; first6adjustedlower>.1,all8F/E/querypointdirectionspositive;7rounddifference separatepositive>0",
+    "capability": "bothdevandconfirm fullnativeK2accuracy>=.70 andpaired95%K2-K1accuracydifferenceCI lower>0; nofilter",
+    "advancement": "nativecapability beforeanysemanticarm perphase; devgraph_directed_pairmessage_gate required beforeconfirmationnativeorintervention (conservativefrozenstagegate); noalternativesites/tasks/templatesfallbackwithinversion",
+    "control_QC": "globalandeachroundsumabsdoseerror/sumtarget<=.01;>=.99targetnormmassfromrowswithinmax(1e-9,.01target); allunmatchedretained",
+    "source_and_inputs_sha256": {
+      "code/ab1_loader_draft.py": "7106d04d13b2b4b8d612391971854beaf9ff0d19957e5afdd02fe319f1488d56",
+      "code/analyze.py": "e95b0cdbfcf26b645e414711c8b86c17a34e573f113c1d408228bc2f8bbb4a34",
+      "code/audit_inputs.py": "225bd15263982645f57cdae3fa5f03201307621507179747c138c1c15de5b8f3",
+      "code/audit_v2_cpu.py": "6a5305f8833fd06efbed2f56f16738ac20ef315d8412bc53abec7ea1a9e8f7dd",
+      "code/audit_v2r1_cpu.py": "cc53798bafc80b14acc23982b7eff37436d4b0977c6ed8eb3b4c26e7d0e4edf9",
+      "code/freeze_guard.py": "fc3cf15b469de5000080df9e1a73a1231e2ad8ac0b06e80e6898ea3468f5075b",
+      "code/freeze_science.py": "564b31ab7f8d46a55bad59b94eadcdbc3d9885668df26fc0619ad526dab9f744",
+      "code/matched_gaussian.py": "dd39e96541061a4671280326281cf05d62e8c22388150ae1de1dae2b7b7a91d0",
+      "code/prepare.py": "5395afe67ddf79fa8428a62d67b5b4597033220579f472e29f42c5b53caf744e",
+      "code/record_operator.py": "4f79e218b1ab479e5630f62921077521ae10f5243f2d351f6f05df5d834b8d1c",
+      "code/record_operator_v2.py": "0adb321b161ce6d9bf29440501093980881c02f722a58b01e94a13e65af96890",
+      "code/record_operator_v2r1.py": "62c78a31b7e63f4be6e9458e6e6ef18522b594afa0e5ed1d018da064a0b49ade",
+      "code/run_native.py": "01d47a4bee3100336516bdd92e0737cbc1e01b0e6fb6bfb2eb55c135a9978457",
+      "code/run_science.py": "59baca0abbdd68e61658622dd53ee23a19dca714f77ae4bceeac93b81eba1ffc",
+      "code/technical.py": "2a8c36edbbcbbfad2ac36d0f920c6d5946e0677720d1fcbff821f81cdfbbeb14",
+      "code/technical_v2.py": "78c42603b33a0932f73b4dfef0e7dc6e48e9af63206e0d3279ae31890c433b6d",
+      "code/technical_v2r1.py": "4927686f2674c6cac01611077aa9eaee00dd326d7e78b8a939e50ece27945bf0",
+      "ASTRA_V2_PROTOCOL.md": "9161007a05e5b116827b57c407125f66d0a4da2e98170f099fb95a9623a5f893",
+      "INPUTS.jsonl": "aeda4d66d2684a1947bf58bdbada43e5338ea4ea4e70bf0e9e82ca77d29c144c",
+      "GROUPS.json": "02da71df7acffca3347388652bbdbf2c993a96a4f3515048b3e563f482cefe09",
+      "GENERATOR_AUDIT.json": "5ddec5a7412fe6b200a5a9afc929a514be630040eb20261c28d8ed1f7924b456",
+      "INPUT_CPU_AUDIT.json": "e3e751436abe2b3aa0d8c30deca51a07dd7c59588e1a09fa9ba49c91afe39707",
+      "V2R1_TECHNICAL_FREEZE.json": "2cfaadcdee9fb90fe9cca4f4d75eb9ef14ac79b8a9375adde3b8d6c74b50822c",
+      "V2R1_TECHNICAL_GPU.json": "00d186b187c6086fcaa85406febc7c5d0f577c7b86c51a6fae2d08e1dd48a161",
+      "V2R1_CPU_ORACLE_AUDIT.json": "91edd2cd690f197832fe58c6d224b1f70200ac2877302642fec87e9e42ffea36",
+      "V2R1_TECHNICAL_GATE.json": "39322412ce96969db035e8a512db677dcdde0af227953003423b0b0a6e07557b"
+    },
+    "model_source_sha256": {
+      "model.safetensors": "58872a72616c736595b8b7662079c5b12c5a162ec16eae94f21c348dfa9885af",
+      "config.json": "ce9cc13da41591b8b4deca053d7dfee06424c0228628ee862ea86d725bc163f3",
+      "modeling_ouro.py": "c5c68fbb368ce2909c257ae2afc50719be8c91539333d3295e19312c4316f413",
+      "configuration_ouro.py": "950443e32929047aa08d02abad2e1888bc1914b3db988d3d675f70787f65dafb"
+    },
+    "no_training_optimizer_headsearch_ARCTest": true
+  },
+  "GENERATOR_AUDIT": {
+    "status": "PASS",
+    "groups": 80,
+    "development_groups": 16,
+    "confirmation_groups": 64,
+    "worlds": 2560,
+    "worlds_per_group": 32,
+    "factors": [
+      "firsthop",
+      "endpoint",
+      "selector",
+      "label",
+      "record_order"
+    ],
+    "four_distinct_options": true,
+    "map_records_equal_and_complete": true,
+    "causal_prefix_ids_identical_across_late_selector_labels": true,
+    "exact_role_label_balance_within_each_split": true,
+    "symbolic_answer_verification": true,
+    "no_native_correct_filter": true,
+    "seeds": {
+      "development": 2026111731,
+      "confirmation": 2026111732
+    },
+    "prior_prefix_source": "/root/ouro-computation-sol-20261116/code/prepare_B.py",
+    "prior_prefix_source_sha256": "b51070cf8b3609496dcf60c8d8ee0a44d5bc07ee94f718c7af2242d48f2b378f",
+    "sha256": {
+      "INPUTS.jsonl": "aeda4d66d2684a1947bf58bdbada43e5338ea4ea4e70bf0e9e82ca77d29c144c",
+      "GROUPS.json": "02da71df7acffca3347388652bbdbf2c993a96a4f3515048b3e563f482cefe09"
+    },
+    "T_range": [
+      210,
+      217
+    ],
+    "utc": "2026-11-16T21:41:22.714659+00:00"
+  },
+  "INPUT_CPU_AUDIT": {
+    "status": "PASS",
+    "worlds": 2560,
+    "unique_causal_prefixes": 640,
+    "independent_regex_graph_parse": true,
+    "all_text_token_ids_reencoded": true,
+    "whole_record_boundaries_verified_from_decoded_text": true,
+    "firsthop_endpoint_selector_semantic_reversal_verified": true,
+    "label_derangement_and_role_balance_verified": true,
+    "executor": "Sol CPU audit, not independent agent",
+    "utc": "2026-11-16T21:48:40.572175+00:00"
+  },
+  "PARALLEL_EXECUTION_AMENDMENT": {
+    "utc": "2026-11-16T22:00:48.651050+00:00",
+    "freeze_sha256": "24ebad17d356f413b90deca0a64269d624c506de2da6bb9d4de1aef608251066",
+    "change": "Engineering-onlythreeprocesssingleGPUcomplete-basegroupconfirmationpartitions; currentdevworkercontinues; oldshellcoordinatorreplaced",
+    "workers": 3,
+    "gpu": "sameone4090",
+    "partition_groups": [
+      [
+        "SR018",
+        "SR021",
+        "SR024",
+        "SR027",
+        "SR030",
+        "SR033",
+        "SR036",
+        "SR039",
+        "SR042",
+        "SR045",
+        "SR048",
+        "SR051",
+        "SR054",
+        "SR057",
+        "SR060",
+        "SR063",
+        "SR066",
+        "SR069",
+        "SR072",
+        "SR075",
+        "SR078"
+      ],
+      [
+        "SR016",
+        "SR019",
+        "SR022",
+        "SR025",
+        "SR028",
+        "SR031",
+        "SR034",
+        "SR037",
+        "SR040",
+        "SR043",
+        "SR046",
+        "SR049",
+        "SR052",
+        "SR055",
+        "SR058",
+        "SR061",
+        "SR064",
+        "SR067",
+        "SR070",
+        "SR073",
+        "SR076",
+        "SR079"
+      ],
+      [
+        "SR017",
+        "SR020",
+        "SR023",
+        "SR026",
+        "SR029",
+        "SR032",
+        "SR035",
+        "SR038",
+        "SR041",
+        "SR044",
+        "SR047",
+        "SR050",
+        "SR053",
+        "SR056",
+        "SR059",
+        "SR062",
+        "SR065",
+        "SR068",
+        "SR071",
+        "SR074",
+        "SR077"
+      ]
+    ],
+    "source_sha256": {
+      "code/run_shard.py": "39582968fea353ed4245fff05b5fa5d1522d3e31e6f655866a7b89d6d652ea23",
+      "code/parallel_coordinator.py": "a1b3f8ff23097501944eb68e90dcc996e94410a675bd681424d7edc7e9324e3d"
+    },
+    "immutable_source_adaptation": "ASTonlyaddsqsfilterandper-shardcompletionfilename, exactexecutedASTsaved; originalfrozenPY/source/data/conditions/model/metrics/gatesunchanged",
+    "original_coordinator_stopped_pid": 17126,
+    "still_running_development_worker_pid": 17368,
+    "scientific_sampling_changes": false
+  },
+  "SOURCE_RUNTIME": {
+    "checkpoint_files_sha256": {
+      "model.safetensors": "58872a72616c736595b8b7662079c5b12c5a162ec16eae94f21c348dfa9885af",
+      "config.json": "ce9cc13da41591b8b4deca053d7dfee06424c0228628ee862ea86d725bc163f3",
+      "modeling_ouro.py": "c5c68fbb368ce2909c257ae2afc50719be8c91539333d3295e19312c4316f413",
+      "configuration_ouro.py": "950443e32929047aa08d02abad2e1888bc1914b3db988d3d675f70787f65dafb"
+    },
+    "actual_model_source_sha256": "c5c68fbb368ce2909c257ae2afc50719be8c91539333d3295e19312c4316f413",
+    "actual_body_source_sha256": "c5c68fbb368ce2909c257ae2afc50719be8c91539333d3295e19312c4316f413",
+    "actual_config_source_sha256": "950443e32929047aa08d02abad2e1888bc1914b3db988d3d675f70787f65dafb",
+    "torch": "2.5.1+cu124",
+    "cuda": "12.4",
+    "transformers": "4.55.0",
+    "gpu": "NVIDIA GeForce RTX 4090",
+    "dtype": "BF16",
+    "attn_implementation": "sdpa",
+    "cache": false,
+    "total_ut_steps": 2
+  }
+}

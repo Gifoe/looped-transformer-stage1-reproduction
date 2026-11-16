@@ -1,0 +1,9 @@
+{
+  "utc": "2026-11-16T21:43:00.452605+00:00",
+  "audit_source_sha256": "6a5305f8833fd06efbed2f56f16738ac20ef315d8412bc53abec7ea1a9e8f7dd",
+  "oracle_tolerance": "128*eps64*(visible_source_tokens+head_dim+1)*max(1,maxabsV), plus128*eps64*(visible+1) softmaxsum. Stricter dimension-scaled bound supplements originalV2sourcefreeze1e-9scale, never relaxes it.",
+  "native_reconstruction_relative_l2_perheadrow_max": 0.01,
+  "actual_after_definition": "exactBF16(nativeActual+storedGPUFP64pairedDelta); independentNumPyfullKVoracle validatesDelta separately withinfrozenmathbound",
+  "scoring": "all448fullheads hashes/scalars/logprobs/ties audited; LPtol2e-5",
+  "new_task_neural_outcomes_observed": false
+}

@@ -1,0 +1,17 @@
+"""Independent text-graph parser for all new inputs; no model invocation."""
+import pathlib,json,re,hashlib,collections,datetime
+from transformers import AutoTokenizer
+R=pathlib.Path('/root/ouro-semantic-read-sol-20261117');qs=[json.loads(l) for l in (R/'INPUTS.jsonl').read_text().splitlines()];tok=AutoTokenizer.from_pretrained('/root/autodl-tmp/ouro-e4-e5/model',trust_remote_code=True,local_files_only=True);canonical={};roles=collections.defaultdict(collections.Counter)
+for q in qs:
+ text=q['text'].rsplit('\n\n',1)[1];first={a:b for a,b in re.findall(r'Object (\w) is (?:stored )?in Box (\w)\.',text)};first.update({a:b for a,b in re.findall(r'The box containing object (\w) is Box (\w)\.',text)});maps={a:int(b) for a,b in re.findall(r'Box (\w) is (?:located inside|contained in|in) Cabinet (\d+)\.',text)};question=re.findall(r'(?:contains object|containing object|encloses object) (\w)[?.]',text);options=[int(v) for lab,v in re.findall(r'([ABCD])\. Cabinet (\d+)',text)];assert len(first)==len(maps)==len(question)+1==2 and len(options)==len(set(options))==4;obj=question[0];box=first[obj];correct=maps[box];other=next(v for k,v in maps.items() if k!=box);assert correct==q['selected_cabinet'] and other==q['opposite_cabinet'];assert options[q['correct_index']]==correct and options[q['opposite_index']]==other and set(q['decoy_indices'])=={k for k,v in enumerate(options) if v not in [correct,other]};assert first==q['object_mapping'] and maps==q['cabinet_mapping'] and options==q['options'];assert tok.encode(q['text'],add_special_tokens=False)==q['ids'];assert hashlib.sha256(json.dumps(q['ids']).encode()).hexdigest()==q['input_ids_sha256']
+ spans=q['record_spans'];assert spans[0][1]==spans[1][0] and spans[1][1]==q['H_start'];pieces=[tok.decode(q['ids'][a:b]) for a,b in spans];assert all(len(re.findall(r'Box \w is (?:located inside|contained in|in) Cabinet \d+\.\n',p))==1 for p in pieces);assert all(p.endswith('\n') for p in pieces);assert len(q['ids'][spans[0][0]:spans[0][1]])==len(q['ids'][spans[1][0]:spans[1][1]])
+ key=(q['pair_id'],q['firsthop_factor'],q['endpoint_factor'],q['record_order']);head=q['ids'][:q['H_start']]
+ if key in canonical:assert head==canonical[key]
+ else:canonical[key]=head
+ for role in ['correct_index','opposite_index']:roles[(q['split'],role)][q[role]]+=1
+assert len(qs)==2560 and len(canonical)==640;assert all(len(set(c.values()))==1 for c in roles.values());idx={(q['pair_id'],q['firsthop_factor'],q['endpoint_factor'],q['selector'],q['label_factor'],q['record_order']):q for q in qs}
+for key,q in idx.items():
+ for field in [1,2,3]:
+  alt=list(key);alt[field]^=1;v=idx[tuple(alt)];assert q['selected_cabinet']==v['opposite_cabinet'] and q['opposite_cabinet']==v['selected_cabinet']
+ alt=list(key);alt[4]^=1;v=idx[tuple(alt)];assert q['ids'][:q['H_start']]==v['ids'][:v['H_start']];assert all(q['options'][k]!=v['options'][k] for k in range(4))
+out={'status':'PASS','worlds':len(qs),'unique_causal_prefixes':len(canonical),'independent_regex_graph_parse':True,'all_text_token_ids_reencoded':True,'whole_record_boundaries_verified_from_decoded_text':True,'firsthop_endpoint_selector_semantic_reversal_verified':True,'label_derangement_and_role_balance_verified':True,'executor':'Sol CPU audit, not independent agent','utc':datetime.datetime.now(datetime.timezone.utc).isoformat()};(R/'INPUT_CPU_AUDIT.json').write_text(json.dumps(out,indent=2));print(json.dumps(out))
