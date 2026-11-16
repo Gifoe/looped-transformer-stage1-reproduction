@@ -1,0 +1,11 @@
+# Cross-world dataset
+
+Seed20261116;160 deterministic base pairs:32 development,128 heldout. Each has both swap directions and normal/reversed label order, yielding128 development and512 heldout directed units. All128 heldout pairs use new object entities T/U/V/W, distinct from development P/Q/R/S. The heldout population includes64 new combinations of the development template and64 pairs in an independently reserved second template. No examples were selected by native correctness. Choices contain all four distinct original, crossed, donor and other cabinets. Cabinet-to-role and option-to-label assignments are permuted reproducibly. Frozen exact IDs, semantic graph, predictions, text, token IDs, offsets and hashes are in inputs/B_INPUTS.jsonl.gz, inputs/B_UNITS.jsonl.gz and freeze/B_FREEZE.json.
+
+Original object->boxA, A->cabinet a, B->cabinet b. Donor object->boxB, A->cabinet c, B->cabinet d. Transfer donor box-source variable to original predicts b, reverse predicts c. All a,b,c,d are distinct. Predictions were frozen before synthetic model execution. The source is the Box+entity token span in the first clause; all later mappings are causally inaccessible. Actual SDPA calls are causal with no sliding exclusion, and changing only future mappings leaves this source B bitwise identical in every unit. Same-variable donor nulls preserve all49152 logits in every unit.
+
+Four text worlds are evaluated natively: original, donor, first-hop-edited original, first-hop-edited donor. Two fixed demonstrations precede the query. Native Joint Option scoring uses a full49152 vocabulary head and the offered label tokens A/B/C/D=[330,389,340,422], first offered label breaks ties. Both loops run natively with cache false.
+
+Heldout native K1 correct=217/512, K2=446/512; paired K2-minus-K1 accuracy 0.4473 [0.4082, 0.4863]. The synthetic family therefore does show additional-loop behavioral gain. This does not by itself explain ARC gains.
+
+The bootstrap unit is the160/128 base world-pair, clustering directions and label reversals. All four units per base pair remain together. Resampling128 heldout pairs5000 times does not treat512 correlated units as512 independent examples. The tested templates/entities are a finite family, not arbitrary relational reasoning.

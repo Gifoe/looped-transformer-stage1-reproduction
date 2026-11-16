@@ -1,0 +1,22 @@
+{
+  "utc": "2026-11-16T09:01:18.563533+00:00",
+  "decision_basis": "B strong majority gate FAIL but all4cross-margin specificity comparisons PASS. Initial freeze permits Round3 if causal specificity survives. This bounded path extension examines partial influence, not claims full abstract algorithm.",
+  "population": "all512 previously exposed B heldout units, no success-based subset selection; CW0004dev units technical. Reuse disclosed: C is prospective intervention extension on exposed synthetic data, not fresh confirmation.",
+  "prediction": "Source-boundary effect on crossed-answer margin is attenuated by restoring natural attention increments at L10-16 and/or native R at earlyL2 orL18. A negative result falsifies this proposed routing dependency.",
+  "sites": {
+    "boundary": "B source span fixed from B",
+    "early": "L2 input R",
+    "middle": "L10-16 normalized attention R",
+    "late": "L18 input R"
+  },
+  "conditions": [
+    "restore_attention",
+    "attention_norm_control",
+    "attention_dose_control",
+    "restore_early_R",
+    "restore_L18_R"
+  ],
+  "arithmetic": "FP64 subtract PminusN actual normalized attention increments; one BF16 writeback; no MLP/residual bypass. Norm preserves prepatch row norm; dose permutes exact delta features.",
+  "primary": "source-crossmargin minus intervention crossmargin over all512, 5000basepair-cluster bootstrap;3primary route margins Bonferroni98.333%; middle routing specificity vs2controls97.5%. Correct-source86 subset descriptive only.",
+  "source_sha256": "0b6e72e1a84d5c45e6f525e27728d3a79603f0bc6a28d6c17551475d3b0db7c5"
+}

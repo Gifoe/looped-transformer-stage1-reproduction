@@ -1,0 +1,785 @@
+{
+  "all": {
+    "n": 512,
+    "base_pairs": 128,
+    "conditions": {
+      "restore_attention": {
+        "n": 512,
+        "crossed": 63,
+        "cross_accuracy": {
+          "n_units": 512,
+          "n_resampling_units": 128,
+          "mean": 0.123046875,
+          "interval": [
+            0.09375,
+            0.154296875
+          ],
+          "confidence": 0.95,
+          "replicates": 5000,
+          "seed": 20261116
+        },
+        "margin": {
+          "n_units": 512,
+          "n_resampling_units": 128,
+          "mean": -1.201416015625,
+          "interval": [
+            -1.273681640625,
+            -1.1324371337890626
+          ],
+          "confidence": 0.95,
+          "replicates": 5000,
+          "seed": 20261116
+        },
+        "source_minus_treatment_margin": {
+          "n_units": 512,
+          "n_resampling_units": 128,
+          "mean": 0.3912353515625,
+          "interval": [
+            0.36030985514322916,
+            0.4200856526692709
+          ],
+          "confidence": 0.9833333333333333,
+          "replicates": 5000,
+          "seed": 20261116
+        },
+        "categories": {
+          "donor": 44,
+          "original": 371,
+          "other": 34,
+          "crossed": 63
+        }
+      },
+      "attention_norm_control": {
+        "n": 512,
+        "crossed": 60,
+        "cross_accuracy": {
+          "n_units": 512,
+          "n_resampling_units": 128,
+          "mean": 0.1171875,
+          "interval": [
+            0.087890625,
+            0.1484375
+          ],
+          "confidence": 0.95,
+          "replicates": 5000,
+          "seed": 20261116
+        },
+        "margin": {
+          "n_units": 512,
+          "n_resampling_units": 128,
+          "mean": -1.1995849609375,
+          "interval": [
+            -1.2727081298828125,
+            -1.1297607421875
+          ],
+          "confidence": 0.95,
+          "replicates": 5000,
+          "seed": 20261116
+        },
+        "source_minus_treatment_margin": {
+          "n_units": 512,
+          "n_resampling_units": 128,
+          "mean": 0.389404296875,
+          "interval": [
+            0.3629119873046875,
+            0.4146728515625
+          ],
+          "confidence": 0.95,
+          "replicates": 5000,
+          "seed": 20261116
+        },
+        "categories": {
+          "donor": 47,
+          "original": 372,
+          "other": 33,
+          "crossed": 60
+        }
+      },
+      "attention_dose_control": {
+        "n": 512,
+        "crossed": 89,
+        "cross_accuracy": {
+          "n_units": 512,
+          "n_resampling_units": 128,
+          "mean": 0.173828125,
+          "interval": [
+            0.142578125,
+            0.20703125
+          ],
+          "confidence": 0.95,
+          "replicates": 5000,
+          "seed": 20261116
+        },
+        "margin": {
+          "n_units": 512,
+          "n_resampling_units": 128,
+          "mean": -0.80908203125,
+          "interval": [
+            -0.871337890625,
+            -0.7496307373046875
+          ],
+          "confidence": 0.95,
+          "replicates": 5000,
+          "seed": 20261116
+        },
+        "source_minus_treatment_margin": {
+          "n_units": 512,
+          "n_resampling_units": 128,
+          "mean": -0.0010986328125,
+          "interval": [
+            -0.00927734375,
+            0.0068359375
+          ],
+          "confidence": 0.95,
+          "replicates": 5000,
+          "seed": 20261116
+        },
+        "categories": {
+          "donor": 61,
+          "original": 325,
+          "other": 37,
+          "crossed": 89
+        }
+      },
+      "restore_early_R": {
+        "n": 512,
+        "crossed": 88,
+        "cross_accuracy": {
+          "n_units": 512,
+          "n_resampling_units": 128,
+          "mean": 0.171875,
+          "interval": [
+            0.138671875,
+            0.205078125
+          ],
+          "confidence": 0.95,
+          "replicates": 5000,
+          "seed": 20261116
+        },
+        "margin": {
+          "n_units": 512,
+          "n_resampling_units": 128,
+          "mean": -0.806640625,
+          "interval": [
+            -0.8682952880859375,
+            -0.7479217529296875
+          ],
+          "confidence": 0.95,
+          "replicates": 5000,
+          "seed": 20261116
+        },
+        "source_minus_treatment_margin": {
+          "n_units": 512,
+          "n_resampling_units": 128,
+          "mean": -0.0035400390625,
+          "interval": [
+            -0.0103759765625,
+            0.0037841796875
+          ],
+          "confidence": 0.9833333333333333,
+          "replicates": 5000,
+          "seed": 20261116
+        },
+        "categories": {
+          "donor": 59,
+          "original": 327,
+          "other": 38,
+          "crossed": 88
+        }
+      },
+      "restore_L18_R": {
+        "n": 512,
+        "crossed": 68,
+        "cross_accuracy": {
+          "n_units": 512,
+          "n_resampling_units": 128,
+          "mean": 0.1328125,
+          "interval": [
+            0.103515625,
+            0.1640625
+          ],
+          "confidence": 0.95,
+          "replicates": 5000,
+          "seed": 20261116
+        },
+        "margin": {
+          "n_units": 512,
+          "n_resampling_units": 128,
+          "mean": -1.125,
+          "interval": [
+            -1.1945892333984376,
+            -1.0576141357421875
+          ],
+          "confidence": 0.95,
+          "replicates": 5000,
+          "seed": 20261116
+        },
+        "source_minus_treatment_margin": {
+          "n_units": 512,
+          "n_resampling_units": 128,
+          "mean": 0.3148193359375,
+          "interval": [
+            0.28743387858072916,
+            0.3412282307942709
+          ],
+          "confidence": 0.9833333333333333,
+          "replicates": 5000,
+          "seed": 20261116
+        },
+        "categories": {
+          "donor": 50,
+          "original": 359,
+          "other": 35,
+          "crossed": 68
+        }
+      }
+    },
+    "raw_restoration_specificity": {
+      "attention_norm_control_minus_restore_attention_margin": {
+        "n_units": 512,
+        "n_resampling_units": 128,
+        "mean": 0.0018310546875,
+        "interval": [
+          -0.004150390625,
+          0.0076904296875
+        ],
+        "confidence": 0.975,
+        "replicates": 5000,
+        "seed": 20261116
+      },
+      "attention_dose_control_minus_restore_attention_margin": {
+        "n_units": 512,
+        "n_resampling_units": 128,
+        "mean": 0.392333984375,
+        "interval": [
+          0.36224212646484377,
+          0.421630859375
+        ],
+        "confidence": 0.975,
+        "replicates": 5000,
+        "seed": 20261116
+      }
+    },
+    "subset_scope": "all512 is primary; selecting source correct/wrong is post-intervention descriptive, equal-basepair-weighted bootstrap when cluster sizes differ"
+  },
+  "source_cross_correct": {
+    "n": 86,
+    "base_pairs": 65,
+    "conditions": {
+      "restore_attention": {
+        "n": 86,
+        "crossed": 58,
+        "cross_accuracy": {
+          "n_units": 86,
+          "n_resampling_units": 65,
+          "mean": 0.6538461538461539,
+          "interval": [
+            0.5384615384615384,
+            0.7615384615384615
+          ],
+          "confidence": 0.95,
+          "replicates": 5000,
+          "seed": 20261116
+        },
+        "margin": {
+          "n_units": 86,
+          "n_resampling_units": 65,
+          "mean": 0.17596153846153847,
+          "interval": [
+            0.06634615384615385,
+            0.2899038461538462
+          ],
+          "confidence": 0.95,
+          "replicates": 5000,
+          "seed": 20261116
+        },
+        "source_minus_treatment_margin": {
+          "n_units": 86,
+          "n_resampling_units": 65,
+          "mean": 0.30208333333333337,
+          "interval": [
+            0.22959268162393165,
+            0.37549278846153916
+          ],
+          "confidence": 0.9833333333333333,
+          "replicates": 5000,
+          "seed": 20261116
+        },
+        "categories": {
+          "crossed": 58,
+          "original": 26,
+          "donor": 2
+        }
+      },
+      "attention_norm_control": {
+        "n": 86,
+        "crossed": 56,
+        "cross_accuracy": {
+          "n_units": 86,
+          "n_resampling_units": 65,
+          "mean": 0.6384615384615384,
+          "interval": [
+            0.5230769230769231,
+            0.7538461538461538
+          ],
+          "confidence": 0.95,
+          "replicates": 5000,
+          "seed": 20261116
+        },
+        "margin": {
+          "n_units": 86,
+          "n_resampling_units": 65,
+          "mean": 0.18782051282051282,
+          "interval": [
+            0.08124198717948719,
+            0.29903846153846153
+          ],
+          "confidence": 0.95,
+          "replicates": 5000,
+          "seed": 20261116
+        },
+        "source_minus_treatment_margin": {
+          "n_units": 86,
+          "n_resampling_units": 65,
+          "mean": 0.29022435897435894,
+          "interval": [
+            0.2294871794871795,
+            0.34840144230769227
+          ],
+          "confidence": 0.95,
+          "replicates": 5000,
+          "seed": 20261116
+        },
+        "categories": {
+          "crossed": 56,
+          "original": 28,
+          "donor": 2
+        }
+      },
+      "attention_dose_control": {
+        "n": 86,
+        "crossed": 82,
+        "cross_accuracy": {
+          "n_units": 86,
+          "n_resampling_units": 65,
+          "mean": 0.9538461538461539,
+          "interval": [
+            0.9,
+            0.9923076923076923
+          ],
+          "confidence": 0.95,
+          "replicates": 5000,
+          "seed": 20261116
+        },
+        "margin": {
+          "n_units": 86,
+          "n_resampling_units": 65,
+          "mean": 0.48028846153846155,
+          "interval": [
+            0.39326923076923076,
+            0.5721153846153846
+          ],
+          "confidence": 0.95,
+          "replicates": 5000,
+          "seed": 20261116
+        },
+        "source_minus_treatment_margin": {
+          "n_units": 86,
+          "n_resampling_units": 65,
+          "mean": -0.0022435897435897434,
+          "interval": [
+            -0.023237179487179484,
+            0.019234775641025582
+          ],
+          "confidence": 0.95,
+          "replicates": 5000,
+          "seed": 20261116
+        },
+        "categories": {
+          "crossed": 82,
+          "original": 3,
+          "other": 1
+        }
+      },
+      "restore_early_R": {
+        "n": 86,
+        "crossed": 84,
+        "cross_accuracy": {
+          "n_units": 86,
+          "n_resampling_units": 65,
+          "mean": 0.9692307692307692,
+          "interval": [
+            0.9230769230769231,
+            1.0
+          ],
+          "confidence": 0.95,
+          "replicates": 5000,
+          "seed": 20261116
+        },
+        "margin": {
+          "n_units": 86,
+          "n_resampling_units": 65,
+          "mean": 0.47099358974358974,
+          "interval": [
+            0.38653846153846155,
+            0.5613822115384614
+          ],
+          "confidence": 0.95,
+          "replicates": 5000,
+          "seed": 20261116
+        },
+        "source_minus_treatment_margin": {
+          "n_units": 86,
+          "n_resampling_units": 65,
+          "mean": 0.007051282051282052,
+          "interval": [
+            -0.011006944444444444,
+            0.025641025641025647
+          ],
+          "confidence": 0.9833333333333333,
+          "replicates": 5000,
+          "seed": 20261116
+        },
+        "categories": {
+          "crossed": 84,
+          "original": 2
+        }
+      },
+      "restore_L18_R": {
+        "n": 86,
+        "crossed": 62,
+        "cross_accuracy": {
+          "n_units": 86,
+          "n_resampling_units": 65,
+          "mean": 0.7076923076923077,
+          "interval": [
+            0.6,
+            0.8153846153846154
+          ],
+          "confidence": 0.95,
+          "replicates": 5000,
+          "seed": 20261116
+        },
+        "margin": {
+          "n_units": 86,
+          "n_resampling_units": 65,
+          "mean": 0.2407051282051282,
+          "interval": [
+            0.13397035256410253,
+            0.35336538461538464
+          ],
+          "confidence": 0.95,
+          "replicates": 5000,
+          "seed": 20261116
+        },
+        "source_minus_treatment_margin": {
+          "n_units": 86,
+          "n_resampling_units": 65,
+          "mean": 0.23733974358974358,
+          "interval": [
+            0.16559561965811964,
+            0.3081223290598292
+          ],
+          "confidence": 0.9833333333333333,
+          "replicates": 5000,
+          "seed": 20261116
+        },
+        "categories": {
+          "crossed": 62,
+          "original": 22,
+          "donor": 2
+        }
+      }
+    },
+    "raw_restoration_specificity": {
+      "attention_norm_control_minus_restore_attention_margin": {
+        "n_units": 86,
+        "n_resampling_units": 65,
+        "mean": 0.011858974358974358,
+        "interval": [
+          -0.004326923076923077,
+          0.027485977564102534
+        ],
+        "confidence": 0.975,
+        "replicates": 5000,
+        "seed": 20261116
+      },
+      "attention_dose_control_minus_restore_attention_margin": {
+        "n_units": 86,
+        "n_resampling_units": 65,
+        "mean": 0.30432692307692305,
+        "interval": [
+          0.23846153846153847,
+          0.3697115384615385
+        ],
+        "confidence": 0.975,
+        "replicates": 5000,
+        "seed": 20261116
+      }
+    },
+    "subset_scope": "all512 is primary; selecting source correct/wrong is post-intervention descriptive, equal-basepair-weighted bootstrap when cluster sizes differ"
+  },
+  "source_cross_wrong": {
+    "n": 426,
+    "base_pairs": 128,
+    "conditions": {
+      "restore_attention": {
+        "n": 426,
+        "crossed": 5,
+        "cross_accuracy": {
+          "n_units": 426,
+          "n_resampling_units": 128,
+          "mean": 0.010416666666666666,
+          "interval": [
+            0.001953125,
+            0.02083333333333333
+          ],
+          "confidence": 0.95,
+          "replicates": 5000,
+          "seed": 20261116
+        },
+        "margin": {
+          "n_units": 426,
+          "n_resampling_units": 128,
+          "mean": -1.53759765625,
+          "interval": [
+            -1.6315938313802083,
+            -1.4433980305989582
+          ],
+          "confidence": 0.95,
+          "replicates": 5000,
+          "seed": 20261116
+        },
+        "source_minus_treatment_margin": {
+          "n_units": 426,
+          "n_resampling_units": 128,
+          "mean": 0.4187825520833333,
+          "interval": [
+            0.38377516004774304,
+            0.45277269151475696
+          ],
+          "confidence": 0.9833333333333333,
+          "replicates": 5000,
+          "seed": 20261116
+        },
+        "categories": {
+          "donor": 42,
+          "original": 345,
+          "other": 34,
+          "crossed": 5
+        }
+      },
+      "attention_norm_control": {
+        "n": 426,
+        "crossed": 4,
+        "cross_accuracy": {
+          "n_units": 426,
+          "n_resampling_units": 128,
+          "mean": 0.008463541666666666,
+          "interval": [
+            0.001953125,
+            0.017578125
+          ],
+          "confidence": 0.95,
+          "replicates": 5000,
+          "seed": 20261116
+        },
+        "margin": {
+          "n_units": 426,
+          "n_resampling_units": 128,
+          "mean": -1.5381673177083333,
+          "interval": [
+            -1.6319997151692707,
+            -1.4430714925130208
+          ],
+          "confidence": 0.95,
+          "replicates": 5000,
+          "seed": 20261116
+        },
+        "source_minus_treatment_margin": {
+          "n_units": 426,
+          "n_resampling_units": 128,
+          "mean": 0.4193522135416667,
+          "interval": [
+            0.3896067301432292,
+            0.4484059651692708
+          ],
+          "confidence": 0.95,
+          "replicates": 5000,
+          "seed": 20261116
+        },
+        "categories": {
+          "donor": 45,
+          "original": 344,
+          "other": 33,
+          "crossed": 4
+        }
+      },
+      "attention_dose_control": {
+        "n": 426,
+        "crossed": 7,
+        "cross_accuracy": {
+          "n_units": 426,
+          "n_resampling_units": 128,
+          "mean": 0.014322916666666666,
+          "interval": [
+            0.004557291666666666,
+            0.026041666666666664
+          ],
+          "confidence": 0.95,
+          "replicates": 5000,
+          "seed": 20261116
+        },
+        "margin": {
+          "n_units": 426,
+          "n_resampling_units": 128,
+          "mean": -1.1167805989583335,
+          "interval": [
+            -1.1927093505859374,
+            -1.0395843505859377
+          ],
+          "confidence": 0.95,
+          "replicates": 5000,
+          "seed": 20261116
+        },
+        "source_minus_treatment_margin": {
+          "n_units": 426,
+          "n_resampling_units": 128,
+          "mean": -0.0020345052083333326,
+          "interval": [
+            -0.012044270833333332,
+            0.0078125
+          ],
+          "confidence": 0.95,
+          "replicates": 5000,
+          "seed": 20261116
+        },
+        "categories": {
+          "donor": 61,
+          "original": 322,
+          "other": 36,
+          "crossed": 7
+        }
+      },
+      "restore_early_R": {
+        "n": 426,
+        "crossed": 4,
+        "cross_accuracy": {
+          "n_units": 426,
+          "n_resampling_units": 128,
+          "mean": 0.009114583333333332,
+          "interval": [
+            0.001953125,
+            0.01888020833333333
+          ],
+          "confidence": 0.95,
+          "replicates": 5000,
+          "seed": 20261116
+        },
+        "margin": {
+          "n_units": 426,
+          "n_resampling_units": 128,
+          "mean": -1.1143798828125,
+          "interval": [
+            -1.1911214192708333,
+            -1.0363332112630208
+          ],
+          "confidence": 0.95,
+          "replicates": 5000,
+          "seed": 20261116
+        },
+        "source_minus_treatment_margin": {
+          "n_units": 426,
+          "n_resampling_units": 128,
+          "mean": -0.004435221354166666,
+          "interval": [
+            -0.012939453125,
+            0.004286363389756964
+          ],
+          "confidence": 0.9833333333333333,
+          "replicates": 5000,
+          "seed": 20261116
+        },
+        "categories": {
+          "donor": 59,
+          "original": 325,
+          "other": 38,
+          "crossed": 4
+        }
+      },
+      "restore_L18_R": {
+        "n": 426,
+        "crossed": 6,
+        "cross_accuracy": {
+          "n_units": 426,
+          "n_resampling_units": 128,
+          "mean": 0.013020833333333332,
+          "interval": [
+            0.00390625,
+            0.024088541666666664
+          ],
+          "confidence": 0.95,
+          "replicates": 5000,
+          "seed": 20261116
+        },
+        "margin": {
+          "n_units": 426,
+          "n_resampling_units": 128,
+          "mean": -1.4574381510416665,
+          "interval": [
+            -1.5483022054036455,
+            -1.3664072672526044
+          ],
+          "confidence": 0.95,
+          "replicates": 5000,
+          "seed": 20261116
+        },
+        "source_minus_treatment_margin": {
+          "n_units": 426,
+          "n_resampling_units": 128,
+          "mean": 0.338623046875,
+          "interval": [
+            0.3069929334852431,
+            0.3691972520616321
+          ],
+          "confidence": 0.9833333333333333,
+          "replicates": 5000,
+          "seed": 20261116
+        },
+        "categories": {
+          "donor": 48,
+          "original": 337,
+          "other": 35,
+          "crossed": 6
+        }
+      }
+    },
+    "raw_restoration_specificity": {
+      "attention_norm_control_minus_restore_attention_margin": {
+        "n_units": 426,
+        "n_resampling_units": 128,
+        "mean": -0.000569661458333333,
+        "interval": [
+          -0.006754557291666667,
+          0.005411783854166667
+        ],
+        "confidence": 0.975,
+        "replicates": 5000,
+        "seed": 20261116
+      },
+      "attention_dose_control_minus_restore_attention_margin": {
+        "n_units": 426,
+        "n_resampling_units": 128,
+        "mean": 0.42081705729166663,
+        "interval": [
+          0.3866968790690104,
+          0.45536295572916663
+        ],
+        "confidence": 0.975,
+        "replicates": 5000,
+        "seed": 20261116
+      }
+    },
+    "subset_scope": "all512 is primary; selecting source correct/wrong is post-intervention descriptive, equal-basepair-weighted bootstrap when cluster sizes differ"
+  }
+}
