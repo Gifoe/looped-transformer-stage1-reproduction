@@ -1,0 +1,61 @@
+{
+  "utc": "2026-11-16T22:43:34.054543+00:00",
+  "purpose": "SinglephysicalK2SDPAeventdevelopmentlocalization; fullmechanismgoalactive",
+  "parent_publication_commit": "b743862f258db3a51a98d554200ef7327f277ae7",
+  "parent_science_freeze_sha256": "24ebad17d356f413b90deca0a64269d624c506de2da6bb9d4de1aef608251066",
+  "files_sha256": {
+    "ASTRA_DECISION.md": "388ec0aebd43efc856d511dbf23f7efe0a5ffdf222af1c1e531894da8294231b",
+    "DEV_INPUTS.jsonl": "f8d2cd1bd970da54ce11f46177ccc9efa156bae37976b8246e55f46dac102281",
+    "code/coordinator.py": "57707985330edb29329cbfc1b6f965f8cd3c47b19ca0d42e1c945fa35df4bbe4",
+    "code/guard.py": "b517737317b25056fbb3daa8635d537da022ddf49fa9d1515571e0e343900654",
+    "code/oracle.py": "2d1249ba32dcec869c61f349242fc8731127d2546feb52b0715f058e6ae8bc33",
+    "code/run_discovery.py": "a982bf388a499c9b1f7485d75859dd324d1be79ba45a9ea145f7d1e9097753e5",
+    "code/select_layer.py": "9a2c74eed88c61b665e600fc7ccaece6a758e85b185a6a6945d3ad1f950ddd77",
+    "code/single_event.py": "0731afca9d1f6edf5d92dbe667383713d15b61935e2910d3eb614b2793605e60",
+    "code/technical.py": "f22a0a26697bd48664a2dc89f2ca0270b6dc26f266b24cbd4661ff72b10e2398"
+  },
+  "parent_native_json_sha256": {
+    "SR000.json": "e307c1b46e79219f962d10d20793e086d45c540c9be77198c2da94b038b7216f",
+    "SR001.json": "8768d952d03240b6f82b16c8d1571732c85ad3dce28e885f93783d24cad63f91",
+    "SR002.json": "3afa8596823f4433e0e9ca4e3d52ebcbc7d85e10f8da375790c0493b8ba2957a",
+    "SR003.json": "9dd1eaec0a3f2f7535d04cd2b5e76ba61bd3fedfd96986e516a28b9e4a333f49",
+    "SR004.json": "589149248c41f43bf39a5c0d6b8f6b8addfd6bca8a84f97278bc9fc3a05c8f6a",
+    "SR005.json": "dcbbec606db34818f26b7dda98057af55a8463f7eea7e7f843810d1b8b794ad8",
+    "SR006.json": "3b96f224205815f82b93f9f3a08149c3cc4c7dea4392d1967c10e804679caad0",
+    "SR007.json": "883db086d301550a40740453cbb099defe868f3009c96c0966b807ebffc717b9",
+    "SR008.json": "b729b86235a3950a436445cd515e91914ca39ea35910836d1e6c9adf54bb681c",
+    "SR009.json": "e0d7f5c8fcef71a4a3b7f53c35451b6b1276fa490a4ac2d024245642ca240a41",
+    "SR010.json": "98650e9011d6edc34e340fa299ea9e91f480045b12d548bebb4f8d8f5eae37ff",
+    "SR011.json": "5c0c80384ca366c65e2b3da7f54b48559097915330a110c92dea39865621ec03",
+    "SR012.json": "b3c5167b5ec7c911e1c81def82ddcaa330c432a4c2ff5d466edb1898bef1f851",
+    "SR013.json": "64de37869399070268abb0c55d5001dd50d056b947214eadb6bf143ecf36a590",
+    "SR014.json": "0cd17fcb6c43f34f535a525bf078af2d88bad4940a543c73a8a43b0449203966",
+    "SR015.json": "779a35d5b607cb1961130b8ebf763a1efab5369c54a9d89563bd05ad6f1cd565"
+  },
+  "population": "16olddevelopmentgroups/512worlds; all80oldgroups exposed, no freshconfirmation",
+  "layers": [
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16
+  ],
+  "receivers": "allH",
+  "source": "bothwholeequalmaprecords/allheads",
+  "loop": 2,
+  "body_forwards_scientific": 8192,
+  "technical_body_forwards": 12,
+  "conditions": [
+    "semantic",
+    "actualBF16dosematchedrandom"
+  ],
+  "native_reference_reused": true,
+  "unique_selection_rule": "max_l min_F,E mean(Ysem-Yrandom);tieearlier;onlyifm>.1 andall8F/E/querypointpositiveanddoseQCpass. No secondbest/site/head/coefficientfallback. Alllayerspublished.",
+  "dose_QC": "perlayer sumabsnormerr/sumtarget<=.01;>=.99targetmassin1%or1e-9matchedrows; allrowsretained",
+  "interpretation": "Exposeddevelopmentselectiononly; no independentpvalueclaim; neednewfreshconfirmationand samebindingcontrolbeforeiso",
+  "new_scientific_outcomes_before_freeze": 0,
+  "no_training_Test_or_headsearch": true
+}

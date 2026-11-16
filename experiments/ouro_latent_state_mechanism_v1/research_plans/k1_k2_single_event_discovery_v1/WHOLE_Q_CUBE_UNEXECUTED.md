@@ -1,0 +1,2 @@
+# Prospective design disposition
+The old `ISO_PROTOCOL_FROZEN_CANDIDATE.md` and `ASTRA_DUAL_ISO_CUBE_DESIGN.md` are retained unexecuted. Whole-Q replacement simultaneously affects S/H reads, so a Q/G-KV cube cannot isolate the G edge without additional assumptions. No GPU outcomes exist for those designs. This is a pre-execution design correction, not a relaxed failed outcome gate. The new region protocol is separate. All previous numerical failures remain unchanged.

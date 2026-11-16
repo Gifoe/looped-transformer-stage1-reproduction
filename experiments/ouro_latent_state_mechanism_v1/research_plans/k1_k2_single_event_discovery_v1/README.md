@@ -1,0 +1,15 @@
+# K1/K2 single-event development localization
+
+Development-only study: 16 existing groups, 512 complete five-factor worlds, physical K2 layers 9–16 evaluated separately. Each world/layer has semantic and actual-BF16-dose-matched random conditions. Native references are frozen parent anchors. 8,192 new scientific forwards; 12 technical forwards. No new independent confirmation and no native-correct filtering.
+
+The frozen max-of-minimum-four-strata rule selected **L11**, minimum graph-stratum `Y_semantic - Y_random = 0.136962890625`. All eight graph/selector point estimates were positive and the dose QC passed. L10 was eligible but was not selected or substituted. All eight profiles are included in `LAYER_SELECTION.json`. These exposed-development results are not independent significance evidence.
+
+The operator adds an ideal FP64 paired whole-record message delta to the actual original BF16 SDPA output, then casts once. It is not a bitwise native counterfactual K/V recomputation. Parent V1 permutation failure remains preserved in the previous release; no self/joint constructed identity is claimed as an empirical mechanism discovery.
+
+`DISCOVERY_FULL_VECTOR_CPU_AUDIT.json` checks all 16,384 new scientific full-vocabulary head endpoints plus 24 technical endpoints, exact vector hashes, full-vocabulary normalized candidate log probabilities, ties, K1 identity, actual loop/layer counts, prefix assertions, dose records and independent Fraction selection arithmetic. Sol implemented, ran the model and did CPU self-audits. Astra designed/reviewed the scientific route, but did not independently replicate GPU execution.
+
+Run `python code/replay_discovery.py` after downloading this directory. The stdlib replay reassembles any shards in memory, checks all input IDs, independently recomputes every candidate profile, dose gate and unique layer selection. Complete scalar records are public in compressed `DISCOVERY_ROWS.jsonl.gz`; full 49,152-dimensional BF16 output vectors and technical QKV witnesses are retained on the authorized server, indexed by `RAW_TENSOR_MANIFEST.json`.
+
+Source paths describe the actual server execution layout. Exact inherited operators/loaders are copied under `parent_sources/` with provenance. The parent release is commit `b743862f258db3a51a98d554200ef7327f277ae7`, directory `k1_k2_semantic_record_reading_v1` on branch `research/ouro-latent-mechanism-20261107`.
+
+The whole research goal remains **active**. We have not established a unique composition algorithm, pure box/object/endpoint address representation, local G composition, or general reasoning coverage. The whole-Q cross-world cube was designed but **not executed**: it also changes reads from non-G sources and can confound a G-specific interpretation. `STAGE_H_REGION_CAUSAL_PROTOCOL.md` is the prospective, unexecuted-at-this-release replacement: localize the L11 write to question/options/readout regions, then use a fresh confirmation. Future study outcomes are not part of this discovery release.
