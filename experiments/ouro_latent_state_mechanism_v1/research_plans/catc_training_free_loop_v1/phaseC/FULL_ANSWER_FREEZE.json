@@ -1,0 +1,23 @@
+{
+  "utc": "2026-11-16T13:13:53.916817+00:00",
+  "population": "fullValidation299, historicallyexposed, noFASparameterselection",
+  "protocol": "exactoriginalE6FASquestion-only fulltext25demonstrations and alloptioncontinuations; primarysumfullvocabFP32tokenlogprob/answercharsexcludingleadingspace; secondarysum/tokenmean",
+  "execution": "sequentialteacherforcedprefixes,noKVcache; at eachnexttokenpredictionR=lastprefixposition. CATC modifiesRinK2only; Qincludescurrentquestion+prioranswerprefix, excludingR. Sameprefixshapes fornative/CATC/LoopCD. Freshsame-devicebaselines, nohistoricalFASscorespooled. This executionformneednotbe bitwiseidenticaltohistoricalbatchedfullsequenceTF.",
+  "methods": [
+    "nativeK2",
+    "nativeK4",
+    "LoopCD_logits_0.25",
+    "LoopCD_logits_1",
+    "fixedV+.1",
+    "selectedcatc14",
+    "Validation-selectedstructuredfamily"
+  ],
+  "source_protocol_commit": "7857ee2e4a7413d52fb1fc8f2d641e10056a406c",
+  "expected_demonstration_prefix_sha256": "e181a54c18e9e1aaf4b336d7031c8647bb3dd0cf8f28d8cb0df735074485d7c9",
+  "budget_priority": "PreparedexactFASprefix1088tokens and6770targettokens across299. FullcohortwithNative/fixedV+/selected14estimated<=40minutes, fitsremainingbudget; identicalzeropoliciesreuseexactidentity. NoFASoutcomesinspected. Hardoriginaldeadlinepreservescompletequestionsifneeded.",
+  "coverage_budget_update_utc": "2026-11-16T13:23:25.609350+00:00",
+  "source_sha256": "f65dce31bbcee91ef503bfbaa54eef6a02d71bfcbee222e9976c2eeed30e99c5",
+  "technical_identity_cases_rule": "first3SHA256(CATC-FAS-tech|id) beforeFASoutcomes",
+  "aggregation_precision": "OriginalGPUFP32tokenlogprobs andGPUFP32sum, thenPythondivisionbycharacters; noFASoutcomesusedforselection.",
+  "secondary_policy_selection": "sameJointValidationmodelselectionfrozenbeforeSciQ/FASoutputs; noFASfitting"
+}

@@ -1,0 +1,2295 @@
+{
+  "status": "COMPLETE",
+  "scope": "3fixedtechnicalcases x7fixedglobalsettings; only decompositionQKV arithmeticFP64->FP32, original BF16backbone/SDPA and actual10%bound retained. No coefficient selection from this audit. Not fullcohort or hardware robustness.",
+  "zero_path_bitwise_exact": true,
+  "tests": [
+    {
+      "id": "Mercury_7214673",
+      "method": "T0",
+      "depths": [
+        {
+          "depth": 1,
+          "bitwise_equal": true,
+          "max_absolute_full_vocab_logit_change": 0.0,
+          "prediction_changed": false,
+          "ties_changed": false,
+          "FP32_decomposition_candidates": {
+            "candidate_logits": [
+              15.1875,
+              15.8125,
+              14.1875,
+              16.0
+            ],
+            "scores": [
+              -1.712952733039856,
+              -1.087952733039856,
+              -2.7129526138305664,
+              -0.900452733039856
+            ],
+            "prediction": 3,
+            "ties": [
+              3
+            ],
+            "logits_sha256": "35eba2f5b522bd68d38ab3bb5e2f9542139c7615b4382181016dd2d06c110a48"
+          },
+          "production_FP64_candidates": {
+            "candidate_logits": [
+              15.1875,
+              15.8125,
+              14.1875,
+              16.0
+            ],
+            "scores": [
+              -1.712952733039856,
+              -1.087952733039856,
+              -2.7129526138305664,
+              -0.900452733039856
+            ],
+            "prediction": 3,
+            "ties": [
+              3
+            ],
+            "logits_sha256": "35eba2f5b522bd68d38ab3bb5e2f9542139c7615b4382181016dd2d06c110a48"
+          }
+        },
+        {
+          "depth": 2,
+          "bitwise_equal": true,
+          "max_absolute_full_vocab_logit_change": 0.0,
+          "prediction_changed": false,
+          "ties_changed": false,
+          "FP32_decomposition_candidates": {
+            "candidate_logits": [
+              19.5,
+              18.375,
+              17.0,
+              20.0
+            ],
+            "scores": [
+              -1.1194812059402466,
+              -2.244481086730957,
+              -3.619481086730957,
+              -0.6194812059402466
+            ],
+            "prediction": 3,
+            "ties": [
+              3
+            ],
+            "logits_sha256": "ead716057a65e895782ed237f12464cfb6901c012e6834dddeee566a305916c6"
+          },
+          "production_FP64_candidates": {
+            "candidate_logits": [
+              19.5,
+              18.375,
+              17.0,
+              20.0
+            ],
+            "scores": [
+              -1.1194812059402466,
+              -2.244481086730957,
+              -3.619481086730957,
+              -0.6194812059402466
+            ],
+            "prediction": 3,
+            "ties": [
+              3
+            ],
+            "logits_sha256": "ead716057a65e895782ed237f12464cfb6901c012e6834dddeee566a305916c6"
+          }
+        },
+        {
+          "depth": 3,
+          "bitwise_equal": true,
+          "max_absolute_full_vocab_logit_change": 0.0,
+          "prediction_changed": false,
+          "ties_changed": false,
+          "FP32_decomposition_candidates": {
+            "candidate_logits": [
+              21.375,
+              20.0,
+              18.375,
+              21.125
+            ],
+            "scores": [
+              -0.7340623736381531,
+              -2.109062433242798,
+              -3.734062433242798,
+              -0.9840623736381531
+            ],
+            "prediction": 0,
+            "ties": [
+              0
+            ],
+            "logits_sha256": "689bde3dc36687d2712528a1cdaed4cdb6dcc4eb09ed16765f4ff609a73d544c"
+          },
+          "production_FP64_candidates": {
+            "candidate_logits": [
+              21.375,
+              20.0,
+              18.375,
+              21.125
+            ],
+            "scores": [
+              -0.7340623736381531,
+              -2.109062433242798,
+              -3.734062433242798,
+              -0.9840623736381531
+            ],
+            "prediction": 0,
+            "ties": [
+              0
+            ],
+            "logits_sha256": "689bde3dc36687d2712528a1cdaed4cdb6dcc4eb09ed16765f4ff609a73d544c"
+          }
+        },
+        {
+          "depth": 4,
+          "bitwise_equal": true,
+          "max_absolute_full_vocab_logit_change": 0.0,
+          "prediction_changed": false,
+          "ties_changed": false,
+          "FP32_decomposition_candidates": {
+            "candidate_logits": [
+              21.0,
+              19.75,
+              18.375,
+              20.125
+            ],
+            "scores": [
+              -0.575439453125,
+              -1.825439453125,
+              -3.200439453125,
+              -1.450439453125
+            ],
+            "prediction": 0,
+            "ties": [
+              0
+            ],
+            "logits_sha256": "35358ab5e6b447d3f554dd321331c43db2f7a1b1f177eaa1d9d45b2e9a2f131a"
+          },
+          "production_FP64_candidates": {
+            "candidate_logits": [
+              21.0,
+              19.75,
+              18.375,
+              20.125
+            ],
+            "scores": [
+              -0.575439453125,
+              -1.825439453125,
+              -3.200439453125,
+              -1.450439453125
+            ],
+            "prediction": 0,
+            "ties": [
+              0
+            ],
+            "logits_sha256": "35358ab5e6b447d3f554dd321331c43db2f7a1b1f177eaa1d9d45b2e9a2f131a"
+          }
+        }
+      ]
+    },
+    {
+      "id": "Mercury_7214673",
+      "method": "T1_structured",
+      "depths": [
+        {
+          "depth": 2,
+          "bitwise_equal": true,
+          "max_absolute_full_vocab_logit_change": 0.0,
+          "prediction_changed": false,
+          "ties_changed": false,
+          "FP32_decomposition_candidates": {
+            "candidate_logits": [
+              19.625,
+              18.5,
+              17.125,
+              20.125
+            ],
+            "scores": [
+              -1.119412899017334,
+              -2.244412899017334,
+              -3.619412899017334,
+              -0.6194128394126892
+            ],
+            "prediction": 3,
+            "ties": [
+              3
+            ],
+            "logits_sha256": "77ba3b0a9c065d49204ecc6640e42d30b812f3372e0542c3e035b595a6552324"
+          },
+          "production_FP64_candidates": {
+            "candidate_logits": [
+              19.625,
+              18.5,
+              17.125,
+              20.125
+            ],
+            "scores": [
+              -1.119412899017334,
+              -2.244412899017334,
+              -3.619412899017334,
+              -0.6194128394126892
+            ],
+            "prediction": 3,
+            "ties": [
+              3
+            ],
+            "logits_sha256": "77ba3b0a9c065d49204ecc6640e42d30b812f3372e0542c3e035b595a6552324"
+          }
+        },
+        {
+          "depth": 4,
+          "bitwise_equal": true,
+          "max_absolute_full_vocab_logit_change": 0.0,
+          "prediction_changed": false,
+          "ties_changed": false,
+          "FP32_decomposition_candidates": {
+            "candidate_logits": [
+              21.125,
+              19.875,
+              18.5,
+              20.25
+            ],
+            "scores": [
+              -0.5753219723701477,
+              -1.825321912765503,
+              -3.200321912765503,
+              -1.450321912765503
+            ],
+            "prediction": 0,
+            "ties": [
+              0
+            ],
+            "logits_sha256": "5671f74c8f6eea5f2af0ce9e50241607ce3660b9b122b874009cfed80b1a51e4"
+          },
+          "production_FP64_candidates": {
+            "candidate_logits": [
+              21.125,
+              19.875,
+              18.5,
+              20.25
+            ],
+            "scores": [
+              -0.5753219723701477,
+              -1.825321912765503,
+              -3.200321912765503,
+              -1.450321912765503
+            ],
+            "prediction": 0,
+            "ties": [
+              0
+            ],
+            "logits_sha256": "5671f74c8f6eea5f2af0ce9e50241607ce3660b9b122b874009cfed80b1a51e4"
+          }
+        }
+      ]
+    },
+    {
+      "id": "Mercury_7214673",
+      "method": "T2_structured",
+      "depths": [
+        {
+          "depth": 2,
+          "bitwise_equal": true,
+          "max_absolute_full_vocab_logit_change": 0.0,
+          "prediction_changed": false,
+          "ties_changed": false,
+          "FP32_decomposition_candidates": {
+            "candidate_logits": [
+              19.5,
+              18.375,
+              17.0,
+              20.0
+            ],
+            "scores": [
+              -1.1195950508117676,
+              -2.2445950508117676,
+              -3.6195950508117676,
+              -0.6195949912071228
+            ],
+            "prediction": 3,
+            "ties": [
+              3
+            ],
+            "logits_sha256": "83bccf937c9010fa51b5f4f28038c628a01647ea5dfbd520324aee063e6ebe66"
+          },
+          "production_FP64_candidates": {
+            "candidate_logits": [
+              19.5,
+              18.375,
+              17.0,
+              20.0
+            ],
+            "scores": [
+              -1.1195950508117676,
+              -2.2445950508117676,
+              -3.6195950508117676,
+              -0.6195949912071228
+            ],
+            "prediction": 3,
+            "ties": [
+              3
+            ],
+            "logits_sha256": "83bccf937c9010fa51b5f4f28038c628a01647ea5dfbd520324aee063e6ebe66"
+          }
+        },
+        {
+          "depth": 4,
+          "bitwise_equal": true,
+          "max_absolute_full_vocab_logit_change": 0.0,
+          "prediction_changed": false,
+          "ties_changed": false,
+          "FP32_decomposition_candidates": {
+            "candidate_logits": [
+              21.125,
+              19.875,
+              18.5,
+              20.25
+            ],
+            "scores": [
+              -0.575282871723175,
+              -1.8252828121185303,
+              -3.2002828121185303,
+              -1.4502828121185303
+            ],
+            "prediction": 0,
+            "ties": [
+              0
+            ],
+            "logits_sha256": "70716bd274f7b26f8827223e001bab8a324cd1ab561cd2095dc4f5df528ad976"
+          },
+          "production_FP64_candidates": {
+            "candidate_logits": [
+              21.125,
+              19.875,
+              18.5,
+              20.25
+            ],
+            "scores": [
+              -0.575282871723175,
+              -1.8252828121185303,
+              -3.2002828121185303,
+              -1.4502828121185303
+            ],
+            "prediction": 0,
+            "ties": [
+              0
+            ],
+            "logits_sha256": "70716bd274f7b26f8827223e001bab8a324cd1ab561cd2095dc4f5df528ad976"
+          }
+        }
+      ]
+    },
+    {
+      "id": "Mercury_7214673",
+      "method": "T3_structured",
+      "depths": [
+        {
+          "depth": 2,
+          "bitwise_equal": true,
+          "max_absolute_full_vocab_logit_change": 0.0,
+          "prediction_changed": false,
+          "ties_changed": false,
+          "FP32_decomposition_candidates": {
+            "candidate_logits": [
+              19.5,
+              18.375,
+              17.0,
+              20.0
+            ],
+            "scores": [
+              -1.1193652153015137,
+              -2.2443652153015137,
+              -3.6193652153015137,
+              -0.6193652153015137
+            ],
+            "prediction": 3,
+            "ties": [
+              3
+            ],
+            "logits_sha256": "6c66925cb8cb8ed0676bedd3b349436ce5701a5920531ce502f9496937602baf"
+          },
+          "production_FP64_candidates": {
+            "candidate_logits": [
+              19.5,
+              18.375,
+              17.0,
+              20.0
+            ],
+            "scores": [
+              -1.1193652153015137,
+              -2.2443652153015137,
+              -3.6193652153015137,
+              -0.6193652153015137
+            ],
+            "prediction": 3,
+            "ties": [
+              3
+            ],
+            "logits_sha256": "6c66925cb8cb8ed0676bedd3b349436ce5701a5920531ce502f9496937602baf"
+          }
+        },
+        {
+          "depth": 4,
+          "bitwise_equal": true,
+          "max_absolute_full_vocab_logit_change": 0.0,
+          "prediction_changed": false,
+          "ties_changed": false,
+          "FP32_decomposition_candidates": {
+            "candidate_logits": [
+              21.125,
+              19.875,
+              18.5,
+              20.25
+            ],
+            "scores": [
+              -0.5753054618835449,
+              -1.825305461883545,
+              -3.200305461883545,
+              -1.450305461883545
+            ],
+            "prediction": 0,
+            "ties": [
+              0
+            ],
+            "logits_sha256": "baa4dea2c02deffc7b699f0dd420dd104815c3ab777ae8716776b27bd686344d"
+          },
+          "production_FP64_candidates": {
+            "candidate_logits": [
+              21.125,
+              19.875,
+              18.5,
+              20.25
+            ],
+            "scores": [
+              -0.5753054618835449,
+              -1.825305461883545,
+              -3.200305461883545,
+              -1.450305461883545
+            ],
+            "prediction": 0,
+            "ties": [
+              0
+            ],
+            "logits_sha256": "baa4dea2c02deffc7b699f0dd420dd104815c3ab777ae8716776b27bd686344d"
+          }
+        }
+      ]
+    },
+    {
+      "id": "Mercury_7214673",
+      "method": "T4_structured",
+      "depths": [
+        {
+          "depth": 2,
+          "bitwise_equal": true,
+          "max_absolute_full_vocab_logit_change": 0.0,
+          "prediction_changed": false,
+          "ties_changed": false,
+          "FP32_decomposition_candidates": {
+            "candidate_logits": [
+              19.625,
+              18.5,
+              17.125,
+              20.125
+            ],
+            "scores": [
+              -1.1191918849945068,
+              -2.244191884994507,
+              -3.619191884994507,
+              -0.6191918253898621
+            ],
+            "prediction": 3,
+            "ties": [
+              3
+            ],
+            "logits_sha256": "e10bbcd50c401356ec1f73dbc613b60915dc39389cc417a5fa9484e1a1a8b3ba"
+          },
+          "production_FP64_candidates": {
+            "candidate_logits": [
+              19.625,
+              18.5,
+              17.125,
+              20.125
+            ],
+            "scores": [
+              -1.1191918849945068,
+              -2.244191884994507,
+              -3.619191884994507,
+              -0.6191918253898621
+            ],
+            "prediction": 3,
+            "ties": [
+              3
+            ],
+            "logits_sha256": "e10bbcd50c401356ec1f73dbc613b60915dc39389cc417a5fa9484e1a1a8b3ba"
+          }
+        },
+        {
+          "depth": 4,
+          "bitwise_equal": true,
+          "max_absolute_full_vocab_logit_change": 0.0,
+          "prediction_changed": false,
+          "ties_changed": false,
+          "FP32_decomposition_candidates": {
+            "candidate_logits": [
+              21.125,
+              19.75,
+              18.375,
+              20.25
+            ],
+            "scores": [
+              -0.5512597560882568,
+              -1.9262597560882568,
+              -3.301259756088257,
+              -1.4262597560882568
+            ],
+            "prediction": 0,
+            "ties": [
+              0
+            ],
+            "logits_sha256": "9b5269c4b311df09e9552a3151ab5590bc9c394624d6cd038cf065462d729dcf"
+          },
+          "production_FP64_candidates": {
+            "candidate_logits": [
+              21.125,
+              19.75,
+              18.375,
+              20.25
+            ],
+            "scores": [
+              -0.5512597560882568,
+              -1.9262597560882568,
+              -3.301259756088257,
+              -1.4262597560882568
+            ],
+            "prediction": 0,
+            "ties": [
+              0
+            ],
+            "logits_sha256": "9b5269c4b311df09e9552a3151ab5590bc9c394624d6cd038cf065462d729dcf"
+          }
+        }
+      ]
+    },
+    {
+      "id": "Mercury_7214673",
+      "method": "T5_structured",
+      "depths": [
+        {
+          "depth": 2,
+          "bitwise_equal": true,
+          "max_absolute_full_vocab_logit_change": 0.0,
+          "prediction_changed": false,
+          "ties_changed": false,
+          "FP32_decomposition_candidates": {
+            "candidate_logits": [
+              19.625,
+              18.5,
+              17.125,
+              20.125
+            ],
+            "scores": [
+              -1.1194517612457275,
+              -2.2444517612457275,
+              -3.6194517612457275,
+              -0.6194517612457275
+            ],
+            "prediction": 3,
+            "ties": [
+              3
+            ],
+            "logits_sha256": "cbc88334f78278195b9a7cd529870b6f41aa7d05ba6fec411c3cedebe1473266"
+          },
+          "production_FP64_candidates": {
+            "candidate_logits": [
+              19.625,
+              18.5,
+              17.125,
+              20.125
+            ],
+            "scores": [
+              -1.1194517612457275,
+              -2.2444517612457275,
+              -3.6194517612457275,
+              -0.6194517612457275
+            ],
+            "prediction": 3,
+            "ties": [
+              3
+            ],
+            "logits_sha256": "cbc88334f78278195b9a7cd529870b6f41aa7d05ba6fec411c3cedebe1473266"
+          }
+        },
+        {
+          "depth": 4,
+          "bitwise_equal": true,
+          "max_absolute_full_vocab_logit_change": 0.0,
+          "prediction_changed": false,
+          "ties_changed": false,
+          "FP32_decomposition_candidates": {
+            "candidate_logits": [
+              21.0,
+              19.75,
+              18.375,
+              20.125
+            ],
+            "scores": [
+              -0.5754272937774658,
+              -1.8254272937774658,
+              -3.200427293777466,
+              -1.4504272937774658
+            ],
+            "prediction": 0,
+            "ties": [
+              0
+            ],
+            "logits_sha256": "3582e503b8963e10d962c72ab1203ab5c7a562c78074c9fdd15872baa53789ce"
+          },
+          "production_FP64_candidates": {
+            "candidate_logits": [
+              21.0,
+              19.75,
+              18.375,
+              20.125
+            ],
+            "scores": [
+              -0.5754272937774658,
+              -1.8254272937774658,
+              -3.200427293777466,
+              -1.4504272937774658
+            ],
+            "prediction": 0,
+            "ties": [
+              0
+            ],
+            "logits_sha256": "3582e503b8963e10d962c72ab1203ab5c7a562c78074c9fdd15872baa53789ce"
+          }
+        }
+      ]
+    },
+    {
+      "id": "Mercury_7214673",
+      "method": "T6_structured",
+      "depths": [
+        {
+          "depth": 2,
+          "bitwise_equal": true,
+          "max_absolute_full_vocab_logit_change": 0.0,
+          "prediction_changed": false,
+          "ties_changed": false,
+          "FP32_decomposition_candidates": {
+            "candidate_logits": [
+              19.5,
+              18.375,
+              17.0,
+              20.0
+            ],
+            "scores": [
+              -1.1192082166671753,
+              -2.244208335876465,
+              -3.619208335876465,
+              -0.6192082166671753
+            ],
+            "prediction": 3,
+            "ties": [
+              3
+            ],
+            "logits_sha256": "b813ab09dc2f708cdab8ccbda2b317e19241bdf94e442226f5d8d92a2173d177"
+          },
+          "production_FP64_candidates": {
+            "candidate_logits": [
+              19.5,
+              18.375,
+              17.0,
+              20.0
+            ],
+            "scores": [
+              -1.1192082166671753,
+              -2.244208335876465,
+              -3.619208335876465,
+              -0.6192082166671753
+            ],
+            "prediction": 3,
+            "ties": [
+              3
+            ],
+            "logits_sha256": "b813ab09dc2f708cdab8ccbda2b317e19241bdf94e442226f5d8d92a2173d177"
+          }
+        },
+        {
+          "depth": 4,
+          "bitwise_equal": true,
+          "max_absolute_full_vocab_logit_change": 0.0,
+          "prediction_changed": false,
+          "ties_changed": false,
+          "FP32_decomposition_candidates": {
+            "candidate_logits": [
+              21.125,
+              19.875,
+              18.5,
+              20.125
+            ],
+            "scores": [
+              -0.54734206199646,
+              -1.79734206199646,
+              -3.17234206199646,
+              -1.54734206199646
+            ],
+            "prediction": 0,
+            "ties": [
+              0
+            ],
+            "logits_sha256": "4e0e8f9ffc58beb99082e9976cb47c18f3eaca339f17014bcb56b5eab131018e"
+          },
+          "production_FP64_candidates": {
+            "candidate_logits": [
+              21.125,
+              19.875,
+              18.5,
+              20.125
+            ],
+            "scores": [
+              -0.54734206199646,
+              -1.79734206199646,
+              -3.17234206199646,
+              -1.54734206199646
+            ],
+            "prediction": 0,
+            "ties": [
+              0
+            ],
+            "logits_sha256": "4e0e8f9ffc58beb99082e9976cb47c18f3eaca339f17014bcb56b5eab131018e"
+          }
+        }
+      ]
+    },
+    {
+      "id": "Mercury_7090685",
+      "method": "T0",
+      "depths": [
+        {
+          "depth": 1,
+          "bitwise_equal": true,
+          "max_absolute_full_vocab_logit_change": 0.0,
+          "prediction_changed": false,
+          "ties_changed": false,
+          "FP32_decomposition_candidates": {
+            "candidate_logits": [
+              13.5625,
+              13.875,
+              14.0,
+              13.25
+            ],
+            "scores": [
+              -1.5637027025222778,
+              -1.2512027025222778,
+              -1.1262027025222778,
+              -1.8762027025222778
+            ],
+            "prediction": 2,
+            "ties": [
+              2
+            ],
+            "logits_sha256": "7cdfc29e0b1a41aec55ae900de947aaf8a41a8ba0ac6cf12e9b4294e8d9d881c"
+          },
+          "production_FP64_candidates": {
+            "candidate_logits": [
+              13.5625,
+              13.875,
+              14.0,
+              13.25
+            ],
+            "scores": [
+              -1.5637027025222778,
+              -1.2512027025222778,
+              -1.1262027025222778,
+              -1.8762027025222778
+            ],
+            "prediction": 2,
+            "ties": [
+              2
+            ],
+            "logits_sha256": "7cdfc29e0b1a41aec55ae900de947aaf8a41a8ba0ac6cf12e9b4294e8d9d881c"
+          }
+        },
+        {
+          "depth": 2,
+          "bitwise_equal": true,
+          "max_absolute_full_vocab_logit_change": 0.0,
+          "prediction_changed": false,
+          "ties_changed": false,
+          "FP32_decomposition_candidates": {
+            "candidate_logits": [
+              19.625,
+              18.5,
+              20.125,
+              17.875
+            ],
+            "scores": [
+              -1.1474130153656006,
+              -2.2724130153656006,
+              -0.6474130749702454,
+              -2.8974130153656006
+            ],
+            "prediction": 2,
+            "ties": [
+              2
+            ],
+            "logits_sha256": "8ca89ca6d16972871a055cfba9f0e37036bf6756df7bcfce612b960624fe991d"
+          },
+          "production_FP64_candidates": {
+            "candidate_logits": [
+              19.625,
+              18.5,
+              20.125,
+              17.875
+            ],
+            "scores": [
+              -1.1474130153656006,
+              -2.2724130153656006,
+              -0.6474130749702454,
+              -2.8974130153656006
+            ],
+            "prediction": 2,
+            "ties": [
+              2
+            ],
+            "logits_sha256": "8ca89ca6d16972871a055cfba9f0e37036bf6756df7bcfce612b960624fe991d"
+          }
+        },
+        {
+          "depth": 3,
+          "bitwise_equal": true,
+          "max_absolute_full_vocab_logit_change": 0.0,
+          "prediction_changed": false,
+          "ties_changed": false,
+          "FP32_decomposition_candidates": {
+            "candidate_logits": [
+              20.5,
+              18.125,
+              20.25,
+              18.125
+            ],
+            "scores": [
+              -0.6761861443519592,
+              -3.0511860847473145,
+              -0.9261861443519592,
+              -3.0511860847473145
+            ],
+            "prediction": 0,
+            "ties": [
+              0
+            ],
+            "logits_sha256": "c3b8ee5838624407b2f9c2522edc8510351c7d38e6acbe0164793582d0b4d3c5"
+          },
+          "production_FP64_candidates": {
+            "candidate_logits": [
+              20.5,
+              18.125,
+              20.25,
+              18.125
+            ],
+            "scores": [
+              -0.6761861443519592,
+              -3.0511860847473145,
+              -0.9261861443519592,
+              -3.0511860847473145
+            ],
+            "prediction": 0,
+            "ties": [
+              0
+            ],
+            "logits_sha256": "c3b8ee5838624407b2f9c2522edc8510351c7d38e6acbe0164793582d0b4d3c5"
+          }
+        },
+        {
+          "depth": 4,
+          "bitwise_equal": true,
+          "max_absolute_full_vocab_logit_change": 0.0,
+          "prediction_changed": false,
+          "ties_changed": false,
+          "FP32_decomposition_candidates": {
+            "candidate_logits": [
+              20.625,
+              17.75,
+              20.0,
+              17.875
+            ],
+            "scores": [
+              -0.5053207278251648,
+              -3.3803207874298096,
+              -1.1303207874298096,
+              -3.2553207874298096
+            ],
+            "prediction": 0,
+            "ties": [
+              0
+            ],
+            "logits_sha256": "818e19a9f3d3db34018aca66bf7195a532b3374654d82abcec9e09ccd92ae212"
+          },
+          "production_FP64_candidates": {
+            "candidate_logits": [
+              20.625,
+              17.75,
+              20.0,
+              17.875
+            ],
+            "scores": [
+              -0.5053207278251648,
+              -3.3803207874298096,
+              -1.1303207874298096,
+              -3.2553207874298096
+            ],
+            "prediction": 0,
+            "ties": [
+              0
+            ],
+            "logits_sha256": "818e19a9f3d3db34018aca66bf7195a532b3374654d82abcec9e09ccd92ae212"
+          }
+        }
+      ]
+    },
+    {
+      "id": "Mercury_7090685",
+      "method": "T1_structured",
+      "depths": [
+        {
+          "depth": 2,
+          "bitwise_equal": true,
+          "max_absolute_full_vocab_logit_change": 0.0,
+          "prediction_changed": false,
+          "ties_changed": false,
+          "FP32_decomposition_candidates": {
+            "candidate_logits": [
+              19.75,
+              18.625,
+              20.25,
+              18.125
+            ],
+            "scores": [
+              -1.1546794176101685,
+              -2.279679298400879,
+              -0.6546794176101685,
+              -2.779679298400879
+            ],
+            "prediction": 2,
+            "ties": [
+              2
+            ],
+            "logits_sha256": "3c5e0b4ba9e494c3d8fded94bbcb5dc676d89bee1e7a2d119c95ce8e11fff0d3"
+          },
+          "production_FP64_candidates": {
+            "candidate_logits": [
+              19.75,
+              18.625,
+              20.25,
+              18.125
+            ],
+            "scores": [
+              -1.1546794176101685,
+              -2.279679298400879,
+              -0.6546794176101685,
+              -2.779679298400879
+            ],
+            "prediction": 2,
+            "ties": [
+              2
+            ],
+            "logits_sha256": "3c5e0b4ba9e494c3d8fded94bbcb5dc676d89bee1e7a2d119c95ce8e11fff0d3"
+          }
+        },
+        {
+          "depth": 4,
+          "bitwise_equal": true,
+          "max_absolute_full_vocab_logit_change": 0.0,
+          "prediction_changed": false,
+          "ties_changed": false,
+          "FP32_decomposition_candidates": {
+            "candidate_logits": [
+              20.5,
+              17.75,
+              20.0,
+              17.75
+            ],
+            "scores": [
+              -0.5518556237220764,
+              -3.3018555641174316,
+              -1.0518555641174316,
+              -3.3018555641174316
+            ],
+            "prediction": 0,
+            "ties": [
+              0
+            ],
+            "logits_sha256": "9e8b2fb9dc2ee71e7cfa444bd58879de80c0bd38c78df316092a5b2ffb9af2d6"
+          },
+          "production_FP64_candidates": {
+            "candidate_logits": [
+              20.5,
+              17.75,
+              20.0,
+              17.75
+            ],
+            "scores": [
+              -0.5518556237220764,
+              -3.3018555641174316,
+              -1.0518555641174316,
+              -3.3018555641174316
+            ],
+            "prediction": 0,
+            "ties": [
+              0
+            ],
+            "logits_sha256": "9e8b2fb9dc2ee71e7cfa444bd58879de80c0bd38c78df316092a5b2ffb9af2d6"
+          }
+        }
+      ]
+    },
+    {
+      "id": "Mercury_7090685",
+      "method": "T2_structured",
+      "depths": [
+        {
+          "depth": 2,
+          "bitwise_equal": true,
+          "max_absolute_full_vocab_logit_change": 0.0,
+          "prediction_changed": false,
+          "ties_changed": false,
+          "FP32_decomposition_candidates": {
+            "candidate_logits": [
+              19.625,
+              18.5,
+              20.125,
+              17.875
+            ],
+            "scores": [
+              -1.1474645137786865,
+              -2.2724645137786865,
+              -0.6474644541740417,
+              -2.8974645137786865
+            ],
+            "prediction": 2,
+            "ties": [
+              2
+            ],
+            "logits_sha256": "f08b3f54f16798f74991a0d48e253ac52dd6aa21d7082413153fd37ef97b3a09"
+          },
+          "production_FP64_candidates": {
+            "candidate_logits": [
+              19.625,
+              18.5,
+              20.125,
+              17.875
+            ],
+            "scores": [
+              -1.1474645137786865,
+              -2.2724645137786865,
+              -0.6474644541740417,
+              -2.8974645137786865
+            ],
+            "prediction": 2,
+            "ties": [
+              2
+            ],
+            "logits_sha256": "f08b3f54f16798f74991a0d48e253ac52dd6aa21d7082413153fd37ef97b3a09"
+          }
+        },
+        {
+          "depth": 4,
+          "bitwise_equal": true,
+          "max_absolute_full_vocab_logit_change": 0.0,
+          "prediction_changed": false,
+          "ties_changed": false,
+          "FP32_decomposition_candidates": {
+            "candidate_logits": [
+              20.5,
+              17.75,
+              20.0,
+              17.75
+            ],
+            "scores": [
+              -0.5519302487373352,
+              -3.3019301891326904,
+              -1.0519301891326904,
+              -3.3019301891326904
+            ],
+            "prediction": 0,
+            "ties": [
+              0
+            ],
+            "logits_sha256": "b8341e3a5243e8d38048830d9c639b6f95494712e4125e85f21a6d46baa983cf"
+          },
+          "production_FP64_candidates": {
+            "candidate_logits": [
+              20.5,
+              17.75,
+              20.0,
+              17.75
+            ],
+            "scores": [
+              -0.5519302487373352,
+              -3.3019301891326904,
+              -1.0519301891326904,
+              -3.3019301891326904
+            ],
+            "prediction": 0,
+            "ties": [
+              0
+            ],
+            "logits_sha256": "b8341e3a5243e8d38048830d9c639b6f95494712e4125e85f21a6d46baa983cf"
+          }
+        }
+      ]
+    },
+    {
+      "id": "Mercury_7090685",
+      "method": "T3_structured",
+      "depths": [
+        {
+          "depth": 2,
+          "bitwise_equal": true,
+          "max_absolute_full_vocab_logit_change": 0.0,
+          "prediction_changed": false,
+          "ties_changed": false,
+          "FP32_decomposition_candidates": {
+            "candidate_logits": [
+              19.375,
+              18.375,
+              20.0,
+              17.875
+            ],
+            "scores": [
+              -1.2420562505722046,
+              -2.242056369781494,
+              -0.6170562505722046,
+              -2.742056369781494
+            ],
+            "prediction": 2,
+            "ties": [
+              2
+            ],
+            "logits_sha256": "8320cbf9c765bce70281a1a8721a7fafe947572d46bb5e3c37218cabec6a81d8"
+          },
+          "production_FP64_candidates": {
+            "candidate_logits": [
+              19.375,
+              18.375,
+              20.0,
+              17.875
+            ],
+            "scores": [
+              -1.2420562505722046,
+              -2.242056369781494,
+              -0.6170562505722046,
+              -2.742056369781494
+            ],
+            "prediction": 2,
+            "ties": [
+              2
+            ],
+            "logits_sha256": "8320cbf9c765bce70281a1a8721a7fafe947572d46bb5e3c37218cabec6a81d8"
+          }
+        },
+        {
+          "depth": 4,
+          "bitwise_equal": true,
+          "max_absolute_full_vocab_logit_change": 0.0,
+          "prediction_changed": false,
+          "ties_changed": false,
+          "FP32_decomposition_candidates": {
+            "candidate_logits": [
+              20.5,
+              17.75,
+              20.0,
+              17.75
+            ],
+            "scores": [
+              -0.5518898963928223,
+              -3.3018898963928223,
+              -1.0518898963928223,
+              -3.3018898963928223
+            ],
+            "prediction": 0,
+            "ties": [
+              0
+            ],
+            "logits_sha256": "7fcef80565eb7fc8bbf6da8c9abdbf1814f13a4951579beef459e0fb3af37c26"
+          },
+          "production_FP64_candidates": {
+            "candidate_logits": [
+              20.5,
+              17.75,
+              20.0,
+              17.75
+            ],
+            "scores": [
+              -0.5518898963928223,
+              -3.3018898963928223,
+              -1.0518898963928223,
+              -3.3018898963928223
+            ],
+            "prediction": 0,
+            "ties": [
+              0
+            ],
+            "logits_sha256": "7fcef80565eb7fc8bbf6da8c9abdbf1814f13a4951579beef459e0fb3af37c26"
+          }
+        }
+      ]
+    },
+    {
+      "id": "Mercury_7090685",
+      "method": "T4_structured",
+      "depths": [
+        {
+          "depth": 2,
+          "bitwise_equal": true,
+          "max_absolute_full_vocab_logit_change": 0.0,
+          "prediction_changed": false,
+          "ties_changed": false,
+          "FP32_decomposition_candidates": {
+            "candidate_logits": [
+              19.5,
+              18.5,
+              20.125,
+              18.0
+            ],
+            "scores": [
+              -1.2419579029083252,
+              -2.241957902908325,
+              -0.61695796251297,
+              -2.741957902908325
+            ],
+            "prediction": 2,
+            "ties": [
+              2
+            ],
+            "logits_sha256": "288c0736952e2d06953e9ff52362ca37a2525fcdb4d3b628a2ccebb10bce429b"
+          },
+          "production_FP64_candidates": {
+            "candidate_logits": [
+              19.5,
+              18.5,
+              20.125,
+              18.0
+            ],
+            "scores": [
+              -1.2419579029083252,
+              -2.241957902908325,
+              -0.61695796251297,
+              -2.741957902908325
+            ],
+            "prediction": 2,
+            "ties": [
+              2
+            ],
+            "logits_sha256": "288c0736952e2d06953e9ff52362ca37a2525fcdb4d3b628a2ccebb10bce429b"
+          }
+        },
+        {
+          "depth": 4,
+          "bitwise_equal": true,
+          "max_absolute_full_vocab_logit_change": 0.0,
+          "prediction_changed": false,
+          "ties_changed": false,
+          "FP32_decomposition_candidates": {
+            "candidate_logits": [
+              20.5,
+              17.875,
+              20.0,
+              17.75
+            ],
+            "scores": [
+              -0.5567747354507446,
+              -3.181774616241455,
+              -1.0567747354507446,
+              -3.306774616241455
+            ],
+            "prediction": 0,
+            "ties": [
+              0
+            ],
+            "logits_sha256": "84f3e065d4cb7e3a37b556688fc29f8ae653db375c3273942f60069d875e36ea"
+          },
+          "production_FP64_candidates": {
+            "candidate_logits": [
+              20.5,
+              17.875,
+              20.0,
+              17.75
+            ],
+            "scores": [
+              -0.5567747354507446,
+              -3.181774616241455,
+              -1.0567747354507446,
+              -3.306774616241455
+            ],
+            "prediction": 0,
+            "ties": [
+              0
+            ],
+            "logits_sha256": "84f3e065d4cb7e3a37b556688fc29f8ae653db375c3273942f60069d875e36ea"
+          }
+        }
+      ]
+    },
+    {
+      "id": "Mercury_7090685",
+      "method": "T5_structured",
+      "depths": [
+        {
+          "depth": 2,
+          "bitwise_equal": true,
+          "max_absolute_full_vocab_logit_change": 0.0,
+          "prediction_changed": false,
+          "ties_changed": false,
+          "FP32_decomposition_candidates": {
+            "candidate_logits": [
+              19.75,
+              18.625,
+              20.375,
+              18.125
+            ],
+            "scores": [
+              -1.2216317653656006,
+              -2.3466317653656006,
+              -0.5966318249702454,
+              -2.8466317653656006
+            ],
+            "prediction": 2,
+            "ties": [
+              2
+            ],
+            "logits_sha256": "400c676a856e15996da69ce271dd72d6041ea8da1e501495aeece1319c4b44af"
+          },
+          "production_FP64_candidates": {
+            "candidate_logits": [
+              19.75,
+              18.625,
+              20.375,
+              18.125
+            ],
+            "scores": [
+              -1.2216317653656006,
+              -2.3466317653656006,
+              -0.5966318249702454,
+              -2.8466317653656006
+            ],
+            "prediction": 2,
+            "ties": [
+              2
+            ],
+            "logits_sha256": "400c676a856e15996da69ce271dd72d6041ea8da1e501495aeece1319c4b44af"
+          }
+        },
+        {
+          "depth": 4,
+          "bitwise_equal": true,
+          "max_absolute_full_vocab_logit_change": 0.0,
+          "prediction_changed": false,
+          "ties_changed": false,
+          "FP32_decomposition_candidates": {
+            "candidate_logits": [
+              20.625,
+              17.875,
+              20.0,
+              17.875
+            ],
+            "scores": [
+              -0.5098604559898376,
+              -3.2598605155944824,
+              -1.1348605155944824,
+              -3.2598605155944824
+            ],
+            "prediction": 0,
+            "ties": [
+              0
+            ],
+            "logits_sha256": "466b0c3a4c3847e0f6989561854aa620931443b027602fbeac66111f19c12052"
+          },
+          "production_FP64_candidates": {
+            "candidate_logits": [
+              20.625,
+              17.875,
+              20.0,
+              17.875
+            ],
+            "scores": [
+              -0.5098604559898376,
+              -3.2598605155944824,
+              -1.1348605155944824,
+              -3.2598605155944824
+            ],
+            "prediction": 0,
+            "ties": [
+              0
+            ],
+            "logits_sha256": "466b0c3a4c3847e0f6989561854aa620931443b027602fbeac66111f19c12052"
+          }
+        }
+      ]
+    },
+    {
+      "id": "Mercury_7090685",
+      "method": "T6_structured",
+      "depths": [
+        {
+          "depth": 2,
+          "bitwise_equal": true,
+          "max_absolute_full_vocab_logit_change": 0.0,
+          "prediction_changed": false,
+          "ties_changed": false,
+          "FP32_decomposition_candidates": {
+            "candidate_logits": [
+              19.375,
+              18.375,
+              20.0,
+              17.875
+            ],
+            "scores": [
+              -1.2420094013214111,
+              -2.242009401321411,
+              -0.6170094609260559,
+              -2.742009401321411
+            ],
+            "prediction": 2,
+            "ties": [
+              2
+            ],
+            "logits_sha256": "c1d2f1bbe9095d37ed99f405cfadf6744171eceebb2fdf78f7e97eefa2db2b58"
+          },
+          "production_FP64_candidates": {
+            "candidate_logits": [
+              19.375,
+              18.375,
+              20.0,
+              17.875
+            ],
+            "scores": [
+              -1.2420094013214111,
+              -2.242009401321411,
+              -0.6170094609260559,
+              -2.742009401321411
+            ],
+            "prediction": 2,
+            "ties": [
+              2
+            ],
+            "logits_sha256": "c1d2f1bbe9095d37ed99f405cfadf6744171eceebb2fdf78f7e97eefa2db2b58"
+          }
+        },
+        {
+          "depth": 4,
+          "bitwise_equal": true,
+          "max_absolute_full_vocab_logit_change": 0.0,
+          "prediction_changed": false,
+          "ties_changed": false,
+          "FP32_decomposition_candidates": {
+            "candidate_logits": [
+              20.5,
+              17.75,
+              20.0,
+              17.75
+            ],
+            "scores": [
+              -0.5518624186515808,
+              -3.3018624782562256,
+              -1.0518624782562256,
+              -3.3018624782562256
+            ],
+            "prediction": 0,
+            "ties": [
+              0
+            ],
+            "logits_sha256": "13903ed6669da89e650980f90f3b8171a0946c080f1564bc3546c95849383d59"
+          },
+          "production_FP64_candidates": {
+            "candidate_logits": [
+              20.5,
+              17.75,
+              20.0,
+              17.75
+            ],
+            "scores": [
+              -0.5518624186515808,
+              -3.3018624782562256,
+              -1.0518624782562256,
+              -3.3018624782562256
+            ],
+            "prediction": 0,
+            "ties": [
+              0
+            ],
+            "logits_sha256": "13903ed6669da89e650980f90f3b8171a0946c080f1564bc3546c95849383d59"
+          }
+        }
+      ]
+    },
+    {
+      "id": "MSA_2013_8_4",
+      "method": "T0",
+      "depths": [
+        {
+          "depth": 1,
+          "bitwise_equal": true,
+          "max_absolute_full_vocab_logit_change": 0.0,
+          "prediction_changed": false,
+          "ties_changed": false,
+          "FP32_decomposition_candidates": {
+            "candidate_logits": [
+              13.9375,
+              14.4375,
+              13.625,
+              14.0
+            ],
+            "scores": [
+              -1.5137388706207275,
+              -1.0137388706207275,
+              -1.8262388706207275,
+              -1.4512388706207275
+            ],
+            "prediction": 1,
+            "ties": [
+              1
+            ],
+            "logits_sha256": "9d2365ee3f43899a0483301070cbbd966c01a18c9428acbc573098b0e3a3241b"
+          },
+          "production_FP64_candidates": {
+            "candidate_logits": [
+              13.9375,
+              14.4375,
+              13.625,
+              14.0
+            ],
+            "scores": [
+              -1.5137388706207275,
+              -1.0137388706207275,
+              -1.8262388706207275,
+              -1.4512388706207275
+            ],
+            "prediction": 1,
+            "ties": [
+              1
+            ],
+            "logits_sha256": "9d2365ee3f43899a0483301070cbbd966c01a18c9428acbc573098b0e3a3241b"
+          }
+        },
+        {
+          "depth": 2,
+          "bitwise_equal": true,
+          "max_absolute_full_vocab_logit_change": 0.0,
+          "prediction_changed": false,
+          "ties_changed": false,
+          "FP32_decomposition_candidates": {
+            "candidate_logits": [
+              18.625,
+              18.375,
+              17.625,
+              18.375
+            ],
+            "scores": [
+              -1.0762888193130493,
+              -1.3262888193130493,
+              -2.0762887001037598,
+              -1.3262888193130493
+            ],
+            "prediction": 0,
+            "ties": [
+              0
+            ],
+            "logits_sha256": "18f07623545c19143073f5d7174cbbfc4388f46b0b2ecc4d3efbd6dbb1d3a6a9"
+          },
+          "production_FP64_candidates": {
+            "candidate_logits": [
+              18.625,
+              18.375,
+              17.625,
+              18.375
+            ],
+            "scores": [
+              -1.0762888193130493,
+              -1.3262888193130493,
+              -2.0762887001037598,
+              -1.3262888193130493
+            ],
+            "prediction": 0,
+            "ties": [
+              0
+            ],
+            "logits_sha256": "18f07623545c19143073f5d7174cbbfc4388f46b0b2ecc4d3efbd6dbb1d3a6a9"
+          }
+        },
+        {
+          "depth": 3,
+          "bitwise_equal": true,
+          "max_absolute_full_vocab_logit_change": 0.0,
+          "prediction_changed": false,
+          "ties_changed": false,
+          "FP32_decomposition_candidates": {
+            "candidate_logits": [
+              21.0,
+              19.0,
+              18.375,
+              20.375
+            ],
+            "scores": [
+              -0.5564514398574829,
+              -2.5564513206481934,
+              -3.1814513206481934,
+              -1.181451439857483
+            ],
+            "prediction": 0,
+            "ties": [
+              0
+            ],
+            "logits_sha256": "559248869ef5199160eda5f0e842d0fb61b1869919b5ccecff9a05c1cae750f1"
+          },
+          "production_FP64_candidates": {
+            "candidate_logits": [
+              21.0,
+              19.0,
+              18.375,
+              20.375
+            ],
+            "scores": [
+              -0.5564514398574829,
+              -2.5564513206481934,
+              -3.1814513206481934,
+              -1.181451439857483
+            ],
+            "prediction": 0,
+            "ties": [
+              0
+            ],
+            "logits_sha256": "559248869ef5199160eda5f0e842d0fb61b1869919b5ccecff9a05c1cae750f1"
+          }
+        },
+        {
+          "depth": 4,
+          "bitwise_equal": true,
+          "max_absolute_full_vocab_logit_change": 0.0,
+          "prediction_changed": false,
+          "ties_changed": false,
+          "FP32_decomposition_candidates": {
+            "candidate_logits": [
+              21.25,
+              19.875,
+              19.125,
+              20.625
+            ],
+            "scores": [
+              -0.646548867225647,
+              -2.0215487480163574,
+              -2.7715487480163574,
+              -1.271548867225647
+            ],
+            "prediction": 0,
+            "ties": [
+              0
+            ],
+            "logits_sha256": "4cb5a088ddcad6f7fbcc653a5ef92289e7109657b520206c2194f264b9c1ad0f"
+          },
+          "production_FP64_candidates": {
+            "candidate_logits": [
+              21.25,
+              19.875,
+              19.125,
+              20.625
+            ],
+            "scores": [
+              -0.646548867225647,
+              -2.0215487480163574,
+              -2.7715487480163574,
+              -1.271548867225647
+            ],
+            "prediction": 0,
+            "ties": [
+              0
+            ],
+            "logits_sha256": "4cb5a088ddcad6f7fbcc653a5ef92289e7109657b520206c2194f264b9c1ad0f"
+          }
+        }
+      ]
+    },
+    {
+      "id": "MSA_2013_8_4",
+      "method": "T1_structured",
+      "depths": [
+        {
+          "depth": 2,
+          "bitwise_equal": true,
+          "max_absolute_full_vocab_logit_change": 0.0,
+          "prediction_changed": false,
+          "ties_changed": false,
+          "FP32_decomposition_candidates": {
+            "candidate_logits": [
+              18.625,
+              18.5,
+              17.75,
+              18.5
+            ],
+            "scores": [
+              -1.1602388620376587,
+              -1.2852388620376587,
+              -2.035238742828369,
+              -1.2852388620376587
+            ],
+            "prediction": 0,
+            "ties": [
+              0
+            ],
+            "logits_sha256": "d4db9ce2952d8444905fa78966035cf6c9c55534e1e4bdda1a3fdb0525ba7be8"
+          },
+          "production_FP64_candidates": {
+            "candidate_logits": [
+              18.625,
+              18.5,
+              17.75,
+              18.5
+            ],
+            "scores": [
+              -1.1602388620376587,
+              -1.2852388620376587,
+              -2.035238742828369,
+              -1.2852388620376587
+            ],
+            "prediction": 0,
+            "ties": [
+              0
+            ],
+            "logits_sha256": "d4db9ce2952d8444905fa78966035cf6c9c55534e1e4bdda1a3fdb0525ba7be8"
+          }
+        },
+        {
+          "depth": 4,
+          "bitwise_equal": true,
+          "max_absolute_full_vocab_logit_change": 0.0,
+          "prediction_changed": false,
+          "ties_changed": false,
+          "FP32_decomposition_candidates": {
+            "candidate_logits": [
+              21.375,
+              19.875,
+              19.125,
+              20.625
+            ],
+            "scores": [
+              -0.5889597535133362,
+              -2.0889596939086914,
+              -2.8389596939086914,
+              -1.3389596939086914
+            ],
+            "prediction": 0,
+            "ties": [
+              0
+            ],
+            "logits_sha256": "94813c2c87258bf1745df09ce84a176b2d4709f751dc344a98c8453bba5bbc92"
+          },
+          "production_FP64_candidates": {
+            "candidate_logits": [
+              21.375,
+              19.875,
+              19.125,
+              20.625
+            ],
+            "scores": [
+              -0.5889597535133362,
+              -2.0889596939086914,
+              -2.8389596939086914,
+              -1.3389596939086914
+            ],
+            "prediction": 0,
+            "ties": [
+              0
+            ],
+            "logits_sha256": "94813c2c87258bf1745df09ce84a176b2d4709f751dc344a98c8453bba5bbc92"
+          }
+        }
+      ]
+    },
+    {
+      "id": "MSA_2013_8_4",
+      "method": "T2_structured",
+      "depths": [
+        {
+          "depth": 2,
+          "bitwise_equal": true,
+          "max_absolute_full_vocab_logit_change": 0.0,
+          "prediction_changed": false,
+          "ties_changed": false,
+          "FP32_decomposition_candidates": {
+            "candidate_logits": [
+              18.5,
+              18.375,
+              17.625,
+              18.375
+            ],
+            "scores": [
+              -1.160484790802002,
+              -1.285484790802002,
+              -2.035484790802002,
+              -1.285484790802002
+            ],
+            "prediction": 0,
+            "ties": [
+              0
+            ],
+            "logits_sha256": "3c580e55e3fc4bfb350b21bd8e08f59acf32726a13561df3a08dd39332b075ce"
+          },
+          "production_FP64_candidates": {
+            "candidate_logits": [
+              18.5,
+              18.375,
+              17.625,
+              18.375
+            ],
+            "scores": [
+              -1.160484790802002,
+              -1.285484790802002,
+              -2.035484790802002,
+              -1.285484790802002
+            ],
+            "prediction": 0,
+            "ties": [
+              0
+            ],
+            "logits_sha256": "3c580e55e3fc4bfb350b21bd8e08f59acf32726a13561df3a08dd39332b075ce"
+          }
+        },
+        {
+          "depth": 4,
+          "bitwise_equal": true,
+          "max_absolute_full_vocab_logit_change": 0.0,
+          "prediction_changed": false,
+          "ties_changed": false,
+          "FP32_decomposition_candidates": {
+            "candidate_logits": [
+              21.375,
+              19.875,
+              19.125,
+              20.625
+            ],
+            "scores": [
+              -0.5889726877212524,
+              -2.088972568511963,
+              -2.838972568511963,
+              -1.3389726877212524
+            ],
+            "prediction": 0,
+            "ties": [
+              0
+            ],
+            "logits_sha256": "f0f92a70640c988dc22b51a811a67a78b49609535c88b64421262dff691cf33a"
+          },
+          "production_FP64_candidates": {
+            "candidate_logits": [
+              21.375,
+              19.875,
+              19.125,
+              20.625
+            ],
+            "scores": [
+              -0.5889726877212524,
+              -2.088972568511963,
+              -2.838972568511963,
+              -1.3389726877212524
+            ],
+            "prediction": 0,
+            "ties": [
+              0
+            ],
+            "logits_sha256": "f0f92a70640c988dc22b51a811a67a78b49609535c88b64421262dff691cf33a"
+          }
+        }
+      ]
+    },
+    {
+      "id": "MSA_2013_8_4",
+      "method": "T3_structured",
+      "depths": [
+        {
+          "depth": 2,
+          "bitwise_equal": true,
+          "max_absolute_full_vocab_logit_change": 0.0,
+          "prediction_changed": false,
+          "ties_changed": false,
+          "FP32_decomposition_candidates": {
+            "candidate_logits": [
+              18.5,
+              18.375,
+              17.625,
+              18.25
+            ],
+            "scores": [
+              -1.1272960901260376,
+              -1.2522960901260376,
+              -2.002295970916748,
+              -1.3772960901260376
+            ],
+            "prediction": 0,
+            "ties": [
+              0
+            ],
+            "logits_sha256": "f880c764bb9be99b9a86cba90b2e61356e4cc30b582414a1354c585632e02f8b"
+          },
+          "production_FP64_candidates": {
+            "candidate_logits": [
+              18.5,
+              18.375,
+              17.625,
+              18.25
+            ],
+            "scores": [
+              -1.1272960901260376,
+              -1.2522960901260376,
+              -2.002295970916748,
+              -1.3772960901260376
+            ],
+            "prediction": 0,
+            "ties": [
+              0
+            ],
+            "logits_sha256": "f880c764bb9be99b9a86cba90b2e61356e4cc30b582414a1354c585632e02f8b"
+          }
+        },
+        {
+          "depth": 4,
+          "bitwise_equal": true,
+          "max_absolute_full_vocab_logit_change": 0.0,
+          "prediction_changed": false,
+          "ties_changed": false,
+          "FP32_decomposition_candidates": {
+            "candidate_logits": [
+              21.375,
+              19.875,
+              19.0,
+              20.625
+            ],
+            "scores": [
+              -0.5820775032043457,
+              -2.0820775032043457,
+              -2.9570775032043457,
+              -1.3320775032043457
+            ],
+            "prediction": 0,
+            "ties": [
+              0
+            ],
+            "logits_sha256": "fa7f37de2aca839a1be39d454edcef45b60835ff904e1b2e840581739f2bbd65"
+          },
+          "production_FP64_candidates": {
+            "candidate_logits": [
+              21.375,
+              19.875,
+              19.0,
+              20.625
+            ],
+            "scores": [
+              -0.5820775032043457,
+              -2.0820775032043457,
+              -2.9570775032043457,
+              -1.3320775032043457
+            ],
+            "prediction": 0,
+            "ties": [
+              0
+            ],
+            "logits_sha256": "fa7f37de2aca839a1be39d454edcef45b60835ff904e1b2e840581739f2bbd65"
+          }
+        }
+      ]
+    },
+    {
+      "id": "MSA_2013_8_4",
+      "method": "T4_structured",
+      "depths": [
+        {
+          "depth": 2,
+          "bitwise_equal": true,
+          "max_absolute_full_vocab_logit_change": 0.0,
+          "prediction_changed": false,
+          "ties_changed": false,
+          "FP32_decomposition_candidates": {
+            "candidate_logits": [
+              18.625,
+              18.5,
+              17.75,
+              18.5
+            ],
+            "scores": [
+              -1.1601601839065552,
+              -1.2851601839065552,
+              -2.0351600646972656,
+              -1.2851601839065552
+            ],
+            "prediction": 0,
+            "ties": [
+              0
+            ],
+            "logits_sha256": "42fcddcf67f1157b391f931dbdab2e9b4db62b8573bb667a470a36b64cf74e24"
+          },
+          "production_FP64_candidates": {
+            "candidate_logits": [
+              18.625,
+              18.5,
+              17.75,
+              18.5
+            ],
+            "scores": [
+              -1.1601601839065552,
+              -1.2851601839065552,
+              -2.0351600646972656,
+              -1.2851601839065552
+            ],
+            "prediction": 0,
+            "ties": [
+              0
+            ],
+            "logits_sha256": "42fcddcf67f1157b391f931dbdab2e9b4db62b8573bb667a470a36b64cf74e24"
+          }
+        },
+        {
+          "depth": 4,
+          "bitwise_equal": true,
+          "max_absolute_full_vocab_logit_change": 0.0,
+          "prediction_changed": false,
+          "ties_changed": false,
+          "FP32_decomposition_candidates": {
+            "candidate_logits": [
+              21.25,
+              19.875,
+              19.0,
+              20.5
+            ],
+            "scores": [
+              -0.6053948998451233,
+              -1.9803948402404785,
+              -2.8553948402404785,
+              -1.3553948402404785
+            ],
+            "prediction": 0,
+            "ties": [
+              0
+            ],
+            "logits_sha256": "a2594af4056aaea9ad3c4d1cf0b683e893ea915fce57477be545511536edfa24"
+          },
+          "production_FP64_candidates": {
+            "candidate_logits": [
+              21.25,
+              19.875,
+              19.0,
+              20.5
+            ],
+            "scores": [
+              -0.6053948998451233,
+              -1.9803948402404785,
+              -2.8553948402404785,
+              -1.3553948402404785
+            ],
+            "prediction": 0,
+            "ties": [
+              0
+            ],
+            "logits_sha256": "a2594af4056aaea9ad3c4d1cf0b683e893ea915fce57477be545511536edfa24"
+          }
+        }
+      ]
+    },
+    {
+      "id": "MSA_2013_8_4",
+      "method": "T5_structured",
+      "depths": [
+        {
+          "depth": 2,
+          "bitwise_equal": true,
+          "max_absolute_full_vocab_logit_change": 0.0,
+          "prediction_changed": false,
+          "ties_changed": false,
+          "FP32_decomposition_candidates": {
+            "candidate_logits": [
+              18.5,
+              18.375,
+              17.625,
+              18.375
+            ],
+            "scores": [
+              -1.160515308380127,
+              -1.285515308380127,
+              -2.035515308380127,
+              -1.285515308380127
+            ],
+            "prediction": 0,
+            "ties": [
+              0
+            ],
+            "logits_sha256": "384a76809a6cc790b307e9b0ef1d90066b71db9deba39a285e5621896e9f8477"
+          },
+          "production_FP64_candidates": {
+            "candidate_logits": [
+              18.5,
+              18.375,
+              17.625,
+              18.375
+            ],
+            "scores": [
+              -1.160515308380127,
+              -1.285515308380127,
+              -2.035515308380127,
+              -1.285515308380127
+            ],
+            "prediction": 0,
+            "ties": [
+              0
+            ],
+            "logits_sha256": "384a76809a6cc790b307e9b0ef1d90066b71db9deba39a285e5621896e9f8477"
+          }
+        },
+        {
+          "depth": 4,
+          "bitwise_equal": true,
+          "max_absolute_full_vocab_logit_change": 0.0,
+          "prediction_changed": false,
+          "ties_changed": false,
+          "FP32_decomposition_candidates": {
+            "candidate_logits": [
+              21.375,
+              19.875,
+              19.125,
+              20.625
+            ],
+            "scores": [
+              -0.5889975428581238,
+              -2.0889976024627686,
+              -2.8389976024627686,
+              -1.3389976024627686
+            ],
+            "prediction": 0,
+            "ties": [
+              0
+            ],
+            "logits_sha256": "aff4c68f82a5c52e27234dfd15609705b381b6d6c455b7365d4badb21aeeca11"
+          },
+          "production_FP64_candidates": {
+            "candidate_logits": [
+              21.375,
+              19.875,
+              19.125,
+              20.625
+            ],
+            "scores": [
+              -0.5889975428581238,
+              -2.0889976024627686,
+              -2.8389976024627686,
+              -1.3389976024627686
+            ],
+            "prediction": 0,
+            "ties": [
+              0
+            ],
+            "logits_sha256": "aff4c68f82a5c52e27234dfd15609705b381b6d6c455b7365d4badb21aeeca11"
+          }
+        }
+      ]
+    },
+    {
+      "id": "MSA_2013_8_4",
+      "method": "T6_structured",
+      "depths": [
+        {
+          "depth": 2,
+          "bitwise_equal": true,
+          "max_absolute_full_vocab_logit_change": 0.0,
+          "prediction_changed": false,
+          "ties_changed": false,
+          "FP32_decomposition_candidates": {
+            "candidate_logits": [
+              18.625,
+              18.375,
+              17.75,
+              18.375
+            ],
+            "scores": [
+              -1.092779517173767,
+              -1.342779517173767,
+              -1.967779517173767,
+              -1.342779517173767
+            ],
+            "prediction": 0,
+            "ties": [
+              0
+            ],
+            "logits_sha256": "809830127bd4e3c802b9112c7d74c717703346044a141a40be8ce0df5370d7a3"
+          },
+          "production_FP64_candidates": {
+            "candidate_logits": [
+              18.625,
+              18.375,
+              17.75,
+              18.375
+            ],
+            "scores": [
+              -1.092779517173767,
+              -1.342779517173767,
+              -1.967779517173767,
+              -1.342779517173767
+            ],
+            "prediction": 0,
+            "ties": [
+              0
+            ],
+            "logits_sha256": "809830127bd4e3c802b9112c7d74c717703346044a141a40be8ce0df5370d7a3"
+          }
+        },
+        {
+          "depth": 4,
+          "bitwise_equal": true,
+          "max_absolute_full_vocab_logit_change": 0.0,
+          "prediction_changed": false,
+          "ties_changed": false,
+          "FP32_decomposition_candidates": {
+            "candidate_logits": [
+              21.25,
+              19.875,
+              19.0,
+              20.5
+            ],
+            "scores": [
+              -0.6053836941719055,
+              -1.9803836345672607,
+              -2.8553836345672607,
+              -1.3553836345672607
+            ],
+            "prediction": 0,
+            "ties": [
+              0
+            ],
+            "logits_sha256": "f73c6d092d31381256cb1894472823c2dc6c3007963fd9f6ec85fcf4539b4282"
+          },
+          "production_FP64_candidates": {
+            "candidate_logits": [
+              21.25,
+              19.875,
+              19.0,
+              20.5
+            ],
+            "scores": [
+              -0.6053836941719055,
+              -1.9803836345672607,
+              -2.8553836345672607,
+              -1.3553836345672607
+            ],
+            "prediction": 0,
+            "ties": [
+              0
+            ],
+            "logits_sha256": "f73c6d092d31381256cb1894472823c2dc6c3007963fd9f6ec85fcf4539b4282"
+          }
+        }
+      ]
+    }
+  ],
+  "source_sha256": "6daa1f17693d7622cfe5bb727baff6ead7136ae8c5b8a6a26cf0200e7fc762ab",
+  "utc": "2026-11-16T12:59:12.151227+00:00"
+}
