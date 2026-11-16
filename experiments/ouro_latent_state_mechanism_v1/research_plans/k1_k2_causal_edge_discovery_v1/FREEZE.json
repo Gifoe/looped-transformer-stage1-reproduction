@@ -1,0 +1,50 @@
+{
+  "start_utc": "2026-11-16T18:41:43.784660+00:00",
+  "freeze_utc": "2026-11-16T18:51:43.784660+00:00",
+  "deadline_utc": "2026-11-16T21:41:43.784660+00:00",
+  "budget_note": "Conservatively includes10minutes for initial source inspection and construction before this freeze.",
+  "reference_commit": "9b900da9cffc6eba97623a76053bb823f319d464",
+  "author": "Sol, no agents",
+  "model": "fixedOuro1.4B,original2recurrentpasses for controlled Cross-World scoring; no training/Test",
+  "development": "All32originaldevelopmentbasepairs,128directed/reversed-labelunits. Oldheldout512NOTindependentconfirmation andNOTnewdevelopment.",
+  "confirmation": "Fresh64basepairs/256units,seed2026111701; newobjectIJKL andboxesI..P,distinctcabinetvalues5..9,optionpermutations,mapping-clauseorder;32newwordingtemplate2,16eacholdtemplates0/1. Freezeallinputs/symboliclabels before outcomes.",
+  "paths": {
+    "SM_L6": {
+      "layer": 6,
+      "target": "M"
+    },
+    "SM_L10": {
+      "layer": 10,
+      "target": "M"
+    },
+    "SR_L14": {
+      "layer": 14,
+      "target": "R"
+    }
+  },
+  "transfers": [
+    "V",
+    "K",
+    "KV"
+  ],
+  "controls": [
+    "same_variable",
+    "unrelated",
+    "dose"
+  ],
+  "source": "Box+variabletoken span before all mappingclauses. ActualpostRoPEexpandedK/Vatmatchingpass/layer/positions; no boundaryhybrids.",
+  "M": "Lastalphanumeric-token at end ofcompletecurrentmappingblock beforeQuestion,excludingpunctuation/newline.",
+  "unrelated": "Auxiliaryfirst-hop source assigns a third box absent fromReceiver mappings, preservingSpositions/length. Auxiliary fullworld is intentionallynot scored for taskaccuracy; causalS cannotsee invalidlatermapping. Source-localK/Vcontrol, not donor-answercopy.",
+  "dose": "Seededfeature-permutation ofactual structured attention-output displacement atsame row; scalarsearch nearestactualBF16norm,retainallunmatched. No10%cap: exactsourceK/Vtransfer notnatural-delta scaling.",
+  "numerical": "OriginalSDPA unchanged exceptdesignatedreceiverrow: nativeout+(FP64counterrow-FP64baserow),samecausalmask/fullprefixnormalization. Exactzero/same-variablebypass; maxfullrowreconstructionrelativeerror.01; assertallotherrowsbyteequal.",
+  "A_gate": "For eachof9fixedpath/type candidates, crossedaccuracy pairedimprovementvsNative and3controls:10000basepairclusterbootstrapseed20261117,onesidedBonferroni36lower>0 for all4,pointgain>=.05 over each; strictnon-tiecrossgain>0vsall4 andatleastonestrictlynovelcorrectcross. Margins+95%CIssecondary; notuniquecircuitproof.",
+  "selection": "Atmostonecandidate amongApasses, maximizeworst4accuracycontrastlowerbound,thenprelistedpathorderSM6,SM10,SR14 andtypeV,K,KV. Frozenbeforefresh outcomes.",
+  "fresh_A": "All9fixedcandidates+controls repeated onfreshfrozenfamily, regardlessdevelopmentAoutcomes. IfdevelopmentAfails,thisisboundedconfirmation/failureaudit,notnewsitesearch; B/Cnotrun.",
+  "B_gate": "OnlyifdevelopmentAandfreshsemanticconfirmationpass. EarlySMcandidate permits L14 M->R native-KV block and transferred-M restoration with explicitreferencebackground,matched-doseunrelatedcomparison. DirectSR-only evidence doesnotjustifyinventinganMtoken/site. FreezeBoperatorbeforeB outcomes.",
+  "C_gate": "OnlyaftercredibleBpath evidence; fixedK1only/K2only/both/neither real2pass trajectories. Neverrelaxgates orsearchnewsites.",
+  "source_sha256": {
+    "prepare_B.py": "b51070cf8b3609496dcf60c8d8ee0a44d5bc07ee94f718c7af2242d48f2b378f",
+    "run_B.py": "9e74fb8a9f9e8fd389ac3bc99a4281e03a14ad05f4ef9e6829348b2369d40eb2",
+    "core.py": "da72f43db7ddfc36c386f18f185d15f15f65a981e44145a8a466ecd862f6af12"
+  }
+}

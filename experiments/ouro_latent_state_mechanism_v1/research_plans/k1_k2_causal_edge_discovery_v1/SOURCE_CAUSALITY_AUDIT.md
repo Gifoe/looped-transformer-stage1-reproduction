@@ -1,0 +1,11 @@
+# Source causality audit
+
+S is the complete Box+identity span in the first-hop clause, before every current mapping. M is the last alphanumeric token at the end of the full mapping block before the question; R is the final Answer readout. S, M, R and full token positions are frozen in INPUTS.jsonl. World pairs preserve source length/position and total sequence length. No source from the current mapping or answer is used for primary transfer.
+
+Actual post-RoPE Key and actual Value inputs are captured at each corresponding pass/layer, with GQA expansion matching the actual SDPA head layout. Original SDPA remains active. Every native world is run through the real two recurrent passes; no boundary hybrid/replay replaces either pass. At both passes and all three sites, receiver/same-variable mapping edits and donor/textual edits have bit-identical source K/V. Option-order-only changes also leave S K/V byte-identical. Actual masks are causal with no extra attention bias; row reconstruction uses only positions <= the receiver target and normalizes over that complete causal prefix.
+
+SOURCE_CAUSALITY_RECEIPTS.jsonl retains all mapping-edit source hashes and option-order assertions for all96basepairs. TECHNICAL_SOURCE_KV.pt retains actual source/M K/V witnesses; TECHNICAL_ATTENTION_WITNESSES.pt retains Q_t, full causal-prefix K/V, donor source tensors and original/reconstructed/counterfactual/BF16 rows for all9candidates on the fixed technical unit. Hashes are in RAW_TENSOR_MANIFEST.json.
+
+The unrelated control assigns a third box absent from receiver mappings, with the same S positions/shape and matching wording. Its later full-world task is intentionally unscored. Actual causal source K/V cannot know that the later mapping omits that box. The same-variable control preserves first-hop semantics while changing later maps; its transferred receiver endpoints are bitwise null in every formal intervention.
+
+No inference that a Key swap changes only one normalized attention weight is made: it changes the complete receiver-row softmax normalization. Source causality isolates access to the current first hop, not a uniquely identifiable symbolic variable or an exhaustive test of all possible first-hop codes.

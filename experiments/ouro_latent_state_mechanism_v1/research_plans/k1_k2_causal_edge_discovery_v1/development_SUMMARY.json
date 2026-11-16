@@ -1,0 +1,2087 @@
+{
+  "phase": "development",
+  "units": 128,
+  "base_pairs": 32,
+  "native_cross": {
+    "n": 128,
+    "crossed": 5,
+    "cross_accuracy": 0.0390625,
+    "strict_crossed": 5,
+    "strict_clear_native_crossed": 5,
+    "novel_crossed": 0,
+    "strict_novel_crossed": 0,
+    "categories": {
+      "crossed": 5,
+      "receiver": 104,
+      "donor": 6,
+      "other": 13
+    },
+    "tied": 4,
+    "mean_cross_margin": -1.5693359375
+  },
+  "native_and_text": {
+    "receiver": {
+      "1": {
+        "correct": 67,
+        "n": 128,
+        "ties": 7
+      },
+      "2": {
+        "correct": 104,
+        "n": 128,
+        "ties": 4
+      }
+    },
+    "donor": {
+      "1": {
+        "correct": 67,
+        "n": 128,
+        "ties": 7
+      },
+      "2": {
+        "correct": 104,
+        "n": 128,
+        "ties": 4
+      }
+    },
+    "textual_counterfactual": {
+      "1": {
+        "correct": 45,
+        "n": 128,
+        "ties": 5
+      },
+      "2": {
+        "correct": 92,
+        "n": 128,
+        "ties": 11
+      }
+    }
+  },
+  "candidates": {
+    "SM_L6_V": {
+      "results": {
+        "transfer": {
+          "n": 128,
+          "crossed": 5,
+          "cross_accuracy": 0.0390625,
+          "strict_crossed": 5,
+          "strict_clear_native_crossed": 5,
+          "novel_crossed": 0,
+          "strict_novel_crossed": 0,
+          "categories": {
+            "crossed": 5,
+            "receiver": 104,
+            "donor": 6,
+            "other": 13
+          },
+          "tied": 6,
+          "mean_cross_margin": -1.5849609375
+        },
+        "same_variable": {
+          "n": 128,
+          "crossed": 5,
+          "cross_accuracy": 0.0390625,
+          "strict_crossed": 5,
+          "strict_clear_native_crossed": 5,
+          "novel_crossed": 0,
+          "strict_novel_crossed": 0,
+          "categories": {
+            "crossed": 5,
+            "receiver": 104,
+            "donor": 6,
+            "other": 13
+          },
+          "tied": 4,
+          "mean_cross_margin": -1.5693359375
+        },
+        "unrelated": {
+          "n": 128,
+          "crossed": 5,
+          "cross_accuracy": 0.0390625,
+          "strict_crossed": 5,
+          "strict_clear_native_crossed": 5,
+          "novel_crossed": 0,
+          "strict_novel_crossed": 0,
+          "categories": {
+            "crossed": 5,
+            "receiver": 104,
+            "donor": 6,
+            "other": 13
+          },
+          "tied": 5,
+          "mean_cross_margin": -1.57373046875
+        },
+        "dose": {
+          "n": 128,
+          "crossed": 5,
+          "cross_accuracy": 0.0390625,
+          "strict_crossed": 5,
+          "strict_clear_native_crossed": 5,
+          "novel_crossed": 0,
+          "strict_novel_crossed": 0,
+          "categories": {
+            "crossed": 5,
+            "receiver": 103,
+            "donor": 7,
+            "other": 13
+          },
+          "tied": 6,
+          "mean_cross_margin": -1.57421875
+        },
+        "dose_matching": {
+          "matched": 128,
+          "nonzero_targets": 128,
+          "max_relative_error": 0.0012698706311320871,
+          "unmatched_retained": 0
+        }
+      },
+      "cross_accuracy_contrasts": {
+        "native": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "lower_bonferroni36": 0.0,
+          "base_pairs": 32,
+          "units": 128
+        },
+        "same_variable": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "lower_bonferroni36": 0.0,
+          "base_pairs": 32,
+          "units": 128
+        },
+        "unrelated": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "lower_bonferroni36": 0.0,
+          "base_pairs": 32,
+          "units": 128
+        },
+        "dose": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "lower_bonferroni36": 0.0,
+          "base_pairs": 32,
+          "units": 128
+        }
+      },
+      "strict_clear_native_contrasts": {
+        "native": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "lower_bonferroni36": 0.0,
+          "base_pairs": 32,
+          "units": 128
+        },
+        "same_variable": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "lower_bonferroni36": 0.0,
+          "base_pairs": 32,
+          "units": 128
+        },
+        "unrelated": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "lower_bonferroni36": 0.0,
+          "base_pairs": 32,
+          "units": 128
+        },
+        "dose": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "lower_bonferroni36": 0.0,
+          "base_pairs": 32,
+          "units": 128
+        }
+      },
+      "margin_contrasts": {
+        "native": {
+          "mean": -0.015625,
+          "ci95": [
+            -0.029296875,
+            -0.0009765625
+          ],
+          "lower_bonferroni36": -0.03564453125,
+          "base_pairs": 32,
+          "units": 128
+        },
+        "same_variable": {
+          "mean": -0.015625,
+          "ci95": [
+            -0.029296875,
+            -0.0009765625
+          ],
+          "lower_bonferroni36": -0.03564453125,
+          "base_pairs": 32,
+          "units": 128
+        },
+        "unrelated": {
+          "mean": -0.01123046875,
+          "ci95": [
+            -0.02393798828124999,
+            0.001953125
+          ],
+          "lower_bonferroni36": -0.030816650390625,
+          "base_pairs": 32,
+          "units": 128
+        },
+        "dose": {
+          "mean": -0.0107421875,
+          "ci95": [
+            -0.02197265625,
+            0.0005004882812498224
+          ],
+          "lower_bonferroni36": -0.02783203125,
+          "base_pairs": 32,
+          "units": 128
+        }
+      },
+      "pass": false,
+      "by_template": {
+        "0": {
+          "n": 128,
+          "crossed": 5,
+          "cross_accuracy": 0.0390625,
+          "strict_crossed": 5,
+          "strict_clear_native_crossed": 5,
+          "novel_crossed": 0,
+          "strict_novel_crossed": 0,
+          "categories": {
+            "crossed": 5,
+            "receiver": 104,
+            "donor": 6,
+            "other": 13
+          },
+          "tied": 6,
+          "mean_cross_margin": -1.5849609375
+        }
+      }
+    },
+    "SM_L6_K": {
+      "results": {
+        "transfer": {
+          "n": 128,
+          "crossed": 5,
+          "cross_accuracy": 0.0390625,
+          "strict_crossed": 5,
+          "strict_clear_native_crossed": 5,
+          "novel_crossed": 0,
+          "strict_novel_crossed": 0,
+          "categories": {
+            "crossed": 5,
+            "receiver": 104,
+            "donor": 7,
+            "other": 12
+          },
+          "tied": 5,
+          "mean_cross_margin": -1.57763671875
+        },
+        "same_variable": {
+          "n": 128,
+          "crossed": 5,
+          "cross_accuracy": 0.0390625,
+          "strict_crossed": 5,
+          "strict_clear_native_crossed": 5,
+          "novel_crossed": 0,
+          "strict_novel_crossed": 0,
+          "categories": {
+            "crossed": 5,
+            "receiver": 104,
+            "donor": 6,
+            "other": 13
+          },
+          "tied": 4,
+          "mean_cross_margin": -1.5693359375
+        },
+        "unrelated": {
+          "n": 128,
+          "crossed": 5,
+          "cross_accuracy": 0.0390625,
+          "strict_crossed": 5,
+          "strict_clear_native_crossed": 5,
+          "novel_crossed": 0,
+          "strict_novel_crossed": 0,
+          "categories": {
+            "crossed": 5,
+            "receiver": 105,
+            "donor": 5,
+            "other": 13
+          },
+          "tied": 6,
+          "mean_cross_margin": -1.5693359375
+        },
+        "dose": {
+          "n": 128,
+          "crossed": 5,
+          "cross_accuracy": 0.0390625,
+          "strict_crossed": 5,
+          "strict_clear_native_crossed": 5,
+          "novel_crossed": 0,
+          "strict_novel_crossed": 0,
+          "categories": {
+            "crossed": 5,
+            "receiver": 103,
+            "donor": 7,
+            "other": 13
+          },
+          "tied": 7,
+          "mean_cross_margin": -1.5849609375
+        },
+        "dose_matching": {
+          "matched": 128,
+          "nonzero_targets": 128,
+          "max_relative_error": 0.007838030536067485,
+          "unmatched_retained": 0
+        }
+      },
+      "cross_accuracy_contrasts": {
+        "native": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "lower_bonferroni36": 0.0,
+          "base_pairs": 32,
+          "units": 128
+        },
+        "same_variable": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "lower_bonferroni36": 0.0,
+          "base_pairs": 32,
+          "units": 128
+        },
+        "unrelated": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "lower_bonferroni36": 0.0,
+          "base_pairs": 32,
+          "units": 128
+        },
+        "dose": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "lower_bonferroni36": 0.0,
+          "base_pairs": 32,
+          "units": 128
+        }
+      },
+      "strict_clear_native_contrasts": {
+        "native": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "lower_bonferroni36": 0.0,
+          "base_pairs": 32,
+          "units": 128
+        },
+        "same_variable": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "lower_bonferroni36": 0.0,
+          "base_pairs": 32,
+          "units": 128
+        },
+        "unrelated": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "lower_bonferroni36": 0.0,
+          "base_pairs": 32,
+          "units": 128
+        },
+        "dose": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "lower_bonferroni36": 0.0,
+          "base_pairs": 32,
+          "units": 128
+        }
+      },
+      "margin_contrasts": {
+        "native": {
+          "mean": -0.00830078125,
+          "ci95": [
+            -0.0224609375,
+            0.005859375
+          ],
+          "lower_bonferroni36": -0.03076171875,
+          "base_pairs": 32,
+          "units": 128
+        },
+        "same_variable": {
+          "mean": -0.00830078125,
+          "ci95": [
+            -0.0224609375,
+            0.005859375
+          ],
+          "lower_bonferroni36": -0.03076171875,
+          "base_pairs": 32,
+          "units": 128
+        },
+        "unrelated": {
+          "mean": -0.00830078125,
+          "ci95": [
+            -0.0185546875,
+            0.00244140625
+          ],
+          "lower_bonferroni36": -0.0244140625,
+          "base_pairs": 32,
+          "units": 128
+        },
+        "dose": {
+          "mean": 0.00732421875,
+          "ci95": [
+            -0.00146484375,
+            0.0166015625
+          ],
+          "lower_bonferroni36": -0.00634765625,
+          "base_pairs": 32,
+          "units": 128
+        }
+      },
+      "pass": false,
+      "by_template": {
+        "0": {
+          "n": 128,
+          "crossed": 5,
+          "cross_accuracy": 0.0390625,
+          "strict_crossed": 5,
+          "strict_clear_native_crossed": 5,
+          "novel_crossed": 0,
+          "strict_novel_crossed": 0,
+          "categories": {
+            "crossed": 5,
+            "receiver": 104,
+            "donor": 7,
+            "other": 12
+          },
+          "tied": 5,
+          "mean_cross_margin": -1.57763671875
+        }
+      }
+    },
+    "SM_L6_KV": {
+      "results": {
+        "transfer": {
+          "n": 128,
+          "crossed": 5,
+          "cross_accuracy": 0.0390625,
+          "strict_crossed": 5,
+          "strict_clear_native_crossed": 5,
+          "novel_crossed": 0,
+          "strict_novel_crossed": 0,
+          "categories": {
+            "crossed": 5,
+            "receiver": 105,
+            "donor": 6,
+            "other": 12
+          },
+          "tied": 6,
+          "mean_cross_margin": -1.5673828125
+        },
+        "same_variable": {
+          "n": 128,
+          "crossed": 5,
+          "cross_accuracy": 0.0390625,
+          "strict_crossed": 5,
+          "strict_clear_native_crossed": 5,
+          "novel_crossed": 0,
+          "strict_novel_crossed": 0,
+          "categories": {
+            "crossed": 5,
+            "receiver": 104,
+            "donor": 6,
+            "other": 13
+          },
+          "tied": 4,
+          "mean_cross_margin": -1.5693359375
+        },
+        "unrelated": {
+          "n": 128,
+          "crossed": 5,
+          "cross_accuracy": 0.0390625,
+          "strict_crossed": 5,
+          "strict_clear_native_crossed": 5,
+          "novel_crossed": 0,
+          "strict_novel_crossed": 0,
+          "categories": {
+            "crossed": 5,
+            "receiver": 102,
+            "donor": 7,
+            "other": 14
+          },
+          "tied": 6,
+          "mean_cross_margin": -1.5712890625
+        },
+        "dose": {
+          "n": 128,
+          "crossed": 5,
+          "cross_accuracy": 0.0390625,
+          "strict_crossed": 5,
+          "strict_clear_native_crossed": 5,
+          "novel_crossed": 0,
+          "strict_novel_crossed": 0,
+          "categories": {
+            "crossed": 5,
+            "receiver": 105,
+            "donor": 6,
+            "other": 12
+          },
+          "tied": 7,
+          "mean_cross_margin": -1.578125
+        },
+        "dose_matching": {
+          "matched": 128,
+          "nonzero_targets": 128,
+          "max_relative_error": 0.0020936460814311806,
+          "unmatched_retained": 0
+        }
+      },
+      "cross_accuracy_contrasts": {
+        "native": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "lower_bonferroni36": 0.0,
+          "base_pairs": 32,
+          "units": 128
+        },
+        "same_variable": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "lower_bonferroni36": 0.0,
+          "base_pairs": 32,
+          "units": 128
+        },
+        "unrelated": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "lower_bonferroni36": 0.0,
+          "base_pairs": 32,
+          "units": 128
+        },
+        "dose": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "lower_bonferroni36": 0.0,
+          "base_pairs": 32,
+          "units": 128
+        }
+      },
+      "strict_clear_native_contrasts": {
+        "native": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "lower_bonferroni36": 0.0,
+          "base_pairs": 32,
+          "units": 128
+        },
+        "same_variable": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "lower_bonferroni36": 0.0,
+          "base_pairs": 32,
+          "units": 128
+        },
+        "unrelated": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "lower_bonferroni36": 0.0,
+          "base_pairs": 32,
+          "units": 128
+        },
+        "dose": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "lower_bonferroni36": 0.0,
+          "base_pairs": 32,
+          "units": 128
+        }
+      },
+      "margin_contrasts": {
+        "native": {
+          "mean": 0.001953125,
+          "ci95": [
+            -0.0087890625,
+            0.01318359375
+          ],
+          "lower_bonferroni36": -0.014215087890624999,
+          "base_pairs": 32,
+          "units": 128
+        },
+        "same_variable": {
+          "mean": 0.001953125,
+          "ci95": [
+            -0.0087890625,
+            0.01318359375
+          ],
+          "lower_bonferroni36": -0.014215087890624999,
+          "base_pairs": 32,
+          "units": 128
+        },
+        "unrelated": {
+          "mean": 0.00390625,
+          "ci95": [
+            -0.0068359375,
+            0.01513671875
+          ],
+          "lower_bonferroni36": -0.012261962890624999,
+          "base_pairs": 32,
+          "units": 128
+        },
+        "dose": {
+          "mean": 0.0107421875,
+          "ci95": [
+            -0.00048828125,
+            0.0224609375
+          ],
+          "lower_bonferroni36": -0.005859375,
+          "base_pairs": 32,
+          "units": 128
+        }
+      },
+      "pass": false,
+      "by_template": {
+        "0": {
+          "n": 128,
+          "crossed": 5,
+          "cross_accuracy": 0.0390625,
+          "strict_crossed": 5,
+          "strict_clear_native_crossed": 5,
+          "novel_crossed": 0,
+          "strict_novel_crossed": 0,
+          "categories": {
+            "crossed": 5,
+            "receiver": 105,
+            "donor": 6,
+            "other": 12
+          },
+          "tied": 6,
+          "mean_cross_margin": -1.5673828125
+        }
+      }
+    },
+    "SM_L10_V": {
+      "results": {
+        "transfer": {
+          "n": 128,
+          "crossed": 5,
+          "cross_accuracy": 0.0390625,
+          "strict_crossed": 5,
+          "strict_clear_native_crossed": 5,
+          "novel_crossed": 0,
+          "strict_novel_crossed": 0,
+          "categories": {
+            "crossed": 5,
+            "receiver": 103,
+            "donor": 7,
+            "other": 13
+          },
+          "tied": 7,
+          "mean_cross_margin": -1.57080078125
+        },
+        "same_variable": {
+          "n": 128,
+          "crossed": 5,
+          "cross_accuracy": 0.0390625,
+          "strict_crossed": 5,
+          "strict_clear_native_crossed": 5,
+          "novel_crossed": 0,
+          "strict_novel_crossed": 0,
+          "categories": {
+            "crossed": 5,
+            "receiver": 104,
+            "donor": 6,
+            "other": 13
+          },
+          "tied": 4,
+          "mean_cross_margin": -1.5693359375
+        },
+        "unrelated": {
+          "n": 128,
+          "crossed": 5,
+          "cross_accuracy": 0.0390625,
+          "strict_crossed": 5,
+          "strict_clear_native_crossed": 5,
+          "novel_crossed": 0,
+          "strict_novel_crossed": 0,
+          "categories": {
+            "crossed": 5,
+            "receiver": 103,
+            "donor": 6,
+            "other": 14
+          },
+          "tied": 6,
+          "mean_cross_margin": -1.5751953125
+        },
+        "dose": {
+          "n": 128,
+          "crossed": 5,
+          "cross_accuracy": 0.0390625,
+          "strict_crossed": 5,
+          "strict_clear_native_crossed": 5,
+          "novel_crossed": 0,
+          "strict_novel_crossed": 0,
+          "categories": {
+            "crossed": 5,
+            "receiver": 103,
+            "donor": 6,
+            "other": 14
+          },
+          "tied": 6,
+          "mean_cross_margin": -1.57177734375
+        },
+        "dose_matching": {
+          "matched": 128,
+          "nonzero_targets": 128,
+          "max_relative_error": 0.004390906937853934,
+          "unmatched_retained": 0
+        }
+      },
+      "cross_accuracy_contrasts": {
+        "native": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "lower_bonferroni36": 0.0,
+          "base_pairs": 32,
+          "units": 128
+        },
+        "same_variable": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "lower_bonferroni36": 0.0,
+          "base_pairs": 32,
+          "units": 128
+        },
+        "unrelated": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "lower_bonferroni36": 0.0,
+          "base_pairs": 32,
+          "units": 128
+        },
+        "dose": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "lower_bonferroni36": 0.0,
+          "base_pairs": 32,
+          "units": 128
+        }
+      },
+      "strict_clear_native_contrasts": {
+        "native": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "lower_bonferroni36": 0.0,
+          "base_pairs": 32,
+          "units": 128
+        },
+        "same_variable": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "lower_bonferroni36": 0.0,
+          "base_pairs": 32,
+          "units": 128
+        },
+        "unrelated": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "lower_bonferroni36": 0.0,
+          "base_pairs": 32,
+          "units": 128
+        },
+        "dose": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "lower_bonferroni36": 0.0,
+          "base_pairs": 32,
+          "units": 128
+        }
+      },
+      "margin_contrasts": {
+        "native": {
+          "mean": -0.00146484375,
+          "ci95": [
+            -0.01513671875,
+            0.01220703125
+          ],
+          "lower_bonferroni36": -0.02294921875,
+          "base_pairs": 32,
+          "units": 128
+        },
+        "same_variable": {
+          "mean": -0.00146484375,
+          "ci95": [
+            -0.01513671875,
+            0.01220703125
+          ],
+          "lower_bonferroni36": -0.02294921875,
+          "base_pairs": 32,
+          "units": 128
+        },
+        "unrelated": {
+          "mean": 0.00439453125,
+          "ci95": [
+            -0.0087890625,
+            0.01806640625
+          ],
+          "lower_bonferroni36": -0.015625,
+          "base_pairs": 32,
+          "units": 128
+        },
+        "dose": {
+          "mean": 0.0009765625,
+          "ci95": [
+            -0.01318359375,
+            0.01513671875
+          ],
+          "lower_bonferroni36": -0.0205078125,
+          "base_pairs": 32,
+          "units": 128
+        }
+      },
+      "pass": false,
+      "by_template": {
+        "0": {
+          "n": 128,
+          "crossed": 5,
+          "cross_accuracy": 0.0390625,
+          "strict_crossed": 5,
+          "strict_clear_native_crossed": 5,
+          "novel_crossed": 0,
+          "strict_novel_crossed": 0,
+          "categories": {
+            "crossed": 5,
+            "receiver": 103,
+            "donor": 7,
+            "other": 13
+          },
+          "tied": 7,
+          "mean_cross_margin": -1.57080078125
+        }
+      }
+    },
+    "SM_L10_K": {
+      "results": {
+        "transfer": {
+          "n": 128,
+          "crossed": 5,
+          "cross_accuracy": 0.0390625,
+          "strict_crossed": 4,
+          "strict_clear_native_crossed": 4,
+          "novel_crossed": 0,
+          "strict_novel_crossed": 0,
+          "categories": {
+            "crossed": 5,
+            "receiver": 104,
+            "donor": 7,
+            "other": 12
+          },
+          "tied": 6,
+          "mean_cross_margin": -1.57958984375
+        },
+        "same_variable": {
+          "n": 128,
+          "crossed": 5,
+          "cross_accuracy": 0.0390625,
+          "strict_crossed": 5,
+          "strict_clear_native_crossed": 5,
+          "novel_crossed": 0,
+          "strict_novel_crossed": 0,
+          "categories": {
+            "crossed": 5,
+            "receiver": 104,
+            "donor": 6,
+            "other": 13
+          },
+          "tied": 4,
+          "mean_cross_margin": -1.5693359375
+        },
+        "unrelated": {
+          "n": 128,
+          "crossed": 5,
+          "cross_accuracy": 0.0390625,
+          "strict_crossed": 4,
+          "strict_clear_native_crossed": 4,
+          "novel_crossed": 0,
+          "strict_novel_crossed": 0,
+          "categories": {
+            "crossed": 5,
+            "receiver": 104,
+            "donor": 6,
+            "other": 13
+          },
+          "tied": 5,
+          "mean_cross_margin": -1.57421875
+        },
+        "dose": {
+          "n": 128,
+          "crossed": 5,
+          "cross_accuracy": 0.0390625,
+          "strict_crossed": 5,
+          "strict_clear_native_crossed": 5,
+          "novel_crossed": 0,
+          "strict_novel_crossed": 0,
+          "categories": {
+            "crossed": 5,
+            "receiver": 104,
+            "donor": 6,
+            "other": 13
+          },
+          "tied": 4,
+          "mean_cross_margin": -1.57470703125
+        },
+        "dose_matching": {
+          "matched": 111,
+          "nonzero_targets": 128,
+          "max_relative_error": 0.05310715913485091,
+          "unmatched_retained": 17
+        }
+      },
+      "cross_accuracy_contrasts": {
+        "native": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "lower_bonferroni36": 0.0,
+          "base_pairs": 32,
+          "units": 128
+        },
+        "same_variable": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "lower_bonferroni36": 0.0,
+          "base_pairs": 32,
+          "units": 128
+        },
+        "unrelated": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "lower_bonferroni36": 0.0,
+          "base_pairs": 32,
+          "units": 128
+        },
+        "dose": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "lower_bonferroni36": 0.0,
+          "base_pairs": 32,
+          "units": 128
+        }
+      },
+      "strict_clear_native_contrasts": {
+        "native": {
+          "mean": -0.0078125,
+          "ci95": [
+            -0.0234375,
+            0.0
+          ],
+          "lower_bonferroni36": -0.0390625,
+          "base_pairs": 32,
+          "units": 128
+        },
+        "same_variable": {
+          "mean": -0.0078125,
+          "ci95": [
+            -0.0234375,
+            0.0
+          ],
+          "lower_bonferroni36": -0.0390625,
+          "base_pairs": 32,
+          "units": 128
+        },
+        "unrelated": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "lower_bonferroni36": 0.0,
+          "base_pairs": 32,
+          "units": 128
+        },
+        "dose": {
+          "mean": -0.0078125,
+          "ci95": [
+            -0.0234375,
+            0.0
+          ],
+          "lower_bonferroni36": -0.0390625,
+          "base_pairs": 32,
+          "units": 128
+        }
+      },
+      "margin_contrasts": {
+        "native": {
+          "mean": -0.01025390625,
+          "ci95": [
+            -0.0224609375,
+            0.00244140625
+          ],
+          "lower_bonferroni36": -0.028863525390625,
+          "base_pairs": 32,
+          "units": 128
+        },
+        "same_variable": {
+          "mean": -0.01025390625,
+          "ci95": [
+            -0.0224609375,
+            0.00244140625
+          ],
+          "lower_bonferroni36": -0.028863525390625,
+          "base_pairs": 32,
+          "units": 128
+        },
+        "unrelated": {
+          "mean": -0.00537109375,
+          "ci95": [
+            -0.0146484375,
+            0.00390625
+          ],
+          "lower_bonferroni36": -0.01953125,
+          "base_pairs": 32,
+          "units": 128
+        },
+        "dose": {
+          "mean": -0.0048828125,
+          "ci95": [
+            -0.017578125,
+            0.00732421875
+          ],
+          "lower_bonferroni36": -0.02392578125,
+          "base_pairs": 32,
+          "units": 128
+        }
+      },
+      "pass": false,
+      "by_template": {
+        "0": {
+          "n": 128,
+          "crossed": 5,
+          "cross_accuracy": 0.0390625,
+          "strict_crossed": 4,
+          "strict_clear_native_crossed": 4,
+          "novel_crossed": 0,
+          "strict_novel_crossed": 0,
+          "categories": {
+            "crossed": 5,
+            "receiver": 104,
+            "donor": 7,
+            "other": 12
+          },
+          "tied": 6,
+          "mean_cross_margin": -1.57958984375
+        }
+      }
+    },
+    "SM_L10_KV": {
+      "results": {
+        "transfer": {
+          "n": 128,
+          "crossed": 5,
+          "cross_accuracy": 0.0390625,
+          "strict_crossed": 5,
+          "strict_clear_native_crossed": 5,
+          "novel_crossed": 0,
+          "strict_novel_crossed": 0,
+          "categories": {
+            "crossed": 5,
+            "receiver": 102,
+            "donor": 7,
+            "other": 14
+          },
+          "tied": 7,
+          "mean_cross_margin": -1.57275390625
+        },
+        "same_variable": {
+          "n": 128,
+          "crossed": 5,
+          "cross_accuracy": 0.0390625,
+          "strict_crossed": 5,
+          "strict_clear_native_crossed": 5,
+          "novel_crossed": 0,
+          "strict_novel_crossed": 0,
+          "categories": {
+            "crossed": 5,
+            "receiver": 104,
+            "donor": 6,
+            "other": 13
+          },
+          "tied": 4,
+          "mean_cross_margin": -1.5693359375
+        },
+        "unrelated": {
+          "n": 128,
+          "crossed": 5,
+          "cross_accuracy": 0.0390625,
+          "strict_crossed": 5,
+          "strict_clear_native_crossed": 5,
+          "novel_crossed": 0,
+          "strict_novel_crossed": 0,
+          "categories": {
+            "crossed": 5,
+            "receiver": 102,
+            "donor": 7,
+            "other": 14
+          },
+          "tied": 7,
+          "mean_cross_margin": -1.576171875
+        },
+        "dose": {
+          "n": 128,
+          "crossed": 5,
+          "cross_accuracy": 0.0390625,
+          "strict_crossed": 5,
+          "strict_clear_native_crossed": 5,
+          "novel_crossed": 0,
+          "strict_novel_crossed": 0,
+          "categories": {
+            "crossed": 5,
+            "receiver": 105,
+            "donor": 7,
+            "other": 11
+          },
+          "tied": 3,
+          "mean_cross_margin": -1.57666015625
+        },
+        "dose_matching": {
+          "matched": 128,
+          "nonzero_targets": 128,
+          "max_relative_error": 0.0052573877285566365,
+          "unmatched_retained": 0
+        }
+      },
+      "cross_accuracy_contrasts": {
+        "native": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "lower_bonferroni36": 0.0,
+          "base_pairs": 32,
+          "units": 128
+        },
+        "same_variable": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "lower_bonferroni36": 0.0,
+          "base_pairs": 32,
+          "units": 128
+        },
+        "unrelated": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "lower_bonferroni36": 0.0,
+          "base_pairs": 32,
+          "units": 128
+        },
+        "dose": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "lower_bonferroni36": 0.0,
+          "base_pairs": 32,
+          "units": 128
+        }
+      },
+      "strict_clear_native_contrasts": {
+        "native": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "lower_bonferroni36": 0.0,
+          "base_pairs": 32,
+          "units": 128
+        },
+        "same_variable": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "lower_bonferroni36": 0.0,
+          "base_pairs": 32,
+          "units": 128
+        },
+        "unrelated": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "lower_bonferroni36": 0.0,
+          "base_pairs": 32,
+          "units": 128
+        },
+        "dose": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "lower_bonferroni36": 0.0,
+          "base_pairs": 32,
+          "units": 128
+        }
+      },
+      "margin_contrasts": {
+        "native": {
+          "mean": -0.00341796875,
+          "ci95": [
+            -0.0146484375,
+            0.00830078125
+          ],
+          "lower_bonferroni36": -0.0205078125,
+          "base_pairs": 32,
+          "units": 128
+        },
+        "same_variable": {
+          "mean": -0.00341796875,
+          "ci95": [
+            -0.0146484375,
+            0.00830078125
+          ],
+          "lower_bonferroni36": -0.0205078125,
+          "base_pairs": 32,
+          "units": 128
+        },
+        "unrelated": {
+          "mean": 0.00341796875,
+          "ci95": [
+            -0.009765625,
+            0.0166015625
+          ],
+          "lower_bonferroni36": -0.015625,
+          "base_pairs": 32,
+          "units": 128
+        },
+        "dose": {
+          "mean": 0.00390625,
+          "ci95": [
+            -0.0078125,
+            0.015625
+          ],
+          "lower_bonferroni36": -0.013671875,
+          "base_pairs": 32,
+          "units": 128
+        }
+      },
+      "pass": false,
+      "by_template": {
+        "0": {
+          "n": 128,
+          "crossed": 5,
+          "cross_accuracy": 0.0390625,
+          "strict_crossed": 5,
+          "strict_clear_native_crossed": 5,
+          "novel_crossed": 0,
+          "strict_novel_crossed": 0,
+          "categories": {
+            "crossed": 5,
+            "receiver": 102,
+            "donor": 7,
+            "other": 14
+          },
+          "tied": 7,
+          "mean_cross_margin": -1.57275390625
+        }
+      }
+    },
+    "SR_L14_V": {
+      "results": {
+        "transfer": {
+          "n": 128,
+          "crossed": 5,
+          "cross_accuracy": 0.0390625,
+          "strict_crossed": 5,
+          "strict_clear_native_crossed": 5,
+          "novel_crossed": 0,
+          "strict_novel_crossed": 0,
+          "categories": {
+            "crossed": 5,
+            "receiver": 103,
+            "donor": 6,
+            "other": 14
+          },
+          "tied": 5,
+          "mean_cross_margin": -1.5576171875
+        },
+        "same_variable": {
+          "n": 128,
+          "crossed": 5,
+          "cross_accuracy": 0.0390625,
+          "strict_crossed": 5,
+          "strict_clear_native_crossed": 5,
+          "novel_crossed": 0,
+          "strict_novel_crossed": 0,
+          "categories": {
+            "crossed": 5,
+            "receiver": 104,
+            "donor": 6,
+            "other": 13
+          },
+          "tied": 4,
+          "mean_cross_margin": -1.5693359375
+        },
+        "unrelated": {
+          "n": 128,
+          "crossed": 5,
+          "cross_accuracy": 0.0390625,
+          "strict_crossed": 5,
+          "strict_clear_native_crossed": 5,
+          "novel_crossed": 0,
+          "strict_novel_crossed": 0,
+          "categories": {
+            "crossed": 5,
+            "receiver": 102,
+            "donor": 7,
+            "other": 14
+          },
+          "tied": 7,
+          "mean_cross_margin": -1.5625
+        },
+        "dose": {
+          "n": 128,
+          "crossed": 5,
+          "cross_accuracy": 0.0390625,
+          "strict_crossed": 5,
+          "strict_clear_native_crossed": 5,
+          "novel_crossed": 0,
+          "strict_novel_crossed": 0,
+          "categories": {
+            "crossed": 5,
+            "receiver": 102,
+            "donor": 7,
+            "other": 14
+          },
+          "tied": 7,
+          "mean_cross_margin": -1.578125
+        },
+        "dose_matching": {
+          "matched": 128,
+          "nonzero_targets": 128,
+          "max_relative_error": 0.0020361638746491523,
+          "unmatched_retained": 0
+        }
+      },
+      "cross_accuracy_contrasts": {
+        "native": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "lower_bonferroni36": 0.0,
+          "base_pairs": 32,
+          "units": 128
+        },
+        "same_variable": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "lower_bonferroni36": 0.0,
+          "base_pairs": 32,
+          "units": 128
+        },
+        "unrelated": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "lower_bonferroni36": 0.0,
+          "base_pairs": 32,
+          "units": 128
+        },
+        "dose": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "lower_bonferroni36": 0.0,
+          "base_pairs": 32,
+          "units": 128
+        }
+      },
+      "strict_clear_native_contrasts": {
+        "native": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "lower_bonferroni36": 0.0,
+          "base_pairs": 32,
+          "units": 128
+        },
+        "same_variable": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "lower_bonferroni36": 0.0,
+          "base_pairs": 32,
+          "units": 128
+        },
+        "unrelated": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "lower_bonferroni36": 0.0,
+          "base_pairs": 32,
+          "units": 128
+        },
+        "dose": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "lower_bonferroni36": 0.0,
+          "base_pairs": 32,
+          "units": 128
+        }
+      },
+      "margin_contrasts": {
+        "native": {
+          "mean": 0.01171875,
+          "ci95": [
+            0.0,
+            0.02392578125
+          ],
+          "lower_bonferroni36": -0.00537109375,
+          "base_pairs": 32,
+          "units": 128
+        },
+        "same_variable": {
+          "mean": 0.01171875,
+          "ci95": [
+            0.0,
+            0.02392578125
+          ],
+          "lower_bonferroni36": -0.00537109375,
+          "base_pairs": 32,
+          "units": 128
+        },
+        "unrelated": {
+          "mean": 0.0048828125,
+          "ci95": [
+            -0.005859375,
+            0.015625
+          ],
+          "lower_bonferroni36": -0.0107421875,
+          "base_pairs": 32,
+          "units": 128
+        },
+        "dose": {
+          "mean": 0.0205078125,
+          "ci95": [
+            0.00732421875,
+            0.033203125
+          ],
+          "lower_bonferroni36": 0.0,
+          "base_pairs": 32,
+          "units": 128
+        }
+      },
+      "pass": false,
+      "by_template": {
+        "0": {
+          "n": 128,
+          "crossed": 5,
+          "cross_accuracy": 0.0390625,
+          "strict_crossed": 5,
+          "strict_clear_native_crossed": 5,
+          "novel_crossed": 0,
+          "strict_novel_crossed": 0,
+          "categories": {
+            "crossed": 5,
+            "receiver": 103,
+            "donor": 6,
+            "other": 14
+          },
+          "tied": 5,
+          "mean_cross_margin": -1.5576171875
+        }
+      }
+    },
+    "SR_L14_K": {
+      "results": {
+        "transfer": {
+          "n": 128,
+          "crossed": 5,
+          "cross_accuracy": 0.0390625,
+          "strict_crossed": 5,
+          "strict_clear_native_crossed": 5,
+          "novel_crossed": 0,
+          "strict_novel_crossed": 0,
+          "categories": {
+            "crossed": 5,
+            "receiver": 104,
+            "donor": 6,
+            "other": 13
+          },
+          "tied": 3,
+          "mean_cross_margin": -1.57421875
+        },
+        "same_variable": {
+          "n": 128,
+          "crossed": 5,
+          "cross_accuracy": 0.0390625,
+          "strict_crossed": 5,
+          "strict_clear_native_crossed": 5,
+          "novel_crossed": 0,
+          "strict_novel_crossed": 0,
+          "categories": {
+            "crossed": 5,
+            "receiver": 104,
+            "donor": 6,
+            "other": 13
+          },
+          "tied": 4,
+          "mean_cross_margin": -1.5693359375
+        },
+        "unrelated": {
+          "n": 128,
+          "crossed": 5,
+          "cross_accuracy": 0.0390625,
+          "strict_crossed": 5,
+          "strict_clear_native_crossed": 5,
+          "novel_crossed": 0,
+          "strict_novel_crossed": 0,
+          "categories": {
+            "crossed": 5,
+            "receiver": 102,
+            "donor": 7,
+            "other": 14
+          },
+          "tied": 7,
+          "mean_cross_margin": -1.55224609375
+        },
+        "dose": {
+          "n": 128,
+          "crossed": 5,
+          "cross_accuracy": 0.0390625,
+          "strict_crossed": 5,
+          "strict_clear_native_crossed": 5,
+          "novel_crossed": 0,
+          "strict_novel_crossed": 0,
+          "categories": {
+            "crossed": 5,
+            "receiver": 103,
+            "donor": 6,
+            "other": 14
+          },
+          "tied": 6,
+          "mean_cross_margin": -1.57080078125
+        },
+        "dose_matching": {
+          "matched": 125,
+          "nonzero_targets": 128,
+          "max_relative_error": 0.025869785842013056,
+          "unmatched_retained": 3
+        }
+      },
+      "cross_accuracy_contrasts": {
+        "native": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "lower_bonferroni36": 0.0,
+          "base_pairs": 32,
+          "units": 128
+        },
+        "same_variable": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "lower_bonferroni36": 0.0,
+          "base_pairs": 32,
+          "units": 128
+        },
+        "unrelated": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "lower_bonferroni36": 0.0,
+          "base_pairs": 32,
+          "units": 128
+        },
+        "dose": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "lower_bonferroni36": 0.0,
+          "base_pairs": 32,
+          "units": 128
+        }
+      },
+      "strict_clear_native_contrasts": {
+        "native": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "lower_bonferroni36": 0.0,
+          "base_pairs": 32,
+          "units": 128
+        },
+        "same_variable": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "lower_bonferroni36": 0.0,
+          "base_pairs": 32,
+          "units": 128
+        },
+        "unrelated": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "lower_bonferroni36": 0.0,
+          "base_pairs": 32,
+          "units": 128
+        },
+        "dose": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "lower_bonferroni36": 0.0,
+          "base_pairs": 32,
+          "units": 128
+        }
+      },
+      "margin_contrasts": {
+        "native": {
+          "mean": -0.0048828125,
+          "ci95": [
+            -0.015625,
+            0.005859375
+          ],
+          "lower_bonferroni36": -0.02197265625,
+          "base_pairs": 32,
+          "units": 128
+        },
+        "same_variable": {
+          "mean": -0.0048828125,
+          "ci95": [
+            -0.015625,
+            0.005859375
+          ],
+          "lower_bonferroni36": -0.02197265625,
+          "base_pairs": 32,
+          "units": 128
+        },
+        "unrelated": {
+          "mean": -0.02197265625,
+          "ci95": [
+            -0.0341796875,
+            -0.009765625
+          ],
+          "lower_bonferroni36": -0.04052734375,
+          "base_pairs": 32,
+          "units": 128
+        },
+        "dose": {
+          "mean": -0.00341796875,
+          "ci95": [
+            -0.0126953125,
+            0.005859375
+          ],
+          "lower_bonferroni36": -0.017578125,
+          "base_pairs": 32,
+          "units": 128
+        }
+      },
+      "pass": false,
+      "by_template": {
+        "0": {
+          "n": 128,
+          "crossed": 5,
+          "cross_accuracy": 0.0390625,
+          "strict_crossed": 5,
+          "strict_clear_native_crossed": 5,
+          "novel_crossed": 0,
+          "strict_novel_crossed": 0,
+          "categories": {
+            "crossed": 5,
+            "receiver": 104,
+            "donor": 6,
+            "other": 13
+          },
+          "tied": 3,
+          "mean_cross_margin": -1.57421875
+        }
+      }
+    },
+    "SR_L14_KV": {
+      "results": {
+        "transfer": {
+          "n": 128,
+          "crossed": 5,
+          "cross_accuracy": 0.0390625,
+          "strict_crossed": 5,
+          "strict_clear_native_crossed": 5,
+          "novel_crossed": 0,
+          "strict_novel_crossed": 0,
+          "categories": {
+            "crossed": 5,
+            "receiver": 102,
+            "donor": 7,
+            "other": 14
+          },
+          "tied": 9,
+          "mean_cross_margin": -1.55029296875
+        },
+        "same_variable": {
+          "n": 128,
+          "crossed": 5,
+          "cross_accuracy": 0.0390625,
+          "strict_crossed": 5,
+          "strict_clear_native_crossed": 5,
+          "novel_crossed": 0,
+          "strict_novel_crossed": 0,
+          "categories": {
+            "crossed": 5,
+            "receiver": 104,
+            "donor": 6,
+            "other": 13
+          },
+          "tied": 4,
+          "mean_cross_margin": -1.5693359375
+        },
+        "unrelated": {
+          "n": 128,
+          "crossed": 5,
+          "cross_accuracy": 0.0390625,
+          "strict_crossed": 5,
+          "strict_clear_native_crossed": 5,
+          "novel_crossed": 0,
+          "strict_novel_crossed": 0,
+          "categories": {
+            "crossed": 5,
+            "receiver": 101,
+            "donor": 8,
+            "other": 14
+          },
+          "tied": 7,
+          "mean_cross_margin": -1.55029296875
+        },
+        "dose": {
+          "n": 128,
+          "crossed": 5,
+          "cross_accuracy": 0.0390625,
+          "strict_crossed": 4,
+          "strict_clear_native_crossed": 4,
+          "novel_crossed": 0,
+          "strict_novel_crossed": 0,
+          "categories": {
+            "crossed": 5,
+            "receiver": 103,
+            "donor": 7,
+            "other": 13
+          },
+          "tied": 7,
+          "mean_cross_margin": -1.572265625
+        },
+        "dose_matching": {
+          "matched": 128,
+          "nonzero_targets": 128,
+          "max_relative_error": 0.001053194067961683,
+          "unmatched_retained": 0
+        }
+      },
+      "cross_accuracy_contrasts": {
+        "native": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "lower_bonferroni36": 0.0,
+          "base_pairs": 32,
+          "units": 128
+        },
+        "same_variable": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "lower_bonferroni36": 0.0,
+          "base_pairs": 32,
+          "units": 128
+        },
+        "unrelated": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "lower_bonferroni36": 0.0,
+          "base_pairs": 32,
+          "units": 128
+        },
+        "dose": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "lower_bonferroni36": 0.0,
+          "base_pairs": 32,
+          "units": 128
+        }
+      },
+      "strict_clear_native_contrasts": {
+        "native": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "lower_bonferroni36": 0.0,
+          "base_pairs": 32,
+          "units": 128
+        },
+        "same_variable": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "lower_bonferroni36": 0.0,
+          "base_pairs": 32,
+          "units": 128
+        },
+        "unrelated": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "lower_bonferroni36": 0.0,
+          "base_pairs": 32,
+          "units": 128
+        },
+        "dose": {
+          "mean": 0.0078125,
+          "ci95": [
+            0.0,
+            0.0234375
+          ],
+          "lower_bonferroni36": 0.0,
+          "base_pairs": 32,
+          "units": 128
+        }
+      },
+      "margin_contrasts": {
+        "native": {
+          "mean": 0.01904296875,
+          "ci95": [
+            0.0068359375,
+            0.03125
+          ],
+          "lower_bonferroni36": 0.0009765625,
+          "base_pairs": 32,
+          "units": 128
+        },
+        "same_variable": {
+          "mean": 0.01904296875,
+          "ci95": [
+            0.0068359375,
+            0.03125
+          ],
+          "lower_bonferroni36": 0.0009765625,
+          "base_pairs": 32,
+          "units": 128
+        },
+        "unrelated": {
+          "mean": 0.0,
+          "ci95": [
+            -0.01611328125,
+            0.015625
+          ],
+          "lower_bonferroni36": -0.0234375,
+          "base_pairs": 32,
+          "units": 128
+        },
+        "dose": {
+          "mean": 0.02197265625,
+          "ci95": [
+            0.009765625,
+            0.0341796875
+          ],
+          "lower_bonferroni36": 0.0029296875,
+          "base_pairs": 32,
+          "units": 128
+        }
+      },
+      "pass": false,
+      "by_template": {
+        "0": {
+          "n": 128,
+          "crossed": 5,
+          "cross_accuracy": 0.0390625,
+          "strict_crossed": 5,
+          "strict_clear_native_crossed": 5,
+          "novel_crossed": 0,
+          "strict_novel_crossed": 0,
+          "categories": {
+            "crossed": 5,
+            "receiver": 102,
+            "donor": 7,
+            "other": 14
+          },
+          "tied": 9,
+          "mean_cross_margin": -1.55029296875
+        }
+      }
+    }
+  },
+  "native_and_text_by_template": {
+    "0": {
+      "n": 128,
+      "nativeK1": 67,
+      "nativeK2": 104,
+      "textK1": 45,
+      "textK2": 92
+    }
+  }
+}

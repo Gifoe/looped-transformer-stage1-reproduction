@@ -1,0 +1,32 @@
+"""All fixed paths, full populations, base-pair cluster inference. No model fitting."""
+import pathlib,json,numpy as np,os,sys,datetime
+R=pathlib.Path(os.environ.get('EDGE_ROOT','/root/ouro-causal-edge-sol-20261117'));f=json.loads((R/'FREEZE.json').read_text());phase=sys.argv[1];units=[u for p in sorted((R/'results').glob('*.json')) for u in json.loads(p.read_text())['units'] if u['split']==phase] if not (R/'ALL_QUESTION_RESULTS.jsonl').exists() else [u for u in map(json.loads,(R/'ALL_QUESTION_RESULTS.jsonl').read_text().splitlines()) if u['split']==phase];expected=128 if phase=='development' else 256;assert len(units)==expected;ids=sorted({u['pair_id'] for u in units});names=[p+'_'+t for p in f['paths'] for t in f['transfers']]
+def clustered(d):
+ values=np.array([np.mean([x for u,x in zip(units,d) if u['pair_id']==p]) for p in ids],dtype=np.float64);rng=np.random.default_rng(20261117);samples=[]
+ for _ in range(40):samples.extend(values[rng.integers(0,len(ids),(250,len(ids)))].mean(1).tolist())
+ return {'mean':float(values.mean()),'ci95':np.quantile(samples,[.025,.975]).tolist(),'lower_bonferroni36':float(np.quantile(samples,.05/36)),'base_pairs':len(ids),'units':len(units)}
+def outcome(u,z):
+ p=z['prediction'];cross=u['predicted_cross_index'];native=u['native_receiver']['scores']['2'];donor=u['native_donor']['scores']['2'];values=z['candidate_logits'];return {'cross':int(p==cross),'strict_cross':int(p==cross and len(z['ties'])==1),'strict_clear_native_cross':int(p==cross and len(z['ties'])==len(native['ties'])==len(donor['ties'])==1),'novel_cross':int(p==cross and p not in [native['prediction'],donor['prediction']]),'strict_novel_cross':int(p==cross and len(z['ties'])==len(native['ties'])==len(donor['ties'])==1 and p not in [native['prediction'],donor['prediction']]),'margin':float(values[cross]-max(x for i,x in enumerate(values) if i!=cross)),'category':'crossed' if p==cross else 'receiver' if p==u['original_index'] else 'donor' if p==u['donor_index'] else 'other','tied':len(z['ties'])>1}
+def aggregate(rows):
+ return {'n':len(rows),'crossed':sum(x['cross'] for x in rows),'cross_accuracy':float(np.mean([x['cross'] for x in rows])),'strict_crossed':sum(x['strict_cross'] for x in rows),'strict_clear_native_crossed':sum(x['strict_clear_native_cross'] for x in rows),'novel_crossed':sum(x['novel_cross'] for x in rows),'strict_novel_crossed':sum(x['strict_novel_cross'] for x in rows),'categories':{n:sum(x['category']==n for x in rows) for n in ['crossed','receiver','donor','other']},'tied':sum(x['tied'] for x in rows),'mean_cross_margin':float(np.mean([x['margin'] for x in rows]))}
+native=[outcome(u,u['native_receiver']['scores']['2']) for u in units];summary={'phase':phase,'units':len(units),'base_pairs':len(ids),'native_cross':aggregate(native),'native_and_text':{},'candidates':{}}
+for n,role in [('receiver','native_receiver'),('donor','native_donor'),('textual_counterfactual','textual_counterfactual')]:
+ summary['native_and_text'][n]={}
+ for dep in ['1','2']:
+  gold=[u['original_index'] if n=='receiver' else u['donor_index'] if n=='donor' else u['predicted_cross_index'] for u in units];summary['native_and_text'][n][dep]={'correct':sum(u[role]['scores'][dep]['prediction']==g for u,g in zip(units,gold)),'n':len(units),'ties':sum(len(u[role]['scores'][dep]['ties'])>1 for u in units)}
+# Template-specific native/text capability remains visible; never condition on correctness.
+summary['native_and_text_by_template']={}
+for template in sorted({u['template'] for u in units}):
+ rs=[u for u in units if u['template']==template];summary['native_and_text_by_template'][str(template)]={'n':len(rs),'nativeK1':sum(u['native_receiver']['scores']['1']['prediction']==u['original_index'] for u in rs),'nativeK2':sum(u['native_receiver']['scores']['2']['prediction']==u['original_index'] for u in rs),'textK1':sum(u['textual_counterfactual']['scores']['1']['prediction']==u['predicted_cross_index'] for u in rs),'textK2':sum(u['textual_counterfactual']['scores']['2']['prediction']==u['predicted_cross_index'] for u in rs)}
+for name in names:
+ vals={c:[outcome(u,u['candidates'][name][c]['scores']['2']) for u in units] for c in ['transfer','same_variable','unrelated','dose']};ag={c:aggregate(v) for c,v in vals.items()};contrasts={};strict_contrasts={};margin_contrasts={};other={'native':native,**{c:vals[c] for c in ['same_variable','unrelated','dose']}}
+ for c,v in other.items():
+  contrasts[c]=clustered([a['cross']-b['cross'] for a,b in zip(vals['transfer'],v)]);strict_contrasts[c]=clustered([a['strict_clear_native_cross']-b['strict_clear_native_cross'] for a,b in zip(vals['transfer'],v)]);margin_contrasts[c]=clustered([a['margin']-b['margin'] for a,b in zip(vals['transfer'],v)])
+ passed=all(v['lower_bonferroni36']>0 and v['mean']>=.05 for v in contrasts.values()) and all(v['mean']>0 for v in strict_contrasts.values()) and ag['transfer']['strict_novel_crossed']>0
+ doses=[r['edits'][0]['dose'] for u in units for r in [u['candidates'][name]['dose']] if r['edits'][0]['dose'] is not None];ag['dose_matching']={'matched':sum(z['matched'] for z in doses),'nonzero_targets':len(doses),'max_relative_error':max((z['relative_error'] for z in doses),default=0),'unmatched_retained':sum(not z['matched'] for z in doses)}
+ summary['candidates'][name]={'results':ag,'cross_accuracy_contrasts':contrasts,'strict_clear_native_contrasts':strict_contrasts,'margin_contrasts':margin_contrasts,'pass':passed,'by_template':{str(t):aggregate([x for u,x in zip(units,vals['transfer']) if u['template']==t]) for t in sorted({u['template'] for u in units})}}
+(R/(phase+'_SUMMARY.json')).write_text(json.dumps(summary,indent=2))
+if phase=='development':
+ passing=[n for n in names if summary['candidates'][n]['pass']];choice=min(passing,key=lambda n:(-min(v['lower_bonferroni36'] for v in summary['candidates'][n]['cross_accuracy_contrasts'].values()),names.index(n))) if passing else None
+ (R/'SELECTED_CANDIDATE.json').write_text(json.dumps({'candidate':choice,'passing':passing,'utc':datetime.datetime.now(datetime.timezone.utc).isoformat(),'scope':'Development-only choice, frozen beforefresh neuraloutcomes; all9fixedpaths repeatedfresh regardlesschoice. No outcome-basedreplacement.'},indent=2))
+print('A_ANALYSIS',phase,'PASSING',[n for n,z in summary['candidates'].items() if z['pass']],'CROSSES',{n:z['results']['transfer']['crossed'] for n,z in summary['candidates'].items()})
