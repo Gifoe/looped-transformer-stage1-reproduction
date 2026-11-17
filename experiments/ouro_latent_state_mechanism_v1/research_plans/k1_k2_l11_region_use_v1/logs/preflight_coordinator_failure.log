@@ -1,0 +1,7 @@
+RUN technical 33943
+Traceback (most recent call last):
+  File "/root/ouro-region-use-sol-20261117/code/coordinator.py", line 7, in <module>
+    run('technical',['technical.py']);run('oracle',['oracle.py'])
+  File "/root/ouro-region-use-sol-20261117/code/coordinator.py", line 5, in run
+    p=subprocess.Popen([PY,str(R/'code'/args[0])]+args[1:],env=env,stdout=log,stderr=subprocess.STDOUT);print('RUN',name,p.pid,flush=True);assert p.wait()==0,('FAILED',name)
+AssertionError: ('FAILED', 'technical')

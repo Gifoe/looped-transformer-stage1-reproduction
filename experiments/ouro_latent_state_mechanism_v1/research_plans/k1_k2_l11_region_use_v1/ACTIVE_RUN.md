@@ -1,0 +1,1 @@
+Region study model execution and full-vector audits finished. All unique-mask/fresh protocols remain frozen. No scientific route automatically launched after this stage. Overall mechanism goal ACTIVE, no unique composition identified. See RESULTS.md and RELEASE_STATUS.json.

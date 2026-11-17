@@ -1,0 +1,29 @@
+# Astra冻结实现审查
+
+结论：未发现要求停止当前开发、修改科学算子或重冻统计方法的实际偏差。确认必须仍等待全部开发产物CPU审计PASS及冻结规则选出合格mask；不得因本审查提前曝光新确认。建议确认启动前单独记录REGION_SELECTION文件SHA与选择规则独立CPU复核receipt，不修改当前冻结源码。
+
+范围：实际阅读REGION_FREEZE.json，region_operator.py、technical.py、run_development.py、run_confirmation.py、analyze.py，并追读prepare_regions.py、coordinator.py、guard.py、audit_vectors.py。此前实际阅读同版区域协议。属于源码与科学设计审查，不是独立GPU执行、全量tensor重放、bootstrap数值重算或独立复现技术PASS。根提供的36forward/72head/24witness结果不得归为我的独立数值验证。
+
+## 算子与语义
+固定K2/L11/index10；当前Q/K/V完整因果FP64softmax计算paired difference，再加actual BF16原SDPA基底并一次回写。仅开放Q/O/R行的delta非零，关闭行bits断言，非H不变。算子不是native KVcounter，命名无混淆。随机方向保持完整H形状及原seed构造，使用每mask实际BF16目标dose；关闭行未变有直接断言。原生48调用、单编辑event、194prefix和投影hook审计均明确。
+
+Q从H_start至首选项前，O包括选项和末readtoken前格式，R单token。生成器用offsets检查互斥完整并集，未发现边界偷换。technical覆盖三模板、两label，mask0/native及mask7/parent全部score（含fullvocab hash）精确桥接，sem1开放行dose与mask7对应行一致。即时vector逐元素一致的全量科学证明没有仅凭norm获得；现有实际输入相同和逐元素算子定义支持其预期，CPUwitness范围应照实标记。
+
+native及semantic逐层Q输入/K/V/attention、两轮norm和L11即时写入的label配对hash被实际比较。所有科学world继续检查，不能把三个模板技术例子当全队列验证。random未声明Q跨label一致，合理：随机种子依unit ID而变。Q约束只能排除未来label可见，不能排除已算终点。
+
+## 统计与计数
+Y为opposite rawlogit减两decoy原logit均值，G为opposite减selected；没有错误softmax或幅度归一化。开发四strata、八selector、>0.1、>=0.8E7、doseQC以及最少regions/最大最小保留率/最小mask顺序与协议一致。native和L11mask7复用，六个新增mask×512×2=6144forward。
+
+确认从region_confirmation读取唯一新64×32inputs；selected7重复条件引用同一结果，其余5forward/input。18列统计族、group内配对均值、100000次64group resampling、seed2026111745和双侧Bonferroni18分位点一致。pass_names切片正确覆盖四selected、四full、两native对比及两label分层；保留差、能力和八selector另加正确门槛。native observed accuracy>=.70，不误用CI下界>=.70。selected7保留差构造依赖被标记，未重新调窄统计族。
+
+## 数据隔离与执行保护
+prepare_regions用新seed2026111743、SR080起的新ID；新tokenhash2048唯一且与全部旧R及CPU生成的旧C不重合。相同文本必产生相同tokenhash，因此此disjoint检查也排除完全相同文本；这不是更广泛的语义独立性证明。每group32factorial、角色label均衡和Q前缀label身份均有CPU断言。
+
+guard实际验证本地及继承文件SHA；resume检查freeze、rawSHA和预期ID集合。analyze自身仅作数量/唯一检查，但正常coordinator先执行audit_vectors，后者校验每文件精确输入集合和metadata，完成全体seen集合检查。因此当前规范执行链未暴露混入旧确认的实际路径。不得绕开coordinator或审核环节手工把不完整结果当确认。
+
+run_confirmation要求technical gate和development fullvector PASS，且selected在1..7；REGION_SELECTION由冻结analyze确定。runner没有单独绑定selection文件SHA：这是可补独立启动receipt的完整性强化事项，不是已观察到选择被修改或科学门槛错误。确认前应保留唯一selection哈希及父freeze一致性检查证据，不需改动运行中科学源码。
+
+## 限定与后续
+qc的全target零分支以mass=1,ratio=0处理，未单独断言actual全零；当前matcher零target应不写且关闭行bits断言、raw audit同时核查实际dose，当前没有观察到实际违规。应完整报告零target行与degenerate情况，不能把退化控制当语义证据。非零目标的实际dose匹配公式与冻结规则一致。
+
+本审查不替代正在进行的开发全向量CPU审计或未来独立18统计重算。若这些审计失败，应在新确认前停止；若开发无合格mask，停止本版本，不回退选择。完整机制目标仍未达到，active。

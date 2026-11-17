@@ -1,0 +1,6 @@
+import pathlib,json,datetime
+from guard import verify,sha
+R=pathlib.Path('/root/ouro-region-use-sol-20261117');fs=verify();f=R/'FRESH_CONFIRMATION_FREEZE.json';z=json.loads(f.read_text());assert fs==z['region_freeze_sha256'] and sha(R/'REGION_SELECTION.json')==z['selection_sha256'] and sha(R/'INPUTS.jsonl')==z['input_sha256'];checked=0
+for name,d in z['all_current_code_sha256'].items():assert sha(R/'code'/name)==d,('prefreshsourcechanged',name);checked+=1
+for name,d in z['development_results_sha256'].items():assert sha(R/'results'/name)==d
+assert json.loads((R/'REGION_CONFIRMATION.json').read_text())['selected_mask']==z['selected_mask'];out={'status':'PASS','region_freeze_sha256':fs,'fresh_confirmation_freeze_sha256':sha(f),'selection_sha256':z['selection_sha256'],'prefresh_code_files_checked':checked,'dev_results_checked':len(z['development_results_sha256']),'all_frozen_code_and_selection_unchanged':True,'postfreeze_reporting_or_audit_sources':[p.name for p in sorted((R/'code').glob('*.py')) if p.name not in z['all_current_code_sha256']],'executor':'Sol source-hash audit, not model replication','utc':datetime.datetime.now(datetime.timezone.utc).isoformat()};(R/'FRESH_FREEZE_POST_AUDIT.json').write_text(json.dumps(out,indent=2));print('FRESH_FREEZE_POST_AUDIT_PASS',checked)
