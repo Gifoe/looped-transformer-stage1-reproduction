@@ -1,0 +1,37 @@
+{
+  "selected_for_causality": {
+    "relation": {
+      "role": "query",
+      "k": 2,
+      "layer": 11,
+      "discover_gain": 0.06
+    },
+    "logic": {
+      "role": "mapping",
+      "k": 2,
+      "layer": 11,
+      "discover_gain": 0.05249999999999999
+    },
+    "arithmetic": {
+      "role": "query",
+      "k": 2,
+      "layer": 11,
+      "discover_gain": 0.08750000000000002
+    }
+  },
+  "heldout_prediction": {
+    "role": "readout",
+    "layer": 24,
+    "fit_tasks": [
+      "relation",
+      "logic"
+    ],
+    "holdout_task": "arithmetic",
+    "expect": "K4 > K1",
+    "discovery_minimum_gain": 0.07500000000000001
+  },
+  "inputs_sha256": "4a255369c16f6fdf52d4f2569f47097a10044f4379ae533d8fc21587f96f608d",
+  "analysis_sha256": "6d36eaa49ef8f7749841a5323208d5325454668ec022528d74b37f48a3006cb3",
+  "readout_alpha": 0.75,
+  "discovery_sha256": "c1a0d6e9ea4b46d344c2fca002d648156ddd3011179d4462ff17ddcbf1093965"
+}
