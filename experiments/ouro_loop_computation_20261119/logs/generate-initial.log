@@ -1,0 +1,9 @@
+Traceback (most recent call last):
+  File "/root/autodl-tmp/ouro-cross-task-20261118/repo/experiments/ouro_loop_computation_20261119/data_loop.py", line 201, in <module>
+    prepare(a.model,a.out)
+  File "/root/autodl-tmp/ouro-cross-task-20261118/repo/experiments/ouro_loop_computation_20261119/data_loop.py", line 184, in prepare
+    all_rows=[build(tok,t,s,i,seen) for t in TASKS for s,n in SPLITS.items() for i in range(n)]
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "/root/autodl-tmp/ouro-cross-task-20261118/repo/experiments/ouro_loop_computation_20261119/data_loop.py", line 176, in build
+    raise RuntimeError(f"No aligned realization for {gid}")
+RuntimeError: No aligned realization for arithmetic/fit/000

@@ -1,0 +1,502 @@
+{
+  "status": "passed",
+  "groups": 1056,
+  "raw_checks": {
+    "development/relation": {
+      "task": "relation",
+      "phase": "development",
+      "groups": 160,
+      "rows": 1280,
+      "manifest_sha256": "35ec9b9b5fd99a16b923a3a72f6568fe48ab1a276c9e8935616bb8df4cf2a9c3",
+      "implementation_sha256": "bcc58a808be9924d21bb4675454588947a6bb31aa3f8e8d574cbe6d6979c9af4",
+      "seconds": 143.0220936050173,
+      "runtime": {
+        "model_revision": "574fa66cb8bf5abdc979642d01cf2b79b16bfab1",
+        "model_sha256": "58872a72616c736595b8b7662079c5b12c5a162ec16eae94f21c348dfa9885af",
+        "torch": "2.7.1+cu128",
+        "transformers": "4.55.4",
+        "torch_cuda": "12.8",
+        "gpu": "NVIDIA GeForce RTX 4090",
+        "cuda_capability": [
+          8,
+          9
+        ],
+        "capacity_bytes": 25252724736,
+        "dtype": "bfloat16",
+        "attention": "sdpa",
+        "use_cache": false,
+        "files_sha256": {
+          "config.json": "ce9cc13da41591b8b4deca053d7dfee06424c0228628ee862ea86d725bc163f3",
+          "configuration_ouro.py": "950443e32929047aa08d02abad2e1888bc1914b3db988d3d675f70787f65dafb",
+          "merges.txt": "0b54e8aa4e53d5383e2e4bc635a56b43f9647f7b13832d5d9ecd8f82dac4f510",
+          "model.safetensors": "58872a72616c736595b8b7662079c5b12c5a162ec16eae94f21c348dfa9885af",
+          "modeling_ouro.py": "c5c68fbb368ce2909c257ae2afc50719be8c91539333d3295e19312c4316f413",
+          "special_tokens_map.json": "55087bb8409060d9cb0f80495e34f4e0d8a84f68a799a6b0cab3132be0aae319",
+          "tokenizer.json": "fcb808fe5e7642f5299be28aea07fc7f6d4f4364c3ac5e408e15a772cbc8fa8d",
+          "tokenizer_config.json": "7e010da95d71b0fa1aa809552922c74cc1dd98d628f21ba39ca6c35aa18d5d91",
+          "vocab.json": "7b9de3f47796abf8d00ab96be299fea0dc9afdf1827f34e7e0b9fb44593efe5c"
+        }
+      },
+      "files": {
+        "trajectory.npy": {
+          "sha256": "dfc00f7a676660c9b0b919630e503cbb4c137bda32bc77e3068dd22b711cb986",
+          "bytes": 61440128
+        },
+        "boundary.npy": {
+          "sha256": "fd888fb56fa652c7a36eaf90d10c8da15af15ddedbb317365e10ebae7a77b366",
+          "bytes": 209715328
+        },
+        "lens.npy": {
+          "sha256": "63e29115b070d53b7517a88f19009f1181357df9d4c9731daded81a4367678cd",
+          "bytes": 2048128
+        },
+        "attention.npy": {
+          "sha256": "ca96812477f4056dde275ef01a0439e6cb00fbe56fa38fb341643e0e638814dd",
+          "bytes": 1474688
+        },
+        "geometry.npy": {
+          "sha256": "b24195470ccaf5e9beca670d4642ea83bd0f221d39c600b903560eca616a8add",
+          "bytes": 5120128
+        },
+        "rows.jsonl": {
+          "sha256": "0ea5769dc39145147c2117f1e0070342b704ceabfe1dcf67d165e0180e05e759",
+          "bytes": 2070766
+        }
+      }
+    },
+    "independent/relation": {
+      "task": "relation",
+      "phase": "independent",
+      "groups": 192,
+      "rows": 1536,
+      "manifest_sha256": "35ec9b9b5fd99a16b923a3a72f6568fe48ab1a276c9e8935616bb8df4cf2a9c3",
+      "implementation_sha256": "bcc58a808be9924d21bb4675454588947a6bb31aa3f8e8d574cbe6d6979c9af4",
+      "seconds": 173.08555860095657,
+      "runtime": {
+        "model_revision": "574fa66cb8bf5abdc979642d01cf2b79b16bfab1",
+        "model_sha256": "58872a72616c736595b8b7662079c5b12c5a162ec16eae94f21c348dfa9885af",
+        "torch": "2.7.1+cu128",
+        "transformers": "4.55.4",
+        "torch_cuda": "12.8",
+        "gpu": "NVIDIA GeForce RTX 4090",
+        "cuda_capability": [
+          8,
+          9
+        ],
+        "capacity_bytes": 25252724736,
+        "dtype": "bfloat16",
+        "attention": "sdpa",
+        "use_cache": false,
+        "files_sha256": {
+          "config.json": "ce9cc13da41591b8b4deca053d7dfee06424c0228628ee862ea86d725bc163f3",
+          "configuration_ouro.py": "950443e32929047aa08d02abad2e1888bc1914b3db988d3d675f70787f65dafb",
+          "merges.txt": "0b54e8aa4e53d5383e2e4bc635a56b43f9647f7b13832d5d9ecd8f82dac4f510",
+          "model.safetensors": "58872a72616c736595b8b7662079c5b12c5a162ec16eae94f21c348dfa9885af",
+          "modeling_ouro.py": "c5c68fbb368ce2909c257ae2afc50719be8c91539333d3295e19312c4316f413",
+          "special_tokens_map.json": "55087bb8409060d9cb0f80495e34f4e0d8a84f68a799a6b0cab3132be0aae319",
+          "tokenizer.json": "fcb808fe5e7642f5299be28aea07fc7f6d4f4364c3ac5e408e15a772cbc8fa8d",
+          "tokenizer_config.json": "7e010da95d71b0fa1aa809552922c74cc1dd98d628f21ba39ca6c35aa18d5d91",
+          "vocab.json": "7b9de3f47796abf8d00ab96be299fea0dc9afdf1827f34e7e0b9fb44593efe5c"
+        }
+      },
+      "files": {
+        "trajectory.npy": {
+          "sha256": "f8b9c119e3316f3b2f1b2d7562b33f7bcb456ad624fcfb193181d8d6c2d7e4dc",
+          "bytes": 73728128
+        },
+        "boundary.npy": {
+          "sha256": "cc03b8a859de6de027e931e7cf4493eaefee449aae2da989e62dd43c3d824b73",
+          "bytes": 251658368
+        },
+        "lens.npy": {
+          "sha256": "3774ffcf961090a31a43f93766d6b093a6d09f3df992d42372405a2f98b6a505",
+          "bytes": 2457728
+        },
+        "attention.npy": {
+          "sha256": "5bd2bd3741e737467c7b1f3b01eadc985aaa08b767aefdd1bd3cec29bedc6ee1",
+          "bytes": 1769600
+        },
+        "geometry.npy": {
+          "sha256": "32f0e74d6e0262b2fb521e54010fb83333c8e191ce0954082649a6838110c2d9",
+          "bytes": 6144128
+        },
+        "rows.jsonl": {
+          "sha256": "7fdc34ad76de37f182d633a49bfce0c445e02fba294941f69adbcef9fe5aa227",
+          "bytes": 2647734
+        }
+      }
+    },
+    "causal/relation": {
+      "task": "relation",
+      "phase": "independent",
+      "groups_protocol_pairs": 128,
+      "arms": 5248,
+      "manifest_sha256": "35ec9b9b5fd99a16b923a3a72f6568fe48ab1a276c9e8935616bb8df4cf2a9c3",
+      "freeze_sha256": "e34cd5dabaeddd2699c3fee7c43ce4b9e31ad03f72bd6e7b6ed962140f9bc31d",
+      "code": "7ff0b8f8ce012933e2cbf8185f79112488fbdb4b47a2b4e4a5c7e7d06c55704e",
+      "runtime": {
+        "model_revision": "574fa66cb8bf5abdc979642d01cf2b79b16bfab1",
+        "model_sha256": "58872a72616c736595b8b7662079c5b12c5a162ec16eae94f21c348dfa9885af",
+        "torch": "2.7.1+cu128",
+        "transformers": "4.55.4",
+        "torch_cuda": "12.8",
+        "gpu": "NVIDIA GeForce RTX 4090",
+        "cuda_capability": [
+          8,
+          9
+        ],
+        "capacity_bytes": 25252724736,
+        "dtype": "bfloat16",
+        "attention": "sdpa",
+        "use_cache": false,
+        "files_sha256": {
+          "config.json": "ce9cc13da41591b8b4deca053d7dfee06424c0228628ee862ea86d725bc163f3",
+          "configuration_ouro.py": "950443e32929047aa08d02abad2e1888bc1914b3db988d3d675f70787f65dafb",
+          "merges.txt": "0b54e8aa4e53d5383e2e4bc635a56b43f9647f7b13832d5d9ecd8f82dac4f510",
+          "model.safetensors": "58872a72616c736595b8b7662079c5b12c5a162ec16eae94f21c348dfa9885af",
+          "modeling_ouro.py": "c5c68fbb368ce2909c257ae2afc50719be8c91539333d3295e19312c4316f413",
+          "special_tokens_map.json": "55087bb8409060d9cb0f80495e34f4e0d8a84f68a799a6b0cab3132be0aae319",
+          "tokenizer.json": "fcb808fe5e7642f5299be28aea07fc7f6d4f4364c3ac5e408e15a772cbc8fa8d",
+          "tokenizer_config.json": "7e010da95d71b0fa1aa809552922c74cc1dd98d628f21ba39ca6c35aa18d5d91",
+          "vocab.json": "7b9de3f47796abf8d00ab96be299fea0dc9afdf1827f34e7e0b9fb44593efe5c"
+        }
+      },
+      "seconds": 593.8310361299664,
+      "files": {
+        "arms.jsonl": "eaf0dbd7b3884ce08cbc32c578c2eb764497bf9673b370314438a61edcb60d67",
+        "projected_boundary.npy": "410af38a04425a210606f2a1e205e890a8a47c0114176e360032b07ed7eb83a5"
+      }
+    },
+    "development/logic": {
+      "task": "logic",
+      "phase": "development",
+      "groups": 160,
+      "rows": 1280,
+      "manifest_sha256": "35ec9b9b5fd99a16b923a3a72f6568fe48ab1a276c9e8935616bb8df4cf2a9c3",
+      "implementation_sha256": "bcc58a808be9924d21bb4675454588947a6bb31aa3f8e8d574cbe6d6979c9af4",
+      "seconds": 142.05327100097202,
+      "runtime": {
+        "model_revision": "574fa66cb8bf5abdc979642d01cf2b79b16bfab1",
+        "model_sha256": "58872a72616c736595b8b7662079c5b12c5a162ec16eae94f21c348dfa9885af",
+        "torch": "2.7.1+cu128",
+        "transformers": "4.55.4",
+        "torch_cuda": "12.8",
+        "gpu": "NVIDIA GeForce RTX 4090",
+        "cuda_capability": [
+          8,
+          9
+        ],
+        "capacity_bytes": 25252724736,
+        "dtype": "bfloat16",
+        "attention": "sdpa",
+        "use_cache": false,
+        "files_sha256": {
+          "config.json": "ce9cc13da41591b8b4deca053d7dfee06424c0228628ee862ea86d725bc163f3",
+          "configuration_ouro.py": "950443e32929047aa08d02abad2e1888bc1914b3db988d3d675f70787f65dafb",
+          "merges.txt": "0b54e8aa4e53d5383e2e4bc635a56b43f9647f7b13832d5d9ecd8f82dac4f510",
+          "model.safetensors": "58872a72616c736595b8b7662079c5b12c5a162ec16eae94f21c348dfa9885af",
+          "modeling_ouro.py": "c5c68fbb368ce2909c257ae2afc50719be8c91539333d3295e19312c4316f413",
+          "special_tokens_map.json": "55087bb8409060d9cb0f80495e34f4e0d8a84f68a799a6b0cab3132be0aae319",
+          "tokenizer.json": "fcb808fe5e7642f5299be28aea07fc7f6d4f4364c3ac5e408e15a772cbc8fa8d",
+          "tokenizer_config.json": "7e010da95d71b0fa1aa809552922c74cc1dd98d628f21ba39ca6c35aa18d5d91",
+          "vocab.json": "7b9de3f47796abf8d00ab96be299fea0dc9afdf1827f34e7e0b9fb44593efe5c"
+        }
+      },
+      "files": {
+        "trajectory.npy": {
+          "sha256": "24483adf154e40ebaf068f1105490787e27b7763a6e64c05815a527afc57cbf9",
+          "bytes": 61440128
+        },
+        "boundary.npy": {
+          "sha256": "53c6f6b91a1498cde335218143383b488f4ac98d97750db7e8af96e6513275b9",
+          "bytes": 209715328
+        },
+        "lens.npy": {
+          "sha256": "95117b8f07851c18f723b9efa9199d85dba0a7fa8dd5358fe33a8417d0dd143d",
+          "bytes": 2048128
+        },
+        "attention.npy": {
+          "sha256": "7925394918b10dc41764faddbad0f0b32ce02fd34dcf849b8dcb6fc0c6720ef5",
+          "bytes": 1474688
+        },
+        "geometry.npy": {
+          "sha256": "41b82f90464b9e038bcfec80e87cd5f5681e664f2d6fee9ceb533b61eb08f6e5",
+          "bytes": 5120128
+        },
+        "rows.jsonl": {
+          "sha256": "2d51bf82948d36697d0b72911ab25fe89de6ff44eaa37a56290ef0c61bde1aa9",
+          "bytes": 2048707
+        }
+      }
+    },
+    "independent/logic": {
+      "task": "logic",
+      "phase": "independent",
+      "groups": 192,
+      "rows": 1536,
+      "manifest_sha256": "35ec9b9b5fd99a16b923a3a72f6568fe48ab1a276c9e8935616bb8df4cf2a9c3",
+      "implementation_sha256": "bcc58a808be9924d21bb4675454588947a6bb31aa3f8e8d574cbe6d6979c9af4",
+      "seconds": 172.60947421495803,
+      "runtime": {
+        "model_revision": "574fa66cb8bf5abdc979642d01cf2b79b16bfab1",
+        "model_sha256": "58872a72616c736595b8b7662079c5b12c5a162ec16eae94f21c348dfa9885af",
+        "torch": "2.7.1+cu128",
+        "transformers": "4.55.4",
+        "torch_cuda": "12.8",
+        "gpu": "NVIDIA GeForce RTX 4090",
+        "cuda_capability": [
+          8,
+          9
+        ],
+        "capacity_bytes": 25252724736,
+        "dtype": "bfloat16",
+        "attention": "sdpa",
+        "use_cache": false,
+        "files_sha256": {
+          "config.json": "ce9cc13da41591b8b4deca053d7dfee06424c0228628ee862ea86d725bc163f3",
+          "configuration_ouro.py": "950443e32929047aa08d02abad2e1888bc1914b3db988d3d675f70787f65dafb",
+          "merges.txt": "0b54e8aa4e53d5383e2e4bc635a56b43f9647f7b13832d5d9ecd8f82dac4f510",
+          "model.safetensors": "58872a72616c736595b8b7662079c5b12c5a162ec16eae94f21c348dfa9885af",
+          "modeling_ouro.py": "c5c68fbb368ce2909c257ae2afc50719be8c91539333d3295e19312c4316f413",
+          "special_tokens_map.json": "55087bb8409060d9cb0f80495e34f4e0d8a84f68a799a6b0cab3132be0aae319",
+          "tokenizer.json": "fcb808fe5e7642f5299be28aea07fc7f6d4f4364c3ac5e408e15a772cbc8fa8d",
+          "tokenizer_config.json": "7e010da95d71b0fa1aa809552922c74cc1dd98d628f21ba39ca6c35aa18d5d91",
+          "vocab.json": "7b9de3f47796abf8d00ab96be299fea0dc9afdf1827f34e7e0b9fb44593efe5c"
+        }
+      },
+      "files": {
+        "trajectory.npy": {
+          "sha256": "b6fdd9c5cfc13c8d3339665dc9d54894ae394a0aa019eb5c557aad8180b136e2",
+          "bytes": 73728128
+        },
+        "boundary.npy": {
+          "sha256": "3a0d9bd8530af1ffdff3d5eaa65272f9b1c0ae6c44777c126ff7d0765f2a00a6",
+          "bytes": 251658368
+        },
+        "lens.npy": {
+          "sha256": "28ea4774f746fb6a22977a85bdce5cb8d13427d474c6cbd3a4ce037ac7477f84",
+          "bytes": 2457728
+        },
+        "attention.npy": {
+          "sha256": "b3ebbbbaf679d7559e49f4fcd9b5a6f0b87afc5802e58c69e2afdda5904b2178",
+          "bytes": 1769600
+        },
+        "geometry.npy": {
+          "sha256": "76bfbf210dbefa4c9d245f4e06025b90a7c040dcf9fdcf2b1bf3a2cba5ac5c49",
+          "bytes": 6144128
+        },
+        "rows.jsonl": {
+          "sha256": "6d5e3b6d7d5a971c462d7fa7368e8c43b41f5f041761ed50a6ddee9b48729e1b",
+          "bytes": 2620533
+        }
+      }
+    },
+    "causal/logic": {
+      "task": "logic",
+      "phase": "independent",
+      "groups_protocol_pairs": 128,
+      "arms": 5248,
+      "manifest_sha256": "35ec9b9b5fd99a16b923a3a72f6568fe48ab1a276c9e8935616bb8df4cf2a9c3",
+      "freeze_sha256": "e34cd5dabaeddd2699c3fee7c43ce4b9e31ad03f72bd6e7b6ed962140f9bc31d",
+      "code": "7ff0b8f8ce012933e2cbf8185f79112488fbdb4b47a2b4e4a5c7e7d06c55704e",
+      "runtime": {
+        "model_revision": "574fa66cb8bf5abdc979642d01cf2b79b16bfab1",
+        "model_sha256": "58872a72616c736595b8b7662079c5b12c5a162ec16eae94f21c348dfa9885af",
+        "torch": "2.7.1+cu128",
+        "transformers": "4.55.4",
+        "torch_cuda": "12.8",
+        "gpu": "NVIDIA GeForce RTX 4090",
+        "cuda_capability": [
+          8,
+          9
+        ],
+        "capacity_bytes": 25252724736,
+        "dtype": "bfloat16",
+        "attention": "sdpa",
+        "use_cache": false,
+        "files_sha256": {
+          "config.json": "ce9cc13da41591b8b4deca053d7dfee06424c0228628ee862ea86d725bc163f3",
+          "configuration_ouro.py": "950443e32929047aa08d02abad2e1888bc1914b3db988d3d675f70787f65dafb",
+          "merges.txt": "0b54e8aa4e53d5383e2e4bc635a56b43f9647f7b13832d5d9ecd8f82dac4f510",
+          "model.safetensors": "58872a72616c736595b8b7662079c5b12c5a162ec16eae94f21c348dfa9885af",
+          "modeling_ouro.py": "c5c68fbb368ce2909c257ae2afc50719be8c91539333d3295e19312c4316f413",
+          "special_tokens_map.json": "55087bb8409060d9cb0f80495e34f4e0d8a84f68a799a6b0cab3132be0aae319",
+          "tokenizer.json": "fcb808fe5e7642f5299be28aea07fc7f6d4f4364c3ac5e408e15a772cbc8fa8d",
+          "tokenizer_config.json": "7e010da95d71b0fa1aa809552922c74cc1dd98d628f21ba39ca6c35aa18d5d91",
+          "vocab.json": "7b9de3f47796abf8d00ab96be299fea0dc9afdf1827f34e7e0b9fb44593efe5c"
+        }
+      },
+      "seconds": 594.8699746930506,
+      "files": {
+        "arms.jsonl": "918d934f272583a1c99039e2290a6b803dbc2debdb7585471bf856d357b336e9",
+        "projected_boundary.npy": "04dfa619ab098d28126de2f3bcda2bead93307383a3df67221f9fa94f357720e"
+      }
+    },
+    "development/arithmetic": {
+      "task": "arithmetic",
+      "phase": "development",
+      "groups": 160,
+      "rows": 1280,
+      "manifest_sha256": "35ec9b9b5fd99a16b923a3a72f6568fe48ab1a276c9e8935616bb8df4cf2a9c3",
+      "implementation_sha256": "bcc58a808be9924d21bb4675454588947a6bb31aa3f8e8d574cbe6d6979c9af4",
+      "seconds": 363.23456526896916,
+      "runtime": {
+        "model_revision": "574fa66cb8bf5abdc979642d01cf2b79b16bfab1",
+        "model_sha256": "58872a72616c736595b8b7662079c5b12c5a162ec16eae94f21c348dfa9885af",
+        "torch": "2.7.1+cu128",
+        "transformers": "4.55.4",
+        "torch_cuda": "12.8",
+        "gpu": "NVIDIA GeForce RTX 4090",
+        "cuda_capability": [
+          8,
+          9
+        ],
+        "capacity_bytes": 25252724736,
+        "dtype": "bfloat16",
+        "attention": "sdpa",
+        "use_cache": false,
+        "files_sha256": {
+          "config.json": "ce9cc13da41591b8b4deca053d7dfee06424c0228628ee862ea86d725bc163f3",
+          "configuration_ouro.py": "950443e32929047aa08d02abad2e1888bc1914b3db988d3d675f70787f65dafb",
+          "merges.txt": "0b54e8aa4e53d5383e2e4bc635a56b43f9647f7b13832d5d9ecd8f82dac4f510",
+          "model.safetensors": "58872a72616c736595b8b7662079c5b12c5a162ec16eae94f21c348dfa9885af",
+          "modeling_ouro.py": "c5c68fbb368ce2909c257ae2afc50719be8c91539333d3295e19312c4316f413",
+          "special_tokens_map.json": "55087bb8409060d9cb0f80495e34f4e0d8a84f68a799a6b0cab3132be0aae319",
+          "tokenizer.json": "fcb808fe5e7642f5299be28aea07fc7f6d4f4364c3ac5e408e15a772cbc8fa8d",
+          "tokenizer_config.json": "7e010da95d71b0fa1aa809552922c74cc1dd98d628f21ba39ca6c35aa18d5d91",
+          "vocab.json": "7b9de3f47796abf8d00ab96be299fea0dc9afdf1827f34e7e0b9fb44593efe5c"
+        }
+      },
+      "files": {
+        "trajectory.npy": {
+          "sha256": "a862b9dc94f2aee6ad5779b25721a4176bfbc92115cdc16032540db73f3e7082",
+          "bytes": 61440128
+        },
+        "boundary.npy": {
+          "sha256": "3956e7faa14de6cd9ab0979061a925ee2c57ca27c3ef4a458970f696eda4608c",
+          "bytes": 209715328
+        },
+        "lens.npy": {
+          "sha256": "d8652e383bf992c59d5866710b2987b0588a61a49936748185a1f4e9d2aa32d2",
+          "bytes": 2048128
+        },
+        "attention.npy": {
+          "sha256": "4da01d12ff3bd4e88eecd0f30d2abcbc54c0df06525c6c4b68ab5bf726d2b4e8",
+          "bytes": 1474688
+        },
+        "geometry.npy": {
+          "sha256": "90ebe1ea038525535211d95c50424237abf25dad8207f22805509cf4574f5351",
+          "bytes": 5120128
+        },
+        "rows.jsonl": {
+          "sha256": "35474b9db400d8c72a5cdc30b60ef63e6fd8e5132d1b8bd9173edeb8b06bc0ab",
+          "bytes": 1989929
+        }
+      }
+    },
+    "independent/arithmetic": {
+      "task": "arithmetic",
+      "phase": "independent",
+      "groups": 192,
+      "rows": 1536,
+      "manifest_sha256": "35ec9b9b5fd99a16b923a3a72f6568fe48ab1a276c9e8935616bb8df4cf2a9c3",
+      "implementation_sha256": "bcc58a808be9924d21bb4675454588947a6bb31aa3f8e8d574cbe6d6979c9af4",
+      "seconds": 469.8410255641211,
+      "runtime": {
+        "model_revision": "574fa66cb8bf5abdc979642d01cf2b79b16bfab1",
+        "model_sha256": "58872a72616c736595b8b7662079c5b12c5a162ec16eae94f21c348dfa9885af",
+        "torch": "2.7.1+cu128",
+        "transformers": "4.55.4",
+        "torch_cuda": "12.8",
+        "gpu": "NVIDIA GeForce RTX 4090",
+        "cuda_capability": [
+          8,
+          9
+        ],
+        "capacity_bytes": 25252724736,
+        "dtype": "bfloat16",
+        "attention": "sdpa",
+        "use_cache": false,
+        "files_sha256": {
+          "config.json": "ce9cc13da41591b8b4deca053d7dfee06424c0228628ee862ea86d725bc163f3",
+          "configuration_ouro.py": "950443e32929047aa08d02abad2e1888bc1914b3db988d3d675f70787f65dafb",
+          "merges.txt": "0b54e8aa4e53d5383e2e4bc635a56b43f9647f7b13832d5d9ecd8f82dac4f510",
+          "model.safetensors": "58872a72616c736595b8b7662079c5b12c5a162ec16eae94f21c348dfa9885af",
+          "modeling_ouro.py": "c5c68fbb368ce2909c257ae2afc50719be8c91539333d3295e19312c4316f413",
+          "special_tokens_map.json": "55087bb8409060d9cb0f80495e34f4e0d8a84f68a799a6b0cab3132be0aae319",
+          "tokenizer.json": "fcb808fe5e7642f5299be28aea07fc7f6d4f4364c3ac5e408e15a772cbc8fa8d",
+          "tokenizer_config.json": "7e010da95d71b0fa1aa809552922c74cc1dd98d628f21ba39ca6c35aa18d5d91",
+          "vocab.json": "7b9de3f47796abf8d00ab96be299fea0dc9afdf1827f34e7e0b9fb44593efe5c"
+        }
+      },
+      "files": {
+        "trajectory.npy": {
+          "sha256": "9ce1426dbc82e394bd42faf9d38f5c0c83baf81a3130d9f849fc34ee7ce65e18",
+          "bytes": 73728128
+        },
+        "boundary.npy": {
+          "sha256": "cf9323bb5f3e66ccde4b41c6678bea69ca8d87f692466bb9179502282774f53a",
+          "bytes": 251658368
+        },
+        "lens.npy": {
+          "sha256": "47e63c253fe05369ffdc3ebe46e0c6ccfe0eedee9f52bd39671de120de3af70d",
+          "bytes": 2457728
+        },
+        "attention.npy": {
+          "sha256": "dfe04eb14ab3b8565d22619219376e35a67be7d2c3c81b17a9d8768e5ab463d6",
+          "bytes": 1769600
+        },
+        "geometry.npy": {
+          "sha256": "f35f3e0ee474b657054385f265372d6cda5279508e8bbcccc600f258abdcea42",
+          "bytes": 6144128
+        },
+        "rows.jsonl": {
+          "sha256": "6ea4c045573970e6360ef5a062a8cea2f0598c855a32ee8ec2c8c63494799880",
+          "bytes": 2469083
+        }
+      }
+    },
+    "causal/arithmetic": {
+      "task": "arithmetic",
+      "phase": "independent",
+      "groups_protocol_pairs": 128,
+      "arms": 5248,
+      "manifest_sha256": "35ec9b9b5fd99a16b923a3a72f6568fe48ab1a276c9e8935616bb8df4cf2a9c3",
+      "freeze_sha256": "e34cd5dabaeddd2699c3fee7c43ce4b9e31ad03f72bd6e7b6ed962140f9bc31d",
+      "code": "7ff0b8f8ce012933e2cbf8185f79112488fbdb4b47a2b4e4a5c7e7d06c55704e",
+      "runtime": {
+        "model_revision": "574fa66cb8bf5abdc979642d01cf2b79b16bfab1",
+        "model_sha256": "58872a72616c736595b8b7662079c5b12c5a162ec16eae94f21c348dfa9885af",
+        "torch": "2.7.1+cu128",
+        "transformers": "4.55.4",
+        "torch_cuda": "12.8",
+        "gpu": "NVIDIA GeForce RTX 4090",
+        "cuda_capability": [
+          8,
+          9
+        ],
+        "capacity_bytes": 25252724736,
+        "dtype": "bfloat16",
+        "attention": "sdpa",
+        "use_cache": false,
+        "files_sha256": {
+          "config.json": "ce9cc13da41591b8b4deca053d7dfee06424c0228628ee862ea86d725bc163f3",
+          "configuration_ouro.py": "950443e32929047aa08d02abad2e1888bc1914b3db988d3d675f70787f65dafb",
+          "merges.txt": "0b54e8aa4e53d5383e2e4bc635a56b43f9647f7b13832d5d9ecd8f82dac4f510",
+          "model.safetensors": "58872a72616c736595b8b7662079c5b12c5a162ec16eae94f21c348dfa9885af",
+          "modeling_ouro.py": "c5c68fbb368ce2909c257ae2afc50719be8c91539333d3295e19312c4316f413",
+          "special_tokens_map.json": "55087bb8409060d9cb0f80495e34f4e0d8a84f68a799a6b0cab3132be0aae319",
+          "tokenizer.json": "fcb808fe5e7642f5299be28aea07fc7f6d4f4364c3ac5e408e15a772cbc8fa8d",
+          "tokenizer_config.json": "7e010da95d71b0fa1aa809552922c74cc1dd98d628f21ba39ca6c35aa18d5d91",
+          "vocab.json": "7b9de3f47796abf8d00ab96be299fea0dc9afdf1827f34e7e0b9fb44593efe5c"
+        }
+      },
+      "seconds": 524.6903731059283,
+      "files": {
+        "arms.jsonl": "16bb5ca585be723e8b84ef4aa74b927f870f57c2687ff622f90c038e7f79efa8",
+        "projected_boundary.npy": "f2b6a8afa9284d622a65b7fa1ae3c625da4008f46a2f973a52ab2a4f5e53b5c9"
+      }
+    }
+  },
+  "cases": 18
+}
