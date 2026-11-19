@@ -1,0 +1,462 @@
+{
+  "fit_groups": 300,
+  "discovery_groups": 100,
+  "candidate": "token-mixed-bilinear",
+  "seed": 20261119,
+  "configurations": {
+    "mean-natural-lowrank": {
+      "rep": "mean",
+      "training": "natural",
+      "kind": "lowrank",
+      "penalty": 1.0,
+      "loss": 0.14882753789424896
+    },
+    "mean-natural-additive": {
+      "rep": "mean",
+      "training": "natural",
+      "kind": "additive",
+      "penalty": 1.0,
+      "loss": 0.1474934220314026
+    },
+    "mean-natural-bilinear": {
+      "rep": "mean",
+      "training": "natural",
+      "kind": "bilinear",
+      "penalty": 1.0,
+      "loss": 0.1475108116865158
+    },
+    "token-natural-lowrank": {
+      "rep": "token",
+      "training": "natural",
+      "kind": "lowrank",
+      "penalty": 1.0,
+      "loss": 0.14873015880584717
+    },
+    "token-natural-additive": {
+      "rep": "token",
+      "training": "natural",
+      "kind": "additive",
+      "penalty": 1.0,
+      "loss": 0.14704956114292145
+    },
+    "token-natural-bilinear": {
+      "rep": "token",
+      "training": "natural",
+      "kind": "bilinear",
+      "penalty": 1.0,
+      "loss": 0.14698590338230133
+    },
+    "full-natural-full": {
+      "rep": "full",
+      "training": "natural",
+      "kind": "full",
+      "penalty": 1.0,
+      "loss": 0.14969655871391296
+    },
+    "mean-mixed-lowrank": {
+      "rep": "mean",
+      "training": "mixed",
+      "kind": "lowrank",
+      "penalty": 1.0,
+      "loss": 0.05067823454737663
+    },
+    "mean-mixed-additive": {
+      "rep": "mean",
+      "training": "mixed",
+      "kind": "additive",
+      "penalty": 1.0,
+      "loss": 0.05041952431201935
+    },
+    "mean-mixed-bilinear": {
+      "rep": "mean",
+      "training": "mixed",
+      "kind": "bilinear",
+      "penalty": 1.0,
+      "loss": 0.053432028740644455
+    },
+    "token-mixed-lowrank": {
+      "rep": "token",
+      "training": "mixed",
+      "kind": "lowrank",
+      "penalty": 1.0,
+      "loss": 0.05064021050930023
+    },
+    "token-mixed-additive": {
+      "rep": "token",
+      "training": "mixed",
+      "kind": "additive",
+      "penalty": 1.0,
+      "loss": 0.05031884089112282
+    },
+    "token-mixed-bilinear": {
+      "rep": "token",
+      "training": "mixed",
+      "kind": "bilinear",
+      "penalty": 1.0,
+      "loss": 0.05336518585681915
+    },
+    "full-mixed-full": {
+      "rep": "full",
+      "training": "mixed",
+      "kind": "full",
+      "penalty": 1.0,
+      "loss": 0.048550333827733994
+    },
+    "natural-mean": {
+      "rep": "mean",
+      "training": "natural",
+      "kind": "natural",
+      "penalty": 0.1,
+      "loss": 0.1580033302307129
+    },
+    "natural-token": {
+      "rep": "token",
+      "training": "natural",
+      "kind": "natural",
+      "penalty": 0.1,
+      "loss": 0.1597347855567932
+    },
+    "natural-full": {
+      "rep": "full",
+      "training": "natural",
+      "kind": "natural",
+      "penalty": 0.1,
+      "loss": 0.09934908896684647
+    }
+  },
+  "all_discovery_models": [
+    {
+      "method": "mean-natural-lowrank",
+      "penalty": 0.01,
+      "discovery_mse": 0.16168104112148285,
+      "discovery_targets": "forward"
+    },
+    {
+      "method": "mean-natural-lowrank",
+      "penalty": 0.1,
+      "discovery_mse": 0.15041561424732208,
+      "discovery_targets": "forward"
+    },
+    {
+      "method": "mean-natural-lowrank",
+      "penalty": 1.0,
+      "discovery_mse": 0.14882753789424896,
+      "discovery_targets": "forward"
+    },
+    {
+      "method": "mean-natural-additive",
+      "penalty": 0.01,
+      "discovery_mse": 0.18259599804878235,
+      "discovery_targets": "forward"
+    },
+    {
+      "method": "mean-natural-additive",
+      "penalty": 0.1,
+      "discovery_mse": 0.158507838845253,
+      "discovery_targets": "forward"
+    },
+    {
+      "method": "mean-natural-additive",
+      "penalty": 1.0,
+      "discovery_mse": 0.1474934220314026,
+      "discovery_targets": "forward"
+    },
+    {
+      "method": "mean-natural-bilinear",
+      "penalty": 0.01,
+      "discovery_mse": 0.19521492719650269,
+      "discovery_targets": "forward"
+    },
+    {
+      "method": "mean-natural-bilinear",
+      "penalty": 0.1,
+      "discovery_mse": 0.16047240793704987,
+      "discovery_targets": "forward"
+    },
+    {
+      "method": "mean-natural-bilinear",
+      "penalty": 1.0,
+      "discovery_mse": 0.1475108116865158,
+      "discovery_targets": "forward"
+    },
+    {
+      "method": "token-natural-lowrank",
+      "penalty": 0.01,
+      "discovery_mse": 0.1603214144706726,
+      "discovery_targets": "forward"
+    },
+    {
+      "method": "token-natural-lowrank",
+      "penalty": 0.1,
+      "discovery_mse": 0.15008792281150818,
+      "discovery_targets": "forward"
+    },
+    {
+      "method": "token-natural-lowrank",
+      "penalty": 1.0,
+      "discovery_mse": 0.14873015880584717,
+      "discovery_targets": "forward"
+    },
+    {
+      "method": "token-natural-additive",
+      "penalty": 0.01,
+      "discovery_mse": 0.18235385417938232,
+      "discovery_targets": "forward"
+    },
+    {
+      "method": "token-natural-additive",
+      "penalty": 0.1,
+      "discovery_mse": 0.15777485072612762,
+      "discovery_targets": "forward"
+    },
+    {
+      "method": "token-natural-additive",
+      "penalty": 1.0,
+      "discovery_mse": 0.14704956114292145,
+      "discovery_targets": "forward"
+    },
+    {
+      "method": "token-natural-bilinear",
+      "penalty": 0.01,
+      "discovery_mse": 0.19370266795158386,
+      "discovery_targets": "forward"
+    },
+    {
+      "method": "token-natural-bilinear",
+      "penalty": 0.1,
+      "discovery_mse": 0.1592775583267212,
+      "discovery_targets": "forward"
+    },
+    {
+      "method": "token-natural-bilinear",
+      "penalty": 1.0,
+      "discovery_mse": 0.14698590338230133,
+      "discovery_targets": "forward"
+    },
+    {
+      "method": "full-natural-full",
+      "penalty": 0.01,
+      "discovery_mse": 0.2287694662809372,
+      "discovery_targets": "forward"
+    },
+    {
+      "method": "full-natural-full",
+      "penalty": 0.1,
+      "discovery_mse": 0.18617244064807892,
+      "discovery_targets": "forward"
+    },
+    {
+      "method": "full-natural-full",
+      "penalty": 1.0,
+      "discovery_mse": 0.14969655871391296,
+      "discovery_targets": "forward"
+    },
+    {
+      "method": "mean-mixed-lowrank",
+      "penalty": 0.01,
+      "discovery_mse": 0.05723264440894127,
+      "discovery_targets": "physical"
+    },
+    {
+      "method": "mean-mixed-lowrank",
+      "penalty": 0.1,
+      "discovery_mse": 0.05214676260948181,
+      "discovery_targets": "physical"
+    },
+    {
+      "method": "mean-mixed-lowrank",
+      "penalty": 1.0,
+      "discovery_mse": 0.05067823454737663,
+      "discovery_targets": "physical"
+    },
+    {
+      "method": "mean-mixed-additive",
+      "penalty": 0.01,
+      "discovery_mse": 0.07597344368696213,
+      "discovery_targets": "physical"
+    },
+    {
+      "method": "mean-mixed-additive",
+      "penalty": 0.1,
+      "discovery_mse": 0.05844534933567047,
+      "discovery_targets": "physical"
+    },
+    {
+      "method": "mean-mixed-additive",
+      "penalty": 1.0,
+      "discovery_mse": 0.05041952431201935,
+      "discovery_targets": "physical"
+    },
+    {
+      "method": "mean-mixed-bilinear",
+      "penalty": 0.01,
+      "discovery_mse": 0.09313550591468811,
+      "discovery_targets": "physical"
+    },
+    {
+      "method": "mean-mixed-bilinear",
+      "penalty": 0.1,
+      "discovery_mse": 0.06615352630615234,
+      "discovery_targets": "physical"
+    },
+    {
+      "method": "mean-mixed-bilinear",
+      "penalty": 1.0,
+      "discovery_mse": 0.053432028740644455,
+      "discovery_targets": "physical"
+    },
+    {
+      "method": "token-mixed-lowrank",
+      "penalty": 0.01,
+      "discovery_mse": 0.057728562504053116,
+      "discovery_targets": "physical"
+    },
+    {
+      "method": "token-mixed-lowrank",
+      "penalty": 0.1,
+      "discovery_mse": 0.052212465554475784,
+      "discovery_targets": "physical"
+    },
+    {
+      "method": "token-mixed-lowrank",
+      "penalty": 1.0,
+      "discovery_mse": 0.05064021050930023,
+      "discovery_targets": "physical"
+    },
+    {
+      "method": "token-mixed-additive",
+      "penalty": 0.01,
+      "discovery_mse": 0.07711068540811539,
+      "discovery_targets": "physical"
+    },
+    {
+      "method": "token-mixed-additive",
+      "penalty": 0.1,
+      "discovery_mse": 0.05871661752462387,
+      "discovery_targets": "physical"
+    },
+    {
+      "method": "token-mixed-additive",
+      "penalty": 1.0,
+      "discovery_mse": 0.05031884089112282,
+      "discovery_targets": "physical"
+    },
+    {
+      "method": "token-mixed-bilinear",
+      "penalty": 0.01,
+      "discovery_mse": 0.09384703636169434,
+      "discovery_targets": "physical"
+    },
+    {
+      "method": "token-mixed-bilinear",
+      "penalty": 0.1,
+      "discovery_mse": 0.06626226007938385,
+      "discovery_targets": "physical"
+    },
+    {
+      "method": "token-mixed-bilinear",
+      "penalty": 1.0,
+      "discovery_mse": 0.05336518585681915,
+      "discovery_targets": "physical"
+    },
+    {
+      "method": "full-mixed-full",
+      "penalty": 0.01,
+      "discovery_mse": 0.0802205353975296,
+      "discovery_targets": "physical"
+    },
+    {
+      "method": "full-mixed-full",
+      "penalty": 0.1,
+      "discovery_mse": 0.06354755163192749,
+      "discovery_targets": "physical"
+    },
+    {
+      "method": "full-mixed-full",
+      "penalty": 1.0,
+      "discovery_mse": 0.048550333827733994,
+      "discovery_targets": "physical"
+    },
+    {
+      "method": "natural-mean",
+      "penalty": 0.01,
+      "discovery_mse": 0.1682506501674652,
+      "discovery_targets": "absolute natural"
+    },
+    {
+      "method": "natural-mean",
+      "penalty": 0.1,
+      "discovery_mse": 0.1580033302307129,
+      "discovery_targets": "absolute natural"
+    },
+    {
+      "method": "natural-mean",
+      "penalty": 1.0,
+      "discovery_mse": 0.22839683294296265,
+      "discovery_targets": "absolute natural"
+    },
+    {
+      "method": "natural-token",
+      "penalty": 0.01,
+      "discovery_mse": 0.17114043235778809,
+      "discovery_targets": "absolute natural"
+    },
+    {
+      "method": "natural-token",
+      "penalty": 0.1,
+      "discovery_mse": 0.1597347855567932,
+      "discovery_targets": "absolute natural"
+    },
+    {
+      "method": "natural-token",
+      "penalty": 1.0,
+      "discovery_mse": 0.22922779619693756,
+      "discovery_targets": "absolute natural"
+    },
+    {
+      "method": "natural-full",
+      "penalty": 0.01,
+      "discovery_mse": 0.11669901758432388,
+      "discovery_targets": "absolute natural"
+    },
+    {
+      "method": "natural-full",
+      "penalty": 0.1,
+      "discovery_mse": 0.09934908896684647,
+      "discovery_targets": "absolute natural"
+    },
+    {
+      "method": "natural-full",
+      "penalty": 1.0,
+      "discovery_mse": 0.10016092658042908,
+      "discovery_targets": "absolute natural"
+    }
+  ],
+  "source": "4a255369c16f6fdf52d4f2569f47097a10044f4379ae533d8fc21587f96f608d",
+  "implementation": {
+    "PROTOCOL.md": "1d60d7870be7e7b41db2f075815ccd72d0090e00876897ebf671f79124f674a8",
+    "capture_composition.py": "b019e27beb2bb9937deb6a09fc08d13f33979a34ebc75ad2e19e043c1ee3c5de",
+    "encoders.py": "4decae86db71eca3ecb9ad9101c766499cd3b74e90fef8b7b687f3860bdc9d83",
+    "model_composition.py": "b5a063e5e854d41ceff2527684fd005c46fe9380d06a521ac262c360f9214021"
+  },
+  "weights": {
+    "mean-natural-lowrank": "825fdd6bc0ede8e46ac11f46c1eb31146e70be8b409f19ff52fdae9e52631271",
+    "mean-natural-additive": "0f3ed207f5c0804bc662c9a07a8b02e0ddc0e2ef57c05b408f77237d95eaa42f",
+    "mean-natural-bilinear": "37d3ff29e908b5db376feb13a1d13bf04c26745453383a35632165ec8462a2ce",
+    "token-natural-lowrank": "544b54b2adb9290176bedeca0de681f69a954c847c754eb7552c32ac92dd708a",
+    "token-natural-additive": "7a40a80277cb0fb31276596f138f06cb005c0e154562adf5889cd7a78ca9272d",
+    "token-natural-bilinear": "554317b9096c1b8d71eec23f10973a34afc825fc3d7e6c15b5376ca11562abef",
+    "full-natural-full": "cebb0c577d0feab4c6543186424310b15fa3e57219c63361961ef23f522c78ec",
+    "mean-mixed-lowrank": "e06a8240488b56c5b6fa1ba192513b8e8c792cc2a06dd85e888316f9d6bc9421",
+    "mean-mixed-additive": "df52ca46709033a7001fe52cff38fe5f4c71547fcf98ed7b67bf6bc3425a8c12",
+    "mean-mixed-bilinear": "0c4957ddc18af90a4f5783976f7713c8d8575649c5bf56f45e93e8f248e88b71",
+    "token-mixed-lowrank": "38934c58c1e427764a90c9202f37531d16ca29b8c4d84561f2d71a5702caf0bc",
+    "token-mixed-additive": "7290f2358f75d9cf4ba70fab73ef95926c78d66724f7686fceaa9876c0f66a16",
+    "token-mixed-bilinear": "2ab67826a959c43e873c0f0cdb2144433c9cb14be191f71db04929e0935e5a40",
+    "full-mixed-full": "1e05e0018b720f89f9ed430d09c9595fe689f8cb4fbfac5e119de2bf9fa36021",
+    "natural-mean": "c314980b6ada25e1287dfc18b947f5738574dac9bbc74b5638d88786757583db",
+    "natural-token": "b154dd090bc778a540883a50886bdde1f0aed0febb9118dd544d2319825b798d",
+    "natural-full": "740259d276f5b4cbc044ea0069c987a458b000ecf469f55c2cdf1bc9d7a6f687"
+  },
+  "scaler": "f036cf8e1cc0ad5a75db7d5ec45e11fd93f1ca06280d98031361798bed369257"
+}
