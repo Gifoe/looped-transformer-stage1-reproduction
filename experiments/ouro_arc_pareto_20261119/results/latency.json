@@ -1,0 +1,3698 @@
+{
+  "protocol": "Ouro native recurrent KV path with explicit Transformers DynamicCache; batch 1; fresh cache per prompt; one forced token after prefill; synchronized CUDA wall time",
+  "warmup_per_method": 3,
+  "samples_per_method": 24,
+  "parity": {
+    "native_k1": {
+      "max_abs_logit": 0.078125,
+      "top1_equal": true
+    },
+    "native_k2": {
+      "max_abs_logit": 0.1171875,
+      "top1_equal": true
+    },
+    "native_k3": {
+      "max_abs_logit": 0.1875,
+      "top1_equal": true
+    },
+    "native_k4": {
+      "max_abs_logit": 0.25,
+      "top1_equal": true
+    }
+  },
+  "observations": [
+    {
+      "id": "MCAS_2014_8_17",
+      "method": "native_k1",
+      "prefix_tokens": 16,
+      "loops": 1,
+      "prefill_ms": 22.376033943146467,
+      "decode_ms": 20.385025069117546,
+      "peak_allocated_bytes": 2887117824
+    },
+    {
+      "id": "MSA_2013_8_3",
+      "method": "native_k1",
+      "prefix_tokens": 28,
+      "loops": 1,
+      "prefill_ms": 22.026053862646222,
+      "decode_ms": 19.804924027994275,
+      "peak_allocated_bytes": 2888414720
+    },
+    {
+      "id": "Mercury_417146",
+      "method": "native_k1",
+      "prefix_tokens": 25,
+      "loops": 1,
+      "prefill_ms": 21.69269695878029,
+      "decode_ms": 19.466808065772057,
+      "peak_allocated_bytes": 2890032640
+    },
+    {
+      "id": "Mercury_SC_401244",
+      "method": "native_k1",
+      "prefix_tokens": 19,
+      "loops": 1,
+      "prefill_ms": 21.16419398225844,
+      "decode_ms": 19.592577125877142,
+      "peak_allocated_bytes": 2887959040
+    },
+    {
+      "id": "Mercury_7026443",
+      "method": "native_k1",
+      "prefix_tokens": 14,
+      "loops": 1,
+      "prefill_ms": 21.169357001781464,
+      "decode_ms": 20.12209896929562,
+      "peak_allocated_bytes": 2885542400
+    },
+    {
+      "id": "Mercury_7183733",
+      "method": "native_k1",
+      "prefix_tokens": 96,
+      "loops": 1,
+      "prefill_ms": 23.129089968279004,
+      "decode_ms": 18.74043419957161,
+      "peak_allocated_bytes": 2905788416
+    },
+    {
+      "id": "NYSEDREGENTS_2014_8_38",
+      "method": "native_k1",
+      "prefix_tokens": 17,
+      "loops": 1,
+      "prefill_ms": 21.007115021348,
+      "decode_ms": 19.507359014824033,
+      "peak_allocated_bytes": 2901423616
+    },
+    {
+      "id": "NYSEDREGENTS_2014_4_9",
+      "method": "native_k1",
+      "prefix_tokens": 54,
+      "loops": 1,
+      "prefill_ms": 20.8819848485291,
+      "decode_ms": 19.478238187730312,
+      "peak_allocated_bytes": 2895041024
+    },
+    {
+      "id": "TIMSS_2003_8_pg14",
+      "method": "native_k1",
+      "prefix_tokens": 16,
+      "loops": 1,
+      "prefill_ms": 20.307208877056837,
+      "decode_ms": 19.84216715209186,
+      "peak_allocated_bytes": 2892918272
+    },
+    {
+      "id": "Mercury_7006790",
+      "method": "native_k1",
+      "prefix_tokens": 21,
+      "loops": 1,
+      "prefill_ms": 20.985692972317338,
+      "decode_ms": 20.442252978682518,
+      "peak_allocated_bytes": 2886684160
+    },
+    {
+      "id": "Mercury_SC_415366",
+      "method": "native_k1",
+      "prefix_tokens": 32,
+      "loops": 1,
+      "prefill_ms": 23.768465965986252,
+      "decode_ms": 20.46437095850706,
+      "peak_allocated_bytes": 2890386944
+    },
+    {
+      "id": "Mercury_7141908",
+      "method": "native_k1",
+      "prefix_tokens": 25,
+      "loops": 1,
+      "prefill_ms": 20.76032804325223,
+      "decode_ms": 20.4083239659667,
+      "peak_allocated_bytes": 2890819072
+    },
+    {
+      "id": "Mercury_SC_415735",
+      "method": "native_k1",
+      "prefix_tokens": 39,
+      "loops": 1,
+      "prefill_ms": 22.458715829998255,
+      "decode_ms": 20.72933013550937,
+      "peak_allocated_bytes": 2892904960
+    },
+    {
+      "id": "Mercury_7037573",
+      "method": "native_k1",
+      "prefix_tokens": 17,
+      "loops": 1,
+      "prefill_ms": 20.512585062533617,
+      "decode_ms": 19.847156945616007,
+      "peak_allocated_bytes": 2890216960
+    },
+    {
+      "id": "Mercury_SC_400172",
+      "method": "native_k1",
+      "prefix_tokens": 17,
+      "loops": 1,
+      "prefill_ms": 22.509697126224637,
+      "decode_ms": 20.511023933067918,
+      "peak_allocated_bytes": 2885891584
+    },
+    {
+      "id": "NAEP_2005_8_S11+14",
+      "method": "native_k1",
+      "prefix_tokens": 18,
+      "loops": 1,
+      "prefill_ms": 22.727657109498978,
+      "decode_ms": 20.62675287015736,
+      "peak_allocated_bytes": 2886138368
+    },
+    {
+      "id": "Mercury_7246925",
+      "method": "native_k1",
+      "prefix_tokens": 35,
+      "loops": 1,
+      "prefill_ms": 21.913100965321064,
+      "decode_ms": 20.937691908329725,
+      "peak_allocated_bytes": 2890539520
+    },
+    {
+      "id": "Mercury_7166180",
+      "method": "native_k1",
+      "prefix_tokens": 37,
+      "loops": 1,
+      "prefill_ms": 21.67274709790945,
+      "decode_ms": 20.90530889108777,
+      "peak_allocated_bytes": 2894376448
+    },
+    {
+      "id": "Mercury_184258",
+      "method": "native_k1",
+      "prefix_tokens": 18,
+      "loops": 1,
+      "prefill_ms": 21.090639987960458,
+      "decode_ms": 20.937166875228286,
+      "peak_allocated_bytes": 2890070528
+    },
+    {
+      "id": "Mercury_7171938",
+      "method": "native_k1",
+      "prefix_tokens": 27,
+      "loops": 1,
+      "prefill_ms": 21.479651099070907,
+      "decode_ms": 20.970812998712063,
+      "peak_allocated_bytes": 2888561152
+    },
+    {
+      "id": "MDSA_2007_5_39",
+      "method": "native_k1",
+      "prefix_tokens": 76,
+      "loops": 1,
+      "prefill_ms": 23.540220921859145,
+      "decode_ms": 19.49050510302186,
+      "peak_allocated_bytes": 2902448128
+    },
+    {
+      "id": "Mercury_SC_400178",
+      "method": "native_k1",
+      "prefix_tokens": 14,
+      "loops": 1,
+      "prefill_ms": 21.200168877840042,
+      "decode_ms": 20.821706159040332,
+      "peak_allocated_bytes": 2896749056
+    },
+    {
+      "id": "NYSEDREGENTS_2014_8_20",
+      "method": "native_k1",
+      "prefix_tokens": 72,
+      "loops": 1,
+      "prefill_ms": 22.8099029045552,
+      "decode_ms": 21.193712949752808,
+      "peak_allocated_bytes": 2898903040
+    },
+    {
+      "id": "Mercury_7158673",
+      "method": "native_k1",
+      "prefix_tokens": 42,
+      "loops": 1,
+      "prefill_ms": 22.624118020758033,
+      "decode_ms": 21.05474192649126,
+      "peak_allocated_bytes": 2902886912
+    },
+    {
+      "id": "MCAS_2014_8_17",
+      "method": "native_k2",
+      "prefix_tokens": 16,
+      "loops": 2,
+      "prefill_ms": 43.248503003269434,
+      "decode_ms": 40.03026196733117,
+      "peak_allocated_bytes": 2895540224
+    },
+    {
+      "id": "MSA_2013_8_3",
+      "method": "native_k2",
+      "prefix_tokens": 28,
+      "loops": 2,
+      "prefill_ms": 43.17418206483126,
+      "decode_ms": 41.683899937197566,
+      "peak_allocated_bytes": 2897377280
+    },
+    {
+      "id": "Mercury_417146",
+      "method": "native_k2",
+      "prefix_tokens": 25,
+      "loops": 2,
+      "prefill_ms": 42.197253089398146,
+      "decode_ms": 39.65468402020633,
+      "peak_allocated_bytes": 2900752384
+    },
+    {
+      "id": "Mercury_SC_401244",
+      "method": "native_k2",
+      "prefix_tokens": 19,
+      "loops": 2,
+      "prefill_ms": 43.32910501398146,
+      "decode_ms": 41.35249787941575,
+      "peak_allocated_bytes": 2896884736
+    },
+    {
+      "id": "Mercury_7026443",
+      "method": "native_k2",
+      "prefix_tokens": 14,
+      "loops": 2,
+      "prefill_ms": 43.29410684294999,
+      "decode_ms": 41.33489006198943,
+      "peak_allocated_bytes": 2892284928
+    },
+    {
+      "id": "Mercury_7183733",
+      "method": "native_k2",
+      "prefix_tokens": 96,
+      "loops": 2,
+      "prefill_ms": 47.61351295746863,
+      "decode_ms": 41.94960696622729,
+      "peak_allocated_bytes": 2928005632
+    },
+    {
+      "id": "NYSEDREGENTS_2014_8_38",
+      "method": "native_k2",
+      "prefix_tokens": 17,
+      "loops": 2,
+      "prefill_ms": 45.12165114283562,
+      "decode_ms": 41.80193180218339,
+      "peak_allocated_bytes": 2923907072
+    },
+    {
+      "id": "NYSEDREGENTS_2014_4_9",
+      "method": "native_k2",
+      "prefix_tokens": 54,
+      "loops": 2,
+      "prefill_ms": 43.755558086559176,
+      "decode_ms": 41.38211999088526,
+      "peak_allocated_bytes": 2909418496
+    },
+    {
+      "id": "TIMSS_2003_8_pg14",
+      "method": "native_k2",
+      "prefix_tokens": 16,
+      "loops": 2,
+      "prefill_ms": 43.727099196985364,
+      "decode_ms": 39.3457158934325,
+      "peak_allocated_bytes": 2906943488
+    },
+    {
+      "id": "Mercury_7006790",
+      "method": "native_k2",
+      "prefix_tokens": 21,
+      "loops": 2,
+      "prefill_ms": 43.057462899014354,
+      "decode_ms": 37.10956103168428,
+      "peak_allocated_bytes": 2894241792
+    },
+    {
+      "id": "Mercury_SC_415366",
+      "method": "native_k2",
+      "prefix_tokens": 32,
+      "loops": 2,
+      "prefill_ms": 40.67067406140268,
+      "decode_ms": 38.68076088838279,
+      "peak_allocated_bytes": 2901135360
+    },
+    {
+      "id": "Mercury_7141908",
+      "method": "native_k2",
+      "prefix_tokens": 25,
+      "loops": 2,
+      "prefill_ms": 43.17024606280029,
+      "decode_ms": 40.52755795419216,
+      "peak_allocated_bytes": 2902325248
+    },
+    {
+      "id": "Mercury_SC_415735",
+      "method": "native_k2",
+      "prefix_tokens": 39,
+      "loops": 2,
+      "prefill_ms": 42.80632198788226,
+      "decode_ms": 40.94972088932991,
+      "peak_allocated_bytes": 2905844736
+    },
+    {
+      "id": "Mercury_7037573",
+      "method": "native_k2",
+      "prefix_tokens": 17,
+      "loops": 2,
+      "prefill_ms": 43.58404106460512,
+      "decode_ms": 39.980791974812746,
+      "peak_allocated_bytes": 2901493760
+    },
+    {
+      "id": "Mercury_SC_400172",
+      "method": "native_k2",
+      "prefix_tokens": 17,
+      "loops": 2,
+      "prefill_ms": 45.42969702742994,
+      "decode_ms": 40.15565779991448,
+      "peak_allocated_bytes": 2892843008
+    },
+    {
+      "id": "NAEP_2005_8_S11+14",
+      "method": "native_k2",
+      "prefix_tokens": 18,
+      "loops": 2,
+      "prefill_ms": 44.05309003777802,
+      "decode_ms": 38.410064997151494,
+      "peak_allocated_bytes": 2893290496
+    },
+    {
+      "id": "Mercury_7246925",
+      "method": "native_k2",
+      "prefix_tokens": 35,
+      "loops": 2,
+      "prefill_ms": 42.3876391723752,
+      "decode_ms": 40.904030902311206,
+      "peak_allocated_bytes": 2901300224
+    },
+    {
+      "id": "Mercury_7166180",
+      "method": "native_k2",
+      "prefix_tokens": 37,
+      "loops": 2,
+      "prefill_ms": 39.91121985018253,
+      "decode_ms": 40.54538207128644,
+      "peak_allocated_bytes": 2908880896
+    },
+    {
+      "id": "Mercury_184258",
+      "method": "native_k2",
+      "prefix_tokens": 18,
+      "loops": 2,
+      "prefill_ms": 42.24563296884298,
+      "decode_ms": 40.19057098776102,
+      "peak_allocated_bytes": 2901154816
+    },
+    {
+      "id": "Mercury_7171938",
+      "method": "native_k2",
+      "prefix_tokens": 27,
+      "loops": 2,
+      "prefill_ms": 43.943090131506324,
+      "decode_ms": 38.74053992331028,
+      "peak_allocated_bytes": 2897716224
+    },
+    {
+      "id": "MDSA_2007_5_39",
+      "method": "native_k2",
+      "prefix_tokens": 76,
+      "loops": 2,
+      "prefill_ms": 45.33274797722697,
+      "decode_ms": 37.863598903641105,
+      "peak_allocated_bytes": 2923207168
+    },
+    {
+      "id": "Mercury_SC_400178",
+      "method": "native_k2",
+      "prefix_tokens": 14,
+      "loops": 2,
+      "prefill_ms": 41.2953810300678,
+      "decode_ms": 38.462558994069695,
+      "peak_allocated_bytes": 2914698240
+    },
+    {
+      "id": "NYSEDREGENTS_2014_8_20",
+      "method": "native_k2",
+      "prefix_tokens": 72,
+      "loops": 2,
+      "prefill_ms": 41.53345385566354,
+      "decode_ms": 37.61269897222519,
+      "peak_allocated_bytes": 2916303360
+    },
+    {
+      "id": "Mercury_7158673",
+      "method": "native_k2",
+      "prefix_tokens": 42,
+      "loops": 2,
+      "prefill_ms": 44.214408146217465,
+      "decode_ms": 38.00328797660768,
+      "peak_allocated_bytes": 2925669376
+    },
+    {
+      "id": "MCAS_2014_8_17",
+      "method": "loopcd_fixed_k2",
+      "prefix_tokens": 16,
+      "loops": 2,
+      "prefill_ms": 42.27799898944795,
+      "decode_ms": 40.999134071171284,
+      "peak_allocated_bytes": 2895973376
+    },
+    {
+      "id": "MSA_2013_8_3",
+      "method": "loopcd_fixed_k2",
+      "prefix_tokens": 28,
+      "loops": 2,
+      "prefill_ms": 43.48078812472522,
+      "decode_ms": 40.47259595245123,
+      "peak_allocated_bytes": 2897573888
+    },
+    {
+      "id": "Mercury_417146",
+      "method": "loopcd_fixed_k2",
+      "prefix_tokens": 25,
+      "loops": 2,
+      "prefill_ms": 47.27636114694178,
+      "decode_ms": 40.74440896511078,
+      "peak_allocated_bytes": 2900948992
+    },
+    {
+      "id": "Mercury_SC_401244",
+      "method": "loopcd_fixed_k2",
+      "prefix_tokens": 19,
+      "loops": 2,
+      "prefill_ms": 41.55695182271302,
+      "decode_ms": 40.4072271194309,
+      "peak_allocated_bytes": 2897177600
+    },
+    {
+      "id": "Mercury_7026443",
+      "method": "loopcd_fixed_k2",
+      "prefix_tokens": 14,
+      "loops": 2,
+      "prefill_ms": 42.64608793891966,
+      "decode_ms": 38.556577172130346,
+      "peak_allocated_bytes": 2892811264
+    },
+    {
+      "id": "Mercury_7183733",
+      "method": "loopcd_fixed_k2",
+      "prefix_tokens": 96,
+      "loops": 2,
+      "prefill_ms": 44.433766044676304,
+      "decode_ms": 41.09730897471309,
+      "peak_allocated_bytes": 2928202240
+    },
+    {
+      "id": "NYSEDREGENTS_2014_8_38",
+      "method": "loopcd_fixed_k2",
+      "prefix_tokens": 17,
+      "loops": 2,
+      "prefill_ms": 44.96036213822663,
+      "decode_ms": 39.84298184514046,
+      "peak_allocated_bytes": 2924293120
+    },
+    {
+      "id": "NYSEDREGENTS_2014_4_9",
+      "method": "loopcd_fixed_k2",
+      "prefix_tokens": 54,
+      "loops": 2,
+      "prefill_ms": 41.37155809439719,
+      "decode_ms": 40.12979404069483,
+      "peak_allocated_bytes": 2909615104
+    },
+    {
+      "id": "TIMSS_2003_8_pg14",
+      "method": "loopcd_fixed_k2",
+      "prefix_tokens": 16,
+      "loops": 2,
+      "prefill_ms": 41.43163305707276,
+      "decode_ms": 39.867620915174484,
+      "peak_allocated_bytes": 2907376640
+    },
+    {
+      "id": "Mercury_7006790",
+      "method": "loopcd_fixed_k2",
+      "prefix_tokens": 21,
+      "loops": 2,
+      "prefill_ms": 42.01428103260696,
+      "decode_ms": 39.24520895816386,
+      "peak_allocated_bytes": 2894441472
+    },
+    {
+      "id": "Mercury_SC_415366",
+      "method": "loopcd_fixed_k2",
+      "prefix_tokens": 32,
+      "loops": 2,
+      "prefill_ms": 42.937833117321134,
+      "decode_ms": 40.656676050275564,
+      "peak_allocated_bytes": 2901331968
+    },
+    {
+      "id": "Mercury_7141908",
+      "method": "loopcd_fixed_k2",
+      "prefix_tokens": 25,
+      "loops": 2,
+      "prefill_ms": 43.631020933389664,
+      "decode_ms": 40.48887500539422,
+      "peak_allocated_bytes": 2902521856
+    },
+    {
+      "id": "Mercury_SC_415735",
+      "method": "loopcd_fixed_k2",
+      "prefix_tokens": 39,
+      "loops": 2,
+      "prefill_ms": 42.25743282586336,
+      "decode_ms": 40.05301417782903,
+      "peak_allocated_bytes": 2906041344
+    },
+    {
+      "id": "Mercury_7037573",
+      "method": "loopcd_fixed_k2",
+      "prefix_tokens": 17,
+      "loops": 2,
+      "prefill_ms": 42.832436971366405,
+      "decode_ms": 40.969448164105415,
+      "peak_allocated_bytes": 2901879808
+    },
+    {
+      "id": "Mercury_SC_400172",
+      "method": "loopcd_fixed_k2",
+      "prefix_tokens": 17,
+      "loops": 2,
+      "prefill_ms": 43.256976176053286,
+      "decode_ms": 40.00812885351479,
+      "peak_allocated_bytes": 2893229056
+    },
+    {
+      "id": "NAEP_2005_8_S11+14",
+      "method": "loopcd_fixed_k2",
+      "prefix_tokens": 18,
+      "loops": 2,
+      "prefill_ms": 43.42754906974733,
+      "decode_ms": 38.769596023485065,
+      "peak_allocated_bytes": 2893630464
+    },
+    {
+      "id": "Mercury_7246925",
+      "method": "loopcd_fixed_k2",
+      "prefix_tokens": 35,
+      "loops": 2,
+      "prefill_ms": 42.292002122849226,
+      "decode_ms": 40.555310901254416,
+      "peak_allocated_bytes": 2901496832
+    },
+    {
+      "id": "Mercury_7166180",
+      "method": "loopcd_fixed_k2",
+      "prefix_tokens": 37,
+      "loops": 2,
+      "prefill_ms": 41.606073966249824,
+      "decode_ms": 39.790684124454856,
+      "peak_allocated_bytes": 2909077504
+    },
+    {
+      "id": "Mercury_184258",
+      "method": "loopcd_fixed_k2",
+      "prefix_tokens": 18,
+      "loops": 2,
+      "prefill_ms": 45.09960999712348,
+      "decode_ms": 40.433972142636776,
+      "peak_allocated_bytes": 2901494784
+    },
+    {
+      "id": "Mercury_7171938",
+      "method": "loopcd_fixed_k2",
+      "prefix_tokens": 27,
+      "loops": 2,
+      "prefill_ms": 42.836864944547415,
+      "decode_ms": 39.68272916972637,
+      "peak_allocated_bytes": 2897912832
+    },
+    {
+      "id": "MDSA_2007_5_39",
+      "method": "loopcd_fixed_k2",
+      "prefix_tokens": 76,
+      "loops": 2,
+      "prefill_ms": 42.82442410476506,
+      "decode_ms": 38.655634969472885,
+      "peak_allocated_bytes": 2923403776
+    },
+    {
+      "id": "Mercury_SC_400178",
+      "method": "loopcd_fixed_k2",
+      "prefix_tokens": 14,
+      "loops": 2,
+      "prefill_ms": 42.20019094645977,
+      "decode_ms": 40.07695592008531,
+      "peak_allocated_bytes": 2915224576
+    },
+    {
+      "id": "NYSEDREGENTS_2014_8_20",
+      "method": "loopcd_fixed_k2",
+      "prefix_tokens": 72,
+      "loops": 2,
+      "prefill_ms": 44.09925895743072,
+      "decode_ms": 39.219423895701766,
+      "peak_allocated_bytes": 2916499968
+    },
+    {
+      "id": "Mercury_7158673",
+      "method": "loopcd_fixed_k2",
+      "prefix_tokens": 42,
+      "loops": 2,
+      "prefill_ms": 40.69669800810516,
+      "decode_ms": 39.33149483054876,
+      "peak_allocated_bytes": 2925865984
+    },
+    {
+      "id": "MCAS_2014_8_17",
+      "method": "loopcd_adaptive_k2",
+      "prefix_tokens": 16,
+      "loops": 2,
+      "prefill_ms": 39.6062689833343,
+      "decode_ms": 39.27599499002099,
+      "peak_allocated_bytes": 2895974400
+    },
+    {
+      "id": "MSA_2013_8_3",
+      "method": "loopcd_adaptive_k2",
+      "prefix_tokens": 28,
+      "loops": 2,
+      "prefill_ms": 43.12619403935969,
+      "decode_ms": 40.424895007163286,
+      "peak_allocated_bytes": 2897573888
+    },
+    {
+      "id": "Mercury_417146",
+      "method": "loopcd_adaptive_k2",
+      "prefix_tokens": 25,
+      "loops": 2,
+      "prefill_ms": 42.98884398303926,
+      "decode_ms": 39.315972942858934,
+      "peak_allocated_bytes": 2900948992
+    },
+    {
+      "id": "Mercury_SC_401244",
+      "method": "loopcd_adaptive_k2",
+      "prefix_tokens": 19,
+      "loops": 2,
+      "prefill_ms": 44.2483639344573,
+      "decode_ms": 39.38252595253289,
+      "peak_allocated_bytes": 2897178624
+    },
+    {
+      "id": "Mercury_7026443",
+      "method": "loopcd_adaptive_k2",
+      "prefix_tokens": 14,
+      "loops": 2,
+      "prefill_ms": 42.911787051707506,
+      "decode_ms": 40.67289107479155,
+      "peak_allocated_bytes": 2892812288
+    },
+    {
+      "id": "Mercury_7183733",
+      "method": "loopcd_adaptive_k2",
+      "prefix_tokens": 96,
+      "loops": 2,
+      "prefill_ms": 42.7688998170197,
+      "decode_ms": 39.3958801869303,
+      "peak_allocated_bytes": 2928202240
+    },
+    {
+      "id": "NYSEDREGENTS_2014_8_38",
+      "method": "loopcd_adaptive_k2",
+      "prefix_tokens": 17,
+      "loops": 2,
+      "prefill_ms": 44.265063013881445,
+      "decode_ms": 41.28431109711528,
+      "peak_allocated_bytes": 2924294144
+    },
+    {
+      "id": "NYSEDREGENTS_2014_4_9",
+      "method": "loopcd_adaptive_k2",
+      "prefix_tokens": 54,
+      "loops": 2,
+      "prefill_ms": 43.402791023254395,
+      "decode_ms": 41.05024295859039,
+      "peak_allocated_bytes": 2909615104
+    },
+    {
+      "id": "TIMSS_2003_8_pg14",
+      "method": "loopcd_adaptive_k2",
+      "prefix_tokens": 16,
+      "loops": 2,
+      "prefill_ms": 42.7690870128572,
+      "decode_ms": 39.619846967980266,
+      "peak_allocated_bytes": 2907377664
+    },
+    {
+      "id": "Mercury_7006790",
+      "method": "loopcd_adaptive_k2",
+      "prefix_tokens": 21,
+      "loops": 2,
+      "prefill_ms": 43.78296202048659,
+      "decode_ms": 39.703927002847195,
+      "peak_allocated_bytes": 2894442496
+    },
+    {
+      "id": "Mercury_SC_415366",
+      "method": "loopcd_adaptive_k2",
+      "prefix_tokens": 32,
+      "loops": 2,
+      "prefill_ms": 41.956199100241065,
+      "decode_ms": 39.41272804513574,
+      "peak_allocated_bytes": 2901331968
+    },
+    {
+      "id": "Mercury_7141908",
+      "method": "loopcd_adaptive_k2",
+      "prefix_tokens": 25,
+      "loops": 2,
+      "prefill_ms": 42.396766133606434,
+      "decode_ms": 40.80181894823909,
+      "peak_allocated_bytes": 2902521856
+    },
+    {
+      "id": "Mercury_SC_415735",
+      "method": "loopcd_adaptive_k2",
+      "prefix_tokens": 39,
+      "loops": 2,
+      "prefill_ms": 42.52594709396362,
+      "decode_ms": 41.17003013379872,
+      "peak_allocated_bytes": 2906041344
+    },
+    {
+      "id": "Mercury_7037573",
+      "method": "loopcd_adaptive_k2",
+      "prefix_tokens": 17,
+      "loops": 2,
+      "prefill_ms": 44.39938394352794,
+      "decode_ms": 40.72151705622673,
+      "peak_allocated_bytes": 2901880832
+    },
+    {
+      "id": "Mercury_SC_400172",
+      "method": "loopcd_adaptive_k2",
+      "prefix_tokens": 17,
+      "loops": 2,
+      "prefill_ms": 42.01758420094848,
+      "decode_ms": 38.053537951782346,
+      "peak_allocated_bytes": 2893230080
+    },
+    {
+      "id": "NAEP_2005_8_S11+14",
+      "method": "loopcd_adaptive_k2",
+      "prefix_tokens": 18,
+      "loops": 2,
+      "prefill_ms": 41.656635934486985,
+      "decode_ms": 40.540016954764724,
+      "peak_allocated_bytes": 2893631488
+    },
+    {
+      "id": "Mercury_7246925",
+      "method": "loopcd_adaptive_k2",
+      "prefix_tokens": 35,
+      "loops": 2,
+      "prefill_ms": 42.029301868751645,
+      "decode_ms": 39.39087316393852,
+      "peak_allocated_bytes": 2901496832
+    },
+    {
+      "id": "Mercury_7166180",
+      "method": "loopcd_adaptive_k2",
+      "prefix_tokens": 37,
+      "loops": 2,
+      "prefill_ms": 41.579114040359855,
+      "decode_ms": 40.48732412047684,
+      "peak_allocated_bytes": 2909077504
+    },
+    {
+      "id": "Mercury_184258",
+      "method": "loopcd_adaptive_k2",
+      "prefix_tokens": 18,
+      "loops": 2,
+      "prefill_ms": 43.32845285534859,
+      "decode_ms": 40.669580921530724,
+      "peak_allocated_bytes": 2901495808
+    },
+    {
+      "id": "Mercury_7171938",
+      "method": "loopcd_adaptive_k2",
+      "prefix_tokens": 27,
+      "loops": 2,
+      "prefill_ms": 43.97236509248614,
+      "decode_ms": 39.38573505729437,
+      "peak_allocated_bytes": 2897912832
+    },
+    {
+      "id": "MDSA_2007_5_39",
+      "method": "loopcd_adaptive_k2",
+      "prefix_tokens": 76,
+      "loops": 2,
+      "prefill_ms": 41.97312309406698,
+      "decode_ms": 39.25330797210336,
+      "peak_allocated_bytes": 2923403776
+    },
+    {
+      "id": "Mercury_SC_400178",
+      "method": "loopcd_adaptive_k2",
+      "prefix_tokens": 14,
+      "loops": 2,
+      "prefill_ms": 43.46047202125192,
+      "decode_ms": 38.38631114922464,
+      "peak_allocated_bytes": 2915225600
+    },
+    {
+      "id": "NYSEDREGENTS_2014_8_20",
+      "method": "loopcd_adaptive_k2",
+      "prefix_tokens": 72,
+      "loops": 2,
+      "prefill_ms": 44.401445193216205,
+      "decode_ms": 41.07446991838515,
+      "peak_allocated_bytes": 2916499968
+    },
+    {
+      "id": "Mercury_7158673",
+      "method": "loopcd_adaptive_k2",
+      "prefix_tokens": 42,
+      "loops": 2,
+      "prefill_ms": 41.52197693474591,
+      "decode_ms": 40.73418094776571,
+      "peak_allocated_bytes": 2925865984
+    },
+    {
+      "id": "MCAS_2014_8_17",
+      "method": "loopcd_hidden_k2",
+      "prefix_tokens": 16,
+      "loops": 2,
+      "prefill_ms": 42.57553303614259,
+      "decode_ms": 39.73969700746238,
+      "peak_allocated_bytes": 2895802368
+    },
+    {
+      "id": "MSA_2013_8_3",
+      "method": "loopcd_hidden_k2",
+      "prefix_tokens": 28,
+      "loops": 2,
+      "prefill_ms": 41.59783199429512,
+      "decode_ms": 39.45521987043321,
+      "peak_allocated_bytes": 2897688576
+    },
+    {
+      "id": "Mercury_417146",
+      "method": "loopcd_hidden_k2",
+      "prefix_tokens": 25,
+      "loops": 2,
+      "prefill_ms": 39.353620959445834,
+      "decode_ms": 38.65526197478175,
+      "peak_allocated_bytes": 2901051392
+    },
+    {
+      "id": "Mercury_SC_401244",
+      "method": "loopcd_hidden_k2",
+      "prefix_tokens": 19,
+      "loops": 2,
+      "prefill_ms": 42.5464641302824,
+      "decode_ms": 40.437516989186406,
+      "peak_allocated_bytes": 2897159168
+    },
+    {
+      "id": "Mercury_7026443",
+      "method": "loopcd_hidden_k2",
+      "prefix_tokens": 14,
+      "loops": 2,
+      "prefill_ms": 44.20861601829529,
+      "decode_ms": 39.05222099274397,
+      "peak_allocated_bytes": 2892538880
+    },
+    {
+      "id": "Mercury_7183733",
+      "method": "loopcd_hidden_k2",
+      "prefix_tokens": 96,
+      "loops": 2,
+      "prefill_ms": 41.77803499624133,
+      "decode_ms": 39.72992510534823,
+      "peak_allocated_bytes": 2928595456
+    },
+    {
+      "id": "NYSEDREGENTS_2014_8_38",
+      "method": "loopcd_hidden_k2",
+      "prefix_tokens": 17,
+      "loops": 2,
+      "prefill_ms": 43.72966103255749,
+      "decode_ms": 40.47357803210616,
+      "peak_allocated_bytes": 2924173312
+    },
+    {
+      "id": "NYSEDREGENTS_2014_4_9",
+      "method": "loopcd_hidden_k2",
+      "prefix_tokens": 54,
+      "loops": 2,
+      "prefill_ms": 42.69188502803445,
+      "decode_ms": 52.153754979372025,
+      "peak_allocated_bytes": 2909836288
+    },
+    {
+      "id": "TIMSS_2003_8_pg14",
+      "method": "loopcd_hidden_k2",
+      "prefix_tokens": 16,
+      "loops": 2,
+      "prefill_ms": 47.48298181220889,
+      "decode_ms": 49.23263704404235,
+      "peak_allocated_bytes": 2907205632
+    },
+    {
+      "id": "Mercury_7006790",
+      "method": "loopcd_hidden_k2",
+      "prefix_tokens": 21,
+      "loops": 2,
+      "prefill_ms": 53.19087696261704,
+      "decode_ms": 48.91789983958006,
+      "peak_allocated_bytes": 2894524416
+    },
+    {
+      "id": "Mercury_SC_415366",
+      "method": "loopcd_hidden_k2",
+      "prefix_tokens": 32,
+      "loops": 2,
+      "prefill_ms": 46.193116810172796,
+      "decode_ms": 39.95259013026953,
+      "peak_allocated_bytes": 2901463040
+    },
+    {
+      "id": "Mercury_7141908",
+      "method": "loopcd_hidden_k2",
+      "prefix_tokens": 25,
+      "loops": 2,
+      "prefill_ms": 39.423841051757336,
+      "decode_ms": 39.13203300908208,
+      "peak_allocated_bytes": 2902624256
+    },
+    {
+      "id": "Mercury_SC_415735",
+      "method": "loopcd_hidden_k2",
+      "prefix_tokens": 39,
+      "loops": 2,
+      "prefill_ms": 41.400443064048886,
+      "decode_ms": 40.26125487871468,
+      "peak_allocated_bytes": 2906201088
+    },
+    {
+      "id": "Mercury_7037573",
+      "method": "loopcd_hidden_k2",
+      "prefix_tokens": 17,
+      "loops": 2,
+      "prefill_ms": 42.87512507289648,
+      "decode_ms": 38.08595100417733,
+      "peak_allocated_bytes": 2901760000
+    },
+    {
+      "id": "Mercury_SC_400172",
+      "method": "loopcd_hidden_k2",
+      "prefix_tokens": 17,
+      "loops": 2,
+      "prefill_ms": 42.43939300067723,
+      "decode_ms": 41.080991039052606,
+      "peak_allocated_bytes": 2893109248
+    },
+    {
+      "id": "NAEP_2005_8_S11+14",
+      "method": "loopcd_hidden_k2",
+      "prefix_tokens": 18,
+      "loops": 2,
+      "prefill_ms": 44.11880695261061,
+      "decode_ms": 40.55494908243418,
+      "peak_allocated_bytes": 2893560832
+    },
+    {
+      "id": "Mercury_7246925",
+      "method": "loopcd_hidden_k2",
+      "prefix_tokens": 35,
+      "loops": 2,
+      "prefill_ms": 42.386094108223915,
+      "decode_ms": 39.79552583768964,
+      "peak_allocated_bytes": 2901640192
+    },
+    {
+      "id": "Mercury_7166180",
+      "method": "loopcd_hidden_k2",
+      "prefix_tokens": 37,
+      "loops": 2,
+      "prefill_ms": 41.100003058090806,
+      "decode_ms": 39.953745901584625,
+      "peak_allocated_bytes": 2909229056
+    },
+    {
+      "id": "Mercury_184258",
+      "method": "loopcd_hidden_k2",
+      "prefix_tokens": 18,
+      "loops": 2,
+      "prefill_ms": 44.332491932436824,
+      "decode_ms": 37.88036713376641,
+      "peak_allocated_bytes": 2901425152
+    },
+    {
+      "id": "Mercury_7171938",
+      "method": "loopcd_hidden_k2",
+      "prefix_tokens": 27,
+      "loops": 2,
+      "prefill_ms": 43.556757969781756,
+      "decode_ms": 40.492017986252904,
+      "peak_allocated_bytes": 2898023424
+    },
+    {
+      "id": "MDSA_2007_5_39",
+      "method": "loopcd_hidden_k2",
+      "prefix_tokens": 76,
+      "loops": 2,
+      "prefill_ms": 43.35029888898134,
+      "decode_ms": 40.40830209851265,
+      "peak_allocated_bytes": 2923715072
+    },
+    {
+      "id": "Mercury_SC_400178",
+      "method": "loopcd_hidden_k2",
+      "prefix_tokens": 14,
+      "loops": 2,
+      "prefill_ms": 40.88221094571054,
+      "decode_ms": 41.03482305072248,
+      "peak_allocated_bytes": 2914952192
+    },
+    {
+      "id": "NYSEDREGENTS_2014_8_20",
+      "method": "loopcd_hidden_k2",
+      "prefix_tokens": 72,
+      "loops": 2,
+      "prefill_ms": 44.17643113993108,
+      "decode_ms": 37.711862940341234,
+      "peak_allocated_bytes": 2916794880
+    },
+    {
+      "id": "Mercury_7158673",
+      "method": "loopcd_hidden_k2",
+      "prefix_tokens": 42,
+      "loops": 2,
+      "prefill_ms": 41.837031953036785,
+      "decode_ms": 38.31037203781307,
+      "peak_allocated_bytes": 2926038016
+    },
+    {
+      "id": "MCAS_2014_8_17",
+      "method": "native_k3",
+      "prefix_tokens": 16,
+      "loops": 3,
+      "prefill_ms": 62.63851188123226,
+      "decode_ms": 60.558268101885915,
+      "peak_allocated_bytes": 2903863808
+    },
+    {
+      "id": "MSA_2013_8_3",
+      "method": "native_k3",
+      "prefix_tokens": 28,
+      "loops": 3,
+      "prefill_ms": 63.470476074144244,
+      "decode_ms": 60.11745799332857,
+      "peak_allocated_bytes": 2906339840
+    },
+    {
+      "id": "Mercury_417146",
+      "method": "native_k3",
+      "prefix_tokens": 25,
+      "loops": 3,
+      "prefill_ms": 64.4107460975647,
+      "decode_ms": 60.80067087896168,
+      "peak_allocated_bytes": 2911472128
+    },
+    {
+      "id": "Mercury_SC_401244",
+      "method": "native_k3",
+      "prefix_tokens": 19,
+      "loops": 3,
+      "prefill_ms": 63.81951994262636,
+      "decode_ms": 60.348503990098834,
+      "peak_allocated_bytes": 2905810432
+    },
+    {
+      "id": "Mercury_7026443",
+      "method": "native_k3",
+      "prefix_tokens": 14,
+      "loops": 3,
+      "prefill_ms": 62.770410906523466,
+      "decode_ms": 61.3749329932034,
+      "peak_allocated_bytes": 2899027456
+    },
+    {
+      "id": "Mercury_7183733",
+      "method": "native_k3",
+      "prefix_tokens": 96,
+      "loops": 3,
+      "prefill_ms": 68.86231596581638,
+      "decode_ms": 61.15464004687965,
+      "peak_allocated_bytes": 2950222848
+    },
+    {
+      "id": "NYSEDREGENTS_2014_8_38",
+      "method": "native_k3",
+      "prefix_tokens": 17,
+      "loops": 3,
+      "prefill_ms": 65.769765060395,
+      "decode_ms": 58.85377409867942,
+      "peak_allocated_bytes": 2946390528
+    },
+    {
+      "id": "NYSEDREGENTS_2014_4_9",
+      "method": "native_k3",
+      "prefix_tokens": 54,
+      "loops": 3,
+      "prefill_ms": 61.18586892262101,
+      "decode_ms": 59.486110927537084,
+      "peak_allocated_bytes": 2923795968
+    },
+    {
+      "id": "TIMSS_2003_8_pg14",
+      "method": "native_k3",
+      "prefix_tokens": 16,
+      "loops": 3,
+      "prefill_ms": 62.98519903793931,
+      "decode_ms": 61.3457930739969,
+      "peak_allocated_bytes": 2920968704
+    },
+    {
+      "id": "Mercury_7006790",
+      "method": "native_k3",
+      "prefix_tokens": 21,
+      "loops": 3,
+      "prefill_ms": 64.85169613733888,
+      "decode_ms": 60.79470086842775,
+      "peak_allocated_bytes": 2901799424
+    },
+    {
+      "id": "Mercury_SC_415366",
+      "method": "native_k3",
+      "prefix_tokens": 32,
+      "loops": 3,
+      "prefill_ms": 65.72379497811198,
+      "decode_ms": 61.39017501845956,
+      "peak_allocated_bytes": 2911883776
+    },
+    {
+      "id": "Mercury_7141908",
+      "method": "native_k3",
+      "prefix_tokens": 25,
+      "loops": 3,
+      "prefill_ms": 67.29265791364014,
+      "decode_ms": 60.273878974840045,
+      "peak_allocated_bytes": 2913831424
+    },
+    {
+      "id": "Mercury_SC_415735",
+      "method": "native_k3",
+      "prefix_tokens": 39,
+      "loops": 3,
+      "prefill_ms": 61.10469484701753,
+      "decode_ms": 58.24368912726641,
+      "peak_allocated_bytes": 2918784512
+    },
+    {
+      "id": "Mercury_7037573",
+      "method": "native_k3",
+      "prefix_tokens": 17,
+      "loops": 3,
+      "prefill_ms": 64.27061394788325,
+      "decode_ms": 58.657282032072544,
+      "peak_allocated_bytes": 2912770560
+    },
+    {
+      "id": "Mercury_SC_400172",
+      "method": "native_k3",
+      "prefix_tokens": 17,
+      "loops": 3,
+      "prefill_ms": 62.07136088050902,
+      "decode_ms": 57.643017964437604,
+      "peak_allocated_bytes": 2899794432
+    },
+    {
+      "id": "NAEP_2005_8_S11+14",
+      "method": "native_k3",
+      "prefix_tokens": 18,
+      "loops": 3,
+      "prefill_ms": 63.46759293228388,
+      "decode_ms": 56.23416695743799,
+      "peak_allocated_bytes": 2900442624
+    },
+    {
+      "id": "Mercury_7246925",
+      "method": "native_k3",
+      "prefix_tokens": 35,
+      "loops": 3,
+      "prefill_ms": 62.20130203291774,
+      "decode_ms": 58.23935009539127,
+      "peak_allocated_bytes": 2912060928
+    },
+    {
+      "id": "Mercury_7166180",
+      "method": "native_k3",
+      "prefix_tokens": 37,
+      "loops": 3,
+      "prefill_ms": 63.66666289977729,
+      "decode_ms": 58.92804102040827,
+      "peak_allocated_bytes": 2923385344
+    },
+    {
+      "id": "Mercury_184258",
+      "method": "native_k3",
+      "prefix_tokens": 18,
+      "loops": 3,
+      "prefill_ms": 62.56069685332477,
+      "decode_ms": 60.09742710739374,
+      "peak_allocated_bytes": 2912239104
+    },
+    {
+      "id": "Mercury_7171938",
+      "method": "native_k3",
+      "prefix_tokens": 27,
+      "loops": 3,
+      "prefill_ms": 68.4458538889885,
+      "decode_ms": 60.99055614322424,
+      "peak_allocated_bytes": 2906871296
+    },
+    {
+      "id": "MDSA_2007_5_39",
+      "method": "native_k3",
+      "prefix_tokens": 76,
+      "loops": 3,
+      "prefill_ms": 63.91827599145472,
+      "decode_ms": 60.06864784285426,
+      "peak_allocated_bytes": 2943966208
+    },
+    {
+      "id": "Mercury_SC_400178",
+      "method": "native_k3",
+      "prefix_tokens": 14,
+      "loops": 3,
+      "prefill_ms": 63.61548509448767,
+      "decode_ms": 60.131253907456994,
+      "peak_allocated_bytes": 2932647424
+    },
+    {
+      "id": "NYSEDREGENTS_2014_8_20",
+      "method": "native_k3",
+      "prefix_tokens": 72,
+      "loops": 3,
+      "prefill_ms": 63.87619907036424,
+      "decode_ms": 60.48187892884016,
+      "peak_allocated_bytes": 2933703680
+    },
+    {
+      "id": "Mercury_7158673",
+      "method": "native_k3",
+      "prefix_tokens": 42,
+      "loops": 3,
+      "prefill_ms": 63.01250006072223,
+      "decode_ms": 60.217903926968575,
+      "peak_allocated_bytes": 2948451840
+    },
+    {
+      "id": "MCAS_2014_8_17",
+      "method": "loopcd_fixed_k3",
+      "prefix_tokens": 16,
+      "loops": 3,
+      "prefill_ms": 63.13986098393798,
+      "decode_ms": 59.85781014896929,
+      "peak_allocated_bytes": 2904296448
+    },
+    {
+      "id": "MSA_2013_8_3",
+      "method": "loopcd_fixed_k3",
+      "prefix_tokens": 28,
+      "loops": 3,
+      "prefill_ms": 65.05699595436454,
+      "decode_ms": 60.28736894950271,
+      "peak_allocated_bytes": 2906536448
+    },
+    {
+      "id": "Mercury_417146",
+      "method": "loopcd_fixed_k3",
+      "prefix_tokens": 25,
+      "loops": 3,
+      "prefill_ms": 64.60071704350412,
+      "decode_ms": 60.14023697935045,
+      "peak_allocated_bytes": 2911668736
+    },
+    {
+      "id": "Mercury_SC_401244",
+      "method": "loopcd_fixed_k3",
+      "prefix_tokens": 19,
+      "loops": 3,
+      "prefill_ms": 63.170795096084476,
+      "decode_ms": 58.9587539434433,
+      "peak_allocated_bytes": 2906102784
+    },
+    {
+      "id": "Mercury_7026443",
+      "method": "loopcd_fixed_k3",
+      "prefix_tokens": 14,
+      "loops": 3,
+      "prefill_ms": 62.65173899009824,
+      "decode_ms": 59.988124994561076,
+      "peak_allocated_bytes": 2899553280
+    },
+    {
+      "id": "Mercury_7183733",
+      "method": "loopcd_fixed_k3",
+      "prefix_tokens": 96,
+      "loops": 3,
+      "prefill_ms": 63.7550859246403,
+      "decode_ms": 60.03895215690136,
+      "peak_allocated_bytes": 2950419456
+    },
+    {
+      "id": "NYSEDREGENTS_2014_8_38",
+      "method": "loopcd_fixed_k3",
+      "prefix_tokens": 17,
+      "loops": 3,
+      "prefill_ms": 65.47592696733773,
+      "decode_ms": 60.974877094849944,
+      "peak_allocated_bytes": 2946776064
+    },
+    {
+      "id": "NYSEDREGENTS_2014_4_9",
+      "method": "loopcd_fixed_k3",
+      "prefix_tokens": 54,
+      "loops": 3,
+      "prefill_ms": 63.36718681268394,
+      "decode_ms": 57.604946196079254,
+      "peak_allocated_bytes": 2923992576
+    },
+    {
+      "id": "TIMSS_2003_8_pg14",
+      "method": "loopcd_fixed_k3",
+      "prefix_tokens": 16,
+      "loops": 3,
+      "prefill_ms": 62.37925193272531,
+      "decode_ms": 59.76728303357959,
+      "peak_allocated_bytes": 2921401344
+    },
+    {
+      "id": "Mercury_7006790",
+      "method": "loopcd_fixed_k3",
+      "prefix_tokens": 21,
+      "loops": 3,
+      "prefill_ms": 64.01984812691808,
+      "decode_ms": 57.74541990831494,
+      "peak_allocated_bytes": 2901998592
+    },
+    {
+      "id": "Mercury_SC_415366",
+      "method": "loopcd_fixed_k3",
+      "prefix_tokens": 32,
+      "loops": 3,
+      "prefill_ms": 65.7166859600693,
+      "decode_ms": 58.98732412606478,
+      "peak_allocated_bytes": 2912080384
+    },
+    {
+      "id": "Mercury_7141908",
+      "method": "loopcd_fixed_k3",
+      "prefix_tokens": 25,
+      "loops": 3,
+      "prefill_ms": 63.0205690395087,
+      "decode_ms": 58.38954099453986,
+      "peak_allocated_bytes": 2914028032
+    },
+    {
+      "id": "Mercury_SC_415735",
+      "method": "loopcd_fixed_k3",
+      "prefix_tokens": 39,
+      "loops": 3,
+      "prefill_ms": 64.61940286681056,
+      "decode_ms": 59.44586405530572,
+      "peak_allocated_bytes": 2918981120
+    },
+    {
+      "id": "Mercury_7037573",
+      "method": "loopcd_fixed_k3",
+      "prefix_tokens": 17,
+      "loops": 3,
+      "prefill_ms": 65.42891799472272,
+      "decode_ms": 61.6939440369606,
+      "peak_allocated_bytes": 2913156096
+    },
+    {
+      "id": "Mercury_SC_400172",
+      "method": "loopcd_fixed_k3",
+      "prefix_tokens": 17,
+      "loops": 3,
+      "prefill_ms": 65.78037212602794,
+      "decode_ms": 60.36536186002195,
+      "peak_allocated_bytes": 2900179968
+    },
+    {
+      "id": "NAEP_2005_8_S11+14",
+      "method": "loopcd_fixed_k3",
+      "prefix_tokens": 18,
+      "loops": 3,
+      "prefill_ms": 66.20367313735187,
+      "decode_ms": 61.56381592154503,
+      "peak_allocated_bytes": 2900782080
+    },
+    {
+      "id": "Mercury_7246925",
+      "method": "loopcd_fixed_k3",
+      "prefix_tokens": 35,
+      "loops": 3,
+      "prefill_ms": 68.89484100975096,
+      "decode_ms": 65.50047686323524,
+      "peak_allocated_bytes": 2912257536
+    },
+    {
+      "id": "Mercury_7166180",
+      "method": "loopcd_fixed_k3",
+      "prefix_tokens": 37,
+      "loops": 3,
+      "prefill_ms": 68.53296514600515,
+      "decode_ms": 61.8101239670068,
+      "peak_allocated_bytes": 2923581952
+    },
+    {
+      "id": "Mercury_184258",
+      "method": "loopcd_fixed_k3",
+      "prefix_tokens": 18,
+      "loops": 3,
+      "prefill_ms": 64.31112391874194,
+      "decode_ms": 61.541645089164376,
+      "peak_allocated_bytes": 2912578560
+    },
+    {
+      "id": "Mercury_7171938",
+      "method": "loopcd_fixed_k3",
+      "prefix_tokens": 27,
+      "loops": 3,
+      "prefill_ms": 66.29165797494352,
+      "decode_ms": 61.72093306668103,
+      "peak_allocated_bytes": 2907067904
+    },
+    {
+      "id": "MDSA_2007_5_39",
+      "method": "loopcd_fixed_k3",
+      "prefix_tokens": 76,
+      "loops": 3,
+      "prefill_ms": 67.07091303542256,
+      "decode_ms": 59.99143794178963,
+      "peak_allocated_bytes": 2944162816
+    },
+    {
+      "id": "Mercury_SC_400178",
+      "method": "loopcd_fixed_k3",
+      "prefix_tokens": 14,
+      "loops": 3,
+      "prefill_ms": 62.180836917832494,
+      "decode_ms": 59.80317993089557,
+      "peak_allocated_bytes": 2933173248
+    },
+    {
+      "id": "NYSEDREGENTS_2014_8_20",
+      "method": "loopcd_fixed_k3",
+      "prefix_tokens": 72,
+      "loops": 3,
+      "prefill_ms": 65.75063616037369,
+      "decode_ms": 61.55459792353213,
+      "peak_allocated_bytes": 2933900288
+    },
+    {
+      "id": "Mercury_7158673",
+      "method": "loopcd_fixed_k3",
+      "prefix_tokens": 42,
+      "loops": 3,
+      "prefill_ms": 61.30688893608749,
+      "decode_ms": 61.885550152510405,
+      "peak_allocated_bytes": 2948648448
+    },
+    {
+      "id": "MCAS_2014_8_17",
+      "method": "loopcd_adaptive_k3",
+      "prefix_tokens": 16,
+      "loops": 3,
+      "prefill_ms": 62.24706210196018,
+      "decode_ms": 59.31300693191588,
+      "peak_allocated_bytes": 2904297472
+    },
+    {
+      "id": "MSA_2013_8_3",
+      "method": "loopcd_adaptive_k3",
+      "prefix_tokens": 28,
+      "loops": 3,
+      "prefill_ms": 65.87582104839385,
+      "decode_ms": 60.959137976169586,
+      "peak_allocated_bytes": 2906536448
+    },
+    {
+      "id": "Mercury_417146",
+      "method": "loopcd_adaptive_k3",
+      "prefix_tokens": 25,
+      "loops": 3,
+      "prefill_ms": 61.76708382554352,
+      "decode_ms": 59.129863046109676,
+      "peak_allocated_bytes": 2911668736
+    },
+    {
+      "id": "Mercury_SC_401244",
+      "method": "loopcd_adaptive_k3",
+      "prefix_tokens": 19,
+      "loops": 3,
+      "prefill_ms": 63.68332915008068,
+      "decode_ms": 58.98720887489617,
+      "peak_allocated_bytes": 2906103808
+    },
+    {
+      "id": "Mercury_7026443",
+      "method": "loopcd_adaptive_k3",
+      "prefix_tokens": 14,
+      "loops": 3,
+      "prefill_ms": 62.70427186973393,
+      "decode_ms": 59.80949918739498,
+      "peak_allocated_bytes": 2899554304
+    },
+    {
+      "id": "Mercury_7183733",
+      "method": "loopcd_adaptive_k3",
+      "prefix_tokens": 96,
+      "loops": 3,
+      "prefill_ms": 66.40808912925422,
+      "decode_ms": 57.368320878595114,
+      "peak_allocated_bytes": 2950419456
+    },
+    {
+      "id": "NYSEDREGENTS_2014_8_38",
+      "method": "loopcd_adaptive_k3",
+      "prefix_tokens": 17,
+      "loops": 3,
+      "prefill_ms": 66.43364508636296,
+      "decode_ms": 62.35334789380431,
+      "peak_allocated_bytes": 2946777088
+    },
+    {
+      "id": "NYSEDREGENTS_2014_4_9",
+      "method": "loopcd_adaptive_k3",
+      "prefix_tokens": 54,
+      "loops": 3,
+      "prefill_ms": 63.755901996046305,
+      "decode_ms": 59.83689101412892,
+      "peak_allocated_bytes": 2923992576
+    },
+    {
+      "id": "TIMSS_2003_8_pg14",
+      "method": "loopcd_adaptive_k3",
+      "prefix_tokens": 16,
+      "loops": 3,
+      "prefill_ms": 59.08811301924288,
+      "decode_ms": 56.89111305400729,
+      "peak_allocated_bytes": 2921402368
+    },
+    {
+      "id": "Mercury_7006790",
+      "method": "loopcd_adaptive_k3",
+      "prefix_tokens": 21,
+      "loops": 3,
+      "prefill_ms": 64.6276781335473,
+      "decode_ms": 60.55338401347399,
+      "peak_allocated_bytes": 2901999616
+    },
+    {
+      "id": "Mercury_SC_415366",
+      "method": "loopcd_adaptive_k3",
+      "prefix_tokens": 32,
+      "loops": 3,
+      "prefill_ms": 60.50165486522019,
+      "decode_ms": 56.95160594768822,
+      "peak_allocated_bytes": 2912080384
+    },
+    {
+      "id": "Mercury_7141908",
+      "method": "loopcd_adaptive_k3",
+      "prefix_tokens": 25,
+      "loops": 3,
+      "prefill_ms": 63.18416795693338,
+      "decode_ms": 56.08404986560345,
+      "peak_allocated_bytes": 2914028032
+    },
+    {
+      "id": "Mercury_SC_415735",
+      "method": "loopcd_adaptive_k3",
+      "prefix_tokens": 39,
+      "loops": 3,
+      "prefill_ms": 57.90800484828651,
+      "decode_ms": 59.399719117209315,
+      "peak_allocated_bytes": 2918981120
+    },
+    {
+      "id": "Mercury_7037573",
+      "method": "loopcd_adaptive_k3",
+      "prefix_tokens": 17,
+      "loops": 3,
+      "prefill_ms": 61.980222817510366,
+      "decode_ms": 58.90355701558292,
+      "peak_allocated_bytes": 2913157120
+    },
+    {
+      "id": "Mercury_SC_400172",
+      "method": "loopcd_adaptive_k3",
+      "prefix_tokens": 17,
+      "loops": 3,
+      "prefill_ms": 63.215409172698855,
+      "decode_ms": 61.779876006767154,
+      "peak_allocated_bytes": 2900180992
+    },
+    {
+      "id": "NAEP_2005_8_S11+14",
+      "method": "loopcd_adaptive_k3",
+      "prefix_tokens": 18,
+      "loops": 3,
+      "prefill_ms": 61.72417686320841,
+      "decode_ms": 54.64774905703962,
+      "peak_allocated_bytes": 2900783104
+    },
+    {
+      "id": "Mercury_7246925",
+      "method": "loopcd_adaptive_k3",
+      "prefix_tokens": 35,
+      "loops": 3,
+      "prefill_ms": 58.28861496411264,
+      "decode_ms": 59.4739590305835,
+      "peak_allocated_bytes": 2912257536
+    },
+    {
+      "id": "Mercury_7166180",
+      "method": "loopcd_adaptive_k3",
+      "prefix_tokens": 37,
+      "loops": 3,
+      "prefill_ms": 60.65908703021705,
+      "decode_ms": 60.170609038323164,
+      "peak_allocated_bytes": 2923581952
+    },
+    {
+      "id": "Mercury_184258",
+      "method": "loopcd_adaptive_k3",
+      "prefix_tokens": 18,
+      "loops": 3,
+      "prefill_ms": 65.17542898654938,
+      "decode_ms": 57.254145154729486,
+      "peak_allocated_bytes": 2912579584
+    },
+    {
+      "id": "Mercury_7171938",
+      "method": "loopcd_adaptive_k3",
+      "prefix_tokens": 27,
+      "loops": 3,
+      "prefill_ms": 64.87427512183785,
+      "decode_ms": 62.2613918967545,
+      "peak_allocated_bytes": 2907067904
+    },
+    {
+      "id": "MDSA_2007_5_39",
+      "method": "loopcd_adaptive_k3",
+      "prefix_tokens": 76,
+      "loops": 3,
+      "prefill_ms": 66.51475606486201,
+      "decode_ms": 56.59610312432051,
+      "peak_allocated_bytes": 2944162816
+    },
+    {
+      "id": "Mercury_SC_400178",
+      "method": "loopcd_adaptive_k3",
+      "prefix_tokens": 14,
+      "loops": 3,
+      "prefill_ms": 62.249261885881424,
+      "decode_ms": 58.81154001690447,
+      "peak_allocated_bytes": 2933174272
+    },
+    {
+      "id": "NYSEDREGENTS_2014_8_20",
+      "method": "loopcd_adaptive_k3",
+      "prefix_tokens": 72,
+      "loops": 3,
+      "prefill_ms": 61.46678002551198,
+      "decode_ms": 59.08525292761624,
+      "peak_allocated_bytes": 2933900288
+    },
+    {
+      "id": "Mercury_7158673",
+      "method": "loopcd_adaptive_k3",
+      "prefix_tokens": 42,
+      "loops": 3,
+      "prefill_ms": 60.57093292474747,
+      "decode_ms": 57.6889980584383,
+      "peak_allocated_bytes": 2948648448
+    },
+    {
+      "id": "MCAS_2014_8_17",
+      "method": "loopcd_hidden_k3",
+      "prefix_tokens": 16,
+      "loops": 3,
+      "prefill_ms": 61.436244985088706,
+      "decode_ms": 62.20993911847472,
+      "peak_allocated_bytes": 2904191488
+    },
+    {
+      "id": "MSA_2013_8_3",
+      "method": "loopcd_hidden_k3",
+      "prefix_tokens": 28,
+      "loops": 3,
+      "prefill_ms": 65.12319901958108,
+      "decode_ms": 59.692465933039784,
+      "peak_allocated_bytes": 2906765824
+    },
+    {
+      "id": "Mercury_417146",
+      "method": "loopcd_hidden_k3",
+      "prefix_tokens": 25,
+      "loops": 3,
+      "prefill_ms": 65.64243393950164,
+      "decode_ms": 59.72098605707288,
+      "peak_allocated_bytes": 2911873536
+    },
+    {
+      "id": "Mercury_SC_401244",
+      "method": "loopcd_hidden_k3",
+      "prefix_tokens": 19,
+      "loops": 3,
+      "prefill_ms": 64.02254314161837,
+      "decode_ms": 60.857174918055534,
+      "peak_allocated_bytes": 2906162688
+    },
+    {
+      "id": "Mercury_7026443",
+      "method": "loopcd_hidden_k3",
+      "prefix_tokens": 14,
+      "loops": 3,
+      "prefill_ms": 62.32784106396139,
+      "decode_ms": 58.31282399594784,
+      "peak_allocated_bytes": 2899338752
+    },
+    {
+      "id": "Mercury_7183733",
+      "method": "loopcd_hidden_k3",
+      "prefix_tokens": 96,
+      "loops": 3,
+      "prefill_ms": 64.09080908633769,
+      "decode_ms": 59.53715881332755,
+      "peak_allocated_bytes": 2951205888
+    },
+    {
+      "id": "NYSEDREGENTS_2014_8_38",
+      "method": "loopcd_hidden_k3",
+      "prefix_tokens": 17,
+      "loops": 3,
+      "prefill_ms": 66.30533514544368,
+      "decode_ms": 61.17730983532965,
+      "peak_allocated_bytes": 2946726400
+    },
+    {
+      "id": "NYSEDREGENTS_2014_4_9",
+      "method": "loopcd_hidden_k3",
+      "prefix_tokens": 54,
+      "loops": 3,
+      "prefill_ms": 64.21787408180535,
+      "decode_ms": 61.42714689485729,
+      "peak_allocated_bytes": 2924434944
+    },
+    {
+      "id": "TIMSS_2003_8_pg14",
+      "method": "loopcd_hidden_k3",
+      "prefix_tokens": 16,
+      "loops": 3,
+      "prefill_ms": 64.41547512076795,
+      "decode_ms": 58.98028984665871,
+      "peak_allocated_bytes": 2921296384
+    },
+    {
+      "id": "Mercury_7006790",
+      "method": "loopcd_hidden_k3",
+      "prefix_tokens": 21,
+      "loops": 3,
+      "prefill_ms": 64.41632704809308,
+      "decode_ms": 60.42671389877796,
+      "peak_allocated_bytes": 2902168064
+    },
+    {
+      "id": "Mercury_SC_415366",
+      "method": "loopcd_hidden_k3",
+      "prefix_tokens": 32,
+      "loops": 3,
+      "prefill_ms": 65.81855798140168,
+      "decode_ms": 61.34202890098095,
+      "peak_allocated_bytes": 2912342528
+    },
+    {
+      "id": "Mercury_7141908",
+      "method": "loopcd_hidden_k3",
+      "prefix_tokens": 25,
+      "loops": 3,
+      "prefill_ms": 65.07523101754487,
+      "decode_ms": 59.89762512035668,
+      "peak_allocated_bytes": 2914232832
+    },
+    {
+      "id": "Mercury_SC_415735",
+      "method": "loopcd_hidden_k3",
+      "prefix_tokens": 39,
+      "loops": 3,
+      "prefill_ms": 63.39784408919513,
+      "decode_ms": 61.11569004133344,
+      "peak_allocated_bytes": 2919300608
+    },
+    {
+      "id": "Mercury_7037573",
+      "method": "loopcd_hidden_k3",
+      "prefix_tokens": 17,
+      "loops": 3,
+      "prefill_ms": 65.24786516092718,
+      "decode_ms": 59.38611296005547,
+      "peak_allocated_bytes": 2913106432
+    },
+    {
+      "id": "Mercury_SC_400172",
+      "method": "loopcd_hidden_k3",
+      "prefix_tokens": 17,
+      "loops": 3,
+      "prefill_ms": 64.73216414451599,
+      "decode_ms": 58.04771697148681,
+      "peak_allocated_bytes": 2900130304
+    },
+    {
+      "id": "NAEP_2005_8_S11+14",
+      "method": "loopcd_hidden_k3",
+      "prefix_tokens": 18,
+      "loops": 3,
+      "prefill_ms": 62.34155991114676,
+      "decode_ms": 58.20770398713648,
+      "peak_allocated_bytes": 2900786688
+    },
+    {
+      "id": "Mercury_7246925",
+      "method": "loopcd_hidden_k3",
+      "prefix_tokens": 35,
+      "loops": 3,
+      "prefill_ms": 62.076848931610584,
+      "decode_ms": 60.50528911873698,
+      "peak_allocated_bytes": 2912544256
+    },
+    {
+      "id": "Mercury_7166180",
+      "method": "loopcd_hidden_k3",
+      "prefix_tokens": 37,
+      "loops": 3,
+      "prefill_ms": 64.17243415489793,
+      "decode_ms": 59.94150089100003,
+      "peak_allocated_bytes": 2923885056
+    },
+    {
+      "id": "Mercury_184258",
+      "method": "loopcd_hidden_k3",
+      "prefix_tokens": 18,
+      "loops": 3,
+      "prefill_ms": 63.42359399423003,
+      "decode_ms": 60.62392587773502,
+      "peak_allocated_bytes": 2912583168
+    },
+    {
+      "id": "Mercury_7171938",
+      "method": "loopcd_hidden_k3",
+      "prefix_tokens": 27,
+      "loops": 3,
+      "prefill_ms": 62.80399393290281,
+      "decode_ms": 61.821016017347574,
+      "peak_allocated_bytes": 2907289088
+    },
+    {
+      "id": "MDSA_2007_5_39",
+      "method": "loopcd_hidden_k3",
+      "prefix_tokens": 76,
+      "loops": 3,
+      "prefill_ms": 63.764856895431876,
+      "decode_ms": 60.73046801611781,
+      "peak_allocated_bytes": 2944785408
+    },
+    {
+      "id": "Mercury_SC_400178",
+      "method": "loopcd_hidden_k3",
+      "prefix_tokens": 14,
+      "loops": 3,
+      "prefill_ms": 63.952443888410926,
+      "decode_ms": 60.22248393855989,
+      "peak_allocated_bytes": 2932958720
+    },
+    {
+      "id": "NYSEDREGENTS_2014_8_20",
+      "method": "loopcd_hidden_k3",
+      "prefix_tokens": 72,
+      "loops": 3,
+      "prefill_ms": 66.16880907677114,
+      "decode_ms": 61.373477103188634,
+      "peak_allocated_bytes": 2934490112
+    },
+    {
+      "id": "Mercury_7158673",
+      "method": "loopcd_hidden_k3",
+      "prefix_tokens": 42,
+      "loops": 3,
+      "prefill_ms": 64.4417810253799,
+      "decode_ms": 61.07033905573189,
+      "peak_allocated_bytes": 2948992512
+    },
+    {
+      "id": "MCAS_2014_8_17",
+      "method": "secant_k3",
+      "prefix_tokens": 16,
+      "loops": 3,
+      "prefill_ms": 62.07877094857395,
+      "decode_ms": 57.17524909414351,
+      "peak_allocated_bytes": 2904191488
+    },
+    {
+      "id": "MSA_2013_8_3",
+      "method": "secant_k3",
+      "prefix_tokens": 28,
+      "loops": 3,
+      "prefill_ms": 63.92807490192354,
+      "decode_ms": 59.798391070216894,
+      "peak_allocated_bytes": 2906765824
+    },
+    {
+      "id": "Mercury_417146",
+      "method": "secant_k3",
+      "prefix_tokens": 25,
+      "loops": 3,
+      "prefill_ms": 64.40116185694933,
+      "decode_ms": 59.16469800285995,
+      "peak_allocated_bytes": 2911873536
+    },
+    {
+      "id": "Mercury_SC_401244",
+      "method": "secant_k3",
+      "prefix_tokens": 19,
+      "loops": 3,
+      "prefill_ms": 62.96529993414879,
+      "decode_ms": 59.76433912292123,
+      "peak_allocated_bytes": 2906162688
+    },
+    {
+      "id": "Mercury_7026443",
+      "method": "secant_k3",
+      "prefix_tokens": 14,
+      "loops": 3,
+      "prefill_ms": 61.38701597228646,
+      "decode_ms": 59.220672119408846,
+      "peak_allocated_bytes": 2899338752
+    },
+    {
+      "id": "Mercury_7183733",
+      "method": "secant_k3",
+      "prefix_tokens": 96,
+      "loops": 3,
+      "prefill_ms": 64.09628805704415,
+      "decode_ms": 59.175011003389955,
+      "peak_allocated_bytes": 2951205888
+    },
+    {
+      "id": "NYSEDREGENTS_2014_8_38",
+      "method": "secant_k3",
+      "prefix_tokens": 17,
+      "loops": 3,
+      "prefill_ms": 62.78079189360142,
+      "decode_ms": 58.92126518301666,
+      "peak_allocated_bytes": 2946726400
+    },
+    {
+      "id": "NYSEDREGENTS_2014_4_9",
+      "method": "secant_k3",
+      "prefix_tokens": 54,
+      "loops": 3,
+      "prefill_ms": 63.57403006404638,
+      "decode_ms": 58.249047957360744,
+      "peak_allocated_bytes": 2924434944
+    },
+    {
+      "id": "TIMSS_2003_8_pg14",
+      "method": "secant_k3",
+      "prefix_tokens": 16,
+      "loops": 3,
+      "prefill_ms": 61.52477511204779,
+      "decode_ms": 59.57262800075114,
+      "peak_allocated_bytes": 2921296384
+    },
+    {
+      "id": "Mercury_7006790",
+      "method": "secant_k3",
+      "prefix_tokens": 21,
+      "loops": 3,
+      "prefill_ms": 64.7557049524039,
+      "decode_ms": 59.22826309688389,
+      "peak_allocated_bytes": 2902168064
+    },
+    {
+      "id": "Mercury_SC_415366",
+      "method": "secant_k3",
+      "prefix_tokens": 32,
+      "loops": 3,
+      "prefill_ms": 63.68595617823303,
+      "decode_ms": 59.395870892331004,
+      "peak_allocated_bytes": 2912342528
+    },
+    {
+      "id": "Mercury_7141908",
+      "method": "secant_k3",
+      "prefix_tokens": 25,
+      "loops": 3,
+      "prefill_ms": 61.79614784196019,
+      "decode_ms": 58.082571951672435,
+      "peak_allocated_bytes": 2914232832
+    },
+    {
+      "id": "Mercury_SC_415735",
+      "method": "secant_k3",
+      "prefix_tokens": 39,
+      "loops": 3,
+      "prefill_ms": 65.94745605252683,
+      "decode_ms": 61.50099006481469,
+      "peak_allocated_bytes": 2919300608
+    },
+    {
+      "id": "Mercury_7037573",
+      "method": "secant_k3",
+      "prefix_tokens": 17,
+      "loops": 3,
+      "prefill_ms": 66.2005478516221,
+      "decode_ms": 61.024839989840984,
+      "peak_allocated_bytes": 2913106432
+    },
+    {
+      "id": "Mercury_SC_400172",
+      "method": "secant_k3",
+      "prefix_tokens": 17,
+      "loops": 3,
+      "prefill_ms": 65.89781492948532,
+      "decode_ms": 61.12358206883073,
+      "peak_allocated_bytes": 2900130304
+    },
+    {
+      "id": "NAEP_2005_8_S11+14",
+      "method": "secant_k3",
+      "prefix_tokens": 18,
+      "loops": 3,
+      "prefill_ms": 64.58267010748386,
+      "decode_ms": 60.154204024001956,
+      "peak_allocated_bytes": 2900786688
+    },
+    {
+      "id": "Mercury_7246925",
+      "method": "secant_k3",
+      "prefix_tokens": 35,
+      "loops": 3,
+      "prefill_ms": 63.311537029221654,
+      "decode_ms": 58.9276400860399,
+      "peak_allocated_bytes": 2912544256
+    },
+    {
+      "id": "Mercury_7166180",
+      "method": "secant_k3",
+      "prefix_tokens": 37,
+      "loops": 3,
+      "prefill_ms": 61.86369014903903,
+      "decode_ms": 59.18966606259346,
+      "peak_allocated_bytes": 2923885056
+    },
+    {
+      "id": "Mercury_184258",
+      "method": "secant_k3",
+      "prefix_tokens": 18,
+      "loops": 3,
+      "prefill_ms": 62.987950164824724,
+      "decode_ms": 59.55579481087625,
+      "peak_allocated_bytes": 2912583168
+    },
+    {
+      "id": "Mercury_7171938",
+      "method": "secant_k3",
+      "prefix_tokens": 27,
+      "loops": 3,
+      "prefill_ms": 63.22595803067088,
+      "decode_ms": 59.68323303386569,
+      "peak_allocated_bytes": 2907289088
+    },
+    {
+      "id": "MDSA_2007_5_39",
+      "method": "secant_k3",
+      "prefix_tokens": 76,
+      "loops": 3,
+      "prefill_ms": 64.06762101687491,
+      "decode_ms": 56.6559499129653,
+      "peak_allocated_bytes": 2944785408
+    },
+    {
+      "id": "Mercury_SC_400178",
+      "method": "secant_k3",
+      "prefix_tokens": 14,
+      "loops": 3,
+      "prefill_ms": 63.23586800135672,
+      "decode_ms": 59.57017606124282,
+      "peak_allocated_bytes": 2932958720
+    },
+    {
+      "id": "NYSEDREGENTS_2014_8_20",
+      "method": "secant_k3",
+      "prefix_tokens": 72,
+      "loops": 3,
+      "prefill_ms": 67.19956710003316,
+      "decode_ms": 59.74714597687125,
+      "peak_allocated_bytes": 2934490112
+    },
+    {
+      "id": "Mercury_7158673",
+      "method": "secant_k3",
+      "prefix_tokens": 42,
+      "loops": 3,
+      "prefill_ms": 67.03587295487523,
+      "decode_ms": 62.14774493128061,
+      "peak_allocated_bytes": 2948992512
+    },
+    {
+      "id": "MCAS_2014_8_17",
+      "method": "laststep_k3",
+      "prefix_tokens": 16,
+      "loops": 3,
+      "prefill_ms": 64.11461695097387,
+      "decode_ms": 58.040485018864274,
+      "peak_allocated_bytes": 2904191488
+    },
+    {
+      "id": "MSA_2013_8_3",
+      "method": "laststep_k3",
+      "prefix_tokens": 28,
+      "loops": 3,
+      "prefill_ms": 65.45025203377008,
+      "decode_ms": 59.05212485231459,
+      "peak_allocated_bytes": 2906765824
+    },
+    {
+      "id": "Mercury_417146",
+      "method": "laststep_k3",
+      "prefix_tokens": 25,
+      "loops": 3,
+      "prefill_ms": 63.20823100395501,
+      "decode_ms": 59.922223910689354,
+      "peak_allocated_bytes": 2911873536
+    },
+    {
+      "id": "Mercury_SC_401244",
+      "method": "laststep_k3",
+      "prefix_tokens": 19,
+      "loops": 3,
+      "prefill_ms": 65.81020401790738,
+      "decode_ms": 59.96780609712005,
+      "peak_allocated_bytes": 2906162688
+    },
+    {
+      "id": "Mercury_7026443",
+      "method": "laststep_k3",
+      "prefix_tokens": 14,
+      "loops": 3,
+      "prefill_ms": 74.70819796435535,
+      "decode_ms": 73.55428719893098,
+      "peak_allocated_bytes": 2899338752
+    },
+    {
+      "id": "Mercury_7183733",
+      "method": "laststep_k3",
+      "prefix_tokens": 96,
+      "loops": 3,
+      "prefill_ms": 77.01248279772699,
+      "decode_ms": 59.82689815573394,
+      "peak_allocated_bytes": 2951205888
+    },
+    {
+      "id": "NYSEDREGENTS_2014_8_38",
+      "method": "laststep_k3",
+      "prefix_tokens": 17,
+      "loops": 3,
+      "prefill_ms": 62.322624027729034,
+      "decode_ms": 59.63780707679689,
+      "peak_allocated_bytes": 2946726400
+    },
+    {
+      "id": "NYSEDREGENTS_2014_4_9",
+      "method": "laststep_k3",
+      "prefix_tokens": 54,
+      "loops": 3,
+      "prefill_ms": 63.83924884721637,
+      "decode_ms": 60.0946641061455,
+      "peak_allocated_bytes": 2924434944
+    },
+    {
+      "id": "TIMSS_2003_8_pg14",
+      "method": "laststep_k3",
+      "prefix_tokens": 16,
+      "loops": 3,
+      "prefill_ms": 61.00715580396354,
+      "decode_ms": 58.80912812426686,
+      "peak_allocated_bytes": 2921296384
+    },
+    {
+      "id": "Mercury_7006790",
+      "method": "laststep_k3",
+      "prefix_tokens": 21,
+      "loops": 3,
+      "prefill_ms": 60.65721088089049,
+      "decode_ms": 59.19687310233712,
+      "peak_allocated_bytes": 2902168064
+    },
+    {
+      "id": "Mercury_SC_415366",
+      "method": "laststep_k3",
+      "prefix_tokens": 32,
+      "loops": 3,
+      "prefill_ms": 63.80023597739637,
+      "decode_ms": 58.56827297247946,
+      "peak_allocated_bytes": 2912342528
+    },
+    {
+      "id": "Mercury_7141908",
+      "method": "laststep_k3",
+      "prefix_tokens": 25,
+      "loops": 3,
+      "prefill_ms": 63.08246194384992,
+      "decode_ms": 58.4899780806154,
+      "peak_allocated_bytes": 2914232832
+    },
+    {
+      "id": "Mercury_SC_415735",
+      "method": "laststep_k3",
+      "prefix_tokens": 39,
+      "loops": 3,
+      "prefill_ms": 63.01631708629429,
+      "decode_ms": 59.169509913772345,
+      "peak_allocated_bytes": 2919300608
+    },
+    {
+      "id": "Mercury_7037573",
+      "method": "laststep_k3",
+      "prefix_tokens": 17,
+      "loops": 3,
+      "prefill_ms": 62.215644866228104,
+      "decode_ms": 58.431801153346896,
+      "peak_allocated_bytes": 2913106432
+    },
+    {
+      "id": "Mercury_SC_400172",
+      "method": "laststep_k3",
+      "prefix_tokens": 17,
+      "loops": 3,
+      "prefill_ms": 62.46732105500996,
+      "decode_ms": 58.21232381276786,
+      "peak_allocated_bytes": 2900130304
+    },
+    {
+      "id": "NAEP_2005_8_S11+14",
+      "method": "laststep_k3",
+      "prefix_tokens": 18,
+      "loops": 3,
+      "prefill_ms": 62.07176996394992,
+      "decode_ms": 58.681737864390016,
+      "peak_allocated_bytes": 2900786688
+    },
+    {
+      "id": "Mercury_7246925",
+      "method": "laststep_k3",
+      "prefix_tokens": 35,
+      "loops": 3,
+      "prefill_ms": 63.37006110697985,
+      "decode_ms": 58.95018787123263,
+      "peak_allocated_bytes": 2912544256
+    },
+    {
+      "id": "Mercury_7166180",
+      "method": "laststep_k3",
+      "prefix_tokens": 37,
+      "loops": 3,
+      "prefill_ms": 63.01447190344334,
+      "decode_ms": 60.106134973466396,
+      "peak_allocated_bytes": 2923885056
+    },
+    {
+      "id": "Mercury_184258",
+      "method": "laststep_k3",
+      "prefix_tokens": 18,
+      "loops": 3,
+      "prefill_ms": 61.12816510722041,
+      "decode_ms": 61.09865405596793,
+      "peak_allocated_bytes": 2912583168
+    },
+    {
+      "id": "Mercury_7171938",
+      "method": "laststep_k3",
+      "prefix_tokens": 27,
+      "loops": 3,
+      "prefill_ms": 66.10551197081804,
+      "decode_ms": 60.869544045999646,
+      "peak_allocated_bytes": 2907289088
+    },
+    {
+      "id": "MDSA_2007_5_39",
+      "method": "laststep_k3",
+      "prefix_tokens": 76,
+      "loops": 3,
+      "prefill_ms": 66.08007499016821,
+      "decode_ms": 61.3831109367311,
+      "peak_allocated_bytes": 2944785408
+    },
+    {
+      "id": "Mercury_SC_400178",
+      "method": "laststep_k3",
+      "prefix_tokens": 14,
+      "loops": 3,
+      "prefill_ms": 63.94982594065368,
+      "decode_ms": 58.66114888340235,
+      "peak_allocated_bytes": 2932958720
+    },
+    {
+      "id": "NYSEDREGENTS_2014_8_20",
+      "method": "laststep_k3",
+      "prefix_tokens": 72,
+      "loops": 3,
+      "prefill_ms": 66.83575990609825,
+      "decode_ms": 58.86524310335517,
+      "peak_allocated_bytes": 2934490112
+    },
+    {
+      "id": "Mercury_7158673",
+      "method": "laststep_k3",
+      "prefix_tokens": 42,
+      "loops": 3,
+      "prefill_ms": 65.3568550478667,
+      "decode_ms": 61.11728399991989,
+      "peak_allocated_bytes": 2948992512
+    },
+    {
+      "id": "MCAS_2014_8_17",
+      "method": "native_k4",
+      "prefix_tokens": 16,
+      "loops": 4,
+      "prefill_ms": 84.63076199404895,
+      "decode_ms": 79.41533206030726,
+      "peak_allocated_bytes": 2912187392
+    },
+    {
+      "id": "MSA_2013_8_3",
+      "method": "native_k4",
+      "prefix_tokens": 28,
+      "loops": 4,
+      "prefill_ms": 85.22644289769232,
+      "decode_ms": 79.55644209869206,
+      "peak_allocated_bytes": 2915302400
+    },
+    {
+      "id": "Mercury_417146",
+      "method": "native_k4",
+      "prefix_tokens": 25,
+      "loops": 4,
+      "prefill_ms": 85.53751418367028,
+      "decode_ms": 77.82872882671654,
+      "peak_allocated_bytes": 2922191872
+    },
+    {
+      "id": "Mercury_SC_401244",
+      "method": "native_k4",
+      "prefix_tokens": 19,
+      "loops": 4,
+      "prefill_ms": 84.27795278839767,
+      "decode_ms": 80.46966907568276,
+      "peak_allocated_bytes": 2914736128
+    },
+    {
+      "id": "Mercury_7026443",
+      "method": "native_k4",
+      "prefix_tokens": 14,
+      "loops": 4,
+      "prefill_ms": 83.85063521564007,
+      "decode_ms": 81.15521399304271,
+      "peak_allocated_bytes": 2905769984
+    },
+    {
+      "id": "Mercury_7183733",
+      "method": "native_k4",
+      "prefix_tokens": 96,
+      "loops": 4,
+      "prefill_ms": 90.8366700168699,
+      "decode_ms": 81.13759499974549,
+      "peak_allocated_bytes": 2972440064
+    },
+    {
+      "id": "NYSEDREGENTS_2014_8_38",
+      "method": "native_k4",
+      "prefix_tokens": 17,
+      "loops": 4,
+      "prefill_ms": 88.50293606519699,
+      "decode_ms": 81.97759510949254,
+      "peak_allocated_bytes": 2968873984
+    },
+    {
+      "id": "NYSEDREGENTS_2014_4_9",
+      "method": "native_k4",
+      "prefix_tokens": 54,
+      "loops": 4,
+      "prefill_ms": 84.40099190920591,
+      "decode_ms": 81.52024098671973,
+      "peak_allocated_bytes": 2938173440
+    },
+    {
+      "id": "TIMSS_2003_8_pg14",
+      "method": "native_k4",
+      "prefix_tokens": 16,
+      "loops": 4,
+      "prefill_ms": 84.75736994296312,
+      "decode_ms": 78.97430309094489,
+      "peak_allocated_bytes": 2934993920
+    },
+    {
+      "id": "Mercury_7006790",
+      "method": "native_k4",
+      "prefix_tokens": 21,
+      "loops": 4,
+      "prefill_ms": 87.54594391211867,
+      "decode_ms": 81.13628602586687,
+      "peak_allocated_bytes": 2909357056
+    },
+    {
+      "id": "Mercury_SC_415366",
+      "method": "native_k4",
+      "prefix_tokens": 32,
+      "loops": 4,
+      "prefill_ms": 84.15043191052973,
+      "decode_ms": 82.18122320249677,
+      "peak_allocated_bytes": 2922632192
+    },
+    {
+      "id": "Mercury_7141908",
+      "method": "native_k4",
+      "prefix_tokens": 25,
+      "loops": 4,
+      "prefill_ms": 86.03779715485871,
+      "decode_ms": 79.54944297671318,
+      "peak_allocated_bytes": 2925337600
+    },
+    {
+      "id": "Mercury_SC_415735",
+      "method": "native_k4",
+      "prefix_tokens": 39,
+      "loops": 4,
+      "prefill_ms": 87.63787406496704,
+      "decode_ms": 79.15019593201578,
+      "peak_allocated_bytes": 2931724288
+    },
+    {
+      "id": "Mercury_7037573",
+      "method": "native_k4",
+      "prefix_tokens": 17,
+      "loops": 4,
+      "prefill_ms": 78.40924779884517,
+      "decode_ms": 78.95299210213125,
+      "peak_allocated_bytes": 2924047360
+    },
+    {
+      "id": "Mercury_SC_400172",
+      "method": "native_k4",
+      "prefix_tokens": 17,
+      "loops": 4,
+      "prefill_ms": 83.91356281936169,
+      "decode_ms": 75.88075613602996,
+      "peak_allocated_bytes": 2906745856
+    },
+    {
+      "id": "NAEP_2005_8_S11+14",
+      "method": "native_k4",
+      "prefix_tokens": 18,
+      "loops": 4,
+      "prefill_ms": 84.17916903272271,
+      "decode_ms": 77.47625396586955,
+      "peak_allocated_bytes": 2907594752
+    },
+    {
+      "id": "Mercury_7246925",
+      "method": "native_k4",
+      "prefix_tokens": 35,
+      "loops": 4,
+      "prefill_ms": 83.76396889798343,
+      "decode_ms": 77.67388108186424,
+      "peak_allocated_bytes": 2922821632
+    },
+    {
+      "id": "Mercury_7166180",
+      "method": "native_k4",
+      "prefix_tokens": 37,
+      "loops": 4,
+      "prefill_ms": 80.18479403108358,
+      "decode_ms": 76.01794111542404,
+      "peak_allocated_bytes": 2937889792
+    },
+    {
+      "id": "Mercury_184258",
+      "method": "native_k4",
+      "prefix_tokens": 18,
+      "loops": 4,
+      "prefill_ms": 84.70906200818717,
+      "decode_ms": 77.43826997466385,
+      "peak_allocated_bytes": 2923323392
+    },
+    {
+      "id": "Mercury_7171938",
+      "method": "native_k4",
+      "prefix_tokens": 27,
+      "loops": 4,
+      "prefill_ms": 83.07003090158105,
+      "decode_ms": 75.94631402753294,
+      "peak_allocated_bytes": 2916026368
+    },
+    {
+      "id": "MDSA_2007_5_39",
+      "method": "native_k4",
+      "prefix_tokens": 76,
+      "loops": 4,
+      "prefill_ms": 83.62058317288756,
+      "decode_ms": 75.61843795701861,
+      "peak_allocated_bytes": 2964725248
+    },
+    {
+      "id": "Mercury_SC_400178",
+      "method": "native_k4",
+      "prefix_tokens": 14,
+      "loops": 4,
+      "prefill_ms": 83.40314705856144,
+      "decode_ms": 77.74311793036759,
+      "peak_allocated_bytes": 2950596608
+    },
+    {
+      "id": "NYSEDREGENTS_2014_8_20",
+      "method": "native_k4",
+      "prefix_tokens": 72,
+      "loops": 4,
+      "prefill_ms": 86.65535692125559,
+      "decode_ms": 77.7136969845742,
+      "peak_allocated_bytes": 2951104000
+    },
+    {
+      "id": "Mercury_7158673",
+      "method": "native_k4",
+      "prefix_tokens": 42,
+      "loops": 4,
+      "prefill_ms": 82.68450596369803,
+      "decode_ms": 79.64264787733555,
+      "peak_allocated_bytes": 2971234304
+    },
+    {
+      "id": "MCAS_2014_8_17",
+      "method": "loopcd_fixed_k4",
+      "prefix_tokens": 16,
+      "loops": 4,
+      "prefill_ms": 81.84436103329062,
+      "decode_ms": 80.10057103820145,
+      "peak_allocated_bytes": 2912619520
+    },
+    {
+      "id": "MSA_2013_8_3",
+      "method": "loopcd_fixed_k4",
+      "prefix_tokens": 28,
+      "loops": 4,
+      "prefill_ms": 84.22450884245336,
+      "decode_ms": 77.61674607172608,
+      "peak_allocated_bytes": 2915499008
+    },
+    {
+      "id": "Mercury_417146",
+      "method": "loopcd_fixed_k4",
+      "prefix_tokens": 25,
+      "loops": 4,
+      "prefill_ms": 85.96115792170167,
+      "decode_ms": 78.52653600275517,
+      "peak_allocated_bytes": 2922388480
+    },
+    {
+      "id": "Mercury_SC_401244",
+      "method": "loopcd_fixed_k4",
+      "prefix_tokens": 19,
+      "loops": 4,
+      "prefill_ms": 86.02372487075627,
+      "decode_ms": 79.43747309036553,
+      "peak_allocated_bytes": 2915027968
+    },
+    {
+      "id": "Mercury_7026443",
+      "method": "loopcd_fixed_k4",
+      "prefix_tokens": 14,
+      "loops": 4,
+      "prefill_ms": 82.96957518905401,
+      "decode_ms": 76.14858890883625,
+      "peak_allocated_bytes": 2906295296
+    },
+    {
+      "id": "Mercury_7183733",
+      "method": "loopcd_fixed_k4",
+      "prefix_tokens": 96,
+      "loops": 4,
+      "prefill_ms": 86.64057496935129,
+      "decode_ms": 78.19724013097584,
+      "peak_allocated_bytes": 2972636672
+    },
+    {
+      "id": "NYSEDREGENTS_2014_8_38",
+      "method": "loopcd_fixed_k4",
+      "prefix_tokens": 17,
+      "loops": 4,
+      "prefill_ms": 84.95001308619976,
+      "decode_ms": 76.73634006641805,
+      "peak_allocated_bytes": 2969259008
+    },
+    {
+      "id": "NYSEDREGENTS_2014_4_9",
+      "method": "loopcd_fixed_k4",
+      "prefix_tokens": 54,
+      "loops": 4,
+      "prefill_ms": 84.54972109757364,
+      "decode_ms": 77.1997959818691,
+      "peak_allocated_bytes": 2938370048
+    },
+    {
+      "id": "TIMSS_2003_8_pg14",
+      "method": "loopcd_fixed_k4",
+      "prefix_tokens": 16,
+      "loops": 4,
+      "prefill_ms": 84.36330407857895,
+      "decode_ms": 80.15459589660168,
+      "peak_allocated_bytes": 2935426048
+    },
+    {
+      "id": "Mercury_7006790",
+      "method": "loopcd_fixed_k4",
+      "prefix_tokens": 21,
+      "loops": 4,
+      "prefill_ms": 84.83446692116559,
+      "decode_ms": 81.76077296957374,
+      "peak_allocated_bytes": 2909555712
+    },
+    {
+      "id": "Mercury_SC_415366",
+      "method": "loopcd_fixed_k4",
+      "prefix_tokens": 32,
+      "loops": 4,
+      "prefill_ms": 87.16839691624045,
+      "decode_ms": 80.27493301779032,
+      "peak_allocated_bytes": 2922828800
+    },
+    {
+      "id": "Mercury_7141908",
+      "method": "loopcd_fixed_k4",
+      "prefix_tokens": 25,
+      "loops": 4,
+      "prefill_ms": 85.51570703275502,
+      "decode_ms": 78.76828103326261,
+      "peak_allocated_bytes": 2925534208
+    },
+    {
+      "id": "Mercury_SC_415735",
+      "method": "loopcd_fixed_k4",
+      "prefix_tokens": 39,
+      "loops": 4,
+      "prefill_ms": 84.01490794494748,
+      "decode_ms": 80.45957912690938,
+      "peak_allocated_bytes": 2931920896
+    },
+    {
+      "id": "Mercury_7037573",
+      "method": "loopcd_fixed_k4",
+      "prefix_tokens": 17,
+      "loops": 4,
+      "prefill_ms": 85.00036504119635,
+      "decode_ms": 75.89435903355479,
+      "peak_allocated_bytes": 2924432384
+    },
+    {
+      "id": "Mercury_SC_400172",
+      "method": "loopcd_fixed_k4",
+      "prefix_tokens": 17,
+      "loops": 4,
+      "prefill_ms": 83.38839700445533,
+      "decode_ms": 74.94674692861736,
+      "peak_allocated_bytes": 2907130880
+    },
+    {
+      "id": "NAEP_2005_8_S11+14",
+      "method": "loopcd_fixed_k4",
+      "prefix_tokens": 18,
+      "loops": 4,
+      "prefill_ms": 86.73477405682206,
+      "decode_ms": 81.35622390545905,
+      "peak_allocated_bytes": 2907933696
+    },
+    {
+      "id": "Mercury_7246925",
+      "method": "loopcd_fixed_k4",
+      "prefix_tokens": 35,
+      "loops": 4,
+      "prefill_ms": 86.4396090619266,
+      "decode_ms": 81.72477409243584,
+      "peak_allocated_bytes": 2923018240
+    },
+    {
+      "id": "Mercury_7166180",
+      "method": "loopcd_fixed_k4",
+      "prefix_tokens": 37,
+      "loops": 4,
+      "prefill_ms": 87.08069799467921,
+      "decode_ms": 81.73053013160825,
+      "peak_allocated_bytes": 2938086400
+    },
+    {
+      "id": "Mercury_184258",
+      "method": "loopcd_fixed_k4",
+      "prefix_tokens": 18,
+      "loops": 4,
+      "prefill_ms": 104.0358878672123,
+      "decode_ms": 174.55261503346264,
+      "peak_allocated_bytes": 2923662336
+    },
+    {
+      "id": "Mercury_7171938",
+      "method": "loopcd_fixed_k4",
+      "prefix_tokens": 27,
+      "loops": 4,
+      "prefill_ms": 176.4963350724429,
+      "decode_ms": 74.5793441310525,
+      "peak_allocated_bytes": 2916222976
+    },
+    {
+      "id": "MDSA_2007_5_39",
+      "method": "loopcd_fixed_k4",
+      "prefix_tokens": 76,
+      "loops": 4,
+      "prefill_ms": 84.92972794920206,
+      "decode_ms": 78.40543612837791,
+      "peak_allocated_bytes": 2964921856
+    },
+    {
+      "id": "Mercury_SC_400178",
+      "method": "loopcd_fixed_k4",
+      "prefix_tokens": 14,
+      "loops": 4,
+      "prefill_ms": 83.17533088847995,
+      "decode_ms": 79.05526412650943,
+      "peak_allocated_bytes": 2951121920
+    },
+    {
+      "id": "NYSEDREGENTS_2014_8_20",
+      "method": "loopcd_fixed_k4",
+      "prefix_tokens": 72,
+      "loops": 4,
+      "prefill_ms": 81.8115109577775,
+      "decode_ms": 77.98695098608732,
+      "peak_allocated_bytes": 2951300608
+    },
+    {
+      "id": "Mercury_7158673",
+      "method": "loopcd_fixed_k4",
+      "prefix_tokens": 42,
+      "loops": 4,
+      "prefill_ms": 85.27733711525798,
+      "decode_ms": 80.70160495117307,
+      "peak_allocated_bytes": 2971430912
+    },
+    {
+      "id": "MCAS_2014_8_17",
+      "method": "loopcd_adaptive_k4",
+      "prefix_tokens": 16,
+      "loops": 4,
+      "prefill_ms": 85.2918028831482,
+      "decode_ms": 80.26404213160276,
+      "peak_allocated_bytes": 2912620544
+    },
+    {
+      "id": "MSA_2013_8_3",
+      "method": "loopcd_adaptive_k4",
+      "prefix_tokens": 28,
+      "loops": 4,
+      "prefill_ms": 85.14393609948456,
+      "decode_ms": 78.36071704514325,
+      "peak_allocated_bytes": 2915499008
+    },
+    {
+      "id": "Mercury_417146",
+      "method": "loopcd_adaptive_k4",
+      "prefix_tokens": 25,
+      "loops": 4,
+      "prefill_ms": 83.9780259411782,
+      "decode_ms": 77.61990814469755,
+      "peak_allocated_bytes": 2922388480
+    },
+    {
+      "id": "Mercury_SC_401244",
+      "method": "loopcd_adaptive_k4",
+      "prefix_tokens": 19,
+      "loops": 4,
+      "prefill_ms": 83.78583309240639,
+      "decode_ms": 80.01790312118828,
+      "peak_allocated_bytes": 2915028992
+    },
+    {
+      "id": "Mercury_7026443",
+      "method": "loopcd_adaptive_k4",
+      "prefix_tokens": 14,
+      "loops": 4,
+      "prefill_ms": 84.51481396332383,
+      "decode_ms": 80.37222200073302,
+      "peak_allocated_bytes": 2906296320
+    },
+    {
+      "id": "Mercury_7183733",
+      "method": "loopcd_adaptive_k4",
+      "prefix_tokens": 96,
+      "loops": 4,
+      "prefill_ms": 85.24945983663201,
+      "decode_ms": 77.68323016352952,
+      "peak_allocated_bytes": 2972636672
+    },
+    {
+      "id": "NYSEDREGENTS_2014_8_38",
+      "method": "loopcd_adaptive_k4",
+      "prefix_tokens": 17,
+      "loops": 4,
+      "prefill_ms": 83.10592896305025,
+      "decode_ms": 76.60765992477536,
+      "peak_allocated_bytes": 2969260032
+    },
+    {
+      "id": "NYSEDREGENTS_2014_4_9",
+      "method": "loopcd_adaptive_k4",
+      "prefix_tokens": 54,
+      "loops": 4,
+      "prefill_ms": 84.74330301396549,
+      "decode_ms": 78.48500879481435,
+      "peak_allocated_bytes": 2938370048
+    },
+    {
+      "id": "TIMSS_2003_8_pg14",
+      "method": "loopcd_adaptive_k4",
+      "prefix_tokens": 16,
+      "loops": 4,
+      "prefill_ms": 82.35022402368486,
+      "decode_ms": 77.64525501988828,
+      "peak_allocated_bytes": 2935427072
+    },
+    {
+      "id": "Mercury_7006790",
+      "method": "loopcd_adaptive_k4",
+      "prefix_tokens": 21,
+      "loops": 4,
+      "prefill_ms": 84.56011000089347,
+      "decode_ms": 77.25690398365259,
+      "peak_allocated_bytes": 2909556736
+    },
+    {
+      "id": "Mercury_SC_415366",
+      "method": "loopcd_adaptive_k4",
+      "prefix_tokens": 32,
+      "loops": 4,
+      "prefill_ms": 83.8805299717933,
+      "decode_ms": 78.50050600245595,
+      "peak_allocated_bytes": 2922828800
+    },
+    {
+      "id": "Mercury_7141908",
+      "method": "loopcd_adaptive_k4",
+      "prefix_tokens": 25,
+      "loops": 4,
+      "prefill_ms": 85.00012499280274,
+      "decode_ms": 81.80802199058235,
+      "peak_allocated_bytes": 2925534208
+    },
+    {
+      "id": "Mercury_SC_415735",
+      "method": "loopcd_adaptive_k4",
+      "prefix_tokens": 39,
+      "loops": 4,
+      "prefill_ms": 89.21010000631213,
+      "decode_ms": 84.89376516081393,
+      "peak_allocated_bytes": 2931920896
+    },
+    {
+      "id": "Mercury_7037573",
+      "method": "loopcd_adaptive_k4",
+      "prefix_tokens": 17,
+      "loops": 4,
+      "prefill_ms": 103.21319405920804,
+      "decode_ms": 92.14982413686812,
+      "peak_allocated_bytes": 2924433408
+    },
+    {
+      "id": "Mercury_SC_400172",
+      "method": "loopcd_adaptive_k4",
+      "prefix_tokens": 17,
+      "loops": 4,
+      "prefill_ms": 84.43495910614729,
+      "decode_ms": 82.62020000256598,
+      "peak_allocated_bytes": 2907131904
+    },
+    {
+      "id": "NAEP_2005_8_S11+14",
+      "method": "loopcd_adaptive_k4",
+      "prefix_tokens": 18,
+      "loops": 4,
+      "prefill_ms": 84.47730098851025,
+      "decode_ms": 74.59936500526965,
+      "peak_allocated_bytes": 2907934720
+    },
+    {
+      "id": "Mercury_7246925",
+      "method": "loopcd_adaptive_k4",
+      "prefix_tokens": 35,
+      "loops": 4,
+      "prefill_ms": 81.7877680528909,
+      "decode_ms": 77.82859285362065,
+      "peak_allocated_bytes": 2923018240
+    },
+    {
+      "id": "Mercury_7166180",
+      "method": "loopcd_adaptive_k4",
+      "prefix_tokens": 37,
+      "loops": 4,
+      "prefill_ms": 83.82064709439874,
+      "decode_ms": 78.38145806454122,
+      "peak_allocated_bytes": 2938086400
+    },
+    {
+      "id": "Mercury_184258",
+      "method": "loopcd_adaptive_k4",
+      "prefix_tokens": 18,
+      "loops": 4,
+      "prefill_ms": 86.23846177943051,
+      "decode_ms": 79.2237741407007,
+      "peak_allocated_bytes": 2923663360
+    },
+    {
+      "id": "Mercury_7171938",
+      "method": "loopcd_adaptive_k4",
+      "prefix_tokens": 27,
+      "loops": 4,
+      "prefill_ms": 84.24984500743449,
+      "decode_ms": 73.84893810376525,
+      "peak_allocated_bytes": 2916222976
+    },
+    {
+      "id": "MDSA_2007_5_39",
+      "method": "loopcd_adaptive_k4",
+      "prefix_tokens": 76,
+      "loops": 4,
+      "prefill_ms": 83.7593690957874,
+      "decode_ms": 76.49229909293354,
+      "peak_allocated_bytes": 2964921856
+    },
+    {
+      "id": "Mercury_SC_400178",
+      "method": "loopcd_adaptive_k4",
+      "prefix_tokens": 14,
+      "loops": 4,
+      "prefill_ms": 84.27766198292375,
+      "decode_ms": 75.44513698667288,
+      "peak_allocated_bytes": 2951122944
+    },
+    {
+      "id": "NYSEDREGENTS_2014_8_20",
+      "method": "loopcd_adaptive_k4",
+      "prefix_tokens": 72,
+      "loops": 4,
+      "prefill_ms": 83.81716604344547,
+      "decode_ms": 75.45094401575625,
+      "peak_allocated_bytes": 2951300608
+    },
+    {
+      "id": "Mercury_7158673",
+      "method": "loopcd_adaptive_k4",
+      "prefix_tokens": 42,
+      "loops": 4,
+      "prefill_ms": 79.64403997175395,
+      "decode_ms": 74.83992306515574,
+      "peak_allocated_bytes": 2971430912
+    },
+    {
+      "id": "MCAS_2014_8_17",
+      "method": "loopcd_hidden_k4",
+      "prefix_tokens": 16,
+      "loops": 4,
+      "prefill_ms": 86.654556915164,
+      "decode_ms": 85.17680503427982,
+      "peak_allocated_bytes": 2912580608
+    },
+    {
+      "id": "MSA_2013_8_3",
+      "method": "loopcd_hidden_k4",
+      "prefix_tokens": 28,
+      "loops": 4,
+      "prefill_ms": 80.93855693005025,
+      "decode_ms": 75.06076595745981,
+      "peak_allocated_bytes": 2915843072
+    },
+    {
+      "id": "Mercury_417146",
+      "method": "loopcd_hidden_k4",
+      "prefix_tokens": 25,
+      "loops": 4,
+      "prefill_ms": 83.28073285520077,
+      "decode_ms": 79.76579410023987,
+      "peak_allocated_bytes": 2922695680
+    },
+    {
+      "id": "Mercury_SC_401244",
+      "method": "loopcd_hidden_k4",
+      "prefix_tokens": 19,
+      "loops": 4,
+      "prefill_ms": 85.32681688666344,
+      "decode_ms": 79.3427349999547,
+      "peak_allocated_bytes": 2915166208
+    },
+    {
+      "id": "Mercury_7026443",
+      "method": "loopcd_hidden_k4",
+      "prefix_tokens": 14,
+      "loops": 4,
+      "prefill_ms": 78.16840405575931,
+      "decode_ms": 78.69321200996637,
+      "peak_allocated_bytes": 2906138624
+    },
+    {
+      "id": "Mercury_7183733",
+      "method": "loopcd_hidden_k4",
+      "prefix_tokens": 96,
+      "loops": 4,
+      "prefill_ms": 86.28213196061552,
+      "decode_ms": 76.52936899103224,
+      "peak_allocated_bytes": 2973816320
+    },
+    {
+      "id": "NYSEDREGENTS_2014_8_38",
+      "method": "loopcd_hidden_k4",
+      "prefix_tokens": 17,
+      "loops": 4,
+      "prefill_ms": 83.86711799539626,
+      "decode_ms": 76.48996799252927,
+      "peak_allocated_bytes": 2969279488
+    },
+    {
+      "id": "NYSEDREGENTS_2014_4_9",
+      "method": "loopcd_hidden_k4",
+      "prefix_tokens": 54,
+      "loops": 4,
+      "prefill_ms": 81.65704901330173,
+      "decode_ms": 76.12755708396435,
+      "peak_allocated_bytes": 2939033600
+    },
+    {
+      "id": "TIMSS_2003_8_pg14",
+      "method": "loopcd_hidden_k4",
+      "prefix_tokens": 16,
+      "loops": 4,
+      "prefill_ms": 84.35901394113898,
+      "decode_ms": 79.50305216945708,
+      "peak_allocated_bytes": 2935387136
+    },
+    {
+      "id": "Mercury_7006790",
+      "method": "loopcd_hidden_k4",
+      "prefix_tokens": 21,
+      "loops": 4,
+      "prefill_ms": 85.04379307851195,
+      "decode_ms": 78.54817085899413,
+      "peak_allocated_bytes": 2909811712
+    },
+    {
+      "id": "Mercury_SC_415366",
+      "method": "loopcd_hidden_k4",
+      "prefix_tokens": 32,
+      "loops": 4,
+      "prefill_ms": 86.37974108569324,
+      "decode_ms": 78.70400790125132,
+      "peak_allocated_bytes": 2923222016
+    },
+    {
+      "id": "Mercury_7141908",
+      "method": "loopcd_hidden_k4",
+      "prefix_tokens": 25,
+      "loops": 4,
+      "prefill_ms": 85.27425699867308,
+      "decode_ms": 79.41606198437512,
+      "peak_allocated_bytes": 2925841408
+    },
+    {
+      "id": "Mercury_SC_415735",
+      "method": "loopcd_hidden_k4",
+      "prefix_tokens": 39,
+      "loops": 4,
+      "prefill_ms": 82.34514901414514,
+      "decode_ms": 78.9782761130482,
+      "peak_allocated_bytes": 2932400128
+    },
+    {
+      "id": "Mercury_7037573",
+      "method": "loopcd_hidden_k4",
+      "prefix_tokens": 17,
+      "loops": 4,
+      "prefill_ms": 85.33393498510122,
+      "decode_ms": 78.1450099311769,
+      "peak_allocated_bytes": 2924452864
+    },
+    {
+      "id": "Mercury_SC_400172",
+      "method": "loopcd_hidden_k4",
+      "prefix_tokens": 17,
+      "loops": 4,
+      "prefill_ms": 84.9774619564414,
+      "decode_ms": 80.38632897660136,
+      "peak_allocated_bytes": 2907151360
+    },
+    {
+      "id": "NAEP_2005_8_S11+14",
+      "method": "loopcd_hidden_k4",
+      "prefix_tokens": 18,
+      "loops": 4,
+      "prefill_ms": 97.1073741093278,
+      "decode_ms": 99.33761088177562,
+      "peak_allocated_bytes": 2908012544
+    },
+    {
+      "id": "Mercury_7246925",
+      "method": "loopcd_hidden_k4",
+      "prefix_tokens": 35,
+      "loops": 4,
+      "prefill_ms": 87.22133608534932,
+      "decode_ms": 81.9914338644594,
+      "peak_allocated_bytes": 2923448320
+    },
+    {
+      "id": "Mercury_7166180",
+      "method": "loopcd_hidden_k4",
+      "prefix_tokens": 37,
+      "loops": 4,
+      "prefill_ms": 83.24938709847629,
+      "decode_ms": 79.28724703378975,
+      "peak_allocated_bytes": 2938541056
+    },
+    {
+      "id": "Mercury_184258",
+      "method": "loopcd_hidden_k4",
+      "prefix_tokens": 18,
+      "loops": 4,
+      "prefill_ms": 81.90257684327662,
+      "decode_ms": 76.46363112144172,
+      "peak_allocated_bytes": 2923741184
+    },
+    {
+      "id": "Mercury_7171938",
+      "method": "loopcd_hidden_k4",
+      "prefix_tokens": 27,
+      "loops": 4,
+      "prefill_ms": 84.13945487700403,
+      "decode_ms": 79.28065094165504,
+      "peak_allocated_bytes": 2916554752
+    },
+    {
+      "id": "MDSA_2007_5_39",
+      "method": "loopcd_hidden_k4",
+      "prefix_tokens": 76,
+      "loops": 4,
+      "prefill_ms": 111.0719230491668,
+      "decode_ms": 81.63772593252361,
+      "peak_allocated_bytes": 2965855744
+    },
+    {
+      "id": "Mercury_SC_400178",
+      "method": "loopcd_hidden_k4",
+      "prefix_tokens": 14,
+      "loops": 4,
+      "prefill_ms": 84.39633785746992,
+      "decode_ms": 79.94896196760237,
+      "peak_allocated_bytes": 2950965248
+    },
+    {
+      "id": "NYSEDREGENTS_2014_8_20",
+      "method": "loopcd_hidden_k4",
+      "prefix_tokens": 72,
+      "loops": 4,
+      "prefill_ms": 83.65667797625065,
+      "decode_ms": 78.49171501584351,
+      "peak_allocated_bytes": 2952185344
+    },
+    {
+      "id": "Mercury_7158673",
+      "method": "loopcd_hidden_k4",
+      "prefix_tokens": 42,
+      "loops": 4,
+      "prefill_ms": 81.30752691067755,
+      "decode_ms": 75.1089418772608,
+      "peak_allocated_bytes": 2971947008
+    },
+    {
+      "id": "MCAS_2014_8_17",
+      "method": "secant_k4",
+      "prefix_tokens": 16,
+      "loops": 4,
+      "prefill_ms": 87.63776603154838,
+      "decode_ms": 82.87151204422116,
+      "peak_allocated_bytes": 2912580608
+    },
+    {
+      "id": "MSA_2013_8_3",
+      "method": "secant_k4",
+      "prefix_tokens": 28,
+      "loops": 4,
+      "prefill_ms": 85.71882918477058,
+      "decode_ms": 83.33083894103765,
+      "peak_allocated_bytes": 2915843072
+    },
+    {
+      "id": "Mercury_417146",
+      "method": "secant_k4",
+      "prefix_tokens": 25,
+      "loops": 4,
+      "prefill_ms": 86.10505796968937,
+      "decode_ms": 83.45157699659467,
+      "peak_allocated_bytes": 2922695680
+    },
+    {
+      "id": "Mercury_SC_401244",
+      "method": "secant_k4",
+      "prefix_tokens": 19,
+      "loops": 4,
+      "prefill_ms": 87.79799495823681,
+      "decode_ms": 81.20286115445197,
+      "peak_allocated_bytes": 2915166208
+    },
+    {
+      "id": "Mercury_7026443",
+      "method": "secant_k4",
+      "prefix_tokens": 14,
+      "loops": 4,
+      "prefill_ms": 77.5507059879601,
+      "decode_ms": 74.18934581801295,
+      "peak_allocated_bytes": 2906138624
+    },
+    {
+      "id": "Mercury_7183733",
+      "method": "secant_k4",
+      "prefix_tokens": 96,
+      "loops": 4,
+      "prefill_ms": 88.3654800709337,
+      "decode_ms": 76.13001484423876,
+      "peak_allocated_bytes": 2973816320
+    },
+    {
+      "id": "NYSEDREGENTS_2014_8_38",
+      "method": "secant_k4",
+      "prefix_tokens": 17,
+      "loops": 4,
+      "prefill_ms": 83.04209401831031,
+      "decode_ms": 81.74212696030736,
+      "peak_allocated_bytes": 2969279488
+    },
+    {
+      "id": "NYSEDREGENTS_2014_4_9",
+      "method": "secant_k4",
+      "prefix_tokens": 54,
+      "loops": 4,
+      "prefill_ms": 79.49030282907188,
+      "decode_ms": 75.37257205694914,
+      "peak_allocated_bytes": 2939033600
+    },
+    {
+      "id": "TIMSS_2003_8_pg14",
+      "method": "secant_k4",
+      "prefix_tokens": 16,
+      "loops": 4,
+      "prefill_ms": 78.22343707084656,
+      "decode_ms": 80.80437406897545,
+      "peak_allocated_bytes": 2935387136
+    },
+    {
+      "id": "Mercury_7006790",
+      "method": "secant_k4",
+      "prefix_tokens": 21,
+      "loops": 4,
+      "prefill_ms": 82.04049500636756,
+      "decode_ms": 78.78967910073698,
+      "peak_allocated_bytes": 2909811712
+    },
+    {
+      "id": "Mercury_SC_415366",
+      "method": "secant_k4",
+      "prefix_tokens": 32,
+      "loops": 4,
+      "prefill_ms": 82.3900590185076,
+      "decode_ms": 75.45264600776136,
+      "peak_allocated_bytes": 2923222016
+    },
+    {
+      "id": "Mercury_7141908",
+      "method": "secant_k4",
+      "prefix_tokens": 25,
+      "loops": 4,
+      "prefill_ms": 84.2547279316932,
+      "decode_ms": 74.44729609414935,
+      "peak_allocated_bytes": 2925841408
+    },
+    {
+      "id": "Mercury_SC_415735",
+      "method": "secant_k4",
+      "prefix_tokens": 39,
+      "loops": 4,
+      "prefill_ms": 87.56911009550095,
+      "decode_ms": 81.11902000382543,
+      "peak_allocated_bytes": 2932400128
+    },
+    {
+      "id": "Mercury_7037573",
+      "method": "secant_k4",
+      "prefix_tokens": 17,
+      "loops": 4,
+      "prefill_ms": 84.93342599831522,
+      "decode_ms": 79.68639116734266,
+      "peak_allocated_bytes": 2924452864
+    },
+    {
+      "id": "Mercury_SC_400172",
+      "method": "secant_k4",
+      "prefix_tokens": 17,
+      "loops": 4,
+      "prefill_ms": 85.18571313470602,
+      "decode_ms": 78.86861497536302,
+      "peak_allocated_bytes": 2907151360
+    },
+    {
+      "id": "NAEP_2005_8_S11+14",
+      "method": "secant_k4",
+      "prefix_tokens": 18,
+      "loops": 4,
+      "prefill_ms": 85.68409597501159,
+      "decode_ms": 79.31224792264402,
+      "peak_allocated_bytes": 2908012544
+    },
+    {
+      "id": "Mercury_7246925",
+      "method": "secant_k4",
+      "prefix_tokens": 35,
+      "loops": 4,
+      "prefill_ms": 82.4654910247773,
+      "decode_ms": 79.51185200363398,
+      "peak_allocated_bytes": 2923448320
+    },
+    {
+      "id": "Mercury_7166180",
+      "method": "secant_k4",
+      "prefix_tokens": 37,
+      "loops": 4,
+      "prefill_ms": 84.83218192122877,
+      "decode_ms": 80.52337309345603,
+      "peak_allocated_bytes": 2938541056
+    },
+    {
+      "id": "Mercury_184258",
+      "method": "secant_k4",
+      "prefix_tokens": 18,
+      "loops": 4,
+      "prefill_ms": 83.30184500664473,
+      "decode_ms": 81.64986199699342,
+      "peak_allocated_bytes": 2923741184
+    },
+    {
+      "id": "Mercury_7171938",
+      "method": "secant_k4",
+      "prefix_tokens": 27,
+      "loops": 4,
+      "prefill_ms": 87.40598289296031,
+      "decode_ms": 79.95433895848691,
+      "peak_allocated_bytes": 2916554752
+    },
+    {
+      "id": "MDSA_2007_5_39",
+      "method": "secant_k4",
+      "prefix_tokens": 76,
+      "loops": 4,
+      "prefill_ms": 83.14119395799935,
+      "decode_ms": 78.48279713653028,
+      "peak_allocated_bytes": 2965855744
+    },
+    {
+      "id": "Mercury_SC_400178",
+      "method": "secant_k4",
+      "prefix_tokens": 14,
+      "loops": 4,
+      "prefill_ms": 79.21725302003324,
+      "decode_ms": 78.44627904705703,
+      "peak_allocated_bytes": 2950965248
+    },
+    {
+      "id": "NYSEDREGENTS_2014_8_20",
+      "method": "secant_k4",
+      "prefix_tokens": 72,
+      "loops": 4,
+      "prefill_ms": 86.43438899889588,
+      "decode_ms": 79.31862282566726,
+      "peak_allocated_bytes": 2952185344
+    },
+    {
+      "id": "Mercury_7158673",
+      "method": "secant_k4",
+      "prefix_tokens": 42,
+      "loops": 4,
+      "prefill_ms": 84.0118108317256,
+      "decode_ms": 81.59597706981003,
+      "peak_allocated_bytes": 2971947008
+    },
+    {
+      "id": "MCAS_2014_8_17",
+      "method": "laststep_k4",
+      "prefix_tokens": 16,
+      "loops": 4,
+      "prefill_ms": 86.58524602651596,
+      "decode_ms": 79.66319192200899,
+      "peak_allocated_bytes": 2912580608
+    },
+    {
+      "id": "MSA_2013_8_3",
+      "method": "laststep_k4",
+      "prefix_tokens": 28,
+      "loops": 4,
+      "prefill_ms": 86.19881793856621,
+      "decode_ms": 80.47690708190203,
+      "peak_allocated_bytes": 2915843072
+    },
+    {
+      "id": "Mercury_417146",
+      "method": "laststep_k4",
+      "prefix_tokens": 25,
+      "loops": 4,
+      "prefill_ms": 86.62197692319751,
+      "decode_ms": 80.78323188237846,
+      "peak_allocated_bytes": 2922695680
+    },
+    {
+      "id": "Mercury_SC_401244",
+      "method": "laststep_k4",
+      "prefix_tokens": 19,
+      "loops": 4,
+      "prefill_ms": 88.47889211028814,
+      "decode_ms": 81.03715698234737,
+      "peak_allocated_bytes": 2915166208
+    },
+    {
+      "id": "Mercury_7026443",
+      "method": "laststep_k4",
+      "prefix_tokens": 14,
+      "loops": 4,
+      "prefill_ms": 84.21999402344227,
+      "decode_ms": 81.35077194310725,
+      "peak_allocated_bytes": 2906138624
+    },
+    {
+      "id": "Mercury_7183733",
+      "method": "laststep_k4",
+      "prefix_tokens": 96,
+      "loops": 4,
+      "prefill_ms": 88.46025494858623,
+      "decode_ms": 78.70889618061483,
+      "peak_allocated_bytes": 2973816320
+    },
+    {
+      "id": "NYSEDREGENTS_2014_8_38",
+      "method": "laststep_k4",
+      "prefix_tokens": 17,
+      "loops": 4,
+      "prefill_ms": 85.40710411034524,
+      "decode_ms": 79.32399585843086,
+      "peak_allocated_bytes": 2969279488
+    },
+    {
+      "id": "NYSEDREGENTS_2014_4_9",
+      "method": "laststep_k4",
+      "prefix_tokens": 54,
+      "loops": 4,
+      "prefill_ms": 84.32437293231487,
+      "decode_ms": 80.45791392214596,
+      "peak_allocated_bytes": 2939033600
+    },
+    {
+      "id": "TIMSS_2003_8_pg14",
+      "method": "laststep_k4",
+      "prefix_tokens": 16,
+      "loops": 4,
+      "prefill_ms": 83.48545897752047,
+      "decode_ms": 79.76013608276844,
+      "peak_allocated_bytes": 2935387136
+    },
+    {
+      "id": "Mercury_7006790",
+      "method": "laststep_k4",
+      "prefix_tokens": 21,
+      "loops": 4,
+      "prefill_ms": 85.99643618799746,
+      "decode_ms": 80.96231799572706,
+      "peak_allocated_bytes": 2909811712
+    },
+    {
+      "id": "Mercury_SC_415366",
+      "method": "laststep_k4",
+      "prefix_tokens": 32,
+      "loops": 4,
+      "prefill_ms": 85.97515313886106,
+      "decode_ms": 80.86587488651276,
+      "peak_allocated_bytes": 2923222016
+    },
+    {
+      "id": "Mercury_7141908",
+      "method": "laststep_k4",
+      "prefix_tokens": 25,
+      "loops": 4,
+      "prefill_ms": 86.45327389240265,
+      "decode_ms": 78.59954494051635,
+      "peak_allocated_bytes": 2925841408
+    },
+    {
+      "id": "Mercury_SC_415735",
+      "method": "laststep_k4",
+      "prefix_tokens": 39,
+      "loops": 4,
+      "prefill_ms": 84.09149013459682,
+      "decode_ms": 79.11700801923871,
+      "peak_allocated_bytes": 2932400128
+    },
+    {
+      "id": "Mercury_7037573",
+      "method": "laststep_k4",
+      "prefix_tokens": 17,
+      "loops": 4,
+      "prefill_ms": 85.92319022864103,
+      "decode_ms": 79.89815389737487,
+      "peak_allocated_bytes": 2924452864
+    },
+    {
+      "id": "Mercury_SC_400172",
+      "method": "laststep_k4",
+      "prefix_tokens": 17,
+      "loops": 4,
+      "prefill_ms": 83.71532894670963,
+      "decode_ms": 80.57752321474254,
+      "peak_allocated_bytes": 2907151360
+    },
+    {
+      "id": "NAEP_2005_8_S11+14",
+      "method": "laststep_k4",
+      "prefix_tokens": 18,
+      "loops": 4,
+      "prefill_ms": 86.98491100221872,
+      "decode_ms": 79.8774310387671,
+      "peak_allocated_bytes": 2908012544
+    },
+    {
+      "id": "Mercury_7246925",
+      "method": "laststep_k4",
+      "prefix_tokens": 35,
+      "loops": 4,
+      "prefill_ms": 84.10243294201791,
+      "decode_ms": 80.2240171469748,
+      "peak_allocated_bytes": 2923448320
+    },
+    {
+      "id": "Mercury_7166180",
+      "method": "laststep_k4",
+      "prefix_tokens": 37,
+      "loops": 4,
+      "prefill_ms": 84.8098520655185,
+      "decode_ms": 81.85408799909055,
+      "peak_allocated_bytes": 2938541056
+    },
+    {
+      "id": "Mercury_184258",
+      "method": "laststep_k4",
+      "prefix_tokens": 18,
+      "loops": 4,
+      "prefill_ms": 86.4502068143338,
+      "decode_ms": 78.33733409643173,
+      "peak_allocated_bytes": 2923741184
+    },
+    {
+      "id": "Mercury_7171938",
+      "method": "laststep_k4",
+      "prefix_tokens": 27,
+      "loops": 4,
+      "prefill_ms": 84.60867707617581,
+      "decode_ms": 79.68332502059639,
+      "peak_allocated_bytes": 2916554752
+    },
+    {
+      "id": "MDSA_2007_5_39",
+      "method": "laststep_k4",
+      "prefix_tokens": 76,
+      "loops": 4,
+      "prefill_ms": 86.93763613700867,
+      "decode_ms": 80.97121096216142,
+      "peak_allocated_bytes": 2965855744
+    },
+    {
+      "id": "Mercury_SC_400178",
+      "method": "laststep_k4",
+      "prefix_tokens": 14,
+      "loops": 4,
+      "prefill_ms": 83.47126096487045,
+      "decode_ms": 80.12696611694992,
+      "peak_allocated_bytes": 2950965248
+    },
+    {
+      "id": "NYSEDREGENTS_2014_8_20",
+      "method": "laststep_k4",
+      "prefix_tokens": 72,
+      "loops": 4,
+      "prefill_ms": 88.55477115139365,
+      "decode_ms": 81.41023991629481,
+      "peak_allocated_bytes": 2952185344
+    },
+    {
+      "id": "Mercury_7158673",
+      "method": "laststep_k4",
+      "prefix_tokens": 42,
+      "loops": 4,
+      "prefill_ms": 82.64020108617842,
+      "decode_ms": 78.16770998761058,
+      "peak_allocated_bytes": 2971947008
+    }
+  ],
+  "cache_note": "Pinned Ouro default UniversalTransformerCache fails construction with Transformers 4.55.4"
+}

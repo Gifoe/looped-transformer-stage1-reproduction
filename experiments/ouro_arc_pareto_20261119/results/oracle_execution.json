@@ -1,0 +1,19 @@
+{
+  "rows": 128,
+  "candidates": 511,
+  "selection": "first 128 validation IDs ordered by seeded SHA256",
+  "zero_based_layers": [
+    8,
+    9,
+    10,
+    11
+  ],
+  "early_loop": 2,
+  "teacher_loop": 4,
+  "seed": 20261119,
+  "base_attention": "SDPA",
+  "no_op_bitwise_equal": true,
+  "control_dose": "float32 L2 of late minus current, separately per token and head, before BF16 round",
+  "measured_wall_s": 19.562612290028483,
+  "peak_allocated_bytes": 3091446784
+}

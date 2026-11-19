@@ -1,0 +1,13 @@
+# Research protocol
+
+Measure whether intra-loop compute or an economical readout can improve zero-shot full-answer ranking with Ouro-1.4B Base. Use the complete official ARC-Challenge test split of 1,172 items and the official validation split of 299 for development. Everything here is single-benchmark and uses fixed answer choices.
+
+## Evidence and decision rules
+
+- Primary outcome is per-character normalized accuracy. Raw accuracy is also reported. Score the entire continuation, including its leading space, via autoregressive conditional log probabilities in the official option order. Use the first option in an exact tie. There are zero demonstrations, no chat wrapper, no answer-letter proxy and no candidate pruning.
+- Compare native K1–K4 with LoopCD-Logits at fixed strength 0.5 or adaptive cap 1.0 and LoopCD-Hidden at fixed strength 0.5. All use K1 as the reference when guidance is possible. Select the strongest comparator per depth on validation, preferring single-head variants for ties. Include a naive one-last-step extrapolation as an ablation for the clipped secant readout.
+- On 128 validation questions selected by seeded ID hash, test K4-to-K2 Q/K/V replacement at shared block indices 8–11 (zero-based). Each component has a same-dose random-direction and preceding-position control. Run a hook identity check. Teacher K4 operates on the same causal candidate prefix, provides an offline oracle and is excluded from the deployment frontier. The training screen requires at least 2 percentage points, a two-sided paired exact p-value below 0.05/3, and improvement over both dose controls. Secant development promotion requires at least 2 points and paired p below 0.025 at either of two tested depths.
+- Freeze source hashes and comparisons before generating test scores. Score all preselected baseline and readout variants for transparent test reporting, including methods that failed the development gate. Paired bootstrap intervals and McNemar tests are descriptive unless identified as selection gates. Publish gain and regression counts and IDs, not just net accuracy.
+- Report stack token-layer counts, a linear-multiply FLOP proxy, actual batch-1 cache-enabled prefill and single-step decode, and peak allocated memory. Measure acquisition wall time separately for the shared full-split scoring sweep. Adaptive depth is an offline question-level replay with a validation-median confidence threshold.
+
+The broader program's training, merge and transfer stages depend on stable evidence. The requested scope here is Ouro-1.4B on ARC-Challenge. The parent is `f525239970b70c7ce28fe9fe91d95859653096cc`.

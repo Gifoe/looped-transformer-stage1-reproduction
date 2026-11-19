@@ -1,0 +1,72 @@
+{
+  "frozen_at_utc": "2026-11-19T16:35:15.836341+00:00",
+  "development_rows": 299,
+  "primary": "acc_norm",
+  "base_commit": "f525239970b70c7ce28fe9fe91d95859653096cc",
+  "strong_baseline_by_depth": {
+    "1": "native_k1",
+    "2": "loopcd_hidden_k2",
+    "3": "native_k3",
+    "4": "native_k4"
+  },
+  "secant_screen": {
+    "3": {
+      "method": "secant_k3",
+      "baseline": "native_k3",
+      "wrong_to_correct": 8,
+      "correct_to_wrong": 13,
+      "delta_pp": -1.6722408026755853,
+      "mcnemar_two_sided_p": 0.38331031799316406,
+      "delta_bootstrap_95_pp": [
+        -4.682274247491638,
+        1.3377926421404682
+      ],
+      "passes_screen": false
+    },
+    "4": {
+      "method": "secant_k4",
+      "baseline": "native_k4",
+      "wrong_to_correct": 0,
+      "correct_to_wrong": 0,
+      "delta_pp": 0.0,
+      "mcnemar_two_sided_p": 1.0,
+      "delta_bootstrap_95_pp": [
+        0.0,
+        0.0
+      ],
+      "passes_screen": false
+    }
+  },
+  "oracle_training_screen": {
+    "q": {
+      "delta_vs_native_pp": -1.5625,
+      "p": 0.625,
+      "better_than_both_matched_controls": false,
+      "passes_screen": false
+    },
+    "k": {
+      "delta_vs_native_pp": 0.78125,
+      "p": 1.0,
+      "better_than_both_matched_controls": false,
+      "passes_screen": false
+    },
+    "v": {
+      "delta_vs_native_pp": 2.34375,
+      "p": 0.5078125,
+      "better_than_both_matched_controls": true,
+      "passes_screen": false
+    }
+  },
+  "adaptive_depth_replay": {
+    "threshold": 0.09828648976981641,
+    "shallow": "loopcd_hidden_k2",
+    "deep": "native_k4"
+  },
+  "config_sha256": {
+    "run_arc.py": "a88756386f7664baafe6b492b179f9d1f65dc21dde88a6ab5ae1c1816a2c54ac",
+    "diagnostics.py": "9a2a9b584d07a796d207b53a360b7326e7b19fac65813ac1b90afc9e06001a39",
+    "analyze_arc.py": "3a67fe9f8798f106359648b093519268275d136bbda3ee538caf4af56ab31bdd"
+  },
+  "validation_scores_sha256": "84513955edca55ca4707481dea266b9dbeb3f366e1951d7ed4188d12350f456e",
+  "oracle_scores_sha256": "859d674a0548e99c1fa2dd501004fb125906447d68e1bac01bc5a1a23121f0e3"
+}
