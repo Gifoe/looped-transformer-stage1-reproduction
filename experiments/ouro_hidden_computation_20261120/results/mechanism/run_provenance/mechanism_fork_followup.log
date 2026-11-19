@@ -1,0 +1,11 @@
+measured 120 fork atlases
+Traceback (most recent call last):
+  File "/root/autodl-tmp/ouro-hidden-computation-20261120/release_git/experiments/ouro_hidden_computation_20261120/mechanism_fork_followup.py", line 158, in <module>
+    main()
+  File "/root/autodl-tmp/ouro-hidden-computation-20261120/release_git/experiments/ouro_hidden_computation_20261120/mechanism_fork_followup.py", line 138, in main
+    for i,(tokens,text) in enumerate(generate(model,tok,es,depth)):
+                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/autodl-tmp/ouro-hidden-computation-20261120/release_git/experiments/ouro_hidden_computation_20261120/mechanism_fork_followup.py", line 84, in generate
+    out=model.model(input_ids=ids,use_cache=False).last_hidden_state
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'tuple' object has no attribute 'last_hidden_state'
