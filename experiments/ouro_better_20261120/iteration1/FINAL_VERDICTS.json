@@ -1,0 +1,57 @@
+{
+  "development_gate_passed": true,
+  "blind_confirm_family_all_constituent_one_sided_p_below_point05": true,
+  "blind_confirm_all_trained_vs_binding_families": {
+    "ce": false,
+    "distill": false,
+    "dropout": false
+  },
+  "binding_K6_better_than_own_K4_confirmed": false,
+  "equal_work_latency_ratio_all_depths": true,
+  "blind_confirm_K4_to_K6": {
+    "n": 384,
+    "wins": 7,
+    "losses": 5,
+    "net": 2,
+    "p_greater": 0.38720703125,
+    "paired_bootstrap_95_pp": [
+      -1.3020833333333333,
+      2.34375
+    ]
+  },
+  "within_candidate_K4_to_K6_all_cohorts": {
+    "dev": {
+      "n": 128,
+      "wins": 0,
+      "losses": 6,
+      "net": -6,
+      "p_greater": 1.0,
+      "paired_bootstrap_95_pp": [
+        -8.59375,
+        -1.5625
+      ]
+    },
+    "diagnostic": {
+      "n": 256,
+      "wins": 1,
+      "losses": 2,
+      "net": -1,
+      "p_greater": 0.875,
+      "paired_bootstrap_95_pp": [
+        -1.5625,
+        0.78125
+      ]
+    },
+    "transfer": {
+      "n": 384,
+      "wins": 7,
+      "losses": 5,
+      "net": 2,
+      "p_greater": 0.38720703125,
+      "paired_bootstrap_95_pp": [
+        -1.3020833333333333,
+        2.34375
+      ]
+    }
+  }
+}

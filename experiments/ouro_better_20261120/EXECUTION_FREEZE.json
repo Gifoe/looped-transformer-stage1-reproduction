@@ -1,0 +1,46 @@
+{
+  "utc": "2026-11-19T19:57:20.136355+00:00",
+  "decision_sha256": "c2d60ee52ddcdb3ba5ae87dd26294d91eb75cdd596ebe0e7e207507f6036b3e6",
+  "split_sha256": "89ce573132eaa19a5edaaf67fdcab081fa47b531734a1bc8059901cd4f0c58ff",
+  "depth6_parity_sha256": "54f63b5d637bbd12f7953b5f59e5cef029e9508ca7d2c618c496a66e78d44d5a",
+  "code_hashes": {
+    "prepare.py": "7cdcb792f93789470648744d2effc9e72269076df069a302d6be9aa05e453b7f",
+    "native_parity.py": "559bc51ebef4850d7a5761cab2424c699027507fd108bb3b5f8666beaad9ad96",
+    "train_shared.py": "7e28e1824e058477be5eda22b805abfba97536d994c9bee3870f1f88166ea131",
+    "evaluate_shared.py": "e4d862fc9f6ab359cf4fbcc55e9696174278d6c732c31c2eb819fb9a08ede713"
+  },
+  "upstream_scorer_sha256": "a88756386f7664baafe6b492b179f9d1f65dc21dde88a6ab5ae1c1816a2c54ac",
+  "gpu": "NVIDIA RTX 4090, native BF16 SDPA",
+  "microbatch": 4,
+  "fit": "512 ARC official train, two prompt orders, teacher-only spare sweep for distillation",
+  "depths": [
+    1,
+    2,
+    3,
+    4,
+    6
+  ],
+  "rank": 8,
+  "alpha": 16,
+  "weight_targets": [
+    "q_proj",
+    "v_proj"
+  ],
+  "optimizer": {
+    "type": "AdamW",
+    "lr": 0.0001,
+    "wd": 0,
+    "clip": 1,
+    "seed": 101,
+    "effective_pairs": 4,
+    "updates": 128
+  },
+  "objectives": {
+    "binding": "Mean full-vocabulary CE plus mean content-remapped JSD, weight 1",
+    "ce": "Mean full-vocabulary CE on the same pair and five depths",
+    "distill": "Same CE plus T-squared KL weight 1, temperature 2, frozen candidate K6 teacher",
+    "dropout": "Same CE with independent per-example-and-loop Bernoulli .5 gates, scaled by 2, shared across modules/token positions"
+  },
+  "primary_development": "All positive absolute original-order exact gains vs best Native or LoopCD family at each K, positive mean exact gain vs CE and positive mean same-content agreement improvement vs selected Native/LoopCD comparator",
+  "latency_and_confirmation": "Unopened and contingent on unchanged development gate."
+}

@@ -1,0 +1,26 @@
+# First-iteration accuracy and mechanism audit
+
+**The same merged adapter improved original-order, unrestricted next-token letter accuracy at each of five actual budgets on 384 OpenBookQA questions.** The sole blind cohort was a previously unused subset of official Train, disjoint from ARC fitting and development. The scored cohort is now exposed. The 128 ARC development and 256 diagnostic questions were held out within this run and scored in earlier project work. The estimates describe one checkpoint, one training seed and one answer protocol.
+
+I independently matched the 15 prediction-file hashes for the three cohorts and five arms, then checked question IDs, gold indices and original/permuted prompt digests across arms. I recomputed exact and restricted accuracy, content agreement, paired candidate-versus-base tests and across-depth candidate-versus-CE differences directly from question records. Only aggregate results were read back from the server. No official test partition was needed.
+
+| True loops | 1 | 2 | 3 | 4 | 6 |
+|---|---:|---:|---:|---:|---:|
+| Binding, correct /384 | 241 | 314 | 337 | 337 | 339 |
+| Strongest observed Native/LoopCD, correct /384 | 132 | 286 | 315 | 321 | 317 |
+| Gain, percentage points | 28.39 | 7.29 | 5.73 | 4.17 | 5.73 |
+| Matched multiexit CE LoRA, correct /384 | 248 | 316 | 335 | 332 | 331 |
+| Matched K6 teacher distillation | 240 | 315 | 326 | 328 | 328 |
+| Matched Loop Dropout | 227 | 313 | 332 | 330 | 330 |
+
+K2 and K6 used Fixed as the strongest observed base-family comparator. At K6, development had selected Native, which scored 316. Across all required per-depth comparisons against the base family, the largest one-sided exact paired p-value was 0.01295, at K4. This meets the prespecified conjunction criterion at 0.05 for this endpoint. Invalid original-order output counts for Binding and Native were each 0/0/0/1/0 and 0/0/0/1/1, respectively. The gains therefore survive removing almost all opportunity to improve merely by emitting a valid letter.
+
+**Objective attribution remains unresolved.** On transfer the five-depth mean Binding-minus-CE improvement was +0.31 pp, with a descriptive question-clustered paired bootstrap interval of −0.63 to +1.30 pp (5,000 draws, seed 812, joint resampling of the five budgets). The corresponding development mean was +0.78 pp [−0.16,+1.72]; diagnostic mean 0.00 pp [−0.94,+0.94]. Binding trailed CE at K1 and K2. At K6 it exceeded CE by eight transfer questions, with nine corrections and one regression (one-sided p=0.0107, individual contrast). This is depth-specific evidence, subject to the number of trained-arm and depth comparisons. Training arms matched 512 question pairs, 1,024 prompts, 128 updates and 1,572,864 trainable parameters. One seed gives no estimate of training variability.
+
+**The order and state interventions narrow the claim.** Binding exceeded Native in same-content agreement across orders by 174/67/20/20/29 of 384 at K1/2/3/4/6. The differences against CE were +4/+6/−4/−1/0. On permuted-order exact correctness, Binding minus CE was +5/−2/+3/+1/−3. In the K1→later switch on ARC development, the adapted K1 followed by frozen native continuation reached 115/128 at K4 versus 104 native, while native K1 followed by adapted continuation reached 114 and the fully adapted model 120. At K6 the corresponding counts were 111, 102, 111 and 114. Same-model state shams were verified in that runner. Earlier state changes can influence later answers, and later adapter applications also contribute. Matched CE achieved 117 at K4 and 114 at K6; this intervention cannot uniquely attribute state effects to order consistency. Its evaluation path differs in numerical layout from the batched primary scorer (e.g., Binding K1 82 versus 83 on dev).
+
+**Depth utility and task generality remain unresolved.** K6 versus K4 corrected seven and damaged five transfer answers (+0.52 pp, one-sided exact p=0.387). There is a reliable K6 improvement relative to the same compute budget of the base family, without reliable evidence that paying for two further loops improves on the adapted K4. On the same transfer stems, whole-answer character-normalized teacher-forced correctness for Binding was 179/190/191/192/194 against Native 170/194/209/215/204. The letter result does not establish general improvement in whole-answer selection, free-form reasoning or other domains.
+
+**Cost remains pending at audit time.** Native six-loop unrolling executed 144 physical layers. The parity sanity check found same greedy prefill top token on 29/30 cached-versus-uncached prompt/depth pairs. Strict latency and production-path claims await standalone equal-work timings and the frozen 1.05 upper-bound criterion. This audit predates the completed cost artifact and certifies no latency outcome. The same OpenBookQA confirmation group cannot serve as independent evidence for a later candidate tuned after viewing these results.
+
+Evidence paths relative to this experiment are DATA_LINEAGE.md, EXECUTION_FREEZE.json, NATIVE_DEPTH6_PARITY.json, iteration1/{dev,diagnostic,transfer}/predictions.*.json and COMPLETE.json, iteration1/ITERATION1_AUDIT.json, iteration1/TRANSFER_INDEPENDENT_AUDIT.json, iteration1/BINDING_SPECIFICITY.json, and iteration1/postgate/RECURRENT_SWITCH{,_PAIRED}.json.
