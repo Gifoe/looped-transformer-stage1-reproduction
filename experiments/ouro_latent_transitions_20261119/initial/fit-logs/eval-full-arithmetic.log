@@ -1,0 +1,24 @@
+arithmetic maximum BF16 head replay margin-delta error 2.384185791015625e-07
+Traceback (most recent call last):
+  File "/root/autodl-tmp/ouro-cross-task-20261118/repo/experiments/ouro_latent_transitions_20261119/fit_study.py", line 404, in <module>
+    run(p.parse_args())
+  File "/root/autodl-tmp/ouro-cross-task-20261118/repo/experiments/ouro_latent_transitions_20261119/fit_study.py", line 387, in run
+    causal = causal_metrics(data, scale, systems, diag, args.runs/args.task, f)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/autodl-tmp/ouro-cross-task-20261118/repo/experiments/ouro_latent_transitions_20261119/fit_study.py", line 315, in causal_metrics
+    dump_line(case_file, {**r, "width": data.width, "method": name, "response_cosine": cosine(
+  File "/root/autodl-tmp/ouro-cross-task-20261118/repo/experiments/ouro_cross_task_20261118/run.py", line 46, in dump_line
+    file.write(json.dumps(item, ensure_ascii=False, allow_nan=False) + "\n")
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/lib/python3.12/json/__init__.py", line 238, in dumps
+    **kw).encode(obj)
+          ^^^^^^^^^^^
+  File "/root/miniconda3/lib/python3.12/json/encoder.py", line 200, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/lib/python3.12/json/encoder.py", line 258, in iterencode
+    return _iterencode(o, 0)
+           ^^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/lib/python3.12/json/encoder.py", line 180, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+TypeError: Object of type float32 is not JSON serializable

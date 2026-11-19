@@ -1,0 +1,80 @@
+{
+  "configurations": {
+    "identity_raw": {
+      "method": "identity_raw",
+      "encoder": null,
+      "latent": null,
+      "penalty": null
+    },
+    "ridge_raw": {
+      "method": "ridge_raw",
+      "encoder": null,
+      "latent": null,
+      "penalty": 30.0
+    },
+    "context": {
+      "method": "context",
+      "encoder": null,
+      "latent": null,
+      "penalty": 0.3
+    },
+    "identity": {
+      "method": "identity",
+      "encoder": "random",
+      "latent": 32,
+      "penalty": 3.0
+    },
+    "ridge": {
+      "method": "ridge",
+      "encoder": "auto",
+      "latent": 128,
+      "penalty": 3.0
+    },
+    "rank8": {
+      "method": "rank8",
+      "encoder": "random",
+      "latent": 32,
+      "penalty": 30.0
+    },
+    "rank24": {
+      "method": "rank24",
+      "encoder": "pca",
+      "latent": 32,
+      "penalty": 30.0
+    },
+    "mlp": {
+      "method": "mlp",
+      "encoder": "auto",
+      "latent": 128,
+      "penalty": 3.0
+    },
+    "dictionary": {
+      "method": "dictionary",
+      "encoder": "auto",
+      "latent": 128,
+      "penalty": 3.0
+    }
+  },
+  "primary_linear": "ridge_raw",
+  "primary_nonlinear": "mlp",
+  "natural_discovery_mse": {
+    "identity_raw": 2.3939640522003174,
+    "ridge_raw": 0.0717143714427948,
+    "context": 0.24935553967952728,
+    "identity": 1.1162023544311523,
+    "ridge": 0.10371200740337372,
+    "rank8": 1.114071011543274,
+    "rank24": 0.7169349789619446,
+    "mlp": 0.09975696355104446,
+    "dictionary": 0.10065712034702301
+  },
+  "seed": 20261119,
+  "fit_groups": 300,
+  "discovery_groups": 100,
+  "implementation": {
+    "fit_study.py": "8d828ac34c1431590b81768b179863f87a127d45e18fc837df7e9262df46ebd1",
+    "capture_transition.py": "246eb709476ec89c583906237626a90d28927e38dcac841237a2fd7193fa4e05",
+    "models.py": "d41a6e781f73ddfbc6c14dcaf2686f6282014fae51037cbe14da6f5d8dd76570",
+    "PROTOCOL.md": "3b036807ef0a1522df8b114bce696fae4b7e9a70570926184d08bbed49ce9481"
+  }
+}

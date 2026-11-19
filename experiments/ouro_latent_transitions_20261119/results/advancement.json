@@ -1,0 +1,167 @@
+{
+  "task_gates": [
+    {
+      "task": "relation",
+      "width": 96,
+      "candidate": "dictionary",
+      "natural_baseline": "ridge_raw",
+      "splits": {
+        "confirm": {
+          "natural": false,
+          "causal": false,
+          "semantic": false,
+          "behavior": false,
+          "natural_relative_improvement": -0.2929349219326052,
+          "hardest_causal_baseline": "identity_raw",
+          "hardest_causal_relative_improvement": -0.8127184549201101
+        },
+        "transfer": {
+          "natural": false,
+          "causal": false,
+          "semantic": false,
+          "behavior": false,
+          "natural_relative_improvement": -0.00848302257912148,
+          "hardest_causal_baseline": "identity_raw",
+          "hardest_causal_relative_improvement": -2.1361384449814325
+        }
+      },
+      "passes": false
+    },
+    {
+      "task": "logic",
+      "width": 96,
+      "candidate": "dictionary",
+      "natural_baseline": "ridge_raw",
+      "splits": {
+        "confirm": {
+          "natural": false,
+          "causal": false,
+          "semantic": false,
+          "behavior": false,
+          "natural_relative_improvement": -0.2358029530933179,
+          "hardest_causal_baseline": "identity_raw",
+          "hardest_causal_relative_improvement": -3.0291947391529073
+        },
+        "transfer": {
+          "natural": false,
+          "causal": false,
+          "semantic": false,
+          "behavior": false,
+          "natural_relative_improvement": -0.2209517518860713,
+          "hardest_causal_baseline": "identity_raw",
+          "hardest_causal_relative_improvement": -3.4937775371703177
+        }
+      },
+      "passes": false
+    },
+    {
+      "task": "arithmetic",
+      "width": 96,
+      "candidate": "mlp",
+      "natural_baseline": "ridge_raw",
+      "splits": {
+        "confirm": {
+          "natural": false,
+          "causal": false,
+          "semantic": false,
+          "behavior": false,
+          "natural_relative_improvement": -0.267945728075875,
+          "hardest_causal_baseline": "rank24",
+          "hardest_causal_relative_improvement": 0.07634433929465545
+        },
+        "transfer": {
+          "natural": true,
+          "causal": false,
+          "semantic": false,
+          "behavior": false,
+          "natural_relative_improvement": 0.03304197337412085,
+          "hardest_causal_baseline": "rank24",
+          "hardest_causal_relative_improvement": -0.8642302755156253
+        }
+      },
+      "passes": false
+    },
+    {
+      "task": "relation",
+      "width": 2048,
+      "candidate": "dictionary",
+      "natural_baseline": "ridge_raw",
+      "splits": {
+        "confirm": {
+          "natural": false,
+          "causal": false,
+          "semantic": false,
+          "behavior": false,
+          "natural_relative_improvement": -0.4767622437746484,
+          "hardest_causal_baseline": "identity_raw",
+          "hardest_causal_relative_improvement": -0.4977902481607248
+        },
+        "transfer": {
+          "natural": false,
+          "causal": false,
+          "semantic": false,
+          "behavior": false,
+          "natural_relative_improvement": -0.152236568781853,
+          "hardest_causal_baseline": "identity_raw",
+          "hardest_causal_relative_improvement": -0.714549756185145
+        }
+      },
+      "passes": false
+    },
+    {
+      "task": "logic",
+      "width": 2048,
+      "candidate": "mlp",
+      "natural_baseline": "ridge_raw",
+      "splits": {
+        "confirm": {
+          "natural": false,
+          "causal": false,
+          "semantic": false,
+          "behavior": false,
+          "natural_relative_improvement": -0.39936014744180715,
+          "hardest_causal_baseline": "identity_raw",
+          "hardest_causal_relative_improvement": -2.9330287948838802
+        },
+        "transfer": {
+          "natural": false,
+          "causal": false,
+          "semantic": false,
+          "behavior": false,
+          "natural_relative_improvement": -0.13070683432900232,
+          "hardest_causal_baseline": "identity_raw",
+          "hardest_causal_relative_improvement": -3.385438155150829
+        }
+      },
+      "passes": false
+    },
+    {
+      "task": "arithmetic",
+      "width": 2048,
+      "candidate": "mlp",
+      "natural_baseline": "ridge_raw",
+      "splits": {
+        "confirm": {
+          "natural": false,
+          "causal": true,
+          "semantic": false,
+          "behavior": false,
+          "natural_relative_improvement": -0.5752741907740857,
+          "hardest_causal_baseline": "ridge",
+          "hardest_causal_relative_improvement": 0.16401887294577477
+        },
+        "transfer": {
+          "natural": true,
+          "causal": false,
+          "semantic": false,
+          "behavior": false,
+          "natural_relative_improvement": 0.031741876636241506,
+          "hardest_causal_baseline": "rank24",
+          "hardest_causal_relative_improvement": -0.39975537083731916
+        }
+      },
+      "passes": false
+    }
+  ],
+  "stage2_authorized_by_results": false
+}

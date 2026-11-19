@@ -1,0 +1,80 @@
+{
+  "configurations": {
+    "identity_raw": {
+      "method": "identity_raw",
+      "encoder": null,
+      "latent": null,
+      "penalty": null
+    },
+    "ridge_raw": {
+      "method": "ridge_raw",
+      "encoder": null,
+      "latent": null,
+      "penalty": 3.0
+    },
+    "context": {
+      "method": "context",
+      "encoder": null,
+      "latent": null,
+      "penalty": 0.3
+    },
+    "identity": {
+      "method": "identity",
+      "encoder": "random",
+      "latent": 32,
+      "penalty": 3.0
+    },
+    "ridge": {
+      "method": "ridge",
+      "encoder": "auto",
+      "latent": 128,
+      "penalty": 0.3
+    },
+    "rank8": {
+      "method": "rank8",
+      "encoder": "random",
+      "latent": 64,
+      "penalty": 0.3
+    },
+    "rank24": {
+      "method": "rank24",
+      "encoder": "structured",
+      "latent": 32,
+      "penalty": 30.0
+    },
+    "mlp": {
+      "method": "mlp",
+      "encoder": "auto",
+      "latent": 128,
+      "penalty": 3.0
+    },
+    "dictionary": {
+      "method": "dictionary",
+      "encoder": "auto",
+      "latent": 128,
+      "penalty": 3.0
+    }
+  },
+  "primary_linear": "ridge_raw",
+  "primary_nonlinear": "mlp",
+  "natural_discovery_mse": {
+    "identity_raw": 2.597456693649292,
+    "ridge_raw": 0.02381249889731407,
+    "context": 0.1306219846010208,
+    "identity": 1.2962597608566284,
+    "ridge": 0.03302716836333275,
+    "rank8": 1.2112045288085938,
+    "rank24": 0.2501121461391449,
+    "mlp": 0.03067679889500141,
+    "dictionary": 0.032340481877326965
+  },
+  "seed": 20261119,
+  "fit_groups": 300,
+  "discovery_groups": 100,
+  "implementation": {
+    "fit_study.py": "8d828ac34c1431590b81768b179863f87a127d45e18fc837df7e9262df46ebd1",
+    "capture_transition.py": "246eb709476ec89c583906237626a90d28927e38dcac841237a2fd7193fa4e05",
+    "models.py": "d41a6e781f73ddfbc6c14dcaf2686f6282014fae51037cbe14da6f5d8dd76570",
+    "PROTOCOL.md": "3b036807ef0a1522df8b114bce696fae4b7e9a70570926184d08bbed49ce9481"
+  }
+}

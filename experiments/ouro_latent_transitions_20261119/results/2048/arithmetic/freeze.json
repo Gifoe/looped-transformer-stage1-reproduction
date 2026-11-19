@@ -1,0 +1,80 @@
+{
+  "configurations": {
+    "identity_raw": {
+      "method": "identity_raw",
+      "encoder": null,
+      "latent": null,
+      "penalty": null
+    },
+    "ridge_raw": {
+      "method": "ridge_raw",
+      "encoder": null,
+      "latent": null,
+      "penalty": 3.0
+    },
+    "context": {
+      "method": "context",
+      "encoder": null,
+      "latent": null,
+      "penalty": 0.3
+    },
+    "identity": {
+      "method": "identity",
+      "encoder": "random",
+      "latent": 32,
+      "penalty": 3.0
+    },
+    "ridge": {
+      "method": "ridge",
+      "encoder": "auto",
+      "latent": 128,
+      "penalty": 0.3
+    },
+    "rank8": {
+      "method": "rank8",
+      "encoder": "random",
+      "latent": 64,
+      "penalty": 0.3
+    },
+    "rank24": {
+      "method": "rank24",
+      "encoder": "structured",
+      "latent": 32,
+      "penalty": 30.0
+    },
+    "mlp": {
+      "method": "mlp",
+      "encoder": "auto",
+      "latent": 128,
+      "penalty": 3.0
+    },
+    "dictionary": {
+      "method": "dictionary",
+      "encoder": "auto",
+      "latent": 128,
+      "penalty": 3.0
+    }
+  },
+  "primary_linear": "ridge_raw",
+  "primary_nonlinear": "mlp",
+  "natural_discovery_mse": {
+    "identity_raw": 2.516188144683838,
+    "ridge_raw": 0.02010621502995491,
+    "context": 0.14219480752944946,
+    "identity": 1.1707817316055298,
+    "ridge": 0.03372462838888168,
+    "rank8": 1.1679445505142212,
+    "rank24": 0.42918530106544495,
+    "mlp": 0.033306222409009933,
+    "dictionary": 0.03460594639182091
+  },
+  "seed": 20261119,
+  "fit_groups": 300,
+  "discovery_groups": 100,
+  "implementation": {
+    "fit_study.py": "8d828ac34c1431590b81768b179863f87a127d45e18fc837df7e9262df46ebd1",
+    "capture_transition.py": "246eb709476ec89c583906237626a90d28927e38dcac841237a2fd7193fa4e05",
+    "models.py": "d41a6e781f73ddfbc6c14dcaf2686f6282014fae51037cbe14da6f5d8dd76570",
+    "PROTOCOL.md": "3b036807ef0a1522df8b114bce696fae4b7e9a70570926184d08bbed49ce9481"
+  }
+}
