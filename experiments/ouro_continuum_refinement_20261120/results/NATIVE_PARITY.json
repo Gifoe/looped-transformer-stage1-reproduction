@@ -1,0 +1,122 @@
+{
+  "status": "PASS",
+  "rows": [
+    {
+      "family": "tableau",
+      "all_48_native_branch_boundaries_bitwise": true,
+      "terminal_native_bitwise": true,
+      "full_loop_m1_bitwise": true,
+      "full_vocab_values_bitwise": 20643840,
+      "native_mask_rope_positions": true,
+      "use_cache": false,
+      "gpu": [
+        {
+          "run": "pilot/tableau/A16",
+          "wall_s": 0.30990715115331113,
+          "peak_allocated_bytes": 3070005760,
+          "batch": [
+            4,
+            105
+          ],
+          "precision": "torch.bfloat16",
+          "native_loops": 0,
+          "loop_field_calls": 16,
+          "attention_calls": 384,
+          "mlp_calls": 384
+        },
+        {
+          "run": "pilot/tableau/B16",
+          "wall_s": 0.3408786600921303,
+          "peak_allocated_bytes": 3750961664,
+          "batch": [
+            4,
+            105
+          ],
+          "precision": "torch.bfloat16",
+          "native_loops": 0,
+          "loop_field_calls": 0,
+          "attention_calls": 384,
+          "mlp_calls": 384
+        }
+      ]
+    },
+    {
+      "family": "twohop",
+      "all_48_native_branch_boundaries_bitwise": true,
+      "terminal_native_bitwise": true,
+      "full_loop_m1_bitwise": true,
+      "full_vocab_values_bitwise": 18874368,
+      "native_mask_rope_positions": true,
+      "use_cache": false,
+      "gpu": [
+        {
+          "run": "pilot/twohop/A16",
+          "wall_s": 0.30580804706551135,
+          "peak_allocated_bytes": 3070823936,
+          "batch": [
+            4,
+            96
+          ],
+          "precision": "torch.bfloat16",
+          "native_loops": 0,
+          "loop_field_calls": 16,
+          "attention_calls": 384,
+          "mlp_calls": 384
+        },
+        {
+          "run": "pilot/twohop/B16",
+          "wall_s": 0.3290866310708225,
+          "peak_allocated_bytes": 3683716608,
+          "batch": [
+            4,
+            96
+          ],
+          "precision": "torch.bfloat16",
+          "native_loops": 0,
+          "loop_field_calls": 0,
+          "attention_calls": 384,
+          "mlp_calls": 384
+        }
+      ]
+    },
+    {
+      "family": "arc",
+      "all_48_native_branch_boundaries_bitwise": true,
+      "terminal_native_bitwise": true,
+      "full_loop_m1_bitwise": true,
+      "full_vocab_values_bitwise": 13369344,
+      "native_mask_rope_positions": true,
+      "use_cache": false,
+      "gpu": [
+        {
+          "run": "pilot/arc/A16",
+          "wall_s": 0.3152267960831523,
+          "peak_allocated_bytes": 3000952832,
+          "batch": [
+            4,
+            68
+          ],
+          "precision": "torch.bfloat16",
+          "native_loops": 0,
+          "loop_field_calls": 16,
+          "attention_calls": 384,
+          "mlp_calls": 384
+        },
+        {
+          "run": "pilot/arc/B16",
+          "wall_s": 0.3317775351461023,
+          "peak_allocated_bytes": 3444493824,
+          "batch": [
+            4,
+            68
+          ],
+          "precision": "torch.bfloat16",
+          "native_loops": 0,
+          "loop_field_calls": 0,
+          "attention_calls": 384,
+          "mlp_calls": 384
+        }
+      ]
+    }
+  ]
+}
