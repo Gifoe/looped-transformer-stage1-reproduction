@@ -1,0 +1,44 @@
+{
+  "choice": "full",
+  "gate_pass": false,
+  "phase": "validation",
+  "methods": [
+    "full",
+    "base",
+    "taylor",
+    "prefix_anderson"
+  ],
+  "controls": {
+    "1/norm": {
+      "best_control": "prefix_anderson",
+      "gain": {
+        "mean": -0.5352235907921568,
+        "ci": [
+          -0.8126529898407171,
+          -0.26501832040667067
+        ],
+        "n": 16
+      },
+      "threshold": 0.05,
+      "pass_gate": false
+    },
+    "3/norm": {
+      "best_control": "prefix_anderson",
+      "gain": {
+        "mean": -0.44615929829888046,
+        "ci": [
+          -0.6788314955076202,
+          -0.2187972344923764
+        ],
+        "n": 16
+      },
+      "threshold": 0.18314495815429838,
+      "pass_gate": false
+    }
+  },
+  "family_sizes": [
+    48,
+    48
+  ],
+  "validation_receipt": "fb6d6ee28dd5a3226719c377eb24f422c6c094e91a561423ae417cc162056fe3"
+}

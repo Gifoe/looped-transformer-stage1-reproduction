@@ -1,0 +1,113 @@
+{
+  "revision": "bfca32210a0d08d6bc03f070f69e94212ffb88f8",
+  "sha256": {
+    "causal.jsonl": "3725bba31ba94fb86da0fb745f76303429bee9194a043d1894be05ccf0650d0e",
+    "natural.jsonl": "48cbf1f403f8af99139a0e17e04dd66811479cb82fabccaaa36ed8bb0ee62a58",
+    "mechanism_tableaux.jsonl": "d059a5db0af6db0702766ba09d77fe2adc0e7e4b486e5cb0a912ab98db15c63f",
+    "mechanism_summary.json": "8cc2ec24551b927b955639279df442d49da8e1e25781f7f9bf7a2714c11318ac"
+  },
+  "groups": 48,
+  "targets": 96,
+  "roles": {
+    "source_1_mapping_24": 48
+  },
+  "five_candidate_hits": {
+    "tableau": 63,
+    "random": 46,
+    "same_y_mapping_control": 34,
+    "oracle_joint_mapping": 61,
+    "whole_boundary": 54,
+    "natural": 56
+  },
+  "five_candidate_ties": {
+    "tableau": 2,
+    "random": 1,
+    "same_y_mapping_control": 1,
+    "oracle_joint_mapping": 1,
+    "whole_boundary": 3,
+    "natural": 1
+  },
+  "full_vocab_greedy_hits": {
+    "tableau": 0,
+    "random": 0,
+    "same_y_mapping_control": 0,
+    "oracle_joint_mapping": 0,
+    "whole_boundary": 0,
+    "natural": 0
+  },
+  "whole_boundary_vs_natural": {
+    "K1_different_scores": 96,
+    "K1_different_pred": 1,
+    "K2_different_scores": 96,
+    "K2_different_pred": 2,
+    "K3_different_scores": 96,
+    "K3_different_pred": 2,
+    "K4_different_scores": 96,
+    "K4_different_pred": 6
+  },
+  "joint_vs_control_paired_tables": {
+    "random": {
+      "joint_1_other_0": 29,
+      "joint_1_other_1": 34,
+      "joint_0_other_0": 21,
+      "joint_0_other_1": 12
+    },
+    "same_y_mapping_control": {
+      "joint_1_other_0": 29,
+      "joint_1_other_1": 34,
+      "joint_0_other_0": 33
+    },
+    "oracle_joint_mapping": {
+      "joint_1_other_1": 60,
+      "joint_0_other_0": 32,
+      "joint_1_other_0": 3,
+      "joint_0_other_1": 1
+    },
+    "whole_boundary": {
+      "joint_1_other_1": 52,
+      "joint_0_other_0": 31,
+      "joint_1_other_0": 11,
+      "joint_0_other_1": 2
+    },
+    "natural": {
+      "joint_1_other_1": 53,
+      "joint_0_other_0": 30,
+      "joint_0_other_1": 3,
+      "joint_1_other_0": 10
+    }
+  },
+  "joint_minus_control_mean_lo_hi": {
+    "random": [
+      0.17708333333333334,
+      0.04166666666666667,
+      0.30208333333333337
+    ],
+    "same_y_mapping_control": [
+      0.3020833333333333,
+      0.22916666666666666,
+      0.375
+    ],
+    "oracle_joint_mapping": [
+      0.020833333333333332,
+      -0.020833333333333336,
+      0.0625
+    ],
+    "whole_boundary": [
+      0.09375,
+      0.020833333333333336,
+      0.16666666666666669
+    ],
+    "natural": [
+      0.07291666666666667,
+      0.0,
+      0.14583333333333331
+    ]
+  },
+  "joint_margin_minus_control_mean_nats": {
+    "base": 1.594930000603199,
+    "random": 1.066558829198281,
+    "same_y_mapping_control": 1.9105224572122097,
+    "source_only": 2.0132961186269918,
+    "rule_only": 1.7627359653512638
+  }
+}
