@@ -1,0 +1,11 @@
+{
+  "training": "independent development groups, native t = 0,.25,.5,.75,1",
+  "checkpoint_scope": "Common 1/8 grid, or shared subset for coarse Euler. Native hidden width 2048.",
+  "vector": "Final Answer: token state at the same actual model position",
+  "objective": "Ridge (lambda=250), native-trained frozen readouts, three-way factorial labels",
+  "limitations": [
+    "A single role/token is tested",
+    "Source and rule are factors; in old 3x3 the bridge is not separable from source",
+    "The endpoint of artificial trajectories is not the native K2 except at m=1"
+  ]
+}
