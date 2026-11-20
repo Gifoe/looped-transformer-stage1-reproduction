@@ -1,0 +1,72 @@
+Traceback (most recent call last):
+  File "/root/autodl-tmp/ouro-continuous-latent-20261120/release_git/experiments/ouro_continuous_embedding_20261120/embedding_run.py", line 135, in <module>
+    main()
+  File "/root/autodl-tmp/ouro-cross-task-20261118/venv/lib/python3.12/site-packages/torch/utils/_contextlib.py", line 116, in decorate_context
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/root/autodl-tmp/ouro-continuous-latent-20261120/release_git/experiments/ouro_continuous_embedding_20261120/embedding_run.py", line 126, in main
+    pilot(model,manifest,a.out)
+  File "/root/autodl-tmp/ouro-continuous-latent-20261120/release_git/experiments/ouro_continuous_embedding_20261120/embedding_run.py", line 91, in pilot
+    records=[branch_trial(op,i,(.0625,.125,.25,.5,1.)) for i in (0,1,10,11,22,23,34,35,46,47)]
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/autodl-tmp/ouro-continuous-latent-20261120/release_git/experiments/ouro_continuous_embedding_20261120/dynamics_embedding.py", line 162, in branch_trial
+    h=integrate(g,x,alpha,2)
+      ^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/autodl-tmp/ouro-continuous-latent-20261120/release_git/experiments/ouro_continuous_embedding_20261120/dynamics_embedding.py", line 107, in integrate
+    h=rk4(g,h,j*dt,dt)
+      ^^^^^^^^^^^^^^^^
+  File "/root/autodl-tmp/ouro-continuous-latent-20261120/release_git/experiments/ouro_continuous_embedding_20261120/dynamics_embedding.py", line 95, in rk4
+    a=g(x,t)
+      ^^^^^^
+  File "/root/autodl-tmp/ouro-continuous-latent-20261120/release_git/experiments/ouro_continuous_embedding_20261120/dynamics_embedding.py", line 126, in field
+    b=op.deriv(first_fixed,x,base).float()
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/autodl-tmp/ouro-continuous-latent-20261120/release_git/experiments/ouro_continuous_embedding_20261120/dynamics_embedding.py", line 76, in deriv
+    return jvp(field,(x,),(v,))[1]
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/root/autodl-tmp/ouro-cross-task-20261118/venv/lib/python3.12/site-packages/torch/_functorch/eager_transforms.py", line 1042, in jvp
+    return _jvp_with_argnums(
+           ^^^^^^^^^^^^^^^^^^
+  File "/root/autodl-tmp/ouro-cross-task-20261118/venv/lib/python3.12/site-packages/torch/_functorch/eager_transforms.py", line 1101, in _jvp_with_argnums
+    result_duals = func(*duals)
+                   ^^^^^^^^^^^^
+  File "/root/autodl-tmp/ouro-continuous-latent-20261120/release_git/experiments/ouro_continuous_embedding_20261120/dynamics_embedding.py", line 125, in <lambda>
+    first_fixed=lambda z:op.deriv(f,z,base).float()
+                         ^^^^^^^^^^^^^^^^^^
+  File "/root/autodl-tmp/ouro-continuous-latent-20261120/release_git/experiments/ouro_continuous_embedding_20261120/dynamics_embedding.py", line 76, in deriv
+    return jvp(field,(x,),(v,))[1]
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/root/autodl-tmp/ouro-cross-task-20261118/venv/lib/python3.12/site-packages/torch/_functorch/eager_transforms.py", line 1042, in jvp
+    return _jvp_with_argnums(
+           ^^^^^^^^^^^^^^^^^^
+  File "/root/autodl-tmp/ouro-cross-task-20261118/venv/lib/python3.12/site-packages/torch/_functorch/eager_transforms.py", line 1101, in _jvp_with_argnums
+    result_duals = func(*duals)
+                   ^^^^^^^^^^^^
+  File "/root/autodl-tmp/ouro-continuous-latent-20261120/release_git/experiments/ouro_continuous_embedding_20261120/dynamics_embedding.py", line 151, in <lambda>
+    f=lambda h:op.branch(index,h)
+               ^^^^^^^^^^^^^^^^^^
+  File "/root/autodl-tmp/ouro-continuous-latent-20261120/release_git/experiments/ouro_continuum_refinement_20261120/solver.py", line 75, in branch
+    return layer.post_attention_layernorm_2(layer.mlp(layer.post_attention_layernorm(x)))
+                                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/autodl-tmp/ouro-cross-task-20261118/venv/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1751, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/autodl-tmp/ouro-cross-task-20261118/venv/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1762, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/.cache/huggingface/modules/transformers_modules/model/modeling_ouro.py", line 77, in forward
+    down_proj = self.down_proj(self.act_fn(self.gate_proj(x)) * self.up_proj(x))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/autodl-tmp/ouro-cross-task-20261118/venv/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1751, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/autodl-tmp/ouro-cross-task-20261118/venv/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1762, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/autodl-tmp/ouro-cross-task-20261118/venv/lib/python3.12/site-packages/torch/nn/modules/activation.py", line 432, in forward
+    return F.silu(input, inplace=self.inplace)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/autodl-tmp/ouro-cross-task-20261118/venv/lib/python3.12/site-packages/torch/nn/functional.py", line 2380, in silu
+    return torch._C._nn.silu(input)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+NotImplementedError: Trying to use forward AD with aten::silu_backward that does not support it.

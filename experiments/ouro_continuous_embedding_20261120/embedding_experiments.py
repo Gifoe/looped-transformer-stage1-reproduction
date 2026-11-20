@@ -1,0 +1,380 @@
+"""Operator perturbations and frozen natural and counterfactual validations."""
+import numpy as np
+import torch
+from torch.nn.attention import SDPBackend, sdpa_kernel
+
+from dynamics_embedding import (EmbeddingOperators, anderson, compare, cosine, integrate, integrate_a,
+    lengths, modified, noise, norm, norm_audit, picard, read_json, rel, state_error, timed, weight_hash, write_json)
+
+CORE=("full_loop","branch_flow","bea2","chart","chart_anderson","hybrid","hybrid_shuffled","ridge","persistence")
+DEVELOP=("native","full_loop","branch_flow","branch_flow_fine","bea2","bea2_fine","bea3",
+         "chart","chart_anderson","chart_rk4","hybrid","hybrid_shuffled","ridge","persistence")
+TOL=2e-5
+
+
+def audit_layers(op,loop,log):
+    logs=[]
+    with timed(op,f"24_layer_order_controls/K{loop}",log):
+        raw=[]
+        for layer in range(24):
+            i=2*layer
+            x=op.actual[i].float()
+            a=lambda z:op.branch(i,z).float()
+            m=lambda z:op.branch(i+1,z).float()
+            with sdpa_kernel(SDPBackend.MATH):
+                v,w=a(x),m(x)
+                jma=op.deriv(m,x,v)
+                jam=op.deriv(a,x,w)
+                bracket=jma-jam
+                slopes=[]
+                for alpha in (.03125,.125,1.):
+                    d=alpha*((m(x+alpha*v)-w)-(a(x+alpha*w)-v))
+                    slopes.append(dict(alpha=alpha,relative=rel(op,d/alpha**2,bracket).tolist(),
+                                      cosine=cosine(op,d,bracket).tolist(),norm=norm(op,d).tolist()))
+                am=integrate(lambda z,t:m(z),integrate(lambda z,t:a(z),x,1.,2),1.,2)
+                ma=integrate(lambda z,t:a(z),integrate(lambda z,t:m(z),x,1.,2),1.,2)
+            w_native=m(x)
+            swapped=x+w_native+a(x+w_native)
+            original=op.actual[i+2].float()
+            delta=swapped-original
+            direction=cosine(op,v,w).tolist()
+            raw.append(dict(i=i,x=original,swap=swapped,delta=delta,bracket=bracket,scales=slopes,
+                     raw_norm=norm(op,delta).tolist(),direction=direction,flow_swap_norm=norm(op,am-ma).tolist(),
+                     flow_vs_discrete_swap_cos=cosine(op,am-ma,-delta).tolist(),
+                     local_A_addition=norm(op,op.actual[i+1]-op.actual[i]).tolist(),
+                     local_M_addition=norm(op,op.actual[i+2]-op.actual[i+1]).tolist()))
+        baseline=op.k2.float()
+        for layer,entry in enumerate(raw):
+            i=entry.pop("i")
+            at=entry.pop("x")
+            d=entry.pop("delta")
+            bracket=entry.pop("bracket")
+            donor=raw[(layer+7)%24]
+            other=donor["delta"] if "delta" in donor else donor["saved_delta"]
+            entry["saved_delta"]=d
+            match=lambda q:q*(norm(op,d)/norm(op,q).clamp_min(1e-12))[:,None,None]
+            no=match(noise(op,d,2718+layer))
+            oth=match(other)
+            f=lambda z:op.native_suffix(z,i+2).float()
+            assert torch.equal(f(at),baseline)
+            native=f(entry.pop("swap"))
+            random=f(at+no)
+            substitute=f(at+oth)
+            linear=op.deriv(f,at,-bracket)
+            actual=native-baseline
+            normal_scores=op.scores(baseline)
+            target=torch.as_tensor([w["y"] for w in op.encodings],device="cuda").unsqueeze(1)
+            def signed_margin(h):
+                z=op.scores(h)
+                gold=z.gather(1,target)
+                other=z.masked_fill(torch.zeros_like(z,dtype=torch.bool).scatter(1,target,True),-torch.inf)
+                return (gold.squeeze(1)-other.max(1).values).tolist()
+            controls={}
+            base_margin=signed_margin(baseline)
+            for name,h in (("actual",native),("norm_matched_random",random),
+                           ("norm_matched_other_layer",substitute)):
+                q=compare(op,h,baseline,baseline)
+                del q["update_cos"]
+                q["direction_vs_swap"]=cosine(op,h-baseline,actual).tolist()
+                q["gold_margin_change"]=[j-i for i,j in zip(base_margin,signed_margin(h),strict=True)]
+                controls[name]=q
+            metrics=dict(
+                transported_bracket=dict(gain=(norm(op,linear)/norm(op,bracket).clamp_min(1e-10)).tolist(),
+                    cos=cosine(op,linear,actual).tolist(),relative=rel(op,linear,actual).tolist(),
+                    random_cos=cosine(op,random-baseline,actual).tolist(),
+                    predicted_logit_delta=(op.scores(baseline+linear)-normal_scores).tolist(),
+                    swap_logit_delta=(op.scores(native)-normal_scores).tolist()),
+                random_input_dose=norm(op,no).tolist(),other_input_dose=norm(op,oth).tolist(),**controls)
+            logs.append({k:v for k,v in entry.items() if k!="saved_delta"} | {"layer":layer+1,**metrics})
+    return logs
+
+
+def long_inverse(op):
+    rows=[]
+    with sdpa_kernel(SDPBackend.MATH):
+        for i in (0,1,10,11,24,25,46,47):
+            x=op.actual[i].float()
+            f=lambda h:op.branch(i,h).float()
+            z=x+f(x)
+            outputs={}
+            for n,damp in ((6,1.),(24,.5),(24,1.)):
+                q,_,res=picard(op,f,z,1.,n,damp)
+                outputs[f"{n}/{damp}"]={"residual":res.tolist(),"state":rel(op,q,x).tolist()}
+            rows.append(dict(branch=i+1,solutions=outputs))
+    return rows
+
+
+def operator_phase(model,manifest,out):
+    model.float()
+    for f,group in manifest.items():
+        members=group["dev"][:2]
+        path=out/f"operators_{f}.json"
+        if path.exists():
+            continue
+        log=[]
+        data={}
+        numerical={}
+        for depth in (2,3):
+            op=EmbeddingOperators(model,members,depth)
+            data[str(depth)]=audit_layers(op,depth,log)
+            with timed(op,f"norm_and_inverse/K{depth}",log):
+                numerical[str(depth)]=dict(norm=norm_audit(op),inverse=long_inverse(op))
+        write_json(path,dict(items=[x["item"] for x in members],loops=data,numerical=numerical,timing=log))
+
+
+def fit_ridge(model,manifest,out):
+    X=[]
+    Y=[]
+    for family,g in manifest.items():
+        op=EmbeddingOperators(model,g["dev"],2)
+        X.append(op.k1[op.valid].float())
+        Y.append((op.k2-op.k1)[op.valid].float())
+    x=torch.cat(X)
+    y=torch.cat(Y)
+    origin=x.mean(0)
+    offset=y.mean(0)
+    scale=x.std(0).clamp_min(.05)
+    a=(x-origin)/scale
+    gram=a@a.T
+    lam=.08*float(gram.diag().mean())
+    gram.diagonal().add_(lam)
+    weights=a.T@torch.linalg.solve(gram,y-offset)
+    np.savez_compressed(out/"ridge.npz",weight=weights.cpu().numpy(),origin=origin.cpu().numpy(),
+                        offset=offset.cpu().numpy(),scale=scale.cpu().numpy(),penalty=lam,train_tokens=len(x))
+    return origin,offset,scale,weights
+
+
+def get_ridge(out):
+    with np.load(out/"ridge.npz") as f:
+        return tuple(torch.as_tensor(f[k],device="cuda") for k in ("origin","offset","scale","weight"))
+
+
+def field_step(op,index,x,name,gate):
+    f=lambda h:op.branch(index,h).float()
+    if name.startswith("branch_flow"):
+        return integrate(modified(op,f,1.,1),x,1.,4 if name.endswith("fine") else 2),None
+    if name.startswith("bea2"):
+        return integrate(modified(op,f,1.,2),x,1.,2 if name.endswith("fine") else 1),None
+    if name=="bea3":
+        return integrate(modified(op,f,1.,3),x,1.,1),None
+    with sdpa_kernel(SDPBackend.MATH):
+        if name=="chart_rk4":
+            def chart(z,t):
+                return picard(op,f,z,t)[1] if t>0 else f(z)
+            return integrate(chart,x,1.,2),None
+        v=f(x)
+        inverse=picard if name=="chart" else anderson
+        _,direction,residual=inverse(op,f,x+.5*v,.5)
+        bad=residual>TOL
+        native=(x.to(op.dtype)+v.to(op.dtype)).float()
+        jumped=torch.zeros_like(bad)
+        if name=="hybrid":
+            jumped=bad
+            end=torch.where(bad[:,None,None],native,x+direction)
+        elif name=="hybrid_shuffled":
+            jumped=gate
+            end=torch.where(gate[:,None,None],native,x+direction)
+        else:
+            end=x+direction
+        return end,dict(residual=residual.tolist(),bad=bad.tolist(),used_jump=jumped.tolist())
+
+
+def shuffle_flags(details,seed=1574):
+    flags=torch.tensor([row["bad"] for row in details],device="cuda")
+    gen=torch.Generator(device="cuda").manual_seed(seed)
+    return flags[torch.randperm(48,generator=gen,device="cuda")]
+
+
+def forecast(op,start,name,ridge,gate=None,start_index=0,trace=False):
+    if name=="native":
+        return op.native_suffix(start,start_index),None
+    if name=="persistence":
+        return start,None
+    if name=="ridge":
+        origin,offset,scale,w=ridge
+        h=start.float()
+        return h+(h-origin)/scale@w+offset,None
+    if name=="full_loop":
+        return integrate_a(op,8,start)[32],None
+    h=start.float()
+    meta=[]
+    for b in range(start_index,48):
+        h,extra=field_step(op,b,h,name,gate[b] if gate is not None else None)
+        if trace or extra is not None:
+            record={} if extra is None else extra
+            if trace:
+                record["native_branch_distance"]=rel(op,h,op.actual[b+1].float()).tolist()
+            meta.append(record)
+    return op.norm(h),meta
+
+
+def run_models(op,start,ref,methods,ridge,timing,prefix):
+    receipt={}
+    gate=None
+    for method in methods:
+        with timed(op,prefix+"/"+method,timing):
+            h,details=forecast(op,start,method,ridge,gate,trace=True)
+        if method=="hybrid":
+            gate=shuffle_flags(details)
+        receipt[method]=compare(op,h,ref,start)
+        if details:
+            receipt[method]["inverse"]=details
+    return receipt
+
+
+def natural_phase(model,manifest,out):
+    original=weight_hash(model,torch.bfloat16)
+    model.float()
+    ridge=fit_ridge(model,manifest,out)
+    log=[]
+    compiled={}
+    for f,g in manifest.items():
+        n=EmbeddingOperators(model,g["dev"],2)
+        data=run_models(n,n.k1,n.k2,DEVELOP,ridge,log,"dev/"+f)
+        diag=compare(n,n.k1.float().lerp(n.k2.float(),.5),n.actual[24],n.k1)
+        compiled[f]=dict(items=[x["item"] for x in g["dev"]],methods=data,linear_oracle_midpoint=diag)
+    write_json(out/"DEVELOPMENT.json",dict(groups=compiled,timing=log))
+    if weight_hash(model,torch.bfloat16)!=original:
+        raise RuntimeError("Loaded weights changed during the analysis")
+
+
+def holdout_phase(model,manifest,out):
+    ridge=get_ridge(out)
+    names=("native",)+CORE
+    for dtype in (torch.bfloat16,torch.float32):
+        model.to(dtype=dtype)
+        for f,g in manifest.items():
+            results=[]
+            log=[]
+            path=out/f"natural_{str(dtype).split('.')[-1]}_{f}.json"
+            if path.exists():
+                continue
+            for depth in (2,3):
+                n=EmbeddingOperators(model,g["test"],depth)
+                n.parity_receipt()
+                ordered=names if dtype==torch.float32 else tuple(k for k in names if k!="bea2")
+                data=run_models(n,n.k1,n.k2,ordered,ridge,log,f"{f}/K{depth}")
+                interp=compare(n,n.k1.float().lerp(n.k2.float(),.5),n.actual[24],n.k1)
+                results.append(dict(loop=depth,methods=data,oracle_linear_midpoint=interp,
+                                   anchor_logits=n.scores(n.k1).tolist(),
+                                   gold=[w["y"] for w in g["test"]]))
+            write_json(path,dict(items=[w["item"] for w in g["test"]],loops=results,timing=log))
+
+
+def patch_state(op,rec,source,rule):
+    roles=rec["roles"]
+    s=roles["source"]
+    r=roles["bridge"] if rec["family"]=="twohop" else roles["mapping"]
+    assert s and r and (rec["family"]=="arc" or not (set(s)&set(r)))
+    indices=(s,r)
+    basis=op.k1
+    states=basis[:1].repeat(len(basis),1,1)
+    for j,(donor,idx) in enumerate(zip((source,rule),indices,strict=True),1):
+        assert len(rec["ids"])==len(donor["ids"])
+        role="source" if j==1 else ("bridge" if rec["family"]=="twohop" else "mapping")
+        assert idx==donor["roles"][role]
+        states[j,idx]=basis[j,idx]
+        delta=(states[j,idx]-basis[0,idx]).float()
+        gen=torch.Generator(device="cuda").manual_seed(1310+j)
+        eps=torch.randn(delta.shape,device=delta.device,generator=gen)
+        states[2+j,idx]=(basis[0,idx]+eps*(delta.norm()/eps.norm())).to(states.dtype)
+        unrelated=next(k for k in range(len(rec["ids"])) if k not in set(s+r) and k<min(idx))
+        vec=delta.sum(0)
+        if vec.norm()==0:
+            vec=eps[0]
+        states[4+j,unrelated]=(basis[0,unrelated]+vec*(delta.norm()/vec.norm())).to(states.dtype)
+    return states,indices
+
+
+def causal_compare(op,states,z,gold,slot_to_content):
+    baseline=states[0:1]
+    native=z[0:1]
+    predicted_delta=states-baseline
+    native_delta=z-native
+    pred_scores=op.scores(states)
+    oracle_scores=op.scores(z)
+    pdelta=pred_scores-pred_scores[0:1]
+    odelta=oracle_scores-oracle_scores[0:1]
+    content_to_slot=torch.as_tensor(slot_to_content,device="cuda").argsort(-1)
+    p_content=pred_scores.gather(-1,content_to_slot)
+    o_content=oracle_scores.gather(-1,content_to_slot)
+    aligned_error=((p_content-p_content[0:1])-(o_content-o_content[0:1])).square().mean(1).sqrt()
+    target=torch.tensor(gold,device="cuda").unsqueeze(1)
+    def margin(scores):
+        main=scores.gather(1,target).squeeze(1)
+        other=scores.masked_fill(torch.zeros_like(scores,dtype=torch.bool).scatter(1,target,True),-torch.inf)
+        return main-other.max(1).values
+    a=predicted_delta.norm(dim=-1).masked_fill(~op.valid,-1)
+    b=native_delta.norm(dim=-1).masked_fill(~op.valid,-1)
+    top_a=a.topk(3,dim=1).indices
+    top_b=b.topk(3,dim=1).indices
+    overlap=(top_a[:,:,None]==top_b[:,None,:]).any(-1).float().mean(-1)
+    pred_idx=pred_scores.argmax(1)
+    native_idx=oracle_scores.argmax(1)
+    hit=pred_scores.max(1,keepdim=True).values==pred_scores
+    oracle_hit=oracle_scores.max(1,keepdim=True).values==oracle_scores
+    return dict(response_cos=cosine(op,predicted_delta,native_delta).tolist(),
+        response_error=rel(op,predicted_delta,native_delta).tolist(),state_error=state_error(op,states,z),
+        native_dose=norm(op,native_delta).tolist(),predicted_dose=norm(op,predicted_delta).tolist(),
+        per_token_effect_native=lengths(op,b.clamp_min(0)),per_token_effect_predicted=lengths(op,a.clamp_min(0)),
+        top3_overlap=overlap.tolist(),logit_response_rmse=(pdelta-odelta).square().mean(1).sqrt().tolist(),
+        content_aligned_logit_rmse=aligned_error.tolist(),native_content_predictions=o_content.argmax(1).tolist(),
+        target_margin_response=(margin(pred_scores)-margin(pred_scores[0:1].expand_as(pred_scores))).tolist(),
+        native_target_margin_response=(margin(oracle_scores)-margin(oracle_scores[0:1].expand_as(oracle_scores))).tolist(),
+        predictions=pred_idx.tolist(),native_predictions=native_idx.tolist(),scores=pred_scores.tolist(),
+        true_scores=oracle_scores.tolist(),ties=(hit.sum(1)>1).tolist(),native_ties=(oracle_hit.sum(1)>1).tolist())
+
+
+def causal_phase(model,manifest,out):
+    ridge=get_ridge(out)
+    methods=CORE
+    for dtype in (torch.float32,torch.bfloat16):
+        model.to(dtype=dtype)
+        for f,g in manifest.items():
+            if not g["causal"]:
+                continue
+            path=out/f"causal_{str(dtype).split('.')[-1]}_{f}.json"
+            if path.exists():
+                continue
+            results=[]
+            time=[]
+            for depth in (2,3):
+                for rec,src,mapping in g["causal"]:
+                    group=[rec,src,mapping]+[rec]*4
+                    op=EmbeddingOperators(model,group,depth)
+                    start,spans=patch_state(op,rec,src,mapping)
+                    with timed(op,f"causal/{f}/K{depth}/native",time):
+                        native=op.native_suffix(start)
+                    assert torch.equal(native[0],op.k2[0])
+                    target=[rec["y"],src["y"],mapping["y"],src["y"],mapping["y"],src["y"],mapping["y"]]
+                    selected=methods if dtype==torch.float32 else ("full_loop","branch_flow","chart","chart_anderson",
+                                                                   "hybrid","hybrid_shuffled","ridge")
+                    identity=list(range(len(rec["content"])))
+                    semantic_order=[identity,src.get("arc_slot_to_content",identity),
+                                    mapping.get("arc_slot_to_content",identity)]+[identity]*4
+                    records={}
+                    gate=None
+                    for name in selected:
+                        with timed(op,f"causal/{f}/K{depth}/{name}",time):
+                            out_h,details=forecast(op,start,name,ridge,gate)
+                        if name=="hybrid":
+                            gate=shuffle_flags(details)
+                        records[name]=causal_compare(op,out_h,native,target,semantic_order)
+                        if details:
+                            records[name]["inverse"]=details
+                    results.append(dict(items=[x["item"] for x in group[:3]],loop=depth,targets=target,
+                                      slot_to_content=semantic_order,
+                                      roles=spans,input_dose=norm(op,start-start[0:1]).tolist(),methods=records))
+            write_json(path,dict(arms=["clean","source","rule","random_source","random_rule","unrelated_source",
+                                      "unrelated_rule"],runs=results,timing=time))
+
+
+def execute(model,manifest,out,stage):
+    if stage=="operators":
+        operator_phase(model,manifest,out)
+    elif stage=="reconstruct":
+        natural_phase(model,manifest,out)
+    elif stage=="holdout":
+        holdout_phase(model,manifest,out)
+    elif stage=="causal":
+        causal_phase(model,manifest,out)

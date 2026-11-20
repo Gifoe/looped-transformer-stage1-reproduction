@@ -1,0 +1,12 @@
+Traceback (most recent call last):
+  File "/root/autodl-tmp/ouro-continuous-latent-20261120/release_git/experiments/ouro_continuous_embedding_20261120/embedding_run.py", line 134, in <module>
+    main()
+  File "/root/autodl-tmp/ouro-cross-task-20261118/venv/lib/python3.12/site-packages/torch/utils/_contextlib.py", line 116, in decorate_context
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/root/autodl-tmp/ouro-continuous-latent-20261120/release_git/experiments/ouro_continuous_embedding_20261120/embedding_run.py", line 125, in main
+    pilot(model,manifest,a.out)
+  File "/root/autodl-tmp/ouro-continuous-latent-20261120/release_git/experiments/ouro_continuous_embedding_20261120/embedding_run.py", line 81, in pilot
+    assert all(w.dtype==torch.float32 and not w.requires_grad for w in model.parameters())
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError
