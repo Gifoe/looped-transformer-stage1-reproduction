@@ -76,13 +76,13 @@ def causal_summary(rows,arm):
     all_cases=list(cells(rows,arm))
     counts=Counter(q[-1] for q in all_cases)
     golden=sum(q[-1]=="to_target" and q[-2] for q in all_cases)
-    doses=[q[0]["methods"]["native"]["native_dose"][q[1]] for q in all_cases]
+    native_output_doses=[q[0]["methods"]["native"]["native_dose"][q[1]] for q in all_cases]
     stats={}
     for name in METHODS:
         hits=Counter()
         delta=[]
         cos=[]
-        doses=[]
+        input_doses=[]
         logit=[]
         signed=[]
         grouped_targets=defaultdict(lambda:[0,0])
@@ -109,10 +109,10 @@ def causal_summary(rows,arm):
             if m["native_dose"][i]>1e-10:
                 delta.append(m["response_error"][i])
                 cos.append(m["response_cos"][i])
-            doses.append(row["input_dose"][i])
+            input_doses.append(row["input_dose"][i])
         stats[name]=dict(counts=dict(hits),ratio_to_target=ratio_by_group(grouped_targets),
                          logit_rmse=stat(logit),direction_cos=stat(cos),state_response_error=stat(delta),
-                         target_margin_delta=stat(signed),dose=stat(doses))
+                         target_margin_delta=stat(signed),dose=stat(input_doses))
     contrast={}
     for name in METHODS[2:]:
         values=defaultdict(list)
@@ -121,7 +121,7 @@ def causal_summary(rows,arm):
             values[row["group"]].append(m[name]["logit_response_rmse"][i]-m["chart_anderson"]["logit_response_rmse"][i])
         contrast[name]=bootstrap(values)
     return dict(cases=len(all_cases),native_counts=dict(counts),clean_correct_and_to_target=golden,
-                methods=stats,paired_chart_improvement=contrast, native_output_effect=stat(doses))
+                methods=stats,paired_chart_improvement=contrast,native_output_effect=stat(native_output_doses))
 
 
 def natural_summary(batch):
