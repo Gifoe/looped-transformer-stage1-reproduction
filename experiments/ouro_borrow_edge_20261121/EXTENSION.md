@@ -1,0 +1,5 @@
+# Independent three-digit precision extension
+
+The primary native cohort yielded 34 independent three-digit exact-repair target clusters and zero qualifying four-digit exact repairs. With 34 clusters, even zero excess reversions give a 97.5% binomial upper bound greater than 10%. Before reading the primary intervention outputs, this extension fixes 100 further three-digit stems across 50 disjoint target clusters. The target clusters are disjoint from the entire primary deck, and all operand pairs are distinct from checked histories and the primary deck. This decision depends on native eligibility only.
+
+Reuse the exact K1 head and original forty development donors. Do not retune, renormalize candidate selection, or stop the extension early based on interventions. Keep the primary 240-stem experiment, extension and combined three-digit results visible. Use the native exact K1 y+100 to K2 y conditioning and the same source and chain gates. Calculate the pooled cluster upper bound only for the shared three-digit protocol. Four-digit causal generalization requires independent evidence because that layout failed to yield qualifying native repairs.
