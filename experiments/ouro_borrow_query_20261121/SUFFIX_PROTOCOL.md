@@ -1,0 +1,6 @@
+# On-policy continuation following the actual whole-state pivot intervention
+
+This descriptive follow-up is triggered by at least eight K1 exact failures after the previously executed whole-input pivot replay. The first changed token is obtained from that experiment's actual generated sequence and is never supplied as a canonical answer. The follow-up uses only naturally repaired confirmation examples and reports the already observed failed-pivot subgroup separately. It is not an independent replication.
+
+Continue the exact prefix emitted by the whole-input pivot test under five policies. Use the receiving loop unchanged, swap just the readout residual at the frozen discovery-selected physical layer for the next token only, swap that readout residual at every remaining token, apply its same-position norm/angle matched control at every remaining token, or replay the full opposite-loop input at every remaining token. In intervention arms compute donor states on the continuation each model actually generated. Never supply ground-truth subsequent tokens. The full replay must equal the other loop's native output sequence, and the receiving-loop continuation must equal the prior pivot-only results. Evaluate complete integer accuracy relative to the desired opposite-loop result in both directions. Treat the full policy as a structural validation.
+
