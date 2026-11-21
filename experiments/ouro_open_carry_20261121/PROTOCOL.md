@@ -1,0 +1,3 @@
+# Candidate-free carry feasibility
+
+Generate the integer answer as the next line of a fixed arithmetic completion prompt. No answer choices or decoder constraints, native no-cache with 1, 2 and 3 shared passes, greedy maximum 6 tokens. Freeze 256 groups, half two-digit and half three-digit, paired on high places with ones sums 4 and 14, no other carry. Require at least 24 groups with a strict K1→K2 correction from exactly a missing/spurious carry (wrong answer differs by ±10). Report every group, parse failures, non-carry wrong→correct and correct→wrong. This development deck will never be a confirmation set. On a failed gate, do not launch a semantic transfer claim or mediator sweep on this arithmetic prompt.
