@@ -1,0 +1,4 @@
+# Exact same-direction and same-dose test on matched safe recipients
+
+The no-borrow comparison also receives the exact borrow quartet's own across-loop interaction change. Use all aligned confirmation stems from the main readout test with their same-y safe joint. Both recipients see the identical signed vector, in the original coordinates and with no rescaling. As a control on each recipient, rotate the displacement preserving its norm and its projections onto that recipient's own baseline K1 readout and the difference between its K1 and K2 readouts. Also replay the clean trajectories. Score full integers and exact y+100 separately from generic damage. The subject-level comparison is paired by target in the same cohort. Its role is to test context selectivity of the numeric y+100 effect at equal dose. It is a secondary measurement, with no assumption that a positive specificity contrast identifies a symbolic carry bit.
+
