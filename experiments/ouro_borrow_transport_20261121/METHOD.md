@@ -1,0 +1,14 @@
+# A recipient-specific path and a candidate transferable variable
+
+On each fixed input, write the prior query intervention as replacing the final-position L14 query at the actual first answer-token divergence. The recipient's original keys and values at L14 remain fixed. For any donor D and recipient R, let p(q;K_R) be rotary-position-matched eager attention. The isolated first-operand effect is
+
+```text
+d(D,R) = sum_{j in first operand} (p(q_D2;K_R)_j - p(q_D1;K_R)_j) V_Rj .
+```
+
+The code validates native weights and attention values, then adds the appropriately signed, dose-matched d to the native multi-head AV vector before the very same output projection. Both donor and donor-control queries are evaluated on the same native recipient K and V. This is a linear contribution to the attention-output vector. It does not require the isolated contribution by itself to be a normalized probability row. The key contrast uses a different true and false hundreds digit from each receiving candidate. A borrowing donor and no-borrow donor control share the exact donor target. Equal geometry and a distinct source field check generic changes and localization.
+
+The L17 interventions address two distinct facts. First, following a last-position Q edit, restoring that entire position's L17 native residual severs every forward path from that edit to the current readout. Causal attention guarantees that earlier positions at L17 were unaffected. This is a structural check. Second, learn an orthonormal rank-8 subspace U from independent donor examples' observed readout differences induced by the Q intervention. At the recipient's native L17 readout r, the effect gives r+d. Compare r+P_U d and r+d-P_U d. For matched controls replace P_U d by a random vector z with the same norm and projections on r and d. Thus both addition and removal preserve the readout norm by the identity ||r+z||^2=||r||^2+2 r·z+||z||^2 and the corresponding identity for r+d-z. The recipient digits are never read in fitting direction vectors. The separate digit-disjoint banks also exclude both recipient candidate digits from the training cases. Each projection still acts on a native shift of the recipient itself and is not an independent donor correction.
+
+The one-step design retains the exact greedily generated shared prefix and then decodes new suffix tokens without further intervention. Receiver-specific correct and original foil answers are the endpoints. A broad claim of a reusable latent borrow bit would require superiority under the disjoint-digit transport comparisons, or further evidence under different semantic transformations. Generic confidence movement and geometric projection energy have a distinct scope from complete-answer switches. [Path-patching methodology](https://arxiv.org/abs/2304.05969) · [Subspace interpretation discussion](https://arxiv.org/abs/2401.12631)
+
