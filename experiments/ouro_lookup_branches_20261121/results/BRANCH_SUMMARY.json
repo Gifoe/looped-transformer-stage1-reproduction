@@ -1,0 +1,947 @@
+{
+  "groups": {
+    "original": {
+      "n": 102,
+      "arms": {
+        "native": {
+          "correct": 102,
+          "wrong_k1": 0,
+          "non_integer": 0
+        },
+        "local_authentic_attention": {
+          "correct": 95,
+          "wrong_k1": 3,
+          "non_integer": 0
+        },
+        "local_authentic_mlp": {
+          "correct": 84,
+          "wrong_k1": 1,
+          "non_integer": 0
+        },
+        "local_authentic_both": {
+          "correct": 94,
+          "wrong_k1": 0,
+          "non_integer": 0
+        },
+        "local_geometry_attention": {
+          "correct": 99,
+          "wrong_k1": 1,
+          "non_integer": 0
+        },
+        "local_geometry_mlp": {
+          "correct": 81,
+          "wrong_k1": 3,
+          "non_integer": 0
+        },
+        "local_geometry_both": {
+          "correct": 74,
+          "wrong_k1": 4,
+          "non_integer": 3
+        },
+        "full_authentic_attention": {
+          "correct": 95,
+          "wrong_k1": 3,
+          "non_integer": 0
+        },
+        "full_authentic_mlp": {
+          "correct": 83,
+          "wrong_k1": 1,
+          "non_integer": 0
+        },
+        "full_authentic_both": {
+          "correct": 94,
+          "wrong_k1": 0,
+          "non_integer": 0
+        },
+        "full_geometry_attention": {
+          "correct": 99,
+          "wrong_k1": 1,
+          "non_integer": 0
+        },
+        "full_geometry_mlp": {
+          "correct": 79,
+          "wrong_k1": 5,
+          "non_integer": 0
+        },
+        "full_geometry_both": {
+          "correct": 74,
+          "wrong_k1": 4,
+          "non_integer": 3
+        }
+      },
+      "scopes": {
+        "local": {
+          "totals": {
+            "authentic": {
+              "attention_loss": 3,
+              "mlp_loss": 1,
+              "both_loss": 0,
+              "attention_restore": 0,
+              "mlp_restore": 0,
+              "attention_dual": 0,
+              "mlp_dual": 0,
+              "joint_only": 0,
+              "redundancy": 0,
+              "signed_interaction": 17
+            },
+            "geometry": {
+              "attention_loss": 1,
+              "mlp_loss": 3,
+              "both_loss": 4,
+              "attention_restore": 1,
+              "mlp_restore": 4,
+              "attention_dual": 0,
+              "mlp_dual": 3,
+              "joint_only": 0,
+              "redundancy": 1,
+              "signed_interaction": -4
+            }
+          },
+          "paired": {
+            "attention_loss": {
+              "n": 102,
+              "targets": 102,
+              "total": 2,
+              "rate": 0.0196078431372549,
+              "interval": [
+                0.0,
+                0.058823529411764705
+              ]
+            },
+            "mlp_loss": {
+              "n": 102,
+              "targets": 102,
+              "total": -2,
+              "rate": -0.0196078431372549,
+              "interval": [
+                -0.06862745098039216,
+                0.0196078431372549
+              ]
+            },
+            "both_loss": {
+              "n": 102,
+              "targets": 102,
+              "total": -4,
+              "rate": -0.0392156862745098,
+              "interval": [
+                -0.08823529411764706,
+                0.0
+              ]
+            },
+            "attention_restore": {
+              "n": 102,
+              "targets": 102,
+              "total": -1,
+              "rate": -0.00980392156862745,
+              "interval": [
+                -0.0392156862745098,
+                0.0
+              ]
+            },
+            "mlp_restore": {
+              "n": 102,
+              "targets": 102,
+              "total": -4,
+              "rate": -0.0392156862745098,
+              "interval": [
+                -0.08823529411764706,
+                0.0
+              ]
+            },
+            "attention_dual": {
+              "n": 102,
+              "targets": 102,
+              "total": 0,
+              "rate": 0.0,
+              "interval": [
+                0.0,
+                0.0
+              ]
+            },
+            "mlp_dual": {
+              "n": 102,
+              "targets": 102,
+              "total": -3,
+              "rate": -0.029411764705882353,
+              "interval": [
+                -0.06862745098039216,
+                0.0
+              ]
+            },
+            "joint_only": {
+              "n": 102,
+              "targets": 102,
+              "total": 0,
+              "rate": 0.0,
+              "interval": [
+                0.0,
+                0.0
+              ]
+            },
+            "redundancy": {
+              "n": 102,
+              "targets": 102,
+              "total": -1,
+              "rate": -0.00980392156862745,
+              "interval": [
+                -0.0392156862745098,
+                0.0
+              ]
+            },
+            "signed_interaction": {
+              "n": 102,
+              "targets": 102,
+              "total": 21,
+              "rate": 0.20588235294117646,
+              "interval": [
+                0.08823529411764706,
+                0.3333333333333333
+              ]
+            }
+          },
+          "bounds": {
+            "attention_dual": {
+              "n": 102,
+              "events": 0,
+              "upper_97_5": 0.0355193266578841
+            },
+            "mlp_dual": {
+              "n": 102,
+              "events": 0,
+              "upper_97_5": 0.0355193266578841
+            },
+            "joint_only": {
+              "n": 102,
+              "events": 0,
+              "upper_97_5": 0.0355193266578841
+            }
+          },
+          "gates": {
+            "attention_dual": false,
+            "mlp_dual": false,
+            "joint_only": false
+          },
+          "exclude_large": {
+            "attention_dual": true,
+            "mlp_dual": true,
+            "joint_only": true
+          }
+        },
+        "full": {
+          "totals": {
+            "authentic": {
+              "attention_loss": 3,
+              "mlp_loss": 1,
+              "both_loss": 0,
+              "attention_restore": 0,
+              "mlp_restore": 0,
+              "attention_dual": 0,
+              "mlp_dual": 0,
+              "joint_only": 0,
+              "redundancy": 0,
+              "signed_interaction": 18
+            },
+            "geometry": {
+              "attention_loss": 1,
+              "mlp_loss": 5,
+              "both_loss": 4,
+              "attention_restore": 1,
+              "mlp_restore": 4,
+              "attention_dual": 0,
+              "mlp_dual": 3,
+              "joint_only": 0,
+              "redundancy": 1,
+              "signed_interaction": -2
+            }
+          },
+          "paired": {
+            "attention_loss": {
+              "n": 102,
+              "targets": 102,
+              "total": 2,
+              "rate": 0.0196078431372549,
+              "interval": [
+                0.0,
+                0.058823529411764705
+              ]
+            },
+            "mlp_loss": {
+              "n": 102,
+              "targets": 102,
+              "total": -4,
+              "rate": -0.0392156862745098,
+              "interval": [
+                -0.09803921568627451,
+                0.00980392156862745
+              ]
+            },
+            "both_loss": {
+              "n": 102,
+              "targets": 102,
+              "total": -4,
+              "rate": -0.0392156862745098,
+              "interval": [
+                -0.08823529411764706,
+                0.0
+              ]
+            },
+            "attention_restore": {
+              "n": 102,
+              "targets": 102,
+              "total": -1,
+              "rate": -0.00980392156862745,
+              "interval": [
+                -0.0392156862745098,
+                0.0
+              ]
+            },
+            "mlp_restore": {
+              "n": 102,
+              "targets": 102,
+              "total": -4,
+              "rate": -0.0392156862745098,
+              "interval": [
+                -0.08823529411764706,
+                0.0
+              ]
+            },
+            "attention_dual": {
+              "n": 102,
+              "targets": 102,
+              "total": 0,
+              "rate": 0.0,
+              "interval": [
+                0.0,
+                0.0
+              ]
+            },
+            "mlp_dual": {
+              "n": 102,
+              "targets": 102,
+              "total": -3,
+              "rate": -0.029411764705882353,
+              "interval": [
+                -0.06862745098039216,
+                0.0
+              ]
+            },
+            "joint_only": {
+              "n": 102,
+              "targets": 102,
+              "total": 0,
+              "rate": 0.0,
+              "interval": [
+                0.0,
+                0.0
+              ]
+            },
+            "redundancy": {
+              "n": 102,
+              "targets": 102,
+              "total": -1,
+              "rate": -0.00980392156862745,
+              "interval": [
+                -0.0392156862745098,
+                0.0
+              ]
+            },
+            "signed_interaction": {
+              "n": 102,
+              "targets": 102,
+              "total": 20,
+              "rate": 0.19607843137254902,
+              "interval": [
+                0.0784313725490196,
+                0.3137254901960784
+              ]
+            }
+          },
+          "bounds": {
+            "attention_dual": {
+              "n": 102,
+              "events": 0,
+              "upper_97_5": 0.0355193266578841
+            },
+            "mlp_dual": {
+              "n": 102,
+              "events": 0,
+              "upper_97_5": 0.0355193266578841
+            },
+            "joint_only": {
+              "n": 102,
+              "events": 0,
+              "upper_97_5": 0.0355193266578841
+            }
+          },
+          "gates": {
+            "attention_dual": false,
+            "mlp_dual": false,
+            "joint_only": false
+          },
+          "exclude_large": {
+            "attention_dual": true,
+            "mlp_dual": true,
+            "joint_only": true
+          }
+        }
+      }
+    },
+    "paired_natural_repair": {
+      "n": 35,
+      "arms": {
+        "native": {
+          "correct": 35,
+          "wrong_k1": 0,
+          "non_integer": 0
+        },
+        "local_authentic_attention": {
+          "correct": 34,
+          "wrong_k1": 1,
+          "non_integer": 0
+        },
+        "local_authentic_mlp": {
+          "correct": 29,
+          "wrong_k1": 0,
+          "non_integer": 0
+        },
+        "local_authentic_both": {
+          "correct": 33,
+          "wrong_k1": 1,
+          "non_integer": 0
+        },
+        "local_geometry_attention": {
+          "correct": 34,
+          "wrong_k1": 1,
+          "non_integer": 0
+        },
+        "local_geometry_mlp": {
+          "correct": 27,
+          "wrong_k1": 2,
+          "non_integer": 0
+        },
+        "local_geometry_both": {
+          "correct": 22,
+          "wrong_k1": 3,
+          "non_integer": 1
+        },
+        "full_authentic_attention": {
+          "correct": 34,
+          "wrong_k1": 1,
+          "non_integer": 0
+        },
+        "full_authentic_mlp": {
+          "correct": 29,
+          "wrong_k1": 0,
+          "non_integer": 0
+        },
+        "full_authentic_both": {
+          "correct": 33,
+          "wrong_k1": 1,
+          "non_integer": 0
+        },
+        "full_geometry_attention": {
+          "correct": 34,
+          "wrong_k1": 1,
+          "non_integer": 0
+        },
+        "full_geometry_mlp": {
+          "correct": 27,
+          "wrong_k1": 2,
+          "non_integer": 0
+        },
+        "full_geometry_both": {
+          "correct": 22,
+          "wrong_k1": 3,
+          "non_integer": 1
+        }
+      },
+      "scopes": {
+        "local": {
+          "totals": {
+            "authentic": {
+              "attention_loss": 1,
+              "mlp_loss": 0,
+              "both_loss": 1,
+              "attention_restore": 0,
+              "mlp_restore": 0,
+              "attention_dual": 0,
+              "mlp_dual": 0,
+              "joint_only": 1,
+              "redundancy": 0,
+              "signed_interaction": 5
+            },
+            "geometry": {
+              "attention_loss": 1,
+              "mlp_loss": 2,
+              "both_loss": 3,
+              "attention_restore": 2,
+              "mlp_restore": 2,
+              "attention_dual": 1,
+              "mlp_dual": 1,
+              "joint_only": 0,
+              "redundancy": 1,
+              "signed_interaction": -4
+            }
+          },
+          "paired": {
+            "attention_loss": {
+              "n": 35,
+              "targets": 35,
+              "total": 0,
+              "rate": 0.0,
+              "interval": [
+                0.0,
+                0.0
+              ]
+            },
+            "mlp_loss": {
+              "n": 35,
+              "targets": 35,
+              "total": -2,
+              "rate": -0.05714285714285714,
+              "interval": [
+                -0.17142857142857143,
+                0.0
+              ]
+            },
+            "both_loss": {
+              "n": 35,
+              "targets": 35,
+              "total": -2,
+              "rate": -0.05714285714285714,
+              "interval": [
+                -0.14285714285714285,
+                0.0
+              ]
+            },
+            "attention_restore": {
+              "n": 35,
+              "targets": 35,
+              "total": -2,
+              "rate": -0.05714285714285714,
+              "interval": [
+                -0.17142857142857143,
+                0.0
+              ]
+            },
+            "mlp_restore": {
+              "n": 35,
+              "targets": 35,
+              "total": -2,
+              "rate": -0.05714285714285714,
+              "interval": [
+                -0.14285714285714285,
+                0.0
+              ]
+            },
+            "attention_dual": {
+              "n": 35,
+              "targets": 35,
+              "total": -1,
+              "rate": -0.02857142857142857,
+              "interval": [
+                -0.11428571428571428,
+                0.0
+              ]
+            },
+            "mlp_dual": {
+              "n": 35,
+              "targets": 35,
+              "total": -1,
+              "rate": -0.02857142857142857,
+              "interval": [
+                -0.11428571428571428,
+                0.0
+              ]
+            },
+            "joint_only": {
+              "n": 35,
+              "targets": 35,
+              "total": 1,
+              "rate": 0.02857142857142857,
+              "interval": [
+                0.0,
+                0.11428571428571428
+              ]
+            },
+            "redundancy": {
+              "n": 35,
+              "targets": 35,
+              "total": -1,
+              "rate": -0.02857142857142857,
+              "interval": [
+                -0.11428571428571428,
+                0.0
+              ]
+            },
+            "signed_interaction": {
+              "n": 35,
+              "targets": 35,
+              "total": 9,
+              "rate": 0.2571428571428571,
+              "interval": [
+                0.02857142857142857,
+                0.4857142857142857
+              ]
+            }
+          },
+          "bounds": {
+            "attention_dual": {
+              "n": 35,
+              "events": 0,
+              "upper_97_5": 0.10003243557210502
+            },
+            "mlp_dual": {
+              "n": 35,
+              "events": 0,
+              "upper_97_5": 0.10003243557210502
+            },
+            "joint_only": {
+              "n": 35,
+              "events": 1,
+              "upper_97_5": 0.1491720796564317
+            }
+          },
+          "gates": {
+            "attention_dual": false,
+            "mlp_dual": false,
+            "joint_only": false
+          },
+          "exclude_large": {
+            "attention_dual": false,
+            "mlp_dual": false,
+            "joint_only": false
+          }
+        },
+        "full": {
+          "totals": {
+            "authentic": {
+              "attention_loss": 1,
+              "mlp_loss": 0,
+              "both_loss": 1,
+              "attention_restore": 0,
+              "mlp_restore": 0,
+              "attention_dual": 0,
+              "mlp_dual": 0,
+              "joint_only": 1,
+              "redundancy": 0,
+              "signed_interaction": 5
+            },
+            "geometry": {
+              "attention_loss": 1,
+              "mlp_loss": 2,
+              "both_loss": 3,
+              "attention_restore": 1,
+              "mlp_restore": 2,
+              "attention_dual": 0,
+              "mlp_dual": 1,
+              "joint_only": 1,
+              "redundancy": 1,
+              "signed_interaction": -4
+            }
+          },
+          "paired": {
+            "attention_loss": {
+              "n": 35,
+              "targets": 35,
+              "total": 0,
+              "rate": 0.0,
+              "interval": [
+                0.0,
+                0.0
+              ]
+            },
+            "mlp_loss": {
+              "n": 35,
+              "targets": 35,
+              "total": -2,
+              "rate": -0.05714285714285714,
+              "interval": [
+                -0.17142857142857143,
+                0.0
+              ]
+            },
+            "both_loss": {
+              "n": 35,
+              "targets": 35,
+              "total": -2,
+              "rate": -0.05714285714285714,
+              "interval": [
+                -0.14285714285714285,
+                0.0
+              ]
+            },
+            "attention_restore": {
+              "n": 35,
+              "targets": 35,
+              "total": -1,
+              "rate": -0.02857142857142857,
+              "interval": [
+                -0.11428571428571428,
+                0.0
+              ]
+            },
+            "mlp_restore": {
+              "n": 35,
+              "targets": 35,
+              "total": -2,
+              "rate": -0.05714285714285714,
+              "interval": [
+                -0.14285714285714285,
+                0.0
+              ]
+            },
+            "attention_dual": {
+              "n": 35,
+              "targets": 35,
+              "total": 0,
+              "rate": 0.0,
+              "interval": [
+                0.0,
+                0.0
+              ]
+            },
+            "mlp_dual": {
+              "n": 35,
+              "targets": 35,
+              "total": -1,
+              "rate": -0.02857142857142857,
+              "interval": [
+                -0.11428571428571428,
+                0.0
+              ]
+            },
+            "joint_only": {
+              "n": 35,
+              "targets": 35,
+              "total": 0,
+              "rate": 0.0,
+              "interval": [
+                0.0,
+                0.0
+              ]
+            },
+            "redundancy": {
+              "n": 35,
+              "targets": 35,
+              "total": -1,
+              "rate": -0.02857142857142857,
+              "interval": [
+                -0.11428571428571428,
+                0.0
+              ]
+            },
+            "signed_interaction": {
+              "n": 35,
+              "targets": 35,
+              "total": 9,
+              "rate": 0.2571428571428571,
+              "interval": [
+                0.05714285714285714,
+                0.4857142857142857
+              ]
+            }
+          },
+          "bounds": {
+            "attention_dual": {
+              "n": 35,
+              "events": 0,
+              "upper_97_5": 0.10003243557210502
+            },
+            "mlp_dual": {
+              "n": 35,
+              "events": 0,
+              "upper_97_5": 0.10003243557210502
+            },
+            "joint_only": {
+              "n": 35,
+              "events": 0,
+              "upper_97_5": 0.10003243557210502
+            }
+          },
+          "gates": {
+            "attention_dual": false,
+            "mlp_dual": false,
+            "joint_only": false
+          },
+          "exclude_large": {
+            "attention_dual": false,
+            "mlp_dual": false,
+            "joint_only": false
+          }
+        }
+      }
+    },
+    "paired_correct_k1": {
+      "n": 54,
+      "arms": {
+        "native": {
+          "correct": 54,
+          "wrong_k1": 0,
+          "non_integer": 0
+        },
+        "local_authentic_attention": {
+          "correct": 54,
+          "wrong_k1": 0,
+          "non_integer": 0
+        },
+        "local_authentic_mlp": {
+          "correct": 44,
+          "wrong_k1": 0,
+          "non_integer": 0
+        },
+        "local_authentic_both": {
+          "correct": 52,
+          "wrong_k1": 0,
+          "non_integer": 0
+        },
+        "local_geometry_attention": {
+          "correct": 54,
+          "wrong_k1": 0,
+          "non_integer": 0
+        },
+        "local_geometry_mlp": {
+          "correct": 44,
+          "wrong_k1": 0,
+          "non_integer": 0
+        },
+        "local_geometry_both": {
+          "correct": 44,
+          "wrong_k1": 0,
+          "non_integer": 0
+        },
+        "full_authentic_attention": {
+          "correct": 54,
+          "wrong_k1": 0,
+          "non_integer": 0
+        },
+        "full_authentic_mlp": {
+          "correct": 44,
+          "wrong_k1": 0,
+          "non_integer": 0
+        },
+        "full_authentic_both": {
+          "correct": 52,
+          "wrong_k1": 0,
+          "non_integer": 0
+        },
+        "full_geometry_attention": {
+          "correct": 54,
+          "wrong_k1": 0,
+          "non_integer": 0
+        },
+        "full_geometry_mlp": {
+          "correct": 47,
+          "wrong_k1": 0,
+          "non_integer": 0
+        },
+        "full_geometry_both": {
+          "correct": 44,
+          "wrong_k1": 0,
+          "non_integer": 0
+        }
+      },
+      "scopes": {}
+    },
+    "paired_other_k1_error": {
+      "n": 1,
+      "arms": {
+        "native": {
+          "correct": 1,
+          "wrong_k1": 0,
+          "non_integer": 0
+        },
+        "local_authentic_attention": {
+          "correct": 1,
+          "wrong_k1": 0,
+          "non_integer": 0
+        },
+        "local_authentic_mlp": {
+          "correct": 1,
+          "wrong_k1": 0,
+          "non_integer": 0
+        },
+        "local_authentic_both": {
+          "correct": 1,
+          "wrong_k1": 0,
+          "non_integer": 0
+        },
+        "local_geometry_attention": {
+          "correct": 1,
+          "wrong_k1": 0,
+          "non_integer": 0
+        },
+        "local_geometry_mlp": {
+          "correct": 1,
+          "wrong_k1": 0,
+          "non_integer": 0
+        },
+        "local_geometry_both": {
+          "correct": 0,
+          "wrong_k1": 0,
+          "non_integer": 0
+        },
+        "full_authentic_attention": {
+          "correct": 1,
+          "wrong_k1": 0,
+          "non_integer": 0
+        },
+        "full_authentic_mlp": {
+          "correct": 1,
+          "wrong_k1": 0,
+          "non_integer": 0
+        },
+        "full_authentic_both": {
+          "correct": 1,
+          "wrong_k1": 0,
+          "non_integer": 0
+        },
+        "full_geometry_attention": {
+          "correct": 1,
+          "wrong_k1": 0,
+          "non_integer": 0
+        },
+        "full_geometry_mlp": {
+          "correct": 1,
+          "wrong_k1": 0,
+          "non_integer": 0
+        },
+        "full_geometry_both": {
+          "correct": 0,
+          "wrong_k1": 0,
+          "non_integer": 0
+        }
+      },
+      "scopes": {}
+    }
+  },
+  "gates": {
+    "local": {
+      "attention_dual": false,
+      "mlp_dual": false,
+      "joint_only": false
+    },
+    "full": {
+      "attention_dual": false,
+      "mlp_dual": false,
+      "joint_only": false
+    }
+  },
+  "exclude_large": {
+    "local": {
+      "attention_dual": true,
+      "mlp_dual": true,
+      "joint_only": true
+    },
+    "full": {
+      "attention_dual": true,
+      "mlp_dual": true,
+      "joint_only": true
+    }
+  },
+  "close_late_suffix": true,
+  "diagnostic": {
+    "n": 24,
+    "max_abs": 3.5762786865234375e-06
+  }
+}
