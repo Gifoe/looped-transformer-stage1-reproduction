@@ -1,0 +1,9 @@
+fixed25 {'acc': [111, 159, 169, 160], 'acc_norm': [118, 183, 191, 183]} generation 0.8071 1.0 seconds 45.3
+fixed35 {'acc': [109, 158, 181, 167], 'acc_norm': [120, 185, 203, 196]} generation 0.7993 1.0 seconds 44.59
+fixed45 {'acc': [114, 159, 182, 177], 'acc_norm': [118, 183, 204, 199]} generation 0.7715 0.9588 seconds 44.5
+hard_t1 {'acc': [113, 163, 178, 177], 'acc_norm': [117, 190, 206, 198]} generation 0.7993 0.9989 seconds 69.18
+smooth_t1 {'acc': [113, 162, 175, 175], 'acc_norm': [118, 192, 208, 201]} generation 0.7971 0.9989 seconds 70.21
+smooth_t2 {'acc': [113, 159, 178, 175], 'acc_norm': [118, 193, 211, 201]} generation 0.8004 1.0 seconds 90.64
+rank1_t1 {'acc': [114, 165, 180, 183], 'acc_norm': [119, 202, 203, 204]} generation 0.7949 0.9877 seconds 69.35
+rank1_t2 {'acc': [115, 157, 175, 167], 'acc_norm': [115, 190, 196, 193]} generation 0.8105 1.0 seconds 95.09
+FROZEN rank1_t1 {'fixed': 'fixed35', 'adaptive': 'smooth_t2', 'rank1': 'rank1_t1'} eligible True
