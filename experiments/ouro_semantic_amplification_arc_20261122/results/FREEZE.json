@@ -1,0 +1,105 @@
+{
+  "chosen": {
+    "magnitude": {
+      "file": "magnitude_round2.pt",
+      "dose": 1.0,
+      "round": 2,
+      "selected_epoch": 2,
+      "metrics": {
+        "acc": {
+          "k1": 97,
+          "k2": 125,
+          "k3": 134,
+          "k4": 133
+        },
+        "acc_norm": {
+          "k1": 111,
+          "k2": 138,
+          "k3": 148,
+          "k4": 153
+        }
+      }
+    },
+    "direction": {
+      "file": "direction_round1.pt",
+      "dose": 1.0,
+      "round": 1,
+      "selected_epoch": 3,
+      "metrics": {
+        "acc": {
+          "k1": 91,
+          "k2": 129,
+          "k3": 142,
+          "k4": 137
+        },
+        "acc_norm": {
+          "k1": 117,
+          "k2": 148,
+          "k3": 163,
+          "k4": 163
+        }
+      }
+    },
+    "completion": {
+      "file": "completion_round1.pt",
+      "dose": 1.0,
+      "round": 1,
+      "selected_epoch": 3,
+      "metrics": {
+        "acc": {
+          "k1": 86,
+          "k2": 122,
+          "k3": 141,
+          "k4": 136
+        },
+        "acc_norm": {
+          "k1": 116,
+          "k2": 146,
+          "k3": 173,
+          "k4": 174
+        }
+      }
+    },
+    "shuffled": {
+      "file": "shuffled_round1.pt",
+      "dose": 1.0,
+      "round": 1,
+      "selected_epoch": 3,
+      "metrics": {
+        "acc": {
+          "k1": 84,
+          "k2": 126,
+          "k3": 146,
+          "k4": 136
+        },
+        "acc_norm": {
+          "k1": 119,
+          "k2": 151,
+          "k3": 175,
+          "k4": 176
+        }
+      }
+    }
+  },
+  "hashes": {
+    "magnitude_round2.pt": "31a788c05e0b2264466dde15672db6a4c1e8673a86d48a20ce37ea3de7a3950b",
+    "direction_round1.pt": "93529292b203b3904dd6ff3c73d5331cae0ca28a553361af366dec753526b3b6",
+    "completion_round1.pt": "274cf7bbd2ce0725cfd527bb63e3c2508f3a009abeb0a1b12a47e5b425aaa868",
+    "shuffled_round1.pt": "10ddba519fc56d47bd5a27724a37d5a4861113cbc97db8e30c586c6978620084",
+    "arc_features.py": "6278714c379cd129be7cbd9178fa50ad1c0b28175b8f52097fbca4fd54626752",
+    "amplify.py": "dfa1fc4613d6f68df7cbdae973b700662f4636c96f9fef9677438f76550b6646",
+    "evaluate.py": "79777aa7551ab5c6b30c507289c1b40ce69826ff25edc62f30a4c1131e21bb7a"
+  },
+  "loopcd_validation": {
+    "k2": "loopcd_hidden_k2",
+    "k3": "loopcd_fixed_k3",
+    "k4": "loopcd_fixed_k4"
+  },
+  "criterion": "max total validation acc_norm over K1–K4, then min gain, then total acc",
+  "matched_parameters": {
+    "magnitude": 100369,
+    "direction": 116753,
+    "completion": 116753,
+    "shuffled": 116753
+  }
+}
