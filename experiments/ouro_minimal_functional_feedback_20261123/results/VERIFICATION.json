@@ -1,0 +1,87 @@
+{
+  "counts": {
+    "ARC": 1172,
+    "OPENBOOKQA": 500
+  },
+  "generation_records": 19176,
+  "gpu_seconds": 2874,
+  "gpu_stages": [
+    {
+      "phase": "screen",
+      "elapsed_seconds": 12,
+      "exit_code": 1,
+      "budget_before_seconds": 18000
+    },
+    {
+      "phase": "screen",
+      "elapsed_seconds": 486,
+      "exit_code": 0,
+      "budget_before_seconds": 17988
+    },
+    {
+      "phase": "gradient_arc",
+      "elapsed_seconds": 94,
+      "exit_code": 0,
+      "budget_before_seconds": 17502
+    },
+    {
+      "phase": "refine",
+      "elapsed_seconds": 339,
+      "exit_code": 0,
+      "budget_before_seconds": 17408
+    },
+    {
+      "phase": "benchmark",
+      "elapsed_seconds": 2,
+      "exit_code": 2,
+      "budget_before_seconds": 17069
+    },
+    {
+      "phase": "benchmark",
+      "elapsed_seconds": 1030,
+      "exit_code": 0,
+      "budget_before_seconds": 17067
+    },
+    {
+      "phase": "generation",
+      "elapsed_seconds": 438,
+      "exit_code": 0,
+      "budget_before_seconds": 16037
+    },
+    {
+      "phase": "gradient_external",
+      "elapsed_seconds": 35,
+      "exit_code": 0,
+      "budget_before_seconds": 15599
+    },
+    {
+      "phase": "subspace_intervene",
+      "elapsed_seconds": 76,
+      "exit_code": 0,
+      "budget_before_seconds": 15564
+    },
+    {
+      "phase": "causal",
+      "elapsed_seconds": 220,
+      "exit_code": 0,
+      "budget_before_seconds": 15488
+    },
+    {
+      "phase": "subspace_random_init",
+      "elapsed_seconds": 97,
+      "exit_code": 0,
+      "budget_before_seconds": 15268
+    },
+    {
+      "phase": "collapse_validation",
+      "elapsed_seconds": 45,
+      "exit_code": 0,
+      "budget_before_seconds": 15171
+    }
+  ],
+  "hashes": {
+    "RESULTS_ARC.jsonl": "74c67e1d6859c91c10a2c4c303bbbf3758602898df6ba38e757923fdac091f8d",
+    "RESULTS_OPENBOOKQA.jsonl": "bd043f5e8102a76d2d8c5adf2d5a402d6741f0f82e279661c7316a4a8d3d7495",
+    "GENERATION_RESULTS.jsonl": "e8809f95cc05a254f62c1c4070920d263b14b755a8f4ddca3f8f9cd72b2fd808"
+  }
+}

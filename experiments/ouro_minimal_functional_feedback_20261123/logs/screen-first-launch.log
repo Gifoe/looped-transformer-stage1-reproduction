@@ -1,0 +1,15 @@
+Traceback (most recent call last):
+  File "/root/ouro-minimal-functional-feedback-20261123/train.py", line 212, in <module>
+    run(p.parse_args())
+  File "/root/ouro-minimal-functional-feedback-20261123/train.py", line 194, in run
+    trial(name,*cfg)
+  File "/root/ouro-minimal-functional-feedback-20261123/train.py", line 179, in trial
+    net,details=fit(old,model,partition,metadata,labels,kind,rank,objective,basis,fixed)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/autodl-tmp/ouro-cross-task-20261118/venv/lib/python3.12/site-packages/torch/utils/_contextlib.py", line 116, in decorate_context
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/root/ouro-minimal-functional-feedback-20261123/train.py", line 96, in fit
+    g=nn.utils.clip_grad_norm_(trainable,1.)
+      ^^
+NameError: name 'nn' is not defined. Did you mean: 'np'?

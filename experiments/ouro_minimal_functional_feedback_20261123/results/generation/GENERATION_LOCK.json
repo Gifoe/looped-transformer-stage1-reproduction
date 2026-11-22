@@ -1,0 +1,174 @@
+{
+  "datasets": {
+    "arc_validation": {
+      "n": 299,
+      "sha256": "a0796ca9c64d4633b595dae2b350485de9cc4f45c4adf9b59b371268f945984d"
+    },
+    "openbookqa_test": {
+      "n": 500,
+      "sha256": "a548cedc44b49bd42085d643a0a8df341c628a12134c5b23ec64f34bbfcfa980",
+      "archived_data_receipt": {
+        "dataset": "allenai/openbookqa",
+        "split": "main/test",
+        "revision": "388097ea7776314e93a529163e0fea805b8a6454",
+        "n": 500,
+        "raw_sha256": "cd5483e366daa230c1c87bbdc512d8b7229f14f6dd04d19fc8b1a3855aaaa8a3",
+        "canonical_sha256": "a548cedc44b49bd42085d643a0a8df341c628a12134c5b23ec64f34bbfcfa980",
+        "columns": [
+          "question",
+          "id",
+          "choices",
+          "answerKey"
+        ]
+      }
+    }
+  },
+  "original_freeze_sha256": "297f5f7c6bacb656f2b56ca5b3413d27ab4fc44e57fd015ff14d2b152f2a696a",
+  "original_freeze": {
+    "checkpoint": "/root/ouro-functional-readout-feedback-20261122/results/feedback/feedback_fit.pt",
+    "checkpoint_sha256": "18fbabe98e898ab6766b796353e754c18abc1223df9421e65c05a5f44d067ef7",
+    "validation_sha256": "a0796ca9c64d4633b595dae2b350485de9cc4f45c4adf9b59b371268f945984d",
+    "chosen": "trained_1",
+    "dose": 1.0,
+    "criterion": "sum of acc and acc_norm counts across K1–K4, ties by acc_norm",
+    "code_sha256": "6da4685c48a564a919deb1c11dc2c91c84a4b92c1fa6a58ba218fab9c8900f9e",
+    "trials": {
+      "initial_0.5": {
+        "k1": {
+          "acc": 97,
+          "acc_norm": 110
+        },
+        "k2": {
+          "acc": 121,
+          "acc_norm": 135
+        },
+        "k3": {
+          "acc": 137,
+          "acc_norm": 148
+        },
+        "k4": {
+          "acc": 135,
+          "acc_norm": 155
+        }
+      },
+      "initial_1": {
+        "k1": {
+          "acc": 98,
+          "acc_norm": 112
+        },
+        "k2": {
+          "acc": 109,
+          "acc_norm": 121
+        },
+        "k3": {
+          "acc": 136,
+          "acc_norm": 142
+        },
+        "k4": {
+          "acc": 134,
+          "acc_norm": 152
+        }
+      },
+      "trained_0.5": {
+        "k1": {
+          "acc": 96,
+          "acc_norm": 114
+        },
+        "k2": {
+          "acc": 145,
+          "acc_norm": 164
+        },
+        "k3": {
+          "acc": 143,
+          "acc_norm": 159
+        },
+        "k4": {
+          "acc": 141,
+          "acc_norm": 159
+        }
+      },
+      "trained_1": {
+        "k1": {
+          "acc": 112,
+          "acc_norm": 116
+        },
+        "k2": {
+          "acc": 147,
+          "acc_norm": 170
+        },
+        "k3": {
+          "acc": 153,
+          "acc_norm": 175
+        },
+        "k4": {
+          "acc": 149,
+          "acc_norm": 175
+        }
+      }
+    },
+    "readout": {
+      "checkpoint": "/root/ouro-functional-readout-feedback-20261122/results/dual_0.75.pt",
+      "checkpoint_sha256": "1c0ffcc770a064f1ea2b9c0e780de53ce9a3d2358b0405a3d828e2506f1657a9",
+      "dose": 1.0
+    }
+  },
+  "checkpoints": {
+    "linear8_t1": {
+      "checkpoint": "/root/ouro-minimal-functional-feedback-20261123/results/linear8_t1.pt",
+      "sha256": "513a964b07f6a70d79fdbf2a36effa85fc757194cb89fc84993a2323da2abeb8",
+      "dose": 1.0,
+      "parameters": 32768
+    },
+    "linear8_t2": {
+      "checkpoint": "/root/ouro-minimal-functional-feedback-20261123/results/linear8_t2.pt",
+      "sha256": "b7c89500040f48abdfa393d2bd2a30390eee91bc55cd2724dd2f70dd73ccf8cd",
+      "dose": 1.0,
+      "parameters": 32768
+    },
+    "linear8_t2kl": {
+      "checkpoint": "/root/ouro-minimal-functional-feedback-20261123/results/linear8_t2kl.pt",
+      "sha256": "e0518e9bc289d057e57ef237cf1ddd01676ede281d123ef31400dd352da28d21",
+      "dose": 1.0,
+      "parameters": 32768
+    }
+  },
+  "code_sha256": "4d3fab338ea2ef3bdb90adce3a1b5a9c64b188eb5a6bc98d3ebb622e396ee034",
+  "minimal_source_sha256": "408e932cfd27dc010162d3e46fc6dc95d8b36704563440879b9f93b021353940",
+  "model": "/root/autodl-tmp/ouro-cross-task-20261118/model",
+  "runtime": {
+    "model_revision": "574fa66cb8bf5abdc979642d01cf2b79b16bfab1",
+    "model_sha256": "58872a72616c736595b8b7662079c5b12c5a162ec16eae94f21c348dfa9885af",
+    "torch": "2.7.1+cu128",
+    "transformers": "4.55.4",
+    "torch_cuda": "12.8",
+    "gpu": "NVIDIA GeForce RTX 4090 D",
+    "cuda_capability": [
+      8,
+      9
+    ],
+    "capacity_bytes": 25250627584,
+    "dtype": "bfloat16",
+    "attention": "sdpa",
+    "use_cache": false,
+    "files_sha256": {
+      "config.json": "ce9cc13da41591b8b4deca053d7dfee06424c0228628ee862ea86d725bc163f3",
+      "configuration_ouro.py": "950443e32929047aa08d02abad2e1888bc1914b3db988d3d675f70787f65dafb",
+      "merges.txt": "0b54e8aa4e53d5383e2e4bc635a56b43f9647f7b13832d5d9ecd8f82dac4f510",
+      "model.safetensors": "58872a72616c736595b8b7662079c5b12c5a162ec16eae94f21c348dfa9885af",
+      "modeling_ouro.py": "c5c68fbb368ce2909c257ae2afc50719be8c91539333d3295e19312c4316f413",
+      "special_tokens_map.json": "55087bb8409060d9cb0f80495e34f4e0d8a84f68a799a6b0cab3132be0aae319",
+      "tokenizer.json": "fcb808fe5e7642f5299be28aea07fc7f6d4f4364c3ac5e408e15a772cbc8fa8d",
+      "tokenizer_config.json": "7e010da95d71b0fa1aa809552922c74cc1dd98d628f21ba39ca6c35aa18d5d91",
+      "vocab.json": "7b9de3f47796abf8d00ab96be299fea0dc9afdf1827f34e7e0b9fb44593efe5c"
+    }
+  },
+  "batch_size": 16,
+  "max_new": 6,
+  "native_model_parameters": 1434652673,
+  "legacy_module_parameters": {
+    "original_feedback": 116753,
+    "original_joint": 233506
+  },
+  "scope": "Canonical option-letter prompt. Unrestricted vocabulary greedy decoding, no cache, compact live batch.",
+  "gpu": "NVIDIA GeForce RTX 4090 D"
+}

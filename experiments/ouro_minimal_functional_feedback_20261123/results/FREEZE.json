@@ -1,0 +1,249 @@
+{
+  "arms": {
+    "linear8_t1": {
+      "file": "linear8_t1.pt",
+      "sha256": "513a964b07f6a70d79fdbf2a36effa85fc757194cb89fc84993a2323da2abeb8",
+      "dose": 1.0,
+      "params": 32768,
+      "validation": {
+        "acc": [
+          116,
+          164,
+          176,
+          179
+        ],
+        "acc_norm": [
+          117,
+          193,
+          206,
+          201
+        ]
+      }
+    },
+    "nonlinear8_t1": {
+      "file": "nonlinear8_t1.pt",
+      "sha256": "811c18843a96e8dd0f513a0bee37e43b8410db9aa38eb6ccd80140d1e6417345",
+      "dose": 1.0,
+      "params": 32768,
+      "validation": {
+        "acc": [
+          114,
+          163,
+          177,
+          177
+        ],
+        "acc_norm": [
+          113,
+          190,
+          208,
+          199
+        ]
+      }
+    },
+    "history8_t1": {
+      "file": "history8_t1.pt",
+      "sha256": "8896126d1877c565b62c3a1bd0e84426f48f84b7d45db791122fe2b3bfc04a6e",
+      "dose": 1.0,
+      "params": 49152,
+      "validation": {
+        "acc": [
+          112,
+          166,
+          175,
+          175
+        ],
+        "acc_norm": [
+          114,
+          194,
+          202,
+          197
+        ]
+      }
+    },
+    "distill8_t1": {
+      "file": "distill8_t1.pt",
+      "sha256": "0355083b22ae9919fc795e00cfc30a7f7531b5f21eb10b41da4a5847775f9420",
+      "dose": 1.0,
+      "params": 32768,
+      "validation": {
+        "acc": [
+          89,
+          128,
+          132,
+          133
+        ],
+        "acc_norm": [
+          103,
+          140,
+          142,
+          153
+        ]
+      }
+    },
+    "adapter8_t1": {
+      "file": "adapter8_t1.pt",
+      "sha256": "7625da4f2e06f02adbc3b895556e4e9b7da76801120c38520c7340e945489839",
+      "dose": 1.0,
+      "params": 32768,
+      "validation": {
+        "acc": [
+          112,
+          159,
+          162,
+          161
+        ],
+        "acc_norm": [
+          118,
+          177,
+          187,
+          188
+        ]
+      }
+    },
+    "constant_t1": {
+      "file": "constant_t1.pt",
+      "sha256": "03324d8225e5c242a1c4813c9622a8dcacfe9d7137bbb25852e6c3d3bff71854",
+      "dose": 1.0,
+      "params": 2048,
+      "validation": {
+        "acc": [
+          96,
+          136,
+          141,
+          132
+        ],
+        "acc_norm": [
+          111,
+          150,
+          153,
+          154
+        ]
+      }
+    },
+    "linear8_t2": {
+      "file": "linear8_t2.pt",
+      "sha256": "b7c89500040f48abdfa393d2bd2a30390eee91bc55cd2724dd2f70dd73ccf8cd",
+      "dose": 1.0,
+      "params": 32768,
+      "validation": {
+        "acc": [
+          110,
+          161,
+          168,
+          165
+        ],
+        "acc_norm": [
+          118,
+          177,
+          190,
+          191
+        ]
+      }
+    },
+    "nonlinear8_t2": {
+      "file": "nonlinear8_t2.pt",
+      "sha256": "23917aeb72fba213f28c57258ab569874b9623d686e0531677fdf6962c7dc203",
+      "dose": 1.0,
+      "params": 32768,
+      "validation": {
+        "acc": [
+          110,
+          149,
+          164,
+          161
+        ],
+        "acc_norm": [
+          115,
+          176,
+          188,
+          186
+        ]
+      }
+    },
+    "subspace_fixed_t1": {
+      "file": "subspace_fixed_t1.pt",
+      "sha256": "acbfba09513e48d7af76a0fd40dc8614e01f5b3699bde19865a969fd60a91dfa",
+      "dose": 1.0,
+      "params": 32768,
+      "validation": {
+        "acc": [
+          102,
+          141,
+          154,
+          154
+        ],
+        "acc_norm": [
+          111,
+          169,
+          169,
+          174
+        ]
+      }
+    },
+    "subspace_joint_t1": {
+      "file": "subspace_joint_t1.pt",
+      "sha256": "fb63cc0c27ce90f83f69d2f7518580fbef767245ef06d5cd1bb5a1432b59044e",
+      "dose": 1.0,
+      "params": 32768,
+      "validation": {
+        "acc": [
+          112,
+          172,
+          175,
+          175
+        ],
+        "acc_norm": [
+          113,
+          195,
+          208,
+          196
+        ]
+      }
+    },
+    "linear8_t2kl": {
+      "file": "linear8_t2kl.pt",
+      "sha256": "e0518e9bc289d057e57ef237cf1ddd01676ede281d123ef31400dd352da28d21",
+      "dose": 1.0,
+      "params": 32768,
+      "validation": {
+        "acc": [
+          106,
+          159,
+          169,
+          171
+        ],
+        "acc_norm": [
+          115,
+          178,
+          190,
+          188
+        ]
+      }
+    }
+  },
+  "best": "linear8_t1",
+  "generation": "linear8_t2",
+  "seed": 261123137,
+  "selection": "max equal-weight validation correct counts across two candidate metrics and K1–K4, with <=32768 stored parameters for main selection",
+  "source": {
+    "train.py": "ab07abf91c2d75026952df8f25b6e154e7cce82b091b27bfbbf415a079e35d60",
+    "minimal.py": "408e932cfd27dc010162d3e46fc6dc95d8b36704563440879b9f93b021353940"
+  },
+  "subspace_initialization_attempted": true,
+  "generation_arms": [
+    "linear8_t1",
+    "linear8_t2",
+    "linear8_t2kl"
+  ],
+  "kl_pair": [
+    "linear8_t2",
+    "linear8_t2kl"
+  ],
+  "sufficiency": {
+    "retention": 0.8,
+    "parameter_reduction": 0.7,
+    "generation_noninferiority_pp": 5.0,
+    "definitions": "Pooled signed gains over Native (K2–K4, two metrics) at least 80% separately on ARC and OpenBookQA. Level A requires all six K2–K4 cells on both datasets at or above historical Feedback-only, <=32768 parameters, plus generation maintenance. Level B requires >=70% compression, retention on both, a positive gain over prior at a depth/metric, and no more than five pp pooled degradation in validity or accuracy K2–K4 on either generation set.",
+    "second_stage": "A or B for a single validation-selected method. Zero-shot and paper few-shot comparisons remain independent."
+  }
+}

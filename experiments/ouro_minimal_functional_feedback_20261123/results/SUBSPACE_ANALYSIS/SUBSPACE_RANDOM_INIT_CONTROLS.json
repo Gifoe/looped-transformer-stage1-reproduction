@@ -1,0 +1,232 @@
+{
+  "comparisons": {
+    "subspace_random_joint_t1": {
+      "fit": {
+        "objective": "t1",
+        "n": 1119,
+        "steps": 280,
+        "loss": 1.6267046928405762,
+        "mean_gradient": 6.336176872253418,
+        "network_calls": 280,
+        "executed_loop_calls": 700,
+        "trainable_parameters": 32768,
+        "total_parameters": 32768,
+        "seconds": 26.10122102126479,
+        "peak_bytes": 7860035072
+      },
+      "validation_cost": {
+        "k1": {
+          "seconds": 1.934984840452671,
+          "median_batch_ms": 23.828353732824326,
+          "p95_batch_ms": 36.260349676012986,
+          "peak_bytes": 2956803072,
+          "backbone_calls": 75,
+          "lm_head_calls": 75,
+          "loops": 1,
+          "padded_token_loops": 43700,
+          "candidates": 1194,
+          "batch_size": 16
+        },
+        "k2": {
+          "seconds": 3.4093834720551968,
+          "median_batch_ms": 41.34942218661308,
+          "p95_batch_ms": 65.1951991021633,
+          "peak_bytes": 2962442240,
+          "backbone_calls": 75,
+          "lm_head_calls": 75,
+          "loops": 2,
+          "padded_token_loops": 87400,
+          "candidates": 1194,
+          "batch_size": 16
+        },
+        "k3": {
+          "seconds": 4.940767955034971,
+          "median_batch_ms": 60.46852096915245,
+          "p95_batch_ms": 95.30725590884684,
+          "peak_bytes": 2968081408,
+          "backbone_calls": 75,
+          "lm_head_calls": 75,
+          "loops": 3,
+          "padded_token_loops": 131100,
+          "candidates": 1194,
+          "batch_size": 16
+        },
+        "k4": {
+          "seconds": 6.4803955145180225,
+          "median_batch_ms": 78.54529097676277,
+          "p95_batch_ms": 125.2763096243143,
+          "peak_bytes": 2973720576,
+          "backbone_calls": 75,
+          "lm_head_calls": 75,
+          "loops": 4,
+          "padded_token_loops": 174800,
+          "candidates": 1194,
+          "batch_size": 16
+        }
+      },
+      "checkpoint": "subspace_random_joint_t1.pt",
+      "checkpoint_sha256": "e5f6790f085b6a74b5148e04c42ab8b4adb8bdcbc29daefc4bc09f7ddcc8499b",
+      "scores_sha256": "1c6ad990946c8f6296426d923d30cd0f5a64393fb876009dc520ab8dfd2bf2f3",
+      "random_control": {
+        "acc": [
+          110,
+          161,
+          171,
+          176
+        ],
+        "acc_norm": [
+          117,
+          185,
+          201,
+          195
+        ]
+      },
+      "gradient_initialized": {
+        "acc": [
+          112,
+          172,
+          175,
+          175
+        ],
+        "acc_norm": [
+          113,
+          195,
+          208,
+          196
+        ]
+      },
+      "dose": 1.0
+    },
+    "subspace_random_fixed_t1": {
+      "fit": {
+        "objective": "t1",
+        "n": 1119,
+        "steps": 280,
+        "loss": 2.122727394104004,
+        "mean_gradient": 1.762279987335205,
+        "network_calls": 280,
+        "executed_loop_calls": 700,
+        "trainable_parameters": 16384,
+        "total_parameters": 32768,
+        "seconds": 25.455024018883705,
+        "peak_bytes": 7860448768
+      },
+      "validation_cost": {
+        "k1": {
+          "seconds": 1.899850070476532,
+          "median_batch_ms": 23.577716201543808,
+          "p95_batch_ms": 35.134945064783096,
+          "peak_bytes": 2956737536,
+          "backbone_calls": 75,
+          "lm_head_calls": 75,
+          "loops": 1,
+          "padded_token_loops": 43700,
+          "candidates": 1194,
+          "batch_size": 16
+        },
+        "k2": {
+          "seconds": 3.3957338221371174,
+          "median_batch_ms": 40.91869294643402,
+          "p95_batch_ms": 65.34847430884837,
+          "peak_bytes": 2962376704,
+          "backbone_calls": 75,
+          "lm_head_calls": 75,
+          "loops": 2,
+          "padded_token_loops": 87400,
+          "candidates": 1194,
+          "batch_size": 16
+        },
+        "k3": {
+          "seconds": 4.9150052331388,
+          "median_batch_ms": 59.0939000248909,
+          "p95_batch_ms": 95.33195681869982,
+          "peak_bytes": 2968015872,
+          "backbone_calls": 75,
+          "lm_head_calls": 75,
+          "loops": 3,
+          "padded_token_loops": 131100,
+          "candidates": 1194,
+          "batch_size": 16
+        },
+        "k4": {
+          "seconds": 6.409035611897707,
+          "median_batch_ms": 76.67110115289688,
+          "p95_batch_ms": 125.43977871537207,
+          "peak_bytes": 2973655040,
+          "backbone_calls": 75,
+          "lm_head_calls": 75,
+          "loops": 4,
+          "padded_token_loops": 174800,
+          "candidates": 1194,
+          "batch_size": 16
+        }
+      },
+      "checkpoint": "subspace_random_fixed_t1.pt",
+      "checkpoint_sha256": "c34f094da2b7579baa1d5d48f973a2b77aba5984f0b964d3130839a7adc81d6e",
+      "scores_sha256": "39cbb7e3a3ed1762e2ee131e03ec78e48e30cd721ef1418b712975ca83af71f5",
+      "random_control": {
+        "acc": [
+          99,
+          120,
+          140,
+          133
+        ],
+        "acc_norm": [
+          107,
+          139,
+          149,
+          153
+        ]
+      },
+      "gradient_initialized": {
+        "acc": [
+          102,
+          141,
+          154,
+          154
+        ],
+        "acc_norm": [
+          111,
+          169,
+          169,
+          174
+        ]
+      },
+      "dose": 1.0
+    }
+  },
+  "frozen_runtime": {
+    "model_revision": "574fa66cb8bf5abdc979642d01cf2b79b16bfab1",
+    "model_sha256": "58872a72616c736595b8b7662079c5b12c5a162ec16eae94f21c348dfa9885af",
+    "torch": "2.7.1+cu128",
+    "transformers": "4.55.4",
+    "torch_cuda": "12.8",
+    "gpu": "NVIDIA GeForce RTX 4090 D",
+    "cuda_capability": [
+      8,
+      9
+    ],
+    "capacity_bytes": 25250627584,
+    "dtype": "bfloat16",
+    "attention": "sdpa",
+    "use_cache": false,
+    "files_sha256": {
+      "config.json": "ce9cc13da41591b8b4deca053d7dfee06424c0228628ee862ea86d725bc163f3",
+      "configuration_ouro.py": "950443e32929047aa08d02abad2e1888bc1914b3db988d3d675f70787f65dafb",
+      "merges.txt": "0b54e8aa4e53d5383e2e4bc635a56b43f9647f7b13832d5d9ecd8f82dac4f510",
+      "model.safetensors": "58872a72616c736595b8b7662079c5b12c5a162ec16eae94f21c348dfa9885af",
+      "modeling_ouro.py": "c5c68fbb368ce2909c257ae2afc50719be8c91539333d3295e19312c4316f413",
+      "special_tokens_map.json": "55087bb8409060d9cb0f80495e34f4e0d8a84f68a799a6b0cab3132be0aae319",
+      "tokenizer.json": "fcb808fe5e7642f5299be28aea07fc7f6d4f4364c3ac5e408e15a772cbc8fa8d",
+      "tokenizer_config.json": "7e010da95d71b0fa1aa809552922c74cc1dd98d628f21ba39ca6c35aa18d5d91",
+      "vocab.json": "7b9de3f47796abf8d00ab96be299fea0dc9afdf1827f34e7e0b9fb44593efe5c"
+    }
+  },
+  "seed": 261123149,
+  "rank": 8,
+  "train_sha256": "0f84cb4e393a729371c3dfd334fce14215a99dcff8095bf31271787f1e305f20",
+  "validation_sha256": "a0796ca9c64d4633b595dae2b350485de9cc4f45c4adf9b59b371268f945984d",
+  "gradient_basis_sha256": "a39a17edc73206029c5e68e6906f8a5a06c15dabffd4eda24529f968de75ff0a",
+  "source_sha256": "d33f918d67a2e1f44218ab4a7dcf17161d9ab6b4c747ce1b200758409bbfb8f3",
+  "initialization": "A seeded Gaussian orthonormal basis replaces the ARC gradient basis. Encoder scaling, training schedule, data, doses and architectures match the paired fits."
+}
