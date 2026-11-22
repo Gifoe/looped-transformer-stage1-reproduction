@@ -1,0 +1,366 @@
+{
+  "arc_challenge": {
+    "n": 1172,
+    "sha256": "d9154be41ee58f88086d5064171cc63f771d7695f9665fd671d32da7fdcbe9a1",
+    "fewshot": 25,
+    "measurements": {
+      "acc": {
+        "correct": {
+          "native_k1": 430,
+          "native_k4": 661,
+          "loopcd_fixed_k4": 674,
+          "loopcd_adaptive_k4": 678,
+          "minimal_k4": 784
+        },
+        "paired": {
+          "native_k4": {
+            "rescued": 150,
+            "damaged": 27,
+            "delta_pp": 10.494880546075086,
+            "ci95_pp": [
+              8.361774744027304,
+              12.627986348122867
+            ],
+            "mcnemar": 7.144231342234898e-22,
+            "p_holm": 4.286538805340939e-21
+          },
+          "loopcd_fixed_k4": {
+            "rescued": 139,
+            "damaged": 29,
+            "delta_pp": 9.38566552901024,
+            "ci95_pp": [
+              7.337883959044369,
+              11.518771331058021
+            ],
+            "mcnemar": 1.9977151743436112e-18,
+            "p_holm": 1.398400622040528e-17
+          },
+          "loopcd_adaptive_k4": {
+            "rescued": 140,
+            "damaged": 34,
+            "delta_pp": 9.044368600682594,
+            "ci95_pp": [
+              6.996587030716723,
+              11.177474402730375
+            ],
+            "mcnemar": 1.7731215882567742e-16,
+            "p_holm": 1.0638729529540645e-15
+          }
+        }
+      },
+      "acc_norm": {
+        "correct": {
+          "native_k1": 452,
+          "native_k4": 705,
+          "loopcd_fixed_k4": 726,
+          "loopcd_adaptive_k4": 724,
+          "minimal_k4": 831
+        },
+        "paired": {
+          "native_k4": {
+            "rescued": 151,
+            "damaged": 25,
+            "delta_pp": 10.750853242320819,
+            "ci95_pp": [
+              8.700938566552903,
+              12.8839590443686
+            ],
+            "mcnemar": 3.6894976911489e-23,
+            "p_holm": 2.58264838380423e-22
+          },
+          "loopcd_fixed_k4": {
+            "rescued": 133,
+            "damaged": 28,
+            "delta_pp": 8.959044368600683,
+            "ci95_pp": [
+              6.911262798634812,
+              11.006825938566553
+            ],
+            "mcnemar": 1.4437558217713244e-17,
+            "p_holm": 8.662534930627946e-17
+          },
+          "loopcd_adaptive_k4": {
+            "rescued": 135,
+            "damaged": 28,
+            "delta_pp": 9.129692832764505,
+            "ci95_pp": [
+              7.081911262798635,
+              11.177474402730375
+            ],
+            "mcnemar": 5.248825264114538e-18,
+            "p_holm": 3.6741776848801764e-17
+          }
+        }
+      }
+    },
+    "cost": {
+      "elapsed_shards_seconds": 583.3589113205671,
+      "dense_loop_tokens": 20352530,
+      "peak_allocated_bytes": 3172150784,
+      "batches": 1139,
+      "oom_retries": 0
+    }
+  },
+  "arc_easy": {
+    "n": 2376,
+    "sha256": "d15e8505c51300abe332612de60434c22b66f79c2652a5a0b03f4c1e1841b933",
+    "fewshot": 8,
+    "measurements": {
+      "acc": {
+        "correct": {
+          "native_k1": 1527,
+          "native_k4": 1990,
+          "loopcd_fixed_k4": 2010,
+          "loopcd_adaptive_k4": 2009,
+          "minimal_k4": 2076
+        },
+        "paired": {
+          "native_k4": {
+            "rescued": 131,
+            "damaged": 45,
+            "delta_pp": 3.6195286195286194,
+            "ci95_pp": [
+              2.5673400673400675,
+              4.713804713804714
+            ],
+            "mcnemar": 6.1408198830206e-11,
+            "p_holm": 2.45632795320824e-10
+          },
+          "loopcd_fixed_k4": {
+            "rescued": 116,
+            "damaged": 50,
+            "delta_pp": 2.7777777777777777,
+            "ci95_pp": [
+              1.7255892255892256,
+              3.82996632996633
+            ],
+            "mcnemar": 3.210830309367942e-07,
+            "p_holm": 1.2843321237471767e-06
+          },
+          "loopcd_adaptive_k4": {
+            "rescued": 123,
+            "damaged": 56,
+            "delta_pp": 2.81986531986532,
+            "ci95_pp": [
+              1.7255892255892256,
+              3.914141414141414
+            ],
+            "mcnemar": 6.053759985241233e-07,
+            "p_holm": 2.421503994096493e-06
+          }
+        }
+      },
+      "acc_norm": {
+        "correct": {
+          "native_k1": 1386,
+          "native_k4": 2000,
+          "loopcd_fixed_k4": 2006,
+          "loopcd_adaptive_k4": 2002,
+          "minimal_k4": 2097
+        },
+        "paired": {
+          "native_k4": {
+            "rescued": 137,
+            "damaged": 40,
+            "delta_pp": 4.082491582491582,
+            "ci95_pp": [
+              3.0303030303030303,
+              5.1767676767676765
+            ],
+            "mcnemar": 1.252700324341673e-13,
+            "p_holm": 6.263501621708366e-13
+          },
+          "loopcd_fixed_k4": {
+            "rescued": 140,
+            "damaged": 49,
+            "delta_pp": 3.82996632996633,
+            "ci95_pp": [
+              2.7356902356902357,
+              4.966329966329966
+            ],
+            "mcnemar": 2.4127943754740865e-11,
+            "p_holm": 1.2063971877370433e-10
+          },
+          "loopcd_adaptive_k4": {
+            "rescued": 145,
+            "damaged": 50,
+            "delta_pp": 3.9983164983164983,
+            "ci95_pp": [
+              2.861952861952862,
+              5.134680134680135
+            ],
+            "mcnemar": 6.3698891811732735e-12,
+            "p_holm": 3.184944590586637e-11
+          }
+        }
+      }
+    },
+    "cost": {
+      "elapsed_shards_seconds": 295.42739355936646,
+      "dense_loop_tokens": 11065370,
+      "peak_allocated_bytes": 3170109440,
+      "batches": 566,
+      "oom_retries": 0
+    }
+  },
+  "sciq": {
+    "n": 1000,
+    "sha256": "39235952654e67106168f207187edf239542a88ce7e3aefb5c89084e215a8009",
+    "fewshot": 0,
+    "measurements": {
+      "acc": {
+        "correct": {
+          "native_k1": 584,
+          "native_k4": 959,
+          "loopcd_fixed_k4": 963,
+          "loopcd_adaptive_k4": 961,
+          "minimal_k4": 965
+        },
+        "paired": {
+          "native_k4": {
+            "rescued": 14,
+            "damaged": 8,
+            "delta_pp": 0.6,
+            "ci95_pp": [
+              -0.3,
+              1.5
+            ],
+            "mcnemar": 0.28627872467041016,
+            "p_holm": 0.4938666353573859
+          },
+          "loopcd_fixed_k4": {
+            "rescued": 9,
+            "damaged": 7,
+            "delta_pp": 0.2,
+            "ci95_pp": [
+              -0.6,
+              1.0
+            ],
+            "mcnemar": 0.803619384765625,
+            "p_holm": 1.0
+          },
+          "loopcd_adaptive_k4": {
+            "rescued": 12,
+            "damaged": 8,
+            "delta_pp": 0.4,
+            "ci95_pp": [
+              -0.5,
+              1.3
+            ],
+            "mcnemar": 0.5034446716308594,
+            "p_holm": 0.717372260743759
+          }
+        }
+      },
+      "acc_norm": {
+        "correct": {
+          "native_k1": 523,
+          "native_k4": 947,
+          "loopcd_fixed_k4": 953,
+          "loopcd_adaptive_k4": 953,
+          "minimal_k4": 969
+        },
+        "paired": {
+          "native_k4": {
+            "rescued": 23,
+            "damaged": 1,
+            "delta_pp": 2.2,
+            "ci95_pp": [
+              1.3,
+              3.2
+            ],
+            "mcnemar": 2.9802322387695312e-06,
+            "p_holm": 8.940696716308594e-06
+          },
+          "loopcd_fixed_k4": {
+            "rescued": 19,
+            "damaged": 3,
+            "delta_pp": 1.6,
+            "ci95_pp": [
+              0.7,
+              2.5
+            ],
+            "mcnemar": 0.0008554458618164062,
+            "p_holm": 0.0025663375854492188
+          },
+          "loopcd_adaptive_k4": {
+            "rescued": 19,
+            "damaged": 3,
+            "delta_pp": 1.6,
+            "ci95_pp": [
+              0.7,
+              2.5
+            ],
+            "mcnemar": 0.0008554458618164062,
+            "p_holm": 0.0025663375854492188
+          }
+        }
+      }
+    },
+    "cost": {
+      "elapsed_shards_seconds": 34.46439874172211,
+      "dense_loop_tokens": 1268165,
+      "peak_allocated_bytes": 3167524864,
+      "batches": 87,
+      "oom_retries": 0
+    }
+  },
+  "mmlu": {
+    "n": 14042,
+    "sha256": "6aab33a0d062987d02f348b1e9e9f05ae74278cabc29aae1d9000e887d53e0c8",
+    "fewshot": 5,
+    "measurements": {
+      "acc": {
+        "correct": {
+          "native_k1": 5812,
+          "native_k4": 9470,
+          "loopcd_fixed_k4": 9434,
+          "loopcd_adaptive_k4": 9392,
+          "minimal_k4": 9428
+        },
+        "paired": {
+          "native_k4": {
+            "rescued": 606,
+            "damaged": 648,
+            "delta_pp": -0.29910269192422734,
+            "ci95_pp": [
+              -0.7904856857997437,
+              0.19940179461615154
+            ],
+            "mcnemar": 0.24693331767869295,
+            "p_holm": 0.4938666353573859
+          },
+          "loopcd_fixed_k4": {
+            "rescued": 680,
+            "damaged": 686,
+            "delta_pp": -0.04272895598917533,
+            "ci95_pp": [
+              -0.5483549351944168,
+              0.4771400085457912
+            ],
+            "mcnemar": 0.8923941859552564,
+            "p_holm": 1.0
+          },
+          "loopcd_adaptive_k4": {
+            "rescued": 745,
+            "damaged": 709,
+            "delta_pp": 0.25637373593505197,
+            "ci95_pp": [
+              -0.2848597065945022,
+              0.783364193134881
+            ],
+            "mcnemar": 0.3586861303718795,
+            "p_holm": 0.717372260743759
+          }
+        }
+      }
+    },
+    "cost": {
+      "elapsed_shards_seconds": 1557.818718675524,
+      "dense_loop_tokens": 50914570,
+      "peak_allocated_bytes": 3175229952,
+      "batches": 2932,
+      "oom_retries": 0
+    }
+  }
+}
