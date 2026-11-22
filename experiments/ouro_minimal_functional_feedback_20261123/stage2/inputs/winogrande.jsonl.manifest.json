@@ -1,0 +1,37 @@
+{
+  "schema_version": 1,
+  "paper_shot_source": "https://arxiv.org/html/2610.02185v1#A2.T2",
+  "harness_version": "0.4.13",
+  "datasets_version": "5.2.0",
+  "huggingface_hub_version": "2.4.0",
+  "python": "3.12.3",
+  "fewshot_seed": 1234,
+  "chat_template": false,
+  "limit_per_task": null,
+  "jsonl": "winogrande.jsonl",
+  "jsonl_sha256": "a032b1a95ea0c3c17c268be44b9c386097fa7fd499887e12fb50cd4137cc31fd",
+  "totals": {
+    "documents": 1267,
+    "requests": 2534
+  },
+  "tasks": [
+    {
+      "task": "winogrande",
+      "benchmark": "winogrande",
+      "dataset": "allenai/winogrande",
+      "dataset_config": "winogrande_xl",
+      "dataset_revision": "01e74176c63542e6b0bcb004dcdea22d94fb67b5",
+      "eval_split": "validation",
+      "fewshot_split": "train",
+      "shots": 5,
+      "metrics": [
+        "acc"
+      ],
+      "documents": 1267,
+      "requests": 2534
+    }
+  ],
+  "elapsed_seconds": {
+    "winogrande": 35.732
+  }
+}

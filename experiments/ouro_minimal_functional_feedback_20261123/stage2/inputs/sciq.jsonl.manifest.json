@@ -1,0 +1,38 @@
+{
+  "schema_version": 1,
+  "paper_shot_source": "https://arxiv.org/html/2610.02185v1#A2.T2",
+  "harness_version": "0.4.13",
+  "datasets_version": "5.2.0",
+  "huggingface_hub_version": "2.4.0",
+  "python": "3.12.3",
+  "fewshot_seed": 1234,
+  "chat_template": false,
+  "limit_per_task": null,
+  "jsonl": "sciq.jsonl",
+  "jsonl_sha256": "790706c306efa8a07a5a57d2b38d459817c03af84329cdbbaad465e1570a8645",
+  "totals": {
+    "documents": 1000,
+    "requests": 4000
+  },
+  "tasks": [
+    {
+      "task": "sciq",
+      "benchmark": "sciq",
+      "dataset": "allenai/sciq",
+      "dataset_config": null,
+      "dataset_revision": "2c94ad3e1aafab77146f384e23536f97a4849815",
+      "eval_split": "test",
+      "fewshot_split": null,
+      "shots": 0,
+      "metrics": [
+        "acc",
+        "acc_norm"
+      ],
+      "documents": 1000,
+      "requests": 4000
+    }
+  ],
+  "elapsed_seconds": {
+    "sciq": 39.449
+  }
+}

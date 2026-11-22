@@ -1,0 +1,38 @@
+{
+  "schema_version": 1,
+  "paper_shot_source": null,
+  "harness_version": "0.4.13",
+  "datasets_version": "5.2.0",
+  "huggingface_hub_version": "2.4.0",
+  "python": "3.12.3",
+  "fewshot_seed": 1234,
+  "chat_template": false,
+  "limit_per_task": null,
+  "jsonl": "arc_challenge.jsonl",
+  "jsonl_sha256": "ee9a62b663aab31e181a5b7ca410f0caee6729dcfef9fc53bdbcaab3c1150da0",
+  "totals": {
+    "documents": 1172,
+    "requests": 4687
+  },
+  "tasks": [
+    {
+      "task": "arc_challenge",
+      "benchmark": "arc_challenge",
+      "dataset": "allenai/ai2_arc",
+      "dataset_config": "ARC-Challenge",
+      "dataset_revision": "210d026faf9955653af8916fad021475a3f00453",
+      "eval_split": "test",
+      "fewshot_split": null,
+      "shots": 0,
+      "metrics": [
+        "acc",
+        "acc_norm"
+      ],
+      "documents": 1172,
+      "requests": 4687
+    }
+  ],
+  "elapsed_seconds": {
+    "arc_challenge": 8.74
+  }
+}

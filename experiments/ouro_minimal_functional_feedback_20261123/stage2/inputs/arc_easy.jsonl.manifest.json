@@ -1,0 +1,38 @@
+{
+  "schema_version": 1,
+  "paper_shot_source": "https://arxiv.org/html/2610.02185v1#A2.T2",
+  "harness_version": "0.4.13",
+  "datasets_version": "5.2.0",
+  "huggingface_hub_version": "2.4.0",
+  "python": "3.12.3",
+  "fewshot_seed": 1234,
+  "chat_template": false,
+  "limit_per_task": null,
+  "jsonl": "arc_easy.jsonl",
+  "jsonl_sha256": "e926e6ba1345ac42f3accb5202bb0b490f752e81dfba47a2aee3f8c0b3ede334",
+  "totals": {
+    "documents": 2376,
+    "requests": 9501
+  },
+  "tasks": [
+    {
+      "task": "arc_easy",
+      "benchmark": "arc_easy",
+      "dataset": "allenai/ai2_arc",
+      "dataset_config": "ARC-Easy",
+      "dataset_revision": "210d026faf9955653af8916fad021475a3f00453",
+      "eval_split": "test",
+      "fewshot_split": "train",
+      "shots": 8,
+      "metrics": [
+        "acc",
+        "acc_norm"
+      ],
+      "documents": 2376,
+      "requests": 9501
+    }
+  ],
+  "elapsed_seconds": {
+    "arc_easy": 66.435
+  }
+}
