@@ -1,0 +1,12 @@
+Traceback (most recent call last):
+  File "/root/ouro-minimal-functional-feedback-20261123/generation_followup/generation_followup_run.py", line 327, in <module>
+    run(parser.parse_args())
+  File "/root/ouro-minimal-functional-feedback-20261123/generation_followup/generation_followup_run.py", line 281, in run
+    _, difference = greedy(args.task, model, tokenizer, band, method, net, arm["dose"],
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/autodl-tmp/ouro-cross-task-20261118/venv/lib/python3.12/site-packages/torch/utils/_contextlib.py", line 116, in decorate_context
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/root/ouro-minimal-functional-feedback-20261123/generation_followup/generation_followup_run.py", line 209, in greedy
+    raise RuntimeError(("KV cache greedy parity", task, arm, step, j, a, c, maximum,
+RuntimeError: ('KV cache greedy parity', 'mbpp', 'native', 3, 0, 94, 2871, 0.25, 0.125)

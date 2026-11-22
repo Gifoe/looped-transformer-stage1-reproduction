@@ -1,0 +1,35 @@
+{
+  "decoding": "cached and full-sequence greedy next-token audit under the same cached history",
+  "ids": [
+    "234",
+    "641",
+    "760",
+    "168",
+    "70",
+    "618",
+    "644",
+    "560",
+    "462"
+  ],
+  "audit_steps": 10,
+  "max_logit_diff": {
+    "native": 2.7734375,
+    "fixed": 3.610156297683716,
+    "adaptive": 2.7833411693573,
+    "feedback": 2.875
+  },
+  "changed_tokens": [
+    {
+      "task": "mbpp",
+      "arm": "adaptive",
+      "step": 5,
+      "id": "560",
+      "cached_token": 100,
+      "uncached_token": 17634,
+      "uncached_gap": 0.08228492736816406,
+      "cached_gap": 0.1672039031982422,
+      "max_logit_difference": 0.2663455009460449
+    }
+  ],
+  "acceptance": "cached protocol; report flips with both winner advantages <= .5 and maximum per-row discrepancy <= 2.0"
+}

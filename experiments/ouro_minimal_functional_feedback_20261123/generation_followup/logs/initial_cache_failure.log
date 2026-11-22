@@ -1,0 +1,18 @@
+Traceback (most recent call last):
+  File "/root/ouro-minimal-functional-feedback-20261123/generation_followup/generation_followup_run.py", line 325, in <module>
+    run(parser.parse_args())
+  File "/root/ouro-minimal-functional-feedback-20261123/generation_followup/generation_followup_run.py", line 279, in run
+    _, difference = greedy(args.task, model, tokenizer, band, method, net, arm["dose"],
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/autodl-tmp/ouro-cross-task-20261118/venv/lib/python3.12/site-packages/torch/utils/_contextlib.py", line 116, in decorate_context
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/root/ouro-minimal-functional-feedback-20261123/generation_followup/generation_followup_run.py", line 184, in greedy
+    cache = create_cache(width + max_new)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/ouro-minimal-functional-feedback-20261123/generation_followup/generation_followup_run.py", line 102, in __init__
+    super().__init__(96)
+  File "/root/.cache/huggingface/modules/transformers_modules/model/modeling_ouro.py", line 134, in __init__
+    self.key_cache: list[Optional[torch.Tensor]] = []
+    ^^^^^^^^^^^^^^
+AttributeError: property 'key_cache' of 'cache_type.<locals>.BoundedCache' object has no setter
