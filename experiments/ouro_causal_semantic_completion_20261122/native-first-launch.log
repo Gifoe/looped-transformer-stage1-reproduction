@@ -1,0 +1,15 @@
+Traceback (most recent call last):
+  File "/root/ouro-causal-semantic-completion-20261122/csc_data.py", line 178, in <module>
+    run(args.model,args.result)
+  File "/root/autodl-tmp/ouro-cross-task-20261118/venv/lib/python3.12/site-packages/torch/utils/_contextlib.py", line 116, in decorate_context
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/root/ouro-causal-semantic-completion-20261122/csc_data.py", line 153, in run
+    save(deck,build(Path("/root")))
+              ^^^^^^^^^^^^^^^^^^^^
+  File "/root/ouro-causal-semantic-completion-20261122/csc_data.py", line 115, in build
+    safe,_,b=native_deck.rand_safe(target,rng,seen|a,gen)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/ouro-native-borrow-interaction-20261121/native_deck.py", line 68, in rand_safe
+    raise ValueError((y,split))
+ValueError: (679, 'discovery')
