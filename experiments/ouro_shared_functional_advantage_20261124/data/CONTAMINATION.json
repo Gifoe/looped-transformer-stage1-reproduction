@@ -1,0 +1,72 @@
+{
+  "train": {
+    "arc_challenge_fit.jsonl": {
+      "n": 840,
+      "sha256": "0b12d4876499d84acd04dad69a38cc02a1fb328224f1d30402697c02ee7dd946"
+    },
+    "csqa_fit.jsonl": {
+      "n": 840,
+      "sha256": "b0b34dc4890f859705b542c55c0d7afa76cb10f3870bf2f5dc4934df1d27ceff"
+    },
+    "squad_fit.jsonl": {
+      "n": 840,
+      "sha256": "2440a3a3f7e3b19ced941694ab2b0b2506061561e59d1f1c9ca97507992e348d"
+    },
+    "gsm8k_fit.jsonl": {
+      "n": 840,
+      "sha256": "f700f4ba7bb2e35547bebc2812a5c40f4768b2e6a8ac084f0895f35bb59d78d5"
+    },
+    "csqa_matched.jsonl": {
+      "n": 1119,
+      "sha256": "1eba5da9b77c11ff972d9df9219fe0ec57a4561e92e02ef0c42992908444edb4"
+    },
+    "full_mixed_train.jsonl": {
+      "n": 40000,
+      "sha256": "573ee0ff8adfaa9119aa6dd43d5c945ce62a6d515b59a0faf0d0b80862ff7de9"
+    }
+  },
+  "evaluation": {
+    "test_arc_challenge": {
+      "n_total": 1172,
+      "n_confirmed": 1171,
+      "flagged_ids": [
+        "MSA_2012_5_15"
+      ],
+      "source_sha256": "a15e0809eb5f4307ef743f3d336fa9b89760f0a55f4d76ebbf0ef9b64bed7b43",
+      "sha256": "4aa9182a0cf535eaef8e540502d0b2c15c5ba2589eee983e25c99191546040e9"
+    },
+    "test_csqa": {
+      "n_total": 1221,
+      "n_confirmed": 1221,
+      "flagged_ids": [],
+      "source_sha256": "713078683d8bf6a4b2108b75d3f94aeb612490bf110e3237276edccec342c6f0",
+      "sha256": "713078683d8bf6a4b2108b75d3f94aeb612490bf110e3237276edccec342c6f0"
+    },
+    "test_gsm8k": {
+      "n_total": 320,
+      "n_confirmed": 320,
+      "flagged_ids": [],
+      "source_sha256": "fe8bea128479bf487e4feadedfc788fbf17111df9e81badfee2be106102f8a57",
+      "sha256": "fe8bea128479bf487e4feadedfc788fbf17111df9e81badfee2be106102f8a57"
+    },
+    "test_squad": {
+      "n_total": 360,
+      "n_confirmed": 360,
+      "flagged_ids": [],
+      "source_sha256": "3bc3305ec98ecab989700fb138a40230629263999572d4d88d2349c15fd3b8a1",
+      "sha256": "3bc3305ec98ecab989700fb138a40230629263999572d4d88d2349c15fd3b8a1"
+    }
+  },
+  "detected": [
+    {
+      "file": "test_arc_challenge",
+      "id": "MSA_2012_5_15",
+      "train_id": "MSA_2012_5_14",
+      "degree": "fourgram_near",
+      "similarity": 0.8021978021978022
+    }
+  ],
+  "train_unique_normalized": 42316,
+  "near_duplicate": "Word four-gram Jaccard ≥ .8, minimum twelve tokens. Common shingles cannot index a candidate.",
+  "scope": "Recorded experiment training vs this test population. Unknown pretraining exposure remains."
+}
