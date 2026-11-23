@@ -1,0 +1,165 @@
+{
+  "selected": {
+    "k1": "t1",
+    "k2": "t2",
+    "k3": "t2",
+    "k4": "t2"
+  },
+  "policies": {
+    "t1": {
+      "first": 0,
+      "stop": null,
+      "cap": 0.45,
+      "after_cap": null,
+      "min_dose": 0.0,
+      "headroom_ratio": 0.0,
+      "checkpoint": "t1"
+    },
+    "t2": {
+      "first": 0,
+      "stop": null,
+      "cap": 0.45,
+      "after_cap": null,
+      "min_dose": 0.0,
+      "headroom_ratio": 0.0,
+      "checkpoint": "t2"
+    },
+    "decision": {
+      "first": 0,
+      "stop": 1,
+      "cap": 0.45,
+      "after_cap": null,
+      "min_dose": 0.0,
+      "headroom_ratio": 0.0,
+      "checkpoint": "t1"
+    },
+    "early_two": {
+      "first": 0,
+      "stop": 2,
+      "cap": 0.45,
+      "after_cap": null,
+      "min_dose": 0.0,
+      "headroom_ratio": 0.0,
+      "checkpoint": "t1"
+    },
+    "tail_only": {
+      "first": 1,
+      "stop": null,
+      "cap": 0.45,
+      "after_cap": null,
+      "min_dose": 0.0,
+      "headroom_ratio": 0.0,
+      "checkpoint": "t1"
+    },
+    "cap25": {
+      "first": 0,
+      "stop": null,
+      "cap": 0.25,
+      "after_cap": null,
+      "min_dose": 0.0,
+      "headroom_ratio": 0.0,
+      "checkpoint": "t1"
+    },
+    "decision25": {
+      "first": 0,
+      "stop": 1,
+      "cap": 0.25,
+      "after_cap": null,
+      "min_dose": 0.0,
+      "headroom_ratio": 0.0,
+      "checkpoint": "t1"
+    },
+    "phased": {
+      "first": 0,
+      "stop": null,
+      "cap": 0.45,
+      "after_cap": 0.15,
+      "min_dose": 0.0,
+      "headroom_ratio": 0.0,
+      "checkpoint": "t1"
+    },
+    "unsaturated": {
+      "first": 0,
+      "stop": null,
+      "cap": 0.45,
+      "after_cap": null,
+      "min_dose": 0.0,
+      "headroom_ratio": 0.43,
+      "checkpoint": "t1"
+    },
+    "train": {
+      "first": 0,
+      "stop": null,
+      "cap": 0.45,
+      "after_cap": null,
+      "min_dose": 0.0,
+      "headroom_ratio": 0.0,
+      "checkpoint": "train"
+    },
+    "train_first": {
+      "first": 0,
+      "stop": 1,
+      "cap": 0.45,
+      "after_cap": null,
+      "min_dose": 0.0,
+      "headroom_ratio": 0.0,
+      "checkpoint": "train"
+    }
+  },
+  "weights_sha256": {
+    "t1": "91d4919308bf9060ce0c44e4046e4851e7e59f65b9692c77045535f96534efd2",
+    "t2": "117f5f2fe9c5afe363ba8c032f42cd25155f7a88cb465e4e79bfb3bf496c8032",
+    "train": "7c3ee7fee06153140abdfffd3b50b432c3c581aa83220c531ab9d412ed593490"
+  },
+  "validation_results_sha256": "9b1fdd969713fc9118614418e5066343eb0060055f84fd98662a6dc22dac3755",
+  "alternate_weight_family": "t2",
+  "all_coherent_plans": [
+    {
+      "weight": "t1",
+      "policy": {
+        "k1": "t1",
+        "k2": "cap25",
+        "k3": "cap25",
+        "k4": "t1"
+      },
+      "utility": [
+        3.90625,
+        4.653124999999999,
+        true
+      ]
+    },
+    {
+      "weight": "t2",
+      "policy": {
+        "k1": "t1",
+        "k2": "t2",
+        "k3": "t2",
+        "k4": "t2"
+      },
+      "utility": [
+        9.765625,
+        13.3828125,
+        false
+      ]
+    },
+    {
+      "weight": "train",
+      "policy": {
+        "k1": "train_first",
+        "k2": "cap25",
+        "k3": "cap25",
+        "k4": "t1"
+      },
+      "utility": [
+        8.203125,
+        10.401562499999999,
+        false
+      ]
+    }
+  ],
+  "cross_validation_score": [
+    9.765625,
+    13.3828125,
+    false
+  ]
+}

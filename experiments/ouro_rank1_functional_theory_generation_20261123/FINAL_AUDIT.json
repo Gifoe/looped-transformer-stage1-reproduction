@@ -1,0 +1,91 @@
+{
+  "output_rows": {
+    "option": {
+      "arc_validation": 299,
+      "openbookqa_test": 500
+    },
+    "content": {
+      "gsm8k": 1319,
+      "mmlu_pro": 12032
+    }
+  },
+  "ledger": {
+    "charged_seconds": 3356,
+    "completed": [
+      {
+        "phase": "schedule_dev",
+        "seconds": 584,
+        "exit_code": 0
+      },
+      {
+        "phase": "fit_rank1",
+        "seconds": 90,
+        "exit_code": 0
+      },
+      {
+        "phase": "rescreen",
+        "seconds": 136,
+        "exit_code": 0
+      },
+      {
+        "phase": "native_a",
+        "seconds": 327,
+        "exit_code": 0
+      },
+      {
+        "phase": "content_b",
+        "seconds": 178,
+        "exit_code": 0
+      },
+      {
+        "phase": "generation_confirm",
+        "seconds": 80,
+        "exit_code": 0
+      },
+      {
+        "phase": "content_gsm8k",
+        "seconds": 1198,
+        "exit_code": 0
+      },
+      {
+        "phase": "content_mmlu_pro",
+        "seconds": 720,
+        "exit_code": 0
+      }
+    ],
+    "failed": [
+      {
+        "phase": "fit_rank1",
+        "seconds": 13,
+        "exit_code": 1
+      },
+      {
+        "phase": "rescreen",
+        "seconds": 11,
+        "exit_code": 1
+      },
+      {
+        "phase": "native_a",
+        "seconds": 19,
+        "exit_code": 1
+      }
+    ]
+  },
+  "gate": true,
+  "failed_cells": [],
+  "proposal_sha256": "abbb6cae50e5864d64df3e16fd08e1deff7a3ad573e384e9c41301e5a27ffdb6",
+  "weight_geometry_relative_to_t1": {
+    "t2": {
+      "output_cosine": 0.847406268119812,
+      "encoder_cosine": 0.9868794679641724,
+      "operator_cosine": 0.8362878470315849,
+      "relative_unbounded_frobenius_norm": 0.9972968783294095
+    },
+    "train": {
+      "output_cosine": 0.9402808547019958,
+      "encoder_cosine": 0.9964473247528076,
+      "operator_cosine": 0.9369403421840872,
+      "relative_unbounded_frobenius_norm": 1.0190350550021834
+    }
+  }
+}
