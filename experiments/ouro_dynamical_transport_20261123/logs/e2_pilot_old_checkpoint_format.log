@@ -1,0 +1,10 @@
+Traceback (most recent call last):
+  File "/root/ouro-dynamical-transport-20261123/e2_signed.py", line 249, in <module>
+    main()
+  File "/root/ouro-dynamical-transport-20261123/e2_signed.py", line 218, in main
+    net=minimal.load_net(args.rank1).requires_grad_(False)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/ouro-minimal-functional-feedback-20261123/minimal.py", line 71, in load_net
+    net=Minimal(**z['arch'])
+                  ~^^^^^^^^
+KeyError: 'arch'
