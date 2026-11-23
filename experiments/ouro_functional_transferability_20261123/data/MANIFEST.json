@@ -1,0 +1,623 @@
+{
+  "schema": 1,
+  "seed": "functional-transferability-20261123-v1",
+  "code_sha256": "07c2e62a32c0ebec7c33e8aa7dac388deb3b427cdf8e3673f1cbb37cc570d0d9",
+  "sources": {
+    "ARC-Challenge/train": {
+      "n": 1119,
+      "sha256": "0f84cb4e393a729371c3dfd334fce14215a99dcff8095bf31271787f1e305f20",
+      "file": "/root/autodl-tmp/ouro-arc-pareto-20261119/data/train.parquet",
+      "license": "CC BY-SA 4.0",
+      "source": "https://huggingface.co/datasets/allenai/ai2_arc/resolve/210d026faf9955653af8916fad021475a3f00453/ARC-Challenge/train-00000-of-00001.parquet"
+    },
+    "ARC-Challenge/validation": {
+      "n": 299,
+      "sha256": "a0796ca9c64d4633b595dae2b350485de9cc4f45c4adf9b59b371268f945984d",
+      "file": "/root/autodl-tmp/ouro-arc-pareto-20261119/data/validation.parquet",
+      "license": "CC BY-SA 4.0",
+      "source": "https://huggingface.co/datasets/allenai/ai2_arc/resolve/210d026faf9955653af8916fad021475a3f00453/ARC-Challenge/validation-00000-of-00001.parquet"
+    },
+    "ARC-Challenge/test": {
+      "n": 1172,
+      "sha256": "b8e71916ead552c4e3bb05e3506bfbe4b5caa93b155e680fabb74dcb1ba14ec0",
+      "file": "/root/autodl-tmp/ouro-arc-pareto-20261119/data/test.parquet",
+      "license": "CC BY-SA 4.0",
+      "source": "https://huggingface.co/datasets/allenai/ai2_arc/resolve/210d026faf9955653af8916fad021475a3f00453/ARC-Challenge/test-00000-of-00001.parquet"
+    },
+    "ARC-Easy/train": {
+      "n": 2251,
+      "sha256": "b315db8a4be597dc7daa50a4e70d48dd7c990c32085629e6ccd8c926beaa80b5",
+      "file": "inputs/arc_easy_train.parquet",
+      "license": "CC BY-SA 4.0",
+      "source": "https://huggingface.co/datasets/allenai/ai2_arc/resolve/210d026faf9955653af8916fad021475a3f00453/ARC-Easy/train-00000-of-00001.parquet"
+    },
+    "ARC-Easy/validation": {
+      "n": 570,
+      "sha256": "ed890ff1e4cef7a7140d3a30dcea3ed2c9d467c6458f447ad9ef0176d8dcbb74",
+      "file": "inputs/arc_easy_validation.parquet",
+      "license": "CC BY-SA 4.0",
+      "source": "https://huggingface.co/datasets/allenai/ai2_arc/resolve/210d026faf9955653af8916fad021475a3f00453/ARC-Easy/validation-00000-of-00001.parquet"
+    },
+    "ARC-Easy/test": {
+      "n": 2376,
+      "sha256": "4160597d618ae851c7eb04e281574f3f654776216ac6b6641588d64527b47177",
+      "file": "inputs/arc_easy_test.parquet",
+      "license": "CC BY-SA 4.0",
+      "source": "https://huggingface.co/datasets/allenai/ai2_arc/resolve/210d026faf9955653af8916fad021475a3f00453/ARC-Easy/test-00000-of-00001.parquet"
+    },
+    "CSQA-author-random/train": {
+      "n": 9741,
+      "sha256": "58ffa3c8472410e24b8c43f423d89c8a003d8284698a6ed7874355dedd09a2fb",
+      "file": "inputs/csqa_train.jsonl",
+      "license_status": "Author dataset metadata license field is blank",
+      "source": "https://s3.amazonaws.com/commensenseqa/train_rand_split.jsonl"
+    },
+    "CSQA-author-random/validation": {
+      "n": 1221,
+      "sha256": "3210497fdaae614ac085d9eb873dd7f4d49b6f965a93adadc803e1229fd8a02a",
+      "file": "/root/ouro-functional-controllability-20261123/results/CSQA_TRANSFER/commonsenseqa_validation.jsonl",
+      "license_status": "Author dataset metadata license field is blank",
+      "source": "https://s3.amazonaws.com/commensenseqa/dev_rand_split.jsonl"
+    }
+  },
+  "historical_id_artifacts": {
+    "PREDICTIONS.jsonl": {
+      "file": "/root/ouro-functional-controllability-20261123/results/CSQA_TRANSFER/PREDICTIONS.jsonl",
+      "sha256": "17aaa8c16d133b4c9c7bc9d35a9d2e4769489570da1500ea2c0082e19956d3f3",
+      "n_ids": 1221,
+      "id_sha256": "54b26043eaf8e9155f33ae6add85f21d5c6e389a618659b0ab56393775addbdc",
+      "relation": "equal"
+    },
+    "RESULTS_ARC.jsonl": {
+      "file": "/root/ouro-functional-controllability-20261123/results/BENCHMARK_RESULTS/RESULTS_ARC.jsonl",
+      "sha256": "fd1cc51be1162af0ea25b8e3bcd9dc2eec99900fbb2e248ab3d494141d51389b",
+      "n_ids": 1172,
+      "id_sha256": "6382fd6844912f41d03cf1d9ba783f7404ca9385221b77c3727e3fe607163de9",
+      "relation": "equal"
+    },
+    "arc_train_dev__native__k4__rank.jsonl": {
+      "file": "/root/ouro-unified-rank1-20261123/results/dev/arc_train_dev__native__k4__rank.jsonl",
+      "sha256": "002457bde6793c77a10414d445cef8d54e8a948b9d929f676c7aef32550b6a1b",
+      "n_ids": 256,
+      "id_sha256": "9eea945fda08be2bae765c388b171d8bcd90f4cea2394aa1f6a1489e3e9bef5a",
+      "relation": "subset"
+    },
+    "unified_arc_dev_lock": {
+      "file": "/root/ouro-unified-rank1-20261123/results/dev/COHORTS.json",
+      "sha256": "9b5f8048cccdda3d7fc2eebda9a9eeb1970ed1284b2eab34f831bfbca77cca78",
+      "n_ids": 256,
+      "id_sha256": "9eea945fda08be2bae765c388b171d8bcd90f4cea2394aa1f6a1489e3e9bef5a"
+    },
+    "stage2_arc_easy_test_ids": {
+      "file": "/root/ouro-minimal-functional-feedback-20261123/stage2/inputs/arc_easy.jsonl",
+      "sha256": "e926e6ba1345ac42f3accb5202bb0b490f752e81dfba47a2aee3f8c0b3ede334",
+      "lock_sha256": "7425dc1bd615891647d854cbf5253a9b3f698f8b27f32b184cbe16f4407790d2",
+      "n_ids": 2376,
+      "id_sha256": "f9819c7e3580d788d30ca77119448adf673cac97ed64464408390c1b18e36900",
+      "direct_mapping": "doc_id indexes official Test at the same revision; choices and gold matched per row",
+      "earlier_demonstration_scope": "ARC-Easy official Train, eight examples per prompt; exclude its entire source split"
+    },
+    "historical_obqa_test": {
+      "file": "/root/ouro-functional-readout-feedback-20261122/external/openbookqa.parquet",
+      "sha256": "a548cedc44b49bd42085d643a0a8df341c628a12134c5b23ec64f34bbfcfa980",
+      "n_rows": 500
+    },
+    "historical_obqa_validation": {
+      "file": "/root/ouro-unified-rank1-20261123/ob_validation.parquet",
+      "sha256": "35370b9cfee8c1ff325ccc74adc434d12c47ca0ac3244aa87f3fa77069285206",
+      "n_rows": 500
+    }
+  },
+  "sampling": {
+    "train_per_source": 1119,
+    "heldout_per_source": {
+      "discovery": 200,
+      "confirm": 299
+    },
+    "order": "SHA-256(seed:namespace:official_id), with official_id tie-break, independent of labels/scores",
+    "dedup": "Unicode NFKC casefold and regex word runs; exclude ID or normalized-stem matches",
+    "arc_easy_eligible": 569,
+    "arc_easy_filters": {
+      "excluded_historical_or_other_source_normalized_stem": 1
+    },
+    "csqa_train_eligible": 9740,
+    "csqa_train_filters": {
+      "excluded_within_pool_duplicate_normalized_stem": 1
+    }
+  },
+  "independence_scope": [
+    "No ID or normalized-stem overlap with the named prior corpora or new fitting/discovery cohorts.",
+    "ARC primary uses ARC-Easy, a difficulty-shifted sister configuration, while fitted ARC is ARC-Challenge.",
+    "ARC-Easy training/test and all ARC-Challenge rows are conservatively removed as a historical exclusion set.",
+    "CSQA primary confirmation is a holdout from official Train. Official author Validation was evaluated historically.",
+    "This audit cannot exclude paraphrastic overlap or foundation-model exposure."
+  ],
+  "parity_audits": {
+    "arc_train__arc_discovery": {
+      "id": 0,
+      "normalized_stem": 0,
+      "normalized_stem_and_options": 0
+    },
+    "arc_train__arc_confirm": {
+      "id": 0,
+      "normalized_stem": 0,
+      "normalized_stem_and_options": 0
+    },
+    "arc_train__csqa_discovery": {
+      "id": 0,
+      "normalized_stem": 0,
+      "normalized_stem_and_options": 0
+    },
+    "arc_train__csqa_confirm": {
+      "id": 0,
+      "normalized_stem": 0,
+      "normalized_stem_and_options": 0
+    },
+    "csqa_train__arc_discovery": {
+      "id": 0,
+      "normalized_stem": 0,
+      "normalized_stem_and_options": 0
+    },
+    "csqa_train__arc_confirm": {
+      "id": 0,
+      "normalized_stem": 0,
+      "normalized_stem_and_options": 0
+    },
+    "csqa_train__csqa_discovery": {
+      "id": 0,
+      "normalized_stem": 0,
+      "normalized_stem_and_options": 0
+    },
+    "csqa_train__csqa_confirm": {
+      "id": 0,
+      "normalized_stem": 0,
+      "normalized_stem_and_options": 0
+    },
+    "arc_csqa_mixed_train__arc_discovery": {
+      "id": 0,
+      "normalized_stem": 0,
+      "normalized_stem_and_options": 0
+    },
+    "arc_csqa_mixed_train__arc_confirm": {
+      "id": 0,
+      "normalized_stem": 0,
+      "normalized_stem_and_options": 0
+    },
+    "arc_csqa_mixed_train__csqa_discovery": {
+      "id": 0,
+      "normalized_stem": 0,
+      "normalized_stem_and_options": 0
+    },
+    "arc_csqa_mixed_train__csqa_confirm": {
+      "id": 0,
+      "normalized_stem": 0,
+      "normalized_stem_and_options": 0
+    },
+    "arc_discovery__arc_confirm": {
+      "id": 0,
+      "normalized_stem": 0,
+      "normalized_stem_and_options": 0
+    },
+    "arc_discovery__csqa_discovery": {
+      "id": 0,
+      "normalized_stem": 0,
+      "normalized_stem_and_options": 0
+    },
+    "arc_discovery__csqa_confirm": {
+      "id": 0,
+      "normalized_stem": 0,
+      "normalized_stem_and_options": 0
+    },
+    "arc_discovery__arc_challenge_validation": {
+      "id": 0,
+      "normalized_stem": 0,
+      "normalized_stem_and_options": 0
+    },
+    "arc_discovery__arc_challenge_test": {
+      "id": 0,
+      "normalized_stem": 0,
+      "normalized_stem_and_options": 0
+    },
+    "arc_discovery__csqa_validation": {
+      "id": 0,
+      "normalized_stem": 0,
+      "normalized_stem_and_options": 0
+    },
+    "arc_confirm__csqa_discovery": {
+      "id": 0,
+      "normalized_stem": 0,
+      "normalized_stem_and_options": 0
+    },
+    "arc_confirm__csqa_confirm": {
+      "id": 0,
+      "normalized_stem": 0,
+      "normalized_stem_and_options": 0
+    },
+    "arc_confirm__arc_challenge_validation": {
+      "id": 0,
+      "normalized_stem": 0,
+      "normalized_stem_and_options": 0
+    },
+    "arc_confirm__arc_challenge_test": {
+      "id": 0,
+      "normalized_stem": 0,
+      "normalized_stem_and_options": 0
+    },
+    "arc_confirm__csqa_validation": {
+      "id": 0,
+      "normalized_stem": 0,
+      "normalized_stem_and_options": 0
+    },
+    "csqa_discovery__csqa_confirm": {
+      "id": 0,
+      "normalized_stem": 0,
+      "normalized_stem_and_options": 0
+    },
+    "csqa_discovery__arc_challenge_validation": {
+      "id": 0,
+      "normalized_stem": 0,
+      "normalized_stem_and_options": 0
+    },
+    "csqa_discovery__arc_challenge_test": {
+      "id": 0,
+      "normalized_stem": 0,
+      "normalized_stem_and_options": 0
+    },
+    "csqa_discovery__csqa_validation": {
+      "id": 0,
+      "normalized_stem": 0,
+      "normalized_stem_and_options": 0
+    },
+    "csqa_confirm__arc_challenge_validation": {
+      "id": 0,
+      "normalized_stem": 0,
+      "normalized_stem_and_options": 0
+    },
+    "csqa_confirm__arc_challenge_test": {
+      "id": 0,
+      "normalized_stem": 0,
+      "normalized_stem_and_options": 0
+    },
+    "csqa_confirm__csqa_validation": {
+      "id": 0,
+      "normalized_stem": 0,
+      "normalized_stem_and_options": 0
+    },
+    "arc_discovery__audited_history": {
+      "id": 0,
+      "normalized_stem": 0,
+      "normalized_stem_and_options": 0
+    },
+    "arc_confirm__audited_history": {
+      "id": 0,
+      "normalized_stem": 0,
+      "normalized_stem_and_options": 0
+    },
+    "csqa_discovery__audited_history": {
+      "id": 0,
+      "normalized_stem": 0,
+      "normalized_stem_and_options": 0
+    },
+    "csqa_confirm__audited_history": {
+      "id": 0,
+      "normalized_stem": 0,
+      "normalized_stem_and_options": 0
+    }
+  },
+  "rendering": {
+    "candidate_prefix": "Question: {question}\nAnswer:",
+    "candidate_continuation": "one leading ASCII space followed by the original option text",
+    "strict_zero_shot_letter_prompt": "same rendering as historical minimal.label_prompt, contiguous A–E labels"
+  },
+  "cohorts": {
+    "arc_train": {
+      "file": "arc_train.jsonl",
+      "sha256": "7f14e59753f897754f94cb663220aee32d382179b5e010e4f4ff2fbe095bb3b8",
+      "n": 1119,
+      "id_sha256": "39b0b3e0836479fdf0d64a3664b4b7d1070c1c82de8a188cedac8d862d97c24b",
+      "sorted_id_sha256": "bef0f4d1996e312ea86e98a62b78ca1120926f9a9819978e46511522600234fc",
+      "normalized_stem_sha256": "7b67e1fbfcea4476c27d761c79fe9e7c416f11b87c53afe5f4c569607104e435",
+      "duplicate_normalized_stems": 1,
+      "source_counts": {
+        "ARC-Challenge/train": 1119
+      },
+      "choices_per_question": {
+        "3": 1,
+        "4": 1117,
+        "5": 1
+      },
+      "gold_option_index": {
+        "0": 239,
+        "1": 296,
+        "2": 291,
+        "3": 293
+      },
+      "role": "Official ARC-Challenge Train, all 1119; used by historical and current fitting"
+    },
+    "csqa_train": {
+      "file": "csqa_train.jsonl",
+      "sha256": "d98ffc3bc313ced1c0f4e0d2246c6bce8976365bc744daff473b0ce77ebea831",
+      "n": 1119,
+      "id_sha256": "25865c8d4e2c375ca33047fa81029b294e538e8fe40e25db1bfd1220673f5077",
+      "sorted_id_sha256": "e6b906f1a1f6bf59bbd7c35f30867603a940106d39197054f6e8af6a8b14d752",
+      "normalized_stem_sha256": "8186cd60f2f1c2b272eb4be130a8d41d9a23d94868925b05a5d07591dc915fb3",
+      "duplicate_normalized_stems": 0,
+      "source_counts": {
+        "CSQA-author-random/train": 1119
+      },
+      "choices_per_question": {
+        "5": 1119
+      },
+      "gold_option_index": {
+        "0": 218,
+        "1": 256,
+        "2": 203,
+        "3": 221,
+        "4": 221
+      },
+      "role": "Official CSQA Train-derived, 1119 unique stems sampled under frozen rule"
+    },
+    "arc_csqa_mixed_train": {
+      "file": "arc_csqa_mixed_train.jsonl",
+      "sha256": "61798defba6c702d52652bbe60d18679c88ba234d9b3af368ef7fa9c5572a1a8",
+      "n": 1119,
+      "id_sha256": "e34212c356c7dd8f5190db2db839381943a075c584ddbf7bcb271e850462f9ad",
+      "sorted_id_sha256": "2f5e5c0a1bffc9c93b00368622814c9e6fc325958b6fa161fc6e0d706c087e49",
+      "normalized_stem_sha256": "22a37e6d8814191281a071997cfe10564f7847a61cab39ad498b9dfb9b9cacf5",
+      "duplicate_normalized_stems": 0,
+      "source_counts": {
+        "ARC-Challenge/train": 560,
+        "CSQA-author-random/train": 559
+      },
+      "choices_per_question": {
+        "3": 1,
+        "4": 558,
+        "5": 560
+      },
+      "gold_option_index": {
+        "0": 231,
+        "1": 269,
+        "2": 243,
+        "3": 266,
+        "4": 110
+      },
+      "role": "560 ARC-Challenge and 559 CSQA from the named fitting cohorts, total 1119"
+    },
+    "arc_discovery": {
+      "file": "arc_discovery.jsonl",
+      "sha256": "9b29b73ee73a73d08576da1c0d349e3b369b2ef0b5cce8d052bb7b2fb05fa8b7",
+      "n": 200,
+      "id_sha256": "14e47a643c1e31eb2e1372f28f47cf20f1350d59e7f6e0d64481b565b37be967",
+      "sorted_id_sha256": "d79e5c538286d7e913c68aac96f6f04ddbb2960bcc6049557162373388a3e6c8",
+      "normalized_stem_sha256": "c74b0a5a116dd9629de0493177f4fbacf9d9ffaaa976e6728c73006fce88e1f7",
+      "duplicate_normalized_stems": 0,
+      "source_counts": {
+        "ARC-Easy/validation": 200
+      },
+      "choices_per_question": {
+        "4": 200
+      },
+      "gold_option_index": {
+        "0": 67,
+        "1": 47,
+        "2": 46,
+        "3": 40
+      },
+      "role": "ARC-Easy Validation-derived discovery subcohort, disjoint from historical audited inputs"
+    },
+    "arc_confirm": {
+      "file": "arc_confirm.jsonl",
+      "sha256": "d3534e7f0b0c874afc6c4760ec81a00edd94dcaa99e51e69d34bbf77ad8313b6",
+      "n": 299,
+      "id_sha256": "4328f95cdcc5b943557fe3b9b3dc6e8cafe45b5e25243738075dda8fa6849909",
+      "sorted_id_sha256": "ae90437115c23b70cd918eb6445f0d701a4eac3849c1f933427f218235f22871",
+      "normalized_stem_sha256": "137069060125d88ca23d5cb3430f6e3982354a30ccc575bac4668abde5df54bd",
+      "duplicate_normalized_stems": 0,
+      "source_counts": {
+        "ARC-Easy/validation": 299
+      },
+      "choices_per_question": {
+        "3": 1,
+        "4": 296,
+        "5": 2
+      },
+      "gold_option_index": {
+        "0": 75,
+        "1": 85,
+        "2": 77,
+        "3": 62
+      },
+      "role": "ARC-Easy Validation-derived independent confirmation, subject to recorded audit scope"
+    },
+    "csqa_discovery": {
+      "file": "csqa_discovery.jsonl",
+      "sha256": "4391e3c207b463dedec7bf003e00ac73e7f53370f9a3d3e7d41d829de01c551e",
+      "n": 200,
+      "id_sha256": "aad8e00d166e0379fca71f00833ee9ec97b1f877400b232f6ad276d2b05cf753",
+      "sorted_id_sha256": "5e1df4962853957bbade9bdde0ebacb9a4436da47a48bc07f9b396415bbe0ebb",
+      "normalized_stem_sha256": "6fdd7206da82f11e09a8587bda161d742cfd56e914f874becb2be348b8c67def",
+      "duplicate_normalized_stems": 0,
+      "source_counts": {
+        "CSQA-author-random/train": 200
+      },
+      "choices_per_question": {
+        "5": 200
+      },
+      "gold_option_index": {
+        "0": 37,
+        "1": 46,
+        "2": 39,
+        "3": 38,
+        "4": 40
+      },
+      "role": "CSQA official Train-derived discovery held out from current fitting and historical reported Val"
+    },
+    "csqa_confirm": {
+      "file": "csqa_confirm.jsonl",
+      "sha256": "dff7b26995a6b5894252448ae56c8fe7c30ca6d94bc732c8f3eb5e4cea192f20",
+      "n": 299,
+      "id_sha256": "e4d31d115954ce97a6d1e73a20e0b3fa86647cf0b0dd24d5ef9654a215d22646",
+      "sorted_id_sha256": "725855ed8a526d435f73edd6462f60cdb9454f3c3bac41f7ba2eb6efc720e9b9",
+      "normalized_stem_sha256": "cfd90d71fe9b3532c7cae3f0fbead29df2c842bc1f73970c5eebcfd542a1a124",
+      "duplicate_normalized_stems": 0,
+      "source_counts": {
+        "CSQA-author-random/train": 299
+      },
+      "choices_per_question": {
+        "5": 299
+      },
+      "gold_option_index": {
+        "0": 54,
+        "1": 62,
+        "2": 61,
+        "3": 54,
+        "4": 68
+      },
+      "role": "CSQA official Train-derived independent confirmation, subject to recorded audit scope"
+    },
+    "arc_challenge_validation": {
+      "file": "arc_challenge_validation.jsonl",
+      "sha256": "cef825bf3e8cde557914e7c30f1e81e6773dc60d581732d78f085e51507de7be",
+      "n": 299,
+      "id_sha256": "cfcc765f49144eb2546838427b5c584a10d097b3eede606ddd87d7a4e55a23e5",
+      "sorted_id_sha256": "e8ae48f5122c559d2099b134c37a3a9a1df2508455f74a6ddf913943a8faa895",
+      "normalized_stem_sha256": "db89bc82600361053fa9474dc5388eed7424683815bc2fcd7e5a2e5c54542a62",
+      "duplicate_normalized_stems": 0,
+      "source_counts": {
+        "ARC-Challenge/validation": 299
+      },
+      "choices_per_question": {
+        "3": 3,
+        "4": 295,
+        "5": 1
+      },
+      "gold_option_index": {
+        "0": 64,
+        "1": 73,
+        "2": 78,
+        "3": 83,
+        "4": 1
+      },
+      "role": "Historical ARC-Challenge Validation previously used in selection; secondary only"
+    },
+    "arc_challenge_test": {
+      "file": "arc_challenge_test.jsonl",
+      "sha256": "160106c558796e57adc7155f30b2efe26a23d7e0a9706e18e35236b4c00213f9",
+      "n": 1172,
+      "id_sha256": "9153df8978906ea972d817cb0c1998fd3184ef121ab786629fcc52acda99a9e7",
+      "sorted_id_sha256": "6382fd6844912f41d03cf1d9ba783f7404ca9385221b77c3727e3fe607163de9",
+      "normalized_stem_sha256": "70324edab7e220efe4e8d9b684414f61ccd032c6d435839f3463a89763569e69",
+      "duplicate_normalized_stems": 2,
+      "source_counts": {
+        "ARC-Challenge/test": 1172
+      },
+      "choices_per_question": {
+        "3": 4,
+        "4": 1165,
+        "5": 3
+      },
+      "gold_option_index": {
+        "0": 266,
+        "1": 311,
+        "2": 310,
+        "3": 285
+      },
+      "role": "Historical ARC-Challenge Test, previously scored; secondary only"
+    },
+    "csqa_validation": {
+      "file": "csqa_validation.jsonl",
+      "sha256": "ea5964901ca1692e22d49f544916251a46cab4e58a46b03c6f579ce2f964bca9",
+      "n": 1221,
+      "id_sha256": "7e5f89598e7467a2dc02c4eb46884200e2dc83fa1afed3d7f29ae3f48b0bf8e5",
+      "sorted_id_sha256": "54b26043eaf8e9155f33ae6add85f21d5c6e389a618659b0ab56393775addbdc",
+      "normalized_stem_sha256": "9818ec896cb32acd8cdf4730723f490b80347a9b9b0a68e0afa45a0a62e2a9ca",
+      "duplicate_normalized_stems": 0,
+      "source_counts": {
+        "CSQA-author-random/validation": 1221
+      },
+      "choices_per_question": {
+        "5": 1221
+      },
+      "gold_option_index": {
+        "0": 239,
+        "1": 255,
+        "2": 241,
+        "3": 251,
+        "4": 235
+      },
+      "role": "Author official CSQA Validation in full; historically scored, separate secondary cohort"
+    }
+  },
+  "token_accounting": {
+    "arc_train": {
+      "candidate_input_tokens": 155721,
+      "candidate_answer_tokens": 25944,
+      "candidates": 4476,
+      "generation_input_tokens": 80771,
+      "generation_gold_answer_tokens": 1119
+    },
+    "csqa_train": {
+      "candidate_input_tokens": 117937,
+      "candidate_answer_tokens": 9472,
+      "candidates": 5595,
+      "generation_input_tokens": 56902,
+      "generation_gold_answer_tokens": 1119
+    },
+    "arc_csqa_mixed_train": {
+      "candidate_input_tokens": 139201,
+      "candidate_answer_tokens": 18225,
+      "candidates": 5035,
+      "generation_input_tokens": 69804,
+      "generation_gold_answer_tokens": 1119
+    },
+    "arc_discovery": {
+      "candidate_input_tokens": 24651,
+      "candidate_answer_tokens": 3499,
+      "candidates": 800,
+      "generation_input_tokens": 12787,
+      "generation_gold_answer_tokens": 200
+    },
+    "arc_confirm": {
+      "candidate_input_tokens": 36223,
+      "candidate_answer_tokens": 4950,
+      "candidates": 1197,
+      "generation_input_tokens": 18744,
+      "generation_gold_answer_tokens": 299
+    },
+    "csqa_discovery": {
+      "candidate_input_tokens": 20517,
+      "candidate_answer_tokens": 1672,
+      "candidates": 1000,
+      "generation_input_tokens": 10041,
+      "generation_gold_answer_tokens": 200
+    },
+    "csqa_confirm": {
+      "candidate_input_tokens": 30745,
+      "candidate_answer_tokens": 2580,
+      "candidates": 1495,
+      "generation_input_tokens": 15090,
+      "generation_gold_answer_tokens": 299
+    },
+    "arc_challenge_validation": {
+      "candidate_input_tokens": 42843,
+      "candidate_answer_tokens": 6770,
+      "candidates": 1194,
+      "generation_input_tokens": 21775,
+      "generation_gold_answer_tokens": 299
+    },
+    "arc_challenge_test": {
+      "candidate_input_tokens": 169081,
+      "candidate_answer_tokens": 27878,
+      "candidates": 4687,
+      "generation_input_tokens": 86615,
+      "generation_gold_answer_tokens": 1172
+    },
+    "csqa_validation": {
+      "candidate_input_tokens": 127693,
+      "candidate_answer_tokens": 10268,
+      "candidates": 6105,
+      "generation_input_tokens": 61836,
+      "generation_gold_answer_tokens": 1221
+    }
+  }
+}

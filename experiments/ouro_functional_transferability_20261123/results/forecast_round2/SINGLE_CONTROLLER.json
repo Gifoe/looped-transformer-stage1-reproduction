@@ -1,0 +1,51 @@
+{
+  "single_checkpoint": true,
+  "source": "mixed",
+  "candidate": "mixed/source/s261123137/k234",
+  "checkpoint": "results/HOLDOUT/mixed/source/s261123137/k234/controller.pt",
+  "checkpoint_sha256": "d3b3c112f948e0b8787b66bdd70dbf0f79ea84a075bb5ada49f35504dd69fdb1",
+  "parameters": 4096,
+  "native_backbone_forwards_per_answer": 1,
+  "cap_rms": 0.45,
+  "seed": 261123137,
+  "target_train_depths": [
+    2,
+    3,
+    4
+  ],
+  "target_train_scales": {
+    "arc": 0.08948586583360374,
+    "csqa": 0.23932509434053836
+  },
+  "criterion": "Maximize the worse of two domain-rescaled source-averaged target-Train moment projections",
+  "scores": {
+    "arc/depth/s261123137/k234": 0.9921623664021715,
+    "csqa/source/s261123137/k234": 0.7751388222078384,
+    "mixed/source/s261123137/k234": 1.1723061307703533,
+    "obqa/source/s261123137/k234": 0.8906235173613125,
+    "qasc/source/s261123137/k234": 0.46752567805281803
+  },
+  "raw_per_domain": {
+    "arc/depth/s261123137/k234": {
+      "arc": 0.138730738542165,
+      "csqa": 0.23744935194033148
+    },
+    "csqa/source/s261123137/k234": {
+      "arc": 0.06936396864650825,
+      "csqa": 0.4230162147424809
+    },
+    "mixed/source/s261123137/k234": {
+      "arc": 0.10490482913402695,
+      "csqa": 0.40102478628254445
+    },
+    "obqa/source/s261123137/k234": {
+      "arc": 0.08948586583360374,
+      "csqa": 0.21314855731439822
+    },
+    "qasc/source/s261123137/k234": {
+      "arc": 0.04183694009999909,
+      "csqa": 0.23932509434053836
+    }
+  },
+  "selection_uses_confirmation": false
+}

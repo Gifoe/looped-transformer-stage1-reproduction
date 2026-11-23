@@ -1,0 +1,345 @@
+{
+  "schema": 1,
+  "main_manifest_sha256": "6036073abbfbf3fbd098914a124a2d8e690c6e59b6f1d47b48eb0e515803a31b",
+  "code_sha256": "4290c3cfb65e11a366ab3631f7c6ae04a1b1b6f317a393cfdc3d1ad890f07797",
+  "sources": {
+    "obqa/train": {
+      "n": 4957,
+      "sha256": "98148f8a54e62eb862346a75192d5fb824d6cbb68f2f59aecd793d39ecb5cd8b",
+      "columns": [
+        "id",
+        "question_stem",
+        "choices"
+      ],
+      "source": "https://huggingface.co/datasets/allenai/openbookqa/resolve/8c4888010de9b23a2d136ebd31d5f5ea9f3d90fa/main/train-00000-of-00001.parquet",
+      "license": "Apache-2.0"
+    },
+    "obqa/validation": {
+      "n": 500,
+      "sha256": "35370b9cfee8c1ff325ccc74adc434d12c47ca0ac3244aa87f3fa77069285206",
+      "columns": [
+        "id",
+        "question_stem",
+        "choices"
+      ],
+      "source": "https://huggingface.co/datasets/allenai/openbookqa/resolve/8c4888010de9b23a2d136ebd31d5f5ea9f3d90fa/main/validation-00000-of-00001.parquet",
+      "license": "Apache-2.0"
+    },
+    "obqa/test": {
+      "n": 500,
+      "sha256": "cd5483e366daa230c1c87bbdc512d8b7229f14f6dd04d19fc8b1a3855aaaa8a3",
+      "columns": [
+        "id",
+        "question_stem",
+        "choices"
+      ],
+      "source": "https://huggingface.co/datasets/allenai/openbookqa/resolve/8c4888010de9b23a2d136ebd31d5f5ea9f3d90fa/main/test-00000-of-00001.parquet",
+      "license": "Apache-2.0"
+    },
+    "qasc/train": {
+      "n": 8134,
+      "sha256": "b9a297b5ab55f1605c7682ffbb7042c26d7ecb9ff1e1aa5a820d4e791c8302d1",
+      "columns": [
+        "id",
+        "question",
+        "choices"
+      ],
+      "source": "https://huggingface.co/datasets/allenai/qasc/resolve/a34ba204eb9a33b919c10cc08f4f1c8dae5ec070/data/train-00000-of-00001.parquet",
+      "license": "CC BY 4.0"
+    },
+    "qasc/validation": {
+      "n": 926,
+      "sha256": "d1ae34ae13c5fce2c55305372c203c6cdb789728d0d7e5ea2956d55bc33f40ae",
+      "columns": [
+        "id",
+        "question",
+        "choices"
+      ],
+      "source": "https://huggingface.co/datasets/allenai/qasc/resolve/a34ba204eb9a33b919c10cc08f4f1c8dae5ec070/data/validation-00000-of-00001.parquet",
+      "license": "CC BY 4.0"
+    },
+    "qasc/test": {
+      "n": 920,
+      "sha256": "495cfbd17abc1720b54785cdce68825104aaf60d7b8bdb2acac62157a31eb517",
+      "columns": [
+        "id",
+        "question",
+        "choices"
+      ],
+      "source": "https://huggingface.co/datasets/allenai/qasc/resolve/a34ba204eb9a33b919c10cc08f4f1c8dae5ec070/data/test-00000-of-00001.parquet",
+      "license": "CC BY 4.0"
+    }
+  },
+  "historical_qasc_and_obqa": {
+    "historical_confirmation_sha256": "342110fc6e459dcee6d780732f9bed2cb230e1e5c621254ec9fd50702ff4904c",
+    "historical_exclusions_sha256": "7f03a6a4cdb21de9b587054d6b5b2ccb7465dfaf371a55e44cada64f402d6ad0",
+    "historical_confirmation_n": 384,
+    "historical_overlap_ids": 41,
+    "n_excluded_after_component_propagation": 491,
+    "excluded_id_sha256": "1250c1b66465848850a6d47dfc9cbffa63f4af7bc3cecf0359e7ece13f67b6d3",
+    "historical_label_or_outcome_access": false,
+    "previous_architecture_obqa_train_reused_exact_sha": "98148f8a54e62eb862346a75192d5fb824d6cbb68f2f59aecd793d39ecb5cd8b"
+  },
+  "pool_sizes": {
+    "obqa": 4772,
+    "qasc": 7129
+  },
+  "filters": {
+    "obqa": {
+      "excluded_historical_or_other_source_normalized_stem": 73,
+      "excluded_within_pool_duplicate_normalized_stem": 112
+    },
+    "qasc": {
+      "excluded_historical_or_other_source_id": 491,
+      "excluded_within_pool_duplicate_normalized_stem": 512,
+      "excluded_historical_or_other_source_normalized_stem": 2,
+      "excluded_historical_near_duplicate_component_members": 0
+    }
+  },
+  "parity_audits": {
+    "obqa_train__arc_train": {
+      "id": 0,
+      "normalized_stem": 0,
+      "normalized_stem_and_options": 0
+    },
+    "obqa_train__csqa_train": {
+      "id": 0,
+      "normalized_stem": 0,
+      "normalized_stem_and_options": 0
+    },
+    "obqa_train__arc_csqa_mixed_train": {
+      "id": 0,
+      "normalized_stem": 0,
+      "normalized_stem_and_options": 0
+    },
+    "obqa_train__arc_discovery": {
+      "id": 0,
+      "normalized_stem": 0,
+      "normalized_stem_and_options": 0
+    },
+    "obqa_train__arc_confirm": {
+      "id": 0,
+      "normalized_stem": 0,
+      "normalized_stem_and_options": 0
+    },
+    "obqa_train__csqa_discovery": {
+      "id": 0,
+      "normalized_stem": 0,
+      "normalized_stem_and_options": 0
+    },
+    "obqa_train__csqa_confirm": {
+      "id": 0,
+      "normalized_stem": 0,
+      "normalized_stem_and_options": 0
+    },
+    "obqa_train__arc_challenge_validation": {
+      "id": 0,
+      "normalized_stem": 0,
+      "normalized_stem_and_options": 0
+    },
+    "obqa_train__arc_challenge_test": {
+      "id": 0,
+      "normalized_stem": 0,
+      "normalized_stem_and_options": 0
+    },
+    "obqa_train__csqa_validation": {
+      "id": 0,
+      "normalized_stem": 0,
+      "normalized_stem_and_options": 0
+    },
+    "obqa_train__obqa_validation": {
+      "id": 0,
+      "normalized_stem": 0,
+      "normalized_stem_and_options": 0
+    },
+    "obqa_train__obqa_test": {
+      "id": 0,
+      "normalized_stem": 0,
+      "normalized_stem_and_options": 0
+    },
+    "obqa_train__qasc_validation": {
+      "id": 0,
+      "normalized_stem": 0,
+      "normalized_stem_and_options": 0
+    },
+    "obqa_train__qasc_test": {
+      "id": 0,
+      "normalized_stem": 0,
+      "normalized_stem_and_options": 0
+    },
+    "obqa_train__historical_qasc_evaluation_and_components": {
+      "id": 0,
+      "normalized_stem": 0,
+      "normalized_stem_and_options": 0
+    },
+    "obqa_train__other_optional_official_train": {
+      "id": 0,
+      "normalized_stem": 0,
+      "normalized_stem_and_options": 0
+    },
+    "qasc_train__arc_train": {
+      "id": 0,
+      "normalized_stem": 0,
+      "normalized_stem_and_options": 0
+    },
+    "qasc_train__csqa_train": {
+      "id": 0,
+      "normalized_stem": 0,
+      "normalized_stem_and_options": 0
+    },
+    "qasc_train__arc_csqa_mixed_train": {
+      "id": 0,
+      "normalized_stem": 0,
+      "normalized_stem_and_options": 0
+    },
+    "qasc_train__arc_discovery": {
+      "id": 0,
+      "normalized_stem": 0,
+      "normalized_stem_and_options": 0
+    },
+    "qasc_train__arc_confirm": {
+      "id": 0,
+      "normalized_stem": 0,
+      "normalized_stem_and_options": 0
+    },
+    "qasc_train__csqa_discovery": {
+      "id": 0,
+      "normalized_stem": 0,
+      "normalized_stem_and_options": 0
+    },
+    "qasc_train__csqa_confirm": {
+      "id": 0,
+      "normalized_stem": 0,
+      "normalized_stem_and_options": 0
+    },
+    "qasc_train__arc_challenge_validation": {
+      "id": 0,
+      "normalized_stem": 0,
+      "normalized_stem_and_options": 0
+    },
+    "qasc_train__arc_challenge_test": {
+      "id": 0,
+      "normalized_stem": 0,
+      "normalized_stem_and_options": 0
+    },
+    "qasc_train__csqa_validation": {
+      "id": 0,
+      "normalized_stem": 0,
+      "normalized_stem_and_options": 0
+    },
+    "qasc_train__obqa_validation": {
+      "id": 0,
+      "normalized_stem": 0,
+      "normalized_stem_and_options": 0
+    },
+    "qasc_train__obqa_test": {
+      "id": 0,
+      "normalized_stem": 0,
+      "normalized_stem_and_options": 0
+    },
+    "qasc_train__qasc_validation": {
+      "id": 0,
+      "normalized_stem": 0,
+      "normalized_stem_and_options": 0
+    },
+    "qasc_train__qasc_test": {
+      "id": 0,
+      "normalized_stem": 0,
+      "normalized_stem_and_options": 0
+    },
+    "qasc_train__historical_qasc_evaluation_and_components": {
+      "id": 0,
+      "normalized_stem": 0,
+      "normalized_stem_and_options": 0
+    },
+    "qasc_train__other_optional_official_train": {
+      "id": 0,
+      "normalized_stem": 0,
+      "normalized_stem_and_options": 0
+    }
+  },
+  "matching_scope": "1119 source-specific questions under main SHA256 ordering and dedup rules",
+  "scorer_columns": [
+    "id",
+    "question",
+    "choices",
+    "answerKey",
+    "dataset",
+    "source_config",
+    "source_split"
+  ],
+  "label_read": "Only id and answerKey for the 1119 already selected official Train IDs per source",
+  "qasc_excluded_columns": [
+    "fact1",
+    "fact2",
+    "combinedfact",
+    "formatted_question"
+  ],
+  "optional_training_only": true,
+  "cohorts": {
+    "obqa_train": {
+      "file": "obqa_train.jsonl",
+      "sha256": "35e0f947cda7f3eb83153124880fb17666f0e78a47518cfc07ee81ccc27e09bb",
+      "n": 1119,
+      "id_sha256": "8b44c5fe0f9eb03cbd54f32e054228dfc078fcbe75315424e9d6c701110ee687",
+      "sorted_id_sha256": "c5b12c1077178a2e809508783ccd63586b01e3a72da51c504a6d48453429a13c",
+      "normalized_stem_sha256": "760bbc8220debdf39ca4e2e0f2a0dc6cd558ced1484a641d28cb2f67f0305695",
+      "duplicate_normalized_stems": 0,
+      "source_counts": {
+        "OpenBookQA-main/train": 1119
+      },
+      "choices_per_question": {
+        "4": 1119
+      },
+      "gold_option_index": {
+        "0": 330,
+        "1": 269,
+        "2": 266,
+        "3": 254
+      },
+      "role": "Optional held-back official Train fit source"
+    },
+    "qasc_train": {
+      "file": "qasc_train.jsonl",
+      "sha256": "fcb567061f89c8456a88c4ffe918d3563ab02e72c9e6470d3894f00cfc7c3d3f",
+      "n": 1119,
+      "id_sha256": "7499baad66bbad35d53f39150bdeaa74c4acb882b1d52d45a3fea913486277ea",
+      "sorted_id_sha256": "4a1d63de14d46e835d7b1627d69e6292de304afc6a453f4e17d6369279d06614",
+      "normalized_stem_sha256": "fff78d65b099207c6d035f945fab1acf1b803e26d0ac9fe7ff825db4032d419a",
+      "duplicate_normalized_stems": 0,
+      "source_counts": {
+        "QASC/train": 1119
+      },
+      "choices_per_question": {
+        "8": 1119
+      },
+      "gold_option_index": {
+        "0": 138,
+        "1": 143,
+        "2": 142,
+        "3": 162,
+        "4": 151,
+        "5": 138,
+        "6": 137,
+        "7": 108
+      },
+      "role": "Optional held-back official Train fit source"
+    }
+  },
+  "token_accounting": {
+    "obqa_train": {
+      "candidate_input_tokens": 85345,
+      "candidate_answer_tokens": 13957,
+      "candidates": 4476,
+      "generation_input_tokens": 54184,
+      "generation_gold_answer_tokens": 1119
+    },
+    "qasc_train": {
+      "candidate_input_tokens": 138446,
+      "candidate_answer_tokens": 16774,
+      "candidates": 8952,
+      "generation_input_tokens": 67791,
+      "generation_gold_answer_tokens": 1119
+    }
+  }
+}

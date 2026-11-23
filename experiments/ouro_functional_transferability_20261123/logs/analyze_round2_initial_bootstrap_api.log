@@ -1,0 +1,10 @@
+Traceback (most recent call last):
+  File "/root/ouro-functional-transferability-20261123/analyze_round2.py", line 133, in <module>
+    transfer()
+  File "/root/ouro-functional-transferability-20261123/analyze_round2.py", line 87, in transfer
+    draws = {target:rng.integers(size,(4000,size)) for target,size in (("arc",70),("csqa",299))}
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "numpy/random/_generator.pyx", line 624, in numpy.random._generator.Generator.integers
+  File "numpy/random/_bounded_integers.pyx", line 1349, in numpy.random._bounded_integers._rand_int64
+  File "numpy/random/_bounded_integers.pyx", line 776, in numpy.random._bounded_integers._rand_int64_broadcast
+ValueError: low >= high
