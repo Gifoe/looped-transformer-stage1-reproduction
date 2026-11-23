@@ -3,7 +3,7 @@ set -euo pipefail
 cd "$(dirname "$0")"
 source control_env.sh
 prior=/root/ouro-dynamical-transport-release-20261123
-repo=/root/ouro-generative-functional-control-release-20261123
+repo=${GEN_RELEASE_REPO:-/root/ouro-generative-functional-control-release-20261123}
 run=$PWD
 base=f2d2d46e519c3997c60cfbcfd126b59adac35641
 tree=dc2c0226d6f3ea12322f3f294ab61a80c4764f17
