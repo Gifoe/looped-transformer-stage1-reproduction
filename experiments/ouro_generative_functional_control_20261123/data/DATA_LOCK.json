@@ -1,0 +1,261 @@
+{
+  "revisions": {
+    "squad": "rajpurkar/squad@7b6d24c440a36b6815f21b70d25016731768db1f",
+    "gsm8k": "openai/gsm8k@740312add88f781978c0658806c59bc2815b9866",
+    "no_robots": "HuggingFaceH4/no_robots@e6f9a4ac5c37faeb744ba9ecf0473184d7f8105b",
+    "smoltalk": "HuggingFaceTB/smoltalk@5feaf2fd3ffca7c237fc38d1861bc30365d48ffa"
+  },
+  "input_build_hashes": {
+    "arc_easy_test.parquet": "4160597d618ae851c7eb04e281574f3f654776216ac6b6641588d64527b47177",
+    "arc_easy_train.parquet": "b315db8a4be597dc7daa50a4e70d48dd7c990c32085629e6ccd8c926beaa80b5",
+    "arc_easy_validation.parquet": "ed890ff1e4cef7a7140d3a30dcea3ed2c9d467c6458f447ad9ef0176d8dcbb74",
+    "obqa_test.parquet": "cd5483e366daa230c1c87bbdc512d8b7229f14f6dd04d19fc8b1a3855aaaa8a3",
+    "obqa_train.parquet": "98148f8a54e62eb862346a75192d5fb824d6cbb68f2f59aecd793d39ecb5cd8b",
+    "obqa_validation.parquet": "35370b9cfee8c1ff325ccc74adc434d12c47ca0ac3244aa87f3fa77069285206",
+    "qasc_test.parquet": "495cfbd17abc1720b54785cdce68825104aaf60d7b8bdb2acac62157a31eb517",
+    "qasc_train.parquet": "b9a297b5ab55f1605c7682ffbb7042c26d7ecb9ff1e1aa5a820d4e791c8302d1",
+    "qasc_validation.parquet": "d1ae34ae13c5fce2c55305372c203c6cdb789728d0d7e5ea2956d55bc33f40ae",
+    "upstream_arc_challenge_test.parquet": "62f03257e737aed263f55c6abf87c7bb0028a44a6bdd2a26eb1279eb42c1d1e9",
+    "upstream_arc_challenge_train.parquet": "e488c1587ffdcfc8443f916c53488a95cd471c5790e0746c6bfe4cecf20962cb",
+    "upstream_arc_challenge_validation.parquet": "395a5c88d1580d69855fbaee9450270578df1ad5af6259771cd0a42c20e99f05",
+    "gsm8k_test.parquet": "ee7b8da9e381df27b9e3f7758a159ab2bdaa4dbaa910546cbbc47e0cb44e4f59",
+    "gsm8k_train.parquet": "ea82612ea9582142387730c793eb67d3b12849002bc0b7fa6f8efafa7351419d",
+    "no_robots_test.parquet": "60707b2636a46e37bb0c1e9ca263a18553f430317b7a53c691676d6a492fc0f2",
+    "no_robots_train.parquet": "76d64120a2ab20eb85d6b22bdced5b1ec638a6213a97004741006745c92489ef",
+    "smol-constraints_test.parquet": "318f76c556e1d25acbaf777d923c91494e2aa70f3cd96207e029648e7c8bee4c",
+    "smol-constraints_train.parquet": "3369eaff911d3511ee21561a3b8607e1acfd773a6ade80f4759490ffdcce7ba4",
+    "smol-magpie-ultra_test.parquet": "5669ea1ca03fb1405fad0e927cc270f2f99dbd51e98232f3b9beb63ccbd61583",
+    "smol-magpie-ultra_train.parquet": "512cb90bf3c8a6772e97c43977d10177b2726118a107eaf8de4797a604e09df8",
+    "smol-rewrite_test.parquet": "cd4d8b1f0bb56c7a0a3ada2a02529fc77b7a2c623b4aae69a1900892659bc232",
+    "smol-rewrite_train.parquet": "12c7df2f0ec53fa35c329c1d10243cbb744bb04b6c52823db8e464835747ccba",
+    "smol-summarize_test.parquet": "df81143c84b7d83e557c70227833ff7df52537ea9ab46656c5fa5053986b7575",
+    "smol-summarize_train.parquet": "6fb82c0cb0b6bc4cc484057b035b59d83da8a32cd675379628bc7d295a139229",
+    "squad_train.parquet": "ea7f52bac024f6b1bdc7aaa2a4ee302cba8c2fdc8d4a235cf18a9a5196b6175b",
+    "squad_validation.parquet": "8c6646d36bd5a95061e076788cf3161d11f6f3e7d625dac7a83bbed0a49f69f7"
+  },
+  "by_source": {
+    "csqa": {
+      "wanted": 6000,
+      "n": 6000,
+      "raw_n": 9741,
+      "file_sha256": "58ffa3c8472410e24b8c43f423d89c8a003d8284698a6ed7874355dedd09a2fb",
+      "task_type_counts": {
+        "mc_content": 4200,
+        "mc_letter": 1800
+      },
+      "response_tokens": 14826,
+      "prompt_tokens": 322806,
+      "p_answer_tokens": [
+        2.0,
+        2.0,
+        3.0,
+        5.0,
+        7.0
+      ]
+    },
+    "obqa": {
+      "wanted": 4000,
+      "n": 4000,
+      "raw_n": 4957,
+      "file_sha256": "98148f8a54e62eb862346a75192d5fb824d6cbb68f2f59aecd793d39ecb5cd8b",
+      "task_type_counts": {
+        "mc_content": 2800,
+        "mc_letter": 1200
+      },
+      "response_tokens": 14708,
+      "prompt_tokens": 203753,
+      "p_answer_tokens": [
+        2.0,
+        3.0,
+        7.0,
+        13.0,
+        25.0
+      ]
+    },
+    "squad": {
+      "wanted": 10000,
+      "n": 10000,
+      "raw_n": 87599,
+      "file_sha256": "ea7f52bac024f6b1bdc7aaa2a4ee302cba8c2fdc8d4a235cf18a9a5196b6175b",
+      "task_type_counts": {
+        "span": 10000
+      },
+      "response_tokens": 60706,
+      "prompt_tokens": 1990003,
+      "p_answer_tokens": [
+        2.0,
+        5.0,
+        11.0,
+        26.0,
+        76.0
+      ]
+    },
+    "gsm8k": {
+      "wanted": 6000,
+      "n": 6000,
+      "raw_n": 7473,
+      "file_sha256": "ea82612ea9582142387730c793eb67d3b12849002bc0b7fa6f8efafa7351419d",
+      "task_type_counts": {
+        "gsm_final": 3087,
+        "gsm_process": 2913
+      },
+      "response_tokens": 361336,
+      "prompt_tokens": 477862,
+      "p_answer_tokens": [
+        4.0,
+        8.0,
+        156.0,
+        226.0,
+        240.0
+      ]
+    },
+    "no_robots": {
+      "wanted": 4000,
+      "n": 4000,
+      "raw_n": 9500,
+      "file_sha256": "76d64120a2ab20eb85d6b22bdced5b1ec638a6213a97004741006745c92489ef",
+      "task_type_counts": {
+        "Open QA": 707,
+        "Brainstorm": 310,
+        "Rewrite": 205,
+        "Generation": 1527,
+        "Chat": 470,
+        "Summarize": 217,
+        "Extract": 90,
+        "Classify": 201,
+        "Coding": 135,
+        "Closed QA": 138
+      },
+      "response_tokens": 396786,
+      "prompt_tokens": 354574,
+      "p_answer_tokens": [
+        2.0,
+        86.0,
+        199.0,
+        234.00999999999976,
+        240.0
+      ]
+    },
+    "smol-magpie-ultra": {
+      "wanted": 4000,
+      "n": 1558,
+      "raw_n": 68257,
+      "file_sha256": "512cb90bf3c8a6772e97c43977d10177b2726118a107eaf8de4797a604e09df8",
+      "task_type_counts": {
+        "role-playing": 342,
+        "reasoning": 257,
+        "coding": 183,
+        "editing": 295,
+        "data-analysis": 231,
+        "math": 90,
+        "information-seeking": 149,
+        "creative-writing": 7,
+        "advice-seeking": 2,
+        "brainstorming": 1,
+        "planning": 1
+      },
+      "response_tokens": 209260,
+      "prompt_tokens": 606107,
+      "p_answer_tokens": [
+        2.0,
+        134.0,
+        207.0,
+        236.0,
+        240.0
+      ]
+    },
+    "smol-rewrite": {
+      "wanted": 2000,
+      "n": 2000,
+      "raw_n": 53342,
+      "file_sha256": "12c7df2f0ec53fa35c329c1d10243cbb744bb04b6c52823db8e464835747ccba",
+      "task_type_counts": {
+        "smol-rewrite": 2000
+      },
+      "response_tokens": 267400,
+      "prompt_tokens": 361097,
+      "p_answer_tokens": [
+        41.0,
+        131.0,
+        194.0,
+        235.0,
+        240.0
+      ]
+    },
+    "smol-summarize": {
+      "wanted": 2000,
+      "n": 2000,
+      "raw_n": 96356,
+      "file_sha256": "6fb82c0cb0b6bc4cc484057b035b59d83da8a32cd675379628bc7d295a139229",
+      "task_type_counts": {
+        "smol-summarize": 2000
+      },
+      "response_tokens": 90920,
+      "prompt_tokens": 414942,
+      "p_answer_tokens": [
+        11.0,
+        39.0,
+        72.0,
+        185.0,
+        236.0
+      ]
+    },
+    "smol-constraints": {
+      "wanted": 2000,
+      "n": 2000,
+      "raw_n": 34424,
+      "file_sha256": "3369eaff911d3511ee21561a3b8607e1acfd773a6ade80f4759490ffdcce7ba4",
+      "task_type_counts": {
+        "smol-constraints": 2000
+      },
+      "response_tokens": 204022,
+      "prompt_tokens": 158097,
+      "p_answer_tokens": [
+        4.0,
+        94.0,
+        166.0,
+        232.01,
+        240.0
+      ]
+    }
+  },
+  "unique_train": 37558,
+  "output_hashes": {
+    "csqa_matched.jsonl": "1eba5da9b77c11ff972d9df9219fe0ec57a4561e92e02ef0c42992908444edb4",
+    "dev_csqa.jsonl": "aa1116403768cb6206c3739f42188da88b5d9eefc8ad42fd2128b42561cd72bb",
+    "dev_gsm8k.jsonl": "2d3dfce18edabb8c5f767ce29dbe8a6578c35770fb10893beced3f7e0e1a68ff",
+    "dev_no_robots.jsonl": "b8d4d8add997aed5d1c22e745e9d6438c8fae900977331fa4cad9e5ef09357c4",
+    "dev_obqa.jsonl": "0ce2dfdfe873c8f4323182f9526f9985c81eaff25a64ccffcbf195d2931edf7c",
+    "dev_smol-constraints.jsonl": "0145d0c90ad112c28c6cd661deb05f0ab8cabb2cfce5761c7eb35aa366136875",
+    "dev_smol-magpie-ultra.jsonl": "139c550fb8aadd899a56c92bbfd37b00bc7c6f35ac87f3f5c6854478a28502a9",
+    "dev_smol-rewrite.jsonl": "09dfab00f99048d0a1ec40a85eef05858e13ea51f3aac9130ee8a2e14d35f6d5",
+    "dev_smol-summarize.jsonl": "f60f975d6fa038141514f7ede81be448f7b9bce31cc25f73505c46b56a01600f",
+    "dev_squad.jsonl": "c2cb5f623fe0e8e7574341c93a73bfbfe1b3f0a7f7db37fd65c6b12898295c3c",
+    "mixed_train.jsonl": "75c4f1281ce703150ebac0d50260f726cab9ad07225169c3cc11016523e48f07",
+    "test_arc_challenge.jsonl": "a15e0809eb5f4307ef743f3d336fa9b89760f0a55f4d76ebbf0ef9b64bed7b43",
+    "test_arc_easy.jsonl": "cc962f694a103d22f3491e78ac595fc047183655569298d68f69c86c09ba30dd",
+    "test_csqa.jsonl": "713078683d8bf6a4b2108b75d3f94aeb612490bf110e3237276edccec342c6f0",
+    "test_gsm8k.jsonl": "fe8bea128479bf487e4feadedfc788fbf17111df9e81badfee2be106102f8a57",
+    "test_no_robots.jsonl": "57502aeba430de323c33f854fb38d523e9d7c41de392a9c2298335bbbc8c915b",
+    "test_obqa.jsonl": "9d33dac1cc645af232f22a6298984f2444e664df84e9c55c2f05c77543c24a7f",
+    "test_smol-constraints.jsonl": "14c3f399d80d68d611d55214e8834c8db750fc3b770cfaed813a384417472de2",
+    "test_smol-magpie-ultra.jsonl": "119aea0122812210e0654389bd9992b599f0de13d2f31ba57a011b0ce1c930d3",
+    "test_smol-rewrite.jsonl": "3aefe4e7a9590ab9652884d4b449710583bf713c9525074c03361b73f16e55b8",
+    "test_smol-summarize.jsonl": "9e33cefe4c46b36027ac60954d5e86c9c2c855057b613c8d74858689784d1345",
+    "test_squad.jsonl": "3bc3305ec98ecab989700fb138a40230629263999572d4d88d2349c15fd3b8a1",
+    "train_csqa.jsonl": "dfaf0a65c87ed8e60e4bf12fc1375995389838144b9a526ca367cdcd89b08656",
+    "train_gsm8k.jsonl": "a5516f5c967c94cdc2b92e14c3b3eaaf1cf228868c1991be087ace22e8710f02",
+    "train_no_robots.jsonl": "acf3c4344a312361559206bacdee9535288a5f1a220be2f98b96f29e4fe8ce39",
+    "train_obqa.jsonl": "47ecf5b3c5c0b04695bed956449f1d972c609128c6271c5dab1b68f23089d892",
+    "train_smol-constraints.jsonl": "b811d718e4ad6feca879ed4415b3b7b87fb798a72cdd9120797dbe41d5a099ce",
+    "train_smol-magpie-ultra.jsonl": "155ffb358fc5abb9e3ec41c6aa438e9211d06876200c7c0241fc27652619d781",
+    "train_smol-rewrite.jsonl": "4e7950fd27c6e4df5ae85935abbdecf29078ff066fe754c56691cf8abba186db",
+    "train_smol-summarize.jsonl": "317c74039b00d0c12e6eb8d81a7702d8b68d88eae1eae54aaf80c2125f681ced",
+    "train_squad.jsonl": "0e47a3a03025f2021f55f55725d7aa94c834ccfccfb5e8baa024f009c99e68e7"
+  },
+  "corpus_notes": [
+    "Magpie Ultra uses pinned train shard 0 of 6; no descriptions are truncated.",
+    "MC calibration test cohorts use official fixed splits; SQuAD dev/test are divided by title.",
+    "Licenses and upstream pretraining exposure are reported separately."
+  ]
+}

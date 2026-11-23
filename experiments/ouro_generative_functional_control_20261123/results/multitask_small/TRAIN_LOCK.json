@@ -1,0 +1,19 @@
+{
+  "data_sha256": "75c4f1281ce703150ebac0d50260f726cab9ad07225169c3cc11016523e48f07",
+  "steps": 3000,
+  "max_work": 706912,
+  "seed": 261123137,
+  "batch": 4,
+  "script_sha256": "7699cbe9d0409f3c1a73ebda5de2af506d745bfba59124e4d4512d7f5bdf8a69",
+  "architecture": "2 x 2048, FP32 rank-one, BF16 base",
+  "learning_rate": 0.001,
+  "rank_weight": 0.25,
+  "initial_sha256": null,
+  "shared_depths": [
+    2,
+    3,
+    4
+  ],
+  "train_order": "shuffled length buckets",
+  "loss": "per-sequence full token average with EOS; candidate auxiliary uses unchanged ranking CE"
+}

@@ -1,0 +1,497 @@
+{
+  "selected_arm": "retention_control",
+  "checkpoint_sha256": "de97f3c0251a67bb33fbee4a9eb2514d4dcded977bbfecf06b205102d0a4d1a0",
+  "controller_file": "results/FINAL_CONTROLLER.pt",
+  "trainable_parameters": 4096,
+  "development_evidence": {
+    "native": {
+      "semantic_macro": 0.5039351851851851,
+      "semantic": {
+        "csqa/letter": 0.6125,
+        "csqa/content": 0.55,
+        "obqa/letter": 0.7291666666666666,
+        "obqa/content": 0.6041666666666666,
+        "squad/EM": 0.5138888888888888,
+        "gsm8k/final": 0.013888888888888888
+      },
+      "strict_letter": 0.020833333333333332,
+      "valid_letter": 0.965625,
+      "paired_candidate_macro": 0.45
+    },
+    "rank_only": {
+      "semantic_macro": 0.47256944444444443,
+      "semantic": {
+        "csqa/letter": 0.6625,
+        "csqa/content": 0.35,
+        "obqa/letter": 0.7708333333333334,
+        "obqa/content": 0.3020833333333333,
+        "squad/EM": 0.7083333333333334,
+        "gsm8k/final": 0.041666666666666664
+      },
+      "strict_letter": 0.005208333333333333,
+      "valid_letter": 0.471875,
+      "paired_candidate_macro": 0.5635416666666666
+    },
+    "gen_only": {
+      "semantic_macro": 0.5869212962962963,
+      "semantic": {
+        "csqa/letter": 0.6375,
+        "csqa/content": 0.6375,
+        "obqa/letter": 0.8229166666666666,
+        "obqa/content": 0.6875,
+        "squad/EM": 0.6944444444444444,
+        "gsm8k/final": 0.041666666666666664
+      },
+      "strict_letter": 0.7197916666666666,
+      "valid_letter": 1.0,
+      "paired_candidate_macro": 0.4697916666666666
+    },
+    "gen_rank": {
+      "semantic_macro": 0.5809027777777778,
+      "semantic": {
+        "csqa/letter": 0.65,
+        "csqa/content": 0.6375,
+        "obqa/letter": 0.8125,
+        "obqa/content": 0.6354166666666666,
+        "squad/EM": 0.7083333333333334,
+        "gsm8k/final": 0.041666666666666664
+      },
+      "strict_letter": 0.73125,
+      "valid_letter": 1.0,
+      "paired_candidate_macro": 0.521875
+    },
+    "multitask_full": {
+      "semantic_macro": 0.579861111111111,
+      "semantic": {
+        "csqa/letter": 0.6375,
+        "csqa/content": 0.64375,
+        "obqa/letter": 0.7604166666666666,
+        "obqa/content": 0.6041666666666666,
+        "squad/EM": 0.7638888888888888,
+        "gsm8k/final": 0.06944444444444445
+      },
+      "strict_letter": 0.6989583333333333,
+      "valid_letter": 0.9885416666666667,
+      "paired_candidate_macro": 0.5104166666666666
+    },
+    "retention_control": {
+      "semantic_macro": 0.5986111111111111,
+      "semantic": {
+        "csqa/letter": 0.63125,
+        "csqa/content": 0.6375,
+        "obqa/letter": 0.8125,
+        "obqa/content": 0.6770833333333334,
+        "squad/EM": 0.7777777777777778,
+        "gsm8k/final": 0.05555555555555555
+      },
+      "strict_letter": 0.721875,
+      "valid_letter": 0.9895833333333333,
+      "paired_candidate_macro": 0.509375
+    },
+    "retention_strong": {
+      "semantic_macro": 0.5844907407407407,
+      "semantic": {
+        "csqa/letter": 0.6125,
+        "csqa/content": 0.6375,
+        "obqa/letter": 0.7708333333333334,
+        "obqa/content": 0.6666666666666666,
+        "squad/EM": 0.7638888888888888,
+        "gsm8k/final": 0.05555555555555555
+      },
+      "strict_letter": 0.6864583333333334,
+      "valid_letter": 0.9885416666666667,
+      "paired_candidate_macro": 0.5166666666666666
+    }
+  },
+  "data_lock_sha256": "90944bfd2b4e129e76108a47e2aca8058ec2d8bbe622b51b02f414b719d282d8",
+  "expanded_pool_sha256": "aaa769da39b546e734584644ce44d4bfcb6212e6f7df87d7fe57a51d05a8adad",
+  "contamination_sha256": "8106082c798ed0b339bfa7e9d995955b2d66abb5d1c746c73b5c3fbda2a00fe2",
+  "evaluation_code_sha256": {
+    "evaluate_suite.py": "8e87dbd2eec6946688bc5bc831f989145f1b78701e172149540fcdd19ef3a72b",
+    "evaluate_generation.py": "d1657b73879ae1a1447ead06ad95b1b08d35f4eca2e1909e3c681596ac08c9b2",
+    "evaluation_lock.py": "c832c2aebcf9d81e2c68ec64efc57aeb260ee0fdd8fe2d34e83522cbaf4f9efb",
+    "task_data.py": "b8de6202280155377e0fe79d95518e34ac4ecc85ab30d0054c01fc342470597d",
+    "historical/generation.py": "4d3fab338ea2ef3bdb90adce3a1b5a9c64b188eb5a6bc98d3ebb622e396ee034",
+    "historical/minimal.py": "408e932cfd27dc010162d3e46fc6dc95d8b36704563440879b9f93b021353940"
+  },
+  "allowed_run_order": [
+    "retention_control",
+    "native",
+    "rank_only",
+    "gen_only",
+    "gen_rank",
+    "multitask_full"
+  ],
+  "arms": {
+    "native": {
+      "file": null,
+      "sha256": "original_backbone"
+    },
+    "rank_only": {
+      "file": "/root/ouro-functional-transferability-20261123/results/HOLDOUT/csqa/source/s261123137/k234/controller.pt",
+      "sha256": "154c3d1591203e9331fb68901a80b4a4fb3935307dcd4fdf17dcee8c0d8ec28a"
+    },
+    "gen_only": {
+      "file": "results/gen_only/controller.pt",
+      "sha256": "81481b8b51b71b7ee8641a6f613e9873caa967e838bcc0385f4491949cb65b95"
+    },
+    "gen_rank": {
+      "file": "results/gen_rank/controller.pt",
+      "sha256": "17dc84cd7946a67d6e332cf5571f32464ac4485e17c630c9983a00ae22c62ef3"
+    },
+    "multitask_full": {
+      "file": "results/multitask_full/controller.pt",
+      "sha256": "835f3977d9cd732c289a10ce3aa743303818538c5976a2cb28ec53e55eee7f92"
+    },
+    "retention_control": {
+      "file": "results/retention_control/controller.pt",
+      "sha256": "de97f3c0251a67bb33fbee4a9eb2514d4dcded977bbfecf06b205102d0a4d1a0"
+    }
+  },
+  "run_stages": [
+    "k4",
+    "qa_transfer",
+    "instruction_transfer"
+  ],
+  "cases": [
+    {
+      "dataset": "arc_challenge",
+      "mode": "content",
+      "depths": [
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "full_limit": 99999,
+      "transfer_limit": 192,
+      "max_new": 24,
+      "batch": 48,
+      "file": "data/filtered/test_arc_challenge.jsonl",
+      "data_sha256": "a15e0809eb5f4307ef743f3d336fa9b89760f0a55f4d76ebbf0ef9b64bed7b43"
+    },
+    {
+      "dataset": "arc_challenge",
+      "mode": "letter",
+      "depths": [
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "full_limit": 99999,
+      "transfer_limit": 192,
+      "max_new": 8,
+      "batch": 48,
+      "file": "data/filtered/test_arc_challenge.jsonl",
+      "data_sha256": "a15e0809eb5f4307ef743f3d336fa9b89760f0a55f4d76ebbf0ef9b64bed7b43"
+    },
+    {
+      "dataset": "arc_challenge",
+      "mode": "candidate",
+      "depths": [
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "full_limit": 99999,
+      "transfer_limit": 192,
+      "max_new": 1,
+      "batch": 12,
+      "file": "data/filtered/test_arc_challenge.jsonl",
+      "data_sha256": "a15e0809eb5f4307ef743f3d336fa9b89760f0a55f4d76ebbf0ef9b64bed7b43"
+    },
+    {
+      "dataset": "arc_easy",
+      "mode": "content",
+      "depths": [
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "full_limit": 99999,
+      "transfer_limit": 192,
+      "max_new": 24,
+      "batch": 48,
+      "file": "data/filtered/test_arc_easy.jsonl",
+      "data_sha256": "cc962f694a103d22f3491e78ac595fc047183655569298d68f69c86c09ba30dd"
+    },
+    {
+      "dataset": "arc_easy",
+      "mode": "letter",
+      "depths": [
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "full_limit": 99999,
+      "transfer_limit": 192,
+      "max_new": 8,
+      "batch": 48,
+      "file": "data/filtered/test_arc_easy.jsonl",
+      "data_sha256": "cc962f694a103d22f3491e78ac595fc047183655569298d68f69c86c09ba30dd"
+    },
+    {
+      "dataset": "arc_easy",
+      "mode": "candidate",
+      "depths": [
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "full_limit": 99999,
+      "transfer_limit": 192,
+      "max_new": 1,
+      "batch": 12,
+      "file": "data/filtered/test_arc_easy.jsonl",
+      "data_sha256": "cc962f694a103d22f3491e78ac595fc047183655569298d68f69c86c09ba30dd"
+    },
+    {
+      "dataset": "csqa",
+      "mode": "content",
+      "depths": [
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "full_limit": 99999,
+      "transfer_limit": 192,
+      "max_new": 24,
+      "batch": 48,
+      "file": "data/filtered/test_csqa.jsonl",
+      "data_sha256": "713078683d8bf6a4b2108b75d3f94aeb612490bf110e3237276edccec342c6f0"
+    },
+    {
+      "dataset": "csqa",
+      "mode": "letter",
+      "depths": [
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "full_limit": 99999,
+      "transfer_limit": 192,
+      "max_new": 8,
+      "batch": 48,
+      "file": "data/filtered/test_csqa.jsonl",
+      "data_sha256": "713078683d8bf6a4b2108b75d3f94aeb612490bf110e3237276edccec342c6f0"
+    },
+    {
+      "dataset": "csqa",
+      "mode": "candidate",
+      "depths": [
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "full_limit": 99999,
+      "transfer_limit": 192,
+      "max_new": 1,
+      "batch": 12,
+      "file": "data/filtered/test_csqa.jsonl",
+      "data_sha256": "713078683d8bf6a4b2108b75d3f94aeb612490bf110e3237276edccec342c6f0"
+    },
+    {
+      "dataset": "obqa",
+      "mode": "content",
+      "depths": [
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "full_limit": 99999,
+      "transfer_limit": 192,
+      "max_new": 24,
+      "batch": 48,
+      "file": "data/filtered/test_obqa.jsonl",
+      "data_sha256": "a54d367dc894facf850b3dc0e45e76c699bfa7239cf5f6ea82129f620631ed21"
+    },
+    {
+      "dataset": "obqa",
+      "mode": "letter",
+      "depths": [
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "full_limit": 99999,
+      "transfer_limit": 192,
+      "max_new": 8,
+      "batch": 48,
+      "file": "data/filtered/test_obqa.jsonl",
+      "data_sha256": "a54d367dc894facf850b3dc0e45e76c699bfa7239cf5f6ea82129f620631ed21"
+    },
+    {
+      "dataset": "obqa",
+      "mode": "candidate",
+      "depths": [
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "full_limit": 99999,
+      "transfer_limit": 192,
+      "max_new": 1,
+      "batch": 12,
+      "file": "data/filtered/test_obqa.jsonl",
+      "data_sha256": "a54d367dc894facf850b3dc0e45e76c699bfa7239cf5f6ea82129f620631ed21"
+    },
+    {
+      "dataset": "squad",
+      "mode": "span",
+      "depths": [
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "full_limit": 360,
+      "transfer_limit": 96,
+      "max_new": 24,
+      "batch": 32,
+      "file": "data/filtered/test_squad.jsonl",
+      "data_sha256": "3bc3305ec98ecab989700fb138a40230629263999572d4d88d2349c15fd3b8a1"
+    },
+    {
+      "dataset": "gsm8k",
+      "mode": "gsm_final",
+      "depths": [
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "full_limit": 320,
+      "transfer_limit": 96,
+      "max_new": 28,
+      "batch": 32,
+      "file": "data/filtered/test_gsm8k.jsonl",
+      "data_sha256": "fe8bea128479bf487e4feadedfc788fbf17111df9e81badfee2be106102f8a57"
+    },
+    {
+      "dataset": "gsm8k",
+      "mode": "gsm_process",
+      "depths": [
+        4
+      ],
+      "full_limit": 96,
+      "transfer_limit": 96,
+      "max_new": 192,
+      "batch": 24,
+      "file": "data/filtered/test_gsm8k.jsonl",
+      "data_sha256": "fe8bea128479bf487e4feadedfc788fbf17111df9e81badfee2be106102f8a57"
+    },
+    {
+      "dataset": "no_robots",
+      "mode": "other",
+      "depths": [
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "full_limit": 64,
+      "transfer_limit": 20,
+      "max_new": 160,
+      "batch": 16,
+      "file": "data/filtered/test_no_robots.jsonl",
+      "data_sha256": "57502aeba430de323c33f854fb38d523e9d7c41de392a9c2298335bbbc8c915b"
+    },
+    {
+      "dataset": "smol-magpie-ultra",
+      "mode": "other",
+      "depths": [
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "full_limit": 64,
+      "transfer_limit": 20,
+      "max_new": 160,
+      "batch": 16,
+      "file": "data/filtered/test_smol-magpie-ultra.jsonl",
+      "data_sha256": "119aea0122812210e0654389bd9992b599f0de13d2f31ba57a011b0ce1c930d3"
+    },
+    {
+      "dataset": "smol-rewrite",
+      "mode": "other",
+      "depths": [
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "full_limit": 64,
+      "transfer_limit": 20,
+      "max_new": 160,
+      "batch": 16,
+      "file": "data/filtered/test_smol-rewrite.jsonl",
+      "data_sha256": "3aefe4e7a9590ab9652884d4b449710583bf713c9525074c03361b73f16e55b8"
+    },
+    {
+      "dataset": "smol-summarize",
+      "mode": "other",
+      "depths": [
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "full_limit": 64,
+      "transfer_limit": 20,
+      "max_new": 160,
+      "batch": 16,
+      "file": "data/filtered/test_smol-summarize.jsonl",
+      "data_sha256": "9e33cefe4c46b36027ac60954d5e86c9c2c855057b613c8d74858689784d1345"
+    },
+    {
+      "dataset": "smol-constraints",
+      "mode": "other",
+      "depths": [
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "full_limit": 64,
+      "transfer_limit": 20,
+      "max_new": 160,
+      "batch": 16,
+      "file": "data/filtered/test_smol-constraints.jsonl",
+      "data_sha256": "14c3f399d80d68d611d55214e8834c8db750fc3b770cfaed813a384417472de2"
+    }
+  ],
+  "decode": "full vocabulary greedy, EOS; short tasks preserve intervening historical newline stop",
+  "selector": "Development semantic correctness first. Exact tie-breaks strict format, parsed validity, acc_norm.",
+  "no_test_model_selection": true
+}

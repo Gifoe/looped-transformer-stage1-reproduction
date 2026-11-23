@@ -1,0 +1,3470 @@
+{
+  "arc_challenge/retention_control": {
+    "n": 1172,
+    "counts": {
+      "candidate_1_content_1": 577,
+      "candidate_0_content_0": 178,
+      "candidate_0_content_1": 338,
+      "generation_correct_candidate_wrong": 338,
+      "candidate_1_content_0": 79,
+      "scores_correct_content_wrong": 79,
+      "content_hit_limit": 5
+    },
+    "examples": {
+      "generation_correct_candidate_wrong": [
+        {
+          "id": "Mercury_7027720",
+          "content": " attach small weights to it",
+          "letter": " B",
+          "gold_letter": "B",
+          "content_stop": "eos"
+        },
+        {
+          "id": "MCAS_2010_5_11984",
+          "content": " using a fork to eat",
+          "letter": " A",
+          "gold_letter": "A",
+          "content_stop": "eos"
+        },
+        {
+          "id": "Mercury_7239383",
+          "content": " The presence and distribution of alleles diverge.",
+          "letter": " B",
+          "gold_letter": "B",
+          "content_stop": "eos"
+        },
+        {
+          "id": "Mercury_7270358",
+          "content": " They bind to mRNA.",
+          "letter": " D",
+          "gold_letter": "D",
+          "content_stop": "eos"
+        },
+        {
+          "id": "Mercury_7042648",
+          "content": " nervous",
+          "letter": " A",
+          "gold_letter": "A",
+          "content_stop": "eos"
+        }
+      ],
+      "scores_correct_content_wrong": [
+        {
+          "id": "Mercury_7268258",
+          "content": " oxygen",
+          "letter": " D",
+          "gold_letter": "C",
+          "content_stop": "eos"
+        },
+        {
+          "id": "Mercury_417150",
+          "content": " evaporation and precipitation",
+          "letter": " B",
+          "gold_letter": "B",
+          "content_stop": "eos"
+        },
+        {
+          "id": "Mercury_SC_417677",
+          "content": " B",
+          "letter": " B",
+          "gold_letter": "B",
+          "content_stop": "eos"
+        },
+        {
+          "id": "Mercury_7014333",
+          "content": " too large",
+          "letter": " B",
+          "gold_letter": "A",
+          "content_stop": "eos"
+        },
+        {
+          "id": "Mercury_184730",
+          "content": " A. the parents are of a different genus and a different species",
+          "letter": " A",
+          "gold_letter": "B",
+          "content_stop": "eos"
+        }
+      ],
+      "content_hit_limit": [
+        {
+          "id": "LEAP_2011_8_10434",
+          "content": " Earth has a solid spherical inner core that is mostly iron. Earth is somewhat flattened at the Poles due to its rotation.",
+          "letter": " B",
+          "gold_letter": "B",
+          "content_stop": "token_limit"
+        },
+        {
+          "id": "Mercury_402216",
+          "content": " 2H_{2}O(l) -> 2H_{2}(g) + O_{2}(",
+          "letter": " B",
+          "gold_letter": "B",
+          "content_stop": "token_limit"
+        },
+        {
+          "id": "Mercury_412681",
+          "content": " C. double the mass of m_{1} and halve the distance between m_{1} and m_{2",
+          "letter": " C",
+          "gold_letter": "C",
+          "content_stop": "token_limit"
+        },
+        {
+          "id": "NAEP_2005_4_S14+3",
+          "content": " Put some Quickgrow on a few plants, put the same amount of Supergrow on a few other plants of the same",
+          "letter": " C",
+          "gold_letter": "C",
+          "content_stop": "token_limit"
+        },
+        {
+          "id": "Mercury_415093",
+          "content": " 2C_{2}H_{6} + 7O_{2} -> 4CO_{2}",
+          "letter": " D",
+          "gold_letter": "D",
+          "content_stop": "token_limit"
+        }
+      ]
+    }
+  },
+  "arc_challenge/native": {
+    "n": 1172,
+    "counts": {
+      "candidate_1_content_1": 516,
+      "letter_only_loose": 859,
+      "candidate_0_content_0": 198,
+      "candidate_0_content_1": 355,
+      "generation_correct_candidate_wrong": 355,
+      "candidate_1_content_0": 103,
+      "scores_correct_content_wrong": 103,
+      "content_hit_limit": 29,
+      "content_label_conflict": 10
+    },
+    "examples": {
+      "letter_only_loose": [
+        {
+          "id": "Mercury_SC_409673",
+          "content": " D. The northern half of Earth is tilted toward the Sun in summer.\n\nAss",
+          "letter": " D\n\nAss",
+          "gold_letter": "D",
+          "content_stop": "internal_newline"
+        },
+        {
+          "id": "Mercury_7212328",
+          "content": " B. the effect of warmed water on aquatic life\n\nAss",
+          "letter": " B\n\nAss",
+          "gold_letter": "B",
+          "content_stop": "internal_newline"
+        },
+        {
+          "id": "Mercury_7168053",
+          "content": " C. weathering\n\nQuestion",
+          "letter": " C\n\nAss",
+          "gold_letter": "C",
+          "content_stop": "internal_newline"
+        },
+        {
+          "id": "Mercury_176855",
+          "content": " B. glucose\n\nAss",
+          "letter": " B. glucose\n\nQuestion",
+          "gold_letter": "B",
+          "content_stop": "internal_newline"
+        },
+        {
+          "id": "MEA_2011_8_13",
+          "content": " A. Medium spiders will be the most plentiful.\n\nAss",
+          "letter": " A\n\nAss",
+          "gold_letter": "A",
+          "content_stop": "internal_newline"
+        }
+      ],
+      "generation_correct_candidate_wrong": [
+        {
+          "id": "MCAS_2010_5_11984",
+          "content": " A. using a fork to eat\n\nAss",
+          "letter": " A",
+          "gold_letter": "A",
+          "content_stop": "internal_newline"
+        },
+        {
+          "id": "Mercury_7239383",
+          "content": " B. The presence and distribution of alleles diverge.\n\nAss",
+          "letter": " B",
+          "gold_letter": "B",
+          "content_stop": "internal_newline"
+        },
+        {
+          "id": "Mercury_417150",
+          "content": " B. precipitation and evaporation\n\nQuestion",
+          "letter": " B\n\nAss",
+          "gold_letter": "B",
+          "content_stop": "internal_newline"
+        },
+        {
+          "id": "Mercury_400084",
+          "content": " D. 4\n\nAss",
+          "letter": " D",
+          "gold_letter": "D",
+          "content_stop": "internal_newline"
+        },
+        {
+          "id": "Mercury_7270358",
+          "content": " D. They bind to mRNA.\n\nAss",
+          "letter": " D\n\nAss",
+          "gold_letter": "D",
+          "content_stop": "internal_newline"
+        }
+      ],
+      "scores_correct_content_wrong": [
+        {
+          "id": "Mercury_7268258",
+          "content": " D. oxygen\n\nAss",
+          "letter": " D\n\nAss",
+          "gold_letter": "C",
+          "content_stop": "internal_newline"
+        },
+        {
+          "id": "Mercury_7014333",
+          "content": " B. too large.\n\nAss",
+          "letter": " B\n\nQuestion",
+          "gold_letter": "A",
+          "content_stop": "internal_newline"
+        },
+        {
+          "id": "Mercury_7136028",
+          "content": " D. gravity from Earth\n\nQuestion",
+          "letter": " D\n\nQuestion",
+          "gold_letter": "A",
+          "content_stop": "internal_newline"
+        },
+        {
+          "id": "Mercury_SC_407080",
+          "content": " C. crushing ice cubes\n\nQuestion",
+          "letter": " A\n\nQuestion",
+          "gold_letter": "D",
+          "content_stop": "internal_newline"
+        },
+        {
+          "id": "Mercury_7186358",
+          "content": "\n\nAssistant\nC",
+          "letter": " C\n\nAss",
+          "gold_letter": "C",
+          "content_stop": "internal_newline"
+        }
+      ],
+      "content_hit_limit": [
+        {
+          "id": "MCAS_2004_5_33",
+          "content": "\n\nQuestion: What is the primary reason for the short stems of flowers in the northern arctic tundra? Answer: To",
+          "letter": " C\n\nQuestion",
+          "gold_letter": "C",
+          "content_stop": "token_limit"
+        },
+        {
+          "id": "Mercury_SC_406451",
+          "content": "\n\nQuestion: What is the main reason the new light bulbs are more environmentally friendly? Answer: They use less energy",
+          "letter": " D\n\nAss",
+          "gold_letter": "C",
+          "content_stop": "token_limit"
+        },
+        {
+          "id": "Mercury_7218015",
+          "content": "\n\nQuestion: What is the primary reason for the difference in climate between southern California and southern Nevada? Answer: Prox",
+          "letter": " D\n\nQuestion",
+          "gold_letter": "D",
+          "content_stop": "token_limit"
+        },
+        {
+          "id": "Mercury_408922",
+          "content": "\n\nQuestion: What is the main reason why the use of DDT stopped? Answer: Investigations showed that DDT was harmful",
+          "letter": " C\n\nQuestion",
+          "gold_letter": "C",
+          "content_stop": "token_limit"
+        },
+        {
+          "id": "Mercury_7177398",
+          "content": "\n\nThe particles within a substance are in constant motion. The particles in which of these substances have the lowest amount of",
+          "letter": " A\n\nQuestion",
+          "gold_letter": "D",
+          "content_stop": "token_limit"
+        }
+      ],
+      "content_label_conflict": [
+        {
+          "id": "Mercury_400828",
+          "content": " D. charge of -3.\n\nAss",
+          "letter": " D\n\nQuestion",
+          "gold_letter": "D",
+          "content_stop": "internal_newline"
+        },
+        {
+          "id": "Mercury_402563",
+          "content": " B. +1\n\nQuestion",
+          "letter": " B",
+          "gold_letter": "B",
+          "content_stop": "internal_newline"
+        },
+        {
+          "id": "Mercury_7038518",
+          "content": " D. Law of Independent Assortment\n\nQuestion",
+          "letter": " D. Law of Independent Assortment\n",
+          "gold_letter": "D",
+          "content_stop": "internal_newline"
+        },
+        {
+          "id": "MCAS_2016_8_15",
+          "content": " C. The college could gather parking data, receive input from community meetings, build an additional parking lot, and then gather",
+          "letter": " C",
+          "gold_letter": "C",
+          "content_stop": "token_limit"
+        },
+        {
+          "id": "Mercury_402216",
+          "content": " B. 2H_{2}O(l) -> 2H_{2}(g) + O_{",
+          "letter": " B",
+          "gold_letter": "B",
+          "content_stop": "token_limit"
+        }
+      ]
+    }
+  },
+  "arc_challenge/rank_only": {
+    "n": 1172,
+    "counts": {
+      "candidate_1_content_1": 343,
+      "letter_only_loose": 907,
+      "candidate_1_content_0": 359,
+      "scores_correct_content_wrong": 359,
+      "letter_lowercase": 170,
+      "candidate_0_content_0": 318,
+      "content_label_conflict": 185,
+      "candidate_0_content_1": 152,
+      "generation_correct_candidate_wrong": 152,
+      "content_hit_limit": 4
+    },
+    "examples": {
+      "letter_only_loose": [
+        {
+          "id": "Mercury_SC_409673",
+          "content": " D. the northern half of earth is tilted toward the sun in summer.\n\nQuestion",
+          "letter": " D\n\nQuestion",
+          "gold_letter": "D",
+          "content_stop": "internal_newline"
+        },
+        {
+          "id": "Mercury_7212328",
+          "content": " B\n\nQuestion",
+          "letter": " B\n\nQuestion",
+          "gold_letter": "B",
+          "content_stop": "internal_newline"
+        },
+        {
+          "id": "Mercury_7168053",
+          "content": " c\n\nQuestion",
+          "letter": " c\n\nQuestion",
+          "gold_letter": "C",
+          "content_stop": "internal_newline"
+        },
+        {
+          "id": "Mercury_176855",
+          "content": " B. glucose\n\nQuestion",
+          "letter": " B. glucose\n\nQuestion",
+          "gold_letter": "B",
+          "content_stop": "internal_newline"
+        },
+        {
+          "id": "MEA_2011_8_13",
+          "content": " A. medium spiders will be most plentiful\n\nQuestion",
+          "letter": " A\n\nQuestion",
+          "gold_letter": "A",
+          "content_stop": "internal_newline"
+        }
+      ],
+      "scores_correct_content_wrong": [
+        {
+          "id": "Mercury_7212328",
+          "content": " B\n\nQuestion",
+          "letter": " B\n\nQuestion",
+          "gold_letter": "B",
+          "content_stop": "internal_newline"
+        },
+        {
+          "id": "Mercury_7168053",
+          "content": " c\n\nQuestion",
+          "letter": " c\n\nQuestion",
+          "gold_letter": "C",
+          "content_stop": "internal_newline"
+        },
+        {
+          "id": "MEA_2011_8_13",
+          "content": " A. medium spiders will be most plentiful\n\nQuestion",
+          "letter": " A\n\nQuestion",
+          "gold_letter": "A",
+          "content_stop": "internal_newline"
+        },
+        {
+          "id": "Mercury_7081743",
+          "content": " B\n\nQuestion",
+          "letter": " B\n\nQuestion",
+          "gold_letter": "B",
+          "content_stop": "internal_newline"
+        },
+        {
+          "id": "Mercury_SC_415719",
+          "content": " A. heat moves from hand to ice cube\n\nQuestion",
+          "letter": " A\n\nQuestion",
+          "gold_letter": "A",
+          "content_stop": "internal_newline"
+        }
+      ],
+      "letter_lowercase": [
+        {
+          "id": "Mercury_7168053",
+          "content": " c\n\nQuestion",
+          "letter": " c\n\nQuestion",
+          "gold_letter": "C",
+          "content_stop": "internal_newline"
+        },
+        {
+          "id": "Mercury_7233765",
+          "content": " d\n\nQuestion",
+          "letter": " d\n\nQuestion",
+          "gold_letter": "B",
+          "content_stop": "internal_newline"
+        },
+        {
+          "id": "Mercury_7027720",
+          "content": " b\n\nQuestion",
+          "letter": " b\n\nQuestion",
+          "gold_letter": "B",
+          "content_stop": "internal_newline"
+        },
+        {
+          "id": "Mercury_7268258",
+          "content": " c\n\nQuestion",
+          "letter": " c\n\nQuestion",
+          "gold_letter": "C",
+          "content_stop": "internal_newline"
+        },
+        {
+          "id": "Mercury_SC_401168",
+          "content": " switch.\n\nQuestion",
+          "letter": " c\n\nQuestion",
+          "gold_letter": "C",
+          "content_stop": "internal_newline"
+        }
+      ],
+      "content_label_conflict": [
+        {
+          "id": "MEA_2011_8_13",
+          "content": " A. medium spiders will be most plentiful\n\nQuestion",
+          "letter": " A\n\nQuestion",
+          "gold_letter": "A",
+          "content_stop": "internal_newline"
+        },
+        {
+          "id": "AIMS_2008_4_5",
+          "content": " D. time of day\n\nQuestion",
+          "letter": " D\n\nQuestion",
+          "gold_letter": "C",
+          "content_stop": "internal_newline"
+        },
+        {
+          "id": "Mercury_SC_415719",
+          "content": " A. heat moves from hand to ice cube\n\nQuestion",
+          "letter": " A\n\nQuestion",
+          "gold_letter": "A",
+          "content_stop": "internal_newline"
+        },
+        {
+          "id": "MCAS_2003_5_14",
+          "content": " C. less water vapor in air\n\nQuestion",
+          "letter": " C\n\nQuestion",
+          "gold_letter": "C",
+          "content_stop": "internal_newline"
+        },
+        {
+          "id": "Mercury_416505",
+          "content": " B. enzyme in lysosome\n\nQuestion",
+          "letter": " D\n\nQuestion",
+          "gold_letter": "B",
+          "content_stop": "internal_newline"
+        }
+      ],
+      "generation_correct_candidate_wrong": [
+        {
+          "id": "MCAS_2010_5_11984",
+          "content": " A. using a fork to eat\n\nQuestion",
+          "letter": " A\n\nQuestion",
+          "gold_letter": "A",
+          "content_stop": "internal_newline"
+        },
+        {
+          "id": "Mercury_7239383",
+          "content": " B. the presence and distribution of alleles diverge.\n\nass",
+          "letter": " B\n\nQuestion",
+          "gold_letter": "B",
+          "content_stop": "internal_newline"
+        },
+        {
+          "id": "Mercury_7042648",
+          "content": " A. nervous\n\nQuestion",
+          "letter": " A. nervous\n\nQuestion",
+          "gold_letter": "A",
+          "content_stop": "internal_newline"
+        },
+        {
+          "id": "Mercury_SC_407383",
+          "content": " D. the ears of a jackrabbit release heat.\n\nQuestion",
+          "letter": " D\n\nQuestion",
+          "gold_letter": "D",
+          "content_stop": "internal_newline"
+        },
+        {
+          "id": "VASoL_2007_5_22",
+          "content": " B. the kind of food he gives his dog\n\nQuestion",
+          "letter": " B\n\nQuestion",
+          "gold_letter": "B",
+          "content_stop": "internal_newline"
+        }
+      ],
+      "content_hit_limit": [
+        {
+          "id": "MCAS_2016_8_15",
+          "content": " C. the college could gather parking data, receive input from community meetings, build an additional parking lot, and then gather",
+          "letter": " C\n\nQuestion",
+          "gold_letter": "C",
+          "content_stop": "token_limit"
+        },
+        {
+          "id": "Mercury_402216",
+          "content": " B. 2H2O(l) -> 2H2(g) + O2(g)",
+          "letter": " B",
+          "gold_letter": "B",
+          "content_stop": "token_limit"
+        },
+        {
+          "id": "LEAP__7_10339",
+          "content": " A. oxygen and sugar are used in the process that provides energy to cells; water and carbon dioxide are its waste products",
+          "letter": " A\n\nQuestion",
+          "gold_letter": "A",
+          "content_stop": "token_limit"
+        },
+        {
+          "id": "Mercury_415093",
+          "content": " D. 2c2h6 + 7o2 -> 4co2 + 6h2o",
+          "letter": " D",
+          "gold_letter": "D",
+          "content_stop": "token_limit"
+        }
+      ]
+    }
+  },
+  "arc_challenge/gen_only": {
+    "n": 1172,
+    "counts": {
+      "candidate_1_content_1": 538,
+      "candidate_0_content_0": 193,
+      "candidate_0_content_1": 361,
+      "generation_correct_candidate_wrong": 361,
+      "candidate_1_content_0": 80,
+      "scores_correct_content_wrong": 80,
+      "content_hit_limit": 8,
+      "letter_only_loose": 1
+    },
+    "examples": {
+      "generation_correct_candidate_wrong": [
+        {
+          "id": "MCAS_2010_5_11984",
+          "content": " using a fork to eat",
+          "letter": " A",
+          "gold_letter": "A",
+          "content_stop": "eos"
+        },
+        {
+          "id": "Mercury_7270358",
+          "content": " They bind to mRNA.",
+          "letter": " D",
+          "gold_letter": "D",
+          "content_stop": "eos"
+        },
+        {
+          "id": "Mercury_7042648",
+          "content": " nervous",
+          "letter": " A",
+          "gold_letter": "A",
+          "content_stop": "eos"
+        },
+        {
+          "id": "Mercury_SC_409171",
+          "content": " buildings will be made safer",
+          "letter": " B",
+          "gold_letter": "B",
+          "content_stop": "eos"
+        },
+        {
+          "id": "Mercury_SC_407383",
+          "content": " The ears of a jackrabbit release heat.",
+          "letter": " D",
+          "gold_letter": "D",
+          "content_stop": "eos"
+        }
+      ],
+      "scores_correct_content_wrong": [
+        {
+          "id": "Mercury_417150",
+          "content": " evaporation and precipitation",
+          "letter": " B",
+          "gold_letter": "B",
+          "content_stop": "eos"
+        },
+        {
+          "id": "Mercury_7041650",
+          "content": " burning of fossil fuels",
+          "letter": " C",
+          "gold_letter": "D",
+          "content_stop": "eos"
+        },
+        {
+          "id": "Mercury_184730",
+          "content": " The parents are of a different genus and a different species.",
+          "letter": " A",
+          "gold_letter": "B",
+          "content_stop": "eos"
+        },
+        {
+          "id": "TAKS_2009_8_27",
+          "content": " Ocean waves move more easily than continental rock. The oceans store and transfer more heat than the continents. The oceans contain a",
+          "letter": " C",
+          "gold_letter": "C",
+          "content_stop": "token_limit"
+        },
+        {
+          "id": "Mercury_7136028",
+          "content": " gravity from Earth",
+          "letter": " D",
+          "gold_letter": "A",
+          "content_stop": "eos"
+        }
+      ],
+      "content_hit_limit": [
+        {
+          "id": "TAKS_2009_8_27",
+          "content": " Ocean waves move more easily than continental rock. The oceans store and transfer more heat than the continents. The oceans contain a",
+          "letter": " C",
+          "gold_letter": "C",
+          "content_stop": "token_limit"
+        },
+        {
+          "id": "LEAP_2011_8_10434",
+          "content": " Earth has a solid spherical inner core that is mostly iron. Earth is somewhat flattened at the Poles due to its rotation.",
+          "letter": " B",
+          "gold_letter": "B",
+          "content_stop": "token_limit"
+        },
+        {
+          "id": "Mercury_7030555",
+          "content": " Four significantly different household appliances (blender, mixer, toaster, and food processor) are plugged into four outlets along",
+          "letter": " C",
+          "gold_letter": "C",
+          "content_stop": "token_limit"
+        },
+        {
+          "id": "Mercury_402216",
+          "content": " 2H_{2}O(l) -> 2H_{2}(g) + O_{2}(",
+          "letter": " B",
+          "gold_letter": "B",
+          "content_stop": "token_limit"
+        },
+        {
+          "id": "Mercury_412681",
+          "content": " C. Double the mass of m_{1} and halve the distance between m_{1} and m_{2",
+          "letter": " C",
+          "gold_letter": "C",
+          "content_stop": "token_limit"
+        }
+      ],
+      "letter_only_loose": [
+        {
+          "id": "Mercury_7008855",
+          "content": " Metals conduct electricity.",
+          "letter": " B. Metals conduct electricity.",
+          "gold_letter": "B",
+          "content_stop": "eos"
+        }
+      ]
+    }
+  },
+  "arc_challenge/gen_rank": {
+    "n": 1172,
+    "counts": {
+      "candidate_1_content_1": 505,
+      "candidate_0_content_0": 222,
+      "candidate_1_content_0": 147,
+      "scores_correct_content_wrong": 147,
+      "candidate_0_content_1": 298,
+      "generation_correct_candidate_wrong": 298,
+      "content_label_conflict": 21,
+      "content_hit_limit": 4
+    },
+    "examples": {
+      "scores_correct_content_wrong": [
+        {
+          "id": "Mercury_7081743",
+          "content": " B",
+          "letter": " B",
+          "gold_letter": "B",
+          "content_stop": "eos"
+        },
+        {
+          "id": "Mercury_7027720",
+          "content": " cut several holes in it",
+          "letter": " B",
+          "gold_letter": "B",
+          "content_stop": "eos"
+        },
+        {
+          "id": "Mercury_SC_415719",
+          "content": " A",
+          "letter": " A",
+          "gold_letter": "A",
+          "content_stop": "eos"
+        },
+        {
+          "id": "Mercury_7268258",
+          "content": " oxygen",
+          "letter": " D",
+          "gold_letter": "C",
+          "content_stop": "eos"
+        },
+        {
+          "id": "Mercury_417150",
+          "content": " evaporation and precipitation",
+          "letter": " B",
+          "gold_letter": "B",
+          "content_stop": "eos"
+        }
+      ],
+      "generation_correct_candidate_wrong": [
+        {
+          "id": "Mercury_7239383",
+          "content": " B. the presence and distribution of alleles diverge",
+          "letter": " B",
+          "gold_letter": "B",
+          "content_stop": "eos"
+        },
+        {
+          "id": "Mercury_SC_406855",
+          "content": " Blow on a pile of sand through a straw.",
+          "letter": " D",
+          "gold_letter": "D",
+          "content_stop": "eos"
+        },
+        {
+          "id": "Mercury_7270358",
+          "content": " D. they bind to mRNA",
+          "letter": " D",
+          "gold_letter": "D",
+          "content_stop": "eos"
+        },
+        {
+          "id": "Mercury_7042648",
+          "content": " nervous",
+          "letter": " A",
+          "gold_letter": "A",
+          "content_stop": "eos"
+        },
+        {
+          "id": "Mercury_416505",
+          "content": " B. an enzyme in a lysosome",
+          "letter": " B",
+          "gold_letter": "B",
+          "content_stop": "eos"
+        }
+      ],
+      "content_label_conflict": [
+        {
+          "id": "Mercury_416645",
+          "content": " D. they move toward an energy source",
+          "letter": " D",
+          "gold_letter": "D",
+          "content_stop": "eos"
+        },
+        {
+          "id": "Mercury_7263060",
+          "content": " A. Giant Impact Theory",
+          "letter": " A",
+          "gold_letter": "D",
+          "content_stop": "eos"
+        },
+        {
+          "id": "Mercury_400828",
+          "content": " D. charge of -3.",
+          "letter": " D",
+          "gold_letter": "D",
+          "content_stop": "eos"
+        },
+        {
+          "id": "Mercury_SC_402984",
+          "content": " B. glass test tube",
+          "letter": " B",
+          "gold_letter": "B",
+          "content_stop": "eos"
+        },
+        {
+          "id": "Mercury_7263638",
+          "content": " A. presence of Van Allen belts",
+          "letter": " B",
+          "gold_letter": "B",
+          "content_stop": "eos"
+        }
+      ],
+      "content_hit_limit": [
+        {
+          "id": "Mercury_402216",
+          "content": " 2H_{2}O(l) -> 2H_{2}(g) + O_{2}(",
+          "letter": " B",
+          "gold_letter": "B",
+          "content_stop": "token_limit"
+        },
+        {
+          "id": "Mercury_412681",
+          "content": " C. double the mass of m_{1} and halve the distance between m_{1} and m_{2",
+          "letter": " C",
+          "gold_letter": "C",
+          "content_stop": "token_limit"
+        },
+        {
+          "id": "NAEP_2005_4_S14+3",
+          "content": " Put some Quickgrow on a few plants, put the same amount of Supergrow on a few other plants of the same",
+          "letter": " C",
+          "gold_letter": "C",
+          "content_stop": "token_limit"
+        },
+        {
+          "id": "Mercury_415093",
+          "content": " D. 2C_{2}H_{6} + 7O_{2} -> 4CO_{",
+          "letter": " D",
+          "gold_letter": "D",
+          "content_stop": "token_limit"
+        }
+      ]
+    }
+  },
+  "arc_challenge/multitask_full": {
+    "n": 1172,
+    "counts": {
+      "candidate_1_content_0": 224,
+      "scores_correct_content_wrong": 224,
+      "candidate_1_content_1": 453,
+      "candidate_0_content_0": 251,
+      "candidate_0_content_1": 244,
+      "generation_correct_candidate_wrong": 244,
+      "content_hit_limit": 4,
+      "content_label_conflict": 1
+    },
+    "examples": {
+      "scores_correct_content_wrong": [
+        {
+          "id": "Mercury_SC_409673",
+          "content": " D",
+          "letter": " D",
+          "gold_letter": "D",
+          "content_stop": "eos"
+        },
+        {
+          "id": "Mercury_7081743",
+          "content": " B",
+          "letter": " B",
+          "gold_letter": "B",
+          "content_stop": "eos"
+        },
+        {
+          "id": "Mercury_7268258",
+          "content": " oxygen",
+          "letter": " D",
+          "gold_letter": "C",
+          "content_stop": "eos"
+        },
+        {
+          "id": "Mercury_417150",
+          "content": " evaporation and precipitation",
+          "letter": " B",
+          "gold_letter": "B",
+          "content_stop": "eos"
+        },
+        {
+          "id": "MCAS_2003_5_14",
+          "content": " C",
+          "letter": " C",
+          "gold_letter": "C",
+          "content_stop": "eos"
+        }
+      ],
+      "generation_correct_candidate_wrong": [
+        {
+          "id": "Mercury_7027720",
+          "content": " attach small weights to it",
+          "letter": " B",
+          "gold_letter": "B",
+          "content_stop": "eos"
+        },
+        {
+          "id": "MCAS_2010_5_11984",
+          "content": " using a fork to eat",
+          "letter": " A",
+          "gold_letter": "A",
+          "content_stop": "eos"
+        },
+        {
+          "id": "Mercury_7239383",
+          "content": " B. The presence and distribution of alleles diverge.",
+          "letter": " B",
+          "gold_letter": "B",
+          "content_stop": "eos"
+        },
+        {
+          "id": "Mercury_7270358",
+          "content": " D. They bind to mRNA.",
+          "letter": " D",
+          "gold_letter": "D",
+          "content_stop": "eos"
+        },
+        {
+          "id": "Mercury_7042648",
+          "content": " nervous",
+          "letter": " A",
+          "gold_letter": "A",
+          "content_stop": "eos"
+        }
+      ],
+      "content_hit_limit": [
+        {
+          "id": "Mercury_402216",
+          "content": " 2H_{2}O(l) -> 2H_{2}(g) + O_{2}(",
+          "letter": " B",
+          "gold_letter": "B",
+          "content_stop": "token_limit"
+        },
+        {
+          "id": "Mercury_412681",
+          "content": " C. Double the mass of m_{1} and halve the distance between m_{1} and m_{2",
+          "letter": " C",
+          "gold_letter": "C",
+          "content_stop": "token_limit"
+        },
+        {
+          "id": "NAEP_2005_4_S14+3",
+          "content": " Put some Quickgrow on a few plants, put the same amount of Supergrow on a few other plants of the same",
+          "letter": " C",
+          "gold_letter": "C",
+          "content_stop": "token_limit"
+        },
+        {
+          "id": "Mercury_415093",
+          "content": " D. 2C_{2}H_{6} + 7O_{2} -> 4CO_{",
+          "letter": " D",
+          "gold_letter": "D",
+          "content_stop": "token_limit"
+        }
+      ],
+      "content_label_conflict": [
+        {
+          "id": "Mercury_415093",
+          "content": " D. 2C_{2}H_{6} + 7O_{2} -> 4CO_{",
+          "letter": " D",
+          "gold_letter": "D",
+          "content_stop": "token_limit"
+        }
+      ]
+    }
+  },
+  "arc_easy/retention_control": {
+    "n": 2376,
+    "counts": {
+      "candidate_1_content_1": 1807,
+      "candidate_1_content_0": 132,
+      "scores_correct_content_wrong": 132,
+      "candidate_0_content_1": 332,
+      "generation_correct_candidate_wrong": 332,
+      "candidate_0_content_0": 105,
+      "content_label_conflict": 2,
+      "content_hit_limit": 3
+    },
+    "examples": {
+      "scores_correct_content_wrong": [
+        {
+          "id": "Mercury_7027265",
+          "content": " landfill creation",
+          "letter": " D",
+          "gold_letter": "D",
+          "content_stop": "eos"
+        },
+        {
+          "id": "Mercury_7136483",
+          "content": " three meters",
+          "letter": " A",
+          "gold_letter": "A",
+          "content_stop": "eos"
+        },
+        {
+          "id": "Mercury_7214620",
+          "content": " one hundred trillion",
+          "letter": " D",
+          "gold_letter": "C",
+          "content_stop": "eos"
+        },
+        {
+          "id": "ACTAAP_2009_5_15",
+          "content": " It is brighter than other stars.",
+          "letter": " B",
+          "gold_letter": "D",
+          "content_stop": "eos"
+        },
+        {
+          "id": "MCAS_2005_9_16",
+          "content": " B. the wavelength decreases as the frequency decreases",
+          "letter": " B",
+          "gold_letter": "C",
+          "content_stop": "eos"
+        }
+      ],
+      "generation_correct_candidate_wrong": [
+        {
+          "id": "Mercury_7174895",
+          "content": " to perform experiments that would be irresponsible using human subjects",
+          "letter": " D",
+          "gold_letter": "D",
+          "content_stop": "eos"
+        },
+        {
+          "id": "Mercury_7001873",
+          "content": " full valence electron shells",
+          "letter": " D",
+          "gold_letter": "D",
+          "content_stop": "eos"
+        },
+        {
+          "id": "Mercury_SC_406543",
+          "content": " the volume of the cup",
+          "letter": " B",
+          "gold_letter": "B",
+          "content_stop": "eos"
+        },
+        {
+          "id": "Mercury_7202125",
+          "content": " to confirm that the observed differences were caused by the fertilizer",
+          "letter": " C",
+          "gold_letter": "C",
+          "content_stop": "eos"
+        },
+        {
+          "id": "TIMSS_1995_8_L5",
+          "content": " mark the bird's territory against the same type of bird",
+          "letter": " B",
+          "gold_letter": "B",
+          "content_stop": "eos"
+        }
+      ],
+      "content_label_conflict": [
+        {
+          "id": "Mercury_412701",
+          "content": " A. 2Sn + 4HNO_{3} -> SnO_{2} + 4NO_{",
+          "letter": " A",
+          "gold_letter": "B",
+          "content_stop": "token_limit"
+        },
+        {
+          "id": "Mercury_7263008",
+          "content": " C. Fission Theory and Giant Impact Theory",
+          "letter": " C",
+          "gold_letter": "C",
+          "content_stop": "eos"
+        }
+      ],
+      "content_hit_limit": [
+        {
+          "id": "Mercury_412701",
+          "content": " A. 2Sn + 4HNO_{3} -> SnO_{2} + 4NO_{",
+          "letter": " A",
+          "gold_letter": "B",
+          "content_stop": "token_limit"
+        },
+        {
+          "id": "TIMSS_2007_8_pg34",
+          "content": " the color of an object such as an apple is the same as the color the light waves that are reflected by the object",
+          "letter": " C",
+          "gold_letter": "C",
+          "content_stop": "token_limit"
+        },
+        {
+          "id": "Mercury_7191520",
+          "content": " In Science the credit goes to the man who convinces the world, not to the man to whom the idea first occurred",
+          "letter": " C",
+          "gold_letter": "B",
+          "content_stop": "token_limit"
+        }
+      ]
+    }
+  },
+  "arc_easy/native": {
+    "n": 2376,
+    "counts": {
+      "candidate_0_content_1": 425,
+      "generation_correct_candidate_wrong": 425,
+      "letter_only_loose": 1967,
+      "candidate_1_content_1": 1663,
+      "candidate_1_content_0": 157,
+      "scores_correct_content_wrong": 157,
+      "candidate_0_content_0": 131,
+      "content_hit_limit": 40,
+      "content_label_conflict": 4
+    },
+    "examples": {
+      "generation_correct_candidate_wrong": [
+        {
+          "id": "NYSEDREGENTS_2010_4_29",
+          "content": " D. a learned behavior\n\nAss",
+          "letter": " D\n\nAss",
+          "gold_letter": "D",
+          "content_stop": "internal_newline"
+        },
+        {
+          "id": "Mercury_7174895",
+          "content": " D. to perform experiments that would be irresponsible using human subjects\n\nAss",
+          "letter": " D\n\nAss",
+          "gold_letter": "D",
+          "content_stop": "internal_newline"
+        },
+        {
+          "id": "Mercury_SC_406543",
+          "content": " B. the volume of the cup\n\nAss",
+          "letter": " B\n\nAss",
+          "gold_letter": "B",
+          "content_stop": "internal_newline"
+        },
+        {
+          "id": "CSZ20823",
+          "content": " C. a compound.\n\nAss",
+          "letter": " C\n\nQuestion",
+          "gold_letter": "C",
+          "content_stop": "internal_newline"
+        },
+        {
+          "id": "MDSA_2013_8_7",
+          "content": " C. a compound\n\nAss",
+          "letter": " C\n\nQuestion",
+          "gold_letter": "C",
+          "content_stop": "internal_newline"
+        }
+      ],
+      "letter_only_loose": [
+        {
+          "id": "NYSEDREGENTS_2010_4_29",
+          "content": " D. a learned behavior\n\nAss",
+          "letter": " D\n\nAss",
+          "gold_letter": "D",
+          "content_stop": "internal_newline"
+        },
+        {
+          "id": "MDSA_2010_5_3",
+          "content": " A. It melts to form liquid water.\n\nAss",
+          "letter": " A\n\nQuestion",
+          "gold_letter": "A",
+          "content_stop": "internal_newline"
+        },
+        {
+          "id": "Mercury_190803",
+          "content": " B. protective coloration\n\nAss",
+          "letter": " B\n\nAss",
+          "gold_letter": "B",
+          "content_stop": "internal_newline"
+        },
+        {
+          "id": "Mercury_SC_401126",
+          "content": " D. wear appropriate protective clothing and eyewear.\n\nAss",
+          "letter": " D\n\nQuestion",
+          "gold_letter": "D",
+          "content_stop": "internal_newline"
+        },
+        {
+          "id": "Mercury_407259",
+          "content": " B. wood burning in a fireplace\n\nAss",
+          "letter": " B\n\nQuestion",
+          "gold_letter": "B",
+          "content_stop": "internal_newline"
+        }
+      ],
+      "scores_correct_content_wrong": [
+        {
+          "id": "MCAS_2010_8_12008",
+          "content": " D. an atom\n\nAss",
+          "letter": " D\n\nAss",
+          "gold_letter": "B",
+          "content_stop": "internal_newline"
+        },
+        {
+          "id": "MCAS_1998_4_24",
+          "content": " D\n\nQuestion",
+          "letter": " D\n\nQuestion",
+          "gold_letter": "D",
+          "content_stop": "internal_newline"
+        },
+        {
+          "id": "NYSEDREGENTS_2010_4_18",
+          "content": " B",
+          "letter": " B",
+          "gold_letter": "B",
+          "content_stop": "eos"
+        },
+        {
+          "id": "Mercury_7214620",
+          "content": " D. one hundred trillion.\n\nAss",
+          "letter": " D\n\nAss",
+          "gold_letter": "C",
+          "content_stop": "internal_newline"
+        },
+        {
+          "id": "Mercury_7017010",
+          "content": " C. balance, meter stick\n\nQuestion",
+          "letter": " C\n\nQuestion",
+          "gold_letter": "A",
+          "content_stop": "internal_newline"
+        }
+      ],
+      "content_hit_limit": [
+        {
+          "id": "Mercury_416550",
+          "content": "\n\nQuestion: What is the main purpose of the text? Answer: The main purpose of the text is to provide",
+          "letter": " B\n\nQuestion",
+          "gold_letter": "B",
+          "content_stop": "token_limit"
+        },
+        {
+          "id": "Mercury_412755",
+          "content": "\n\nQuestion: What is the volume of the gas in the 40 mL container after being transferred from the ",
+          "letter": " B. 20 mL.\n",
+          "gold_letter": "D",
+          "content_stop": "token_limit"
+        },
+        {
+          "id": "LEAP_2005_4_10267",
+          "content": "\n\nQuestion: What is the main reason for the toads' disappearance according to the text? Answer: The toads'",
+          "letter": " D\n\nAss",
+          "gold_letter": "D",
+          "content_stop": "token_limit"
+        },
+        {
+          "id": "Mercury_7247083",
+          "content": "\n\nQuestion: What is the main purpose of the gravity assist concept in space exploration? Answer: To conserve fuel by",
+          "letter": " C\n\nQuestion",
+          "gold_letter": "C",
+          "content_stop": "token_limit"
+        },
+        {
+          "id": "Mercury_SC_408851",
+          "content": "\n\nQuestion: What is the main purpose of the text? Answer: The main purpose of the text is to provide",
+          "letter": " C\n\nAss",
+          "gold_letter": "C",
+          "content_stop": "token_limit"
+        }
+      ],
+      "content_label_conflict": [
+        {
+          "id": "Mercury_7026898",
+          "content": " D. hazardous waste\n\nAss",
+          "letter": " D\n\nQuestion",
+          "gold_letter": "C",
+          "content_stop": "internal_newline"
+        },
+        {
+          "id": "Mercury_SC_LBS10272",
+          "content": " D. summer\n\nQuestion",
+          "letter": " A. summer\n\nAss",
+          "gold_letter": "C",
+          "content_stop": "internal_newline"
+        },
+        {
+          "id": "Mercury_7004183",
+          "content": " B. +1\n\nQuestion",
+          "letter": " B",
+          "gold_letter": "B",
+          "content_stop": "internal_newline"
+        },
+        {
+          "id": "Mercury_7201320",
+          "content": " A. submission of a peer-reviewed journal\n\nAss",
+          "letter": " A\n\nQuestion",
+          "gold_letter": "A",
+          "content_stop": "internal_newline"
+        }
+      ]
+    }
+  },
+  "arc_easy/rank_only": {
+    "n": 2376,
+    "counts": {
+      "candidate_0_content_0": 224,
+      "letter_only_loose": 2135,
+      "content_label_conflict": 242,
+      "candidate_1_content_1": 1060,
+      "candidate_1_content_0": 951,
+      "scores_correct_content_wrong": 951,
+      "letter_lowercase": 443,
+      "candidate_0_content_1": 141,
+      "generation_correct_candidate_wrong": 141,
+      "content_hit_limit": 2
+    },
+    "examples": {
+      "letter_only_loose": [
+        {
+          "id": "NYSEDREGENTS_2010_4_29",
+          "content": " D. learned behavior\n\nQuestion",
+          "letter": " D\n\nQuestion",
+          "gold_letter": "D",
+          "content_stop": "internal_newline"
+        },
+        {
+          "id": "MDSA_2010_5_3",
+          "content": " A. it melts to form liquid water.\n\nQuestion",
+          "letter": " A\n\nQuestion",
+          "gold_letter": "A",
+          "content_stop": "internal_newline"
+        },
+        {
+          "id": "Mercury_190803",
+          "content": " B. protective coloration\n\nQuestion",
+          "letter": " B\n\nQuestion",
+          "gold_letter": "B",
+          "content_stop": "internal_newline"
+        },
+        {
+          "id": "Mercury_SC_401126",
+          "content": " d\n\nQuestion",
+          "letter": " D\n\nQuestion",
+          "gold_letter": "D",
+          "content_stop": "internal_newline"
+        },
+        {
+          "id": "Mercury_407259",
+          "content": " b\n\nQuestion",
+          "letter": " b\n\nQuestion",
+          "gold_letter": "B",
+          "content_stop": "internal_newline"
+        }
+      ],
+      "content_label_conflict": [
+        {
+          "id": "NYSEDREGENTS_2010_4_29",
+          "content": " D. learned behavior\n\nQuestion",
+          "letter": " D\n\nQuestion",
+          "gold_letter": "D",
+          "content_stop": "internal_newline"
+        },
+        {
+          "id": "MCAS_2010_8_12008",
+          "content": " b. molecule\n\nQuestion",
+          "letter": " D\n\nQuestion",
+          "gold_letter": "B",
+          "content_stop": "internal_newline"
+        },
+        {
+          "id": "Mercury_SC_402094",
+          "content": " B. erosion\n\nQuestion",
+          "letter": " B\n\nQuestion",
+          "gold_letter": "B",
+          "content_stop": "internal_newline"
+        },
+        {
+          "id": "NCEOGA_2013_8_3",
+          "content": " B. the molecules will move faster\n\nQuestion",
+          "letter": " B\n\nQuestion",
+          "gold_letter": "B",
+          "content_stop": "internal_newline"
+        },
+        {
+          "id": "Mercury_LBS10126",
+          "content": " A. the gas is more dense than air.\n\nQuestion",
+          "letter": " A.\n\nQuestion",
+          "gold_letter": "A",
+          "content_stop": "internal_newline"
+        }
+      ],
+      "scores_correct_content_wrong": [
+        {
+          "id": "Mercury_SC_401126",
+          "content": " d\n\nQuestion",
+          "letter": " D\n\nQuestion",
+          "gold_letter": "D",
+          "content_stop": "internal_newline"
+        },
+        {
+          "id": "Mercury_407259",
+          "content": " b\n\nQuestion",
+          "letter": " b\n\nQuestion",
+          "gold_letter": "B",
+          "content_stop": "internal_newline"
+        },
+        {
+          "id": "MCAS_2010_8_12008",
+          "content": " b. molecule\n\nQuestion",
+          "letter": " D\n\nQuestion",
+          "gold_letter": "B",
+          "content_stop": "internal_newline"
+        },
+        {
+          "id": "Mercury_7124128",
+          "content": " d\n\nQuestion",
+          "letter": " D\n\nQuestion",
+          "gold_letter": "D",
+          "content_stop": "internal_newline"
+        },
+        {
+          "id": "Mercury_SC_408628",
+          "content": " c\n\nQuestion",
+          "letter": " C\n\nQuestion",
+          "gold_letter": "C",
+          "content_stop": "internal_newline"
+        }
+      ],
+      "letter_lowercase": [
+        {
+          "id": "Mercury_407259",
+          "content": " b\n\nQuestion",
+          "letter": " b\n\nQuestion",
+          "gold_letter": "B",
+          "content_stop": "internal_newline"
+        },
+        {
+          "id": "Mercury_7012495",
+          "content": " d\n\nQuestion",
+          "letter": " d\n\nQuestion",
+          "gold_letter": "D",
+          "content_stop": "internal_newline"
+        },
+        {
+          "id": "Mercury_177485",
+          "content": " b. parallel circuit\n\nQuestion",
+          "letter": " b\n\nQuestion",
+          "gold_letter": "B",
+          "content_stop": "internal_newline"
+        },
+        {
+          "id": "NYSEDREGENTS_2010_8_7",
+          "content": " c\n\nQuestion",
+          "letter": " c\n\nQuestion",
+          "gold_letter": "C",
+          "content_stop": "internal_newline"
+        },
+        {
+          "id": "TIMSS_1995_8_L5",
+          "content": " b\n\nQuestion",
+          "letter": " b\n\nQuestion",
+          "gold_letter": "B",
+          "content_stop": "internal_newline"
+        }
+      ],
+      "generation_correct_candidate_wrong": [
+        {
+          "id": "Mercury_7174895",
+          "content": " D. to perform experiments that would be irresponsible using human subjects\n\nQuestion",
+          "letter": " D\n\nQuestion",
+          "gold_letter": "D",
+          "content_stop": "internal_newline"
+        },
+        {
+          "id": "Mercury_7001873",
+          "content": " D. full valence electron shells\n\nQuestion",
+          "letter": " D\n\nQuestion",
+          "gold_letter": "D",
+          "content_stop": "internal_newline"
+        },
+        {
+          "id": "NYSEDREGENTS_2015_8_32",
+          "content": " C. battery-powered flashlight\n\nQuestion",
+          "letter": " C\n\nQuestion",
+          "gold_letter": "C",
+          "content_stop": "internal_newline"
+        },
+        {
+          "id": "Mercury_SC_400603",
+          "content": " A. closed circuit.\n\nQuestion",
+          "letter": " A. closed circuit.\n\nQuestion",
+          "gold_letter": "A",
+          "content_stop": "internal_newline"
+        },
+        {
+          "id": "Mercury_7026425",
+          "content": " C. avoiding insects that taste bad\n\nQuestion",
+          "letter": " C\n\nQuestion",
+          "gold_letter": "C",
+          "content_stop": "internal_newline"
+        }
+      ],
+      "content_hit_limit": [
+        {
+          "id": "ACTAAP_2013_5_13",
+          "content": " D. Mercury, venus, earth, mars, jupiter, saturn, uranus, neptune\n\n",
+          "letter": " D",
+          "gold_letter": "D",
+          "content_stop": "token_limit"
+        },
+        {
+          "id": "Mercury_412701",
+          "content": " B. I_{2} + 5Cl_{2} + 6H_{2}o -> 2",
+          "letter": " A\n\nQuestion",
+          "gold_letter": "B",
+          "content_stop": "token_limit"
+        }
+      ]
+    }
+  },
+  "arc_easy/gen_only": {
+    "n": 2376,
+    "counts": {
+      "candidate_0_content_1": 417,
+      "generation_correct_candidate_wrong": 417,
+      "candidate_1_content_1": 1709,
+      "candidate_1_content_0": 142,
+      "scores_correct_content_wrong": 142,
+      "candidate_0_content_0": 108,
+      "letter_only_loose": 2,
+      "content_label_conflict": 1,
+      "content_hit_limit": 2
+    },
+    "examples": {
+      "generation_correct_candidate_wrong": [
+        {
+          "id": "NYSEDREGENTS_2010_4_29",
+          "content": " a learned behavior",
+          "letter": " D",
+          "gold_letter": "D",
+          "content_stop": "eos"
+        },
+        {
+          "id": "Mercury_407259",
+          "content": " wood burning in a fireplace",
+          "letter": " B",
+          "gold_letter": "B",
+          "content_stop": "eos"
+        },
+        {
+          "id": "Mercury_7174895",
+          "content": " to perform experiments that would be irresponsible using human subjects",
+          "letter": " D",
+          "gold_letter": "D",
+          "content_stop": "eos"
+        },
+        {
+          "id": "Mercury_SC_406543",
+          "content": " the volume of the cup",
+          "letter": " B",
+          "gold_letter": "B",
+          "content_stop": "eos"
+        },
+        {
+          "id": "CSZ20823",
+          "content": " a compound",
+          "letter": " C",
+          "gold_letter": "C",
+          "content_stop": "eos"
+        }
+      ],
+      "scores_correct_content_wrong": [
+        {
+          "id": "Mercury_7027265",
+          "content": " landfill creation",
+          "letter": " D",
+          "gold_letter": "D",
+          "content_stop": "eos"
+        },
+        {
+          "id": "Mercury_7207463",
+          "content": " dissolves many substances",
+          "letter": " B",
+          "gold_letter": "B",
+          "content_stop": "eos"
+        },
+        {
+          "id": "ACTAAP_2009_5_15",
+          "content": " It is brighter than other stars.",
+          "letter": " B",
+          "gold_letter": "D",
+          "content_stop": "eos"
+        },
+        {
+          "id": "Mercury_7219520",
+          "content": " beak shape",
+          "letter": " A",
+          "gold_letter": "C",
+          "content_stop": "eos"
+        },
+        {
+          "id": "NCEOGA_2013_5_6",
+          "content": " radiation",
+          "letter": " B",
+          "gold_letter": "B",
+          "content_stop": "eos"
+        }
+      ],
+      "letter_only_loose": [
+        {
+          "id": "Mercury_LBS10778",
+          "content": " There would be no seasons.",
+          "letter": " A. There would be no seasons.",
+          "gold_letter": "A",
+          "content_stop": "eos"
+        },
+        {
+          "id": "Mercury_7207183",
+          "content": " fragments that broke off of older rocks",
+          "letter": " A fragments that broke off of older rocks",
+          "gold_letter": "A",
+          "content_stop": "eos"
+        }
+      ],
+      "content_label_conflict": [
+        {
+          "id": "Mercury_412701",
+          "content": " A. 2Sn + 4HNO_{3} -> SnO_{2} + 4NO_{",
+          "letter": " A",
+          "gold_letter": "B",
+          "content_stop": "token_limit"
+        }
+      ],
+      "content_hit_limit": [
+        {
+          "id": "Mercury_412701",
+          "content": " A. 2Sn + 4HNO_{3} -> SnO_{2} + 4NO_{",
+          "letter": " A",
+          "gold_letter": "B",
+          "content_stop": "token_limit"
+        },
+        {
+          "id": "TIMSS_2007_8_pg34",
+          "content": " the color of an object such as an apple is the same as the color the light waves that are reflected by the object",
+          "letter": " C",
+          "gold_letter": "C",
+          "content_stop": "token_limit"
+        }
+      ]
+    }
+  },
+  "arc_easy/gen_rank": {
+    "n": 2376,
+    "counts": {
+      "candidate_0_content_0": 153,
+      "candidate_1_content_1": 1677,
+      "candidate_1_content_0": 258,
+      "scores_correct_content_wrong": 258,
+      "candidate_0_content_1": 288,
+      "generation_correct_candidate_wrong": 288,
+      "content_label_conflict": 31,
+      "content_hit_limit": 1
+    },
+    "examples": {
+      "scores_correct_content_wrong": [
+        {
+          "id": "MCAS_2010_8_12008",
+          "content": " B",
+          "letter": " B",
+          "gold_letter": "B",
+          "content_stop": "eos"
+        },
+        {
+          "id": "Mercury_7027265",
+          "content": " landfill creation",
+          "letter": " D",
+          "gold_letter": "D",
+          "content_stop": "eos"
+        },
+        {
+          "id": "Mercury_7207463",
+          "content": " B freezing and boiling points",
+          "letter": " B",
+          "gold_letter": "B",
+          "content_stop": "eos"
+        },
+        {
+          "id": "AKDE&ED_2008_4_39",
+          "content": " water vapor from the air condensed into liquid",
+          "letter": " D",
+          "gold_letter": "D",
+          "content_stop": "eos"
+        },
+        {
+          "id": "MCAS_2012_8_23653",
+          "content": " B",
+          "letter": " B",
+          "gold_letter": "B",
+          "content_stop": "eos"
+        }
+      ],
+      "generation_correct_candidate_wrong": [
+        {
+          "id": "Mercury_7001873",
+          "content": " full valence electron shells",
+          "letter": " D",
+          "gold_letter": "D",
+          "content_stop": "eos"
+        },
+        {
+          "id": "Mercury_7202125",
+          "content": " to confirm that the observed differences were caused by the fertilizer",
+          "letter": " C",
+          "gold_letter": "C",
+          "content_stop": "eos"
+        },
+        {
+          "id": "NYSEDREGENTS_2015_8_32",
+          "content": " battery-powered flashlight",
+          "letter": " C",
+          "gold_letter": "C",
+          "content_stop": "eos"
+        },
+        {
+          "id": "TAKS_2009_5_21",
+          "content": " B. Aluminum",
+          "letter": " B",
+          "gold_letter": "B",
+          "content_stop": "eos"
+        },
+        {
+          "id": "Mercury_SC_400603",
+          "content": " A closed circuit",
+          "letter": " A",
+          "gold_letter": "A",
+          "content_stop": "eos"
+        }
+      ],
+      "content_label_conflict": [
+        {
+          "id": "LEAP_2005_4_10267",
+          "content": " A. the toads were destroyed by construction equipment",
+          "letter": " A",
+          "gold_letter": "D",
+          "content_stop": "eos"
+        },
+        {
+          "id": "MCAS_2013_8_29426",
+          "content": " D. composition of the atmosphere",
+          "letter": " D",
+          "gold_letter": "D",
+          "content_stop": "eos"
+        },
+        {
+          "id": "Mercury_SC_407370",
+          "content": " A. changing of seasons",
+          "letter": " A",
+          "gold_letter": "A",
+          "content_stop": "eos"
+        },
+        {
+          "id": "Mercury_7009818",
+          "content": " A. quality of food",
+          "letter": " A",
+          "gold_letter": "A",
+          "content_stop": "eos"
+        },
+        {
+          "id": "Mercury_SC_408336",
+          "content": " B. Earth tilts on its axis",
+          "letter": " B",
+          "gold_letter": "B",
+          "content_stop": "eos"
+        }
+      ],
+      "content_hit_limit": [
+        {
+          "id": "Mercury_7001313",
+          "content": " help patients spend less time in the emergency room. aid research students who are studying complex organisms. help make medicines from newly",
+          "letter": " D",
+          "gold_letter": "D",
+          "content_stop": "token_limit"
+        }
+      ]
+    }
+  },
+  "arc_easy/multitask_full": {
+    "n": 2376,
+    "counts": {
+      "candidate_0_content_1": 254,
+      "generation_correct_candidate_wrong": 254,
+      "candidate_1_content_0": 360,
+      "scores_correct_content_wrong": 360,
+      "candidate_1_content_1": 1612,
+      "candidate_0_content_0": 150
+    },
+    "examples": {
+      "generation_correct_candidate_wrong": [
+        {
+          "id": "NYSEDREGENTS_2010_4_29",
+          "content": " a learned behavior",
+          "letter": " D",
+          "gold_letter": "D",
+          "content_stop": "eos"
+        },
+        {
+          "id": "Mercury_7174895",
+          "content": " to perform experiments that would be irresponsible using human subjects",
+          "letter": " D",
+          "gold_letter": "D",
+          "content_stop": "eos"
+        },
+        {
+          "id": "TIMSS_1995_8_L5",
+          "content": " mark the bird's territory against the same type of bird",
+          "letter": " B",
+          "gold_letter": "B",
+          "content_stop": "eos"
+        },
+        {
+          "id": "NYSEDREGENTS_2015_8_32",
+          "content": " battery-powered flashlight",
+          "letter": " C",
+          "gold_letter": "C",
+          "content_stop": "eos"
+        },
+        {
+          "id": "Mercury_7083405",
+          "content": " A tissue.",
+          "letter": " A",
+          "gold_letter": "A",
+          "content_stop": "eos"
+        }
+      ],
+      "scores_correct_content_wrong": [
+        {
+          "id": "MDSA_2010_5_3",
+          "content": " A",
+          "letter": " A",
+          "gold_letter": "A",
+          "content_stop": "eos"
+        },
+        {
+          "id": "MCAS_2010_8_12008",
+          "content": " B",
+          "letter": " B",
+          "gold_letter": "B",
+          "content_stop": "eos"
+        },
+        {
+          "id": "Mercury_7207463",
+          "content": " B",
+          "letter": " B",
+          "gold_letter": "B",
+          "content_stop": "eos"
+        },
+        {
+          "id": "AKDE&ED_2008_4_39",
+          "content": " D",
+          "letter": " D",
+          "gold_letter": "D",
+          "content_stop": "eos"
+        },
+        {
+          "id": "MCAS_2012_8_23653",
+          "content": " B",
+          "letter": " B",
+          "gold_letter": "B",
+          "content_stop": "eos"
+        }
+      ]
+    }
+  },
+  "csqa/retention_control": {
+    "n": 1221,
+    "counts": {
+      "candidate_1_content_1": 622,
+      "candidate_0_content_1": 214,
+      "generation_correct_candidate_wrong": 214,
+      "candidate_0_content_0": 229,
+      "candidate_1_content_0": 156,
+      "scores_correct_content_wrong": 156,
+      "letter_only_loose": 3,
+      "letter_lowercase": 4
+    },
+    "examples": {
+      "generation_correct_candidate_wrong": [
+        {
+          "id": "c306ab28498b67c53decb9dde1d78bd5",
+          "content": " gap",
+          "letter": " E",
+          "gold_letter": "E",
+          "content_stop": "eos"
+        },
+        {
+          "id": "3fb36127a61903029a363911a1d2b1e9_1",
+          "content": " stairwell",
+          "letter": " C",
+          "gold_letter": "C",
+          "content_stop": "eos"
+        },
+        {
+          "id": "1272e693cf9152e7ac71095c643676b5",
+          "content": " theater",
+          "letter": " A",
+          "gold_letter": "A",
+          "content_stop": "eos"
+        },
+        {
+          "id": "1f3ccb722600da7d862531416934949a",
+          "content": " brass band",
+          "letter": " E",
+          "gold_letter": "C",
+          "content_stop": "eos"
+        },
+        {
+          "id": "bb503ece4eac41dfe608a1dcb654e6bf",
+          "content": " paid for",
+          "letter": " C",
+          "gold_letter": "C",
+          "content_stop": "eos"
+        }
+      ],
+      "scores_correct_content_wrong": [
+        {
+          "id": "98a04457025f18c2287d5c610ff8000d",
+          "content": " desk",
+          "letter": " C",
+          "gold_letter": "E",
+          "content_stop": "eos"
+        },
+        {
+          "id": "c96a86957a9ab1d8ca0aeeb7f040d87a_1",
+          "content": " library",
+          "letter": " B",
+          "gold_letter": "B",
+          "content_stop": "eos"
+        },
+        {
+          "id": "2192c5c2145a6e03755ad89a02e64055",
+          "content": " bus stop",
+          "letter": " D",
+          "gold_letter": "B",
+          "content_stop": "eos"
+        },
+        {
+          "id": "e71da9e95b321763c86e879a47bbd327",
+          "content": " have to",
+          "letter": " C",
+          "gold_letter": "E",
+          "content_stop": "eos"
+        },
+        {
+          "id": "d1ad9b79f54205b6b9ac19a27f9c2be5",
+          "content": " airport",
+          "letter": " D",
+          "gold_letter": "E",
+          "content_stop": "eos"
+        }
+      ],
+      "letter_only_loose": [
+        {
+          "id": "fb35c7aa5694bab2cde4b7257bfae003",
+          "content": " protection",
+          "letter": " c",
+          "gold_letter": "C",
+          "content_stop": "eos"
+        },
+        {
+          "id": "6a0177586d506cb7b741f4207b428e42",
+          "content": " luggage compartment",
+          "letter": " b",
+          "gold_letter": "B",
+          "content_stop": "eos"
+        },
+        {
+          "id": "506c2dbfe7b00a82bfdf0507a8de88fb",
+          "content": " america",
+          "letter": " e",
+          "gold_letter": "E",
+          "content_stop": "eos"
+        }
+      ],
+      "letter_lowercase": [
+        {
+          "id": "fb35c7aa5694bab2cde4b7257bfae003",
+          "content": " protection",
+          "letter": " c",
+          "gold_letter": "C",
+          "content_stop": "eos"
+        },
+        {
+          "id": "6a0177586d506cb7b741f4207b428e42",
+          "content": " luggage compartment",
+          "letter": " b",
+          "gold_letter": "B",
+          "content_stop": "eos"
+        },
+        {
+          "id": "a287575d3ba4b9f958536fc14a1f5b5a",
+          "content": " europe",
+          "letter": " e",
+          "gold_letter": "D",
+          "content_stop": "eos"
+        },
+        {
+          "id": "506c2dbfe7b00a82bfdf0507a8de88fb",
+          "content": " america",
+          "letter": " e",
+          "gold_letter": "E",
+          "content_stop": "eos"
+        }
+      ]
+    }
+  },
+  "csqa/native": {
+    "n": 1221,
+    "counts": {
+      "candidate_1_content_1": 432,
+      "letter_only_loose": 767,
+      "candidate_0_content_0": 328,
+      "candidate_1_content_0": 235,
+      "scores_correct_content_wrong": 235,
+      "candidate_0_content_1": 226,
+      "generation_correct_candidate_wrong": 226,
+      "content_hit_limit": 34,
+      "content_label_conflict": 12
+    },
+    "examples": {
+      "letter_only_loose": [
+        {
+          "id": "435a728f45d32faa4b3c4553c966fd6b",
+          "content": " B. slurred speech\n\nAss",
+          "letter": " B\n\nQuestion",
+          "gold_letter": "B",
+          "content_stop": "internal_newline"
+        },
+        {
+          "id": "c306ab28498b67c53decb9dde1d78bd5",
+          "content": "\n\nAssistant\nThe",
+          "letter": " E\n\nAss",
+          "gold_letter": "E",
+          "content_stop": "internal_newline"
+        },
+        {
+          "id": "dc2fa76467ff342abdb4cf142f92dddd",
+          "content": "\n\nAssistant\nB",
+          "letter": " B\n\nAss",
+          "gold_letter": "B",
+          "content_stop": "internal_newline"
+        },
+        {
+          "id": "e216381e9f0ddd1d248ee25fccca2b1f",
+          "content": " E. parents\n\nAss",
+          "letter": " E\n\nAss",
+          "gold_letter": "E",
+          "content_stop": "internal_newline"
+        },
+        {
+          "id": "27604394ccee83e089f9ffae1883cf07",
+          "content": " A. carnival\n\nAss",
+          "letter": " A\n\nAss",
+          "gold_letter": "A",
+          "content_stop": "internal_newline"
+        }
+      ],
+      "scores_correct_content_wrong": [
+        {
+          "id": "dc2fa76467ff342abdb4cf142f92dddd",
+          "content": "\n\nAssistant\nB",
+          "letter": " B\n\nAss",
+          "gold_letter": "B",
+          "content_stop": "internal_newline"
+        },
+        {
+          "id": "c96a86957a9ab1d8ca0aeeb7f040d87a_1",
+          "content": " D. library\n\nQuestion",
+          "letter": " D\n\nAss",
+          "gold_letter": "B",
+          "content_stop": "internal_newline"
+        },
+        {
+          "id": "6386bcf080633bc3eeb3317a5435b7b7",
+          "content": "\n\nAssistant\nD",
+          "letter": " D\n\nAss",
+          "gold_letter": "E",
+          "content_stop": "internal_newline"
+        },
+        {
+          "id": "e71da9e95b321763c86e879a47bbd327",
+          "content": "\n\nAssistant\nD",
+          "letter": " D\n\nAss",
+          "gold_letter": "E",
+          "content_stop": "internal_newline"
+        },
+        {
+          "id": "d1ad9b79f54205b6b9ac19a27f9c2be5",
+          "content": " D. airport\n\nQuestion",
+          "letter": " D\n\nQuestion",
+          "gold_letter": "E",
+          "content_stop": "internal_newline"
+        }
+      ],
+      "generation_correct_candidate_wrong": [
+        {
+          "id": "27604394ccee83e089f9ffae1883cf07",
+          "content": " A. carnival\n\nAss",
+          "letter": " A\n\nAss",
+          "gold_letter": "A",
+          "content_stop": "internal_newline"
+        },
+        {
+          "id": "2192c5c2145a6e03755ad89a02e64055",
+          "content": " B. rest area\n\nAss",
+          "letter": " B\n\nAss",
+          "gold_letter": "B",
+          "content_stop": "internal_newline"
+        },
+        {
+          "id": "cfc7fccb8449a2a950c9d2a50991420e",
+          "content": " B. growing older\n\nAss",
+          "letter": " E\n\nAss",
+          "gold_letter": "B",
+          "content_stop": "internal_newline"
+        },
+        {
+          "id": "c865b3547c2a2e3c3916d7be6ab25752",
+          "content": " C. sidewalk\n\nQuestion",
+          "letter": " C\n\nQuestion",
+          "gold_letter": "C",
+          "content_stop": "internal_newline"
+        },
+        {
+          "id": "1f3ccb722600da7d862531416934949a",
+          "content": " C. brass band\n\nAss",
+          "letter": " C\n\nQuestion",
+          "gold_letter": "C",
+          "content_stop": "internal_newline"
+        }
+      ],
+      "content_hit_limit": [
+        {
+          "id": "001b0f5a841fd81d13fbe67c7c7179d6",
+          "content": "\n\nQuestion: What is the main topic of the text? Answer: The text discusses the importance of eating and the",
+          "letter": " C\n\nQuestion",
+          "gold_letter": "E",
+          "content_stop": "token_limit"
+        },
+        {
+          "id": "3f3ba1d9a3bfe63df11247a968eaddce",
+          "content": "\n\nQuestion: What is the main topic of the text? Answer: The text discusses the importance of understanding and addressing",
+          "letter": " E\n\nQuestion",
+          "gold_letter": "B",
+          "content_stop": "token_limit"
+        },
+        {
+          "id": "af3b9a8b1962cd3bcd19e644d873e7bc",
+          "content": "\n\nQuestion: What is the main purpose of the text? Answer: The text is a multiple-choice question about",
+          "letter": " D\n\nQuestion",
+          "gold_letter": "E",
+          "content_stop": "token_limit"
+        },
+        {
+          "id": "b7091d2bfcea421d787ce9e7982f104a",
+          "content": "\n\nQuestion: What is the main purpose of the text? Answer: The text is a set of multiple-choice",
+          "letter": " C\n\nAss",
+          "gold_letter": "C",
+          "content_stop": "token_limit"
+        },
+        {
+          "id": "a585df0818180ce3c06f963a4c3c810a",
+          "content": "\n\nQuestion: What is the main topic of the text? Answer: The text discusses the use of the term \"",
+          "letter": "\n\nassistant\nA",
+          "gold_letter": "A",
+          "content_stop": "token_limit"
+        }
+      ],
+      "content_label_conflict": [
+        {
+          "id": "a80ee7775e934c423012fe98e20ba28b",
+          "content": " D. slow down\n\nAss",
+          "letter": " E\n\nAss",
+          "gold_letter": "E",
+          "content_stop": "internal_newline"
+        },
+        {
+          "id": "80c19c62338edae0e8a1f5c6fec0d29a",
+          "content": " D. cupboard\n\nAss",
+          "letter": " D\n\nAss",
+          "gold_letter": "B",
+          "content_stop": "internal_newline"
+        },
+        {
+          "id": "194b66240f6fab75749c1e30ed09ea09",
+          "content": " D. noodle house\n\nQuestion",
+          "letter": " D\n\nQuestion",
+          "gold_letter": "E",
+          "content_stop": "internal_newline"
+        },
+        {
+          "id": "6f48ee564a48293eb501cc0d8197bdd9",
+          "content": " D. shelf\n\nAss",
+          "letter": " D\n\nAss",
+          "gold_letter": "C",
+          "content_stop": "internal_newline"
+        },
+        {
+          "id": "91f512273a2da7ae796919069b20d6cf",
+          "content": " D. violin case\n\nAss",
+          "letter": " D\n\nAss",
+          "gold_letter": "E",
+          "content_stop": "internal_newline"
+        }
+      ]
+    }
+  },
+  "csqa/rank_only": {
+    "n": 1221,
+    "counts": {
+      "candidate_1_content_1": 405,
+      "letter_only_loose": 819,
+      "letter_lowercase": 797,
+      "candidate_0_content_1": 96,
+      "generation_correct_candidate_wrong": 96,
+      "candidate_1_content_0": 445,
+      "scores_correct_content_wrong": 445,
+      "candidate_0_content_0": 275,
+      "content_label_conflict": 52
+    },
+    "examples": {
+      "letter_only_loose": [
+        {
+          "id": "435a728f45d32faa4b3c4553c966fd6b",
+          "content": " slurred speech\n\nQuestion",
+          "letter": " b\n\nQuestion",
+          "gold_letter": "B",
+          "content_stop": "internal_newline"
+        },
+        {
+          "id": "c306ab28498b67c53decb9dde1d78bd5",
+          "content": " gap\n\nQuestion",
+          "letter": " e\n\nQuestion",
+          "gold_letter": "E",
+          "content_stop": "internal_newline"
+        },
+        {
+          "id": "ec224c1dbfb569cce7ec317fe987ae68",
+          "content": " b\n\nQuestion",
+          "letter": " b\n\nQuestion",
+          "gold_letter": "B",
+          "content_stop": "internal_newline"
+        },
+        {
+          "id": "dc2fa76467ff342abdb4cf142f92dddd",
+          "content": " b\n\nQuestion",
+          "letter": " b\n\nQuestion",
+          "gold_letter": "B",
+          "content_stop": "internal_newline"
+        },
+        {
+          "id": "e216381e9f0ddd1d248ee25fccca2b1f",
+          "content": " e\n\nQuestion",
+          "letter": " e\n\nQuestion",
+          "gold_letter": "E",
+          "content_stop": "internal_newline"
+        }
+      ],
+      "letter_lowercase": [
+        {
+          "id": "435a728f45d32faa4b3c4553c966fd6b",
+          "content": " slurred speech\n\nQuestion",
+          "letter": " b\n\nQuestion",
+          "gold_letter": "B",
+          "content_stop": "internal_newline"
+        },
+        {
+          "id": "c306ab28498b67c53decb9dde1d78bd5",
+          "content": " gap\n\nQuestion",
+          "letter": " e\n\nQuestion",
+          "gold_letter": "E",
+          "content_stop": "internal_newline"
+        },
+        {
+          "id": "ec224c1dbfb569cce7ec317fe987ae68",
+          "content": " b\n\nQuestion",
+          "letter": " b\n\nQuestion",
+          "gold_letter": "B",
+          "content_stop": "internal_newline"
+        },
+        {
+          "id": "dc2fa76467ff342abdb4cf142f92dddd",
+          "content": " b\n\nQuestion",
+          "letter": " b\n\nQuestion",
+          "gold_letter": "B",
+          "content_stop": "internal_newline"
+        },
+        {
+          "id": "ec8797b12e3c6666ebe70b2a7680b66f",
+          "content": " sit quietly\n\nQuestion",
+          "letter": " e\n\nQuestion",
+          "gold_letter": "D",
+          "content_stop": "internal_newline"
+        }
+      ],
+      "generation_correct_candidate_wrong": [
+        {
+          "id": "c306ab28498b67c53decb9dde1d78bd5",
+          "content": " gap\n\nQuestion",
+          "letter": " e\n\nQuestion",
+          "gold_letter": "E",
+          "content_stop": "internal_newline"
+        },
+        {
+          "id": "1272e693cf9152e7ac71095c643676b5",
+          "content": " A. theater\n\nQuestion",
+          "letter": " A\n\nQuestion",
+          "gold_letter": "A",
+          "content_stop": "internal_newline"
+        },
+        {
+          "id": "bb503ece4eac41dfe608a1dcb654e6bf",
+          "content": " paid for\n\nQuestion",
+          "letter": " c\n\nQuestion",
+          "gold_letter": "C",
+          "content_stop": "internal_newline"
+        },
+        {
+          "id": "d21777d771dc6fd08e769d378651817e",
+          "content": " E. open doors\n\nQuestion",
+          "letter": " e\n\nQuestion",
+          "gold_letter": "E",
+          "content_stop": "internal_newline"
+        },
+        {
+          "id": "c2a8c6814ed3e207771cfc23b3b42cf1",
+          "content": " B. table setting\n\nQuestion",
+          "letter": " c\n\nQuestion",
+          "gold_letter": "B",
+          "content_stop": "internal_newline"
+        }
+      ],
+      "scores_correct_content_wrong": [
+        {
+          "id": "01f01cc3ad152773ef42b30e926912bf",
+          "content": " B. require water\n\nQuestion",
+          "letter": " B\n\nQuestion",
+          "gold_letter": "A",
+          "content_stop": "internal_newline"
+        },
+        {
+          "id": "ec224c1dbfb569cce7ec317fe987ae68",
+          "content": " b\n\nQuestion",
+          "letter": " b\n\nQuestion",
+          "gold_letter": "B",
+          "content_stop": "internal_newline"
+        },
+        {
+          "id": "dc2fa76467ff342abdb4cf142f92dddd",
+          "content": " b\n\nQuestion",
+          "letter": " b\n\nQuestion",
+          "gold_letter": "B",
+          "content_stop": "internal_newline"
+        },
+        {
+          "id": "ec8797b12e3c6666ebe70b2a7680b66f",
+          "content": " sit quietly\n\nQuestion",
+          "letter": " e\n\nQuestion",
+          "gold_letter": "D",
+          "content_stop": "internal_newline"
+        },
+        {
+          "id": "e216381e9f0ddd1d248ee25fccca2b1f",
+          "content": " e\n\nQuestion",
+          "letter": " e\n\nQuestion",
+          "gold_letter": "E",
+          "content_stop": "internal_newline"
+        }
+      ],
+      "content_label_conflict": [
+        {
+          "id": "d1ad9b79f54205b6b9ac19a27f9c2be5",
+          "content": " E. airport\n\nQuestion",
+          "letter": " E\n\nQuestion",
+          "gold_letter": "E",
+          "content_stop": "internal_newline"
+        },
+        {
+          "id": "e1744fc698cffb574e5cf4b29a81ce76",
+          "content": " B. internet cafe\n\nQuestion",
+          "letter": " E\n\nQuestion",
+          "gold_letter": "A",
+          "content_stop": "internal_newline"
+        },
+        {
+          "id": "8d275acea05fd16295c659c504576a9b",
+          "content": " B. mall\n\nQuestion",
+          "letter": " b\n\nQuestion",
+          "gold_letter": "B",
+          "content_stop": "internal_newline"
+        },
+        {
+          "id": "ba6bd1bdef02d0ebfe5370f92365ae18",
+          "content": " B. fridge\n\nQuestion",
+          "letter": " B\n\nQuestion",
+          "gold_letter": "B",
+          "content_stop": "internal_newline"
+        },
+        {
+          "id": "637c710ec9582fd9b9e8eaa3f3fe83bb",
+          "content": " B. hotel\n\nQuestion",
+          "letter": " B\n\nQuestion",
+          "gold_letter": "B",
+          "content_stop": "internal_newline"
+        }
+      ]
+    }
+  },
+  "csqa/gen_only": {
+    "n": 1221,
+    "counts": {
+      "candidate_1_content_1": 548,
+      "candidate_0_content_1": 278,
+      "generation_correct_candidate_wrong": 278,
+      "candidate_0_content_0": 239,
+      "candidate_1_content_0": 156,
+      "scores_correct_content_wrong": 156
+    },
+    "examples": {
+      "generation_correct_candidate_wrong": [
+        {
+          "id": "c306ab28498b67c53decb9dde1d78bd5",
+          "content": " gap",
+          "letter": " A",
+          "gold_letter": "E",
+          "content_stop": "eos"
+        },
+        {
+          "id": "ec224c1dbfb569cce7ec317fe987ae68",
+          "content": " live long",
+          "letter": " A",
+          "gold_letter": "B",
+          "content_stop": "eos"
+        },
+        {
+          "id": "3fb36127a61903029a363911a1d2b1e9_1",
+          "content": " stairwell",
+          "letter": " C",
+          "gold_letter": "C",
+          "content_stop": "eos"
+        },
+        {
+          "id": "3665b329f93f7c84edeabe394140f8d2",
+          "content": " set orbits",
+          "letter": " B",
+          "gold_letter": "B",
+          "content_stop": "eos"
+        },
+        {
+          "id": "1272e693cf9152e7ac71095c643676b5",
+          "content": " theater",
+          "letter": " A",
+          "gold_letter": "A",
+          "content_stop": "eos"
+        }
+      ],
+      "scores_correct_content_wrong": [
+        {
+          "id": "98a04457025f18c2287d5c610ff8000d",
+          "content": " desk",
+          "letter": " C",
+          "gold_letter": "E",
+          "content_stop": "eos"
+        },
+        {
+          "id": "c96a86957a9ab1d8ca0aeeb7f040d87a_1",
+          "content": " library",
+          "letter": " B",
+          "gold_letter": "B",
+          "content_stop": "eos"
+        },
+        {
+          "id": "2192c5c2145a6e03755ad89a02e64055",
+          "content": " bus stop",
+          "letter": " B",
+          "gold_letter": "B",
+          "content_stop": "eos"
+        },
+        {
+          "id": "e71da9e95b321763c86e879a47bbd327",
+          "content": " have to",
+          "letter": " C",
+          "gold_letter": "E",
+          "content_stop": "eos"
+        },
+        {
+          "id": "d1ad9b79f54205b6b9ac19a27f9c2be5",
+          "content": " airport",
+          "letter": " D",
+          "gold_letter": "E",
+          "content_stop": "eos"
+        }
+      ]
+    }
+  },
+  "csqa/gen_rank": {
+    "n": 1221,
+    "counts": {
+      "candidate_1_content_1": 631,
+      "candidate_0_content_1": 185,
+      "generation_correct_candidate_wrong": 185,
+      "candidate_1_content_0": 173,
+      "scores_correct_content_wrong": 173,
+      "candidate_0_content_0": 232,
+      "letter_only_loose": 1,
+      "letter_lowercase": 1
+    },
+    "examples": {
+      "generation_correct_candidate_wrong": [
+        {
+          "id": "c306ab28498b67c53decb9dde1d78bd5",
+          "content": " gap",
+          "letter": " E",
+          "gold_letter": "E",
+          "content_stop": "eos"
+        },
+        {
+          "id": "3fb36127a61903029a363911a1d2b1e9_1",
+          "content": " stairwell",
+          "letter": " C",
+          "gold_letter": "C",
+          "content_stop": "eos"
+        },
+        {
+          "id": "cfc7fccb8449a2a950c9d2a50991420e",
+          "content": " growing older",
+          "letter": " B",
+          "gold_letter": "B",
+          "content_stop": "eos"
+        },
+        {
+          "id": "bb503ece4eac41dfe608a1dcb654e6bf",
+          "content": " paid for",
+          "letter": " C",
+          "gold_letter": "C",
+          "content_stop": "eos"
+        },
+        {
+          "id": "001b0f5a841fd81d13fbe67c7c7179d6",
+          "content": " defecating",
+          "letter": " C",
+          "gold_letter": "E",
+          "content_stop": "eos"
+        }
+      ],
+      "scores_correct_content_wrong": [
+        {
+          "id": "01f01cc3ad152773ef42b30e926912bf",
+          "content": " trained",
+          "letter": " A",
+          "gold_letter": "A",
+          "content_stop": "eos"
+        },
+        {
+          "id": "ec224c1dbfb569cce7ec317fe987ae68",
+          "content": " sand trap",
+          "letter": " A",
+          "gold_letter": "B",
+          "content_stop": "eos"
+        },
+        {
+          "id": "98a04457025f18c2287d5c610ff8000d",
+          "content": " desk",
+          "letter": " C",
+          "gold_letter": "E",
+          "content_stop": "eos"
+        },
+        {
+          "id": "c96a86957a9ab1d8ca0aeeb7f040d87a_1",
+          "content": " library",
+          "letter": " B",
+          "gold_letter": "B",
+          "content_stop": "eos"
+        },
+        {
+          "id": "6cc797ec148c1fc74592957a55bd0951",
+          "content": " turn off",
+          "letter": " A",
+          "gold_letter": "E",
+          "content_stop": "eos"
+        }
+      ],
+      "letter_only_loose": [
+        {
+          "id": "fb35c7aa5694bab2cde4b7257bfae003",
+          "content": " protection",
+          "letter": " c",
+          "gold_letter": "C",
+          "content_stop": "eos"
+        }
+      ],
+      "letter_lowercase": [
+        {
+          "id": "fb35c7aa5694bab2cde4b7257bfae003",
+          "content": " protection",
+          "letter": " c",
+          "gold_letter": "C",
+          "content_stop": "eos"
+        }
+      ]
+    }
+  },
+  "csqa/multitask_full": {
+    "n": 1221,
+    "counts": {
+      "candidate_1_content_1": 606,
+      "candidate_0_content_1": 218,
+      "generation_correct_candidate_wrong": 218,
+      "candidate_1_content_0": 177,
+      "scores_correct_content_wrong": 177,
+      "candidate_0_content_0": 220
+    },
+    "examples": {
+      "generation_correct_candidate_wrong": [
+        {
+          "id": "c306ab28498b67c53decb9dde1d78bd5",
+          "content": " gap",
+          "letter": " E",
+          "gold_letter": "E",
+          "content_stop": "eos"
+        },
+        {
+          "id": "ec224c1dbfb569cce7ec317fe987ae68",
+          "content": " live long",
+          "letter": " A",
+          "gold_letter": "B",
+          "content_stop": "eos"
+        },
+        {
+          "id": "c865b3547c2a2e3c3916d7be6ab25752",
+          "content": " sidewalk",
+          "letter": " C",
+          "gold_letter": "C",
+          "content_stop": "eos"
+        },
+        {
+          "id": "1f3ccb722600da7d862531416934949a",
+          "content": " brass band",
+          "letter": " C",
+          "gold_letter": "C",
+          "content_stop": "eos"
+        },
+        {
+          "id": "bb503ece4eac41dfe608a1dcb654e6bf",
+          "content": " paid for",
+          "letter": " C",
+          "gold_letter": "C",
+          "content_stop": "eos"
+        }
+      ],
+      "scores_correct_content_wrong": [
+        {
+          "id": "01f01cc3ad152773ef42b30e926912bf",
+          "content": " trained",
+          "letter": " C",
+          "gold_letter": "A",
+          "content_stop": "eos"
+        },
+        {
+          "id": "98a04457025f18c2287d5c610ff8000d",
+          "content": " desk",
+          "letter": " C",
+          "gold_letter": "E",
+          "content_stop": "eos"
+        },
+        {
+          "id": "c96a86957a9ab1d8ca0aeeb7f040d87a_1",
+          "content": " library",
+          "letter": " B",
+          "gold_letter": "B",
+          "content_stop": "eos"
+        },
+        {
+          "id": "2192c5c2145a6e03755ad89a02e64055",
+          "content": " bus stop",
+          "letter": " B",
+          "gold_letter": "B",
+          "content_stop": "eos"
+        },
+        {
+          "id": "e71da9e95b321763c86e879a47bbd327",
+          "content": " have to",
+          "letter": " C",
+          "gold_letter": "E",
+          "content_stop": "eos"
+        }
+      ]
+    }
+  },
+  "obqa/retention_control": {
+    "n": 499,
+    "counts": {
+      "candidate_1_content_1": 203,
+      "candidate_0_content_1": 175,
+      "generation_correct_candidate_wrong": 175,
+      "candidate_1_content_0": 31,
+      "scores_correct_content_wrong": 31,
+      "candidate_0_content_0": 90
+    },
+    "examples": {
+      "generation_correct_candidate_wrong": [
+        {
+          "id": "1572",
+          "content": " mammal",
+          "letter": " C",
+          "gold_letter": "C",
+          "content_stop": "eos"
+        },
+        {
+          "id": "8-409",
+          "content": " dead",
+          "letter": " C",
+          "gold_letter": "C",
+          "content_stop": "eos"
+        },
+        {
+          "id": "8-28",
+          "content": " CO2, H20, and sun rays",
+          "letter": " D",
+          "gold_letter": "D",
+          "content_stop": "eos"
+        },
+        {
+          "id": "378",
+          "content": " many collisions that have occured",
+          "letter": " B",
+          "gold_letter": "B",
+          "content_stop": "eos"
+        },
+        {
+          "id": "7-1159",
+          "content": " prey will experience a drop in population",
+          "letter": " C",
+          "gold_letter": "C",
+          "content_stop": "eos"
+        }
+      ],
+      "scores_correct_content_wrong": [
+        {
+          "id": "7-1077",
+          "content": " flower pots on a wagon",
+          "letter": " A",
+          "gold_letter": "D",
+          "content_stop": "eos"
+        },
+        {
+          "id": "9-230",
+          "content": " A",
+          "letter": " A",
+          "gold_letter": "A",
+          "content_stop": "eos"
+        },
+        {
+          "id": "7-988",
+          "content": " a rapid decline of the leaves",
+          "letter": " A",
+          "gold_letter": "A",
+          "content_stop": "eos"
+        },
+        {
+          "id": "745",
+          "content": " wood",
+          "letter": " A",
+          "gold_letter": "B",
+          "content_stop": "eos"
+        },
+        {
+          "id": "496",
+          "content": " A solar-rechargeable battery",
+          "letter": " A",
+          "gold_letter": "A",
+          "content_stop": "eos"
+        }
+      ]
+    }
+  },
+  "obqa/native": {
+    "n": 499,
+    "counts": {
+      "candidate_1_content_1": 173,
+      "letter_only_loose": 377,
+      "candidate_0_content_1": 172,
+      "generation_correct_candidate_wrong": 172,
+      "candidate_1_content_0": 48,
+      "scores_correct_content_wrong": 48,
+      "candidate_0_content_0": 106,
+      "content_hit_limit": 7,
+      "content_label_conflict": 2
+    },
+    "examples": {
+      "letter_only_loose": [
+        {
+          "id": "9-369",
+          "content": " B. distance traveled\n\nAss",
+          "letter": " B\n\nQuestion",
+          "gold_letter": "B",
+          "content_stop": "internal_newline"
+        },
+        {
+          "id": "1572",
+          "content": " C. mammal\n\nAss",
+          "letter": " C\n\nAss",
+          "gold_letter": "C",
+          "content_stop": "internal_newline"
+        },
+        {
+          "id": "8-409",
+          "content": " C. dead\n\nAss",
+          "letter": " C\n\nAss",
+          "gold_letter": "C",
+          "content_stop": "internal_newline"
+        },
+        {
+          "id": "9-317",
+          "content": " C. electricity\n\nAss",
+          "letter": " C\n\nAss",
+          "gold_letter": "C",
+          "content_stop": "internal_newline"
+        },
+        {
+          "id": "8-28",
+          "content": " D. CO2, H20, and sun rays\n\nQuestion",
+          "letter": " D\n\nQuestion",
+          "gold_letter": "D",
+          "content_stop": "internal_newline"
+        }
+      ],
+      "generation_correct_candidate_wrong": [
+        {
+          "id": "1572",
+          "content": " C. mammal\n\nAss",
+          "letter": " C\n\nAss",
+          "gold_letter": "C",
+          "content_stop": "internal_newline"
+        },
+        {
+          "id": "8-409",
+          "content": " C. dead\n\nAss",
+          "letter": " C\n\nAss",
+          "gold_letter": "C",
+          "content_stop": "internal_newline"
+        },
+        {
+          "id": "8-28",
+          "content": " D. CO2, H20, and sun rays\n\nQuestion",
+          "letter": " D\n\nQuestion",
+          "gold_letter": "D",
+          "content_stop": "internal_newline"
+        },
+        {
+          "id": "378",
+          "content": " B. many collisions that have occured\n\nAss",
+          "letter": " B\n\nQuestion",
+          "gold_letter": "B",
+          "content_stop": "internal_newline"
+        },
+        {
+          "id": "7-1159",
+          "content": " C. prey will experience a drop in population\n\nAss",
+          "letter": " C\n\nQuestion",
+          "gold_letter": "C",
+          "content_stop": "internal_newline"
+        }
+      ],
+      "scores_correct_content_wrong": [
+        {
+          "id": "9-478",
+          "content": " D. father\n\nQuestion",
+          "letter": " D\n\nAss",
+          "gold_letter": "C",
+          "content_stop": "internal_newline"
+        },
+        {
+          "id": "7-1077",
+          "content": " A. flower pots on a wagon\n\nQuestion",
+          "letter": " A\n\nQuestion",
+          "gold_letter": "D",
+          "content_stop": "internal_newline"
+        },
+        {
+          "id": "7-988",
+          "content": " D. a rapid decline of the leaves\n\nAss",
+          "letter": " D\n\nAss",
+          "gold_letter": "A",
+          "content_stop": "internal_newline"
+        },
+        {
+          "id": "1660",
+          "content": " B\n\nAss",
+          "letter": " B\n\nAss",
+          "gold_letter": "B",
+          "content_stop": "internal_newline"
+        },
+        {
+          "id": "745",
+          "content": " D. metal\n\nAss",
+          "letter": " A\n\nAss",
+          "gold_letter": "B",
+          "content_stop": "internal_newline"
+        }
+      ],
+      "content_hit_limit": [
+        {
+          "id": "9-895",
+          "content": "\n\nQuestion: What is the main idea of the text? Answer: The text discusses the importance of understanding and addressing",
+          "letter": " A\n\nQuestion",
+          "gold_letter": "A",
+          "content_stop": "token_limit"
+        },
+        {
+          "id": "9-575",
+          "content": "\n\nQuestion: What is the main reason given for why it's not normal for an adult animal to lay eggs?",
+          "letter": " C\n\nAss",
+          "gold_letter": "B",
+          "content_stop": "token_limit"
+        },
+        {
+          "id": "7-664",
+          "content": "\n\nQuestion: What is the main topic of the text? Answer: The text discusses the importance of understanding and using",
+          "letter": " C\n\nQuestion",
+          "gold_letter": "C",
+          "content_stop": "token_limit"
+        },
+        {
+          "id": "664",
+          "content": "\n\nQuestion: What is the main reason given for the decrease in hummingbirds at the house? Answer: The birds no",
+          "letter": " D\n\nQuestion",
+          "gold_letter": "D",
+          "content_stop": "token_limit"
+        },
+        {
+          "id": "9-461",
+          "content": "\n\nQuestion: What is the main reason for the rear-end collision described in the text? Answer: Steve didn",
+          "letter": " C\n\nQuestion",
+          "gold_letter": "C",
+          "content_stop": "token_limit"
+        }
+      ],
+      "content_label_conflict": [
+        {
+          "id": "948",
+          "content": " B. frogs returning to the ponds where they hatched to lay eggs\n\nAss",
+          "letter": " B",
+          "gold_letter": "B",
+          "content_stop": "internal_newline"
+        },
+        {
+          "id": "9-199",
+          "content": " B. corn syrup\n\nQuestion",
+          "letter": " B. corn syrup\n\nQuestion",
+          "gold_letter": "A",
+          "content_stop": "internal_newline"
+        }
+      ]
+    }
+  },
+  "obqa/rank_only": {
+    "n": 499,
+    "counts": {
+      "candidate_1_content_0": 168,
+      "scores_correct_content_wrong": 168,
+      "letter_only_loose": 390,
+      "letter_lowercase": 200,
+      "candidate_1_content_1": 90,
+      "candidate_0_content_1": 69,
+      "generation_correct_candidate_wrong": 69,
+      "candidate_0_content_0": 172,
+      "content_label_conflict": 52
+    },
+    "examples": {
+      "scores_correct_content_wrong": [
+        {
+          "id": "9-369",
+          "content": " b\n\nQuestion",
+          "letter": " b\n\nQuestion",
+          "gold_letter": "B",
+          "content_stop": "internal_newline"
+        },
+        {
+          "id": "9-478",
+          "content": " D. father\n\nQuestion",
+          "letter": " c\n\nQuestion",
+          "gold_letter": "C",
+          "content_stop": "internal_newline"
+        },
+        {
+          "id": "9-317",
+          "content": " c\n\nQuestion",
+          "letter": " c\n\nQuestion",
+          "gold_letter": "C",
+          "content_stop": "internal_newline"
+        },
+        {
+          "id": "7-1077",
+          "content": " A. wagon\n\nQuestion",
+          "letter": " A\n\nQuestion",
+          "gold_letter": "D",
+          "content_stop": "internal_newline"
+        },
+        {
+          "id": "9-230",
+          "content": " A. measure altitude\n\nQuestion",
+          "letter": " A\n\nQuestion",
+          "gold_letter": "A",
+          "content_stop": "internal_newline"
+        }
+      ],
+      "letter_only_loose": [
+        {
+          "id": "9-369",
+          "content": " b\n\nQuestion",
+          "letter": " b\n\nQuestion",
+          "gold_letter": "B",
+          "content_stop": "internal_newline"
+        },
+        {
+          "id": "1572",
+          "content": " mammal\n\nQuestion",
+          "letter": " c\n\nQuestion",
+          "gold_letter": "C",
+          "content_stop": "internal_newline"
+        },
+        {
+          "id": "9-478",
+          "content": " D. father\n\nQuestion",
+          "letter": " c\n\nQuestion",
+          "gold_letter": "C",
+          "content_stop": "internal_newline"
+        },
+        {
+          "id": "8-409",
+          "content": " dead\n\nQuestion",
+          "letter": " c\n\nQuestion",
+          "gold_letter": "C",
+          "content_stop": "internal_newline"
+        },
+        {
+          "id": "9-317",
+          "content": " c\n\nQuestion",
+          "letter": " c\n\nQuestion",
+          "gold_letter": "C",
+          "content_stop": "internal_newline"
+        }
+      ],
+      "letter_lowercase": [
+        {
+          "id": "9-369",
+          "content": " b\n\nQuestion",
+          "letter": " b\n\nQuestion",
+          "gold_letter": "B",
+          "content_stop": "internal_newline"
+        },
+        {
+          "id": "1572",
+          "content": " mammal\n\nQuestion",
+          "letter": " c\n\nQuestion",
+          "gold_letter": "C",
+          "content_stop": "internal_newline"
+        },
+        {
+          "id": "9-478",
+          "content": " D. father\n\nQuestion",
+          "letter": " c\n\nQuestion",
+          "gold_letter": "C",
+          "content_stop": "internal_newline"
+        },
+        {
+          "id": "8-409",
+          "content": " dead\n\nQuestion",
+          "letter": " c\n\nQuestion",
+          "gold_letter": "C",
+          "content_stop": "internal_newline"
+        },
+        {
+          "id": "9-317",
+          "content": " c\n\nQuestion",
+          "letter": " c\n\nQuestion",
+          "gold_letter": "C",
+          "content_stop": "internal_newline"
+        }
+      ],
+      "generation_correct_candidate_wrong": [
+        {
+          "id": "8-409",
+          "content": " dead\n\nQuestion",
+          "letter": " c\n\nQuestion",
+          "gold_letter": "C",
+          "content_stop": "internal_newline"
+        },
+        {
+          "id": "395",
+          "content": " skunk\n\nQuestion",
+          "letter": " d\n\nQuestion",
+          "gold_letter": "D",
+          "content_stop": "internal_newline"
+        },
+        {
+          "id": "1835",
+          "content": " B. arctic\n\nQuestion",
+          "letter": " B. arctic\n\nQuestion",
+          "gold_letter": "B",
+          "content_stop": "internal_newline"
+        },
+        {
+          "id": "359",
+          "content": " ecru\n\nQuestion",
+          "letter": " a\n\nQuestion",
+          "gold_letter": "A",
+          "content_stop": "internal_newline"
+        },
+        {
+          "id": "869",
+          "content": " A. ramen\n\nQuestion",
+          "letter": " A\n\nQuestion",
+          "gold_letter": "A",
+          "content_stop": "internal_newline"
+        }
+      ],
+      "content_label_conflict": [
+        {
+          "id": "7-1077",
+          "content": " A. wagon\n\nQuestion",
+          "letter": " A\n\nQuestion",
+          "gold_letter": "D",
+          "content_stop": "internal_newline"
+        },
+        {
+          "id": "8-92",
+          "content": " B. a mug of tea\n\nQuestion",
+          "letter": " B\n\nQuestion",
+          "gold_letter": "B",
+          "content_stop": "internal_newline"
+        },
+        {
+          "id": "9-1090",
+          "content": " d. oxygen\n\nQuestion",
+          "letter": " d\n\nQuestion",
+          "gold_letter": "D",
+          "content_stop": "internal_newline"
+        },
+        {
+          "id": "9-230",
+          "content": " A. measure altitude\n\nQuestion",
+          "letter": " A\n\nQuestion",
+          "gold_letter": "A",
+          "content_stop": "internal_newline"
+        },
+        {
+          "id": "7-988",
+          "content": " D. rapid decline of the leaves\n\nQuestion",
+          "letter": " D\n\nQuestion",
+          "gold_letter": "A",
+          "content_stop": "internal_newline"
+        }
+      ]
+    }
+  },
+  "obqa/gen_only": {
+    "n": 499,
+    "counts": {
+      "candidate_1_content_1": 189,
+      "candidate_0_content_1": 178,
+      "generation_correct_candidate_wrong": 178,
+      "candidate_1_content_0": 31,
+      "scores_correct_content_wrong": 31,
+      "candidate_0_content_0": 101,
+      "letter_only_loose": 1
+    },
+    "examples": {
+      "generation_correct_candidate_wrong": [
+        {
+          "id": "1572",
+          "content": " mammal",
+          "letter": " C",
+          "gold_letter": "C",
+          "content_stop": "eos"
+        },
+        {
+          "id": "8-409",
+          "content": " dead",
+          "letter": " C",
+          "gold_letter": "C",
+          "content_stop": "eos"
+        },
+        {
+          "id": "8-28",
+          "content": " CO2, H20, and sun rays",
+          "letter": " D",
+          "gold_letter": "D",
+          "content_stop": "eos"
+        },
+        {
+          "id": "378",
+          "content": " many collisions that have occured",
+          "letter": " B",
+          "gold_letter": "B",
+          "content_stop": "eos"
+        },
+        {
+          "id": "7-1159",
+          "content": " prey will experience a drop in population",
+          "letter": " C",
+          "gold_letter": "C",
+          "content_stop": "eos"
+        }
+      ],
+      "scores_correct_content_wrong": [
+        {
+          "id": "7-1077",
+          "content": " cars that are in a lot",
+          "letter": " A",
+          "gold_letter": "D",
+          "content_stop": "eos"
+        },
+        {
+          "id": "7-988",
+          "content": " a rapid decline of the leaves",
+          "letter": " A",
+          "gold_letter": "A",
+          "content_stop": "eos"
+        },
+        {
+          "id": "1774",
+          "content": " a man eating nachos then getting food poisoning",
+          "letter": " B",
+          "gold_letter": "B",
+          "content_stop": "eos"
+        },
+        {
+          "id": "202",
+          "content": " a fish",
+          "letter": " C",
+          "gold_letter": "C",
+          "content_stop": "eos"
+        },
+        {
+          "id": "745",
+          "content": " wood",
+          "letter": " A",
+          "gold_letter": "B",
+          "content_stop": "eos"
+        }
+      ],
+      "letter_only_loose": [
+        {
+          "id": "620",
+          "content": " concrete configuration",
+          "letter": " A concrete configuration",
+          "gold_letter": "A",
+          "content_stop": "eos"
+        }
+      ]
+    }
+  },
+  "obqa/gen_rank": {
+    "n": 499,
+    "counts": {
+      "candidate_1_content_1": 186,
+      "candidate_0_content_1": 147,
+      "generation_correct_candidate_wrong": 147,
+      "candidate_1_content_0": 51,
+      "scores_correct_content_wrong": 51,
+      "content_label_conflict": 3,
+      "candidate_0_content_0": 115
+    },
+    "examples": {
+      "generation_correct_candidate_wrong": [
+        {
+          "id": "1572",
+          "content": " mammal",
+          "letter": " C",
+          "gold_letter": "C",
+          "content_stop": "eos"
+        },
+        {
+          "id": "8-409",
+          "content": " dead",
+          "letter": " C",
+          "gold_letter": "C",
+          "content_stop": "eos"
+        },
+        {
+          "id": "8-28",
+          "content": " CO2, H20, and sun rays",
+          "letter": " D",
+          "gold_letter": "D",
+          "content_stop": "eos"
+        },
+        {
+          "id": "378",
+          "content": " many collisions that have occured",
+          "letter": " B",
+          "gold_letter": "B",
+          "content_stop": "eos"
+        },
+        {
+          "id": "7-1159",
+          "content": " prey will experience a drop in population",
+          "letter": " C",
+          "gold_letter": "C",
+          "content_stop": "eos"
+        }
+      ],
+      "scores_correct_content_wrong": [
+        {
+          "id": "9-478",
+          "content": " D",
+          "letter": " C",
+          "gold_letter": "C",
+          "content_stop": "eos"
+        },
+        {
+          "id": "7-1077",
+          "content": " A cars that are in a lot",
+          "letter": " A",
+          "gold_letter": "D",
+          "content_stop": "eos"
+        },
+        {
+          "id": "9-230",
+          "content": " A",
+          "letter": " A",
+          "gold_letter": "A",
+          "content_stop": "eos"
+        },
+        {
+          "id": "7-988",
+          "content": " a rapid decline of the leaves",
+          "letter": " A",
+          "gold_letter": "A",
+          "content_stop": "eos"
+        },
+        {
+          "id": "9-674",
+          "content": " mile up in the sky",
+          "letter": " C",
+          "gold_letter": "C",
+          "content_stop": "eos"
+        }
+      ],
+      "content_label_conflict": [
+        {
+          "id": "202",
+          "content": " C. octopus",
+          "letter": " C",
+          "gold_letter": "C",
+          "content_stop": "eos"
+        },
+        {
+          "id": "7-372",
+          "content": " A. snout",
+          "letter": " A",
+          "gold_letter": "B",
+          "content_stop": "eos"
+        },
+        {
+          "id": "630",
+          "content": " D. Mississippi",
+          "letter": " C",
+          "gold_letter": "C",
+          "content_stop": "eos"
+        }
+      ]
+    }
+  },
+  "obqa/multitask_full": {
+    "n": 499,
+    "counts": {
+      "candidate_1_content_1": 195,
+      "candidate_0_content_1": 148,
+      "generation_correct_candidate_wrong": 148,
+      "candidate_1_content_0": 50,
+      "scores_correct_content_wrong": 50,
+      "candidate_0_content_0": 106,
+      "letter_only_loose": 1
+    },
+    "examples": {
+      "generation_correct_candidate_wrong": [
+        {
+          "id": "1572",
+          "content": " mammal",
+          "letter": " C",
+          "gold_letter": "C",
+          "content_stop": "eos"
+        },
+        {
+          "id": "8-409",
+          "content": " dead",
+          "letter": " C",
+          "gold_letter": "C",
+          "content_stop": "eos"
+        },
+        {
+          "id": "378",
+          "content": " many collisions that have occured",
+          "letter": " B",
+          "gold_letter": "B",
+          "content_stop": "eos"
+        },
+        {
+          "id": "7-1159",
+          "content": " prey will experience a drop in population",
+          "letter": " C",
+          "gold_letter": "C",
+          "content_stop": "eos"
+        },
+        {
+          "id": "8-92",
+          "content": " A boiling hot mug of tea",
+          "letter": " B",
+          "gold_letter": "B",
+          "content_stop": "eos"
+        }
+      ],
+      "scores_correct_content_wrong": [
+        {
+          "id": "9-478",
+          "content": " D",
+          "letter": " C",
+          "gold_letter": "C",
+          "content_stop": "eos"
+        },
+        {
+          "id": "7-1077",
+          "content": " cars that are in a lot",
+          "letter": " A",
+          "gold_letter": "D",
+          "content_stop": "eos"
+        },
+        {
+          "id": "9-230",
+          "content": " A",
+          "letter": " A",
+          "gold_letter": "A",
+          "content_stop": "eos"
+        },
+        {
+          "id": "7-988",
+          "content": " a rapid decline of the leaves",
+          "letter": " D",
+          "gold_letter": "A",
+          "content_stop": "eos"
+        },
+        {
+          "id": "1774",
+          "content": " B",
+          "letter": " B",
+          "gold_letter": "B",
+          "content_stop": "eos"
+        }
+      ],
+      "letter_only_loose": [
+        {
+          "id": "1129",
+          "content": " a marsh",
+          "letter": " A marsh",
+          "gold_letter": "A",
+          "content_stop": "eos"
+        }
+      ]
+    }
+  }
+}
