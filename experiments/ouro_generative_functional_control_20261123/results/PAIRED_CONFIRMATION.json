@@ -43141,6 +43141,194 @@
       "rows_sha256": "be9102de032b6b4d2f11ebf4babfd0bebc26ef834a1bd67075d3aaa51a29a6b4"
     }
   },
+  "no_robots__k4__other": {
+    "native": {
+      "summary": {
+        "valid": {
+          "value": 1.0,
+          "n": 64,
+          "count": 64
+        },
+        "completed": {
+          "value": 0.296875,
+          "n": 64,
+          "count": 19
+        },
+        "rouge_l": {
+          "value": 0.2280863374188502,
+          "n": 64,
+          "count": null
+        },
+        "reference_number_recall": {
+          "value": 0.521763085399449,
+          "n": 22,
+          "count": null
+        }
+      },
+      "native_paired": {
+        "completed": {
+          "n": 64,
+          "reference": 0.296875,
+          "controller": 0.296875,
+          "delta": 0.0,
+          "rescued": 0,
+          "harmed": 0,
+          "paired_ci95": [
+            0.0,
+            0.0
+          ],
+          "exact_mcnemar": null
+        },
+        "reference_number_recall": {
+          "n": 22,
+          "reference": 0.521763085399449,
+          "controller": 0.521763085399449,
+          "delta": 0.0,
+          "rescued": 0,
+          "harmed": 0,
+          "paired_ci95": [
+            0.0,
+            0.0
+          ],
+          "exact_mcnemar": null
+        },
+        "rouge_l": {
+          "n": 64,
+          "reference": 0.2280863374188502,
+          "controller": 0.2280863374188502,
+          "delta": 0.0,
+          "rescued": 0,
+          "harmed": 0,
+          "paired_ci95": [
+            0.0,
+            0.0
+          ],
+          "exact_mcnemar": null
+        },
+        "valid": {
+          "n": 64,
+          "reference": 1.0,
+          "controller": 1.0,
+          "delta": 0.0,
+          "rescued": 0,
+          "harmed": 0,
+          "paired_ci95": [
+            0.0,
+            0.0
+          ],
+          "exact_mcnemar": null
+        }
+      },
+      "ranking_baseline_paired": null,
+      "cost": {
+        "seconds": 284.6589013300836,
+        "model_calls": 640,
+        "backbone_padded_token_loops": 9643952,
+        "generated_tokens": 8129,
+        "cuda_peak": 3604017664
+      },
+      "stop_counts": {
+        "token_limit": 45,
+        "next_turn": 15,
+        "eos": 4
+      },
+      "error_counts": {},
+      "rows_sha256": "f7cad31e7e9db79b4aee4abd3f4e42c860d243f8904e917645311b364bd01002"
+    },
+    "retention_control": {
+      "summary": {
+        "valid": {
+          "value": 1.0,
+          "n": 64,
+          "count": 64
+        },
+        "completed": {
+          "value": 0.859375,
+          "n": 64,
+          "count": 55
+        },
+        "rouge_l": {
+          "value": 0.23837959370404838,
+          "n": 64,
+          "count": null
+        },
+        "reference_number_recall": {
+          "value": 0.35134297520661156,
+          "n": 22,
+          "count": null
+        }
+      },
+      "native_paired": {
+        "completed": {
+          "n": 64,
+          "reference": 0.296875,
+          "controller": 0.859375,
+          "delta": 0.5625,
+          "rescued": 36,
+          "harmed": 0,
+          "paired_ci95": [
+            0.4375,
+            0.6875
+          ],
+          "exact_mcnemar": 2.9103830456733704e-11
+        },
+        "reference_number_recall": {
+          "n": 22,
+          "reference": 0.521763085399449,
+          "controller": 0.35134297520661156,
+          "delta": -0.17042011019283743,
+          "rescued": 3,
+          "harmed": 9,
+          "paired_ci95": [
+            -0.33708763774104683,
+            -0.013179235537190056
+          ],
+          "exact_mcnemar": null
+        },
+        "rouge_l": {
+          "n": 64,
+          "reference": 0.2280863374188502,
+          "controller": 0.23837959370404838,
+          "delta": 0.01029325628519819,
+          "rescued": 35,
+          "harmed": 27,
+          "paired_ci95": [
+            -0.020858844857331638,
+            0.04122574771028494
+          ],
+          "exact_mcnemar": null
+        },
+        "valid": {
+          "n": 64,
+          "reference": 1.0,
+          "controller": 1.0,
+          "delta": 0.0,
+          "rescued": 0,
+          "harmed": 0,
+          "paired_ci95": [
+            0.0,
+            0.0
+          ],
+          "exact_mcnemar": null
+        }
+      },
+      "ranking_baseline_paired": null,
+      "cost": {
+        "seconds": 178.12400895357132,
+        "model_calls": 640,
+        "backbone_padded_token_loops": 5839880,
+        "generated_tokens": 4386,
+        "cuda_peak": 3602814464
+      },
+      "stop_counts": {
+        "eos": 46,
+        "next_turn": 9,
+        "token_limit": 9
+      },
+      "error_counts": {},
+      "rows_sha256": "59c08967a61ce6606bf5766d1d862f8173069988318f9d6ad6ab86857fbc18f6"
+    }
+  },
   "obqa__k2__candidate": {
     "gen_only": {
       "summary": {

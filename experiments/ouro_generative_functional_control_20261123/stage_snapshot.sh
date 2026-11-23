@@ -29,7 +29,7 @@ export CUDA_VISIBLE_DEVICES=""
 "$py" analyze_transfer_depth.py
 "$py" result_tables.py
 "$py" render_summary.py
-"$py" - "$stamp" <<'PY'
+"$py" - "$stamp" "${SNAPSHOT_STATE:-active}" <<'PY'
 import json
 from pathlib import Path
 import sys
@@ -37,10 +37,11 @@ import sys
 coverage = json.loads(Path("results/CONFIRMATION_COVERAGE.json").read_text())
 known = coverage["shards"]
 planned = coverage["planned_shards"]
+status = "其余确认评测已由用户暂停。" if sys.argv[2] == "paused" else "其余确认评测在服务器继续运行。"
 markdown = (
     "# 评测快照\n\n"
     f"服务器记录时间为 {sys.argv[1]}。训练已完成，共验证并归档 {known}/{planned} 个冻结确认单元。"
-    "其余确认评测在服务器继续运行。快照发布仅包含当时已有完整回执的推理。\n\n"
+    + status + "快照发布仅包含当时已有完整回执的推理。\n\n"
     "- `REPORT_ZH.md` 记录当时可确认的主要结果。\n"
     "- `results/CONFIRMATION_COVERAGE.json` 列出尚未进入快照的条件。\n"
     "- `results/CONFIRMATION.csv` 含已可逐题配对的条件。`results/confirmation.tar.gz` 含全部已完成的逐题结果。\n"
@@ -49,7 +50,7 @@ markdown = (
 Path("SNAPSHOT.md").write_text(markdown, encoding="utf-8")
 report = Path("REPORT_ZH.md")
 lines = report.read_text(encoding="utf-8").split("\n", 1)
-note = f"\n\n这是在 {sys.argv[1]} 归档的运行中快照，含 {known}/{planned} 个确认单元。 [快照范围](SNAPSHOT.md)\n"
+note = f"\n\n这是在 {sys.argv[1]} 归档的快照，含 {known}/{planned} 个确认单元。{status} [快照范围](SNAPSHOT.md)\n"
 report.write_text(lines[0] + note + lines[1], encoding="utf-8")
 PY
 bash package_release.sh --snapshot
