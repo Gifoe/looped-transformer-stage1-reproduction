@@ -28,8 +28,13 @@
     CUDA_VISIBLE_DEVICES='' "$py" "$gen/overlap_audit.py" --data data/official --train data/arc_challenge_fit.jsonl --train data/csqa_fit.jsonl --train data/squad_fit.jsonl --train data/gsm8k_fit.jsonl --train "$gen/data/csqa_matched.jsonl" --train "$gen/data/full_mixed_train.jsonl" --out data/confirmation
     CUDA_VISIBLE_DEVICES='' "$py" lock_passage_split.py --current_fit data/squad_fit.jsonl --historical_fit "$gen/data/full_mixed_train.jsonl" --development data/squad_development.jsonl --confirmation data/confirmation/test_squad.jsonl --out results/DEVELOPMENT_EXCLUSIONS.json
     bash run_round3.sh > run_round3.log 2>&1
+    bash run_anchored.sh > run_anchored.log 2>&1
     bash seal_confirmation.sh
     bash run_confirmation.sh > run_confirmation.log 2>&1
     bash run_postprocess.sh
 
 发布包保存源文件哈希、矩摘要、可逐题重算的结果和实际训练权重。完整矩阵可按前述命令重建。逐题结果解压后，应与各条件回执 SHA 一致。训练、机制前向、验证与测试的 GPU 耗时均计入 GPU_LEDGER.tsv。
+
+从已保存的矩阵、权重和开发结果可独立重算训练后的一阶斜率，无需运行模型。参数中的历史权重路径应与开发回执的 SHA 相符。
+
+    CUDA_VISIBLE_DEVICES='' "$py" audit_deployed_directions.py --fit results/MOMENT_FIT --holdout results/MOMENT_HOLDOUT --weights results/fits --paired results/PAIRED_DEVELOPMENT.json --development results/development --historical "historical_rank=$prior_transfer/results/HOLDOUT/csqa/source/s261123137/k234/controller.pt" --historical "historical_retention=$gen/results/FINAL_CONTROLLER.pt" --historical "historical_mixed=$gen/results/multitask_full/controller.pt" --out results/DEPLOYED_DIRECTIONS.json
