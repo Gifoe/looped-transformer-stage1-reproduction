@@ -103,7 +103,7 @@ def train(a, archive, model, tok, rows, runtime):
     rule = dict(recipe=a.recipe, rank_weight=a.rank_weight, seed=a.seed, initial_factors_sha256=initial, lr=a.lr,
                 dataset_sha256=minimal.sha(a.data / "MANIFEST.json"), code_sha256=minimal.sha(Path(__file__)),
                 model_sha256=runtime["model_sha256"], depths=list(DEPTHS), per_step=list(QUOTAS_PER_STEP),
-                epochs=a.epochs, microbatch=a.microbatch, smoke_updates=a.smoke_updates)
+                epochs=a.epochs, microbatch=a.microbatch, smoke_updates=a.smoke_updates, max_work=a.max_work)
     lock = a.out / "TRAIN_LOCK.json"
     if lock.exists() and json.loads(lock.read_text()) != rule:
         raise ValueError(f"Conflicting run lock at {lock}")
@@ -117,6 +117,7 @@ def train(a, archive, model, tok, rows, runtime):
         optimizer.load_state_dict(old["optimizer"])
         start_epoch, start_step, history, seconds = old["epoch"], old["step"], old["history"], old["seconds"]
     encoded = features(tok, rows)
+    completed_work = sum(row['padded_token_loops'] for row in history)
     start = time.perf_counter()
     torch.cuda.reset_peak_memory_stats()
 
@@ -130,6 +131,8 @@ def train(a, archive, model, tok, rows, runtime):
             plan = plan[:a.smoke_updates]
         off = start_step if epoch == start_epoch else 0
         for step, (depth, items) in enumerate(plan[off:], start=off):
+            if a.max_work and completed_work >= a.max_work:
+                break
             optimizer.zero_grad(set_to_none=True)
             generated, works, target_tokens = 0., 0, 0
             for i in range(0, len(items), a.microbatch):
@@ -152,6 +155,7 @@ def train(a, archive, model, tok, rows, runtime):
             if not np.isfinite(grad) or grad <= 0:
                 raise RuntimeError(f"No finite controller gradient at {epoch}/{step}")
             optimizer.step()
+            completed_work += works
             trace = dict(epoch=epoch, step=step+1, depth=depth, nll=generated, grad=grad,
                          ranking=float(ranked.detach()) if ranked is not None else None,
                          target_tokens=target_tokens, padded_token_loops=works,
@@ -176,6 +180,10 @@ def train(a, archive, model, tok, rows, runtime):
                      peak_cuda_bytes=torch.cuda.max_memory_allocated(), logs=history))
         save_state(epoch+1, 0)
         print("CHECKPOINT", epoch, len(history), p, flush=True)
+        if a.max_work and completed_work >= a.max_work:
+            minimal.dump(a.out/'WORK_STOP.json',dict(epoch=epoch, updates=len(history), target=a.max_work,
+                         actual=completed_work, overshoot=completed_work-a.max_work, checkpoint=str(p), sha256=minimal.sha(p)))
+            break
     if a.smoke_updates:
         sample = rows["gsm8k"][0]["views"]["final"]
         with torch.inference_mode():
@@ -196,6 +204,7 @@ def main():
     parser.add_argument("--lr", type=float, default=.001)
     parser.add_argument("--microbatch", type=int, default=4)
     parser.add_argument("--smoke-updates", type=int)
+    parser.add_argument("--max-work",type=int,help="Stop after first completed optimizer step reaching padded token×loop cap")
     a = parser.parse_args()
     a.rank_weight = SETS[a.recipe][1] if a.recipe in ("A", "B") else a.rank_weight
     if a.rank_weight is None or not 1 <= a.through_epoch <= a.epochs:

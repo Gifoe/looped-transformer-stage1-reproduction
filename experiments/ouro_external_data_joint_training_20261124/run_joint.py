@@ -77,6 +77,26 @@ def first_seed(a, recipe, rank):
     return scores
 
 
+def matched_work(a, scores, rank):
+    """Confirm a favorable D result if it consumed materially more training work."""
+    cs, ds = (scores[r][2] for r in 'CD')
+    c, d = (read(Path(row['weight']).with_name('TRAIN.json'))['padded_token_loops'] for row in (cs,ds))
+    comparison=dict(matched_epoch=3,C_padded_token_loops=c,D_padded_token_loops=d,relative_excess=d/c-1)
+    out=Path('results/compute_matched_D')
+    if ordering(ds)>ordering(cs) and d>=c*(1+read(a.study)['paired_compute_trigger']):
+        receipt=out/'WORK_STOP.json'
+        if not receipt.exists():
+            job('fit_D_matched_C_work','train_external.py',
+                [*a.common,'--data','data','--out',out,'--recipe','D','--seed',SEEDS[0],
+                 '--rank-weight',rank,'--through-epoch',3,'--max-work',c])
+        capped=read(receipt)
+        run=core(a,'D_compute_matched',Path(capped['checkpoint']),'dev-small',(2,3,4))
+        comparison.update(work_receipt=capped,matched_development=assess(run,'D_compute_matched','dev-small'),executed=True)
+    else:
+        comparison.update(executed=False,why='D did not lead at equal question exposure or consumed less than 10% additional padded token-loop work')
+    minimal.dump(Path('results/CD_COMPUTE_AUDIT.json'),comparison)
+
+
 def freeze(a, selected, refs, development):
     path=Path("results/FREEZE.json")
     win=Path(selected["weight"])
@@ -158,6 +178,7 @@ def main():
     for r in "CD":
         scores[r]=first_seed(a,r,rank)
         first[r]=max(scores[r],key=ordering)
+    matched_work(a,scores,rank)
     top=sorted(first,key=lambda recipe: ordering(first[recipe]),reverse=True)[:2]
     for arm,pth in refs.items():
         if arm != "t2":
