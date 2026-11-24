@@ -1,0 +1,21 @@
+{
+  "source": "Measured on the original RTX 4090 D. Values transcribed at the precision returned by the verified SSH analysis. Per-question receipts and dense matrices are in the original GPU work directory.",
+  "depth": 4,
+  "receiver": "Before RMSNorm at the end of K3",
+  "utility": "Gold-minus-mean-exp rival, character-normalized candidate log likelihood times sixteen",
+  "training": [
+    {"name": "ARC-Challenge", "n": 1013, "natural_rescue": 30, "natural_damage": 23, "slopes": {"T1": [0.733, 2.360, 1.627], "T2": [0.672, 2.021, 1.349], "Mixed": [0.046, 0.916, 0.870]}},
+    {"name": "CommonsenseQA", "n": 8786, "natural_rescue": 279, "natural_damage": 176, "slopes": {"T1": [0.637, 3.329, 2.692], "T2": [0.767, 3.356, 2.589], "Mixed": [0.191, 2.245, 2.053]}}
+  ],
+  "slope_order": ["direct", "post_loop", "interaction"],
+  "finite_arc_validation": {
+    "n": 24,
+    "doses": [0.05, 0.10, 1.00],
+    "operator": {
+      "T1": {"direct": [0.0015, 0.0148, 0.0463], "post_loop": [0.0738, 0.1325, 1.5728], "linear_post_loop": [0.0709, 0.1407, 1.4093], "positive_interaction_with_post_loop_harm_at_0.1_and_1.0": [2, 1], "linear_post_loop_mae_at_0.1_and_1.0": [0.0436, 1.0782]},
+      "T2": {"direct": [-0.0173, -0.0109, -0.1310], "post_loop": [0.0376, 0.0999, 1.1676], "linear_post_loop": [0.0558, 0.1118, 1.1167], "positive_interaction_with_post_loop_harm_at_0.1_and_1.0": [2, 4], "linear_post_loop_mae_at_0.1_and_1.0": [0.0424, 0.7645]},
+      "Mixed": {"direct": [0.0062, 0.0102, 0.0461], "post_loop": [0.0026, 0.0575, 0.4439], "linear_post_loop": [0.0290, 0.0584, 0.5820], "positive_interaction_with_post_loop_harm_at_0.1_and_1.0": [3, 1], "linear_post_loop_mae_at_0.1_and_1.0": [0.0419, 0.4644]}
+    }
+  },
+  "historical_full_8_macro_percent": {"native": 66.9623, "loopcd_fixed": 67.6484, "loopcd_adaptive": 67.3779, "loopcd_taskwise_best": 67.7225, "rank8": 72.5786, "t1": 72.4798, "t2": 71.7578, "mixed": 67.6100}
+}
