@@ -1,0 +1,5255 @@
+{
+  "seed": 261124137,
+  "shared": {
+    "seed": 261124137,
+    "initial_factors_sha256": "a25e360b449ab2252af5bd1c6f37c0e1b032a4b19f9e455c51254490122edfc3",
+    "dataset_sha256": "dbe6ef4361b73fd423a0c500acedb5ec62809cddec7186021178d219c7afd39f",
+    "depths": [
+      2,
+      3,
+      4
+    ],
+    "per_step": [
+      2,
+      2,
+      4
+    ],
+    "model_sha256": "58872a72616c736595b8b7662079c5b12c5a162ec16eae94f21c348dfa9885af",
+    "rank_weight": 0.0,
+    "lr": 0.001,
+    "code_sha256": "f5f74449301445f099bd734d5e0413ce377d8147841395f72c9a9fd7a7d15cc0"
+  },
+  "epochs": [
+    {
+      "epoch": 1,
+      "costs": {
+        "C": {
+          "optimizer_updates": 500,
+          "seconds": 188.05732931941748,
+          "target_tokens": 150797,
+          "padded_token_loops": 1537164,
+          "checkpoint_sha256": "46cb9a98b3450ff0807f35b3de844b16219f8e267d4912d8831de951bc6de3d9"
+        },
+        "D": {
+          "optimizer_updates": 500,
+          "seconds": 189.69700993597507,
+          "target_tokens": 184916,
+          "padded_token_loops": 1958812,
+          "checkpoint_sha256": "5e1d37fbb3134ab408353197fc8e71bcabd6c22bf149de7f66d36dd82a6299b1"
+        }
+      },
+      "explained_by_loop": {
+        "2": 167,
+        "3": 167,
+        "4": 166
+      },
+      "selection": {
+        "C": [
+          0,
+          -0.008333333333333333,
+          -0.19166666666666668,
+          0.15617283950617283,
+          -0.0095679012345679
+        ],
+        "D": [
+          0,
+          -0.008333333333333333,
+          -0.15833333333333333,
+          0.17685185185185184,
+          0.003703703703703706
+        ]
+      },
+      "paired_D_minus_C": [
+        {
+          "dataset": "arc_challenge",
+          "depth": 2,
+          "mode": "candidate",
+          "paired": {
+            "acc": {
+              "n": 120,
+              "reference": 0.38333333333333336,
+              "controller": 0.35,
+              "delta": -0.03333333333333333,
+              "rescued": 1,
+              "harmed": 5,
+              "paired_ci95": [
+                -0.075,
+                0.0
+              ],
+              "exact_mcnemar": 0.21875
+            },
+            "acc_norm": {
+              "n": 120,
+              "reference": 0.4666666666666667,
+              "controller": 0.475,
+              "delta": 0.008333333333333333,
+              "rescued": 3,
+              "harmed": 2,
+              "paired_ci95": [
+                -0.025,
+                0.041666666666666664
+              ],
+              "exact_mcnemar": 1.0
+            }
+          }
+        },
+        {
+          "dataset": "arc_challenge",
+          "depth": 2,
+          "mode": "content",
+          "paired": {
+            "content_f1": {
+              "n": 120,
+              "reference": 0.7113065964536552,
+              "controller": 0.6922376683057797,
+              "delta": -0.019068928147875516,
+              "rescued": 5,
+              "harmed": 8,
+              "paired_ci95": [
+                -0.05436993415940784,
+                0.011837425367030632
+              ],
+              "exact_mcnemar": null
+            },
+            "correct": {
+              "n": 120,
+              "reference": 0.6666666666666666,
+              "controller": 0.6166666666666667,
+              "delta": -0.05,
+              "rescued": 1,
+              "harmed": 7,
+              "paired_ci95": [
+                -0.1,
+                -0.008333333333333333
+              ],
+              "exact_mcnemar": 0.0703125
+            },
+            "loose_correct": {
+              "n": 120,
+              "reference": 0.6666666666666666,
+              "controller": 0.6166666666666667,
+              "delta": -0.05,
+              "rescued": 1,
+              "harmed": 7,
+              "paired_ci95": [
+                -0.1,
+                -0.008333333333333333
+              ],
+              "exact_mcnemar": 0.0703125
+            },
+            "strict": {
+              "n": 120,
+              "reference": 0.6666666666666666,
+              "controller": 0.6166666666666667,
+              "delta": -0.05,
+              "rescued": 1,
+              "harmed": 7,
+              "paired_ci95": [
+                -0.1,
+                -0.008333333333333333
+              ],
+              "exact_mcnemar": 0.0703125
+            },
+            "valid": {
+              "n": 120,
+              "reference": 0.975,
+              "controller": 0.925,
+              "delta": -0.05,
+              "rescued": 0,
+              "harmed": 6,
+              "paired_ci95": [
+                -0.09166666666666666,
+                -0.016666666666666666
+              ],
+              "exact_mcnemar": 0.03125
+            }
+          }
+        },
+        {
+          "dataset": "arc_challenge",
+          "depth": 3,
+          "mode": "candidate",
+          "paired": {
+            "acc": {
+              "n": 120,
+              "reference": 0.39166666666666666,
+              "controller": 0.38333333333333336,
+              "delta": -0.008333333333333333,
+              "rescued": 1,
+              "harmed": 2,
+              "paired_ci95": [
+                -0.041666666666666664,
+                0.016666666666666666
+              ],
+              "exact_mcnemar": 1.0
+            },
+            "acc_norm": {
+              "n": 120,
+              "reference": 0.475,
+              "controller": 0.475,
+              "delta": 0.0,
+              "rescued": 2,
+              "harmed": 2,
+              "paired_ci95": [
+                -0.03333333333333333,
+                0.03333333333333333
+              ],
+              "exact_mcnemar": 1.0
+            }
+          }
+        },
+        {
+          "dataset": "arc_challenge",
+          "depth": 3,
+          "mode": "content",
+          "paired": {
+            "content_f1": {
+              "n": 120,
+              "reference": 0.8465904437982611,
+              "controller": 0.8070864755442929,
+              "delta": -0.03950396825396826,
+              "rescued": 1,
+              "harmed": 9,
+              "paired_ci95": [
+                -0.07887450396825398,
+                -0.002222222222222222
+              ],
+              "exact_mcnemar": null
+            },
+            "correct": {
+              "n": 120,
+              "reference": 0.775,
+              "controller": 0.7083333333333334,
+              "delta": -0.06666666666666667,
+              "rescued": 1,
+              "harmed": 9,
+              "paired_ci95": [
+                -0.11666666666666667,
+                -0.016666666666666666
+              ],
+              "exact_mcnemar": 0.021484375
+            },
+            "loose_correct": {
+              "n": 120,
+              "reference": 0.775,
+              "controller": 0.7083333333333334,
+              "delta": -0.06666666666666667,
+              "rescued": 1,
+              "harmed": 9,
+              "paired_ci95": [
+                -0.11666666666666667,
+                -0.016666666666666666
+              ],
+              "exact_mcnemar": 0.021484375
+            },
+            "strict": {
+              "n": 120,
+              "reference": 0.775,
+              "controller": 0.7083333333333334,
+              "delta": -0.06666666666666667,
+              "rescued": 1,
+              "harmed": 9,
+              "paired_ci95": [
+                -0.11666666666666667,
+                -0.016666666666666666
+              ],
+              "exact_mcnemar": 0.021484375
+            },
+            "valid": {
+              "n": 120,
+              "reference": 0.95,
+              "controller": 0.9333333333333333,
+              "delta": -0.016666666666666666,
+              "rescued": 0,
+              "harmed": 2,
+              "paired_ci95": [
+                -0.041666666666666664,
+                0.0
+              ],
+              "exact_mcnemar": 0.5
+            }
+          }
+        },
+        {
+          "dataset": "arc_challenge",
+          "depth": 4,
+          "mode": "candidate",
+          "paired": {
+            "acc": {
+              "n": 120,
+              "reference": 0.4,
+              "controller": 0.39166666666666666,
+              "delta": -0.008333333333333333,
+              "rescued": 1,
+              "harmed": 2,
+              "paired_ci95": [
+                -0.041666666666666664,
+                0.016666666666666666
+              ],
+              "exact_mcnemar": 1.0
+            },
+            "acc_norm": {
+              "n": 120,
+              "reference": 0.5083333333333333,
+              "controller": 0.5,
+              "delta": -0.008333333333333333,
+              "rescued": 1,
+              "harmed": 2,
+              "paired_ci95": [
+                -0.041666666666666664,
+                0.016666666666666666
+              ],
+              "exact_mcnemar": 1.0
+            }
+          }
+        },
+        {
+          "dataset": "arc_challenge",
+          "depth": 4,
+          "mode": "content",
+          "paired": {
+            "content_f1": {
+              "n": 120,
+              "reference": 0.8033395525326641,
+              "controller": 0.8079261220089393,
+              "delta": 0.004586569476275362,
+              "rescued": 6,
+              "harmed": 6,
+              "paired_ci95": [
+                -0.04028727400050929,
+                0.052782976827094506
+              ],
+              "exact_mcnemar": null
+            },
+            "correct": {
+              "n": 120,
+              "reference": 0.75,
+              "controller": 0.7416666666666667,
+              "delta": -0.008333333333333333,
+              "rescued": 5,
+              "harmed": 6,
+              "paired_ci95": [
+                -0.06666666666666667,
+                0.041666666666666664
+              ],
+              "exact_mcnemar": 1.0
+            },
+            "loose_correct": {
+              "n": 120,
+              "reference": 0.75,
+              "controller": 0.7416666666666667,
+              "delta": -0.008333333333333333,
+              "rescued": 5,
+              "harmed": 6,
+              "paired_ci95": [
+                -0.058333333333333334,
+                0.041666666666666664
+              ],
+              "exact_mcnemar": 1.0
+            },
+            "strict": {
+              "n": 120,
+              "reference": 0.7416666666666667,
+              "controller": 0.7083333333333334,
+              "delta": -0.03333333333333333,
+              "rescued": 4,
+              "harmed": 8,
+              "paired_ci95": [
+                -0.09166666666666666,
+                0.025
+              ],
+              "exact_mcnemar": 0.3876953125
+            },
+            "valid": {
+              "n": 120,
+              "reference": 0.9333333333333333,
+              "controller": 0.925,
+              "delta": -0.008333333333333333,
+              "rescued": 4,
+              "harmed": 5,
+              "paired_ci95": [
+                -0.058333333333333334,
+                0.041666666666666664
+              ],
+              "exact_mcnemar": 1.0
+            }
+          }
+        },
+        {
+          "dataset": "csqa",
+          "depth": 2,
+          "mode": "candidate",
+          "paired": {
+            "acc": {
+              "n": 120,
+              "reference": 0.55,
+              "controller": 0.5916666666666667,
+              "delta": 0.041666666666666664,
+              "rescued": 8,
+              "harmed": 3,
+              "paired_ci95": [
+                -0.008333333333333333,
+                0.1
+              ],
+              "exact_mcnemar": 0.2265625
+            },
+            "acc_norm": {
+              "n": 120,
+              "reference": 0.49166666666666664,
+              "controller": 0.525,
+              "delta": 0.03333333333333333,
+              "rescued": 6,
+              "harmed": 2,
+              "paired_ci95": [
+                -0.008333333333333333,
+                0.08333333333333333
+              ],
+              "exact_mcnemar": 0.2890625
+            }
+          }
+        },
+        {
+          "dataset": "csqa",
+          "depth": 2,
+          "mode": "content",
+          "paired": {
+            "content_f1": {
+              "n": 120,
+              "reference": 0.7016666666666667,
+              "controller": 0.7016666666666667,
+              "delta": 0.0,
+              "rescued": 8,
+              "harmed": 8,
+              "paired_ci95": [
+                -0.06666666666666667,
+                0.06666666666666667
+              ],
+              "exact_mcnemar": null
+            },
+            "correct": {
+              "n": 120,
+              "reference": 0.7083333333333334,
+              "controller": 0.7083333333333334,
+              "delta": 0.0,
+              "rescued": 8,
+              "harmed": 8,
+              "paired_ci95": [
+                -0.06666666666666667,
+                0.06666666666666667
+              ],
+              "exact_mcnemar": 1.0
+            },
+            "loose_correct": {
+              "n": 120,
+              "reference": 0.7083333333333334,
+              "controller": 0.7083333333333334,
+              "delta": 0.0,
+              "rescued": 8,
+              "harmed": 8,
+              "paired_ci95": [
+                -0.06666666666666667,
+                0.06666666666666667
+              ],
+              "exact_mcnemar": 1.0
+            },
+            "strict": {
+              "n": 120,
+              "reference": 0.7083333333333334,
+              "controller": 0.7083333333333334,
+              "delta": 0.0,
+              "rescued": 8,
+              "harmed": 8,
+              "paired_ci95": [
+                -0.06666666666666667,
+                0.06666666666666667
+              ],
+              "exact_mcnemar": 1.0
+            },
+            "valid": {
+              "n": 120,
+              "reference": 0.9833333333333333,
+              "controller": 0.9833333333333333,
+              "delta": 0.0,
+              "rescued": 1,
+              "harmed": 1,
+              "paired_ci95": [
+                -0.025,
+                0.025
+              ],
+              "exact_mcnemar": 1.0
+            }
+          }
+        },
+        {
+          "dataset": "csqa",
+          "depth": 3,
+          "mode": "candidate",
+          "paired": {
+            "acc": {
+              "n": 120,
+              "reference": 0.625,
+              "controller": 0.6416666666666667,
+              "delta": 0.016666666666666666,
+              "rescued": 2,
+              "harmed": 0,
+              "paired_ci95": [
+                0.0,
+                0.041666666666666664
+              ],
+              "exact_mcnemar": 0.5
+            },
+            "acc_norm": {
+              "n": 120,
+              "reference": 0.5583333333333333,
+              "controller": 0.5666666666666667,
+              "delta": 0.008333333333333333,
+              "rescued": 2,
+              "harmed": 1,
+              "paired_ci95": [
+                -0.016666666666666666,
+                0.03333333333333333
+              ],
+              "exact_mcnemar": 1.0
+            }
+          }
+        },
+        {
+          "dataset": "csqa",
+          "depth": 3,
+          "mode": "content",
+          "paired": {
+            "content_f1": {
+              "n": 120,
+              "reference": 0.7616666666666667,
+              "controller": 0.7616666666666667,
+              "delta": 0.0,
+              "rescued": 2,
+              "harmed": 2,
+              "paired_ci95": [
+                -0.03333333333333333,
+                0.03333333333333333
+              ],
+              "exact_mcnemar": null
+            },
+            "correct": {
+              "n": 120,
+              "reference": 0.7666666666666667,
+              "controller": 0.7666666666666667,
+              "delta": 0.0,
+              "rescued": 2,
+              "harmed": 2,
+              "paired_ci95": [
+                -0.03333333333333333,
+                0.03333333333333333
+              ],
+              "exact_mcnemar": 1.0
+            },
+            "loose_correct": {
+              "n": 120,
+              "reference": 0.7666666666666667,
+              "controller": 0.7666666666666667,
+              "delta": 0.0,
+              "rescued": 2,
+              "harmed": 2,
+              "paired_ci95": [
+                -0.03333333333333333,
+                0.03333333333333333
+              ],
+              "exact_mcnemar": 1.0
+            },
+            "strict": {
+              "n": 120,
+              "reference": 0.7666666666666667,
+              "controller": 0.7666666666666667,
+              "delta": 0.0,
+              "rescued": 2,
+              "harmed": 2,
+              "paired_ci95": [
+                -0.03333333333333333,
+                0.03333333333333333
+              ],
+              "exact_mcnemar": 1.0
+            },
+            "valid": {
+              "n": 120,
+              "reference": 1.0,
+              "controller": 0.9916666666666667,
+              "delta": -0.008333333333333333,
+              "rescued": 0,
+              "harmed": 1,
+              "paired_ci95": [
+                -0.025,
+                0.0
+              ],
+              "exact_mcnemar": 1.0
+            }
+          }
+        },
+        {
+          "dataset": "csqa",
+          "depth": 4,
+          "mode": "candidate",
+          "paired": {
+            "acc": {
+              "n": 120,
+              "reference": 0.65,
+              "controller": 0.6416666666666667,
+              "delta": -0.008333333333333333,
+              "rescued": 0,
+              "harmed": 1,
+              "paired_ci95": [
+                -0.025,
+                0.0
+              ],
+              "exact_mcnemar": 1.0
+            },
+            "acc_norm": {
+              "n": 120,
+              "reference": 0.575,
+              "controller": 0.5666666666666667,
+              "delta": -0.008333333333333333,
+              "rescued": 0,
+              "harmed": 1,
+              "paired_ci95": [
+                -0.025,
+                0.0
+              ],
+              "exact_mcnemar": 1.0
+            }
+          }
+        },
+        {
+          "dataset": "csqa",
+          "depth": 4,
+          "mode": "content",
+          "paired": {
+            "content_f1": {
+              "n": 120,
+              "reference": 0.7372222222222222,
+              "controller": 0.726388888888889,
+              "delta": -0.010833333333333332,
+              "rescued": 3,
+              "harmed": 5,
+              "paired_ci95": [
+                -0.049166666666666664,
+                0.02666666666666667
+              ],
+              "exact_mcnemar": null
+            },
+            "correct": {
+              "n": 120,
+              "reference": 0.7333333333333333,
+              "controller": 0.7166666666666667,
+              "delta": -0.016666666666666666,
+              "rescued": 2,
+              "harmed": 4,
+              "paired_ci95": [
+                -0.058333333333333334,
+                0.025
+              ],
+              "exact_mcnemar": 0.6875
+            },
+            "loose_correct": {
+              "n": 120,
+              "reference": 0.7333333333333333,
+              "controller": 0.7166666666666667,
+              "delta": -0.016666666666666666,
+              "rescued": 2,
+              "harmed": 4,
+              "paired_ci95": [
+                -0.058333333333333334,
+                0.025
+              ],
+              "exact_mcnemar": 0.6875
+            },
+            "strict": {
+              "n": 120,
+              "reference": 0.7333333333333333,
+              "controller": 0.7166666666666667,
+              "delta": -0.016666666666666666,
+              "rescued": 2,
+              "harmed": 4,
+              "paired_ci95": [
+                -0.058333333333333334,
+                0.025
+              ],
+              "exact_mcnemar": 0.6875
+            },
+            "valid": {
+              "n": 120,
+              "reference": 1.0,
+              "controller": 1.0,
+              "delta": 0.0,
+              "rescued": 0,
+              "harmed": 0,
+              "paired_ci95": [
+                0.0,
+                0.0
+              ],
+              "exact_mcnemar": null
+            }
+          }
+        },
+        {
+          "dataset": "gsm8k",
+          "depth": 2,
+          "mode": "gsm_process",
+          "paired": {
+            "completed": {
+              "n": 120,
+              "reference": 0.975,
+              "controller": 0.9583333333333334,
+              "delta": -0.016666666666666666,
+              "rescued": 1,
+              "harmed": 3,
+              "paired_ci95": [
+                -0.05,
+                0.016666666666666666
+              ],
+              "exact_mcnemar": 0.625
+            },
+            "correct": {
+              "n": 120,
+              "reference": 0.5583333333333333,
+              "controller": 0.6666666666666666,
+              "delta": 0.10833333333333334,
+              "rescued": 20,
+              "harmed": 7,
+              "paired_ci95": [
+                0.025,
+                0.19166666666666668
+              ],
+              "exact_mcnemar": 0.0191572904586792
+            },
+            "eos_before_16": {
+              "n": 120,
+              "reference": 0.058333333333333334,
+              "controller": 0.008333333333333333,
+              "delta": -0.05,
+              "rescued": 1,
+              "harmed": 7,
+              "paired_ci95": [
+                -0.1,
+                -0.008333333333333333
+              ],
+              "exact_mcnemar": 0.0703125
+            },
+            "premature_eos": {
+              "n": 120,
+              "reference": 0.041666666666666664,
+              "controller": 0.03333333333333333,
+              "delta": -0.008333333333333333,
+              "rescued": 3,
+              "harmed": 4,
+              "paired_ci95": [
+                -0.05,
+                0.03333333333333333
+              ],
+              "exact_mcnemar": 1.0
+            },
+            "process": {
+              "n": 120,
+              "reference": 0.875,
+              "controller": 0.9166666666666666,
+              "delta": 0.041666666666666664,
+              "rescued": 10,
+              "harmed": 5,
+              "paired_ci95": [
+                -0.016666666666666666,
+                0.10833333333333334
+              ],
+              "exact_mcnemar": 0.30175781249999994
+            },
+            "process_correct": {
+              "n": 120,
+              "reference": 0.5083333333333333,
+              "controller": 0.65,
+              "delta": 0.14166666666666666,
+              "rescued": 24,
+              "harmed": 7,
+              "paired_ci95": [
+                0.058333333333333334,
+                0.23333333333333334
+              ],
+              "exact_mcnemar": 0.003326892852783203
+            },
+            "repetitive": {
+              "n": 120,
+              "reference": 0.275,
+              "controller": 0.23333333333333334,
+              "delta": -0.041666666666666664,
+              "rescued": 10,
+              "harmed": 15,
+              "paired_ci95": [
+                -0.125,
+                0.041666666666666664
+              ],
+              "exact_mcnemar": 0.42435622215270996
+            },
+            "strict": {
+              "n": 120,
+              "reference": 0.5416666666666666,
+              "controller": 0.65,
+              "delta": 0.10833333333333334,
+              "rescued": 21,
+              "harmed": 8,
+              "paired_ci95": [
+                0.025,
+                0.19166666666666668
+              ],
+              "exact_mcnemar": 0.0241195447742939
+            },
+            "token_limit": {
+              "n": 120,
+              "reference": 0.025,
+              "controller": 0.041666666666666664,
+              "delta": 0.016666666666666666,
+              "rescued": 3,
+              "harmed": 1,
+              "paired_ci95": [
+                -0.016666666666666666,
+                0.05
+              ],
+              "exact_mcnemar": 0.625
+            },
+            "valid": {
+              "n": 120,
+              "reference": 1.0,
+              "controller": 1.0,
+              "delta": 0.0,
+              "rescued": 0,
+              "harmed": 0,
+              "paired_ci95": [
+                0.0,
+                0.0
+              ],
+              "exact_mcnemar": null
+            }
+          },
+          "output_length_and_format": {
+            "full": {
+              "n": 120,
+              "C_median": 80.0,
+              "D_median": 90.0,
+              "strict": {
+                "n": 120,
+                "reference": 0.5416666666666666,
+                "controller": 0.65,
+                "delta": 0.10833333333333334,
+                "rescued": 21,
+                "harmed": 8,
+                "paired_ci95": [
+                  0.025,
+                  0.19166666666666668
+                ],
+                "exact_mcnemar": 0.0241195447742939
+              }
+            },
+            "same_32_token_length_bin": {
+              "n": 52,
+              "C_median": 80.5,
+              "D_median": 83.0,
+              "strict": {
+                "n": 52,
+                "reference": 0.6153846153846154,
+                "controller": 0.6923076923076923,
+                "delta": 0.07692307692307693,
+                "rescued": 5,
+                "harmed": 1,
+                "paired_ci95": [
+                  0.0,
+                  0.17307692307692307
+                ],
+                "exact_mcnemar": 0.21875
+              }
+            },
+            "both_completed_with_process": {
+              "n": 100,
+              "C_median": 87.5,
+              "D_median": 91.0,
+              "strict": {
+                "n": 100,
+                "reference": 0.59,
+                "controller": 0.71,
+                "delta": 0.12,
+                "rescued": 17,
+                "harmed": 5,
+                "paired_ci95": [
+                  0.03,
+                  0.21
+                ],
+                "exact_mcnemar": 0.01690053939819336
+              }
+            }
+          }
+        },
+        {
+          "dataset": "gsm8k",
+          "depth": 3,
+          "mode": "gsm_process",
+          "paired": {
+            "completed": {
+              "n": 120,
+              "reference": 0.9333333333333333,
+              "controller": 0.9416666666666667,
+              "delta": 0.008333333333333333,
+              "rescued": 5,
+              "harmed": 4,
+              "paired_ci95": [
+                -0.041666666666666664,
+                0.058333333333333334
+              ],
+              "exact_mcnemar": 1.0
+            },
+            "correct": {
+              "n": 120,
+              "reference": 0.6666666666666666,
+              "controller": 0.7083333333333334,
+              "delta": 0.041666666666666664,
+              "rescued": 16,
+              "harmed": 11,
+              "paired_ci95": [
+                -0.041666666666666664,
+                0.125
+              ],
+              "exact_mcnemar": 0.44206833839416504
+            },
+            "eos_before_16": {
+              "n": 120,
+              "reference": 0.008333333333333333,
+              "controller": 0.025,
+              "delta": 0.016666666666666666,
+              "rescued": 3,
+              "harmed": 1,
+              "paired_ci95": [
+                -0.016666666666666666,
+                0.05
+              ],
+              "exact_mcnemar": 0.625
+            },
+            "premature_eos": {
+              "n": 120,
+              "reference": 0.05,
+              "controller": 0.06666666666666667,
+              "delta": 0.016666666666666666,
+              "rescued": 7,
+              "harmed": 5,
+              "paired_ci95": [
+                -0.041666666666666664,
+                0.075
+              ],
+              "exact_mcnemar": 0.7744140625
+            },
+            "process": {
+              "n": 120,
+              "reference": 0.8416666666666667,
+              "controller": 0.8583333333333333,
+              "delta": 0.016666666666666666,
+              "rescued": 14,
+              "harmed": 12,
+              "paired_ci95": [
+                -0.06666666666666667,
+                0.1
+              ],
+              "exact_mcnemar": 0.8450189828872681
+            },
+            "process_correct": {
+              "n": 120,
+              "reference": 0.6166666666666667,
+              "controller": 0.6583333333333333,
+              "delta": 0.041666666666666664,
+              "rescued": 19,
+              "harmed": 14,
+              "paired_ci95": [
+                -0.05,
+                0.13333333333333333
+              ],
+              "exact_mcnemar": 0.48685024166479707
+            },
+            "repetitive": {
+              "n": 120,
+              "reference": 0.26666666666666666,
+              "controller": 0.25,
+              "delta": -0.016666666666666666,
+              "rescued": 9,
+              "harmed": 11,
+              "paired_ci95": [
+                -0.09166666666666666,
+                0.058333333333333334
+              ],
+              "exact_mcnemar": 0.8238029479980469
+            },
+            "strict": {
+              "n": 120,
+              "reference": 0.625,
+              "controller": 0.6666666666666666,
+              "delta": 0.041666666666666664,
+              "rescued": 19,
+              "harmed": 14,
+              "paired_ci95": [
+                -0.05,
+                0.13333333333333333
+              ],
+              "exact_mcnemar": 0.48685024166479707
+            },
+            "token_limit": {
+              "n": 120,
+              "reference": 0.06666666666666667,
+              "controller": 0.058333333333333334,
+              "delta": -0.008333333333333333,
+              "rescued": 4,
+              "harmed": 5,
+              "paired_ci95": [
+                -0.058333333333333334,
+                0.041666666666666664
+              ],
+              "exact_mcnemar": 1.0
+            },
+            "valid": {
+              "n": 120,
+              "reference": 1.0,
+              "controller": 1.0,
+              "delta": 0.0,
+              "rescued": 0,
+              "harmed": 0,
+              "paired_ci95": [
+                0.0,
+                0.0
+              ],
+              "exact_mcnemar": null
+            }
+          },
+          "output_length_and_format": {
+            "full": {
+              "n": 120,
+              "C_median": 95.0,
+              "D_median": 95.0,
+              "strict": {
+                "n": 120,
+                "reference": 0.625,
+                "controller": 0.6666666666666666,
+                "delta": 0.041666666666666664,
+                "rescued": 19,
+                "harmed": 14,
+                "paired_ci95": [
+                  -0.05,
+                  0.13333333333333333
+                ],
+                "exact_mcnemar": 0.48685024166479707
+              }
+            },
+            "same_32_token_length_bin": {
+              "n": 59,
+              "C_median": 86,
+              "D_median": 89,
+              "strict": {
+                "n": 59,
+                "reference": 0.6440677966101694,
+                "controller": 0.7288135593220338,
+                "delta": 0.0847457627118644,
+                "rescued": 7,
+                "harmed": 2,
+                "paired_ci95": [
+                  -0.01694915254237288,
+                  0.1864406779661017
+                ],
+                "exact_mcnemar": 0.1796875
+              }
+            },
+            "both_completed_with_process": {
+              "n": 89,
+              "C_median": 95,
+              "D_median": 89,
+              "strict": {
+                "n": 89,
+                "reference": 0.7415730337078652,
+                "controller": 0.7528089887640449,
+                "delta": 0.011235955056179775,
+                "rescued": 7,
+                "harmed": 6,
+                "paired_ci95": [
+                  -0.06741573033707865,
+                  0.0898876404494382
+                ],
+                "exact_mcnemar": 1.0
+              }
+            }
+          }
+        },
+        {
+          "dataset": "gsm8k",
+          "depth": 4,
+          "mode": "gsm_process",
+          "paired": {
+            "completed": {
+              "n": 120,
+              "reference": 0.9416666666666667,
+              "controller": 0.9333333333333333,
+              "delta": -0.008333333333333333,
+              "rescued": 4,
+              "harmed": 5,
+              "paired_ci95": [
+                -0.058333333333333334,
+                0.041666666666666664
+              ],
+              "exact_mcnemar": 1.0
+            },
+            "correct": {
+              "n": 120,
+              "reference": 0.6416666666666667,
+              "controller": 0.6416666666666667,
+              "delta": 0.0,
+              "rescued": 10,
+              "harmed": 10,
+              "paired_ci95": [
+                -0.075,
+                0.075
+              ],
+              "exact_mcnemar": 1.0
+            },
+            "eos_before_16": {
+              "n": 120,
+              "reference": 0.06666666666666667,
+              "controller": 0.058333333333333334,
+              "delta": -0.008333333333333333,
+              "rescued": 5,
+              "harmed": 6,
+              "paired_ci95": [
+                -0.058333333333333334,
+                0.041666666666666664
+              ],
+              "exact_mcnemar": 1.0
+            },
+            "premature_eos": {
+              "n": 120,
+              "reference": 0.075,
+              "controller": 0.03333333333333333,
+              "delta": -0.041666666666666664,
+              "rescued": 2,
+              "harmed": 7,
+              "paired_ci95": [
+                -0.09166666666666666,
+                0.008333333333333333
+              ],
+              "exact_mcnemar": 0.1796875
+            },
+            "process": {
+              "n": 120,
+              "reference": 0.7416666666666667,
+              "controller": 0.7833333333333333,
+              "delta": 0.041666666666666664,
+              "rescued": 16,
+              "harmed": 11,
+              "paired_ci95": [
+                -0.041666666666666664,
+                0.125
+              ],
+              "exact_mcnemar": 0.44206833839416504
+            },
+            "process_correct": {
+              "n": 120,
+              "reference": 0.5583333333333333,
+              "controller": 0.5666666666666667,
+              "delta": 0.008333333333333333,
+              "rescued": 13,
+              "harmed": 12,
+              "paired_ci95": [
+                -0.075,
+                0.09166666666666666
+              ],
+              "exact_mcnemar": 1.0
+            },
+            "repetitive": {
+              "n": 120,
+              "reference": 0.175,
+              "controller": 0.23333333333333334,
+              "delta": 0.058333333333333334,
+              "rescued": 13,
+              "harmed": 6,
+              "paired_ci95": [
+                -0.016666666666666666,
+                0.13333333333333333
+              ],
+              "exact_mcnemar": 0.1670684814453125
+            },
+            "strict": {
+              "n": 120,
+              "reference": 0.6,
+              "controller": 0.6333333333333333,
+              "delta": 0.03333333333333333,
+              "rescued": 14,
+              "harmed": 10,
+              "paired_ci95": [
+                -0.041666666666666664,
+                0.11666666666666667
+              ],
+              "exact_mcnemar": 0.5412561893463135
+            },
+            "token_limit": {
+              "n": 120,
+              "reference": 0.058333333333333334,
+              "controller": 0.06666666666666667,
+              "delta": 0.008333333333333333,
+              "rescued": 5,
+              "harmed": 4,
+              "paired_ci95": [
+                -0.041666666666666664,
+                0.058333333333333334
+              ],
+              "exact_mcnemar": 1.0
+            },
+            "valid": {
+              "n": 120,
+              "reference": 1.0,
+              "controller": 0.9916666666666667,
+              "delta": -0.008333333333333333,
+              "rescued": 0,
+              "harmed": 1,
+              "paired_ci95": [
+                -0.025,
+                0.0
+              ],
+              "exact_mcnemar": 1.0
+            }
+          },
+          "output_length_and_format": {
+            "full": {
+              "n": 120,
+              "C_median": 90.0,
+              "D_median": 84.0,
+              "strict": {
+                "n": 120,
+                "reference": 0.6,
+                "controller": 0.6333333333333333,
+                "delta": 0.03333333333333333,
+                "rescued": 14,
+                "harmed": 10,
+                "paired_ci95": [
+                  -0.041666666666666664,
+                  0.11666666666666667
+                ],
+                "exact_mcnemar": 0.5412561893463135
+              }
+            },
+            "same_32_token_length_bin": {
+              "n": 69,
+              "C_median": 82,
+              "D_median": 79,
+              "strict": {
+                "n": 69,
+                "reference": 0.6086956521739131,
+                "controller": 0.6376811594202898,
+                "delta": 0.028985507246376812,
+                "rescued": 5,
+                "harmed": 3,
+                "paired_ci95": [
+                  -0.043478260869565216,
+                  0.11594202898550725
+                ],
+                "exact_mcnemar": 0.7265625
+              }
+            },
+            "both_completed_with_process": {
+              "n": 78,
+              "C_median": 90.0,
+              "D_median": 81.0,
+              "strict": {
+                "n": 78,
+                "reference": 0.7435897435897436,
+                "controller": 0.7435897435897436,
+                "delta": 0.0,
+                "rescued": 3,
+                "harmed": 3,
+                "paired_ci95": [
+                  -0.0641025641025641,
+                  0.0641025641025641
+                ],
+                "exact_mcnemar": 1.0
+              }
+            }
+          }
+        },
+        {
+          "dataset": "obqa",
+          "depth": 2,
+          "mode": "candidate",
+          "paired": {
+            "acc": {
+              "n": 120,
+              "reference": 0.25833333333333336,
+              "controller": 0.24166666666666667,
+              "delta": -0.016666666666666666,
+              "rescued": 1,
+              "harmed": 3,
+              "paired_ci95": [
+                -0.05,
+                0.016666666666666666
+              ],
+              "exact_mcnemar": 0.625
+            },
+            "acc_norm": {
+              "n": 120,
+              "reference": 0.4666666666666667,
+              "controller": 0.4666666666666667,
+              "delta": 0.0,
+              "rescued": 2,
+              "harmed": 2,
+              "paired_ci95": [
+                -0.03333333333333333,
+                0.03333333333333333
+              ],
+              "exact_mcnemar": 1.0
+            }
+          }
+        },
+        {
+          "dataset": "obqa",
+          "depth": 2,
+          "mode": "content",
+          "paired": {
+            "content_f1": {
+              "n": 120,
+              "reference": 0.626468487394958,
+              "controller": 0.6386077370342077,
+              "delta": 0.01213924963924964,
+              "rescued": 6,
+              "harmed": 4,
+              "paired_ci95": [
+                -0.03571428571428571,
+                0.06138483044733046
+              ],
+              "exact_mcnemar": null
+            },
+            "correct": {
+              "n": 120,
+              "reference": 0.6,
+              "controller": 0.6,
+              "delta": 0.0,
+              "rescued": 4,
+              "harmed": 4,
+              "paired_ci95": [
+                -0.05,
+                0.05
+              ],
+              "exact_mcnemar": 1.0
+            },
+            "loose_correct": {
+              "n": 120,
+              "reference": 0.6,
+              "controller": 0.6,
+              "delta": 0.0,
+              "rescued": 4,
+              "harmed": 4,
+              "paired_ci95": [
+                -0.041666666666666664,
+                0.05
+              ],
+              "exact_mcnemar": 1.0
+            },
+            "strict": {
+              "n": 120,
+              "reference": 0.6,
+              "controller": 0.5916666666666667,
+              "delta": -0.008333333333333333,
+              "rescued": 4,
+              "harmed": 5,
+              "paired_ci95": [
+                -0.058333333333333334,
+                0.041666666666666664
+              ],
+              "exact_mcnemar": 1.0
+            },
+            "valid": {
+              "n": 120,
+              "reference": 0.9583333333333334,
+              "controller": 0.9416666666666667,
+              "delta": -0.016666666666666666,
+              "rescued": 1,
+              "harmed": 3,
+              "paired_ci95": [
+                -0.05,
+                0.016666666666666666
+              ],
+              "exact_mcnemar": 0.625
+            }
+          }
+        },
+        {
+          "dataset": "obqa",
+          "depth": 3,
+          "mode": "candidate",
+          "paired": {
+            "acc": {
+              "n": 120,
+              "reference": 0.30833333333333335,
+              "controller": 0.2833333333333333,
+              "delta": -0.025,
+              "rescued": 1,
+              "harmed": 4,
+              "paired_ci95": [
+                -0.06666666666666667,
+                0.008333333333333333
+              ],
+              "exact_mcnemar": 0.375
+            },
+            "acc_norm": {
+              "n": 120,
+              "reference": 0.49166666666666664,
+              "controller": 0.49166666666666664,
+              "delta": 0.0,
+              "rescued": 2,
+              "harmed": 2,
+              "paired_ci95": [
+                -0.03333333333333333,
+                0.03333333333333333
+              ],
+              "exact_mcnemar": 1.0
+            }
+          }
+        },
+        {
+          "dataset": "obqa",
+          "depth": 3,
+          "mode": "content",
+          "paired": {
+            "content_f1": {
+              "n": 120,
+              "reference": 0.753058676830416,
+              "controller": 0.741451533973273,
+              "delta": -0.01160714285714286,
+              "rescued": 2,
+              "harmed": 4,
+              "paired_ci95": [
+                -0.042162698412698416,
+                0.016170634920634922
+              ],
+              "exact_mcnemar": null
+            },
+            "correct": {
+              "n": 120,
+              "reference": 0.7166666666666667,
+              "controller": 0.6916666666666667,
+              "delta": -0.025,
+              "rescued": 1,
+              "harmed": 4,
+              "paired_ci95": [
+                -0.06666666666666667,
+                0.008333333333333333
+              ],
+              "exact_mcnemar": 0.375
+            },
+            "loose_correct": {
+              "n": 120,
+              "reference": 0.7166666666666667,
+              "controller": 0.6916666666666667,
+              "delta": -0.025,
+              "rescued": 1,
+              "harmed": 4,
+              "paired_ci95": [
+                -0.06666666666666667,
+                0.008333333333333333
+              ],
+              "exact_mcnemar": 0.375
+            },
+            "strict": {
+              "n": 120,
+              "reference": 0.7166666666666667,
+              "controller": 0.6916666666666667,
+              "delta": -0.025,
+              "rescued": 1,
+              "harmed": 4,
+              "paired_ci95": [
+                -0.06666666666666667,
+                0.008333333333333333
+              ],
+              "exact_mcnemar": 0.375
+            },
+            "valid": {
+              "n": 120,
+              "reference": 0.9416666666666667,
+              "controller": 0.9,
+              "delta": -0.041666666666666664,
+              "rescued": 0,
+              "harmed": 5,
+              "paired_ci95": [
+                -0.08333333333333333,
+                -0.008333333333333333
+              ],
+              "exact_mcnemar": 0.0625
+            }
+          }
+        },
+        {
+          "dataset": "obqa",
+          "depth": 4,
+          "mode": "candidate",
+          "paired": {
+            "acc": {
+              "n": 120,
+              "reference": 0.2916666666666667,
+              "controller": 0.2916666666666667,
+              "delta": 0.0,
+              "rescued": 1,
+              "harmed": 1,
+              "paired_ci95": [
+                -0.025,
+                0.025
+              ],
+              "exact_mcnemar": 1.0
+            },
+            "acc_norm": {
+              "n": 120,
+              "reference": 0.5166666666666667,
+              "controller": 0.5166666666666667,
+              "delta": 0.0,
+              "rescued": 1,
+              "harmed": 1,
+              "paired_ci95": [
+                -0.025,
+                0.025
+              ],
+              "exact_mcnemar": 1.0
+            }
+          }
+        },
+        {
+          "dataset": "obqa",
+          "depth": 4,
+          "mode": "content",
+          "paired": {
+            "content_f1": {
+              "n": 120,
+              "reference": 0.8058333333333334,
+              "controller": 0.8263988095238095,
+              "delta": 0.020565476190476193,
+              "rescued": 7,
+              "harmed": 3,
+              "paired_ci95": [
+                -0.020833333333333332,
+                0.06285714285714286
+              ],
+              "exact_mcnemar": null
+            },
+            "correct": {
+              "n": 120,
+              "reference": 0.775,
+              "controller": 0.8083333333333333,
+              "delta": 0.03333333333333333,
+              "rescued": 6,
+              "harmed": 2,
+              "paired_ci95": [
+                -0.008333333333333333,
+                0.08333333333333333
+              ],
+              "exact_mcnemar": 0.2890625
+            },
+            "loose_correct": {
+              "n": 120,
+              "reference": 0.775,
+              "controller": 0.8083333333333333,
+              "delta": 0.03333333333333333,
+              "rescued": 6,
+              "harmed": 2,
+              "paired_ci95": [
+                -0.008333333333333333,
+                0.08333333333333333
+              ],
+              "exact_mcnemar": 0.2890625
+            },
+            "strict": {
+              "n": 120,
+              "reference": 0.775,
+              "controller": 0.8083333333333333,
+              "delta": 0.03333333333333333,
+              "rescued": 6,
+              "harmed": 2,
+              "paired_ci95": [
+                -0.008333333333333333,
+                0.08333333333333333
+              ],
+              "exact_mcnemar": 0.2890625
+            },
+            "valid": {
+              "n": 120,
+              "reference": 0.9583333333333334,
+              "controller": 0.9583333333333334,
+              "delta": 0.0,
+              "rescued": 3,
+              "harmed": 3,
+              "paired_ci95": [
+                -0.041666666666666664,
+                0.041666666666666664
+              ],
+              "exact_mcnemar": 1.0
+            }
+          }
+        },
+        {
+          "dataset": "squad",
+          "depth": 2,
+          "mode": "span",
+          "paired": {
+            "correct": {
+              "n": 120,
+              "reference": 0.4083333333333333,
+              "controller": 0.45,
+              "delta": 0.041666666666666664,
+              "rescued": 10,
+              "harmed": 5,
+              "paired_ci95": [
+                -0.016666666666666666,
+                0.10833333333333334
+              ],
+              "exact_mcnemar": 0.30175781249999994
+            },
+            "f1": {
+              "n": 120,
+              "reference": 0.6159869041633748,
+              "controller": 0.659802993045253,
+              "delta": 0.04381608888187836,
+              "rescued": 20,
+              "harmed": 11,
+              "paired_ci95": [
+                -0.0066657645169158316,
+                0.09336453464907413
+              ],
+              "exact_mcnemar": null
+            },
+            "strict": {
+              "n": 120,
+              "reference": 0.03333333333333333,
+              "controller": 0.10833333333333334,
+              "delta": 0.075,
+              "rescued": 10,
+              "harmed": 1,
+              "paired_ci95": [
+                0.025,
+                0.13333333333333333
+              ],
+              "exact_mcnemar": 0.01171875
+            },
+            "valid": {
+              "n": 120,
+              "reference": 1.0,
+              "controller": 1.0,
+              "delta": 0.0,
+              "rescued": 0,
+              "harmed": 0,
+              "paired_ci95": [
+                0.0,
+                0.0
+              ],
+              "exact_mcnemar": null
+            }
+          }
+        },
+        {
+          "dataset": "squad",
+          "depth": 3,
+          "mode": "span",
+          "paired": {
+            "correct": {
+              "n": 120,
+              "reference": 0.5166666666666667,
+              "controller": 0.5416666666666666,
+              "delta": 0.025,
+              "rescued": 6,
+              "harmed": 3,
+              "paired_ci95": [
+                -0.025,
+                0.075
+              ],
+              "exact_mcnemar": 0.5078125
+            },
+            "f1": {
+              "n": 120,
+              "reference": 0.7208603270367976,
+              "controller": 0.7465403927907294,
+              "delta": 0.025680065753931686,
+              "rescued": 10,
+              "harmed": 7,
+              "paired_ci95": [
+                -0.0046416558695002936,
+                0.059999998392392236
+              ],
+              "exact_mcnemar": null
+            },
+            "strict": {
+              "n": 120,
+              "reference": 0.008333333333333333,
+              "controller": 0.0,
+              "delta": -0.008333333333333333,
+              "rescued": 0,
+              "harmed": 1,
+              "paired_ci95": [
+                -0.025,
+                0.0
+              ],
+              "exact_mcnemar": 1.0
+            },
+            "valid": {
+              "n": 120,
+              "reference": 1.0,
+              "controller": 1.0,
+              "delta": 0.0,
+              "rescued": 0,
+              "harmed": 0,
+              "paired_ci95": [
+                0.0,
+                0.0
+              ],
+              "exact_mcnemar": null
+            }
+          }
+        },
+        {
+          "dataset": "squad",
+          "depth": 4,
+          "mode": "span",
+          "paired": {
+            "correct": {
+              "n": 120,
+              "reference": 0.5333333333333333,
+              "controller": 0.55,
+              "delta": 0.016666666666666666,
+              "rescued": 3,
+              "harmed": 1,
+              "paired_ci95": [
+                -0.016666666666666666,
+                0.05
+              ],
+              "exact_mcnemar": 0.625
+            },
+            "f1": {
+              "n": 120,
+              "reference": 0.7139918620324337,
+              "controller": 0.730587352894229,
+              "delta": 0.016595490861795206,
+              "rescued": 8,
+              "harmed": 3,
+              "paired_ci95": [
+                -0.00574380759638912,
+                0.042181177895172464
+              ],
+              "exact_mcnemar": null
+            },
+            "strict": {
+              "n": 120,
+              "reference": 0.14166666666666666,
+              "controller": 0.09166666666666666,
+              "delta": -0.05,
+              "rescued": 0,
+              "harmed": 6,
+              "paired_ci95": [
+                -0.09166666666666666,
+                -0.016666666666666666
+              ],
+              "exact_mcnemar": 0.03125
+            },
+            "valid": {
+              "n": 120,
+              "reference": 1.0,
+              "controller": 1.0,
+              "delta": 0.0,
+              "rescued": 0,
+              "harmed": 0,
+              "paired_ci95": [
+                0.0,
+                0.0
+              ],
+              "exact_mcnemar": null
+            }
+          }
+        }
+      ]
+    },
+    {
+      "epoch": 2,
+      "costs": {
+        "C": {
+          "optimizer_updates": 1000,
+          "seconds": 371.9141809027642,
+          "target_tokens": 301361,
+          "padded_token_loops": 3079080,
+          "checkpoint_sha256": "e6eb4dd4b90526815d4526377241c61f845045cd59cd02de669ec31aa4682969"
+        },
+        "D": {
+          "optimizer_updates": 1000,
+          "seconds": 376.6239550579339,
+          "target_tokens": 369943,
+          "padded_token_loops": 3920420,
+          "checkpoint_sha256": "060165bc664adf9a3600665f79da56b7371a06ac27e9743aa12a215984d6e893"
+        }
+      },
+      "explained_by_loop": {
+        "4": 167,
+        "2": 167,
+        "3": 166
+      },
+      "selection": {
+        "C": [
+          0,
+          -0.008333333333333333,
+          -0.20833333333333334,
+          0.14791666666666667,
+          -0.020061728395061727
+        ],
+        "D": [
+          0,
+          -0.025,
+          -0.19166666666666668,
+          0.15416666666666665,
+          -0.017283950617283952
+        ]
+      },
+      "paired_D_minus_C": [
+        {
+          "dataset": "arc_challenge",
+          "depth": 2,
+          "mode": "candidate",
+          "paired": {
+            "acc": {
+              "n": 120,
+              "reference": 0.36666666666666664,
+              "controller": 0.3416666666666667,
+              "delta": -0.025,
+              "rescued": 1,
+              "harmed": 4,
+              "paired_ci95": [
+                -0.06666666666666667,
+                0.008333333333333333
+              ],
+              "exact_mcnemar": 0.375
+            },
+            "acc_norm": {
+              "n": 120,
+              "reference": 0.44166666666666665,
+              "controller": 0.44166666666666665,
+              "delta": 0.0,
+              "rescued": 4,
+              "harmed": 4,
+              "paired_ci95": [
+                -0.05,
+                0.041666666666666664
+              ],
+              "exact_mcnemar": 1.0
+            }
+          }
+        },
+        {
+          "dataset": "arc_challenge",
+          "depth": 2,
+          "mode": "content",
+          "paired": {
+            "content_f1": {
+              "n": 120,
+              "reference": 0.7213347078188409,
+              "controller": 0.7171994426425542,
+              "delta": -0.004135265176286847,
+              "rescued": 10,
+              "harmed": 7,
+              "paired_ci95": [
+                -0.048103556495390866,
+                0.03670421456267046
+              ],
+              "exact_mcnemar": null
+            },
+            "correct": {
+              "n": 120,
+              "reference": 0.625,
+              "controller": 0.6416666666666667,
+              "delta": 0.016666666666666666,
+              "rescued": 8,
+              "harmed": 6,
+              "paired_ci95": [
+                -0.041666666666666664,
+                0.075
+              ],
+              "exact_mcnemar": 0.79052734375
+            },
+            "loose_correct": {
+              "n": 120,
+              "reference": 0.625,
+              "controller": 0.6416666666666667,
+              "delta": 0.016666666666666666,
+              "rescued": 8,
+              "harmed": 6,
+              "paired_ci95": [
+                -0.041666666666666664,
+                0.075
+              ],
+              "exact_mcnemar": 0.79052734375
+            },
+            "strict": {
+              "n": 120,
+              "reference": 0.625,
+              "controller": 0.6416666666666667,
+              "delta": 0.016666666666666666,
+              "rescued": 8,
+              "harmed": 6,
+              "paired_ci95": [
+                -0.041666666666666664,
+                0.075
+              ],
+              "exact_mcnemar": 0.79052734375
+            },
+            "valid": {
+              "n": 120,
+              "reference": 0.95,
+              "controller": 0.9666666666666667,
+              "delta": 0.016666666666666666,
+              "rescued": 5,
+              "harmed": 3,
+              "paired_ci95": [
+                -0.025,
+                0.06666666666666667
+              ],
+              "exact_mcnemar": 0.7265625
+            }
+          }
+        },
+        {
+          "dataset": "arc_challenge",
+          "depth": 3,
+          "mode": "candidate",
+          "paired": {
+            "acc": {
+              "n": 120,
+              "reference": 0.38333333333333336,
+              "controller": 0.39166666666666666,
+              "delta": 0.008333333333333333,
+              "rescued": 3,
+              "harmed": 2,
+              "paired_ci95": [
+                -0.025,
+                0.041666666666666664
+              ],
+              "exact_mcnemar": 1.0
+            },
+            "acc_norm": {
+              "n": 120,
+              "reference": 0.475,
+              "controller": 0.475,
+              "delta": 0.0,
+              "rescued": 2,
+              "harmed": 2,
+              "paired_ci95": [
+                -0.03333333333333333,
+                0.03333333333333333
+              ],
+              "exact_mcnemar": 1.0
+            }
+          }
+        },
+        {
+          "dataset": "arc_challenge",
+          "depth": 3,
+          "mode": "content",
+          "paired": {
+            "content_f1": {
+              "n": 120,
+              "reference": 0.8131512903591076,
+              "controller": 0.791998091705909,
+              "delta": -0.021153198653198653,
+              "rescued": 3,
+              "harmed": 8,
+              "paired_ci95": [
+                -0.06286195286195286,
+                0.017871632996632997
+              ],
+              "exact_mcnemar": null
+            },
+            "correct": {
+              "n": 120,
+              "reference": 0.7333333333333333,
+              "controller": 0.725,
+              "delta": -0.008333333333333333,
+              "rescued": 4,
+              "harmed": 5,
+              "paired_ci95": [
+                -0.058333333333333334,
+                0.041666666666666664
+              ],
+              "exact_mcnemar": 1.0
+            },
+            "loose_correct": {
+              "n": 120,
+              "reference": 0.7333333333333333,
+              "controller": 0.725,
+              "delta": -0.008333333333333333,
+              "rescued": 4,
+              "harmed": 5,
+              "paired_ci95": [
+                -0.058333333333333334,
+                0.041666666666666664
+              ],
+              "exact_mcnemar": 1.0
+            },
+            "strict": {
+              "n": 120,
+              "reference": 0.7333333333333333,
+              "controller": 0.725,
+              "delta": -0.008333333333333333,
+              "rescued": 4,
+              "harmed": 5,
+              "paired_ci95": [
+                -0.058333333333333334,
+                0.041666666666666664
+              ],
+              "exact_mcnemar": 1.0
+            },
+            "valid": {
+              "n": 120,
+              "reference": 0.95,
+              "controller": 0.9666666666666667,
+              "delta": 0.016666666666666666,
+              "rescued": 3,
+              "harmed": 1,
+              "paired_ci95": [
+                -0.016666666666666666,
+                0.05
+              ],
+              "exact_mcnemar": 0.625
+            }
+          }
+        },
+        {
+          "dataset": "arc_challenge",
+          "depth": 4,
+          "mode": "candidate",
+          "paired": {
+            "acc": {
+              "n": 120,
+              "reference": 0.4166666666666667,
+              "controller": 0.39166666666666666,
+              "delta": -0.025,
+              "rescued": 0,
+              "harmed": 3,
+              "paired_ci95": [
+                -0.058333333333333334,
+                0.0
+              ],
+              "exact_mcnemar": 0.25
+            },
+            "acc_norm": {
+              "n": 120,
+              "reference": 0.5166666666666667,
+              "controller": 0.48333333333333334,
+              "delta": -0.03333333333333333,
+              "rescued": 1,
+              "harmed": 5,
+              "paired_ci95": [
+                -0.075,
+                0.0
+              ],
+              "exact_mcnemar": 0.21875
+            }
+          }
+        },
+        {
+          "dataset": "arc_challenge",
+          "depth": 4,
+          "mode": "content",
+          "paired": {
+            "content_f1": {
+              "n": 120,
+              "reference": 0.8271888147255794,
+              "controller": 0.7806394875483919,
+              "delta": -0.04654932717718759,
+              "rescued": 2,
+              "harmed": 10,
+              "paired_ci95": [
+                -0.09314685939775327,
+                -0.006249004995608251
+              ],
+              "exact_mcnemar": null
+            },
+            "correct": {
+              "n": 120,
+              "reference": 0.7666666666666667,
+              "controller": 0.7166666666666667,
+              "delta": -0.05,
+              "rescued": 3,
+              "harmed": 9,
+              "paired_ci95": [
+                -0.10833333333333334,
+                0.008333333333333333
+              ],
+              "exact_mcnemar": 0.14599609375
+            },
+            "loose_correct": {
+              "n": 120,
+              "reference": 0.7666666666666667,
+              "controller": 0.7166666666666667,
+              "delta": -0.05,
+              "rescued": 3,
+              "harmed": 9,
+              "paired_ci95": [
+                -0.10833333333333334,
+                0.008333333333333333
+              ],
+              "exact_mcnemar": 0.14599609375
+            },
+            "strict": {
+              "n": 120,
+              "reference": 0.75,
+              "controller": 0.6833333333333333,
+              "delta": -0.06666666666666667,
+              "rescued": 2,
+              "harmed": 10,
+              "paired_ci95": [
+                -0.125,
+                -0.016666666666666666
+              ],
+              "exact_mcnemar": 0.03857421875
+            },
+            "valid": {
+              "n": 120,
+              "reference": 0.9666666666666667,
+              "controller": 0.9166666666666666,
+              "delta": -0.05,
+              "rescued": 1,
+              "harmed": 7,
+              "paired_ci95": [
+                -0.1,
+                -0.008333333333333333
+              ],
+              "exact_mcnemar": 0.0703125
+            }
+          }
+        },
+        {
+          "dataset": "csqa",
+          "depth": 2,
+          "mode": "candidate",
+          "paired": {
+            "acc": {
+              "n": 120,
+              "reference": 0.5583333333333333,
+              "controller": 0.6083333333333333,
+              "delta": 0.05,
+              "rescued": 7,
+              "harmed": 1,
+              "paired_ci95": [
+                0.008333333333333333,
+                0.1
+              ],
+              "exact_mcnemar": 0.0703125
+            },
+            "acc_norm": {
+              "n": 120,
+              "reference": 0.5166666666666667,
+              "controller": 0.49166666666666664,
+              "delta": -0.025,
+              "rescued": 3,
+              "harmed": 6,
+              "paired_ci95": [
+                -0.075,
+                0.025
+              ],
+              "exact_mcnemar": 0.5078125
+            }
+          }
+        },
+        {
+          "dataset": "csqa",
+          "depth": 2,
+          "mode": "content",
+          "paired": {
+            "content_f1": {
+              "n": 120,
+              "reference": 0.6708333333333333,
+              "controller": 0.6783333333333333,
+              "delta": 0.007500000000000001,
+              "rescued": 6,
+              "harmed": 5,
+              "paired_ci95": [
+                -0.04252083333333332,
+                0.05999999999999999
+              ],
+              "exact_mcnemar": null
+            },
+            "correct": {
+              "n": 120,
+              "reference": 0.6666666666666666,
+              "controller": 0.6833333333333333,
+              "delta": 0.016666666666666666,
+              "rescued": 6,
+              "harmed": 4,
+              "paired_ci95": [
+                -0.03333333333333333,
+                0.06666666666666667
+              ],
+              "exact_mcnemar": 0.75390625
+            },
+            "loose_correct": {
+              "n": 120,
+              "reference": 0.6666666666666666,
+              "controller": 0.6833333333333333,
+              "delta": 0.016666666666666666,
+              "rescued": 6,
+              "harmed": 4,
+              "paired_ci95": [
+                -0.03333333333333333,
+                0.06666666666666667
+              ],
+              "exact_mcnemar": 0.75390625
+            },
+            "strict": {
+              "n": 120,
+              "reference": 0.6666666666666666,
+              "controller": 0.6833333333333333,
+              "delta": 0.016666666666666666,
+              "rescued": 6,
+              "harmed": 4,
+              "paired_ci95": [
+                -0.03333333333333333,
+                0.06666666666666667
+              ],
+              "exact_mcnemar": 0.75390625
+            },
+            "valid": {
+              "n": 120,
+              "reference": 0.9833333333333333,
+              "controller": 0.9916666666666667,
+              "delta": 0.008333333333333333,
+              "rescued": 1,
+              "harmed": 0,
+              "paired_ci95": [
+                0.0,
+                0.025
+              ],
+              "exact_mcnemar": 1.0
+            }
+          }
+        },
+        {
+          "dataset": "csqa",
+          "depth": 3,
+          "mode": "candidate",
+          "paired": {
+            "acc": {
+              "n": 120,
+              "reference": 0.6333333333333333,
+              "controller": 0.625,
+              "delta": -0.008333333333333333,
+              "rescued": 1,
+              "harmed": 2,
+              "paired_ci95": [
+                -0.041666666666666664,
+                0.016666666666666666
+              ],
+              "exact_mcnemar": 1.0
+            },
+            "acc_norm": {
+              "n": 120,
+              "reference": 0.55,
+              "controller": 0.5583333333333333,
+              "delta": 0.008333333333333333,
+              "rescued": 2,
+              "harmed": 1,
+              "paired_ci95": [
+                -0.016666666666666666,
+                0.041666666666666664
+              ],
+              "exact_mcnemar": 1.0
+            }
+          }
+        },
+        {
+          "dataset": "csqa",
+          "depth": 3,
+          "mode": "content",
+          "paired": {
+            "content_f1": {
+              "n": 120,
+              "reference": 0.701388888888889,
+              "controller": 0.7,
+              "delta": -0.0013888888888888876,
+              "rescued": 6,
+              "harmed": 6,
+              "paired_ci95": [
+                -0.05281249999999999,
+                0.05142361111111124
+              ],
+              "exact_mcnemar": null
+            },
+            "correct": {
+              "n": 120,
+              "reference": 0.6916666666666667,
+              "controller": 0.7,
+              "delta": 0.008333333333333333,
+              "rescued": 6,
+              "harmed": 5,
+              "paired_ci95": [
+                -0.05,
+                0.06666666666666667
+              ],
+              "exact_mcnemar": 1.0
+            },
+            "loose_correct": {
+              "n": 120,
+              "reference": 0.6916666666666667,
+              "controller": 0.7,
+              "delta": 0.008333333333333333,
+              "rescued": 6,
+              "harmed": 5,
+              "paired_ci95": [
+                -0.041666666666666664,
+                0.06666666666666667
+              ],
+              "exact_mcnemar": 1.0
+            },
+            "strict": {
+              "n": 120,
+              "reference": 0.6916666666666667,
+              "controller": 0.7,
+              "delta": 0.008333333333333333,
+              "rescued": 6,
+              "harmed": 5,
+              "paired_ci95": [
+                -0.041666666666666664,
+                0.058333333333333334
+              ],
+              "exact_mcnemar": 1.0
+            },
+            "valid": {
+              "n": 120,
+              "reference": 1.0,
+              "controller": 1.0,
+              "delta": 0.0,
+              "rescued": 0,
+              "harmed": 0,
+              "paired_ci95": [
+                0.0,
+                0.0
+              ],
+              "exact_mcnemar": null
+            }
+          }
+        },
+        {
+          "dataset": "csqa",
+          "depth": 4,
+          "mode": "candidate",
+          "paired": {
+            "acc": {
+              "n": 120,
+              "reference": 0.65,
+              "controller": 0.65,
+              "delta": 0.0,
+              "rescued": 0,
+              "harmed": 0,
+              "paired_ci95": [
+                0.0,
+                0.0
+              ],
+              "exact_mcnemar": null
+            },
+            "acc_norm": {
+              "n": 120,
+              "reference": 0.5583333333333333,
+              "controller": 0.5583333333333333,
+              "delta": 0.0,
+              "rescued": 1,
+              "harmed": 1,
+              "paired_ci95": [
+                -0.025,
+                0.025
+              ],
+              "exact_mcnemar": 1.0
+            }
+          }
+        },
+        {
+          "dataset": "csqa",
+          "depth": 4,
+          "mode": "content",
+          "paired": {
+            "content_f1": {
+              "n": 120,
+              "reference": 0.6755555555555556,
+              "controller": 0.6922222222222222,
+              "delta": 0.016666666666666666,
+              "rescued": 4,
+              "harmed": 2,
+              "paired_ci95": [
+                -0.025,
+                0.058333333333333334
+              ],
+              "exact_mcnemar": null
+            },
+            "correct": {
+              "n": 120,
+              "reference": 0.6666666666666666,
+              "controller": 0.6833333333333333,
+              "delta": 0.016666666666666666,
+              "rescued": 4,
+              "harmed": 2,
+              "paired_ci95": [
+                -0.025,
+                0.058333333333333334
+              ],
+              "exact_mcnemar": 0.6875
+            },
+            "loose_correct": {
+              "n": 120,
+              "reference": 0.6666666666666666,
+              "controller": 0.6833333333333333,
+              "delta": 0.016666666666666666,
+              "rescued": 4,
+              "harmed": 2,
+              "paired_ci95": [
+                -0.025,
+                0.058333333333333334
+              ],
+              "exact_mcnemar": 0.6875
+            },
+            "strict": {
+              "n": 120,
+              "reference": 0.6666666666666666,
+              "controller": 0.6833333333333333,
+              "delta": 0.016666666666666666,
+              "rescued": 4,
+              "harmed": 2,
+              "paired_ci95": [
+                -0.025,
+                0.058333333333333334
+              ],
+              "exact_mcnemar": 0.6875
+            },
+            "valid": {
+              "n": 120,
+              "reference": 1.0,
+              "controller": 1.0,
+              "delta": 0.0,
+              "rescued": 0,
+              "harmed": 0,
+              "paired_ci95": [
+                0.0,
+                0.0
+              ],
+              "exact_mcnemar": null
+            }
+          }
+        },
+        {
+          "dataset": "gsm8k",
+          "depth": 2,
+          "mode": "gsm_process",
+          "paired": {
+            "completed": {
+              "n": 120,
+              "reference": 0.975,
+              "controller": 0.9583333333333334,
+              "delta": -0.016666666666666666,
+              "rescued": 3,
+              "harmed": 5,
+              "paired_ci95": [
+                -0.06666666666666667,
+                0.025
+              ],
+              "exact_mcnemar": 0.7265625
+            },
+            "correct": {
+              "n": 120,
+              "reference": 0.575,
+              "controller": 0.6,
+              "delta": 0.025,
+              "rescued": 12,
+              "harmed": 9,
+              "paired_ci95": [
+                -0.05,
+                0.1
+              ],
+              "exact_mcnemar": 0.6636238098144531
+            },
+            "eos_before_16": {
+              "n": 120,
+              "reference": 0.041666666666666664,
+              "controller": 0.03333333333333333,
+              "delta": -0.008333333333333333,
+              "rescued": 2,
+              "harmed": 3,
+              "paired_ci95": [
+                -0.041666666666666664,
+                0.025
+              ],
+              "exact_mcnemar": 1.0
+            },
+            "premature_eos": {
+              "n": 120,
+              "reference": 0.041666666666666664,
+              "controller": 0.016666666666666666,
+              "delta": -0.025,
+              "rescued": 2,
+              "harmed": 5,
+              "paired_ci95": [
+                -0.06666666666666667,
+                0.016666666666666666
+              ],
+              "exact_mcnemar": 0.453125
+            },
+            "process": {
+              "n": 120,
+              "reference": 0.8666666666666667,
+              "controller": 0.8833333333333333,
+              "delta": 0.016666666666666666,
+              "rescued": 11,
+              "harmed": 9,
+              "paired_ci95": [
+                -0.058333333333333334,
+                0.09166666666666666
+              ],
+              "exact_mcnemar": 0.8238029479980469
+            },
+            "process_correct": {
+              "n": 120,
+              "reference": 0.525,
+              "controller": 0.5583333333333333,
+              "delta": 0.03333333333333333,
+              "rescued": 15,
+              "harmed": 11,
+              "paired_ci95": [
+                -0.05,
+                0.11666666666666667
+              ],
+              "exact_mcnemar": 0.557197093963623
+            },
+            "repetitive": {
+              "n": 120,
+              "reference": 0.23333333333333334,
+              "controller": 0.25833333333333336,
+              "delta": 0.025,
+              "rescued": 12,
+              "harmed": 9,
+              "paired_ci95": [
+                -0.05,
+                0.1
+              ],
+              "exact_mcnemar": 0.6636238098144531
+            },
+            "strict": {
+              "n": 120,
+              "reference": 0.55,
+              "controller": 0.575,
+              "delta": 0.025,
+              "rescued": 14,
+              "harmed": 11,
+              "paired_ci95": [
+                -0.058333333333333334,
+                0.10833333333333334
+              ],
+              "exact_mcnemar": 0.6900379657745361
+            },
+            "token_limit": {
+              "n": 120,
+              "reference": 0.025,
+              "controller": 0.041666666666666664,
+              "delta": 0.016666666666666666,
+              "rescued": 5,
+              "harmed": 3,
+              "paired_ci95": [
+                -0.025,
+                0.06666666666666667
+              ],
+              "exact_mcnemar": 0.7265625
+            },
+            "valid": {
+              "n": 120,
+              "reference": 1.0,
+              "controller": 1.0,
+              "delta": 0.0,
+              "rescued": 0,
+              "harmed": 0,
+              "paired_ci95": [
+                0.0,
+                0.0
+              ],
+              "exact_mcnemar": null
+            }
+          },
+          "output_length_and_format": {
+            "full": {
+              "n": 120,
+              "C_median": 73.0,
+              "D_median": 78.5,
+              "strict": {
+                "n": 120,
+                "reference": 0.55,
+                "controller": 0.575,
+                "delta": 0.025,
+                "rescued": 14,
+                "harmed": 11,
+                "paired_ci95": [
+                  -0.058333333333333334,
+                  0.10833333333333334
+                ],
+                "exact_mcnemar": 0.6900379657745361
+              }
+            },
+            "same_32_token_length_bin": {
+              "n": 61,
+              "C_median": 74,
+              "D_median": 75,
+              "strict": {
+                "n": 61,
+                "reference": 0.6065573770491803,
+                "controller": 0.5901639344262295,
+                "delta": -0.01639344262295082,
+                "rescued": 4,
+                "harmed": 5,
+                "paired_ci95": [
+                  -0.11475409836065574,
+                  0.08196721311475409
+                ],
+                "exact_mcnemar": 1.0
+              }
+            },
+            "both_completed_with_process": {
+              "n": 95,
+              "C_median": 75,
+              "D_median": 79,
+              "strict": {
+                "n": 95,
+                "reference": 0.6105263157894737,
+                "controller": 0.631578947368421,
+                "delta": 0.021052631578947368,
+                "rescued": 8,
+                "harmed": 6,
+                "paired_ci95": [
+                  -0.05263157894736842,
+                  0.09473684210526316
+                ],
+                "exact_mcnemar": 0.79052734375
+              }
+            }
+          }
+        },
+        {
+          "dataset": "gsm8k",
+          "depth": 3,
+          "mode": "gsm_process",
+          "paired": {
+            "completed": {
+              "n": 120,
+              "reference": 0.9416666666666667,
+              "controller": 0.9416666666666667,
+              "delta": 0.0,
+              "rescued": 3,
+              "harmed": 3,
+              "paired_ci95": [
+                -0.041666666666666664,
+                0.041666666666666664
+              ],
+              "exact_mcnemar": 1.0
+            },
+            "correct": {
+              "n": 120,
+              "reference": 0.7083333333333334,
+              "controller": 0.6833333333333333,
+              "delta": -0.025,
+              "rescued": 9,
+              "harmed": 12,
+              "paired_ci95": [
+                -0.1,
+                0.05
+              ],
+              "exact_mcnemar": 0.6636238098144531
+            },
+            "eos_before_16": {
+              "n": 120,
+              "reference": 0.025,
+              "controller": 0.025,
+              "delta": 0.0,
+              "rescued": 1,
+              "harmed": 1,
+              "paired_ci95": [
+                -0.025,
+                0.025
+              ],
+              "exact_mcnemar": 1.0
+            },
+            "premature_eos": {
+              "n": 120,
+              "reference": 0.05,
+              "controller": 0.008333333333333333,
+              "delta": -0.041666666666666664,
+              "rescued": 0,
+              "harmed": 5,
+              "paired_ci95": [
+                -0.08333333333333333,
+                -0.008333333333333333
+              ],
+              "exact_mcnemar": 0.0625
+            },
+            "process": {
+              "n": 120,
+              "reference": 0.8333333333333334,
+              "controller": 0.8583333333333333,
+              "delta": 0.025,
+              "rescued": 9,
+              "harmed": 6,
+              "paired_ci95": [
+                -0.03333333333333333,
+                0.09166666666666666
+              ],
+              "exact_mcnemar": 0.6072387695312499
+            },
+            "process_correct": {
+              "n": 120,
+              "reference": 0.6416666666666667,
+              "controller": 0.6416666666666667,
+              "delta": 0.0,
+              "rescued": 10,
+              "harmed": 10,
+              "paired_ci95": [
+                -0.075,
+                0.075
+              ],
+              "exact_mcnemar": 1.0
+            },
+            "repetitive": {
+              "n": 120,
+              "reference": 0.275,
+              "controller": 0.31666666666666665,
+              "delta": 0.041666666666666664,
+              "rescued": 15,
+              "harmed": 10,
+              "paired_ci95": [
+                -0.041666666666666664,
+                0.125
+              ],
+              "exact_mcnemar": 0.42435622215270996
+            },
+            "strict": {
+              "n": 120,
+              "reference": 0.6666666666666666,
+              "controller": 0.675,
+              "delta": 0.008333333333333333,
+              "rescued": 10,
+              "harmed": 9,
+              "paired_ci95": [
+                -0.058333333333333334,
+                0.08333333333333333
+              ],
+              "exact_mcnemar": 1.0
+            },
+            "token_limit": {
+              "n": 120,
+              "reference": 0.058333333333333334,
+              "controller": 0.058333333333333334,
+              "delta": 0.0,
+              "rescued": 3,
+              "harmed": 3,
+              "paired_ci95": [
+                -0.041666666666666664,
+                0.041666666666666664
+              ],
+              "exact_mcnemar": 1.0
+            },
+            "valid": {
+              "n": 120,
+              "reference": 1.0,
+              "controller": 1.0,
+              "delta": 0.0,
+              "rescued": 0,
+              "harmed": 0,
+              "paired_ci95": [
+                0.0,
+                0.0
+              ],
+              "exact_mcnemar": null
+            }
+          },
+          "output_length_and_format": {
+            "full": {
+              "n": 120,
+              "C_median": 89.5,
+              "D_median": 94.5,
+              "strict": {
+                "n": 120,
+                "reference": 0.6666666666666666,
+                "controller": 0.675,
+                "delta": 0.008333333333333333,
+                "rescued": 10,
+                "harmed": 9,
+                "paired_ci95": [
+                  -0.058333333333333334,
+                  0.08333333333333333
+                ],
+                "exact_mcnemar": 1.0
+              }
+            },
+            "same_32_token_length_bin": {
+              "n": 69,
+              "C_median": 80,
+              "D_median": 81,
+              "strict": {
+                "n": 69,
+                "reference": 0.7391304347826086,
+                "controller": 0.7391304347826086,
+                "delta": 0.0,
+                "rescued": 1,
+                "harmed": 1,
+                "paired_ci95": [
+                  -0.043478260869565216,
+                  0.043478260869565216
+                ],
+                "exact_mcnemar": 1.0
+              }
+            },
+            "both_completed_with_process": {
+              "n": 94,
+              "C_median": 87.5,
+              "D_median": 93.5,
+              "strict": {
+                "n": 94,
+                "reference": 0.7659574468085106,
+                "controller": 0.776595744680851,
+                "delta": 0.010638297872340425,
+                "rescued": 6,
+                "harmed": 5,
+                "paired_ci95": [
+                  -0.06382978723404255,
+                  0.0851063829787234
+                ],
+                "exact_mcnemar": 1.0
+              }
+            }
+          }
+        },
+        {
+          "dataset": "gsm8k",
+          "depth": 4,
+          "mode": "gsm_process",
+          "paired": {
+            "completed": {
+              "n": 120,
+              "reference": 0.925,
+              "controller": 0.925,
+              "delta": 0.0,
+              "rescued": 5,
+              "harmed": 5,
+              "paired_ci95": [
+                -0.05,
+                0.05
+              ],
+              "exact_mcnemar": 1.0
+            },
+            "correct": {
+              "n": 120,
+              "reference": 0.65,
+              "controller": 0.6166666666666667,
+              "delta": -0.03333333333333333,
+              "rescued": 6,
+              "harmed": 10,
+              "paired_ci95": [
+                -0.1,
+                0.03333333333333333
+              ],
+              "exact_mcnemar": 0.454498291015625
+            },
+            "eos_before_16": {
+              "n": 120,
+              "reference": 0.06666666666666667,
+              "controller": 0.06666666666666667,
+              "delta": 0.0,
+              "rescued": 3,
+              "harmed": 3,
+              "paired_ci95": [
+                -0.041666666666666664,
+                0.041666666666666664
+              ],
+              "exact_mcnemar": 1.0
+            },
+            "premature_eos": {
+              "n": 120,
+              "reference": 0.06666666666666667,
+              "controller": 0.03333333333333333,
+              "delta": -0.03333333333333333,
+              "rescued": 3,
+              "harmed": 7,
+              "paired_ci95": [
+                -0.08333333333333333,
+                0.016666666666666666
+              ],
+              "exact_mcnemar": 0.34375
+            },
+            "process": {
+              "n": 120,
+              "reference": 0.725,
+              "controller": 0.7916666666666666,
+              "delta": 0.06666666666666667,
+              "rescued": 14,
+              "harmed": 6,
+              "paired_ci95": [
+                0.0,
+                0.14166666666666666
+              ],
+              "exact_mcnemar": 0.11531829833984375
+            },
+            "process_correct": {
+              "n": 120,
+              "reference": 0.525,
+              "controller": 0.575,
+              "delta": 0.05,
+              "rescued": 14,
+              "harmed": 8,
+              "paired_ci95": [
+                -0.025,
+                0.125
+              ],
+              "exact_mcnemar": 0.28627872467041016
+            },
+            "repetitive": {
+              "n": 120,
+              "reference": 0.23333333333333334,
+              "controller": 0.25,
+              "delta": 0.016666666666666666,
+              "rescued": 12,
+              "harmed": 10,
+              "paired_ci95": [
+                -0.058333333333333334,
+                0.09166666666666666
+              ],
+              "exact_mcnemar": 0.8318119049072266
+            },
+            "strict": {
+              "n": 120,
+              "reference": 0.5333333333333333,
+              "controller": 0.5916666666666667,
+              "delta": 0.058333333333333334,
+              "rescued": 16,
+              "harmed": 9,
+              "paired_ci95": [
+                -0.025,
+                0.14166666666666666
+              ],
+              "exact_mcnemar": 0.2295229434967041
+            },
+            "token_limit": {
+              "n": 120,
+              "reference": 0.075,
+              "controller": 0.075,
+              "delta": 0.0,
+              "rescued": 5,
+              "harmed": 5,
+              "paired_ci95": [
+                -0.05,
+                0.05
+              ],
+              "exact_mcnemar": 1.0
+            },
+            "valid": {
+              "n": 120,
+              "reference": 1.0,
+              "controller": 0.9916666666666667,
+              "delta": -0.008333333333333333,
+              "rescued": 0,
+              "harmed": 1,
+              "paired_ci95": [
+                -0.025,
+                0.0
+              ],
+              "exact_mcnemar": 1.0
+            }
+          },
+          "output_length_and_format": {
+            "full": {
+              "n": 120,
+              "C_median": 90.5,
+              "D_median": 91.0,
+              "strict": {
+                "n": 120,
+                "reference": 0.5333333333333333,
+                "controller": 0.5916666666666667,
+                "delta": 0.058333333333333334,
+                "rescued": 16,
+                "harmed": 9,
+                "paired_ci95": [
+                  -0.025,
+                  0.14166666666666666
+                ],
+                "exact_mcnemar": 0.2295229434967041
+              }
+            },
+            "same_32_token_length_bin": {
+              "n": 80,
+              "C_median": 87.0,
+              "D_median": 80.0,
+              "strict": {
+                "n": 80,
+                "reference": 0.55,
+                "controller": 0.5875,
+                "delta": 0.0375,
+                "rescued": 6,
+                "harmed": 3,
+                "paired_ci95": [
+                  -0.0375,
+                  0.1125
+                ],
+                "exact_mcnemar": 0.5078125
+              }
+            },
+            "both_completed_with_process": {
+              "n": 79,
+              "C_median": 90,
+              "D_median": 91,
+              "strict": {
+                "n": 79,
+                "reference": 0.7468354430379747,
+                "controller": 0.7215189873417721,
+                "delta": -0.02531645569620253,
+                "rescued": 3,
+                "harmed": 5,
+                "paired_ci95": [
+                  -0.10126582278481013,
+                  0.0379746835443038
+                ],
+                "exact_mcnemar": 0.7265625
+              }
+            }
+          }
+        },
+        {
+          "dataset": "obqa",
+          "depth": 2,
+          "mode": "candidate",
+          "paired": {
+            "acc": {
+              "n": 120,
+              "reference": 0.25,
+              "controller": 0.24166666666666667,
+              "delta": -0.008333333333333333,
+              "rescued": 2,
+              "harmed": 3,
+              "paired_ci95": [
+                -0.041666666666666664,
+                0.025
+              ],
+              "exact_mcnemar": 1.0
+            },
+            "acc_norm": {
+              "n": 120,
+              "reference": 0.4583333333333333,
+              "controller": 0.4583333333333333,
+              "delta": 0.0,
+              "rescued": 3,
+              "harmed": 3,
+              "paired_ci95": [
+                -0.041666666666666664,
+                0.041666666666666664
+              ],
+              "exact_mcnemar": 1.0
+            }
+          }
+        },
+        {
+          "dataset": "obqa",
+          "depth": 2,
+          "mode": "content",
+          "paired": {
+            "content_f1": {
+              "n": 120,
+              "reference": 0.6197852909617616,
+              "controller": 0.6074583308848015,
+              "delta": -0.012326960076960075,
+              "rescued": 6,
+              "harmed": 10,
+              "paired_ci95": [
+                -0.06073754046879048,
+                0.036247978179228195
+              ],
+              "exact_mcnemar": null
+            },
+            "correct": {
+              "n": 120,
+              "reference": 0.5916666666666667,
+              "controller": 0.5666666666666667,
+              "delta": -0.025,
+              "rescued": 5,
+              "harmed": 8,
+              "paired_ci95": [
+                -0.08333333333333333,
+                0.03333333333333333
+              ],
+              "exact_mcnemar": 0.5810546875
+            },
+            "loose_correct": {
+              "n": 120,
+              "reference": 0.5916666666666667,
+              "controller": 0.5666666666666667,
+              "delta": -0.025,
+              "rescued": 5,
+              "harmed": 8,
+              "paired_ci95": [
+                -0.08333333333333333,
+                0.03333333333333333
+              ],
+              "exact_mcnemar": 0.5810546875
+            },
+            "strict": {
+              "n": 120,
+              "reference": 0.5916666666666667,
+              "controller": 0.5666666666666667,
+              "delta": -0.025,
+              "rescued": 5,
+              "harmed": 8,
+              "paired_ci95": [
+                -0.08333333333333333,
+                0.03333333333333333
+              ],
+              "exact_mcnemar": 0.5810546875
+            },
+            "valid": {
+              "n": 120,
+              "reference": 0.975,
+              "controller": 0.9583333333333334,
+              "delta": -0.016666666666666666,
+              "rescued": 0,
+              "harmed": 2,
+              "paired_ci95": [
+                -0.041666666666666664,
+                0.0
+              ],
+              "exact_mcnemar": 0.5
+            }
+          }
+        },
+        {
+          "dataset": "obqa",
+          "depth": 3,
+          "mode": "candidate",
+          "paired": {
+            "acc": {
+              "n": 120,
+              "reference": 0.3,
+              "controller": 0.2916666666666667,
+              "delta": -0.008333333333333333,
+              "rescued": 2,
+              "harmed": 3,
+              "paired_ci95": [
+                -0.041666666666666664,
+                0.025
+              ],
+              "exact_mcnemar": 1.0
+            },
+            "acc_norm": {
+              "n": 120,
+              "reference": 0.5,
+              "controller": 0.475,
+              "delta": -0.025,
+              "rescued": 1,
+              "harmed": 4,
+              "paired_ci95": [
+                -0.06666666666666667,
+                0.008333333333333333
+              ],
+              "exact_mcnemar": 0.375
+            }
+          }
+        },
+        {
+          "dataset": "obqa",
+          "depth": 3,
+          "mode": "content",
+          "paired": {
+            "content_f1": {
+              "n": 120,
+              "reference": 0.7117609427609428,
+              "controller": 0.7434090909090909,
+              "delta": 0.03164814814814814,
+              "rescued": 9,
+              "harmed": 5,
+              "paired_ci95": [
+                -0.014253835978835979,
+                0.0829088955026455
+              ],
+              "exact_mcnemar": null
+            },
+            "correct": {
+              "n": 120,
+              "reference": 0.675,
+              "controller": 0.7,
+              "delta": 0.025,
+              "rescued": 7,
+              "harmed": 4,
+              "paired_ci95": [
+                -0.03333333333333333,
+                0.08333333333333333
+              ],
+              "exact_mcnemar": 0.548828125
+            },
+            "loose_correct": {
+              "n": 120,
+              "reference": 0.675,
+              "controller": 0.7,
+              "delta": 0.025,
+              "rescued": 7,
+              "harmed": 4,
+              "paired_ci95": [
+                -0.025,
+                0.08333333333333333
+              ],
+              "exact_mcnemar": 0.548828125
+            },
+            "strict": {
+              "n": 120,
+              "reference": 0.675,
+              "controller": 0.7,
+              "delta": 0.025,
+              "rescued": 7,
+              "harmed": 4,
+              "paired_ci95": [
+                -0.025,
+                0.075
+              ],
+              "exact_mcnemar": 0.548828125
+            },
+            "valid": {
+              "n": 120,
+              "reference": 0.95,
+              "controller": 0.9333333333333333,
+              "delta": -0.016666666666666666,
+              "rescued": 0,
+              "harmed": 2,
+              "paired_ci95": [
+                -0.041666666666666664,
+                0.0
+              ],
+              "exact_mcnemar": 0.5
+            }
+          }
+        },
+        {
+          "dataset": "obqa",
+          "depth": 4,
+          "mode": "candidate",
+          "paired": {
+            "acc": {
+              "n": 120,
+              "reference": 0.3,
+              "controller": 0.30833333333333335,
+              "delta": 0.008333333333333333,
+              "rescued": 1,
+              "harmed": 0,
+              "paired_ci95": [
+                0.0,
+                0.025
+              ],
+              "exact_mcnemar": 1.0
+            },
+            "acc_norm": {
+              "n": 120,
+              "reference": 0.5166666666666667,
+              "controller": 0.5166666666666667,
+              "delta": 0.0,
+              "rescued": 1,
+              "harmed": 1,
+              "paired_ci95": [
+                -0.025,
+                0.025
+              ],
+              "exact_mcnemar": 1.0
+            }
+          }
+        },
+        {
+          "dataset": "obqa",
+          "depth": 4,
+          "mode": "content",
+          "paired": {
+            "content_f1": {
+              "n": 120,
+              "reference": 0.7803571428571429,
+              "controller": 0.7678571428571428,
+              "delta": -0.0125,
+              "rescued": 5,
+              "harmed": 7,
+              "paired_ci95": [
+                -0.06666666666666667,
+                0.041666666666666664
+              ],
+              "exact_mcnemar": null
+            },
+            "correct": {
+              "n": 120,
+              "reference": 0.7666666666666667,
+              "controller": 0.7583333333333333,
+              "delta": -0.008333333333333333,
+              "rescued": 5,
+              "harmed": 6,
+              "paired_ci95": [
+                -0.06666666666666667,
+                0.041666666666666664
+              ],
+              "exact_mcnemar": 1.0
+            },
+            "loose_correct": {
+              "n": 120,
+              "reference": 0.7666666666666667,
+              "controller": 0.7583333333333333,
+              "delta": -0.008333333333333333,
+              "rescued": 5,
+              "harmed": 6,
+              "paired_ci95": [
+                -0.058333333333333334,
+                0.041666666666666664
+              ],
+              "exact_mcnemar": 1.0
+            },
+            "strict": {
+              "n": 120,
+              "reference": 0.7666666666666667,
+              "controller": 0.7583333333333333,
+              "delta": -0.008333333333333333,
+              "rescued": 5,
+              "harmed": 6,
+              "paired_ci95": [
+                -0.058333333333333334,
+                0.041666666666666664
+              ],
+              "exact_mcnemar": 1.0
+            },
+            "valid": {
+              "n": 120,
+              "reference": 0.975,
+              "controller": 0.9583333333333334,
+              "delta": -0.016666666666666666,
+              "rescued": 1,
+              "harmed": 3,
+              "paired_ci95": [
+                -0.05,
+                0.016666666666666666
+              ],
+              "exact_mcnemar": 0.625
+            }
+          }
+        },
+        {
+          "dataset": "squad",
+          "depth": 2,
+          "mode": "span",
+          "paired": {
+            "correct": {
+              "n": 120,
+              "reference": 0.39166666666666666,
+              "controller": 0.4083333333333333,
+              "delta": 0.016666666666666666,
+              "rescued": 7,
+              "harmed": 5,
+              "paired_ci95": [
+                -0.041666666666666664,
+                0.075
+              ],
+              "exact_mcnemar": 0.7744140625
+            },
+            "f1": {
+              "n": 120,
+              "reference": 0.546945644497115,
+              "controller": 0.640739500423324,
+              "delta": 0.09379385592620887,
+              "rescued": 27,
+              "harmed": 7,
+              "paired_ci95": [
+                0.03568869365928189,
+                0.1532050370653312
+              ],
+              "exact_mcnemar": null
+            },
+            "strict": {
+              "n": 120,
+              "reference": 0.025,
+              "controller": 0.041666666666666664,
+              "delta": 0.016666666666666666,
+              "rescued": 2,
+              "harmed": 0,
+              "paired_ci95": [
+                0.0,
+                0.041666666666666664
+              ],
+              "exact_mcnemar": 0.5
+            },
+            "valid": {
+              "n": 120,
+              "reference": 1.0,
+              "controller": 1.0,
+              "delta": 0.0,
+              "rescued": 0,
+              "harmed": 0,
+              "paired_ci95": [
+                0.0,
+                0.0
+              ],
+              "exact_mcnemar": null
+            }
+          }
+        },
+        {
+          "dataset": "squad",
+          "depth": 3,
+          "mode": "span",
+          "paired": {
+            "correct": {
+              "n": 120,
+              "reference": 0.5583333333333333,
+              "controller": 0.5333333333333333,
+              "delta": -0.025,
+              "rescued": 3,
+              "harmed": 6,
+              "paired_ci95": [
+                -0.075,
+                0.025
+              ],
+              "exact_mcnemar": 0.5078125
+            },
+            "f1": {
+              "n": 120,
+              "reference": 0.7459476081767104,
+              "controller": 0.7282840456756865,
+              "delta": -0.017663562501023803,
+              "rescued": 6,
+              "harmed": 9,
+              "paired_ci95": [
+                -0.05771170675872688,
+                0.01743667481612528
+              ],
+              "exact_mcnemar": null
+            },
+            "strict": {
+              "n": 120,
+              "reference": 0.0,
+              "controller": 0.0,
+              "delta": 0.0,
+              "rescued": 0,
+              "harmed": 0,
+              "paired_ci95": [
+                0.0,
+                0.0
+              ],
+              "exact_mcnemar": null
+            },
+            "valid": {
+              "n": 120,
+              "reference": 1.0,
+              "controller": 1.0,
+              "delta": 0.0,
+              "rescued": 0,
+              "harmed": 0,
+              "paired_ci95": [
+                0.0,
+                0.0
+              ],
+              "exact_mcnemar": null
+            }
+          }
+        },
+        {
+          "dataset": "squad",
+          "depth": 4,
+          "mode": "span",
+          "paired": {
+            "correct": {
+              "n": 120,
+              "reference": 0.5583333333333333,
+              "controller": 0.55,
+              "delta": -0.008333333333333333,
+              "rescued": 2,
+              "harmed": 3,
+              "paired_ci95": [
+                -0.041666666666666664,
+                0.025
+              ],
+              "exact_mcnemar": 1.0
+            },
+            "f1": {
+              "n": 120,
+              "reference": 0.7374728285297045,
+              "controller": 0.7343851523170284,
+              "delta": -0.0030876762126762114,
+              "rescued": 6,
+              "harmed": 5,
+              "paired_ci95": [
+                -0.03249851190476191,
+                0.024648421023421022
+              ],
+              "exact_mcnemar": null
+            },
+            "strict": {
+              "n": 120,
+              "reference": 0.06666666666666667,
+              "controller": 0.075,
+              "delta": 0.008333333333333333,
+              "rescued": 1,
+              "harmed": 0,
+              "paired_ci95": [
+                0.0,
+                0.025
+              ],
+              "exact_mcnemar": 1.0
+            },
+            "valid": {
+              "n": 120,
+              "reference": 1.0,
+              "controller": 1.0,
+              "delta": 0.0,
+              "rescued": 0,
+              "harmed": 0,
+              "paired_ci95": [
+                0.0,
+                0.0
+              ],
+              "exact_mcnemar": null
+            }
+          }
+        }
+      ]
+    },
+    {
+      "epoch": 3,
+      "costs": {
+        "C": {
+          "optimizer_updates": 1500,
+          "seconds": 537.44391852431,
+          "target_tokens": 452395,
+          "padded_token_loops": 4613504,
+          "checkpoint_sha256": "0fd3186f48a21ad0b37006ff3787be4865fb5ec758f8a76f6d4384aca4946b75"
+        },
+        "D": {
+          "optimizer_updates": 1500,
+          "seconds": 564.4967069830745,
+          "target_tokens": 555255,
+          "padded_token_loops": 5881860,
+          "checkpoint_sha256": "965398a7620e22097a6f0d34c3b623bbfe0e820007fda6fb0d79788daa370627"
+        }
+      },
+      "explained_by_loop": {
+        "3": 167,
+        "4": 167,
+        "2": 166
+      },
+      "selection": {
+        "C": [
+          0,
+          -0.058333333333333334,
+          -0.25,
+          0.15671296296296297,
+          -0.016666666666666666
+        ],
+        "D": [
+          -1,
+          -0.13333333333333333,
+          -0.2833333333333333,
+          0.15617283950617286,
+          -0.02067901234567901
+        ]
+      },
+      "paired_D_minus_C": [
+        {
+          "dataset": "arc_challenge",
+          "depth": 2,
+          "mode": "candidate",
+          "paired": {
+            "acc": {
+              "n": 120,
+              "reference": 0.36666666666666664,
+              "controller": 0.325,
+              "delta": -0.041666666666666664,
+              "rescued": 1,
+              "harmed": 6,
+              "paired_ci95": [
+                -0.08333333333333333,
+                0.0
+              ],
+              "exact_mcnemar": 0.125
+            },
+            "acc_norm": {
+              "n": 120,
+              "reference": 0.4166666666666667,
+              "controller": 0.43333333333333335,
+              "delta": 0.016666666666666666,
+              "rescued": 7,
+              "harmed": 5,
+              "paired_ci95": [
+                -0.041666666666666664,
+                0.075
+              ],
+              "exact_mcnemar": 0.7744140625
+            }
+          }
+        },
+        {
+          "dataset": "arc_challenge",
+          "depth": 2,
+          "mode": "content",
+          "paired": {
+            "content_f1": {
+              "n": 120,
+              "reference": 0.7119027254708369,
+              "controller": 0.7200340386021501,
+              "delta": 0.00813131313131313,
+              "rescued": 6,
+              "harmed": 4,
+              "paired_ci95": [
+                -0.019447601010101012,
+                0.03472222222222222
+              ],
+              "exact_mcnemar": null
+            },
+            "correct": {
+              "n": 120,
+              "reference": 0.6333333333333333,
+              "controller": 0.6416666666666667,
+              "delta": 0.008333333333333333,
+              "rescued": 5,
+              "harmed": 4,
+              "paired_ci95": [
+                -0.041666666666666664,
+                0.058333333333333334
+              ],
+              "exact_mcnemar": 1.0
+            },
+            "loose_correct": {
+              "n": 120,
+              "reference": 0.6333333333333333,
+              "controller": 0.6416666666666667,
+              "delta": 0.008333333333333333,
+              "rescued": 5,
+              "harmed": 4,
+              "paired_ci95": [
+                -0.041666666666666664,
+                0.058333333333333334
+              ],
+              "exact_mcnemar": 1.0
+            },
+            "strict": {
+              "n": 120,
+              "reference": 0.6333333333333333,
+              "controller": 0.6416666666666667,
+              "delta": 0.008333333333333333,
+              "rescued": 5,
+              "harmed": 4,
+              "paired_ci95": [
+                -0.041666666666666664,
+                0.058333333333333334
+              ],
+              "exact_mcnemar": 1.0
+            },
+            "valid": {
+              "n": 120,
+              "reference": 0.975,
+              "controller": 0.95,
+              "delta": -0.025,
+              "rescued": 0,
+              "harmed": 3,
+              "paired_ci95": [
+                -0.058333333333333334,
+                0.0
+              ],
+              "exact_mcnemar": 0.25
+            }
+          }
+        },
+        {
+          "dataset": "arc_challenge",
+          "depth": 3,
+          "mode": "candidate",
+          "paired": {
+            "acc": {
+              "n": 120,
+              "reference": 0.36666666666666664,
+              "controller": 0.38333333333333336,
+              "delta": 0.016666666666666666,
+              "rescued": 4,
+              "harmed": 2,
+              "paired_ci95": [
+                -0.025,
+                0.058333333333333334
+              ],
+              "exact_mcnemar": 0.6875
+            },
+            "acc_norm": {
+              "n": 120,
+              "reference": 0.45,
+              "controller": 0.4666666666666667,
+              "delta": 0.016666666666666666,
+              "rescued": 2,
+              "harmed": 0,
+              "paired_ci95": [
+                0.0,
+                0.041666666666666664
+              ],
+              "exact_mcnemar": 0.5
+            }
+          }
+        },
+        {
+          "dataset": "arc_challenge",
+          "depth": 3,
+          "mode": "content",
+          "paired": {
+            "content_f1": {
+              "n": 120,
+              "reference": 0.8229138671069786,
+              "controller": 0.7710833827764942,
+              "delta": -0.05183048433048433,
+              "rescued": 2,
+              "harmed": 11,
+              "paired_ci95": [
+                -0.09250124643874645,
+                -0.018055021367521365
+              ],
+              "exact_mcnemar": null
+            },
+            "correct": {
+              "n": 120,
+              "reference": 0.75,
+              "controller": 0.6833333333333333,
+              "delta": -0.06666666666666667,
+              "rescued": 2,
+              "harmed": 10,
+              "paired_ci95": [
+                -0.125,
+                -0.016666666666666666
+              ],
+              "exact_mcnemar": 0.03857421875
+            },
+            "loose_correct": {
+              "n": 120,
+              "reference": 0.75,
+              "controller": 0.6833333333333333,
+              "delta": -0.06666666666666667,
+              "rescued": 2,
+              "harmed": 10,
+              "paired_ci95": [
+                -0.125,
+                -0.016666666666666666
+              ],
+              "exact_mcnemar": 0.03857421875
+            },
+            "strict": {
+              "n": 120,
+              "reference": 0.75,
+              "controller": 0.6833333333333333,
+              "delta": -0.06666666666666667,
+              "rescued": 2,
+              "harmed": 10,
+              "paired_ci95": [
+                -0.125,
+                -0.016666666666666666
+              ],
+              "exact_mcnemar": 0.03857421875
+            },
+            "valid": {
+              "n": 120,
+              "reference": 0.9666666666666667,
+              "controller": 0.9333333333333333,
+              "delta": -0.03333333333333333,
+              "rescued": 1,
+              "harmed": 5,
+              "paired_ci95": [
+                -0.075,
+                0.0
+              ],
+              "exact_mcnemar": 0.21875
+            }
+          }
+        },
+        {
+          "dataset": "arc_challenge",
+          "depth": 4,
+          "mode": "candidate",
+          "paired": {
+            "acc": {
+              "n": 120,
+              "reference": 0.39166666666666666,
+              "controller": 0.36666666666666664,
+              "delta": -0.025,
+              "rescued": 1,
+              "harmed": 4,
+              "paired_ci95": [
+                -0.06666666666666667,
+                0.008333333333333333
+              ],
+              "exact_mcnemar": 0.375
+            },
+            "acc_norm": {
+              "n": 120,
+              "reference": 0.5083333333333333,
+              "controller": 0.49166666666666664,
+              "delta": -0.016666666666666666,
+              "rescued": 2,
+              "harmed": 4,
+              "paired_ci95": [
+                -0.058333333333333334,
+                0.025
+              ],
+              "exact_mcnemar": 0.6875
+            }
+          }
+        },
+        {
+          "dataset": "arc_challenge",
+          "depth": 4,
+          "mode": "content",
+          "paired": {
+            "content_f1": {
+              "n": 120,
+              "reference": 0.7589312389680036,
+              "controller": 0.6581917591495764,
+              "delta": -0.10073947981842718,
+              "rescued": 2,
+              "harmed": 16,
+              "paired_ci95": [
+                -0.1551591905901116,
+                -0.05315736054880791
+              ],
+              "exact_mcnemar": null
+            },
+            "correct": {
+              "n": 120,
+              "reference": 0.6833333333333333,
+              "controller": 0.6083333333333333,
+              "delta": -0.075,
+              "rescued": 2,
+              "harmed": 11,
+              "paired_ci95": [
+                -0.13333333333333333,
+                -0.016666666666666666
+              ],
+              "exact_mcnemar": 0.0224609375
+            },
+            "loose_correct": {
+              "n": 120,
+              "reference": 0.6833333333333333,
+              "controller": 0.6083333333333333,
+              "delta": -0.075,
+              "rescued": 2,
+              "harmed": 11,
+              "paired_ci95": [
+                -0.13333333333333333,
+                -0.016666666666666666
+              ],
+              "exact_mcnemar": 0.0224609375
+            },
+            "strict": {
+              "n": 120,
+              "reference": 0.6,
+              "controller": 0.55,
+              "delta": -0.05,
+              "rescued": 3,
+              "harmed": 9,
+              "paired_ci95": [
+                -0.10833333333333334,
+                0.0
+              ],
+              "exact_mcnemar": 0.14599609375
+            },
+            "valid": {
+              "n": 120,
+              "reference": 0.8833333333333333,
+              "controller": 0.7666666666666667,
+              "delta": -0.11666666666666667,
+              "rescued": 0,
+              "harmed": 14,
+              "paired_ci95": [
+                -0.175,
+                -0.06666666666666667
+              ],
+              "exact_mcnemar": 0.0001220703125
+            }
+          }
+        },
+        {
+          "dataset": "csqa",
+          "depth": 2,
+          "mode": "candidate",
+          "paired": {
+            "acc": {
+              "n": 120,
+              "reference": 0.5,
+              "controller": 0.48333333333333334,
+              "delta": -0.016666666666666666,
+              "rescued": 3,
+              "harmed": 5,
+              "paired_ci95": [
+                -0.06666666666666667,
+                0.025
+              ],
+              "exact_mcnemar": 0.7265625
+            },
+            "acc_norm": {
+              "n": 120,
+              "reference": 0.48333333333333334,
+              "controller": 0.475,
+              "delta": -0.008333333333333333,
+              "rescued": 5,
+              "harmed": 6,
+              "paired_ci95": [
+                -0.06666666666666667,
+                0.041666666666666664
+              ],
+              "exact_mcnemar": 1.0
+            }
+          }
+        },
+        {
+          "dataset": "csqa",
+          "depth": 2,
+          "mode": "content",
+          "paired": {
+            "content_f1": {
+              "n": 120,
+              "reference": 0.6316666666666666,
+              "controller": 0.6825,
+              "delta": 0.05083333333333333,
+              "rescued": 11,
+              "harmed": 4,
+              "paired_ci95": [
+                -0.008333333333333333,
+                0.11087500000000015
+              ],
+              "exact_mcnemar": null
+            },
+            "correct": {
+              "n": 120,
+              "reference": 0.6333333333333333,
+              "controller": 0.6833333333333333,
+              "delta": 0.05,
+              "rescued": 10,
+              "harmed": 4,
+              "paired_ci95": [
+                -0.008333333333333333,
+                0.10833333333333334
+              ],
+              "exact_mcnemar": 0.1795654296875
+            },
+            "loose_correct": {
+              "n": 120,
+              "reference": 0.6333333333333333,
+              "controller": 0.6833333333333333,
+              "delta": 0.05,
+              "rescued": 10,
+              "harmed": 4,
+              "paired_ci95": [
+                -0.008333333333333333,
+                0.10833333333333334
+              ],
+              "exact_mcnemar": 0.1795654296875
+            },
+            "strict": {
+              "n": 120,
+              "reference": 0.6333333333333333,
+              "controller": 0.6833333333333333,
+              "delta": 0.05,
+              "rescued": 10,
+              "harmed": 4,
+              "paired_ci95": [
+                -0.008333333333333333,
+                0.10833333333333334
+              ],
+              "exact_mcnemar": 0.1795654296875
+            },
+            "valid": {
+              "n": 120,
+              "reference": 0.9916666666666667,
+              "controller": 0.9916666666666667,
+              "delta": 0.0,
+              "rescued": 0,
+              "harmed": 0,
+              "paired_ci95": [
+                0.0,
+                0.0
+              ],
+              "exact_mcnemar": null
+            }
+          }
+        },
+        {
+          "dataset": "csqa",
+          "depth": 3,
+          "mode": "candidate",
+          "paired": {
+            "acc": {
+              "n": 120,
+              "reference": 0.6333333333333333,
+              "controller": 0.6333333333333333,
+              "delta": 0.0,
+              "rescued": 1,
+              "harmed": 1,
+              "paired_ci95": [
+                -0.025,
+                0.025
+              ],
+              "exact_mcnemar": 1.0
+            },
+            "acc_norm": {
+              "n": 120,
+              "reference": 0.5666666666666667,
+              "controller": 0.5583333333333333,
+              "delta": -0.008333333333333333,
+              "rescued": 1,
+              "harmed": 2,
+              "paired_ci95": [
+                -0.041666666666666664,
+                0.016666666666666666
+              ],
+              "exact_mcnemar": 1.0
+            }
+          }
+        },
+        {
+          "dataset": "csqa",
+          "depth": 3,
+          "mode": "content",
+          "paired": {
+            "content_f1": {
+              "n": 120,
+              "reference": 0.7328703703703704,
+              "controller": 0.7491666666666668,
+              "delta": 0.0162962962962963,
+              "rescued": 4,
+              "harmed": 2,
+              "paired_ci95": [
+                -0.01648148148148148,
+                0.05
+              ],
+              "exact_mcnemar": null
+            },
+            "correct": {
+              "n": 120,
+              "reference": 0.725,
+              "controller": 0.75,
+              "delta": 0.025,
+              "rescued": 4,
+              "harmed": 1,
+              "paired_ci95": [
+                -0.008333333333333333,
+                0.06666666666666667
+              ],
+              "exact_mcnemar": 0.375
+            },
+            "loose_correct": {
+              "n": 120,
+              "reference": 0.725,
+              "controller": 0.75,
+              "delta": 0.025,
+              "rescued": 4,
+              "harmed": 1,
+              "paired_ci95": [
+                -0.008333333333333333,
+                0.06666666666666667
+              ],
+              "exact_mcnemar": 0.375
+            },
+            "strict": {
+              "n": 120,
+              "reference": 0.725,
+              "controller": 0.75,
+              "delta": 0.025,
+              "rescued": 4,
+              "harmed": 1,
+              "paired_ci95": [
+                -0.008333333333333333,
+                0.06666666666666667
+              ],
+              "exact_mcnemar": 0.375
+            },
+            "valid": {
+              "n": 120,
+              "reference": 0.9916666666666667,
+              "controller": 1.0,
+              "delta": 0.008333333333333333,
+              "rescued": 1,
+              "harmed": 0,
+              "paired_ci95": [
+                0.0,
+                0.025
+              ],
+              "exact_mcnemar": 1.0
+            }
+          }
+        },
+        {
+          "dataset": "csqa",
+          "depth": 4,
+          "mode": "candidate",
+          "paired": {
+            "acc": {
+              "n": 120,
+              "reference": 0.65,
+              "controller": 0.65,
+              "delta": 0.0,
+              "rescued": 0,
+              "harmed": 0,
+              "paired_ci95": [
+                0.0,
+                0.0
+              ],
+              "exact_mcnemar": null
+            },
+            "acc_norm": {
+              "n": 120,
+              "reference": 0.5583333333333333,
+              "controller": 0.5666666666666667,
+              "delta": 0.008333333333333333,
+              "rescued": 1,
+              "harmed": 0,
+              "paired_ci95": [
+                0.0,
+                0.025
+              ],
+              "exact_mcnemar": 1.0
+            }
+          }
+        },
+        {
+          "dataset": "csqa",
+          "depth": 4,
+          "mode": "content",
+          "paired": {
+            "content_f1": {
+              "n": 120,
+              "reference": 0.7305555555555556,
+              "controller": 0.6958333333333333,
+              "delta": -0.03472222222222222,
+              "rescued": 4,
+              "harmed": 8,
+              "paired_ci95": [
+                -0.08753472222222221,
+                0.018055555555555557
+              ],
+              "exact_mcnemar": null
+            },
+            "correct": {
+              "n": 120,
+              "reference": 0.725,
+              "controller": 0.6916666666666667,
+              "delta": -0.03333333333333333,
+              "rescued": 4,
+              "harmed": 8,
+              "paired_ci95": [
+                -0.09166666666666666,
+                0.025
+              ],
+              "exact_mcnemar": 0.3876953125
+            },
+            "loose_correct": {
+              "n": 120,
+              "reference": 0.725,
+              "controller": 0.6916666666666667,
+              "delta": -0.03333333333333333,
+              "rescued": 4,
+              "harmed": 8,
+              "paired_ci95": [
+                -0.09166666666666666,
+                0.025
+              ],
+              "exact_mcnemar": 0.3876953125
+            },
+            "strict": {
+              "n": 120,
+              "reference": 0.725,
+              "controller": 0.6916666666666667,
+              "delta": -0.03333333333333333,
+              "rescued": 4,
+              "harmed": 8,
+              "paired_ci95": [
+                -0.09166666666666666,
+                0.025
+              ],
+              "exact_mcnemar": 0.3876953125
+            },
+            "valid": {
+              "n": 120,
+              "reference": 0.9916666666666667,
+              "controller": 1.0,
+              "delta": 0.008333333333333333,
+              "rescued": 1,
+              "harmed": 0,
+              "paired_ci95": [
+                0.0,
+                0.025
+              ],
+              "exact_mcnemar": 1.0
+            }
+          }
+        },
+        {
+          "dataset": "gsm8k",
+          "depth": 2,
+          "mode": "gsm_process",
+          "paired": {
+            "completed": {
+              "n": 120,
+              "reference": 0.9666666666666667,
+              "controller": 0.925,
+              "delta": -0.041666666666666664,
+              "rescued": 4,
+              "harmed": 9,
+              "paired_ci95": [
+                -0.1,
+                0.016666666666666666
+              ],
+              "exact_mcnemar": 0.266845703125
+            },
+            "correct": {
+              "n": 120,
+              "reference": 0.5333333333333333,
+              "controller": 0.6,
+              "delta": 0.06666666666666667,
+              "rescued": 19,
+              "harmed": 11,
+              "paired_ci95": [
+                -0.025,
+                0.15
+              ],
+              "exact_mcnemar": 0.20048842206597334
+            },
+            "eos_before_16": {
+              "n": 120,
+              "reference": 0.06666666666666667,
+              "controller": 0.041666666666666664,
+              "delta": -0.025,
+              "rescued": 4,
+              "harmed": 7,
+              "paired_ci95": [
+                -0.08333333333333333,
+                0.025
+              ],
+              "exact_mcnemar": 0.548828125
+            },
+            "premature_eos": {
+              "n": 120,
+              "reference": 0.075,
+              "controller": 0.025,
+              "delta": -0.05,
+              "rescued": 1,
+              "harmed": 7,
+              "paired_ci95": [
+                -0.1,
+                -0.008333333333333333
+              ],
+              "exact_mcnemar": 0.0703125
+            },
+            "process": {
+              "n": 120,
+              "reference": 0.825,
+              "controller": 0.8333333333333334,
+              "delta": 0.008333333333333333,
+              "rescued": 13,
+              "harmed": 12,
+              "paired_ci95": [
+                -0.075,
+                0.09166666666666666
+              ],
+              "exact_mcnemar": 1.0
+            },
+            "process_correct": {
+              "n": 120,
+              "reference": 0.4666666666666667,
+              "controller": 0.575,
+              "delta": 0.10833333333333334,
+              "rescued": 23,
+              "harmed": 10,
+              "paired_ci95": [
+                0.016666666666666666,
+                0.2
+              ],
+              "exact_mcnemar": 0.03508203336969018
+            },
+            "repetitive": {
+              "n": 120,
+              "reference": 0.275,
+              "controller": 0.30833333333333335,
+              "delta": 0.03333333333333333,
+              "rescued": 19,
+              "harmed": 15,
+              "paired_ci95": [
+                -0.06666666666666667,
+                0.125
+              ],
+              "exact_mcnemar": 0.6075913612730801
+            },
+            "strict": {
+              "n": 120,
+              "reference": 0.475,
+              "controller": 0.575,
+              "delta": 0.1,
+              "rescued": 22,
+              "harmed": 10,
+              "paired_ci95": [
+                0.008333333333333333,
+                0.19166666666666668
+              ],
+              "exact_mcnemar": 0.050102459732443094
+            },
+            "token_limit": {
+              "n": 120,
+              "reference": 0.03333333333333333,
+              "controller": 0.075,
+              "delta": 0.041666666666666664,
+              "rescued": 9,
+              "harmed": 4,
+              "paired_ci95": [
+                -0.016666666666666666,
+                0.1
+              ],
+              "exact_mcnemar": 0.266845703125
+            },
+            "valid": {
+              "n": 120,
+              "reference": 1.0,
+              "controller": 1.0,
+              "delta": 0.0,
+              "rescued": 0,
+              "harmed": 0,
+              "paired_ci95": [
+                0.0,
+                0.0
+              ],
+              "exact_mcnemar": null
+            }
+          },
+          "output_length_and_format": {
+            "full": {
+              "n": 120,
+              "C_median": 75.0,
+              "D_median": 82.5,
+              "strict": {
+                "n": 120,
+                "reference": 0.475,
+                "controller": 0.575,
+                "delta": 0.1,
+                "rescued": 22,
+                "harmed": 10,
+                "paired_ci95": [
+                  0.008333333333333333,
+                  0.19166666666666668
+                ],
+                "exact_mcnemar": 0.050102459732443094
+              }
+            },
+            "same_32_token_length_bin": {
+              "n": 48,
+              "C_median": 69.5,
+              "D_median": 70.5,
+              "strict": {
+                "n": 48,
+                "reference": 0.5416666666666666,
+                "controller": 0.6666666666666666,
+                "delta": 0.125,
+                "rescued": 9,
+                "harmed": 3,
+                "paired_ci95": [
+                  -0.020833333333333332,
+                  0.2708333333333333
+                ],
+                "exact_mcnemar": 0.14599609375
+              }
+            },
+            "both_completed_with_process": {
+              "n": 87,
+              "C_median": 76,
+              "D_median": 83,
+              "strict": {
+                "n": 87,
+                "reference": 0.6091954022988506,
+                "controller": 0.7011494252873564,
+                "delta": 0.09195402298850575,
+                "rescued": 15,
+                "harmed": 7,
+                "paired_ci95": [
+                  -0.011494252873563218,
+                  0.19540229885057472
+                ],
+                "exact_mcnemar": 0.13380050659179688
+              }
+            }
+          }
+        },
+        {
+          "dataset": "gsm8k",
+          "depth": 3,
+          "mode": "gsm_process",
+          "paired": {
+            "completed": {
+              "n": 120,
+              "reference": 0.975,
+              "controller": 0.9166666666666666,
+              "delta": -0.058333333333333334,
+              "rescued": 2,
+              "harmed": 9,
+              "paired_ci95": [
+                -0.11666666666666667,
+                -0.008333333333333333
+              ],
+              "exact_mcnemar": 0.0654296875
+            },
+            "correct": {
+              "n": 120,
+              "reference": 0.7083333333333334,
+              "controller": 0.7083333333333334,
+              "delta": 0.0,
+              "rescued": 11,
+              "harmed": 11,
+              "paired_ci95": [
+                -0.075,
+                0.075
+              ],
+              "exact_mcnemar": 1.0
+            },
+            "eos_before_16": {
+              "n": 120,
+              "reference": 0.03333333333333333,
+              "controller": 0.03333333333333333,
+              "delta": 0.0,
+              "rescued": 2,
+              "harmed": 2,
+              "paired_ci95": [
+                -0.03333333333333333,
+                0.03333333333333333
+              ],
+              "exact_mcnemar": 1.0
+            },
+            "premature_eos": {
+              "n": 120,
+              "reference": 0.016666666666666666,
+              "controller": 0.0,
+              "delta": -0.016666666666666666,
+              "rescued": 0,
+              "harmed": 2,
+              "paired_ci95": [
+                -0.041666666666666664,
+                0.0
+              ],
+              "exact_mcnemar": 0.5
+            },
+            "process": {
+              "n": 120,
+              "reference": 0.9083333333333333,
+              "controller": 0.8333333333333334,
+              "delta": -0.075,
+              "rescued": 6,
+              "harmed": 15,
+              "paired_ci95": [
+                -0.15,
+                0.0
+              ],
+              "exact_mcnemar": 0.0783538818359375
+            },
+            "process_correct": {
+              "n": 120,
+              "reference": 0.6833333333333333,
+              "controller": 0.6666666666666666,
+              "delta": -0.016666666666666666,
+              "rescued": 10,
+              "harmed": 12,
+              "paired_ci95": [
+                -0.09166666666666666,
+                0.058333333333333334
+              ],
+              "exact_mcnemar": 0.8318119049072266
+            },
+            "repetitive": {
+              "n": 120,
+              "reference": 0.225,
+              "controller": 0.3333333333333333,
+              "delta": 0.10833333333333334,
+              "rescued": 19,
+              "harmed": 6,
+              "paired_ci95": [
+                0.025,
+                0.19166666666666668
+              ],
+              "exact_mcnemar": 0.01463329792022705
+            },
+            "strict": {
+              "n": 120,
+              "reference": 0.7,
+              "controller": 0.7,
+              "delta": 0.0,
+              "rescued": 10,
+              "harmed": 10,
+              "paired_ci95": [
+                -0.075,
+                0.075
+              ],
+              "exact_mcnemar": 1.0
+            },
+            "token_limit": {
+              "n": 120,
+              "reference": 0.025,
+              "controller": 0.08333333333333333,
+              "delta": 0.058333333333333334,
+              "rescued": 9,
+              "harmed": 2,
+              "paired_ci95": [
+                0.008333333333333333,
+                0.11666666666666667
+              ],
+              "exact_mcnemar": 0.0654296875
+            },
+            "valid": {
+              "n": 120,
+              "reference": 1.0,
+              "controller": 1.0,
+              "delta": 0.0,
+              "rescued": 0,
+              "harmed": 0,
+              "paired_ci95": [
+                0.0,
+                0.0
+              ],
+              "exact_mcnemar": null
+            }
+          },
+          "output_length_and_format": {
+            "full": {
+              "n": 120,
+              "C_median": 87.5,
+              "D_median": 86.5,
+              "strict": {
+                "n": 120,
+                "reference": 0.7,
+                "controller": 0.7,
+                "delta": 0.0,
+                "rescued": 10,
+                "harmed": 10,
+                "paired_ci95": [
+                  -0.075,
+                  0.075
+                ],
+                "exact_mcnemar": 1.0
+              }
+            },
+            "same_32_token_length_bin": {
+              "n": 67,
+              "C_median": 78,
+              "D_median": 79,
+              "strict": {
+                "n": 67,
+                "reference": 0.7611940298507462,
+                "controller": 0.7611940298507462,
+                "delta": 0.0,
+                "rescued": 3,
+                "harmed": 3,
+                "paired_ci95": [
+                  -0.07462686567164178,
+                  0.07462686567164178
+                ],
+                "exact_mcnemar": 1.0
+              }
+            },
+            "both_completed_with_process": {
+              "n": 94,
+              "C_median": 92.5,
+              "D_median": 86.5,
+              "strict": {
+                "n": 94,
+                "reference": 0.7978723404255319,
+                "controller": 0.8297872340425532,
+                "delta": 0.031914893617021274,
+                "rescued": 8,
+                "harmed": 5,
+                "paired_ci95": [
+                  -0.0425531914893617,
+                  0.10638297872340426
+                ],
+                "exact_mcnemar": 0.5810546875
+              }
+            }
+          }
+        },
+        {
+          "dataset": "gsm8k",
+          "depth": 4,
+          "mode": "gsm_process",
+          "paired": {
+            "completed": {
+              "n": 120,
+              "reference": 0.9833333333333333,
+              "controller": 0.9416666666666667,
+              "delta": -0.041666666666666664,
+              "rescued": 0,
+              "harmed": 5,
+              "paired_ci95": [
+                -0.08333333333333333,
+                -0.008333333333333333
+              ],
+              "exact_mcnemar": 0.0625
+            },
+            "correct": {
+              "n": 120,
+              "reference": 0.7083333333333334,
+              "controller": 0.6666666666666666,
+              "delta": -0.041666666666666664,
+              "rescued": 6,
+              "harmed": 11,
+              "paired_ci95": [
+                -0.10833333333333334,
+                0.025
+              ],
+              "exact_mcnemar": 0.332305908203125
+            },
+            "eos_before_16": {
+              "n": 120,
+              "reference": 0.06666666666666667,
+              "controller": 0.058333333333333334,
+              "delta": -0.008333333333333333,
+              "rescued": 1,
+              "harmed": 2,
+              "paired_ci95": [
+                -0.041666666666666664,
+                0.016666666666666666
+              ],
+              "exact_mcnemar": 1.0
+            },
+            "premature_eos": {
+              "n": 120,
+              "reference": 0.05,
+              "controller": 0.008333333333333333,
+              "delta": -0.041666666666666664,
+              "rescued": 0,
+              "harmed": 5,
+              "paired_ci95": [
+                -0.08333333333333333,
+                -0.008333333333333333
+              ],
+              "exact_mcnemar": 0.0625
+            },
+            "process": {
+              "n": 120,
+              "reference": 0.8416666666666667,
+              "controller": 0.825,
+              "delta": -0.016666666666666666,
+              "rescued": 7,
+              "harmed": 9,
+              "paired_ci95": [
+                -0.08333333333333333,
+                0.05
+              ],
+              "exact_mcnemar": 0.803619384765625
+            },
+            "process_correct": {
+              "n": 120,
+              "reference": 0.675,
+              "controller": 0.625,
+              "delta": -0.05,
+              "rescued": 7,
+              "harmed": 13,
+              "paired_ci95": [
+                -0.125,
+                0.025
+              ],
+              "exact_mcnemar": 0.26317596435546875
+            },
+            "repetitive": {
+              "n": 120,
+              "reference": 0.24166666666666667,
+              "controller": 0.21666666666666667,
+              "delta": -0.025,
+              "rescued": 8,
+              "harmed": 11,
+              "paired_ci95": [
+                -0.1,
+                0.041666666666666664
+              ],
+              "exact_mcnemar": 0.6476058959960938
+            },
+            "strict": {
+              "n": 120,
+              "reference": 0.6916666666666667,
+              "controller": 0.6416666666666667,
+              "delta": -0.05,
+              "rescued": 7,
+              "harmed": 13,
+              "paired_ci95": [
+                -0.125,
+                0.025
+              ],
+              "exact_mcnemar": 0.26317596435546875
+            },
+            "token_limit": {
+              "n": 120,
+              "reference": 0.016666666666666666,
+              "controller": 0.058333333333333334,
+              "delta": 0.041666666666666664,
+              "rescued": 5,
+              "harmed": 0,
+              "paired_ci95": [
+                0.008333333333333333,
+                0.08333333333333333
+              ],
+              "exact_mcnemar": 0.0625
+            },
+            "valid": {
+              "n": 120,
+              "reference": 1.0,
+              "controller": 1.0,
+              "delta": 0.0,
+              "rescued": 0,
+              "harmed": 0,
+              "paired_ci95": [
+                0.0,
+                0.0
+              ],
+              "exact_mcnemar": null
+            }
+          },
+          "output_length_and_format": {
+            "full": {
+              "n": 120,
+              "C_median": 90.0,
+              "D_median": 85.5,
+              "strict": {
+                "n": 120,
+                "reference": 0.6916666666666667,
+                "controller": 0.6416666666666667,
+                "delta": -0.05,
+                "rescued": 7,
+                "harmed": 13,
+                "paired_ci95": [
+                  -0.125,
+                  0.025
+                ],
+                "exact_mcnemar": 0.26317596435546875
+              }
+            },
+            "same_32_token_length_bin": {
+              "n": 66,
+              "C_median": 81.0,
+              "D_median": 82.0,
+              "strict": {
+                "n": 66,
+                "reference": 0.6363636363636364,
+                "controller": 0.696969696969697,
+                "delta": 0.06060606060606061,
+                "rescued": 4,
+                "harmed": 0,
+                "paired_ci95": [
+                  0.015151515151515152,
+                  0.12121212121212122
+                ],
+                "exact_mcnemar": 0.125
+              }
+            },
+            "both_completed_with_process": {
+              "n": 92,
+              "C_median": 90.5,
+              "D_median": 90.5,
+              "strict": {
+                "n": 92,
+                "reference": 0.8043478260869565,
+                "controller": 0.782608695652174,
+                "delta": -0.021739130434782608,
+                "rescued": 4,
+                "harmed": 6,
+                "paired_ci95": [
+                  -0.08695652173913043,
+                  0.043478260869565216
+                ],
+                "exact_mcnemar": 0.75390625
+              }
+            }
+          }
+        },
+        {
+          "dataset": "obqa",
+          "depth": 2,
+          "mode": "candidate",
+          "paired": {
+            "acc": {
+              "n": 120,
+              "reference": 0.25,
+              "controller": 0.24166666666666667,
+              "delta": -0.008333333333333333,
+              "rescued": 1,
+              "harmed": 2,
+              "paired_ci95": [
+                -0.041666666666666664,
+                0.016666666666666666
+              ],
+              "exact_mcnemar": 1.0
+            },
+            "acc_norm": {
+              "n": 120,
+              "reference": 0.44166666666666665,
+              "controller": 0.44166666666666665,
+              "delta": 0.0,
+              "rescued": 2,
+              "harmed": 2,
+              "paired_ci95": [
+                -0.03333333333333333,
+                0.03333333333333333
+              ],
+              "exact_mcnemar": 1.0
+            }
+          }
+        },
+        {
+          "dataset": "obqa",
+          "depth": 2,
+          "mode": "content",
+          "paired": {
+            "content_f1": {
+              "n": 120,
+              "reference": 0.6131250530515236,
+              "controller": 0.6293558777823485,
+              "delta": 0.016230824730824725,
+              "rescued": 8,
+              "harmed": 8,
+              "paired_ci95": [
+                -0.037103556166056165,
+                0.07305829587079589
+              ],
+              "exact_mcnemar": null
+            },
+            "correct": {
+              "n": 120,
+              "reference": 0.575,
+              "controller": 0.5833333333333334,
+              "delta": 0.008333333333333333,
+              "rescued": 7,
+              "harmed": 6,
+              "paired_ci95": [
+                -0.05,
+                0.06666666666666667
+              ],
+              "exact_mcnemar": 1.0
+            },
+            "loose_correct": {
+              "n": 120,
+              "reference": 0.575,
+              "controller": 0.5833333333333334,
+              "delta": 0.008333333333333333,
+              "rescued": 7,
+              "harmed": 6,
+              "paired_ci95": [
+                -0.05,
+                0.06666666666666667
+              ],
+              "exact_mcnemar": 1.0
+            },
+            "strict": {
+              "n": 120,
+              "reference": 0.575,
+              "controller": 0.5833333333333334,
+              "delta": 0.008333333333333333,
+              "rescued": 7,
+              "harmed": 6,
+              "paired_ci95": [
+                -0.05,
+                0.06666666666666667
+              ],
+              "exact_mcnemar": 1.0
+            },
+            "valid": {
+              "n": 120,
+              "reference": 0.9416666666666667,
+              "controller": 0.9583333333333334,
+              "delta": 0.016666666666666666,
+              "rescued": 3,
+              "harmed": 1,
+              "paired_ci95": [
+                -0.016666666666666666,
+                0.05
+              ],
+              "exact_mcnemar": 0.625
+            }
+          }
+        },
+        {
+          "dataset": "obqa",
+          "depth": 3,
+          "mode": "candidate",
+          "paired": {
+            "acc": {
+              "n": 120,
+              "reference": 0.2833333333333333,
+              "controller": 0.30833333333333335,
+              "delta": 0.025,
+              "rescued": 5,
+              "harmed": 2,
+              "paired_ci95": [
+                -0.016666666666666666,
+                0.06666666666666667
+              ],
+              "exact_mcnemar": 0.453125
+            },
+            "acc_norm": {
+              "n": 120,
+              "reference": 0.5083333333333333,
+              "controller": 0.48333333333333334,
+              "delta": -0.025,
+              "rescued": 1,
+              "harmed": 4,
+              "paired_ci95": [
+                -0.06666666666666667,
+                0.008333333333333333
+              ],
+              "exact_mcnemar": 0.375
+            }
+          }
+        },
+        {
+          "dataset": "obqa",
+          "depth": 3,
+          "mode": "content",
+          "paired": {
+            "content_f1": {
+              "n": 120,
+              "reference": 0.7270321067821067,
+              "controller": 0.7196547619047619,
+              "delta": -0.007377344877344875,
+              "rescued": 4,
+              "harmed": 5,
+              "paired_ci95": [
+                -0.04948006854256854,
+                0.03365800865800866
+              ],
+              "exact_mcnemar": null
+            },
+            "correct": {
+              "n": 120,
+              "reference": 0.7,
+              "controller": 0.6916666666666667,
+              "delta": -0.008333333333333333,
+              "rescued": 4,
+              "harmed": 5,
+              "paired_ci95": [
+                -0.058333333333333334,
+                0.041666666666666664
+              ],
+              "exact_mcnemar": 1.0
+            },
+            "loose_correct": {
+              "n": 120,
+              "reference": 0.7,
+              "controller": 0.6916666666666667,
+              "delta": -0.008333333333333333,
+              "rescued": 4,
+              "harmed": 5,
+              "paired_ci95": [
+                -0.058333333333333334,
+                0.041666666666666664
+              ],
+              "exact_mcnemar": 1.0
+            },
+            "strict": {
+              "n": 120,
+              "reference": 0.7,
+              "controller": 0.6916666666666667,
+              "delta": -0.008333333333333333,
+              "rescued": 4,
+              "harmed": 5,
+              "paired_ci95": [
+                -0.058333333333333334,
+                0.041666666666666664
+              ],
+              "exact_mcnemar": 1.0
+            },
+            "valid": {
+              "n": 120,
+              "reference": 0.9583333333333334,
+              "controller": 0.925,
+              "delta": -0.03333333333333333,
+              "rescued": 1,
+              "harmed": 5,
+              "paired_ci95": [
+                -0.075,
+                0.0
+              ],
+              "exact_mcnemar": 0.21875
+            }
+          }
+        },
+        {
+          "dataset": "obqa",
+          "depth": 4,
+          "mode": "candidate",
+          "paired": {
+            "acc": {
+              "n": 120,
+              "reference": 0.2833333333333333,
+              "controller": 0.31666666666666665,
+              "delta": 0.03333333333333333,
+              "rescued": 4,
+              "harmed": 0,
+              "paired_ci95": [
+                0.008333333333333333,
+                0.06666666666666667
+              ],
+              "exact_mcnemar": 0.125
+            },
+            "acc_norm": {
+              "n": 120,
+              "reference": 0.525,
+              "controller": 0.5333333333333333,
+              "delta": 0.008333333333333333,
+              "rescued": 1,
+              "harmed": 0,
+              "paired_ci95": [
+                0.0,
+                0.025
+              ],
+              "exact_mcnemar": 1.0
+            }
+          }
+        },
+        {
+          "dataset": "obqa",
+          "depth": 4,
+          "mode": "content",
+          "paired": {
+            "content_f1": {
+              "n": 120,
+              "reference": 0.7219024276377218,
+              "controller": 0.6960627281215516,
+              "delta": -0.025839699516170107,
+              "rescued": 5,
+              "harmed": 9,
+              "paired_ci95": [
+                -0.07200163929208046,
+                0.02057708916900097
+              ],
+              "exact_mcnemar": null
+            },
+            "correct": {
+              "n": 120,
+              "reference": 0.7,
+              "controller": 0.6583333333333333,
+              "delta": -0.041666666666666664,
+              "rescued": 2,
+              "harmed": 7,
+              "paired_ci95": [
+                -0.09166666666666666,
+                0.008333333333333333
+              ],
+              "exact_mcnemar": 0.1796875
+            },
+            "loose_correct": {
+              "n": 120,
+              "reference": 0.7,
+              "controller": 0.6583333333333333,
+              "delta": -0.041666666666666664,
+              "rescued": 2,
+              "harmed": 7,
+              "paired_ci95": [
+                -0.09166666666666666,
+                0.008333333333333333
+              ],
+              "exact_mcnemar": 0.1796875
+            },
+            "strict": {
+              "n": 120,
+              "reference": 0.6833333333333333,
+              "controller": 0.6583333333333333,
+              "delta": -0.025,
+              "rescued": 3,
+              "harmed": 6,
+              "paired_ci95": [
+                -0.075,
+                0.025
+              ],
+              "exact_mcnemar": 0.5078125
+            },
+            "valid": {
+              "n": 120,
+              "reference": 0.9166666666666666,
+              "controller": 0.85,
+              "delta": -0.06666666666666667,
+              "rescued": 1,
+              "harmed": 9,
+              "paired_ci95": [
+                -0.11666666666666667,
+                -0.016666666666666666
+              ],
+              "exact_mcnemar": 0.021484375
+            }
+          }
+        },
+        {
+          "dataset": "squad",
+          "depth": 2,
+          "mode": "span",
+          "paired": {
+            "correct": {
+              "n": 120,
+              "reference": 0.35,
+              "controller": 0.31666666666666665,
+              "delta": -0.03333333333333333,
+              "rescued": 9,
+              "harmed": 13,
+              "paired_ci95": [
+                -0.10833333333333334,
+                0.041666666666666664
+              ],
+              "exact_mcnemar": 0.5234670639038086
+            },
+            "f1": {
+              "n": 120,
+              "reference": 0.5478920980716521,
+              "controller": 0.5422611305856864,
+              "delta": -0.005630967485965773,
+              "rescued": 24,
+              "harmed": 24,
+              "paired_ci95": [
+                -0.06734412844598442,
+                0.052533438257005335
+              ],
+              "exact_mcnemar": null
+            },
+            "strict": {
+              "n": 120,
+              "reference": 0.008333333333333333,
+              "controller": 0.008333333333333333,
+              "delta": 0.0,
+              "rescued": 1,
+              "harmed": 1,
+              "paired_ci95": [
+                -0.025,
+                0.025
+              ],
+              "exact_mcnemar": 1.0
+            },
+            "valid": {
+              "n": 120,
+              "reference": 1.0,
+              "controller": 1.0,
+              "delta": 0.0,
+              "rescued": 0,
+              "harmed": 0,
+              "paired_ci95": [
+                0.0,
+                0.0
+              ],
+              "exact_mcnemar": null
+            }
+          }
+        },
+        {
+          "dataset": "squad",
+          "depth": 3,
+          "mode": "span",
+          "paired": {
+            "correct": {
+              "n": 120,
+              "reference": 0.5416666666666666,
+              "controller": 0.55,
+              "delta": 0.008333333333333333,
+              "rescued": 6,
+              "harmed": 5,
+              "paired_ci95": [
+                -0.041666666666666664,
+                0.058333333333333334
+              ],
+              "exact_mcnemar": 1.0
+            },
+            "f1": {
+              "n": 120,
+              "reference": 0.7387123300555838,
+              "controller": 0.7446416433919799,
+              "delta": 0.005929313336396086,
+              "rescued": 10,
+              "harmed": 9,
+              "paired_ci95": [
+                -0.031579556417038884,
+                0.04335793078635822
+              ],
+              "exact_mcnemar": null
+            },
+            "strict": {
+              "n": 120,
+              "reference": 0.0,
+              "controller": 0.0,
+              "delta": 0.0,
+              "rescued": 0,
+              "harmed": 0,
+              "paired_ci95": [
+                0.0,
+                0.0
+              ],
+              "exact_mcnemar": null
+            },
+            "valid": {
+              "n": 120,
+              "reference": 1.0,
+              "controller": 1.0,
+              "delta": 0.0,
+              "rescued": 0,
+              "harmed": 0,
+              "paired_ci95": [
+                0.0,
+                0.0
+              ],
+              "exact_mcnemar": null
+            }
+          }
+        },
+        {
+          "dataset": "squad",
+          "depth": 4,
+          "mode": "span",
+          "paired": {
+            "correct": {
+              "n": 120,
+              "reference": 0.5916666666666667,
+              "controller": 0.5583333333333333,
+              "delta": -0.03333333333333333,
+              "rescued": 2,
+              "harmed": 6,
+              "paired_ci95": [
+                -0.08333333333333333,
+                0.008333333333333333
+              ],
+              "exact_mcnemar": 0.2890625
+            },
+            "f1": {
+              "n": 120,
+              "reference": 0.7337474536630253,
+              "controller": 0.7395852963758681,
+              "delta": 0.005837842712842712,
+              "rescued": 8,
+              "harmed": 7,
+              "paired_ci95": [
+                -0.025914682539682543,
+                0.03901695526695527
+              ],
+              "exact_mcnemar": null
+            },
+            "strict": {
+              "n": 120,
+              "reference": 0.008333333333333333,
+              "controller": 0.008333333333333333,
+              "delta": 0.0,
+              "rescued": 0,
+              "harmed": 0,
+              "paired_ci95": [
+                0.0,
+                0.0
+              ],
+              "exact_mcnemar": null
+            },
+            "valid": {
+              "n": 120,
+              "reference": 1.0,
+              "controller": 1.0,
+              "delta": 0.0,
+              "rescued": 0,
+              "harmed": 0,
+              "paired_ci95": [
+                0.0,
+                0.0
+              ],
+              "exact_mcnemar": null
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "cohort": "Fixed development screen. No test comparisons.",
+  "length_and_format_caveat": "Strata depend on generated text and are descriptive, not controlled causality."
+}

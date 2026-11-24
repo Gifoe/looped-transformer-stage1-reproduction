@@ -10,6 +10,7 @@ grep -qx DONE run_after_stage1.log
 test -s results/RESULTS.json
 test -s results/FINAL_CONTROLLER.pt
 test -s MECHANISM.md
+if [[ ! -s results/C_D_DEV_AUDIT.json ]]; then "$py" audit_cd.py; fi
 g() { git -C "$repo" "$@"; }
 base=$(g rev-parse HEAD)
 mkdir -p "$target"/{configs,data/panel,results,logs}
@@ -20,7 +21,7 @@ cp ./*.sh ./*.md "$target/"
 cp configs/study.json "$target/configs/"
 cp data/{MANIFEST.json,EXCLUSIONS.jsonl,SCHEDULE_PREFLIGHT.json} "$target/data/"
 cp data/panel/PANEL.json "$target/data/panel/"
-cp results/{RESULTS.csv,RESULTS.json,FINAL_CONTROLLER.pt,FREEZE.json,DEVELOPMENT_SELECTION.json,CD_COMPUTE_AUDIT.json} "$target/results/"
+cp results/{RESULTS.csv,RESULTS.json,ERRORS.csv,FINAL_CONTROLLER.pt,FREEZE.json,DEVELOPMENT_SELECTION.json,CD_COMPUTE_AUDIT.json,C_D_DEV_AUDIT.json} "$target/results/"
 cp GPU_LEDGER.tsv "$target/"
 
 bundle() {

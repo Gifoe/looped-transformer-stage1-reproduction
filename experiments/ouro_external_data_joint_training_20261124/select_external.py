@@ -4,13 +4,12 @@ import argparse
 import json
 from pathlib import Path
 
-from evaluate_core import DECODE, TASKS
+from evaluate_core import DEVELOPMENT_REFERENCES, TASKS
 import minimal
 import paired_analysis
 from task_data import load
 
 
-REFERENCES = {"candidate": "t1", "content": "retention", "span": "retention", "gsm_process": "mixed"}
 PRIMARY = {"candidate": ("acc_norm",), "content": ("correct",), "span": ("correct",),
            "gsm_process": ("strict", "process_correct")}
 DAMAGE = .02
@@ -34,7 +33,7 @@ def assess(directory, arm, phase):
             for k in (2, 3, 4):
                 own = checked(directory, ds, arm, k, mode, phase)
                 native = checked(directory, ds, 'native', k, mode, phase)
-                comparator = REFERENCES[mode]
+                comparator = DEVELOPMENT_REFERENCES[mode]
                 strong = checked(directory, ds, comparator, k, mode, phase)
                 n = paired_analysis.compare(native, own)
                 s = paired_analysis.compare(strong, own)

@@ -21,9 +21,10 @@ TASKS = {
 DECODE = {"candidate": (1, 12), "content": (24, 48), "letter": (8, 48), "span": (24, 32), "gsm_process": (192, 24)}
 STRIDE = 576
 LIMITS = {"dev-small": 120, "dev-large": 360, "test": None, "transfer": 192}
+DEVELOPMENT_REFERENCES = {"candidate": "t1", "content": "retention", "span": "retention", "gsm_process": "mixed"}
 
 
-def job_sets(data, phase, depths, requested):
+def job_sets(data, phase, depths, requested, arm):
     group = "dev" if phase.startswith("dev-") else "test"
     manifest = json.loads((data / "PANEL.json").read_text())["files"]
     for ds in requested:
@@ -39,6 +40,9 @@ def job_sets(data, phase, depths, requested):
         modes = TASKS[ds]
         if group == "dev":
             modes = tuple(mode for mode in modes if mode != "letter")
+        if phase == "dev-large" and arm in DEVELOPMENT_REFERENCES.values():
+            # Expanded development baselines only need their registered comparison endpoints.
+            modes = tuple(mode for mode in modes if DEVELOPMENT_REFERENCES[mode] == arm)
         for mode in modes:
             batch_rows = data_mode(rows, ds, mode)
             for k in depths:
@@ -75,8 +79,18 @@ def finish(path, rows, spec, cost, hardware):
                                                 rows_sha256=minimal.sha(path)))
 
 
+def check_runtime(freeze, hardware):
+    study = Path(__file__).resolve().parent / "configs/study.json"
+    if freeze["study_config_sha256"] != minimal.sha(study):
+        raise ValueError("The frozen study configuration was changed")
+    files = json.loads(study.read_text())["model_files_sha256"]
+    if hardware["model_sha256"] != freeze["model_sha256"] or hardware["files_sha256"] != files:
+        raise ValueError("Ouro model, configuration, or tokenizer differs from the seal")
+
+
 @torch.inference_mode()
 def run(a):
+    freeze = None
     if a.phase in ("test", "transfer"):
         if a.freeze is None:
             raise ValueError("Official scoring requires a sealed checkpoint registry and protocol")
@@ -91,8 +105,10 @@ def run(a):
         if a.phase == "transfer" and set(a.depths) - {2, 3, 5, 6}:
             raise ValueError("Transfer uses registered held-out depths")
     checksum = minimal.sha(a.checkpoint) if a.checkpoint else "native"
-    specs = list(job_sets(a.data, a.phase, a.depths, a.tasks))
+    specs = list(job_sets(a.data, a.phase, a.depths, a.tasks, a.arm))
     archive, model, tok, hardware = minimal.runtime(a.archive, a.previous, a.model)
+    if freeze is not None:
+        check_runtime(freeze, hardware)
     net = controller(a.checkpoint, next(model.parameters()).device)
     a.out.mkdir(parents=True, exist_ok=True)
     for spec, rows in specs:

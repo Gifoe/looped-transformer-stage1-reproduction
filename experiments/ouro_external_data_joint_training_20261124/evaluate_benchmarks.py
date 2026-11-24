@@ -11,7 +11,7 @@ import numpy as np
 import torch
 
 from controller_io import controller
-from evaluate_core import finish, verified
+from evaluate_core import check_runtime, finish, verified
 import minimal
 
 
@@ -165,8 +165,7 @@ def run(a):
     if weight is not None and minimal.sha(weight) != slot["sha256"]:
         raise ValueError("The frozen Rank-1 checkpoint was changed")
     _, model, tokenizer, hardware = minimal.runtime(a.archive,a.previous,a.model)
-    if hardware["model_sha256"] != plan["model_sha256"]:
-        raise ValueError("Ouro checkpoint changed")
+    check_runtime(plan, hardware)
     net = controller(weight,next(model.parameters()).device)
     a.out.mkdir(parents=True,exist_ok=True)
     if a.task=="mmlu_pro":

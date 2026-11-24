@@ -39,14 +39,19 @@ def finite_summary(rows):
         grouped[key].setdefault(row['id'],{})[row['arm']]=row
     output=[]
     for (view, group,depth,dose), by_question in sorted(grouped.items()):
-        effects, errors, pair_gap={}, {}, []
+        effects, local_slopes, errors, agreement = {}, {}, {}, {}
         for arm in ('C','D'):
-            effects[arm]=uncertainty([item[arm]['q_edited']-item[arm]['q_native'] for item in by_question.values()])
-            errors[arm]=float(np.mean([abs(item[arm]['q_edited']-item[arm]['q_native']-item[arm]['linear']) for item in by_question.values()]))
-        for item in by_question.values():
-            pair_gap.append(item['D']['q_edited']-item['C']['q_edited'])
+            observations = [item[arm] for item in by_question.values()]
+            observed = np.asarray([item['q_edited']-item['q_native'] for item in observations])
+            predicted = np.asarray([item['linear'] for item in observations])
+            effects[arm] = uncertainty(observed)
+            local_slopes[arm] = uncertainty(predicted / dose)
+            errors[arm] = float(np.abs(observed - predicted).mean())
+            agreement[arm] = float(np.mean(np.sign(observed) == np.sign(predicted)))
+        pair_gap = [item['D']['q_edited']-item['C']['q_edited'] for item in by_question.values()]
         output.append(dict(view=view,group=group,depth=depth,dose=dose,paired_D_minus_C=uncertainty(pair_gap),
-                           native_relative=effects, mean_absolute_linear_error=errors))
+                           native_relative=effects, local_signed_slopes=local_slopes,
+                           mean_absolute_linear_error=errors, sign_agreement=agreement))
     return output
 
 
