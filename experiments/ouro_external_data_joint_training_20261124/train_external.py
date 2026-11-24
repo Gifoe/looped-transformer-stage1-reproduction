@@ -87,6 +87,7 @@ def features(tok, rows):
     return result
 
 
+@torch.enable_grad()
 def train(a, archive, model, tok, rows, runtime):
     a.out.mkdir(parents=True, exist_ok=True)
     minimal.dump(a.out / "RUNTIME.json", runtime)

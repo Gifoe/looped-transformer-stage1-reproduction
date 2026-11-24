@@ -1,0 +1,303 @@
+{
+  "status": "passed",
+  "training": {
+    "checkpoint_sha256": "5e202f9461680b70cee4f73a3ff610608b35525dc76be19bf0384b5e2a9cbb2e",
+    "parameters": 4096,
+    "optimizer_updates": 3,
+    "exposed_views": {
+      "K2/csqa/mc_content": 2,
+      "K2/gsm8k/gsm_final": 1,
+      "K2/gsm8k/gsm_process": 3,
+      "K2/obqa/mc_content": 1,
+      "K2/obqa/mc_letter": 1,
+      "K3/csqa/mc_content": 2,
+      "K3/gsm8k/gsm_final": 1,
+      "K3/gsm8k/gsm_process": 3,
+      "K3/obqa/mc_content": 1,
+      "K3/obqa/mc_letter": 1,
+      "K4/csqa/mc_content": 1,
+      "K4/csqa/mc_letter": 1,
+      "K4/gsm8k/gsm_final": 1,
+      "K4/gsm8k/gsm_process": 3,
+      "K4/obqa/mc_letter": 2
+    },
+    "target_tokens": 796,
+    "padded_token_loops": 13340,
+    "seconds": 2.1840178314596415,
+    "peak_cuda_bytes": 4764699648,
+    "logs": [
+      {
+        "epoch": 1,
+        "step": 1,
+        "depth": 2,
+        "nll": 2.7025176882743835,
+        "grad": 0.11058802157640457,
+        "ranking": 3.3672854900360107,
+        "target_tokens": 221,
+        "padded_token_loops": 2544,
+        "views": [
+          [
+            "csqa",
+            "csqa/64ec08b8c35c93bfafab9669da0b0e91",
+            "short",
+            "mc_content",
+            2
+          ],
+          [
+            "csqa",
+            "csqa/766477be9ecd1137b20b9e6baa647d2b",
+            "short",
+            "mc_content",
+            4
+          ],
+          [
+            "obqa",
+            "obqa/14-1428",
+            "short",
+            "mc_content",
+            5
+          ],
+          [
+            "obqa",
+            "obqa/12-963",
+            "short",
+            "mc_letter",
+            2
+          ],
+          [
+            "gsm8k",
+            "gsm/fd23914e644d4a3db7e73703b38583e1079cc7fee11647e4866c72df357c5a3c",
+            "process",
+            "gsm_process",
+            80
+          ],
+          [
+            "gsm8k",
+            "gsm/36877cea5323c08f7deaf7b07bfae624479f2db5918f0a4e4859a597e8e54432",
+            "final",
+            "gsm_final",
+            4
+          ],
+          [
+            "gsm8k",
+            "gsm/5ed96b39265e77c281abce9e57d4ec1587f51ef8ba2ec0964305a92e299b429a",
+            "process",
+            "gsm_process",
+            65
+          ],
+          [
+            "gsm8k",
+            "gsm/abbea6e3cbd960219907898e92d7b885329cfc0cf40089c8324a2a34e1a45c10",
+            "process",
+            "gsm_process",
+            59
+          ]
+        ],
+        "cumulative_seconds": 1.1213080268353224
+      },
+      {
+        "epoch": 1,
+        "step": 2,
+        "depth": 3,
+        "nll": 1.6364256143569946,
+        "grad": 0.2507386803627014,
+        "ranking": 1.0694284439086914,
+        "target_tokens": 350,
+        "padded_token_loops": 5748,
+        "views": [
+          [
+            "csqa",
+            "csqa/205dad291e5318efc42d5e00d413edb6",
+            "short",
+            "mc_content",
+            3
+          ],
+          [
+            "csqa",
+            "csqa/f7475c20c45b074db9e2c343b42b3b4c",
+            "short",
+            "mc_content",
+            2
+          ],
+          [
+            "obqa",
+            "obqa/10-874",
+            "short",
+            "mc_content",
+            5
+          ],
+          [
+            "obqa",
+            "obqa/10-322",
+            "short",
+            "mc_letter",
+            2
+          ],
+          [
+            "gsm8k",
+            "gsm/d95d8f893b07e7eda33f85b8113e839c0156f1af237a8083ee15ef81be303d4b",
+            "process",
+            "gsm_process",
+            93
+          ],
+          [
+            "gsm8k",
+            "gsm/ce07c7a2b7466b3e43630f044ece3edf813245533f411bc7b47d6a7dd4e31d7b",
+            "process",
+            "gsm_process",
+            118
+          ],
+          [
+            "gsm8k",
+            "gsm/8e5ca0408d8fcc88b071129983fdbed174ec79743c781ddaa96b3f7311b29115",
+            "final",
+            "gsm_final",
+            5
+          ],
+          [
+            "gsm8k",
+            "gsm/fc75546e92689c549de25e87a3e470ef69fe15bb3fb8f80353c51521798c64dd",
+            "process",
+            "gsm_process",
+            122
+          ]
+        ],
+        "cumulative_seconds": 1.6089680716395378
+      },
+      {
+        "epoch": 1,
+        "step": 3,
+        "depth": 4,
+        "nll": 1.507786363363266,
+        "grad": 0.20039698481559753,
+        "ranking": 0.8134478330612183,
+        "target_tokens": 225,
+        "padded_token_loops": 5048,
+        "views": [
+          [
+            "csqa",
+            "csqa/1e4bc9dddd752c31311bd4ff105073bc",
+            "short",
+            "mc_content",
+            2
+          ],
+          [
+            "csqa",
+            "csqa/1d8b598fac27504b182b85ab6f543a89",
+            "short",
+            "mc_letter",
+            2
+          ],
+          [
+            "obqa",
+            "obqa/11-265",
+            "short",
+            "mc_letter",
+            2
+          ],
+          [
+            "obqa",
+            "obqa/14-273",
+            "short",
+            "mc_letter",
+            2
+          ],
+          [
+            "gsm8k",
+            "gsm/798134a6e91649b5fe3e94c42cc338d0a2724d08878a4c4d9cfac580a7bb7541",
+            "process",
+            "gsm_process",
+            75
+          ],
+          [
+            "gsm8k",
+            "gsm/77aff52713257cc96d36d5fdb904f85ed04af32e8257c98c6138e25a15f0e97c",
+            "process",
+            "gsm_process",
+            68
+          ],
+          [
+            "gsm8k",
+            "gsm/c526bff8328b806ac71aa4a6f853dbaa9147ab5209cc8397ace6e2ca6050cafe",
+            "process",
+            "gsm_process",
+            67
+          ],
+          [
+            "gsm8k",
+            "gsm/6502cac9591aad86eaca6de6645742de9921dfbe96c8457b71e4672f8787c4cb",
+            "final",
+            "gsm_final",
+            7
+          ]
+        ],
+        "cumulative_seconds": 2.1773409452289343
+      }
+    ]
+  },
+  "generation": {
+    "rows": [
+      {
+        "id": "gsm/903991e351bfe6d9c1334cf23554edc63a51546f3571bf4fe37b095d569837de",
+        "prediction": " To determine how many days it takes the",
+        "generated_tokens": [
+          1626,
+          3346,
+          638,
+          800,
+          2009,
+          357,
+          2933,
+          260
+        ],
+        "stop": "token_limit",
+        "label": null,
+        "answer_tokens": 8,
+        "metrics": {
+          "correct": false,
+          "strict": false,
+          "valid": false,
+          "parsed": null,
+          "process": false,
+          "completed": false
+        }
+      }
+    ],
+    "cost": {
+      "seconds": 0.39311316050589085,
+      "model_calls": 8,
+      "backbone_padded_token_loops": 1256,
+      "generated_tokens": 8,
+      "cuda_peak": 4764699648
+    }
+  },
+  "configuration": {
+    "recipe": "B",
+    "rank_weight": 0.25,
+    "seed": 261124137,
+    "initial_factors_sha256": "a25e360b449ab2252af5bd1c6f37c0e1b032a4b19f9e455c51254490122edfc3",
+    "lr": 0.001,
+    "dataset_sha256": "dbe6ef4361b73fd423a0c500acedb5ec62809cddec7186021178d219c7afd39f",
+    "code_sha256": "f5f74449301445f099bd734d5e0413ce377d8147841395f72c9a9fd7a7d15cc0",
+    "model_sha256": "58872a72616c736595b8b7662079c5b12c5a162ec16eae94f21c348dfa9885af",
+    "depths": [
+      2,
+      3,
+      4
+    ],
+    "per_step": [
+      2,
+      2,
+      4
+    ],
+    "epochs": 5,
+    "microbatch": 4,
+    "smoke_updates": 3,
+    "max_work": null
+  },
+  "initial_failed_attempt": {
+    "gpu_seconds": 17,
+    "failure": "loss had no backward graph",
+    "fix": "enable gradients inside the frozen-backbone training entry point"
+  }
+}

@@ -167,7 +167,12 @@ def main():
     if frozen.exists():
         if not a.development_only:
             final_panel(a,frozen)
+        print("DONE",flush=True)
         return
+    parity=Path('results/smoke/TRAIN_DECODE_PARITY.json')
+    if not parity.exists():
+        job('train_decode_parity','verify_parity.py',[*a.common,'--data','data','--out',parity,
+                                                     '--checkpoint',weight('B',SEEDS[0],1)])
     for arm, pth in refs.items():
         if arm != "t2":
             core(a,arm,pth,"dev-small",(2,3,4))
