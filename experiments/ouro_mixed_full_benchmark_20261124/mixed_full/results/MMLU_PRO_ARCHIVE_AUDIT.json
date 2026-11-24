@@ -1,0 +1,98 @@
+{
+  "n": 12032,
+  "original": {
+    "original_runner_sha256": "2ca896636adbe83f1939a9f1ea7e2af1246de3d7ab8ed6ce23d13f85222c3e03",
+    "active_runner_sha256": "c645b5ec024f7dfe6ddfbc0ff26fc52d3251e6b48743f1ac7517c1125c8b1a49",
+    "equal_greedy_without_parity": {
+      "prompt_items": "269e8c50231557c72330d5275f9e495c5b7b3aefb5a2568b20212915cc951e97",
+      "extract": "aeedda5e8a7de123182406369aa4c9ded1bb5cc30642091ac72821bad5adbd7a",
+      "batches": "84bd14c356ef86bdc371978b2d68f4d152a97d8560799ac15d7d2ee79291fd9c",
+      "cache_type": "8210451c310e991d4161ba7d7ae0722685e3490d2ef669b1d3d3731b52faf3a7",
+      "forward": "434bea1eef537afa741d168479ece030ad859b0dd8c39e9dae289fd3ab58b45c",
+      "prepare": "51626f62ea9848663ff5f8fa65ada4fedbefd0c54172aae849526c5ea6828da9",
+      "greedy": "78604a3e0f177da8bbbe9529410b15b48021c9de477e98ac49f5e5b9a5d78590"
+    },
+    "rollout_lock_sha256": "f51b631a87522c54490273527ec9fc8dc6e8bc8bc886f372ad295f91bd7d1f16",
+    "original_protocol": {
+      "arms": [
+        "native",
+        "fixed",
+        "adaptive",
+        "feedback"
+      ],
+      "depth": 4,
+      "max_new_tokens": 8,
+      "batch_size": 96,
+      "capacity_tokens": 14500,
+      "seed": 0,
+      "decoding": "greedy",
+      "shots": 0,
+      "dataset": {
+        "dataset": "TIGER-Lab/MMLU-Pro",
+        "revision": "b189ec765aa7ed75c8acfea42df31fdae71f97be",
+        "source": "data/test-00000-of-00001.parquet",
+        "split": "test",
+        "rows": 12032,
+        "sha256": "0e24a191921c2f453518a537a8b2117bd137e7714d4ef1565e9ba06c1ecb9ad8",
+        "columns": [
+          "question_id",
+          "question",
+          "element",
+          "answer",
+          "answer_index",
+          "cot_content",
+          "category",
+          "src"
+        ]
+      },
+      "freeze_sha256": "c5aaef5ea66825f568d10e1ffdfa975040e5b1086caed96d2f2deedd6876d700",
+      "weight_sha256": "513a964b07f6a70d79fdbf2a36effa85fc757194cb89fc84993a2323da2abeb8",
+      "code_sha256": "2ca896636adbe83f1939a9f1ea7e2af1246de3d7ab8ed6ce23d13f85222c3e03",
+      "sources": "Ouro native plus LoopCD .3 fixed/.5 adaptive using K1 reference.",
+      "model": {
+        "model_revision": "574fa66cb8bf5abdc979642d01cf2b79b16bfab1",
+        "model_sha256": "58872a72616c736595b8b7662079c5b12c5a162ec16eae94f21c348dfa9885af",
+        "torch": "2.7.1+cu128",
+        "transformers": "4.55.4",
+        "torch_cuda": "12.8",
+        "gpu": "NVIDIA GeForce RTX 4090 D",
+        "cuda_capability": [
+          8,
+          9
+        ],
+        "capacity_bytes": 25250627584,
+        "dtype": "bfloat16",
+        "attention": "sdpa",
+        "use_cache": false,
+        "files_sha256": {
+          "config.json": "ce9cc13da41591b8b4deca053d7dfee06424c0228628ee862ea86d725bc163f3",
+          "configuration_ouro.py": "950443e32929047aa08d02abad2e1888bc1914b3db988d3d675f70787f65dafb",
+          "merges.txt": "0b54e8aa4e53d5383e2e4bc635a56b43f9647f7b13832d5d9ecd8f82dac4f510",
+          "model.safetensors": "58872a72616c736595b8b7662079c5b12c5a162ec16eae94f21c348dfa9885af",
+          "modeling_ouro.py": "c5c68fbb368ce2909c257ae2afc50719be8c91539333d3295e19312c4316f413",
+          "special_tokens_map.json": "55087bb8409060d9cb0f80495e34f4e0d8a84f68a799a6b0cab3132be0aae319",
+          "tokenizer.json": "fcb808fe5e7642f5299be28aea07fc7f6d4f4364c3ac5e408e15a772cbc8fa8d",
+          "tokenizer_config.json": "7e010da95d71b0fa1aa809552922c74cc1dd98d628f21ba39ca6c35aa18d5d91",
+          "vocab.json": "7b9de3f47796abf8d00ab96be299fea0dc9afdf1827f34e7e0b9fb44593efe5c"
+        }
+      }
+    }
+  },
+  "baseline_cost": {
+    "native": {
+      "seconds": 414.9961185976863,
+      "peak_allocated_bytes": 15189627392,
+      "sha256": "fc10604fb688cd50190bdebee8d8e61e635d63a05dd25dda1f61551c81062a0c"
+    },
+    "fixed": {
+      "seconds": 413.8657453171909,
+      "peak_allocated_bytes": 15189627392,
+      "sha256": "ba6164709843f1762ac4af2cd9e7f48f8517bbd335d7e17663509206b1c7c4c8"
+    },
+    "adaptive": {
+      "seconds": 413.7263077311218,
+      "peak_allocated_bytes": 15189627392,
+      "sha256": "9a96a7befa9be19c2b791e2048f002e85603fa73cd71b3445d0c6f65e3d9b218"
+    }
+  }
+}

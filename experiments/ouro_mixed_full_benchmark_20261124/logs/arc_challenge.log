@@ -1,0 +1,18 @@
+Traceback (most recent call last):
+  File "/root/ouro-external-data-joint-training-20261124/mixed_full/mixed_evaluate.py", line 23, in <module>
+    evaluator.run(args)
+  File "/root/autodl-tmp/ouro-cross-task-20261118/venv/lib/python3.12/site-packages/torch/utils/_contextlib.py", line 116, in decorate_context
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/root/ouro-external-data-joint-training-20261124/evaluate_benchmarks.py", line 174, in run
+    seven(a,plan,model,tokenizer,net,hardware)
+  File "/root/ouro-external-data-joint-training-20261124/evaluate_benchmarks.py", line 55, in seven
+    panel = scorer.check_archive(a, stage, hardware, name, compared)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/ouro-unified-rank1-20261123/seven_unified.py", line 122, in check_archive
+    requests, manifest = stage2.read_export(SimpleNamespace(
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/ouro-external-data-joint-training-20261124/mixed_full/archive/code/stage2_score.py", line 375, in read_export
+    raise ValueError("Export has a shot mismatch or a duplicate task receipt")
+ValueError: Export has a shot mismatch or a duplicate task receipt
+COMPLETE arc_challenge mixed 1172
