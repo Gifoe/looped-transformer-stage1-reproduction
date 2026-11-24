@@ -1,6 +1,6 @@
 # Ouro 单一 Rank-1 外部数据联合训练
 
-本目录锁定 A/B/C/D 的训练输入、题级调度和正式评测口径。数据与 CPU 调度检查通过。GPU 小样本已在 K2、K3、K4 各完成一次更新并执行真实生成，正式评测结果尚未产生。 [GPU 验证回执](results/SMOKE_RECEIPT.json)
+本目录锁定 A/B/C/D 的训练输入、题级调度和正式评测口径。GPU 小样本及实际训练与解码一致性检查通过。A、B 各完成 1,500 次实际更新，逐步题号、视图、深度和目标词元数一致。开发评测正在进行，正式评测尚未开始。 [GPU 验证回执](results/SMOKE_RECEIPT.json) · [A/B 训练回执](results/A_B_TRAINING_AUDIT.json) · [写入与解码核验](results/TRAIN_DECODE_PARITY.json)
 
 ## 对照
 
