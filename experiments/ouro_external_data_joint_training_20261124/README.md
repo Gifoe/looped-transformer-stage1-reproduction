@@ -1,6 +1,6 @@
 # Ouro 单一 Rank-1 外部数据联合训练
 
-本目录锁定 A/B/C/D 的训练输入、题级调度和正式评测口径。GPU 小样本及实际训练与解码一致性检查通过。A、B 各完成 1,500 次实际更新，逐步题号、视图、深度和目标词元数一致。开发评测正在进行，正式评测尚未开始。 [GPU 验证回执](results/SMOKE_RECEIPT.json) · [A/B 训练回执](results/A_B_TRAINING_AUDIT.json) · [写入与解码核验](results/TRAIN_DECODE_PARITY.json)
+本目录锁定 A/B/C/D 的训练输入、题级调度和正式评测口径。A、B 各完成 1,500 次匹配更新及小开发集评测。按预先规则选定 A 的纯生成 NLL，C/D 使用同一目标。正式评测尚未开始。 [A/B 配对开发结果](AB_SCREEN.md) · [A/B 训练回执](results/A_B_TRAINING_AUDIT.json) · [写入与解码核验](results/TRAIN_DECODE_PARITY.json)
 
 ## 对照
 
@@ -16,6 +16,7 @@
 如果 D 在三轮等题数比较中超过 C 且多消耗至少 10% 骨干 token×loop，会加做同种子的 D 训练，达到 C 的实际工作量后在首个完整更新处停止，记录剩余差异和总更新。该对照只用于核对计算成本的解释。
 
 开发选择优先减少比 Native 低 2 个百分点且配对区间上界低于零的端点数，再比较相对 Native 的最弱差值、相对事前强参照的最弱差值和等权任务类平均。原七项采用表中已锁定的 Stage2 请求，主指标在配置里固定。MMLU-Pro 复用原有零样本全词表生成与答案解析。可核验的 Native、T1、T2 逐题历史回执直接复用。历史 T1/T2 使用完整 ARC Train 1,119 题、280 步，分别是候选排序和内容／字母生成加排序。Retention 源于 CSQA/OBQA 成对短答训练，普通 mixed 来自本系列前一轮的四源训练。
+
 
 ## 单卡运行
 

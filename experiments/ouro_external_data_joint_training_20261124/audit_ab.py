@@ -49,12 +49,46 @@ def run(root, seed):
     return dict(seed=seed,matched=True,shared={key:locks['A'][key] for key in subject},epochs=blocks)
 
 
+def development(roots, output):
+    from paired_analysis import compare, METRICS
+    from select_external import assess, ordering
+    from task_data import load
+
+    METRICS.update(('process_correct','premature_eos','token_limit','eos_before_16','repetitive'))
+    seed=output['seed']
+    all_scores={}
+    for epoch in output['epochs']:
+        n=epoch['epoch']
+        tags={arm:f'{arm}_s{seed}_e{n}' for arm in 'AB'}
+        effects=[]
+        for left in sorted(roots.glob(f'*__{tags["A"]}__*.jsonl')):
+            ds, _, depth, mode = left.stem.split('__')
+            right=roots/f'{ds}__{tags["B"]}__{depth}__{mode}.jsonl'
+            docs = [read(f.with_suffix('.json')) for f in (left,right)]
+            for letter,path,doc in zip('AB',(left,right),docs,strict=True):
+                if doc['rows_sha256'] != signature(path) or doc['plan']['checkpoint_sha256']!=epoch['arms'][letter]['checkpoint_sha256']:
+                    raise ValueError('Development receipt differs from training')
+            delta=compare(load(left),load(right))
+            effects.append(dict(dataset=ds,depth=depth,mode=mode,paired=delta))
+        if len(effects)!=24:
+            raise ValueError(f'Expected 24 complete development comparisons per epoch, got {len(effects)}')
+        scores={arm:assess(roots,tags[arm],'dev-small') for arm in tags}
+        epoch['paired_B_minus_A']=effects
+        epoch['selection_metrics']={arm:ordering(row) for arm,row in scores.items()}
+        all_scores.update({row['arm']:row for row in scores.values()})
+    output['best_first_three']={arm:max((row for row in all_scores.values() if row['arm'].startswith(arm+'_')),key=ordering)['arm'] for arm in 'AB'}
+    output['development_only']=True
+
+
 if __name__=='__main__':
     p=argparse.ArgumentParser(description=__doc__)
     p.add_argument('--fits',type=Path,default=Path('results/fits'))
     p.add_argument('--seed',type=int,default=261124137)
     p.add_argument('--out',type=Path,default=Path('results/A_B_TRAINING_AUDIT.json'))
+    p.add_argument('--development',type=Path)
     a=p.parse_args()
     out=run(a.fits,a.seed)
+    if a.development:
+        development(a.development,out)
     a.out.write_text(json.dumps(out,indent=2)+'\n')
     print([(row['epoch'],row['arms']['A']['updates'],row['rank_auxiliary_work_ratio']) for row in out['epochs']],flush=True)
