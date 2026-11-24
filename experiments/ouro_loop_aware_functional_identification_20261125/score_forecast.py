@@ -87,6 +87,13 @@ def run(a):
     outcomes=scores(a.results,lock)
     if not outcomes:
         raise ValueError('No closed held-out interventions')
+    for target in plan['source_order']:
+        for source in plan['source_order']:
+            if target == source:
+                continue
+            for depth, dose, direction in itertools.product((3, 4, 5), (.1, .5, 1.), ('loop', 'excess')):
+                if (target, depth, f'{source}__{direction}', dose) not in outcomes:
+                    raise ValueError(f'Incomplete confirmation for {source} to {target} at K{depth}, dose {dose}')
     entries=[]
     kinds=sorted({(key[1],key[3]) for key in outcomes})
     scopes=sorted(set(r['scope'] for r in plan['records']))

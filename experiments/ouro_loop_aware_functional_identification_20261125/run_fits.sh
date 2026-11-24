@@ -38,6 +38,7 @@ print(*data['source_order'],sep='\n')
 PY
 )
 limit=${roster[0]}
+weights=(--weight "t1=$t1" --weight "t2=$t2" --weight "mixed=$mixed")
 for source in "${roster[@]:1}"; do
     dest="results/fits/source_$source"
     if [[ ! -s "$dest/TRAIN.json" ]]; then
@@ -45,8 +46,8 @@ for source in "${roster[@]:1}"; do
         "$py" -u train_identification.py "${common[@]}" --arm uniform --include "$source" \
             --limit "$limit" --out "$dest" > "logs/fit_source_$source.log" 2>&1
     fi
+    weights+=(--weight "source_$source=$dest/controller.pt")
 done
-weights=(--weight "t1=$t1" --weight "t2=$t2" --weight "mixed=$mixed")
 for label in uniform ordinary loop warm_uniform warm_loop; do
     dest="results/fits/$label"
     initialization=()

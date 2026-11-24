@@ -44,7 +44,7 @@ for source in "${domains[@]}"; do
     "$py" -u collect_identification.py "${runtime[@]}" "${operators[@]}" \
         --input "data/pools_complete/$source.jsonl" --dataset "$source" \
         --mode candidate --depth 4 --batch 6 --token-budget 2600 --full-context \
-        --out "results/filtered_moments/$source"
+        --out "results/filtered_moments/$source/candidate/k4"
 done
 forecast=results/forecast_candidate
 "$py" -u freeze_forecast.py --moments results/filtered_moments --data data/pools_complete \
@@ -58,6 +58,8 @@ printf 'DONE\n' > run_forecast.log
 bash run_fits.sh
 ```
 
+`bash run_remaining_moments.sh` 继承前六个矩阵，再采集 SocialIQA、RACE、SQuAD、GSM8K，另建十来源预测。它使用与此前相同的固定折号，且不会覆盖首批候选预测。教师强制生成效用的逐词元正确率单独解释，不等同于自由生成的整题准确率。
+
 有限剂量诊断的输入应为官方 ARC-Challenge Validation。脚本按固定哈希选取 24 题，记录所有真实剂量、有效写入线性估计和逐题正确性。
 
 ```bash
@@ -68,3 +70,19 @@ python plot_identification.py --observed EARLY_MECHANISM.json --out figures
 ```
 
 历史全量参考可从归档提交 `93b80141e1c81b4a632d4d8a696786c525cde697` 恢复。详见 [结果表](RESULTS.md)。
+
+## 正式评测入口
+
+`run_full.py` 读取已锁定的独立开发获胜者。首八项仅跑新权重，要求与历史 Mixed 全量 K4 使用相同的请求、模型和评分器。新增四项对新权重及 Native、T1、T2、Mixed 跑完整官方有标签集合。CommonsenseQA 的 1,221 题是官方公开 Validation，SQuAD 1.1 的 10,570 题是官方公开 Dev。脚本保存原评分及另计的标准指标。SQuAD 列标准 EM 与最大参考词元 F1，GSM8K 同时保存标准 `####` 精确匹配与历史宽松结果。新增四项的 Rank-8、LoopCD Fixed 与 LoopCD Adaptive 仍需补齐。
+
+```bash
+release="$joint/mixed_full"
+"$py" -u run_full.py "${runtime[@]}" --selection results/dev/SELECTION.json \
+    --reference-freeze "$release/FREEZE.json" --stage2 "$release/archive" \
+    --minimal-code "$feedback" --unified "$unified" \
+    --followup "$feedback/generation_followup" --historical "$historical" \
+    --panel "$joint/data/panel" --t1 "$t1" --t2 "$t2" --mixed "$mixed" \
+    --out results/official
+```
+
+以 `--block freeze` 只核对文件和拟合选择，以 `--block legacy` 或 `--block extra` 分别恢复任务块。生成分片与正式输出由历史评测器逐题校验。
