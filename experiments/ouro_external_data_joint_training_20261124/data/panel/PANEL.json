@@ -1,0 +1,83 @@
+{
+  "files": {
+    "dev_arc_challenge.jsonl": {
+      "rows": 299,
+      "sha256": "ac3d8d0bea4f3d67073cb03abe3f5bc29ee0f4292f2028f849709e1de9ffa9de"
+    },
+    "dev_csqa.jsonl": {
+      "rows": 360,
+      "sha256": "56c9ecd8466c201a1830063ef626d409ef2ac180bbb6ec40f0816b5c968508f6"
+    },
+    "dev_gsm8k.jsonl": {
+      "rows": 360,
+      "sha256": "4bcd2518024b1afaee282bb7b79e19114b24b02a8a505fe16995417ec145a682"
+    },
+    "dev_obqa.jsonl": {
+      "rows": 360,
+      "sha256": "08468d4208b1c5d90c6903c1a5d6d5483f53d13368d9951cdb0bd44f174b15f1"
+    },
+    "dev_scienceqa.jsonl": {
+      "rows": 360,
+      "sha256": "c3ffa3566a83b301e705e94c7c1b1001a98ba37545665842ad418f38f6be2620"
+    },
+    "dev_squad.jsonl": {
+      "rows": 360,
+      "sha256": "b5bc065832f4ad53295cd7611663370f9c50cf1f2f9144be877e50c8af1e5511"
+    },
+    "test_arc_challenge.jsonl": {
+      "rows": 1172,
+      "sha256": "a15e0809eb5f4307ef743f3d336fa9b89760f0a55f4d76ebbf0ef9b64bed7b43"
+    },
+    "test_csqa.jsonl": {
+      "rows": 1221,
+      "sha256": "713078683d8bf6a4b2108b75d3f94aeb612490bf110e3237276edccec342c6f0"
+    },
+    "test_gsm8k.jsonl": {
+      "rows": 1319,
+      "sha256": "8d9fd7c739acf2c1dd2fc6b8bf158b873d50a6032920f7f7f536b33b5f1554de"
+    },
+    "test_obqa.jsonl": {
+      "rows": 500,
+      "sha256": "9d33dac1cc645af232f22a6298984f2444e664df84e9c55c2f05c77543c24a7f"
+    },
+    "test_squad.jsonl": {
+      "rows": 10570,
+      "sha256": "f39636c71ab13ee4dd796ee9e6f0ebbcca6a5e455fa4f3cb7ede1ffbde112037"
+    }
+  },
+  "sources": {
+    "arc_challenge": {
+      "path": "/root/ouro-functional-transferability-20261123/inputs/upstream_arc_challenge_test.parquet",
+      "sha256": "62f03257e737aed263f55c6abf87c7bb0028a44a6bdd2a26eb1279eb42c1d1e9"
+    },
+    "csqa": {
+      "path": "/root/ouro-functional-transferability-20261123/data/csqa_validation.jsonl",
+      "sha256": "ea5964901ca1692e22d49f544916251a46cab4e58a46b03c6f579ce2f964bca9"
+    },
+    "obqa": {
+      "path": "/root/ouro-functional-transferability-20261123/inputs/obqa_test.parquet",
+      "sha256": "cd5483e366daa230c1c87bbdc512d8b7229f14f6dd04d19fc8b1a3855aaaa8a3"
+    },
+    "squad": {
+      "path": "/root/ouro-generative-functional-control-20261123/inputs/squad_validation.parquet",
+      "sha256": "8c6646d36bd5a95061e076788cf3161d11f6f3e7d625dac7a83bbed0a49f69f7"
+    },
+    "gsm8k": {
+      "path": "/root/ouro-generative-functional-control-20261123/inputs/gsm8k_test.parquet",
+      "sha256": "ee7b8da9e381df27b9e3f7758a159ab2bdaa4dbaa910546cbbc47e0cb44e4f59"
+    }
+  },
+  "dev_squad_history": {
+    "/root/ouro-generative-functional-control-20261123/data/full_mixed_train.jsonl": "573ee0ff8adfaa9119aa6dd43d5c945ce62a6d515b59a0faf0d0b80862ff7de9",
+    "/root/ouro-shared-functional-advantage-20261124/data/squad_fit.jsonl": "2440a3a3f7e3b19ced941694ab2b0b2506061561e59d1f1c9ca97507992e348d",
+    "/root/ouro-shared-functional-advantage-20261124/data/squad_development.jsonl": "ff8c13ed3ba927dc4a14f90f223e6e0b5ab719f1b5ca37ed0f22606ee7a37764",
+    "/root/ouro-shared-functional-advantage-20261124/data/squad_moment_holdout.jsonl": "a4fc8bafc0f76e3b9fb9b95d8ea2eb7f9b49ef06d575f63c9d38579c9b132615"
+  },
+  "dev_squad_filtered": {
+    "historical_or_eval_passage": 42472
+  },
+  "dev_squad_article_count": 10422,
+  "dev_squad_policy": "one question per normalized passage, no known old fitting, dev, moment holdout, or official validation passages",
+  "dev_arc": "historical official validation, excluded from joint training",
+  "test_scope": "historical full labeled panels, CSQA is author validation; development uses separate reserved cohorts"
+}

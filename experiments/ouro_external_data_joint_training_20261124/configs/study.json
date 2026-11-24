@@ -1,0 +1,27 @@
+{
+  "seeds": [261124137, 261124247, 261124359],
+  "train_depths": [2, 3, 4],
+  "measured_transfer_depths": [2, 3, 5, 6],
+  "batch_source_counts": [2, 2, 4],
+  "first_screen_epochs": [1, 2, 3],
+  "maximum_epoch": 5,
+  "sustained_extension_minimum_improvement": 0.005,
+  "selection_damage_effect": 0.02,
+  "process_versus_final": [3, 1],
+  "scienceqa_explanation_fraction_in_d": 0.5,
+  "native_degradation_comparator": "All primary point estimates must be at least Native. Report 95% intervals independently.",
+  "primary": {
+    "arc_challenge": "acc_norm",
+    "arc_easy": "acc_norm",
+    "sciq": "acc_norm",
+    "mmlu": "acc",
+    "hellaswag": "acc_norm",
+    "winogrande": "acc",
+    "piqa": "acc_norm",
+    "csqa": "acc_norm",
+    "obqa": "acc_norm",
+    "squad": "correct",
+    "gsm8k": "strict",
+    "mmlu_pro": "correct"
+  }
+}
