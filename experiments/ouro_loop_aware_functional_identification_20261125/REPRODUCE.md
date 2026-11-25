@@ -26,7 +26,7 @@ T1、T2 和 Mixed 的 SHA-256 依次为 `91d4919308bf9060ce0c44e4046e4851e7e59f6
 for k in 2 3 4; do
     "$py" -u collect_identification.py "${runtime[@]}" "${operators[@]}" \
         --input "$prior_transfer/data/arc_train.jsonl" --dataset arc_challenge \
-        --mode candidate --depth "$k" --out "results/original_arc/k$k"
+        --mode candidate --depth "$k" --out "results/moments/arc_challenge/candidate/k$k"
 done
 "$py" -u fetch_reading.py --out data/reading
 "$py" -u build_pools.py --transfer "$prior_transfer" --generation "$gen" --external "$joint" \
@@ -60,12 +60,27 @@ bash run_fits.sh
 
 `bash run_remaining_moments.sh` 继承前六个矩阵，再采集 SocialIQA、RACE、SQuAD、GSM8K，另建十来源预测。它使用与此前相同的固定折号，且不会覆盖首批候选预测。教师强制生成效用的逐词元正确率单独解释，不等同于自由生成的整题准确率。
 
+初轮训练和开发完成后，可用 `bash run_fit_refinement.sh` 比较匹配计算预算的单源对照以及 T1 初始化的因子切空间加权。按题数和按预算的模型结果分别分析。
+
+```bash
+"$py" -u score_source_training.py --forecast results/forecast_candidate/FORECAST.json \
+    --development results/dev/SELECTION.json --work-development results/dev_refinement/SELECTION.json \
+    --out results/forecast_candidate/TRAINED_VALUE.json
+"$py" -u forecast_direction_contrast.py --input results/forecast_candidate/confirmation \
+    --out results/forecast_candidate/DIRECTION_CONTRAST.json
+"$py" -u audit_cohort_independence.py --pools data/pools_complete \
+    --mmlu "$feedback/stage2/zero_shot/mmlu_cache" --confirmation results/forecast_candidate/confirmation \
+    --out results/COHORT_INDEPENDENCE.json
+```
+
 有限剂量诊断的输入应为官方 ARC-Challenge Validation。脚本按固定哈希选取 24 题，记录所有真实剂量、有效写入线性估计和逐题正确性。
 
 ```bash
 "$py" -u finite_identification.py "${runtime[@]}" "${operators[@]}" \
-    --input "$arc_validation" --dataset arc_challenge --mode candidate --depth 4 \
-    --limit 24 --out results/finite_arc_val
+    --input "$prior_transfer/data/arc_challenge_validation.jsonl" \
+    --dataset arc_challenge --mode candidate --depth 4 --limit 24 --out results/finite/arc_k4
+"$py" -u audit_depth_spectra.py --input results/moments/arc_challenge/candidate \
+    --out results/ARC_DEPTH_SPECTRA.json
 python plot_identification.py --observed EARLY_MECHANISM.json --out figures
 ```
 
@@ -87,3 +102,11 @@ release="$joint/mixed_full"
 ```
 
 以 `--block freeze` 只核对文件和拟合选择，以 `--block legacy` 或 `--block extra` 分别恢复任务块。生成分片与正式输出由历史评测器逐题校验。
+
+等价的串行入口为 `bash run_final_confirm.sh /absolute/path/to/SELECTION.json`。它对官方测试使用全局 GPU 锁，并在全部完成后执行逐题配对。发布目录由 `package_research.py` 从正式预测与封存回执生成。
+
+```bash
+"$py" -u aggregate_full.py --out results/official --release "$joint" --panel "$joint/data/panel" \
+    --stage2 "$release/archive" --minimal "$feedback" --model "$model" \
+    --followup "$feedback/generation_followup" --unified "$unified" --historical "$historical"
+```

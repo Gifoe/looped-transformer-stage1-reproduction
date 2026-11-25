@@ -178,7 +178,8 @@ def main(a):
             for baseline, comparisons in row["paired"].items():
                 for metric, comparison in comparisons.items():
                     flat.append({"benchmark": task, "mode": mode, "metric": metric, "baseline": baseline, **comparison})
-    minimal.dump(a.out / "RESULTS.json", {"freeze_sha256": minimal.sha(a.out / "FREEZE.json"), "tasks": rows})
+    minimal.dump(a.out / "RESULTS.json", {"freeze_sha256": minimal.sha(a.out / "FREEZE.json"),
+                                        "primary": lock["primary"], "tasks": rows})
     with (a.out / "RESULTS.csv").open("w", newline="", encoding="utf-8") as stream:
         writer = csv.DictWriter(stream, fieldnames=list(flat[0]))
         writer.writeheader()

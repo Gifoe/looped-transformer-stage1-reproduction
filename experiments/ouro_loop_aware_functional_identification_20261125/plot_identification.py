@@ -86,11 +86,58 @@ def forecast(audit,out):
     export(fig,out,'forecast_vs_observed')
 
 
+def direction_contrast(rows, out):
+    full_dose = [row for row in rows if row["dose"] == 1.]
+    fig, axes = plt.subplots(1, 3, figsize=(10.9, 3.35), sharey=True, layout="constrained")
+    endpoints = ("Post-loop utility", "Loop interaction", "Candidate accuracy (pp)")
+    for endpoint, (ax, title) in enumerate(zip(axes, endpoints, strict=True)):
+        multiplier = 100 if endpoint == 2 else 1
+        for j, row in enumerate(full_dose):
+            mean = multiplier * row["mean"][endpoint]
+            lo, hi = [multiplier * v for v in row["domain_question_ci95"][endpoint]]
+            ax.errorbar(mean, j, xerr=[[mean - lo], [hi - mean]], fmt="o",
+                        color="#175286", markersize=5, capsize=3, linewidth=1.4)
+        ax.axvline(0, color="#676767", lw=.8)
+        ax.set(yticks=range(len(full_dose)), yticklabels=[f'K{r["depth"]}' for r in full_dose],
+               title=title, xlabel="Loop-contrast axis − ordinary axis")
+    axes[0].invert_yaxis()
+    export(fig, out, "paired_direction_contrast")
+
+
+def official_results(document, out):
+    primary = document["primary"]
+    rows = {}
+    for row in document["tasks"]:
+        key = row["task"]
+        if key not in rows and primary[key] in row["paired"]["native"]:
+            rows[key] = row
+    if set(rows) != primary.keys():
+        raise ValueError("Final result figure requires every official primary endpoint")
+    fig, axes = plt.subplots(1, 2, figsize=(10.4, 5.4), sharey=True, layout="constrained")
+    for ax, references in zip(axes, (("native", "fixed", "adaptive"), ("t1", "rank8")), strict=True):
+        positions = np.arange(len(rows))
+        for j, name in enumerate(references):
+            results = [row["paired"][name][primary[key]] for key, row in rows.items()]
+            gain = 100 * np.array([r["change"] for r in results])
+            interval = 100 * np.array([r["ci95"] for r in results]).T
+            offset = (j - (len(references) - 1) / 2) * .20
+            color = ("#175286", "#2E8576", "#A54341")[j]
+            ax.hlines(positions + offset, interval[0], interval[1], lw=1., color=color)
+            ax.plot(gain, positions + offset, "o", ms=3.5, color=color, label=name)
+        ax.axvline(0, color="#676767", lw=.8)
+        ax.set(yticks=positions, yticklabels=[r.replace("_", " ") for r in rows], xlabel="New − reference (pp)")
+        ax.legend(ncols=len(references), fontsize=8, loc="upper center", bbox_to_anchor=(.5, 1.12))
+    axes[0].invert_yaxis()
+    export(fig, out, "official_k4_performance")
+
+
 if __name__=='__main__':
     p=argparse.ArgumentParser(description=__doc__)
     p.add_argument('--observed',type=Path,default=Path('EARLY_MECHANISM.json'))
     p.add_argument('--forecast',type=Path)
     p.add_argument('--audit',type=Path)
+    p.add_argument('--paired-directions',type=Path)
+    p.add_argument('--official',type=Path)
     p.add_argument('--out',type=Path,default=Path('figures'))
     args=p.parse_args()
     args.out.mkdir(parents=True,exist_ok=True)
@@ -99,3 +146,7 @@ if __name__=='__main__':
         spectrum(json.loads(args.forecast.read_text(encoding='utf-8')),args.out)
     if args.audit:
         forecast(json.loads(args.audit.read_text(encoding='utf-8')),args.out)
+    if args.paired_directions:
+        direction_contrast(json.loads(args.paired_directions.read_text(encoding='utf-8')), args.out)
+    if args.official:
+        official_results(json.loads(args.official.read_text(encoding='utf-8')), args.out)
