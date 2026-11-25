@@ -10,6 +10,7 @@ import string
 import minimal
 import evaluate_benchmarks as historical
 import evaluate_core as core
+import extra_baselines
 from task_data import load
 
 
@@ -74,6 +75,12 @@ def freeze(a):
         if minimal.sha(weight) != EXTRA_ARMS[name]:
             raise ValueError(f"Unexpected historical {name} checkpoint")
         arms[name] = {"path": str(weight), "sha256": EXTRA_ARMS[name]}
+    rank8 = a.rank8.resolve()
+    if minimal.sha(rank8) != extra_baselines.RANK8:
+        raise ValueError("Unexpected historical Rank-8 checkpoint")
+    arms["rank8"] = {"path": str(rank8), "sha256": extra_baselines.RANK8}
+    for name in extra_baselines.LOOPCD:
+        arms[name] = {"path": None, "sha256": "native"}
     plan = {
         "selection_sha256": minimal.sha(a.selection),
         "historical_freeze_sha256": minimal.sha(a.reference_freeze),
@@ -85,6 +92,7 @@ def freeze(a):
         "large_benchmark_scorer_sha256": minimal.sha(Path(historical.__file__)),
         "study_config_sha256": minimal.sha(Path(core.__file__).parent / "configs/study.json"),
         "launcher_sha256": minimal.sha(Path(__file__)),
+        "extra_baselines_sha256": minimal.sha(Path(extra_baselines.__file__)),
         **{key: minimal.sha(file) for key, file in check_files.items()},
         "seven_requests_sha256": lock["seven_requests_sha256"],
     }
@@ -161,10 +169,10 @@ def main(a):
     if a.block in ("all", "extra"):
         a.out = a.root / "extra"
         a.data, a.phase, a.depths, a.tasks = a.panel, "test", [4], list(EXTRA)
-        for a.arm in ("new", "native", "t1", "t2", "mixed"):
+        for a.arm in ("new", "native", "t1", "t2", "mixed", "rank8", *extra_baselines.LOOPCD):
             weight = plan["arms"][a.arm]["path"]
             a.checkpoint = Path(weight) if weight is not None else None
-            core.run(a)
+            extra_baselines.run(a)
             standard_generation(a, plan)
 
 
@@ -172,7 +180,7 @@ if __name__ == "__main__":
     p = argparse.ArgumentParser(description=__doc__)
     for key in ("selection", "reference-freeze", "archive", "previous", "model",
                 "panel", "stage2", "minimal-code", "unified", "followup", "historical",
-                "out", "t1", "t2", "mixed"):
+                "out", "t1", "t2", "mixed", "rank8"):
         p.add_argument(f"--{key}", required=True, type=Path)
     p.add_argument("--block", choices=("freeze", "legacy", "extra", "all"), default="all")
     a = p.parse_args()

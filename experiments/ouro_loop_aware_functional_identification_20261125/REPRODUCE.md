@@ -73,15 +73,16 @@ python plot_identification.py --observed EARLY_MECHANISM.json --out figures
 
 ## 正式评测入口
 
-`run_full.py` 读取已锁定的独立开发获胜者。首八项仅跑新权重，要求与历史 Mixed 全量 K4 使用相同的请求、模型和评分器。新增四项对新权重及 Native、T1、T2、Mixed 跑完整官方有标签集合。CommonsenseQA 的 1,221 题是官方公开 Validation，SQuAD 1.1 的 10,570 题是官方公开 Dev。脚本保存原评分及另计的标准指标。SQuAD 列标准 EM 与最大参考词元 F1，GSM8K 同时保存标准 `####` 精确匹配与历史宽松结果。新增四项的 Rank-8、LoopCD Fixed 与 LoopCD Adaptive 仍需补齐。
+`run_full.py` 读取已锁定的独立开发获胜者。首八项仅跑新权重，要求与历史 Mixed 全量 K4 使用相同的请求、模型和评分器。新增四项对新权重及 Native、T1、T2、Mixed、Rank-8、LoopCD Fixed、LoopCD Adaptive 跑完整官方有标签集合。CommonsenseQA 的 1,221 题是官方公开 Validation，SQuAD 1.1 的 10,570 题是官方公开 Dev。脚本保存原评分及另计的标准指标。SQuAD 列标准 EM 与最大参考词元 F1，GSM8K 同时保存标准 `####` 精确匹配与历史宽松结果。LoopCD 系数按历史候选和生成协议分别复用。
 
 ```bash
 release="$joint/mixed_full"
 "$py" -u run_full.py "${runtime[@]}" --selection results/dev/SELECTION.json \
-    --reference-freeze "$release/FREEZE.json" --stage2 "$release/archive" \
+    --reference-freeze "$release/results/FREEZE.json" --stage2 "$release/archive" \
     --minimal-code "$feedback" --unified "$unified" \
     --followup "$feedback/generation_followup" --historical "$historical" \
     --panel "$joint/data/panel" --t1 "$t1" --t2 "$t2" --mixed "$mixed" \
+    --rank8 "$feedback/results/linear8_t1.pt" \
     --out results/official
 ```
 
