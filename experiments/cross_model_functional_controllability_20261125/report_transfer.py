@@ -35,6 +35,38 @@ def generation_transitions(directory):
     return counts
 
 
+def mmlu_letter_audit(directory):
+    labels = ("A", "B", "C", "D")
+    totals = {field: [0]*len(labels) for field in
+              ("gold", "native", "rank1", "native_correct", "rank1_correct", "centered_shift")}
+    n = 0
+    with (directory / "mmlu__native.jsonl").open(encoding="utf-8") as before, (
+        directory / "mmlu__t1.jsonl"
+    ).open(encoding="utf-8") as after:
+        for line_native, line_rank1 in zip(before, after, strict=True):
+            left, right = json.loads(line_native), json.loads(line_rank1)
+            if (left["id"], left["gold"], left["choices"]) != (right["id"], right["gold"], right["choices"]):
+                raise ValueError("MMLU answer-label audit requires matching items")
+            if tuple(left["choices"]) != labels or len(set(left["chars"])) != 1:
+                raise ValueError("Expected four single-letter candidates in the locked MMLU protocol")
+            gold = left["gold"]
+            old, new = [max(range(len(labels)), key=r["scores"].__getitem__) for r in (left, right)]
+            totals["gold"][gold] += 1
+            totals["native"][old] += 1
+            totals["rank1"][new] += 1
+            totals["native_correct"][gold] += int(old == gold)
+            totals["rank1_correct"][gold] += int(new == gold)
+            changes = [y-x for x, y in zip(left["scores"], right["scores"], strict=True)]
+            center = sum(changes)/len(labels)
+            for j, change in enumerate(changes):
+                totals["centered_shift"][j] += change-center
+            n += 1
+    if n != TASKS["mmlu"][0]:
+        raise ValueError("MMLU answer-label population is incomplete")
+    totals["centered_shift"] = [value/n for value in totals["centered_shift"]]
+    return dict(n=n, labels=list(labels), **totals)
+
+
 def functional_rows(folder):
     rows = []
     ouro = folder / "mechanism" / "MECHANISM.json"
@@ -57,30 +89,42 @@ def functional_rows(folder):
     return rows
 
 
-def loopcd_rows(a):
+def loopcd_rows(a, sources):
     output = []
     if a.historical is not None:
         for task, r in json.loads(a.historical.read_text(encoding="utf-8"))["results"].items():
             fixed, adapted = [r["paired"][key][r["metric"]] for key in ("fixed", "adaptive")]
+            native = r["paired"]["native"][r["metric"]]
             best = max((fixed, adapted), key=lambda row: row["reference"])
             low, high = best["paired_ci95"]
-            output.append(f"| Ouro-1.4B Base | {task} | {100*fixed['reference']:.2f}% | {100*adapted['reference']:.2f}% | "
+            output.append(f"| Ouro-1.4B Base | {task} | {100*native['reference']:.2f}% | {100*fixed['reference']:.2f}% | "
+                          f"{100*adapted['reference']:.2f}% | {100*native['controller']:.2f}% | "
                           f"{100*best['delta']:+.2f} [{100*low:+.2f}, {100*high:+.2f}] | 历史零样本逐题 |")
-    papers = json.loads(Path(__file__).with_name("LOOPCD_PAPER.json").read_text(encoding="utf-8"))["published_zero_shot"]
+    published = json.loads(Path(__file__).with_name("LOOPCD_PAPER.json").read_text(encoding="utf-8"))
+    papers = published["published_zero_shot"]
+    hidden = published["huginn_k32_hidden_table_3_native_and_guided"]
     for name, label in {**MODEL_LABELS, "huginn-0125": HUGINN_LABEL}.items():
         path = a.results / "loopcd" / name / "RESULTS.json"
         baseline = json.loads(path.read_text(encoding="utf-8")) if path.is_file() else {}
         for task in TASKS:
+            observed = sources.get(label, {}).get(task)
+            local_native, local_rank1 = "—", "—"
+            if observed is not None:
+                paired = observed["metrics"][observed["primary"]]
+                local_native, local_rank1 = (f"{100*paired[k]:.2f}%" for k in ("native", "t1"))
             if task in papers.get(name, {}):
                 paper_native, fixed, adaptive = papers[name][task]
-                output.append(f"| {label} | {task} | {fixed:.2f}% | {adaptive:.2f}% | — | 论文汇总，原文 Native {paper_native:.2f}% |")
+                appendix = f"；原文 Hidden {hidden[task][1]:.2f}%" if name == "huginn-0125" else ""
+                output.append(f"| {label} | {task} | {local_native} | {fixed:.2f}% | {adaptive:.2f}% | "
+                              f"{local_rank1} | — | 论文汇总，原文 Native {paper_native:.2f}%{appendix} |")
             elif task in baseline:
                 item = baseline[task]
                 fixed, adapted = [item["arms"][key]["metrics"][item["primary"]]["rank1_versus_loopcd"]
                                   for key in ("fixed", "adaptive")]
                 best = max((fixed, adapted), key=lambda row: row["native"])
                 low, high = best["paired_ci95"]
-                output.append(f"| {label} | {task} | {100*fixed['native']:.2f}% | {100*adapted['native']:.2f}% | "
+                output.append(f"| {label} | {task} | {local_native} | {100*fixed['native']:.2f}% | {100*adapted['native']:.2f}% | "
+                              f"{local_rank1} | "
                               f"{100*best['delta']:+.2f} [{100*low:+.2f}, {100*high:+.2f}] | 本轮零样本逐题 |")
     return output
 
@@ -102,6 +146,7 @@ def main(a):
     auxiliary = []
     interpretation = []
     generation = []
+    mmlu = []
     if a.historical is not None:
         historic = json.loads(a.historical.read_text(encoding="utf-8"))
         old = {}
@@ -147,6 +192,12 @@ def main(a):
             allocated = format_arms([cost.get("peak_allocated_bytes") for cost in costs], 2**30)
             reserved = format_arms([cost.get("peak_reserved_bytes") for cost in costs], 2**30)
             auxiliary.append(f"| {label} | {task} | {'，'.join(metrics) or '—'} | {allocated} | {reserved} |")
+        if "mmlu" in result and label in folders:
+            diagnostics = mmlu_letter_audit(folders[label])
+            summaries = [" / ".join(f"{n:,}" for n in diagnostics[name]) for name in ("native", "rank1")]
+            changes = " / ".join(f"{b-a:+,}" for a, b in zip(diagnostics["native_correct"],
+                                                            diagnostics["rank1_correct"], strict=True))
+            mmlu.append(f"| {label} | {summaries[0]} | {summaries[1]} | {changes} |")
         if len(macro) == len(TASKS):
             if label in labels.values():
                 closed.append(label)
@@ -179,6 +230,11 @@ def main(a):
                  "每组题目由两个实际输出共同定义。",
                  "", "| 模型 | 合法状态 | 题数 | Native 正确 | Rank-1 正确 | 净正确数 |",
                  "| --- | --- | ---: | ---: | ---: | ---: |", *generation, "",
+                 "## MMLU 字母选择分布", "",
+                 "MMLU 的归档候选为 A、B、C、D，完整选项文本保留在共同提示。表内顺序为 A / B / C / D。"
+                 "按金标字母分组的正确数变化描述了退化集中在哪些答案位置。",
+                 "", "| 模型 | Native 预测数 | Rank-1 预测数 | 分金标字母净正确数 |",
+                 "| --- | --- | --- | --- |", *mmlu, "",
                  "## 跨版本证据", "", *interpretation, "",
                  "配对区间按题重采样，各任务单独计算，未校正多重比较。"
                  "Ouro 各版本在同一提示和循环预算下比较冻结 T1，以检验直接权重迁移。"
@@ -188,8 +244,8 @@ def main(a):
                  "逐题差值和置信区间来自仓库历史文件或本轮匹配的预测。",
                  "两个 Thinking 版本以及与零样本口径不同的项目补跑 Fixed 与 Adaptive。",
                  "对同一测试集选出两种 LoopCD 中成绩更高的一项作为描述性参照。", "",
-                 "| 模型 | Benchmark | LoopCD Fixed | LoopCD Adaptive | Rank-1 对最佳 LoopCD pp [95%] | 来源 |",
-                 "| --- | --- | ---: | ---: | --- | --- |", *loopcd_rows(a), "",
+                 "| 模型 | Benchmark | Native | LoopCD Fixed | LoopCD Adaptive | Rank-1 | Rank-1 对最佳 LoopCD pp [95%] | 来源 |",
+                 "| --- | --- | ---: | ---: | ---: | ---: | --- | --- |", *loopcd_rows(a, sources), "",
                  "[LoopCD 原文及附录 B.3–B.4](https://arxiv.org/html/2610.02185v1#A2.SS3)", ""])
     measured = functional_rows(a.results)
     if measured:

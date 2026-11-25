@@ -12,6 +12,7 @@ from types import SimpleNamespace
 
 from evaluate_transfer import ARM_NAMES, TASKS, T1_SHA
 import plot_transfer
+from report_transfer import mmlu_letter_audit
 
 
 CODE = ("MODELS.json", "REPRODUCE.md", "REPORT_ZH.md", "evaluate_transfer.py",
@@ -85,6 +86,8 @@ def audit_populations(root, models):
         findings[task]["overlap_with_same_native_correctness"] = comparisons
         if subject_effects:
             findings[task]["mmlu_subject_counts"] = subject_effects
+            findings[task]["mmlu_answer_letter"] = {model: mmlu_letter_audit(root / "results" / model)
+                                                   for model in models}
     return {"model_order": list(models), "sign_legend": {"-1": "harmed", "0": "unchanged", "1": "rescued"},
             "questions_matched_on": ["id", *identity_fields], "results": findings}
 
@@ -137,8 +140,9 @@ def pack(a):
     ouro_count = len(models)
     files = {name: root / name for name in (*CODE, *HUGINN_CODE)}
     mechanism = root / "results" / "mechanism"
-    if a.with_huginn:
+    if a.with_huginn or a.huginn_partial:
         models["huginn-0125"] = None
+    if a.with_huginn:
         files.update(loopcd_files(root, models))
     if a.with_huginn or (a.only is None and (mechanism / "MECHANISM.json").is_file()):
         path = mechanism / "MECHANISM.json"
@@ -159,16 +163,23 @@ def pack(a):
     historical = read(a.historical)
     if historical.get("completed_questions") != sum(n for n, _ in TASKS.values()):
         raise ValueError("Historical Base has a different population")
-    reference = {}
+    reference, reference_loopcd = {}, {}
     for task, (count, metric) in TASKS.items():
         old = historical["results"][task]
         if old["n"] != count or old["metric"] != metric:
             raise ValueError(f"Historical Base protocol differs at {task}")
         reference[task] = old["paired"]["native"]
+        reference_loopcd[task] = {arm: old["paired"][arm] for arm in ("fixed", "adaptive")}
+    partial_huginn_tasks = []
     for name in models:
         directory = root / "results" / name
         results = read(directory / "RESULTS.json")
-        if set(results) != TASKS.keys():
+        partial = name == "huginn-0125" and a.huginn_partial
+        if partial:
+            if not results or not results.keys() <= TASKS.keys() or len(results) == len(TASKS):
+                raise ValueError("A partial Huginn release requires at least one and fewer than eight closed benchmarks")
+            partial_huginn_tasks.extend(task for task in TASKS if task in results)
+        elif set(results) != TASKS.keys():
             raise ValueError(f"Missing official benchmarks for {name}")
         lock = read(directory / "FREEZE.json")
         metadata = a.models / name / "MODEL_LOCK.json"
@@ -183,15 +194,18 @@ def pack(a):
                 raise ValueError("Huginn training, model and evaluation receipts disagree")
             files["weights/rank1_huginn.pt"] = controller
             files[f"results/{name}/fit/FIT.json"] = fit / "FIT.json"
-            for artifact in ("CACHE_PARITY_native.json", "CACHE_PARITY_t1.json",
-                             "mechanism/FINITE.json", "mechanism/LOCK.json", "mechanism/MECHANISM.json"):
-                files[f"results/{name}/{artifact}"] = directory / artifact
+            if not partial:
+                for artifact in ("CACHE_PARITY_native.json", "CACHE_PARITY_t1.json",
+                                 "mechanism/FINITE.json", "mechanism/LOCK.json", "mechanism/MECHANISM.json"):
+                    files[f"results/{name}/{artifact}"] = directory / artifact
         elif lock["arms"]["t1"] != T1_SHA or lock["model_lock_sha256"] != digest(metadata):
             raise ValueError(f"Weight or model receipt differs for {name}")
         for artifact in ("RESULTS.json", "FREEZE.json"):
             files[f"results/{name}/{artifact}"] = directory / artifact
         files[f"models/{name}/MODEL_LOCK.json"] = metadata
         for task, (n, metric) in TASKS.items():
+            if task not in results and partial:
+                continue
             row = results[task]
             if row["primary"] != metric or row["metrics"][metric]["n"] != n:
                 raise ValueError(f"Incomplete paired population for {name}/{task}")
@@ -213,10 +227,12 @@ def pack(a):
                 files[f"figures/{figure.name}"] = figure
     records = []
     audit = out / "PAIRED_POPULATION_AUDIT.json"
-    audit.write_text(json.dumps(audit_populations(root, models), indent=2) + "\n", encoding="utf-8")
+    matched_models = [name for name in models if not (a.huginn_partial and name == "huginn-0125")]
+    audit.write_text(json.dumps(audit_populations(root, matched_models), indent=2) + "\n", encoding="utf-8")
     records.append({"path": audit.name, "bytes": audit.stat().st_size, "sha256": digest(audit)})
     base = out / "HISTORICAL_OURO_1.4B_BASE.json"
-    base.write_text(json.dumps({"original_summary_sha256": digest(a.historical), "results": reference},
+    base.write_text(json.dumps({"original_summary_sha256": digest(a.historical), "results": reference,
+                                "loopcd_comparisons": reference_loopcd},
                                indent=2) + "\n", encoding="utf-8")
     records.append({"path": base.name, "bytes": base.stat().st_size, "sha256": digest(base)})
     for key, source in sorted(files.items()):
@@ -230,7 +246,7 @@ def pack(a):
             shutil.copyfile(source, dst)
         records.append({"path": key, "bytes": dst.stat().st_size, "sha256": digest(dst), "original_sha256": digest(source)})
     manifest = {"complete_ouro_models": ouro_count, "complete_huginn": a.with_huginn,
-                "official_benchmarks": len(models) * len(TASKS),
+                "partial_huginn_tasks": partial_huginn_tasks, "official_benchmarks": len(matched_models) * len(TASKS),
                 "benchmark_questions_per_arm": sum(n for n, _ in TASKS.values()),
                 "measurement_arms": list(ARM_NAMES), "t1_sha256": T1_SHA, "files": records}
     stage_manifest = out / "RELEASE_MANIFEST.partial"
@@ -244,8 +260,10 @@ if __name__ == "__main__":
     for name in ("root", "models", "t1", "historical", "out"):
         p.add_argument(f"--{name}", type=Path, required=True)
     p.add_argument("--only", nargs="+")
-    p.add_argument("--with-huginn", action="store_true")
+    variants = p.add_mutually_exclusive_group()
+    variants.add_argument("--with-huginn", action="store_true")
+    variants.add_argument("--huginn-partial", action="store_true")
     args = p.parse_args()
-    if args.with_huginn and args.only:
+    if (args.with_huginn or args.huginn_partial) and args.only:
         p.error("Publish all three Ouro comparisons with the Huginn release")
     pack(args)

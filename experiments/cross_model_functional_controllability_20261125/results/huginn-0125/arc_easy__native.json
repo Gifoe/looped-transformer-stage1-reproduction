@@ -1,0 +1,51 @@
+{
+  "plan": {
+    "task": "arc_easy",
+    "arm": "native",
+    "protocol_sha256": "f672d2c25fb7277f076f2924a5645972df2b7a58fe23db25f8f68acbd1f0eef6",
+    "depth": 32,
+    "checkpoint": null,
+    "seed": 261125137,
+    "config": {
+      "max_length": 4096,
+      "max_batch": 32,
+      "token_cap": 1984,
+      "attention_cap": 8388608,
+      "head_rows": 128,
+      "shard_size": 256
+    }
+  },
+  "metrics": {
+    "acc": {
+      "value": 0.6864478114478114,
+      "n": 2376,
+      "count": 1631
+    },
+    "acc_norm": {
+      "value": 0.6435185185185185,
+      "n": 2376,
+      "count": 1529
+    }
+  },
+  "cost": {
+    "head_calls": 434,
+    "forward_calls": 246,
+    "padded_input_tokens": 255850,
+    "dense_loop_token_calls": 8187200,
+    "seconds": 247.75276816822588,
+    "peak_allocated_bytes": 7614888448,
+    "peak_reserved_bytes": 7887388672
+  },
+  "runtime": {
+    "name": "bb6621b65e90b6a4b9b29ef88dc83866d450470c",
+    "gpu": "NVIDIA GeForce RTX 4090 D",
+    "dtype": "torch.bfloat16",
+    "torch": "2.7.1+cu128",
+    "width": 5280,
+    "seed": 261125137,
+    "bos": 65504,
+    "eos": 65505,
+    "pad": 65509
+  },
+  "rows_sha256": "b0e3f5d4c7eae9333994f3c0a67a7f612ff752dc79e00b17236c5e8e3eb6fed9"
+}

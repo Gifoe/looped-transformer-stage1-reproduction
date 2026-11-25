@@ -22,6 +22,8 @@ def run(a):
         "Publish complete frozen T1 transfer benchmarks on the three Ouro checkpoints"
         if expected_models == 3 else "Archive complete per-model frozen T1 transfer benchmarks"
     )
+    if manifest.get("partial_huginn_tasks"):
+        api.COMMIT_MESSAGE = "Archive completed Huginn benchmark pairs and the frozen Rank-1 checkpoint"
     api.run(a, "" if a.verify_only else sys.stdin.readline().strip())
 
 
