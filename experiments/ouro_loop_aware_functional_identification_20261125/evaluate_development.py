@@ -3,6 +3,7 @@
 import argparse
 import json
 from pathlib import Path
+import shutil
 import statistics
 import sys
 
@@ -53,12 +54,48 @@ def structured(rows,metric):
     return dict(n=len(rows),value=statistics.mean(r['metrics'][metric] for r in rows))
 
 
+def matching_protocols(paths, manifest):
+    fields=('cohorts','model_sha256','depth','accuracy_rank')
+    out=[]
+    for folder in paths:
+        path=folder/'DEV_PROTOCOL.json'
+        previous=json.loads(path.read_text(encoding='utf-8'))
+        if any(previous[key]!=manifest[key] for key in fields):
+            raise ValueError(f'Development reuse protocol differs at {path}')
+        out.append((folder,previous,minimal.sha(path)))
+    return out
+
+
+def reused_receipt(sources, name, checkpoint, stamp, raw, ids, metric):
+    for folder, protocol, lock in sources:
+        slots=protocol['checkpoint_sha256']
+        if name not in slots or slots[name]!=checkpoint:
+            continue
+        receipt=folder/stamp.name
+        record=folder/raw.name
+        if not receipt.is_file():
+            continue
+        doc=json.loads(receipt.read_text(encoding='utf-8'))
+        if doc['protocol_sha256']!=lock or doc['sha256']!=minimal.sha(record):
+            raise ValueError(f'Development reuse receipt differs at {receipt}')
+        rows=load(record)
+        if [r['id'] for r in rows]!=ids or structured(rows,metric)!={key:doc[key] for key in ('n','value')}:
+            raise ValueError(f'Development reuse population or score differs at {receipt}')
+        shutil.copyfile(record,raw)
+        return dict(doc, reused_from=str(receipt), source_protocol_sha256=lock)
+    return None
+
+
 @torch.inference_mode()
 def run(a):
     a.out.mkdir(parents=True,exist_ok=True)
     official=a.out/'SELECTION.json'
     if official.exists():
         raise ValueError('This development selection is already sealed')
+    if a.prefill_candidates:
+        if not (a.out/'DEV_PROTOCOL.json').is_file():
+            raise ValueError('Candidate prefill requires the active study protocol')
+        torch.cuda.set_per_process_memory_fraction(.35)
     panel=register(a)
     arch,model,tokenizer,runtime=minimal.runtime(a.archive,a.previous,a.model)
     sys.path[:0]=[str(a.unified),str(a.stage2/'code')]
@@ -75,16 +112,21 @@ def run(a):
     modes={f'{dataset}/{mode}':dict(ids=[r.get('sample_id',r.get('id')) for r in rows],primary=KEYS[mode])
            for (dataset,mode),rows in panel.items()}
     manifest=dict(cohorts=modes,model_sha256=runtime['model_sha256'],checkpoint_sha256=hashes,depth=4,
-                  accuracy_rank=('fewest strong-reference loss endpoints > 2 pp','worst relative gain versus T1','class-balanced gain'))
+                  accuracy_rank=['fewest strong-reference loss endpoints > 2 pp','worst relative gain versus T1','class-balanced gain'])
     locked=a.out/'DEV_PROTOCOL.json'
     if locked.exists() and json.loads(locked.read_text())!=manifest:
         raise ValueError('Development comparison protocol changed')
     minimal.dump(locked,manifest)
+    sources=matching_protocols(a.reuse,manifest)
     results={}
     for name,path in arms.items():
+        if a.prefill_candidates and name not in a.prefill_candidates:
+            continue
         net=controller(path,next(model.parameters()).device)
         results[name]={}
         for (ds,mode),rows in panel.items():
+            if a.prefill_candidates and mode not in ('candidate','mmlu'):
+                continue
             key=f'{ds}/{mode}'
             stamp=a.out/f'{ds}__{mode}__{name}.json'
             raw=stamp.with_suffix('.jsonl')
@@ -93,6 +135,13 @@ def run(a):
                 if doc['sha256']!=minimal.sha(raw) or doc['protocol_sha256']!=minimal.sha(locked):
                     raise ValueError(f'Benchmark result differs at {stamp}')
                 results[name][key]=doc
+                continue
+            previous=reused_receipt(sources,name,hashes[name],stamp,raw,modes[key]['ids'],KEYS[mode])
+            if previous is not None:
+                previous['protocol_sha256']=minimal.sha(locked)
+                minimal.dump(stamp,previous)
+                results[name][key]=previous
+                print('REUSED DEV',name,key,previous['n'],round(previous['value'],4),flush=True)
                 continue
             if mode=='mmlu':
                 scored,cost=scorer.shard_score(implementation,minimal,model,encoder,net,rows,config,next(model.parameters()).device)
@@ -104,11 +153,15 @@ def run(a):
                 observed,cost=generate(arch,model,tokenizer,net,rows,mode,4,batch,cap)
             if [r['id'] for r in observed]!=modes[key]['ids']:
                 raise ValueError(f'Development IDs differ at {stamp}')
+            if a.prefill_candidates:
+                cost=dict(cost,concurrent_development=True)
             save(raw,observed)
             current=dict(**structured(observed,KEYS[mode]),cost=cost,sha256=minimal.sha(raw),protocol_sha256=minimal.sha(locked))
             minimal.dump(stamp,current)
             results[name][key]=current
             print('DEV',name,key,current['n'],round(current['value'],4),flush=True)
+    if a.prefill_candidates:
+        return
     summary={}
     for name,run in results.items():
         gap={key:record['value']-results['t1'][key]['value'] for key,record in run.items()}
@@ -131,4 +184,6 @@ if __name__=='__main__':
     for item in ('archive','previous','model','panel','stage2','mmlu','unified','out'):
         p.add_argument(f'--{item}',type=Path,required=True)
     p.add_argument('--weight',action='append',required=True)
+    p.add_argument('--reuse',action='append',type=Path,default=[])
+    p.add_argument('--prefill-candidates',nargs='+')
     run(p.parse_args())

@@ -15,3 +15,17 @@
 | 等权平均 | 43,769 | 66.96% | 67.72% | 72.58% | 72.48% | 71.76% | 67.61% |
 
 同协议固定 LoopCD 平均 67.65%，自适应 LoopCD 平均 67.38%。新选权重及新增四项的完整同协议验证尚未完成。SQuAD 先前的 360 题、GSM8K 的 96 题及之前的局部开发结果均未填入正式结果。 [Mixed、T1 与 T2 已发布逐题结果](https://github.com/Gifoe/looped-transformer-stage1-reproduction/tree/93b80141e1c81b4a632d4d8a696786c525cde697/experiments/ouro_mixed_full_benchmark_20261124) · [Rank-8 七项候选基线](https://github.com/Gifoe/looped-transformer-stage1-reproduction/blob/research/ouro-minimal-functional-feedback/experiments/ouro_minimal_functional_feedback_20261123/stage2/zero_shot/REPORT_ZH.md)
+
+## 新实验的独立候选开发结果
+
+| K4 控制器 | ARC 299 | OpenBookQA 360 | CommonsenseQA 360 | MMLU 285 |
+| --- | ---: | ---: | ---: | ---: |
+| Native | 51.17% | 50.28% | 51.39% | 64.21% |
+| 历史 T1 | 68.23% | 60.56% | 63.33% | 63.86% |
+| 均匀 | 60.20% | 59.17% | 67.22% | 62.46% |
+| 普通功能加权 | 62.21% | 61.39% | 69.17% | 63.16% |
+| 循环交互加权 | 62.88% | 59.72% | 69.72% | 63.51% |
+| T1 初始化均匀 | 62.88% | 59.44% | 66.39% | 62.11% |
+| T1 初始化循环加权 | 63.55% | 60.00% | 68.33% | 62.46% |
+
+前三组从零写入初始化，五组使用完全相同的 25,358 题、4,586 次更新和 13,850,052 个填充后 token-loop。循环加权比均匀训练的四项等权平均高 1.70 个百分点，比普通功能加权低 0.02。相对 T1，ARC −5.35 个百分点 [−9.70, −1.00]，CommonsenseQA +6.39 [2.50, 10.56]。当前增益主要在任务间转移。自由生成和正式全量测试仍需单独验证。 [逐题配对统计](results/dev/CANDIDATE_MATCHED_CONTRASTS.json)

@@ -7,10 +7,17 @@ source external_env.sh
 cd "$study"
 export PYTHONPATH="$study:$PYTHONPATH"
 mkdir -p logs
+while ! grep -qx DONE run_fit_refinement.log; do
+    worker=$(cat run_fit_refinement.pid)
+    if [[ ! -e "/proc/$worker/cwd" ]]; then
+        echo 'The matched compute stage stopped' >&2
+        exit 3
+    fi
+    sleep 15
+done
 exec 8>"$gpu_lock"
 flock 8
 test -s results/dev_refinement/SELECTION.json
-test -s results/forecast_all_sources/AUDIT.json
 runtime=(--archive "$archive" --previous "$previous" --model "$model")
 common=("${runtime[@]}" --data data/pools_complete --moments results/filtered_moments --forecast results/forecast_candidate)
 t1="$controllability/results/weights/rank1_t1.pt"
@@ -32,7 +39,7 @@ done
 if [[ ! -s results/dev_within_source/SELECTION.json ]]; then
     "$py" -u evaluate_development.py "${runtime[@]}" --panel "$joint/data/panel" \
         --stage2 "$joint/mixed_full/archive" --mmlu "$feedback/stage2/zero_shot/mmlu_cache" \
-        --unified "$unified" --out results/dev_within_source "${weights[@]}" > logs/development_within_source.log 2>&1
+        --unified "$unified" --reuse results/dev --out results/dev_within_source "${weights[@]}" > logs/development_within_source.log 2>&1
 fi
 "$py" -u score_source_training.py --forecast results/forecast_candidate/FORECAST.json \
     --development results/dev/SELECTION.json --work-development results/dev_refinement/SELECTION.json \

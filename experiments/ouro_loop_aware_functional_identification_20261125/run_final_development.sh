@@ -8,13 +8,15 @@ cd "$study"
 export PYTHONPATH="$study:$PYTHONPATH"
 mkdir -p logs
 
-while ! grep -qx DONE run_within_source.log; do
-    worker=$(cat run_within_source.pid)
-    if [[ ! -e "/proc/$worker/cwd" ]]; then
-        echo 'The prerequisite within-source controls did not finish' >&2
-        exit 3
-    fi
-    sleep 15
+for phase in run_within_source run_remaining_moments; do
+    while ! grep -qx DONE "$phase.log"; do
+        worker=$(cat "$phase.pid")
+        if [[ ! -e "/proc/$worker/cwd" ]]; then
+            echo "The prerequisite phase stopped: $phase" >&2
+            exit 3
+        fi
+        sleep 15
+    done
 done
 
 forecast=results/forecast_all_sources
@@ -69,7 +71,7 @@ arms=(--weight "t1=$t1" --weight "t2=$t2" --weight "mixed=$mixed")
     if [[ ! -s results/dev_coverage/SELECTION.json ]]; then
         "$py" -u evaluate_development.py "${runtime[@]}" --panel "$joint/data/panel" \
             --stage2 "$joint/mixed_full/archive" --mmlu "$feedback/stage2/zero_shot/mmlu_cache" \
-            --unified "$unified" --out results/dev_coverage "${arms[@]}" > logs/development_coverage.log 2>&1
+            --unified "$unified" --reuse results/dev --out results/dev_coverage "${arms[@]}" > logs/development_coverage.log 2>&1
     fi
 )
 "$py" -u combine_development.py --development results/dev_refinement results/dev_within_source results/dev_coverage \

@@ -20,6 +20,27 @@ def mean_for(rows, method):
     return statistics.mean(row["paired"][method][metric]["baseline"] for _, metric, row in rows)
 
 
+def dev_table(root):
+    choices = {
+        "dev": ("uniform", "ordinary", "loop", "warm_uniform", "warm_loop"),
+        "dev_refinement": ("warm_tangent",),
+        "dev_within_source": tuple(f"within_{source}_{mode}" for source in ("arc_challenge", "csqa")
+                                   for mode in ("uniform", "high", "low")),
+        "dev_coverage": ("coverage_uniform", "coverage_tangent", "coverage_loss_tangent"),
+    }
+    endpoints = ("arc_challenge/candidate", "arc_challenge/content", "csqa/candidate",
+                 "mmlu/mmlu", "gsm8k/gsm_process")
+    lines = ["| 训练对照 | ARC 候选 | ARC 自由生成 | CSQA 候选 | MMLU | GSM8K 严格 |",
+             "| --- | ---: | ---: | ---: | ---: | ---: |"]
+    for folder, methods in choices.items():
+        experiments = read(root / "results" / folder / "SELECTION.json")["summary"]
+        for name in methods:
+            row = experiments[name]["gap"]
+            values = [f"{100*row[k]:+.2f}" for k in endpoints]
+            lines.append("| " + " | ".join([name, *values]) + " |")
+    return lines
+
+
 def assemble(root):
     official = root / "results/official"
     result = read(official / "RESULTS.json")
@@ -55,6 +76,10 @@ def assemble(root):
     policy = selection["best"]
     fit_sources = "、".join(fit["sources"])
     task_groups = "、".join(trajectory["source_order"])
+    hours = sum(row["costs"]["new"].get("seconds", row["costs"]["new"].get("elapsed_seconds", 0.))
+                for _, _, row in primary) / 3600
+    lower = [task for task, key, row in primary if row["paired"]["native"][key]["change"] < 0.]
+    weak = "、".join(lower) if lower else "无"
     lines = [
         "# Loop-Aware Functional Identification 完整研究报告",
         "",
@@ -68,6 +93,7 @@ def assemble(root):
         f"95% 区间为 [{100*mmlu['ci95'][0]:+.2f}, {100*mmlu['ci95'][1]:+.2f}]。"
         f"MMLU-Pro 的答题正确率和合法输出率相对 Native 分别变化 "
         f"{100*mmlu_pro['correct']['change']:+.2f} 和 {100*mmlu_pro['parseable']['change']:+.2f} 个百分点。",
+        f"新模型十二个主任务实际计时合计为 {hours:.2f} 小时。相对 Native 主指标下降的任务为 {weak}。",
         "",
         "[十二项结果表](results/official/RESULTS.md) · [逐项配对区间](results/official/RESULTS.csv) · "
         "[预测、生成诊断及计算量回执](results/official/RESULTS.json)",
@@ -89,6 +115,14 @@ def assemble(root):
         f"平均选型后悔值分别为 {prospect['ordinary_functional']['aggregate']['regret_mean']:.4f} "
         f"与 {prospect['loop_factor_influence_warm_t1']['aggregate']['regret_mean']:.4f}。"
         "后悔值比较对应开发环境上所选来源与该对照中观测最优来源的真实准确率差。",
+        "",
+        "## 配对训练对照",
+        "",
+        "下表为独立开发集上相对历史 T1 的百分点。ARC 与 CSQA 的候选评分与实际生成分开。"
+        "主训练五组使用相同题目、顺序、训练步数和 token-loop，区别在样本权重或初始化。"
+        "同源高低权重对照在每个原生正确转移及题长组内保持总权重。",
+        "",
+        *dev_table(root),
         "",
         "## 机制边界",
         "",

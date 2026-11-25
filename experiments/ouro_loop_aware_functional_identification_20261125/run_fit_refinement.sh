@@ -52,6 +52,6 @@ done
 if [[ ! -s results/dev_refinement/SELECTION.json ]]; then
     "$py" -u evaluate_development.py "${runtime[@]}" --panel "$joint/data/panel" \
         --stage2 "$joint/mixed_full/archive" --mmlu "$feedback/stage2/zero_shot/mmlu_cache" \
-        --unified "$unified" --out results/dev_refinement "${weights[@]}" > logs/development_refinement.log 2>&1
+        --unified "$unified" --reuse results/dev --out results/dev_refinement "${weights[@]}" > logs/development_refinement.log 2>&1
 fi
 printf 'DONE\n'

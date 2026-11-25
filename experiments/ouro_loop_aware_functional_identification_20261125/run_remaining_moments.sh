@@ -7,6 +7,16 @@ source external_env.sh
 cd "$study"
 export PYTHONPATH="$study:$PYTHONPATH"
 mkdir -p logs
+if [[ ${OURO_WAIT_FOR_WITHIN:-0} == 1 ]]; then
+    while ! grep -qx DONE run_within_source.log; do
+        worker=$(cat run_within_source.pid)
+        if [[ ! -e "/proc/$worker/cwd" ]]; then
+            echo 'The within-source stage stopped' >&2
+            exit 3
+        fi
+        sleep 15
+    done
+fi
 exec 8>"$gpu_lock"
 flock 8
 base=(--archive "$archive" --previous "$previous" --model "$model" --full-context)
