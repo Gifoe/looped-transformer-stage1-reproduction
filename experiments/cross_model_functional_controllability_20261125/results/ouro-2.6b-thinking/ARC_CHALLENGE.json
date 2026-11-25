@@ -1,0 +1,61 @@
+{
+  "primary": "acc_norm",
+  "metrics": {
+    "acc": {
+      "n": 1172,
+      "native_count": 631,
+      "t1_count": 691,
+      "native": 0.53839590443686,
+      "t1": 0.5895904436860068,
+      "delta": 0.051194539249146756,
+      "rescue": 86,
+      "damage": 26,
+      "paired_ci95": [
+        0.034129692832764506,
+        0.06911262798634812
+      ],
+      "mcnemar": 1.100922308456013e-08
+    },
+    "acc_norm": {
+      "n": 1172,
+      "native_count": 667,
+      "t1_count": 736,
+      "native": 0.5691126279863481,
+      "t1": 0.6279863481228669,
+      "delta": 0.05887372013651877,
+      "rescue": 91,
+      "damage": 22,
+      "paired_ci95": [
+        0.041808873720136516,
+        0.07593856655290103
+      ],
+      "mcnemar": 3.69703787625371e-11
+    }
+  },
+  "cost": {
+    "native": {
+      "elapsed_seconds": 34.90381379425526,
+      "forward_calls": 131,
+      "head_calls": 266,
+      "padded_input_tokens": 160266,
+      "dense_loop_token_calls": 641064,
+      "oom_retries": 0,
+      "peak_allocated_bytes": 5592129536,
+      "peak_reserved_bytes": 6257901568
+    },
+    "t1": {
+      "elapsed_seconds": 34.702848294749856,
+      "forward_calls": 131,
+      "head_calls": 266,
+      "padded_input_tokens": 160266,
+      "dense_loop_token_calls": 641064,
+      "oom_retries": 0,
+      "peak_allocated_bytes": 5592129536,
+      "peak_reserved_bytes": 6259998720
+    }
+  },
+  "predictions": {
+    "native": "ce963a27c5df36c03542e65bf5c53dd36c6d81ce0edea2a670762ab216bf371b",
+    "t1": "adf50610c3cdec548eae61191b57da3f387a88709eb857ce5fbaf66ce2333fd2"
+  }
+}
