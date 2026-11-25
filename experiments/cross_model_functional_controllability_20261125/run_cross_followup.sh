@@ -30,11 +30,13 @@ if p["complete_ouro_models"] != 3 or p["official_benchmarks"] != 24:
     raise ValueError("The three Ouro comparisons must complete first")
 PY
 
-printf 'START OURO MECHANISM %s\n' "$(date -Is)"
-bash run_transfer_mechanism.sh
 wait_for "$weight_root/huginn-0125/MODEL_LOCK.json" fetch_huginn.pid
 printf 'START HUGINN %s\n' "$(date -Is)"
 bash run_huginn.sh
+printf 'START LOOPCD %s\n' "$(date -Is)"
+bash run_loopcd.sh
+printf 'START OURO MECHANISM %s\n' "$(date -Is)"
+bash run_transfer_mechanism.sh
 historical="$joint/t1_full/results/RESULTS.json"
 "$py" -u report_transfer.py --results results --out REPORT_ZH.md --historical "$historical" --final --require-huginn
 "$py" -u package_transfer.py --root "$study" --models "$weight_root" --t1 "$controllability/results/weights/rank1_t1.pt" \

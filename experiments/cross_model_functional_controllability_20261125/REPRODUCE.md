@@ -40,8 +40,11 @@ cd "$study"
 "$py" fetch_huginn.py --metadata HUGINN_RELEASE.json --out /dev/shm/ouro-cross-model-20261125/huginn-0125
 bash run_transfer_mechanism.sh
 bash run_huginn.sh
+bash run_loopcd.sh
 "$py" report_transfer.py --results results --historical "$joint/t1_full/results/RESULTS.json" \
     --out REPORT_ZH.md --final --require-huginn
 ```
 
 功能谱从同一批 ARC Train 题估计。有限剂量对照使用 ARC Validation 中固定的 24 题。Ouro 各版本可比较读写子空间，Huginn 的跨架构比较使用各自归一化的谱和功能响应。
+
+LoopCD 补测复用相同零样本请求和原生循环预算。[LOOPCD_PAPER.json](LOOPCD_PAPER.json) 记录原文可复用的零样本汇总。Ouro 的选择题同次主模型前向计算 Fixed 和 Adaptive。MMLU-Pro 各方法独立生成，Huginn 用单独的早期 Coda 缓存读取第一轮状态。

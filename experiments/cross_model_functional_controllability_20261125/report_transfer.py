@@ -57,6 +57,34 @@ def functional_rows(folder):
     return rows
 
 
+def loopcd_rows(a):
+    output = []
+    if a.historical is not None:
+        for task, r in json.loads(a.historical.read_text(encoding="utf-8"))["results"].items():
+            fixed, adapted = [r["paired"][key][r["metric"]] for key in ("fixed", "adaptive")]
+            best = max((fixed, adapted), key=lambda row: row["reference"])
+            low, high = best["paired_ci95"]
+            output.append(f"| Ouro-1.4B Base | {task} | {100*fixed['reference']:.2f}% | {100*adapted['reference']:.2f}% | "
+                          f"{100*best['delta']:+.2f} [{100*low:+.2f}, {100*high:+.2f}] | 历史零样本逐题 |")
+    papers = json.loads(Path(__file__).with_name("LOOPCD_PAPER.json").read_text(encoding="utf-8"))["published_zero_shot"]
+    for name, label in {**MODEL_LABELS, "huginn-0125": HUGINN_LABEL}.items():
+        path = a.results / "loopcd" / name / "RESULTS.json"
+        baseline = json.loads(path.read_text(encoding="utf-8")) if path.is_file() else {}
+        for task in TASKS:
+            if task in papers.get(name, {}):
+                paper_native, fixed, adaptive = papers[name][task]
+                output.append(f"| {label} | {task} | {fixed:.2f}% | {adaptive:.2f}% | — | 论文汇总，原文 Native {paper_native:.2f}% |")
+            elif task in baseline:
+                item = baseline[task]
+                fixed, adapted = [item["arms"][key]["metrics"][item["primary"]]["rank1_versus_loopcd"]
+                                  for key in ("fixed", "adaptive")]
+                best = max((fixed, adapted), key=lambda row: row["native"])
+                low, high = best["paired_ci95"]
+                output.append(f"| {label} | {task} | {100*fixed['native']:.2f}% | {100*adapted['native']:.2f}% | "
+                              f"{100*best['delta']:+.2f} [{100*low:+.2f}, {100*high:+.2f}] | 本轮零样本逐题 |")
+    return output
+
+
 def main(a):
     title = "Ouro 与 Huginn 的低秩功能控制" if a.require_huginn else "冻结 T1 的 Ouro 跨版本评测"
     rows = [f"# {title}", "",
@@ -155,6 +183,14 @@ def main(a):
                  "配对区间按题重采样，各任务单独计算，未校正多重比较。"
                  "Ouro 各版本在同一提示和循环预算下比较冻结 T1，以检验直接权重迁移。"
                  "共享功能坐标以及原生循环的贡献由独立功能响应对照评估。", ""])
+    rows.extend(["## LoopCD 对照", "",
+                 "来自同一检查点和零样本设置的论文汇总直接引用。论文汇总保留其原文 Native，"
+                 "逐题差值和置信区间来自仓库历史文件或本轮匹配的预测。",
+                 "两个 Thinking 版本以及与零样本口径不同的项目补跑 Fixed 与 Adaptive。",
+                 "对同一测试集选出两种 LoopCD 中成绩更高的一项作为描述性参照。", "",
+                 "| 模型 | Benchmark | LoopCD Fixed | LoopCD Adaptive | Rank-1 对最佳 LoopCD pp [95%] | 来源 |",
+                 "| --- | --- | ---: | ---: | --- | --- |", *loopcd_rows(a), "",
+                 "[LoopCD 原文及附录 B.3–B.4](https://arxiv.org/html/2610.02185v1#A2.SS3)", ""])
     measured = functional_rows(a.results)
     if measured:
         rows.extend(["## 功能矩阵与实际干预", "",

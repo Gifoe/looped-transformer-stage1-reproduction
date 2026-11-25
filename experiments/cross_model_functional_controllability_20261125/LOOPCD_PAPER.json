@@ -1,0 +1,29 @@
+{
+  "source": "https://arxiv.org/html/2610.02185v1",
+  "paper": "Decoding Looped Transformers Better for (Almost) Free",
+  "method": "LoopCD-Logits",
+  "columns": ["paper_native_percent", "loopcd_fixed_percent", "loopcd_adaptive_percent"],
+  "provenance": "Table 2 aggregate at zero shots with the corresponding published recurrence budget. Per-item predictions, exact request fingerprints and local-device timings are unavailable in the original table.",
+  "published_zero_shot": {
+    "ouro-2.6b": {
+      "piqa": [80.25, 80.74, 80.69],
+      "sciq": [94.20, 94.60, 94.30]
+    },
+    "huginn-0125": {
+      "arc_challenge": [37.63, 39.51, 39.42],
+      "arc_easy": [64.31, 64.10, 64.69],
+      "sciq": [90.40, 91.10, 91.20],
+      "mmlu": [33.47, 33.57, 33.61],
+      "hellaswag": [66.65, 69.00, 69.03],
+      "winogrande": [60.77, 61.96, 61.33],
+      "piqa": [75.79, 74.97, 75.79]
+    }
+  },
+  "coverage": {
+    "ouro-1.4b-base": "Reuse the repository's eight complete zero-shot Fixed and Adaptive baselines.",
+    "ouro-2.6b": "Paper candidate rows beyond SciQ and PIQA use demonstrations and do not match the zero-shot evaluation.",
+    "ouro-1.4b-thinking": "The paper tests this checkpoint on sampled mathematical reasoning. The eight requested benchmark conditions are missing.",
+    "ouro-2.6b-thinking": "The paper tests this checkpoint on sampled mathematical reasoning. The eight requested benchmark conditions are missing.",
+    "huginn-0125": "Seven candidate rows are published at R=32 using zero-shot likelihood. MMLU-Pro uses five chain-of-thought demonstrations and requires a zero-shot run."
+  }
+}

@@ -19,7 +19,7 @@ CODE = ("MODELS.json", "REPRODUCE.md", "REPORT_ZH.md", "evaluate_transfer.py",
         "plot_transfer.py", "publish_transfer.py")
 HUGINN_CODE = ("HUGINN_RELEASE.json", "fetch_huginn.py", "huginn_control.py", "evaluate_huginn.py",
                "audit_transfer_mechanism.py", "audit_huginn_mechanism.py", "run_transfer_mechanism.sh",
-               "run_huginn.sh", "run_cross_followup.sh")
+               "run_huginn.sh", "run_cross_followup.sh", "LOOPCD_PAPER.json", "evaluate_loopcd.py", "run_loopcd.sh")
 
 
 def digest(path):
@@ -89,6 +89,40 @@ def audit_populations(root, models):
             "questions_matched_on": ["id", *identity_fields], "results": findings}
 
 
+def loopcd_files(root, models):
+    output = {}
+    paper = read(root / "LOOPCD_PAPER.json")["published_zero_shot"]
+    for model in models:
+        folder = root / "results" / "loopcd" / model
+        rows = read(folder / "RESULTS.json")
+        if rows.keys() != TASKS.keys():
+            raise ValueError(f"Incomplete LoopCD coverage for {model}")
+        prefix = f"results/loopcd/{model}"
+        for item in ("RESULTS.json", "FREEZE.json"):
+            output[f"{prefix}/{item}"] = folder / item
+        for task, (n, primary) in TASKS.items():
+            row = rows[task]
+            if row["primary"] != primary:
+                raise ValueError(f"Wrong primary metric for LoopCD {model}/{task}")
+            if task in paper.get(model, {}):
+                if row["source"] != "paper_aggregate_only" or [
+                    row["paper_native"], row["fixed"], row["adaptive"]
+                ] != paper[model][task]:
+                    raise ValueError(f"Wrong published zero-shot aggregate for {model}/{task}")
+                continue
+            if row["source"] != "current_matched":
+                raise ValueError(f"Missing matched LoopCD evaluations for {model}/{task}")
+            for arm, item in row["arms"].items():
+                preds = folder / f"{task}__{arm}.jsonl"
+                receipt = preds.with_suffix(".json")
+                if (item["metrics"][primary]["versus_native"]["n"] != n or digest(preds) != item["rows_sha256"]
+                        or read(receipt)["rows_sha256"] != item["rows_sha256"]):
+                    raise ValueError(f"Unverified LoopCD result at {model}/{task}/{arm}")
+                output[f"{prefix}/{preds.name}.gz"] = preds
+                output[f"{prefix}/{receipt.name}"] = receipt
+    return output
+
+
 def pack(a):
     out = a.out.resolve()
     root = a.root.resolve()
@@ -105,6 +139,7 @@ def pack(a):
     mechanism = root / "results" / "mechanism"
     if a.with_huginn:
         models["huginn-0125"] = None
+        files.update(loopcd_files(root, models))
     if a.with_huginn or (a.only is None and (mechanism / "MECHANISM.json").is_file()):
         path = mechanism / "MECHANISM.json"
         measured = read(path)

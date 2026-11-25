@@ -1,6 +1,7 @@
 {
   "model_order": [
     "ouro-2.6b",
+    "ouro-1.4b-thinking",
     "ouro-2.6b-thinking"
   ],
   "sign_legend": {
@@ -22,19 +23,78 @@
         {
           "signs": [
             -1,
+            -1,
             -1
+          ],
+          "n": 1
+        },
+        {
+          "signs": [
+            -1,
+            -1,
+            0
+          ],
+          "n": 1
+        },
+        {
+          "signs": [
+            -1,
+            0,
+            -1
+          ],
+          "n": 5
+        },
+        {
+          "signs": [
+            -1,
+            0,
+            0
           ],
           "n": 7
         },
         {
           "signs": [
             -1,
-            0
+            0,
+            1
           ],
-          "n": 9
+          "n": 1
         },
         {
           "signs": [
+            -1,
+            1,
+            -1
+          ],
+          "n": 1
+        },
+        {
+          "signs": [
+            -1,
+            1,
+            0
+          ],
+          "n": 1
+        },
+        {
+          "signs": [
+            0,
+            -1,
+            -1
+          ],
+          "n": 2
+        },
+        {
+          "signs": [
+            0,
+            -1,
+            0
+          ],
+          "n": 31
+        },
+        {
+          "signs": [
+            0,
             -1,
             1
           ],
@@ -43,40 +103,121 @@
         {
           "signs": [
             0,
+            0,
             -1
           ],
-          "n": 15
+          "n": 9
         },
         {
           "signs": [
             0,
+            0,
             0
           ],
-          "n": 1000
+          "n": 821
         },
         {
           "signs": [
             0,
+            0,
             1
           ],
-          "n": 55
+          "n": 34
         },
         {
           "signs": [
+            0,
+            1,
+            -1
+          ],
+          "n": 4
+        },
+        {
+          "signs": [
+            0,
             1,
             0
           ],
-          "n": 50
+          "n": 148
+        },
+        {
+          "signs": [
+            0,
+            1,
+            1
+          ],
+          "n": 20
         },
         {
           "signs": [
             1,
+            -1,
+            0
+          ],
+          "n": 3
+        },
+        {
+          "signs": [
+            1,
+            -1,
             1
           ],
-          "n": 35
+          "n": 2
+        },
+        {
+          "signs": [
+            1,
+            0,
+            0
+          ],
+          "n": 27
+        },
+        {
+          "signs": [
+            1,
+            0,
+            1
+          ],
+          "n": 19
+        },
+        {
+          "signs": [
+            1,
+            1,
+            0
+          ],
+          "n": 20
+        },
+        {
+          "signs": [
+            1,
+            1,
+            1
+          ],
+          "n": 14
         }
       ],
       "overlap_with_same_native_correctness": [
+        {
+          "models": [
+            "ouro-2.6b",
+            "ouro-1.4b-thinking"
+          ],
+          "rescues": {
+            "n_initially_matched": 418,
+            "both": 34,
+            "left_only": 16,
+            "right_only": 101,
+            "neither": 267
+          },
+          "damage": {
+            "n_initially_matched": 557,
+            "both": 2,
+            "left_only": 10,
+            "right_only": 29,
+            "neither": 516
+          }
+        },
         {
           "models": [
             "ouro-2.6b",
@@ -96,6 +237,26 @@
             "right_only": 11,
             "neither": 594
           }
+        },
+        {
+          "models": [
+            "ouro-1.4b-thinking",
+            "ouro-2.6b-thinking"
+          ],
+          "rescues": {
+            "n_initially_matched": 427,
+            "both": 34,
+            "left_only": 109,
+            "right_only": 20,
+            "neither": 264
+          },
+          "damage": {
+            "n_initially_matched": 550,
+            "both": 3,
+            "left_only": 29,
+            "right_only": 8,
+            "neither": 510
+          }
         }
       ]
     },
@@ -106,19 +267,142 @@
         {
           "signs": [
             -1,
+            -1,
             -1
           ],
-          "n": 8
+          "n": 3
         },
         {
           "signs": [
             -1,
+            -1,
             0
           ],
-          "n": 15
+          "n": 1
         },
         {
           "signs": [
+            -1,
+            0,
+            -1
+          ],
+          "n": 2
+        },
+        {
+          "signs": [
+            -1,
+            0,
+            0
+          ],
+          "n": 13
+        },
+        {
+          "signs": [
+            -1,
+            0,
+            1
+          ],
+          "n": 1
+        },
+        {
+          "signs": [
+            -1,
+            1,
+            -1
+          ],
+          "n": 3
+        },
+        {
+          "signs": [
+            -1,
+            1,
+            0
+          ],
+          "n": 1
+        },
+        {
+          "signs": [
+            0,
+            -1,
+            -1
+          ],
+          "n": 2
+        },
+        {
+          "signs": [
+            0,
+            -1,
+            0
+          ],
+          "n": 39
+        },
+        {
+          "signs": [
+            0,
+            -1,
+            1
+          ],
+          "n": 2
+        },
+        {
+          "signs": [
+            0,
+            0,
+            -1
+          ],
+          "n": 14
+        },
+        {
+          "signs": [
+            0,
+            0,
+            0
+          ],
+          "n": 1920
+        },
+        {
+          "signs": [
+            0,
+            0,
+            1
+          ],
+          "n": 50
+        },
+        {
+          "signs": [
+            0,
+            1,
+            -1
+          ],
+          "n": 4
+        },
+        {
+          "signs": [
+            0,
+            1,
+            0
+          ],
+          "n": 156
+        },
+        {
+          "signs": [
+            0,
+            1,
+            1
+          ],
+          "n": 35
+        },
+        {
+          "signs": [
+            1,
+            -1,
+            0
+          ],
+          "n": 1
+        },
+        {
+          "signs": [
+            1,
             -1,
             1
           ],
@@ -126,41 +410,58 @@
         },
         {
           "signs": [
-            0,
-            -1
-          ],
-          "n": 20
-        },
-        {
-          "signs": [
+            1,
             0,
             0
           ],
-          "n": 2115
-        },
-        {
-          "signs": [
-            0,
-            1
-          ],
-          "n": 87
+          "n": 57
         },
         {
           "signs": [
             1,
-            0
+            0,
+            1
           ],
-          "n": 81
+          "n": 21
         },
         {
           "signs": [
             1,
+            1,
+            0
+          ],
+          "n": 23
+        },
+        {
+          "signs": [
+            1,
+            1,
             1
           ],
-          "n": 49
+          "n": 27
         }
       ],
       "overlap_with_same_native_correctness": [
+        {
+          "models": [
+            "ouro-2.6b",
+            "ouro-1.4b-thinking"
+          ],
+          "rescues": {
+            "n_initially_matched": 347,
+            "both": 50,
+            "left_only": 30,
+            "right_only": 101,
+            "neither": 166
+          },
+          "damage": {
+            "n_initially_matched": 1747,
+            "both": 4,
+            "left_only": 11,
+            "right_only": 35,
+            "neither": 1697
+          }
+        },
         {
           "models": [
             "ouro-2.6b",
@@ -180,6 +481,26 @@
             "right_only": 16,
             "neither": 1788
           }
+        },
+        {
+          "models": [
+            "ouro-1.4b-thinking",
+            "ouro-2.6b-thinking"
+          ],
+          "rescues": {
+            "n_initially_matched": 350,
+            "both": 62,
+            "left_only": 86,
+            "right_only": 24,
+            "neither": 178
+          },
+          "damage": {
+            "n_initially_matched": 1741,
+            "both": 5,
+            "left_only": 35,
+            "right_only": 14,
+            "neither": 1687
+          }
         }
       ]
     },
@@ -190,12 +511,22 @@
         {
           "signs": [
             -1,
+            0,
             0
           ],
           "n": 1
         },
         {
           "signs": [
+            0,
+            -1,
+            0
+          ],
+          "n": 5
+        },
+        {
+          "signs": [
+            0,
             0,
             -1
           ],
@@ -204,33 +535,97 @@
         {
           "signs": [
             0,
+            0,
             0
           ],
-          "n": 956
+          "n": 932
         },
         {
           "signs": [
             0,
+            0,
             1
           ],
-          "n": 27
+          "n": 15
         },
         {
           "signs": [
+            0,
             1,
             0
           ],
-          "n": 9
+          "n": 19
+        },
+        {
+          "signs": [
+            0,
+            1,
+            1
+          ],
+          "n": 12
         },
         {
           "signs": [
             1,
+            -1,
+            0
+          ],
+          "n": 1
+        },
+        {
+          "signs": [
+            1,
+            0,
+            0
+          ],
+          "n": 3
+        },
+        {
+          "signs": [
+            1,
+            0,
             1
           ],
-          "n": 4
+          "n": 3
+        },
+        {
+          "signs": [
+            1,
+            1,
+            0
+          ],
+          "n": 5
+        },
+        {
+          "signs": [
+            1,
+            1,
+            1
+          ],
+          "n": 1
         }
       ],
       "overlap_with_same_native_correctness": [
+        {
+          "models": [
+            "ouro-2.6b",
+            "ouro-1.4b-thinking"
+          ],
+          "rescues": {
+            "n_initially_matched": 48,
+            "both": 6,
+            "left_only": 2,
+            "right_only": 10,
+            "neither": 30
+          },
+          "damage": {
+            "n_initially_matched": 917,
+            "both": 0,
+            "left_only": 0,
+            "right_only": 5,
+            "neither": 912
+          }
+        },
         {
           "models": [
             "ouro-2.6b",
@@ -250,6 +645,26 @@
             "right_only": 3,
             "neither": 905
           }
+        },
+        {
+          "models": [
+            "ouro-1.4b-thinking",
+            "ouro-2.6b-thinking"
+          ],
+          "rescues": {
+            "n_initially_matched": 62,
+            "both": 13,
+            "left_only": 13,
+            "right_only": 5,
+            "neither": 31
+          },
+          "damage": {
+            "n_initially_matched": 901,
+            "both": 0,
+            "left_only": 4,
+            "right_only": 3,
+            "neither": 894
+          }
         }
       ]
     },
@@ -260,68 +675,217 @@
         {
           "signs": [
             -1,
+            -1,
             -1
           ],
-          "n": 88
+          "n": 5
         },
         {
           "signs": [
+            -1,
             -1,
             0
           ],
-          "n": 446
+          "n": 32
         },
         {
           "signs": [
             -1,
+            0,
+            -1
+          ],
+          "n": 77
+        },
+        {
+          "signs": [
+            -1,
+            0,
+            0
+          ],
+          "n": 394
+        },
+        {
+          "signs": [
+            -1,
+            0,
             1
           ],
           "n": 8
         },
         {
           "signs": [
+            -1,
+            1,
+            -1
+          ],
+          "n": 6
+        },
+        {
+          "signs": [
+            -1,
+            1,
+            0
+          ],
+          "n": 20
+        },
+        {
+          "signs": [
+            0,
+            -1,
+            -1
+          ],
+          "n": 29
+        },
+        {
+          "signs": [
+            0,
+            -1,
+            0
+          ],
+          "n": 380
+        },
+        {
+          "signs": [
+            0,
+            -1,
+            1
+          ],
+          "n": 15
+        },
+        {
+          "signs": [
+            0,
             0,
             -1
           ],
-          "n": 334
+          "n": 295
         },
         {
           "signs": [
+            0,
             0,
             0
           ],
-          "n": 12451
+          "n": 11749
         },
         {
           "signs": [
             0,
+            0,
             1
           ],
-          "n": 306
+          "n": 271
+        },
+        {
+          "signs": [
+            0,
+            1,
+            -1
+          ],
+          "n": 10
+        },
+        {
+          "signs": [
+            0,
+            1,
+            0
+          ],
+          "n": 322
+        },
+        {
+          "signs": [
+            0,
+            1,
+            1
+          ],
+          "n": 20
         },
         {
           "signs": [
             1,
+            -1,
+            0
+          ],
+          "n": 17
+        },
+        {
+          "signs": [
+            1,
+            -1,
+            1
+          ],
+          "n": 2
+        },
+        {
+          "signs": [
+            1,
+            0,
             -1
+          ],
+          "n": 18
+        },
+        {
+          "signs": [
+            1,
+            0,
+            0
+          ],
+          "n": 295
+        },
+        {
+          "signs": [
+            1,
+            0,
+            1
+          ],
+          "n": 51
+        },
+        {
+          "signs": [
+            1,
+            1,
+            -1
+          ],
+          "n": 1
+        },
+        {
+          "signs": [
+            1,
+            1,
+            0
           ],
           "n": 19
         },
         {
           "signs": [
             1,
-            0
-          ],
-          "n": 331
-        },
-        {
-          "signs": [
             1,
             1
           ],
-          "n": 59
+          "n": 6
         }
       ],
       "overlap_with_same_native_correctness": [
+        {
+          "models": [
+            "ouro-2.6b",
+            "ouro-1.4b-thinking"
+          ],
+          "rescues": {
+            "n_initially_matched": 2574,
+            "both": 26,
+            "left_only": 219,
+            "right_only": 144,
+            "neither": 2185
+          },
+          "damage": {
+            "n_initially_matched": 8569,
+            "both": 37,
+            "left_only": 256,
+            "right_only": 298,
+            "neither": 7978
+          }
+        },
         {
           "models": [
             "ouro-2.6b",
@@ -340,6 +904,26 @@
             "left_only": 276,
             "right_only": 176,
             "neither": 9081
+          }
+        },
+        {
+          "models": [
+            "ouro-1.4b-thinking",
+            "ouro-2.6b-thinking"
+          ],
+          "rescues": {
+            "n_initially_matched": 2591,
+            "both": 26,
+            "left_only": 145,
+            "right_only": 175,
+            "neither": 2245
+          },
+          "damage": {
+            "n_initially_matched": 8757,
+            "both": 34,
+            "left_only": 311,
+            "right_only": 192,
+            "neither": 8220
           }
         }
       ],
@@ -629,6 +1213,293 @@
             "n": 171,
             "rescued": 3,
             "harmed": 3
+          }
+        },
+        "ouro-1.4b-thinking": {
+          "mmlu_abstract_algebra": {
+            "n": 100,
+            "rescued": 3,
+            "harmed": 8
+          },
+          "mmlu_anatomy": {
+            "n": 135,
+            "rescued": 5,
+            "harmed": 3
+          },
+          "mmlu_astronomy": {
+            "n": 152,
+            "rescued": 3,
+            "harmed": 7
+          },
+          "mmlu_business_ethics": {
+            "n": 100,
+            "rescued": 4,
+            "harmed": 3
+          },
+          "mmlu_clinical_knowledge": {
+            "n": 265,
+            "rescued": 6,
+            "harmed": 12
+          },
+          "mmlu_college_biology": {
+            "n": 144,
+            "rescued": 2,
+            "harmed": 2
+          },
+          "mmlu_college_chemistry": {
+            "n": 100,
+            "rescued": 7,
+            "harmed": 4
+          },
+          "mmlu_college_computer_science": {
+            "n": 100,
+            "rescued": 3,
+            "harmed": 3
+          },
+          "mmlu_college_mathematics": {
+            "n": 100,
+            "rescued": 9,
+            "harmed": 9
+          },
+          "mmlu_college_medicine": {
+            "n": 173,
+            "rescued": 4,
+            "harmed": 3
+          },
+          "mmlu_college_physics": {
+            "n": 102,
+            "rescued": 1,
+            "harmed": 4
+          },
+          "mmlu_computer_security": {
+            "n": 100,
+            "rescued": 1,
+            "harmed": 1
+          },
+          "mmlu_conceptual_physics": {
+            "n": 235,
+            "rescued": 8,
+            "harmed": 12
+          },
+          "mmlu_econometrics": {
+            "n": 114,
+            "rescued": 6,
+            "harmed": 0
+          },
+          "mmlu_electrical_engineering": {
+            "n": 145,
+            "rescued": 10,
+            "harmed": 7
+          },
+          "mmlu_elementary_mathematics": {
+            "n": 378,
+            "rescued": 19,
+            "harmed": 9
+          },
+          "mmlu_formal_logic": {
+            "n": 126,
+            "rescued": 3,
+            "harmed": 4
+          },
+          "mmlu_global_facts": {
+            "n": 100,
+            "rescued": 3,
+            "harmed": 5
+          },
+          "mmlu_high_school_biology": {
+            "n": 310,
+            "rescued": 5,
+            "harmed": 7
+          },
+          "mmlu_high_school_chemistry": {
+            "n": 203,
+            "rescued": 9,
+            "harmed": 9
+          },
+          "mmlu_high_school_computer_science": {
+            "n": 100,
+            "rescued": 1,
+            "harmed": 3
+          },
+          "mmlu_high_school_european_history": {
+            "n": 165,
+            "rescued": 4,
+            "harmed": 6
+          },
+          "mmlu_high_school_geography": {
+            "n": 198,
+            "rescued": 1,
+            "harmed": 4
+          },
+          "mmlu_high_school_government_and_politics": {
+            "n": 193,
+            "rescued": 5,
+            "harmed": 4
+          },
+          "mmlu_high_school_macroeconomics": {
+            "n": 390,
+            "rescued": 9,
+            "harmed": 9
+          },
+          "mmlu_high_school_mathematics": {
+            "n": 270,
+            "rescued": 20,
+            "harmed": 22
+          },
+          "mmlu_high_school_microeconomics": {
+            "n": 238,
+            "rescued": 5,
+            "harmed": 2
+          },
+          "mmlu_high_school_physics": {
+            "n": 151,
+            "rescued": 6,
+            "harmed": 8
+          },
+          "mmlu_high_school_psychology": {
+            "n": 545,
+            "rescued": 4,
+            "harmed": 12
+          },
+          "mmlu_high_school_statistics": {
+            "n": 216,
+            "rescued": 6,
+            "harmed": 12
+          },
+          "mmlu_high_school_us_history": {
+            "n": 204,
+            "rescued": 4,
+            "harmed": 3
+          },
+          "mmlu_high_school_world_history": {
+            "n": 237,
+            "rescued": 5,
+            "harmed": 4
+          },
+          "mmlu_human_aging": {
+            "n": 223,
+            "rescued": 5,
+            "harmed": 6
+          },
+          "mmlu_human_sexuality": {
+            "n": 131,
+            "rescued": 2,
+            "harmed": 2
+          },
+          "mmlu_international_law": {
+            "n": 121,
+            "rescued": 5,
+            "harmed": 1
+          },
+          "mmlu_jurisprudence": {
+            "n": 108,
+            "rescued": 2,
+            "harmed": 2
+          },
+          "mmlu_logical_fallacies": {
+            "n": 163,
+            "rescued": 3,
+            "harmed": 4
+          },
+          "mmlu_machine_learning": {
+            "n": 112,
+            "rescued": 6,
+            "harmed": 2
+          },
+          "mmlu_management": {
+            "n": 103,
+            "rescued": 2,
+            "harmed": 2
+          },
+          "mmlu_marketing": {
+            "n": 234,
+            "rescued": 1,
+            "harmed": 11
+          },
+          "mmlu_medical_genetics": {
+            "n": 100,
+            "rescued": 2,
+            "harmed": 4
+          },
+          "mmlu_miscellaneous": {
+            "n": 783,
+            "rescued": 11,
+            "harmed": 26
+          },
+          "mmlu_moral_disputes": {
+            "n": 346,
+            "rescued": 8,
+            "harmed": 18
+          },
+          "mmlu_moral_scenarios": {
+            "n": 895,
+            "rescued": 40,
+            "harmed": 47
+          },
+          "mmlu_nutrition": {
+            "n": 306,
+            "rescued": 7,
+            "harmed": 8
+          },
+          "mmlu_philosophy": {
+            "n": 311,
+            "rescued": 10,
+            "harmed": 7
+          },
+          "mmlu_prehistory": {
+            "n": 324,
+            "rescued": 7,
+            "harmed": 9
+          },
+          "mmlu_professional_accounting": {
+            "n": 282,
+            "rescued": 12,
+            "harmed": 9
+          },
+          "mmlu_professional_law": {
+            "n": 1534,
+            "rescued": 55,
+            "harmed": 64
+          },
+          "mmlu_professional_medicine": {
+            "n": 272,
+            "rescued": 13,
+            "harmed": 6
+          },
+          "mmlu_professional_psychology": {
+            "n": 612,
+            "rescued": 16,
+            "harmed": 21
+          },
+          "mmlu_public_relations": {
+            "n": 110,
+            "rescued": 3,
+            "harmed": 4
+          },
+          "mmlu_security_studies": {
+            "n": 245,
+            "rescued": 6,
+            "harmed": 11
+          },
+          "mmlu_sociology": {
+            "n": 201,
+            "rescued": 2,
+            "harmed": 2
+          },
+          "mmlu_us_foreign_policy": {
+            "n": 100,
+            "rescued": 1,
+            "harmed": 5
+          },
+          "mmlu_virology": {
+            "n": 166,
+            "rescued": 3,
+            "harmed": 4
+          },
+          "mmlu_world_religions": {
+            "n": 171,
+            "rescued": 1,
+            "harmed": 4
           }
         },
         "ouro-2.6b-thinking": {
@@ -927,20 +1798,55 @@
         {
           "signs": [
             -1,
+            -1,
             -1
           ],
-          "n": 25
+          "n": 2
         },
         {
           "signs": [
+            -1,
             -1,
             0
           ],
-          "n": 72
+          "n": 7
         },
         {
           "signs": [
             -1,
+            0,
+            -1
+          ],
+          "n": 18
+        },
+        {
+          "signs": [
+            -1,
+            0,
+            0
+          ],
+          "n": 57
+        },
+        {
+          "signs": [
+            -1,
+            1,
+            -1
+          ],
+          "n": 5
+        },
+        {
+          "signs": [
+            -1,
+            1,
+            0
+          ],
+          "n": 8
+        },
+        {
+          "signs": [
+            -1,
+            1,
             1
           ],
           "n": 1
@@ -948,26 +1854,102 @@
         {
           "signs": [
             0,
+            -1,
             -1
+          ],
+          "n": 13
+        },
+        {
+          "signs": [
+            0,
+            -1,
+            0
+          ],
+          "n": 268
+        },
+        {
+          "signs": [
+            0,
+            0,
+            -1
+          ],
+          "n": 67
+        },
+        {
+          "signs": [
+            0,
+            0,
+            0
+          ],
+          "n": 8598
+        },
+        {
+          "signs": [
+            0,
+            0,
+            1
+          ],
+          "n": 100
+        },
+        {
+          "signs": [
+            0,
+            1,
+            -1
+          ],
+          "n": 10
+        },
+        {
+          "signs": [
+            0,
+            1,
+            0
+          ],
+          "n": 622
+        },
+        {
+          "signs": [
+            0,
+            1,
+            1
+          ],
+          "n": 58
+        },
+        {
+          "signs": [
+            1,
+            -1,
+            0
+          ],
+          "n": 9
+        },
+        {
+          "signs": [
+            1,
+            -1,
+            1
+          ],
+          "n": 2
+        },
+        {
+          "signs": [
+            1,
+            0,
+            0
           ],
           "n": 90
         },
         {
           "signs": [
-            0,
-            0
-          ],
-          "n": 9488
-        },
-        {
-          "signs": [
+            1,
             0,
             1
           ],
-          "n": 158
+          "n": 36
         },
         {
           "signs": [
+            1,
             1,
             -1
           ],
@@ -976,19 +1958,41 @@
         {
           "signs": [
             1,
+            1,
             0
           ],
-          "n": 146
+          "n": 47
         },
         {
           "signs": [
             1,
+            1,
             1
           ],
-          "n": 61
+          "n": 23
         }
       ],
       "overlap_with_same_native_correctness": [
+        {
+          "models": [
+            "ouro-2.6b",
+            "ouro-1.4b-thinking"
+          ],
+          "rescues": {
+            "n_initially_matched": 2140,
+            "both": 71,
+            "left_only": 81,
+            "right_only": 301,
+            "neither": 1687
+          },
+          "damage": {
+            "n_initially_matched": 6870,
+            "both": 9,
+            "left_only": 38,
+            "right_only": 248,
+            "neither": 6575
+          }
+        },
         {
           "models": [
             "ouro-2.6b",
@@ -1008,6 +2012,26 @@
             "right_only": 56,
             "neither": 7301
           }
+        },
+        {
+          "models": [
+            "ouro-1.4b-thinking",
+            "ouro-2.6b-thinking"
+          ],
+          "rescues": {
+            "n_initially_matched": 2177,
+            "both": 82,
+            "left_only": 303,
+            "right_only": 86,
+            "neither": 1706
+          },
+          "damage": {
+            "n_initially_matched": 6867,
+            "both": 15,
+            "left_only": 244,
+            "right_only": 43,
+            "neither": 6565
+          }
         }
       ]
     },
@@ -1018,19 +2042,22 @@
         {
           "signs": [
             -1,
+            -1,
             -1
           ],
-          "n": 4
+          "n": 1
         },
         {
           "signs": [
             -1,
+            -1,
             0
           ],
-          "n": 28
+          "n": 2
         },
         {
           "signs": [
+            -1,
             -1,
             1
           ],
@@ -1038,41 +2065,162 @@
         },
         {
           "signs": [
+            -1,
             0,
             -1
           ],
-          "n": 37
+          "n": 2
+        },
+        {
+          "signs": [
+            -1,
+            0,
+            0
+          ],
+          "n": 23
+        },
+        {
+          "signs": [
+            -1,
+            1,
+            -1
+          ],
+          "n": 1
+        },
+        {
+          "signs": [
+            -1,
+            1,
+            0
+          ],
+          "n": 3
         },
         {
           "signs": [
             0,
-            0
+            -1,
+            -1
           ],
-          "n": 1107
+          "n": 2
         },
         {
           "signs": [
             0,
-            1
+            -1,
+            0
           ],
-          "n": 42
+          "n": 93
         },
         {
           "signs": [
+            0,
+            -1,
+            1
+          ],
+          "n": 4
+        },
+        {
+          "signs": [
+            0,
+            0,
+            -1
+          ],
+          "n": 29
+        },
+        {
+          "signs": [
+            0,
+            0,
+            0
+          ],
+          "n": 917
+        },
+        {
+          "signs": [
+            0,
+            0,
+            1
+          ],
+          "n": 34
+        },
+        {
+          "signs": [
+            0,
+            1,
+            -1
+          ],
+          "n": 6
+        },
+        {
+          "signs": [
+            0,
             1,
             0
           ],
-          "n": 44
+          "n": 97
+        },
+        {
+          "signs": [
+            0,
+            1,
+            1
+          ],
+          "n": 4
         },
         {
           "signs": [
             1,
+            -1,
+            0
+          ],
+          "n": 6
+        },
+        {
+          "signs": [
+            1,
+            0,
+            0
+          ],
+          "n": 34
+        },
+        {
+          "signs": [
+            1,
+            0,
             1
+          ],
+          "n": 4
+        },
+        {
+          "signs": [
+            1,
+            1,
+            0
           ],
           "n": 4
         }
       ],
       "overlap_with_same_native_correctness": [
+        {
+          "models": [
+            "ouro-2.6b",
+            "ouro-1.4b-thinking"
+          ],
+          "rescues": {
+            "n_initially_matched": 242,
+            "both": 4,
+            "left_only": 11,
+            "right_only": 47,
+            "neither": 180
+          },
+          "damage": {
+            "n_initially_matched": 697,
+            "both": 4,
+            "left_only": 13,
+            "right_only": 69,
+            "neither": 611
+          }
+        },
         {
           "models": [
             "ouro-2.6b",
@@ -1092,6 +2240,26 @@
             "right_only": 19,
             "neither": 729
           }
+        },
+        {
+          "models": [
+            "ouro-1.4b-thinking",
+            "ouro-2.6b-thinking"
+          ],
+          "rescues": {
+            "n_initially_matched": 246,
+            "both": 4,
+            "left_only": 52,
+            "right_only": 15,
+            "neither": 175
+          },
+          "damage": {
+            "n_initially_matched": 689,
+            "both": 3,
+            "left_only": 74,
+            "right_only": 18,
+            "neither": 594
+          }
         }
       ]
     },
@@ -1102,54 +2270,169 @@
         {
           "signs": [
             -1,
-            -1
+            -1,
+            0
           ],
-          "n": 8
+          "n": 4
         },
         {
           "signs": [
             -1,
-            0
-          ],
-          "n": 21
-        },
-        {
-          "signs": [
             0,
             -1
           ],
-          "n": 17
-        },
-        {
-          "signs": [
-            0,
-            0
-          ],
-          "n": 1728
-        },
-        {
-          "signs": [
-            0,
-            1
-          ],
-          "n": 29
-        },
-        {
-          "signs": [
-            1,
-            0
-          ],
-          "n": 28
-        },
-        {
-          "signs": [
-            1,
-            1
-          ],
           "n": 7
+        },
+        {
+          "signs": [
+            -1,
+            0,
+            0
+          ],
+          "n": 11
+        },
+        {
+          "signs": [
+            -1,
+            1,
+            -1
+          ],
+          "n": 1
+        },
+        {
+          "signs": [
+            -1,
+            1,
+            0
+          ],
+          "n": 6
+        },
+        {
+          "signs": [
+            0,
+            -1,
+            0
+          ],
+          "n": 64
+        },
+        {
+          "signs": [
+            0,
+            -1,
+            1
+          ],
+          "n": 2
+        },
+        {
+          "signs": [
+            0,
+            0,
+            -1
+          ],
+          "n": 16
+        },
+        {
+          "signs": [
+            0,
+            0,
+            0
+          ],
+          "n": 1576
+        },
+        {
+          "signs": [
+            0,
+            0,
+            1
+          ],
+          "n": 23
+        },
+        {
+          "signs": [
+            0,
+            1,
+            -1
+          ],
+          "n": 1
+        },
+        {
+          "signs": [
+            0,
+            1,
+            0
+          ],
+          "n": 88
+        },
+        {
+          "signs": [
+            0,
+            1,
+            1
+          ],
+          "n": 4
+        },
+        {
+          "signs": [
+            1,
+            -1,
+            0
+          ],
+          "n": 4
+        },
+        {
+          "signs": [
+            1,
+            0,
+            0
+          ],
+          "n": 14
+        },
+        {
+          "signs": [
+            1,
+            0,
+            1
+          ],
+          "n": 5
+        },
+        {
+          "signs": [
+            1,
+            1,
+            0
+          ],
+          "n": 10
+        },
+        {
+          "signs": [
+            1,
+            1,
+            1
+          ],
+          "n": 2
         }
       ],
       "overlap_with_same_native_correctness": [
+        {
+          "models": [
+            "ouro-2.6b",
+            "ouro-1.4b-thinking"
+          ],
+          "rescues": {
+            "n_initially_matched": 306,
+            "both": 12,
+            "left_only": 12,
+            "right_only": 47,
+            "neither": 235
+          },
+          "damage": {
+            "n_initially_matched": 1372,
+            "both": 4,
+            "left_only": 14,
+            "right_only": 61,
+            "neither": 1293
+          }
+        },
         {
           "models": [
             "ouro-2.6b",
@@ -1169,6 +2452,26 @@
             "right_only": 12,
             "neither": 1388
           }
+        },
+        {
+          "models": [
+            "ouro-1.4b-thinking",
+            "ouro-2.6b-thinking"
+          ],
+          "rescues": {
+            "n_initially_matched": 309,
+            "both": 6,
+            "left_only": 55,
+            "right_only": 16,
+            "neither": 232
+          },
+          "damage": {
+            "n_initially_matched": 1353,
+            "both": 0,
+            "left_only": 59,
+            "right_only": 17,
+            "neither": 1277
+          }
         }
       ]
     },
@@ -1179,68 +2482,233 @@
         {
           "signs": [
             -1,
+            -1,
             -1
           ],
-          "n": 14
+          "n": 1
         },
         {
           "signs": [
             -1,
+            -1,
             0
           ],
-          "n": 310
+          "n": 31
         },
         {
           "signs": [
             -1,
+            -1,
             1
           ],
-          "n": 38
+          "n": 2
         },
         {
           "signs": [
+            -1,
             0,
             -1
           ],
-          "n": 114
+          "n": 12
         },
         {
           "signs": [
+            -1,
             0,
             0
           ],
-          "n": 9720
+          "n": 248
+        },
+        {
+          "signs": [
+            -1,
+            0,
+            1
+          ],
+          "n": 31
+        },
+        {
+          "signs": [
+            -1,
+            1,
+            -1
+          ],
+          "n": 1
+        },
+        {
+          "signs": [
+            -1,
+            1,
+            0
+          ],
+          "n": 31
+        },
+        {
+          "signs": [
+            -1,
+            1,
+            1
+          ],
+          "n": 5
         },
         {
           "signs": [
             0,
+            -1,
+            -1
+          ],
+          "n": 10
+        },
+        {
+          "signs": [
+            0,
+            -1,
+            0
+          ],
+          "n": 601
+        },
+        {
+          "signs": [
+            0,
+            -1,
             1
           ],
-          "n": 949
+          "n": 45
+        },
+        {
+          "signs": [
+            0,
+            0,
+            -1
+          ],
+          "n": 93
+        },
+        {
+          "signs": [
+            0,
+            0,
+            0
+          ],
+          "n": 8476
+        },
+        {
+          "signs": [
+            0,
+            0,
+            1
+          ],
+          "n": 844
+        },
+        {
+          "signs": [
+            0,
+            1,
+            -1
+          ],
+          "n": 11
+        },
+        {
+          "signs": [
+            0,
+            1,
+            0
+          ],
+          "n": 643
+        },
+        {
+          "signs": [
+            0,
+            1,
+            1
+          ],
+          "n": 60
         },
         {
           "signs": [
             1,
+            -1,
             -1
+          ],
+          "n": 1
+        },
+        {
+          "signs": [
+            1,
+            -1,
+            0
+          ],
+          "n": 65
+        },
+        {
+          "signs": [
+            1,
+            -1,
+            1
           ],
           "n": 8
         },
         {
           "signs": [
             1,
-            0
+            0,
+            -1
           ],
-          "n": 755
+          "n": 7
         },
         {
           "signs": [
             1,
+            0,
+            0
+          ],
+          "n": 628
+        },
+        {
+          "signs": [
+            1,
+            0,
             1
           ],
-          "n": 124
+          "n": 111
+        },
+        {
+          "signs": [
+            1,
+            1,
+            0
+          ],
+          "n": 62
+        },
+        {
+          "signs": [
+            1,
+            1,
+            1
+          ],
+          "n": 5
         }
       ],
       "overlap_with_same_native_correctness": [
+        {
+          "models": [
+            "ouro-2.6b",
+            "ouro-1.4b-thinking"
+          ],
+          "rescues": {
+            "n_initially_matched": 5984,
+            "both": 67,
+            "left_only": 330,
+            "right_only": 539,
+            "neither": 5048
+          },
+          "damage": {
+            "n_initially_matched": 2649,
+            "both": 34,
+            "left_only": 115,
+            "right_only": 194,
+            "neither": 2306
+          }
+        },
         {
           "models": [
             "ouro-2.6b",
@@ -1259,6 +2727,26 @@
             "left_only": 89,
             "right_only": 38,
             "neither": 1395
+          }
+        },
+        {
+          "models": [
+            "ouro-1.4b-thinking",
+            "ouro-2.6b-thinking"
+          ],
+          "rescues": {
+            "n_initially_matched": 6555,
+            "both": 70,
+            "left_only": 638,
+            "right_only": 379,
+            "neither": 5468
+          },
+          "damage": {
+            "n_initially_matched": 1524,
+            "both": 12,
+            "left_only": 117,
+            "right_only": 51,
+            "neither": 1344
           }
         }
       ]

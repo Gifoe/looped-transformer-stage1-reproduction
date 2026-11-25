@@ -1,0 +1,78 @@
+{
+  "model_lock_sha256": "43283c8c99a0c7bd4be0b75d73f3970180e4238a97163aa92c7a2ac2430caec7",
+  "reference_sha256": "2d966f1d2cfd37f7c9447af85bce49a604cbea2ef5266b9d22ae20165fef1383",
+  "reference": {
+    "selection": "Mixed, fixed by user before scoring",
+    "parameters": 4096,
+    "depth": 4,
+    "expected": {
+      "sciq": 1000,
+      "piqa": 1838,
+      "arc_challenge": 1172,
+      "arc_easy": 2376,
+      "winogrande": 1267,
+      "mmlu": 14042,
+      "hellaswag": 10042,
+      "mmlu_pro": 12032
+    },
+    "repository_source": "59cc8e5330bd16b6dbf40d687b70ff68e518e3d6",
+    "arms": {
+      "mixed": {
+        "path": "/root/ouro-shared-functional-advantage-20261124/results/fits/mixed/controller.pt",
+        "sha256": "ec2e55a64564f608cfeb245da079015db4347a9391072cba7f2949db05185b87"
+      }
+    },
+    "model_sha256": "58872a72616c736595b8b7662079c5b12c5a162ec16eae94f21c348dfa9885af",
+    "study_config_sha256": "afb34e6dfd974105050d97e5d8d276181f24e69ae985f112f1ae9a0756f76c0d",
+    "primary": {
+      "arc_challenge": "acc_norm",
+      "arc_easy": "acc_norm",
+      "sciq": "acc_norm",
+      "mmlu": "acc",
+      "hellaswag": "acc_norm",
+      "winogrande": "acc",
+      "piqa": "acc_norm",
+      "csqa": "acc_norm",
+      "obqa": "acc_norm",
+      "squad": "correct",
+      "gsm8k": "strict",
+      "mmlu_pro": "correct"
+    },
+    "large_benchmark_scorer_sha256": "facd08796b9e8f7ee8fe1583fe10dc5820c1f1db22bfc652fdd11f5dd7dad577",
+    "entry_sha256": "325b5a0037a95e88baab9178d33fd2e67eb46a385c9d585f6d67ad6b8479555f",
+    "stage2_adapter_sha256": "fabfc80e923d1baedb1cb3b4f27ebe653957eabde3fb768646ed03a006b3bf5f",
+    "stage2_sha256": "e9768f49fca4f81fbbc59790ed5f222e2487adb91166349ce663da2e738ea1d1",
+    "seven_requests_sha256": {
+      "sciq": "790706c306efa8a07a5a57d2b38d459817c03af84329cdbbaad465e1570a8645",
+      "piqa": "3885a22dd6d8c25889d5814a31e87ce53835da76b5ed9ec39c0d68e6efeeea1d",
+      "arc_challenge": "ee9a62b663aab31e181a5b7ca410f0caee6729dcfef9fc53bdbcaab3c1150da0",
+      "arc_easy": "e665197eb5fc0e9c29bf02c8ea77e0adc0b0a5011209951d69f9d2856adf5f21",
+      "winogrande": "4e54c970c3a7045043d5c7a690af48b1342219906c4d7906fddd671f1fcea7c3",
+      "mmlu": "1262beee0a03d05f104f9f5ed834307bdcf9d9859bcf4368f9e76b7f508b746f",
+      "hellaswag": "db11095451488edba20b77da71d5ccb9ef1f4688a8f2c23721336160a7ba9082"
+    },
+    "stage2_zero_shot_archive_sources": {
+      "sciq": "stage2",
+      "piqa": "stage2",
+      "arc_challenge": "zero_shot",
+      "arc_easy": "zero_shot",
+      "winogrande": "zero_shot",
+      "mmlu": "zero_shot",
+      "hellaswag": "zero_shot"
+    },
+    "mmlu_pro_sha256": "0e24a191921c2f453518a537a8b2117bd137e7714d4ef1565e9ba06c1ecb9ad8",
+    "mmlu_pro_code_sha256": "c645b5ec024f7dfe6ddfbc0ff26fc52d3251e6b48743f1ac7517c1125c8b1a49",
+    "mmlu_pro_reference_lock_sha256": "f51b631a87522c54490273527ec9fc8dc6e8bc8bc886f372ad295f91bd7d1f16"
+  },
+  "evaluator_sha256": "e753f8f14c2ee968ab05f2699e7a84f2082a0a46f14926853d06ba29219c21c7",
+  "arms": {
+    "native": null,
+    "t1": "91d4919308bf9060ce0c44e4046e4851e7e59f65b9692c77045535f96534efd2"
+  },
+  "injection": "historical T1 predictor positions before the fourth native loop",
+  "relative_rms_cap": 0.45,
+  "dose": 1.0,
+  "depth": 4,
+  "no_dynamic_exit": true,
+  "no_tuning": true
+}
