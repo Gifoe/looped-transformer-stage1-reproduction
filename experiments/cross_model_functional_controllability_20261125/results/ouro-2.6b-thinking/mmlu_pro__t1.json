@@ -1,0 +1,117 @@
+{
+  "plan": {
+    "task": "mmlu_pro",
+    "mode": "generated",
+    "depth": 4,
+    "arm": "t1",
+    "checkpoint": "91d4919308bf9060ce0c44e4046e4851e7e59f65b9692c77045535f96534efd2",
+    "model_lock_sha256": "9dc53c2b5a58dd9d0b93260507a32b009f68d21ba1b05319124f9d3c2cb2cab1",
+    "input_sha256": "0e24a191921c2f453518a537a8b2117bd137e7714d4ef1565e9ba06c1ecb9ad8",
+    "max_new": 8,
+    "batch": 96,
+    "capacity_tokens": 7250,
+    "cache_layers": 192
+  },
+  "metrics": {
+    "correct": {
+      "value": 0.2570644946808511,
+      "n": 12032,
+      "count": 3093
+    },
+    "parseable": {
+      "value": 0.4875332446808511,
+      "n": 12032,
+      "count": 5866
+    },
+    "strict_format": {
+      "value": 0.4874501329787234,
+      "n": 12032,
+      "count": 5865
+    },
+    "strict": {
+      "value": 0.2570644946808511,
+      "n": 12032,
+      "count": 3093
+    }
+  },
+  "cost": {
+    "seconds": 1013.1854983381927,
+    "peak_allocated_bytes": 17200982528,
+    "peak_reserved_bytes": 21030240256,
+    "calls": 3032,
+    "generated_tokens": 54819
+  },
+  "runtime": {
+    "model": {
+      "repository": "ByteDance/Ouro-2.6B-Thinking",
+      "revision": "f1edd81e7ac41355db670500ceaf204e0f73af68",
+      "weight_sha256": "c506a79247dc51fc0400d789365c3d43932f718abce9810f3606ace47d0a3080",
+      "weight_bytes": 5336011242,
+      "files": {
+        "config.json": {
+          "bytes": 1999,
+          "blob_id": "5de22fc1560f1c7d8245e4c0d70d5bb4011fdbf2",
+          "sha256": null
+        },
+        "configuration_ouro.py": {
+          "bytes": 11595,
+          "blob_id": "84590d670902673508f4a2b565a1994b9d2643ca",
+          "sha256": null
+        },
+        "merges.txt": {
+          "bytes": 466391,
+          "blob_id": "69503b13f727ba3812b6803e97442a6de05ef5eb",
+          "sha256": null
+        },
+        "model.safetensors": {
+          "bytes": 5336011242,
+          "blob_id": "8c10bfff7c53bc6637d5596a8250e0105698ce56",
+          "sha256": "c506a79247dc51fc0400d789365c3d43932f718abce9810f3606ace47d0a3080"
+        },
+        "modeling_ouro.py": {
+          "bytes": 35495,
+          "blob_id": "3c117765ee158c994a0602dd1fee4f593e39bde1",
+          "sha256": null
+        },
+        "special_tokens_map.json": {
+          "bytes": 965,
+          "blob_id": "f3c1c91caef5cac1620e8008b8e590b6d0289d52",
+          "sha256": null
+        },
+        "tokenizer.json": {
+          "bytes": 3522644,
+          "blob_id": "5046b313b3e16fa14cd3662ef70c105b08c92092",
+          "sha256": null
+        },
+        "tokenizer_config.json": {
+          "bytes": 4303,
+          "blob_id": "b653407b285b06c5885e8af863b8630dde0c430a",
+          "sha256": null
+        },
+        "vocab.json": {
+          "bytes": 800656,
+          "blob_id": "6a22c055228041f2f7b055686644c157cb5d21fc",
+          "sha256": null
+        }
+      },
+      "hidden_size": 2048,
+      "layers": 48
+    },
+    "depth": 4,
+    "early_exit": false,
+    "dtype": "bfloat16",
+    "decoding_seed": 0,
+    "tokenizer_tokens": {
+      "bos": 1,
+      "eos": 2,
+      "pad": null,
+      "config_bos": 1,
+      "config_eos": 2
+    },
+    "gpu": "NVIDIA GeForce RTX 4090 D",
+    "capacity_bytes": 25252724736,
+    "torch": "2.7.1+cu128",
+    "transformers": "4.55.4"
+  },
+  "rows_sha256": "ef6696f33d291ada23e78f13d8a927191d1aaf78e8f897d079d97f4c9b0469ac"
+}

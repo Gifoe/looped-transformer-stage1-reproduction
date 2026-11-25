@@ -49,7 +49,8 @@ def download_segment(url, fd, first, last, expected, receipt):
                         raise ValueError(f"Invalid byte write at offset {start}")
                     start += len(buf)
         except requests.RequestException as exc:
-            print("RANGE RETRY", first, attempt + 1, type(exc).__name__, flush=True)
+            status = exc.response.status_code if exc.response is not None else None
+            print("RANGE RETRY", first, attempt + 1, type(exc).__name__, status, flush=True)
             time.sleep(3 * (attempt + 1))
             continue
         if start == last + 1:
@@ -59,7 +60,21 @@ def download_segment(url, fd, first, last, expected, receipt):
     raise RuntimeError(f"Unable to download range {first}-{last}")
 
 
-def ranged_download(target, temp, source, record, workers):
+def download_checkpoint_range(source, fd, first, last, expected, ledger, repair):
+    complete = ledger / f"{first}.ok"
+    if complete.is_file():
+        return
+    if repair:
+        step = 12 * 2**20
+        for start in range(first, last + 1, step):
+            stop = min(start + step, last + 1) - 1
+            download_segment(source, fd, start, stop, expected, ledger / f"{start}-{stop}.part-ok")
+        complete.touch()
+    else:
+        download_segment(source, fd, first, last, expected, complete)
+
+
+def ranged_download(target, temp, source, record, workers, repair):
     ledger = temp.parent / "MODEL_RANGES"
     marker = ledger / "LAYOUT.json"
     if marker.exists():
@@ -79,8 +94,8 @@ def ranged_download(target, temp, source, record, workers):
     try:
         os.ftruncate(fd, plan["bytes"])
         with ThreadPoolExecutor(max_workers=workers) as pool:
-            pending = [pool.submit(download_segment, source, fd, first, min(first + stride, plan["bytes"]) - 1,
-                                   plan["bytes"], ledger / f"{first}.ok")
+            pending = [pool.submit(download_checkpoint_range, source, fd, first, min(first + stride, plan["bytes"]) - 1,
+                                   plan["bytes"], ledger, repair)
                        for first in range(plan["prefix_bytes"], plan["bytes"], stride)]
             for result in pending:
                 result.result()
@@ -91,15 +106,15 @@ def ranged_download(target, temp, source, record, workers):
     temp.replace(target)
 
 
-def fetch(destination, mirror, model, record, range_workers):
+def fetch(destination, mirror, model, record, range_workers, repair):
     name = record["rfilename"]
     p = destination / name
     if verified(p, record):
         return
     temp = p.with_suffix(p.suffix + ".partial")
     source = f'{mirror}/{model["repository"]}/resolve/{model["revision"]}/{name}'
-    if name == "model.safetensors" and range_workers > 1:
-        ranged_download(p, temp, source, record, range_workers)
+    if name == "model.safetensors" and (range_workers > 1 or repair):
+        ranged_download(p, temp, source, record, range_workers, repair)
         print("VERIFIED", name, p.stat().st_size, flush=True)
         return
     for attempt in range(5):
@@ -147,7 +162,7 @@ def run(a):
     target = a.out / a.name
     target.mkdir(parents=True, exist_ok=True)
     with ThreadPoolExecutor(max_workers=4) as pool:
-        pending = [pool.submit(fetch, target, a.mirror, plan, r, a.range_workers) for r in files.values()]
+        pending = [pool.submit(fetch, target, a.mirror, plan, r, a.range_workers, a.repair_ranges) for r in files.values()]
         for future in pending:
             future.result()
     config = json.loads((target / "config.json").read_text(encoding="utf-8"))
@@ -169,4 +184,5 @@ if __name__ == "__main__":
     p.add_argument("--out", type=Path, required=True)
     p.add_argument("--mirror", default="https://hf-mirror.com")
     p.add_argument("--range-workers", type=int, default=1)
+    p.add_argument("--repair-ranges", action="store_true")
     run(p.parse_args())

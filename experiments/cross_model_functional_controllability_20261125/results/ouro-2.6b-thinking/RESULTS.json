@@ -1,0 +1,514 @@
+{
+  "arc_challenge": {
+    "primary": "acc_norm",
+    "metrics": {
+      "acc": {
+        "n": 1172,
+        "native_count": 631,
+        "t1_count": 691,
+        "native": 0.53839590443686,
+        "t1": 0.5895904436860068,
+        "delta": 0.051194539249146756,
+        "rescue": 86,
+        "damage": 26,
+        "paired_ci95": [
+          0.034129692832764506,
+          0.06911262798634812
+        ],
+        "mcnemar": 1.100922308456013e-08
+      },
+      "acc_norm": {
+        "n": 1172,
+        "native_count": 667,
+        "t1_count": 736,
+        "native": 0.5691126279863481,
+        "t1": 0.6279863481228669,
+        "delta": 0.05887372013651877,
+        "rescue": 91,
+        "damage": 22,
+        "paired_ci95": [
+          0.041808873720136516,
+          0.07593856655290103
+        ],
+        "mcnemar": 3.69703787625371e-11
+      }
+    },
+    "cost": {
+      "native": {
+        "elapsed_seconds": 34.90381379425526,
+        "forward_calls": 131,
+        "head_calls": 266,
+        "padded_input_tokens": 160266,
+        "dense_loop_token_calls": 641064,
+        "oom_retries": 0,
+        "peak_allocated_bytes": 5592129536,
+        "peak_reserved_bytes": 6257901568
+      },
+      "t1": {
+        "elapsed_seconds": 34.702848294749856,
+        "forward_calls": 131,
+        "head_calls": 266,
+        "padded_input_tokens": 160266,
+        "dense_loop_token_calls": 641064,
+        "oom_retries": 0,
+        "peak_allocated_bytes": 5592129536,
+        "peak_reserved_bytes": 6259998720
+      }
+    },
+    "predictions": {
+      "native": "ce963a27c5df36c03542e65bf5c53dd36c6d81ce0edea2a670762ab216bf371b",
+      "t1": "adf50610c3cdec548eae61191b57da3f387a88709eb857ce5fbaf66ce2333fd2"
+    }
+  },
+  "arc_easy": {
+    "primary": "acc_norm",
+    "metrics": {
+      "acc": {
+        "n": 2376,
+        "native_count": 1978,
+        "t1_count": 2042,
+        "native": 0.8324915824915825,
+        "t1": 0.8594276094276094,
+        "delta": 0.026936026936026935,
+        "rescue": 96,
+        "damage": 32,
+        "paired_ci95": [
+          0.017676767676767676,
+          0.0361952861952862
+        ],
+        "mcnemar": 1.2841763866093115e-08
+      },
+      "acc_norm": {
+        "n": 2376,
+        "native_count": 1907,
+        "t1_count": 2016,
+        "native": 0.8026094276094277,
+        "t1": 0.8484848484848485,
+        "delta": 0.045875420875420875,
+        "rescue": 137,
+        "damage": 28,
+        "paired_ci95": [
+          0.03535353535353535,
+          0.0563973063973064
+        ],
+        "mcnemar": 1.898834462748165e-18
+      }
+    },
+    "cost": {
+      "native": {
+        "elapsed_seconds": 56.325687158852816,
+        "forward_calls": 237,
+        "head_calls": 418,
+        "padded_input_tokens": 250065,
+        "dense_loop_token_calls": 1000260,
+        "oom_retries": 0,
+        "peak_allocated_bytes": 5572853248,
+        "peak_reserved_bytes": 6259998720
+      },
+      "t1": {
+        "elapsed_seconds": 56.704236367717385,
+        "forward_calls": 237,
+        "head_calls": 418,
+        "padded_input_tokens": 250065,
+        "dense_loop_token_calls": 1000260,
+        "oom_retries": 0,
+        "peak_allocated_bytes": 5572853248,
+        "peak_reserved_bytes": 6259998720
+      }
+    },
+    "predictions": {
+      "native": "b87a4e0401128411ce0c6166bbda50fdb5f9df2ee6b677eb340e11021670c18a",
+      "t1": "2072eff1d5e8670a25cd99e4c85f441b4a8d638c9054fa4449bbb9d6595acedd"
+    }
+  },
+  "sciq": {
+    "primary": "acc_norm",
+    "metrics": {
+      "acc": {
+        "n": 1000,
+        "native_count": 948,
+        "t1_count": 960,
+        "native": 0.948,
+        "t1": 0.96,
+        "delta": 0.012,
+        "rescue": 18,
+        "damage": 6,
+        "paired_ci95": [
+          0.003,
+          0.022
+        ],
+        "mcnemar": 0.022655844688415527
+      },
+      "acc_norm": {
+        "n": 1000,
+        "native_count": 913,
+        "t1_count": 941,
+        "native": 0.913,
+        "t1": 0.941,
+        "delta": 0.028,
+        "rescue": 31,
+        "damage": 3,
+        "paired_ci95": [
+          0.017,
+          0.04
+        ],
+        "mcnemar": 7.660128176212311e-07
+      }
+    },
+    "cost": {
+      "native": {
+        "elapsed_seconds": 52.3473079316318,
+        "forward_calls": 87,
+        "head_calls": 87,
+        "padded_input_tokens": 253633,
+        "dense_loop_token_calls": 1014532,
+        "oom_retries": 0,
+        "peak_allocated_bytes": 5601175552,
+        "peak_reserved_bytes": 6398410752
+      },
+      "t1": {
+        "elapsed_seconds": 52.55044937133789,
+        "forward_calls": 87,
+        "head_calls": 87,
+        "padded_input_tokens": 253633,
+        "dense_loop_token_calls": 1014532,
+        "oom_retries": 0,
+        "peak_allocated_bytes": 5601175552,
+        "peak_reserved_bytes": 6398410752
+      }
+    },
+    "predictions": {
+      "native": "88df55004e222129c3c5de95b36f477be8444f6b8da7fcb41aa532728e077f4d",
+      "t1": "5a5b8ec9a23a54fedd152162cba25977ad9d4d65cb023f7b5e048703dc4769a4"
+    }
+  },
+  "mmlu": {
+    "primary": "acc",
+    "metrics": {
+      "acc": {
+        "n": 14042,
+        "native_count": 10525,
+        "t1_count": 10457,
+        "native": 0.7495371029767839,
+        "t1": 0.7446944879646774,
+        "delta": -0.004842615012106538,
+        "rescue": 373,
+        "damage": 441,
+        "paired_ci95": [
+          -0.008759435977780942,
+          -0.0009257940464321322
+        ],
+        "mcnemar": 0.01880184528863807
+      },
+      "acc_norm": {
+        "n": 14042,
+        "native_count": 10525,
+        "t1_count": 10457,
+        "native": 0.7495371029767839,
+        "t1": 0.7446944879646774,
+        "delta": -0.004842615012106538,
+        "rescue": 373,
+        "damage": 441,
+        "paired_ci95": [
+          -0.008759435977780942,
+          -0.0009257940464321322
+        ],
+        "mcnemar": 0.01880184528863807
+      }
+    },
+    "cost": {
+      "native": {
+        "elapsed_seconds": 402.6446377001703,
+        "forward_calls": 608,
+        "head_calls": 608,
+        "padded_input_tokens": 1893747,
+        "dense_loop_token_calls": 7574988,
+        "oom_retries": 0,
+        "peak_allocated_bytes": 5602983936,
+        "peak_reserved_bytes": 6402605056
+      },
+      "t1": {
+        "elapsed_seconds": 402.5947062894702,
+        "forward_calls": 608,
+        "head_calls": 608,
+        "padded_input_tokens": 1893747,
+        "dense_loop_token_calls": 7574988,
+        "oom_retries": 0,
+        "peak_allocated_bytes": 5602983936,
+        "peak_reserved_bytes": 6402605056
+      }
+    },
+    "predictions": {
+      "native": "d9191fc58fcef55c3e52ca421178611b02f9a2c9a50ad78596086f86406223eb",
+      "t1": "57754ddac5aee00ba77ae1842cb549f3914ab19fc4eed131d8f2d6317dde1692"
+    }
+  },
+  "hellaswag": {
+    "primary": "acc_norm",
+    "metrics": {
+      "acc": {
+        "n": 10042,
+        "native_count": 5709,
+        "t1_count": 5763,
+        "native": 0.5685122485560645,
+        "t1": 0.5738896634136627,
+        "delta": 0.005377414857598088,
+        "rescue": 168,
+        "damage": 114,
+        "paired_ci95": [
+          0.0020912168890659232,
+          0.008663612826130252
+        ],
+        "mcnemar": 0.0015531302152038348
+      },
+      "acc_norm": {
+        "n": 10042,
+        "native_count": 7639,
+        "t1_count": 7743,
+        "native": 0.7607050388368851,
+        "t1": 0.7710615415255925,
+        "delta": 0.010356502688707428,
+        "rescue": 220,
+        "damage": 116,
+        "paired_ci95": [
+          0.006771559450308703,
+          0.013941445927106154
+        ],
+        "mcnemar": 1.4854181844127285e-08
+      }
+    },
+    "cost": {
+      "native": {
+        "elapsed_seconds": 655.474533546716,
+        "forward_calls": 1281,
+        "head_calls": 9929,
+        "padded_input_tokens": 3199150,
+        "dense_loop_token_calls": 12796600,
+        "oom_retries": 0,
+        "peak_allocated_bytes": 5615736320,
+        "peak_reserved_bytes": 6404702208
+      },
+      "t1": {
+        "elapsed_seconds": 655.6119175013155,
+        "forward_calls": 1281,
+        "head_calls": 9929,
+        "padded_input_tokens": 3199150,
+        "dense_loop_token_calls": 12796600,
+        "oom_retries": 0,
+        "peak_allocated_bytes": 5615736320,
+        "peak_reserved_bytes": 6404702208
+      }
+    },
+    "predictions": {
+      "native": "e0273e5a5cf4310183e5b508523948e2761ebe33c63cfa7f60a4de556a0c9ad1",
+      "t1": "067e37673fc0d8b45485ad9cf58ad385524b2a2dd81037eca648c05f7cb23075"
+    }
+  },
+  "winogrande": {
+    "primary": "acc",
+    "metrics": {
+      "acc": {
+        "n": 1267,
+        "native_count": 865,
+        "t1_count": 871,
+        "native": 0.6827150749802684,
+        "t1": 0.6874506708760852,
+        "delta": 0.004735595895816891,
+        "rescue": 47,
+        "damage": 41,
+        "paired_ci95": [
+          -0.009490923441199667,
+          0.01973164956590371
+        ],
+        "mcnemar": 0.59428829514694
+      },
+      "acc_norm": {
+        "n": 1267,
+        "native_count": 862,
+        "t1_count": 868,
+        "native": 0.6803472770323599,
+        "t1": 0.6850828729281768,
+        "delta": 0.004735595895816891,
+        "rescue": 48,
+        "damage": 42,
+        "paired_ci95": [
+          -0.010260457774269928,
+          0.01973164956590371
+        ],
+        "mcnemar": 0.5984117182335192
+      }
+    },
+    "cost": {
+      "native": {
+        "elapsed_seconds": 14.422693733125925,
+        "forward_calls": 80,
+        "head_calls": 157,
+        "padded_input_tokens": 56132,
+        "dense_loop_token_calls": 224528,
+        "oom_retries": 0,
+        "peak_allocated_bytes": 5423551488,
+        "peak_reserved_bytes": 6408896512
+      },
+      "t1": {
+        "elapsed_seconds": 14.771146669983864,
+        "forward_calls": 80,
+        "head_calls": 157,
+        "padded_input_tokens": 56132,
+        "dense_loop_token_calls": 224528,
+        "oom_retries": 0,
+        "peak_allocated_bytes": 5423551488,
+        "peak_reserved_bytes": 6408896512
+      }
+    },
+    "predictions": {
+      "native": "62bb0967e5d0cd9f5a1ef37f8543fae8b80ab668e7c72ceea9bae38fc3bceb58",
+      "t1": "cb5543f40f7c3f1ddcd2efd215a232b0b8b90cedd6342e7af4548e1bdf913a4e"
+    }
+  },
+  "piqa": {
+    "primary": "acc_norm",
+    "metrics": {
+      "acc": {
+        "n": 1838,
+        "native_count": 1449,
+        "t1_count": 1454,
+        "native": 0.7883569096844396,
+        "t1": 0.7910772578890098,
+        "delta": 0.002720348204570185,
+        "rescue": 25,
+        "damage": 20,
+        "paired_ci95": [
+          -0.004352557127312296,
+          0.009793253536452665
+        ],
+        "mcnemar": 0.5514843298025198
+      },
+      "acc_norm": {
+        "n": 1838,
+        "native_count": 1452,
+        "t1_count": 1463,
+        "native": 0.7899891186071817,
+        "t1": 0.7959738846572362,
+        "delta": 0.005984766050054407,
+        "rescue": 36,
+        "damage": 25,
+        "paired_ci95": [
+          -0.002176278563656148,
+          0.014145810663764961
+        ],
+        "mcnemar": 0.20003136851310313
+      }
+    },
+    "cost": {
+      "native": {
+        "elapsed_seconds": 32.66367270424962,
+        "forward_calls": 120,
+        "head_calls": 713,
+        "padded_input_tokens": 144730,
+        "dense_loop_token_calls": 578920,
+        "oom_retries": 0,
+        "peak_allocated_bytes": 5613523456,
+        "peak_reserved_bytes": 6408896512
+      },
+      "t1": {
+        "elapsed_seconds": 32.602118603885174,
+        "forward_calls": 120,
+        "head_calls": 713,
+        "padded_input_tokens": 144730,
+        "dense_loop_token_calls": 578920,
+        "oom_retries": 0,
+        "peak_allocated_bytes": 5613523456,
+        "peak_reserved_bytes": 6408896512
+      }
+    },
+    "predictions": {
+      "native": "d896ca863ff8460d0666919e7d132927b395ef8b5ba84b1273f7baca04014e88",
+      "t1": "7698c5381231f3d7d0aa5fe67e9f9775f4757a9fca650d224f509f7f4b6e6c83"
+    }
+  },
+  "mmlu_pro": {
+    "primary": "correct",
+    "metrics": {
+      "correct": {
+        "n": 12032,
+        "native_count": 2118,
+        "t1_count": 3093,
+        "native": 0.17603058510638298,
+        "t1": 0.2570644946808511,
+        "delta": 0.08103390957446809,
+        "rescue": 1111,
+        "damage": 136,
+        "paired_ci95": [
+          0.07554853723404255,
+          0.08651928191489362
+        ],
+        "mcnemar": 1.3428102933731557e-190
+      },
+      "parseable": {
+        "n": 12032,
+        "native_count": 3525,
+        "t1_count": 5866,
+        "native": 0.29296875,
+        "t1": 0.4875332446808511,
+        "delta": 0.19456449468085107,
+        "rescue": 2359,
+        "damage": 18,
+        "paired_ci95": [
+          0.18741688829787234,
+          0.20162898936170212
+        ],
+        "mcnemar": 0.0
+      },
+      "strict_format": {
+        "n": 12032,
+        "native_count": 3524,
+        "t1_count": 5865,
+        "native": 0.29288563829787234,
+        "t1": 0.4874501329787234,
+        "delta": 0.19456449468085107,
+        "rescue": 2359,
+        "damage": 18,
+        "paired_ci95": [
+          0.18741688829787234,
+          0.20162898936170212
+        ],
+        "mcnemar": 0.0
+      },
+      "strict": {
+        "n": 12032,
+        "native_count": 2118,
+        "t1_count": 3093,
+        "native": 0.17603058510638298,
+        "t1": 0.2570644946808511,
+        "delta": 0.08103390957446809,
+        "rescue": 1111,
+        "damage": 136,
+        "paired_ci95": [
+          0.07554853723404255,
+          0.08651928191489362
+        ],
+        "mcnemar": 1.3428102933731557e-190
+      }
+    },
+    "cost": {
+      "native": {
+        "seconds": 998.9618977922946,
+        "peak_allocated_bytes": 17200982528,
+        "peak_reserved_bytes": 21030240256,
+        "calls": 3032,
+        "generated_tokens": 71555
+      },
+      "t1": {
+        "seconds": 1013.1854983381927,
+        "peak_allocated_bytes": 17200982528,
+        "peak_reserved_bytes": 21030240256,
+        "calls": 3032,
+        "generated_tokens": 54819
+      }
+    },
+    "predictions": {
+      "native": "b6d949419af05a3cccf96a4e69c3f98dbd79f1ab28dd6e37373ad1645a7f0ccb",
+      "t1": "ef6696f33d291ada23e78f13d8a927191d1aaf78e8f897d079d97f4c9b0469ac"
+    }
+  }
+}
