@@ -99,7 +99,7 @@ def loopcd_rows(a, sources):
             low, high = best["paired_ci95"]
             output.append(f"| Ouro-1.4B Base | {task} | {100*native['reference']:.2f}% | {100*fixed['reference']:.2f}% | "
                           f"{100*adapted['reference']:.2f}% | {100*native['controller']:.2f}% | "
-                          f"{100*best['delta']:+.2f} [{100*low:+.2f}, {100*high:+.2f}] | 历史零样本逐题 |")
+                          f"{100*best['delta']:+.2f} [{100*low:+.2f}, {100*high:+.2f}] | — | 历史零样本逐题 |")
     published = json.loads(Path(__file__).with_name("LOOPCD_PAPER.json").read_text(encoding="utf-8"))
     papers = published["published_zero_shot"]
     hidden = published["huginn_k32_hidden_table_3_native_and_guided"]
@@ -116,16 +116,18 @@ def loopcd_rows(a, sources):
                 paper_native, fixed, adaptive = papers[name][task]
                 appendix = f"；原文 Hidden {hidden[task][1]:.2f}%" if name == "huginn-0125" else ""
                 output.append(f"| {label} | {task} | {local_native} | {fixed:.2f}% | {adaptive:.2f}% | "
-                              f"{local_rank1} | — | 论文汇总，原文 Native {paper_native:.2f}%{appendix} |")
+                              f"{local_rank1} | — | — | 论文汇总，原文 Native {paper_native:.2f}%{appendix} |")
             elif task in baseline:
                 item = baseline[task]
                 fixed, adapted = [item["arms"][key]["metrics"][item["primary"]]["rank1_versus_loopcd"]
                                   for key in ("fixed", "adaptive")]
                 best = max((fixed, adapted), key=lambda row: row["native"])
                 low, high = best["paired_ci95"]
+                seconds = [item["arms"][key]["cost"]["elapsed_seconds"] for key in ("fixed", "adaptive")]
+                cost = f"{seconds[0]:.2f}（联合）" if item["joint_candidate_time"] else format_arms(seconds)
                 output.append(f"| {label} | {task} | {local_native} | {100*fixed['native']:.2f}% | {100*adapted['native']:.2f}% | "
                               f"{local_rank1} | "
-                              f"{100*best['delta']:+.2f} [{100*low:+.2f}, {100*high:+.2f}] | 本轮零样本逐题 |")
+                              f"{100*best['delta']:+.2f} [{100*low:+.2f}, {100*high:+.2f}] | {cost} | 本轮零样本逐题 |")
     return output
 
 
@@ -243,9 +245,10 @@ def main(a):
                  "来自同一检查点和零样本设置的论文汇总直接引用。论文汇总保留其原文 Native，"
                  "逐题差值和置信区间来自仓库历史文件或本轮匹配的预测。",
                  "两个 Thinking 版本以及与零样本口径不同的项目补跑 Fixed 与 Adaptive。",
+                 "选择题的两种 LoopCD 共享一次模型前向，表内给出实测联合用时。生成评测独立计时，依次为 Fixed 和 Adaptive。",
                  "对同一测试集选出两种 LoopCD 中成绩更高的一项作为描述性参照。", "",
-                 "| 模型 | Benchmark | Native | LoopCD Fixed | LoopCD Adaptive | Rank-1 | Rank-1 对最佳 LoopCD pp [95%] | 来源 |",
-                 "| --- | --- | ---: | ---: | ---: | ---: | --- | --- |", *loopcd_rows(a, sources), "",
+                 "| 模型 | Benchmark | Native | LoopCD Fixed | LoopCD Adaptive | Rank-1 | Rank-1 对最佳 LoopCD pp [95%] | 用时秒 | 来源 |",
+                 "| --- | --- | ---: | ---: | ---: | ---: | --- | --- | --- |", *loopcd_rows(a, sources), "",
                  "[LoopCD 原文及附录 B.3–B.4](https://arxiv.org/html/2610.02185v1#A2.SS3)", ""])
     measured = functional_rows(a.results)
     if measured:
