@@ -12,12 +12,13 @@ def run(a):
 
     manifest = json.loads((a.directory / "RELEASE_MANIFEST.json").read_text(encoding="utf-8"))
     expected_models = a.stage_models if a.stage_models is not None else 3
-    if manifest["complete_ouro_models"] != expected_models or manifest["measurement_arms"] != ["native", "t1"]:
+    if (manifest["complete_ouro_models"] != expected_models or manifest["measurement_arms"] != ["native", "t1"]
+            or manifest.get("complete_huginn", False) != a.with_huginn):
         raise ValueError("The release is missing a complete model or a comparison arm")
-    api.EXPECTED_BENCHMARKS = 8 * expected_models
+    api.EXPECTED_BENCHMARKS = 8 * (expected_models + int(a.with_huginn))
     api.FEATURE = "experiments/cross_model_functional_controllability_20261125"
     api.BRANCH = "research/cross-model-functional-controllability"
-    api.COMMIT_MESSAGE = (
+    api.COMMIT_MESSAGE = "Publish Ouro and Huginn full low-rank control comparisons" if a.with_huginn else (
         "Publish complete frozen T1 transfer benchmarks on the three Ouro checkpoints"
         if expected_models == 3 else "Archive complete per-model frozen T1 transfer benchmarks"
     )
@@ -29,6 +30,7 @@ if __name__ == "__main__":
     parser.add_argument("--directory", type=Path, required=True)
     parser.add_argument("--expected-head")
     parser.add_argument("--stage-models", type=int, choices=(1, 2))
+    parser.add_argument("--with-huginn", action="store_true")
     parser.add_argument("--verify-only", action="store_true")
     parser.add_argument("--publisher", type=Path,
                         default=Path("/root/ouro-loop-aware-functional-identification-20261125"))

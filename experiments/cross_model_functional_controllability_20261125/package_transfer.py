@@ -4,6 +4,7 @@ import argparse
 from collections import Counter, defaultdict
 import gzip
 from hashlib import file_digest
+from itertools import combinations
 import json
 from pathlib import Path
 import shutil
@@ -16,6 +17,9 @@ import plot_transfer
 CODE = ("MODELS.json", "REPRODUCE.md", "REPORT_ZH.md", "evaluate_transfer.py",
         "report_transfer.py", "run_cross_models.sh", "fetch_ouro.py", "package_transfer.py",
         "plot_transfer.py", "publish_transfer.py")
+HUGINN_CODE = ("HUGINN_RELEASE.json", "fetch_huginn.py", "huginn_control.py", "evaluate_huginn.py",
+               "audit_transfer_mechanism.py", "audit_huginn_mechanism.py", "run_transfer_mechanism.sh",
+               "run_huginn.sh", "run_cross_followup.sh")
 
 
 def digest(path):
@@ -41,7 +45,7 @@ def audit_populations(root, models):
     findings = {}
     identity_fields = ("gold", "choices", "chars")
     for task, (n, metric) in TASKS.items():
-        reference, effects = None, {}
+        reference, effects, origins = None, {}, {}
         subject_effects = {}
         for model in models:
             directory = root / "results" / model
@@ -54,6 +58,7 @@ def audit_populations(root, models):
                 raise ValueError(f"Question identity or candidate text changed at {model}/{task}")
             effects[model] = {key: int(t1[key]["metrics"][metric]) - int(row["metrics"][metric])
                               for key, row in native.items()}
+            origins[model] = {key: row["metrics"][metric] for key, row in native.items()}
             if task == "mmlu":
                 by_subject = defaultdict(Counter)
                 for key, delta in effects[model].items():
@@ -65,6 +70,19 @@ def audit_populations(root, models):
         findings[task] = {"n": n, "metric": metric,
                           "paired_change_counts": [{"signs": list(key), "n": count}
                                                    for key, count in sorted(patterns.items())]}
+        comparisons = []
+        for left, right in combinations(models, 2):
+            record = {"models": [left, right]}
+            for name, initially_correct, direction in (("rescues", False, 1), ("damage", True, -1)):
+                eligible = (key for key in reference if origins[left][key] == origins[right][key] == initially_correct)
+                square = Counter((effects[left][key] == direction, effects[right][key] == direction)
+                                 for key in eligible)
+                total = sum(square.values())
+                record[name] = {"n_initially_matched": total, "both": square[True, True],
+                                "left_only": square[True, False], "right_only": square[False, True],
+                                "neither": square[False, False]}
+            comparisons.append(record)
+        findings[task]["overlap_with_same_native_correctness"] = comparisons
         if subject_effects:
             findings[task]["mmlu_subject_counts"] = subject_effects
     return {"model_order": list(models), "sign_legend": {"-1": "harmed", "0": "unchanged", "1": "rescued"},
@@ -82,7 +100,24 @@ def pack(a):
         if not set(a.only) <= models.keys():
             raise ValueError("Unknown model in the release request")
         models = {name: models[name] for name in a.only}
-    files = {name: root / name for name in CODE}
+    ouro_count = len(models)
+    files = {name: root / name for name in (*CODE, *HUGINN_CODE)}
+    mechanism = root / "results" / "mechanism"
+    if a.with_huginn:
+        models["huginn-0125"] = None
+    if a.with_huginn or (a.only is None and (mechanism / "MECHANISM.json").is_file()):
+        path = mechanism / "MECHANISM.json"
+        measured = read(path)
+        if measured["operator_sha256"] != T1_SHA or (measured["train"], measured["validation"]) != (1119, 24):
+            raise ValueError("The closed Ouro mechanism summary has different data or a different controller")
+        files["results/mechanism/MECHANISM.json"] = path
+        for name in models.keys() - {"huginn-0125"}:
+            folder = mechanism / name / "finite"
+            artifact = folder / "finite.jsonl"
+            if read(folder / "FINITE.json")["finite_sha256"] != digest(artifact):
+                raise ValueError(f"Changed finite-dose rows for {name}")
+            for artifact in ("MECHANISM_LOCK.json", "finite/FINITE.json", "finite/finite.jsonl"):
+                files[f"results/mechanism/{name}/{artifact}"] = mechanism / name / artifact
     if digest(a.t1) != T1_SHA:
         raise ValueError("Historical T1 release identity differs")
     files["weights/rank1_t1.pt"] = a.t1
@@ -102,7 +137,21 @@ def pack(a):
             raise ValueError(f"Missing official benchmarks for {name}")
         lock = read(directory / "FREEZE.json")
         metadata = a.models / name / "MODEL_LOCK.json"
-        if lock["arms"]["t1"] != T1_SHA or lock["model_lock_sha256"] != digest(metadata):
+        if name == "huginn-0125":
+            fit = directory / "fit"
+            controller = fit / "rank1_huginn.pt"
+            receipt = read(fit / "FIT.json")
+            if (lock["depth"] != 32 or lock["model_sha256"] != digest(metadata)
+                    or lock["controller_sha256"] != digest(controller)
+                    or lock["controller_sha256"] != receipt["checkpoint_sha256"]
+                    or (receipt["steps"], receipt["examples"], receipt["trainable_params"]) != (280, 1119, 10560)):
+                raise ValueError("Huginn training, model and evaluation receipts disagree")
+            files["weights/rank1_huginn.pt"] = controller
+            files[f"results/{name}/fit/FIT.json"] = fit / "FIT.json"
+            for artifact in ("CACHE_PARITY_native.json", "CACHE_PARITY_t1.json",
+                             "mechanism/FINITE.json", "mechanism/LOCK.json", "mechanism/MECHANISM.json"):
+                files[f"results/{name}/{artifact}"] = directory / artifact
+        elif lock["arms"]["t1"] != T1_SHA or lock["model_lock_sha256"] != digest(metadata):
             raise ValueError(f"Weight or model receipt differs for {name}")
         for artifact in ("RESULTS.json", "FREEZE.json"):
             files[f"results/{name}/{artifact}"] = directory / artifact
@@ -122,7 +171,8 @@ def pack(a):
 
     if a.only is None:
         figure_dir = root / "figures"
-        plot_transfer.run(SimpleNamespace(results=root / "results", historical=a.historical, out=figure_dir))
+        plot_transfer.run(SimpleNamespace(results=root / "results", historical=a.historical, out=figure_dir,
+                                          with_huginn=a.with_huginn))
         for figure in figure_dir.glob("*"):
             if figure.suffix in (".pdf", ".svg"):
                 files[f"figures/{figure.name}"] = figure
@@ -144,10 +194,13 @@ def pack(a):
         else:
             shutil.copyfile(source, dst)
         records.append({"path": key, "bytes": dst.stat().st_size, "sha256": digest(dst), "original_sha256": digest(source)})
-    manifest = {"complete_ouro_models": len(models), "official_benchmarks": len(models) * len(TASKS),
+    manifest = {"complete_ouro_models": ouro_count, "complete_huginn": a.with_huginn,
+                "official_benchmarks": len(models) * len(TASKS),
                 "benchmark_questions_per_arm": sum(n for n, _ in TASKS.values()),
                 "measurement_arms": list(ARM_NAMES), "t1_sha256": T1_SHA, "files": records}
-    (out / "RELEASE_MANIFEST.json").write_text(json.dumps(manifest, indent=2) + "\n", encoding="utf-8")
+    stage_manifest = out / "RELEASE_MANIFEST.partial"
+    stage_manifest.write_text(json.dumps(manifest, indent=2) + "\n", encoding="utf-8")
+    stage_manifest.replace(out / "RELEASE_MANIFEST.json")
     print("PACKAGED", len(records), "verified release files", flush=True)
 
 
@@ -156,4 +209,8 @@ if __name__ == "__main__":
     for name in ("root", "models", "t1", "historical", "out"):
         p.add_argument(f"--{name}", type=Path, required=True)
     p.add_argument("--only", nargs="+")
-    pack(p.parse_args())
+    p.add_argument("--with-huginn", action="store_true")
+    args = p.parse_args()
+    if args.with_huginn and args.only:
+        p.error("Publish all three Ouro comparisons with the Huginn release")
+    pack(args)

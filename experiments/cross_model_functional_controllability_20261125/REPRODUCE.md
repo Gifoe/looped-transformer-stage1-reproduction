@@ -22,4 +22,26 @@ OURO_TRANSFER_MODELS="$model_root" bash run_cross_models.sh
 
 正式评测单卡串行。云端并行下载检查点时，优先评测已通过完整权重验证的版本。每个模型先完成 ARC-Challenge 的两个配对条件，再运行其余七项。全部预测、配对置信区间、正式样本数、生成合法率与严格格式、实际时间和 CUDA 峰值分别保存在模型结果目录。中断后重跑相同命令会逐分片核对冻结口径、ID、预测摘要及指标。
 
-历史 Ouro-1.4B Base 的八项全量成绩单独复用。跨架构的 Huginn 权重训练与评测是后续阶段。
+历史 Ouro-1.4B Base 的八项全量成绩从原归档读取。
+
+## 跨架构 Huginn-0125
+
+Huginn 使用官方发布版 `bb6621b65e90b6a4b9b29ef88dc83866d450470c`。源码、模型配置、tokenizer 和四个权重分片在启动时校验。Huginn 保持其 Prelude、输入注入、随机初态与 Coda，控制器写入第 32 次循环的入口。评测的两个方法共享模型、批次、随机种子、解码协议和 K32。训练覆盖 ARC-Challenge Train 1,119 题，执行 280 次更新，按 8、16、32 轮交替训练 10,560 个控制器参数。目标沿用历史 T1 的原始和字符归一化排序损失。
+
+运行前三个 Ouro 版本后，在研究目录中执行以下命令。Huginn 使用单独的 Transformers 4.49.0 导入路径，其官方 KV-cache 在这个版本通过动态与静态缓存一致性检查。
+
+```bash
+study="$PWD"
+joint=/root/ouro-external-data-joint-training-20261124
+cd "$joint"
+source external_env.sh
+cd "$study"
+"$py" -m pip install --no-deps --target "$study/huginn_deps" 'transformers==4.49.0'
+"$py" fetch_huginn.py --metadata HUGINN_RELEASE.json --out /dev/shm/ouro-cross-model-20261125/huginn-0125
+bash run_transfer_mechanism.sh
+bash run_huginn.sh
+"$py" report_transfer.py --results results --historical "$joint/t1_full/results/RESULTS.json" \
+    --out REPORT_ZH.md --final --require-huginn
+```
+
+功能谱从同一批 ARC Train 题估计。有限剂量对照使用 ARC Validation 中固定的 24 题。Ouro 各版本可比较读写子空间，Huginn 的跨架构比较使用各自归一化的谱和功能响应。
