@@ -1,0 +1,113 @@
+{
+  "plan": {
+    "depth": 4,
+    "task": "mmlu",
+    "protocol_sha256": "f9c276049015b2924d32cee1ed02dec7a29398bf9702f47c81f4ffd3a81d0b75",
+    "config": {
+      "max_length": 65536,
+      "max_batch": 32,
+      "token_cap": 4096,
+      "attention_cap": 8388608,
+      "head_rows": 128,
+      "shard_size": 256
+    },
+    "joint_variants": true,
+    "source_hash": "1262beee0a03d05f104f9f5ed834307bdcf9d9859bcf4368f9e76b7f508b746f",
+    "fixed": 0.5,
+    "adaptive_cap": 1.0,
+    "arm": "fixed"
+  },
+  "metrics": {
+    "acc": {
+      "value": 0.7466885059108389,
+      "n": 14042,
+      "count": 10485
+    },
+    "acc_norm": {
+      "value": 0.7466885059108389,
+      "n": 14042,
+      "count": 10485
+    }
+  },
+  "cost": {
+    "head_calls": 1216,
+    "forward_calls": 608,
+    "dense_loop_token_calls": 7574988,
+    "elapsed_seconds": 381.7030829824507,
+    "peak_allocated_bytes": 5602902016,
+    "peak_reserved_bytes": 6473908224
+  },
+  "runtime": {
+    "model": {
+      "repository": "ByteDance/Ouro-2.6B-Thinking",
+      "revision": "f1edd81e7ac41355db670500ceaf204e0f73af68",
+      "weight_sha256": "c506a79247dc51fc0400d789365c3d43932f718abce9810f3606ace47d0a3080",
+      "weight_bytes": 5336011242,
+      "files": {
+        "config.json": {
+          "bytes": 1999,
+          "blob_id": "5de22fc1560f1c7d8245e4c0d70d5bb4011fdbf2",
+          "sha256": null
+        },
+        "configuration_ouro.py": {
+          "bytes": 11595,
+          "blob_id": "84590d670902673508f4a2b565a1994b9d2643ca",
+          "sha256": null
+        },
+        "merges.txt": {
+          "bytes": 466391,
+          "blob_id": "69503b13f727ba3812b6803e97442a6de05ef5eb",
+          "sha256": null
+        },
+        "model.safetensors": {
+          "bytes": 5336011242,
+          "blob_id": "8c10bfff7c53bc6637d5596a8250e0105698ce56",
+          "sha256": "c506a79247dc51fc0400d789365c3d43932f718abce9810f3606ace47d0a3080"
+        },
+        "modeling_ouro.py": {
+          "bytes": 35495,
+          "blob_id": "3c117765ee158c994a0602dd1fee4f593e39bde1",
+          "sha256": null
+        },
+        "special_tokens_map.json": {
+          "bytes": 965,
+          "blob_id": "f3c1c91caef5cac1620e8008b8e590b6d0289d52",
+          "sha256": null
+        },
+        "tokenizer.json": {
+          "bytes": 3522644,
+          "blob_id": "5046b313b3e16fa14cd3662ef70c105b08c92092",
+          "sha256": null
+        },
+        "tokenizer_config.json": {
+          "bytes": 4303,
+          "blob_id": "b653407b285b06c5885e8af863b8630dde0c430a",
+          "sha256": null
+        },
+        "vocab.json": {
+          "bytes": 800656,
+          "blob_id": "6a22c055228041f2f7b055686644c157cb5d21fc",
+          "sha256": null
+        }
+      },
+      "hidden_size": 2048,
+      "layers": 48
+    },
+    "depth": 4,
+    "early_exit": false,
+    "dtype": "bfloat16",
+    "decoding_seed": 0,
+    "tokenizer_tokens": {
+      "bos": 1,
+      "eos": 2,
+      "pad": null,
+      "config_bos": 1,
+      "config_eos": 2
+    },
+    "gpu": "NVIDIA GeForce RTX 4090 D",
+    "capacity_bytes": 25252724736,
+    "torch": "2.7.1+cu128",
+    "transformers": "4.55.4"
+  },
+  "rows_sha256": "00f0973fc76c1b691a6c1c6f40d47f6d198c91331b7842e7ca2873685bb6c964"
+}

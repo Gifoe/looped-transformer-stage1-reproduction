@@ -1,0 +1,338 @@
+{
+  "arc_challenge": {
+    "source": "paper_aggregate_only",
+    "paper_native": 37.63,
+    "fixed": 39.51,
+    "adaptive": 39.42,
+    "primary": "acc_norm"
+  },
+  "arc_easy": {
+    "source": "paper_aggregate_only",
+    "paper_native": 64.31,
+    "fixed": 64.1,
+    "adaptive": 64.69,
+    "primary": "acc_norm"
+  },
+  "sciq": {
+    "source": "paper_aggregate_only",
+    "paper_native": 90.4,
+    "fixed": 91.1,
+    "adaptive": 91.2,
+    "primary": "acc_norm"
+  },
+  "mmlu": {
+    "source": "paper_aggregate_only",
+    "paper_native": 33.47,
+    "fixed": 33.57,
+    "adaptive": 33.61,
+    "primary": "acc"
+  },
+  "hellaswag": {
+    "source": "paper_aggregate_only",
+    "paper_native": 66.65,
+    "fixed": 69.0,
+    "adaptive": 69.03,
+    "primary": "acc_norm"
+  },
+  "winogrande": {
+    "source": "paper_aggregate_only",
+    "paper_native": 60.77,
+    "fixed": 61.96,
+    "adaptive": 61.33,
+    "primary": "acc"
+  },
+  "piqa": {
+    "source": "paper_aggregate_only",
+    "paper_native": 75.79,
+    "fixed": 74.97,
+    "adaptive": 75.79,
+    "primary": "acc_norm"
+  },
+  "mmlu_pro": {
+    "source": "current_matched",
+    "joint_candidate_time": false,
+    "primary": "correct",
+    "arms": {
+      "fixed": {
+        "metrics": {
+          "correct": {
+            "versus_native": {
+              "n": 12032,
+              "native_count": 730,
+              "t1_count": 572,
+              "native": 0.06067154255319149,
+              "t1": 0.047539893617021274,
+              "delta": -0.013131648936170214,
+              "rescue": 247,
+              "damage": 405,
+              "paired_ci95": [
+                -0.017287234042553192,
+                -0.008976063829787235
+              ],
+              "mcnemar": 6.48603542975179e-10
+            },
+            "rank1_versus_loopcd": {
+              "n": 12032,
+              "native_count": 572,
+              "t1_count": 1158,
+              "native": 0.047539893617021274,
+              "t1": 0.0962433510638298,
+              "delta": 0.04870345744680851,
+              "rescue": 988,
+              "damage": 402,
+              "paired_ci95": [
+                0.04280252659574468,
+                0.05485372340425532
+              ],
+              "mcnemar": 3.466191724593432e-57
+            }
+          },
+          "parseable": {
+            "versus_native": {
+              "n": 12032,
+              "native_count": 5868,
+              "t1_count": 4725,
+              "native": 0.4876994680851064,
+              "t1": 0.3927027925531915,
+              "delta": -0.09499667553191489,
+              "rescue": 558,
+              "damage": 1701,
+              "paired_ci95": [
+                -0.1023936170212766,
+                -0.08743351063829788
+              ],
+              "mcnemar": 1.5224135423095272e-133
+            },
+            "rank1_versus_loopcd": {
+              "n": 12032,
+              "native_count": 4725,
+              "t1_count": 10272,
+              "native": 0.3927027925531915,
+              "t1": 0.8537234042553191,
+              "delta": 0.46102061170212766,
+              "rescue": 5863,
+              "damage": 316,
+              "paired_ci95": [
+                0.4513796542553192,
+                0.47099401595744683
+              ],
+              "mcnemar": 0.0
+            }
+          },
+          "strict_format": {
+            "versus_native": {
+              "n": 12032,
+              "native_count": 5289,
+              "t1_count": 3965,
+              "native": 0.4395777925531915,
+              "t1": 0.3295378989361702,
+              "delta": -0.11003989361702128,
+              "rescue": 449,
+              "damage": 1773,
+              "paired_ci95": [
+                -0.11743683510638298,
+                -0.10264295212765957
+              ],
+              "mcnemar": 3.226952074823278e-185
+            },
+            "rank1_versus_loopcd": {
+              "n": 12032,
+              "native_count": 3965,
+              "t1_count": 8948,
+              "native": 0.3295378989361702,
+              "t1": 0.7436835106382979,
+              "delta": 0.41414561170212766,
+              "rescue": 5292,
+              "damage": 309,
+              "paired_ci95": [
+                0.40441946476063834,
+                0.4237034574468085
+              ],
+              "mcnemar": 0.0
+            }
+          },
+          "strict": {
+            "versus_native": {
+              "n": 12032,
+              "native_count": 667,
+              "t1_count": 494,
+              "native": 0.05543550531914894,
+              "t1": 0.04105718085106383,
+              "delta": -0.014378324468085107,
+              "rescue": 200,
+              "damage": 373,
+              "paired_ci95": [
+                -0.01820146276595745,
+                -0.010472074468085107
+              ],
+              "mcnemar": 4.483109316745372e-13
+            },
+            "rank1_versus_loopcd": {
+              "n": 12032,
+              "native_count": 494,
+              "t1_count": 1029,
+              "native": 0.04105718085106383,
+              "t1": 0.08552194148936171,
+              "delta": 0.04446476063829787,
+              "rescue": 883,
+              "damage": 348,
+              "paired_ci95": [
+                0.03889627659574468,
+                0.05028257978723404
+              ],
+              "mcnemar": 5.0886998531069734e-54
+            }
+          }
+        },
+        "cost": {
+          "calls": 10572,
+          "generated_tokens": 65253,
+          "elapsed_seconds": 3803.132965968922,
+          "peak_allocated_bytes": 14219660288,
+          "peak_reserved_bytes": 24146608128
+        },
+        "rows_sha256": "ea1fc229a49c332de625439cb320ada2f01a4da6ad7ea9b74d54a3b449908912"
+      },
+      "adaptive": {
+        "metrics": {
+          "correct": {
+            "versus_native": {
+              "n": 12032,
+              "native_count": 730,
+              "t1_count": 574,
+              "native": 0.06067154255319149,
+              "t1": 0.0477061170212766,
+              "delta": -0.012965425531914893,
+              "rescue": 276,
+              "damage": 432,
+              "paired_ci95": [
+                -0.01720412234042553,
+                -0.008643617021276596
+              ],
+              "mcnemar": 4.968073945720674e-09
+            },
+            "rank1_versus_loopcd": {
+              "n": 12032,
+              "native_count": 574,
+              "t1_count": 1158,
+              "native": 0.0477061170212766,
+              "t1": 0.0962433510638298,
+              "delta": 0.04853723404255319,
+              "rescue": 992,
+              "damage": 408,
+              "paired_ci95": [
+                0.04271941489361702,
+                0.0546875
+              ],
+              "mcnemar": 2.2321357575754473e-56
+            }
+          },
+          "parseable": {
+            "versus_native": {
+              "n": 12032,
+              "native_count": 5868,
+              "t1_count": 4733,
+              "native": 0.4876994680851064,
+              "t1": 0.3933676861702128,
+              "delta": -0.09433178191489362,
+              "rescue": 637,
+              "damage": 1772,
+              "paired_ci95": [
+                -0.10206117021276596,
+                -0.08651928191489362
+              ],
+              "mcnemar": 8.102162498258016e-123
+            },
+            "rank1_versus_loopcd": {
+              "n": 12032,
+              "native_count": 4733,
+              "t1_count": 10272,
+              "native": 0.3933676861702128,
+              "t1": 0.8537234042553191,
+              "delta": 0.4603557180851064,
+              "rescue": 5861,
+              "damage": 322,
+              "paired_ci95": [
+                0.4506316489361702,
+                0.47024601063829785
+              ],
+              "mcnemar": 0.0
+            }
+          },
+          "strict_format": {
+            "versus_native": {
+              "n": 12032,
+              "native_count": 5289,
+              "t1_count": 3949,
+              "native": 0.4395777925531915,
+              "t1": 0.32820811170212766,
+              "delta": -0.11136968085106383,
+              "rescue": 526,
+              "damage": 1866,
+              "paired_ci95": [
+                -0.11901595744680851,
+                -0.10355718085106383
+              ],
+              "mcnemar": 8.169836891577028e-175
+            },
+            "rank1_versus_loopcd": {
+              "n": 12032,
+              "native_count": 3949,
+              "t1_count": 8948,
+              "native": 0.32820811170212766,
+              "t1": 0.7436835106382979,
+              "delta": 0.4154753989361702,
+              "rescue": 5324,
+              "damage": 325,
+              "paired_ci95": [
+                0.40575132978723405,
+                0.4251994680851064
+              ],
+              "mcnemar": 0.0
+            }
+          },
+          "strict": {
+            "versus_native": {
+              "n": 12032,
+              "native_count": 667,
+              "t1_count": 490,
+              "native": 0.05543550531914894,
+              "t1": 0.04072473404255319,
+              "delta": -0.014710771276595746,
+              "rescue": 223,
+              "damage": 400,
+              "paired_ci95": [
+                -0.018700132978723406,
+                -0.010719331781914924
+              ],
+              "mcnemar": 1.260065090544088e-12
+            },
+            "rank1_versus_loopcd": {
+              "n": 12032,
+              "native_count": 490,
+              "t1_count": 1029,
+              "native": 0.04072473404255319,
+              "t1": 0.08552194148936171,
+              "delta": 0.04479720744680851,
+              "rescue": 884,
+              "damage": 345,
+              "paired_ci95": [
+                0.03931183510638298,
+                0.05053191489361702
+              ],
+              "mcnemar": 6.314179385016608e-55
+            }
+          }
+        },
+        "cost": {
+          "calls": 10578,
+          "generated_tokens": 65167,
+          "elapsed_seconds": 3801.3682527579367,
+          "peak_allocated_bytes": 14219660288,
+          "peak_reserved_bytes": 20812136448
+        },
+        "rows_sha256": "11d7a047803737a6d14be28d8210fcef030f1ed9c1aae7e88efad85083a7224c"
+      }
+    }
+  }
+}

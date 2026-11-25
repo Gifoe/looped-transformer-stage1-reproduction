@@ -246,6 +246,9 @@ def main(a):
                  "逐题差值和置信区间来自仓库历史文件或本轮匹配的预测。",
                  "两个 Thinking 版本以及与零样本口径不同的项目补跑 Fixed 与 Adaptive。",
                  "选择题的两种 LoopCD 共享一次模型前向，表内给出实测联合用时。生成评测独立计时，依次为 Fixed 和 Adaptive。",
+                 "本轮补测按三卡分片。Huginn 的两种 MMLU-Pro 生成对照，以及 Ouro-2.6B-Thinking 的选择题和 Fixed 生成，均在 RTX 4090 D 上完成。"
+                 "Ouro-1.4B-Thinking 与 Ouro-2.6B Base 的全部补测，以及 Ouro-2.6B-Thinking 的 Adaptive 生成，在各有 24 GiB 可见显存的两张 vGPU 上完成。"
+                 "运行回执记录设备、实际耗时和峰值显存，各设备实测时间按各自运行环境解释。",
                  "对同一测试集选出两种 LoopCD 中成绩更高的一项作为描述性参照。", "",
                  "| 模型 | Benchmark | Native | LoopCD Fixed | LoopCD Adaptive | Rank-1 | Rank-1 对最佳 LoopCD pp [95%] | 用时秒 | 来源 |",
                  "| --- | --- | ---: | ---: | ---: | ---: | --- | --- | --- |", *loopcd_rows(a, sources), "",
