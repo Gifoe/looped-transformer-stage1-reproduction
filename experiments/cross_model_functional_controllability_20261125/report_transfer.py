@@ -20,11 +20,25 @@ def main(a):
             "| 模型 | Benchmark | N | Native | T1 | 差值 pp [95%] | 救回 / 退化 | Native / T1 秒 |",
             "| --- | --- | ---: | ---: | ---: | --- | --- | --- |"]
     closed = []
+    sources = {}
+    if a.historical is not None:
+        historic = json.loads(a.historical.read_text(encoding="utf-8"))
+        old = {}
+        for task, r in historic["results"].items():
+            if task not in TASKS or r["metric"] != TASKS[task][1]:
+                raise ValueError(f"Historical Base protocol differs for {task}")
+            p = r["paired"]["native"][r["metric"]]
+            scores = dict(n=p["n"], native=p["reference"], t1=p["controller"], delta=p["delta"],
+                          paired_ci95=p["paired_ci95"], rescue=p["rescued"], damage=p["harmed"])
+            timings = dict(native=r.get("baseline_cost", {}).get("native", {}), t1=r["t1_cost"])
+            old[task] = dict(primary=r["metric"], metrics={r["metric"]: scores}, cost=timings)
+        sources["Ouro-1.4B Base（历史）"] = old
     for key, label in MODEL_LABELS.items():
         target = a.results / key / "RESULTS.json"
         if not target.is_file():
             continue
-        result = json.loads(target.read_text(encoding="utf-8"))
+        sources[label] = json.loads(target.read_text(encoding="utf-8"))
+    for label, result in sources.items():
         macro = []
         for task in TASKS:
             if task not in result:
@@ -39,10 +53,11 @@ def main(a):
             low, high = pair["paired_ci95"]
             values = [label, task, f'{pair["n"]:,}', f'{100*pair["native"]:.2f}%', f'{100*pair["t1"]:.2f}%',
                       f'{100*pair["delta"]:+.2f} [{100*low:+.2f}, {100*high:+.2f}]',
-                      f'{pair["rescue"]} / {pair["damage"]}', " / ".join(f"{val:.1f}" for val in timings)]
+                      f'{pair["rescue"]} / {pair["damage"]}', " / ".join(f"{val:.1f}" if val is not None else "—" for val in timings)]
             rows.append("| " + " | ".join(values) + " |")
         if len(macro) == len(TASKS):
-            closed.append(label)
+            if label in MODEL_LABELS.values():
+                closed.append(label)
             values = [100 * statistics.mean(r[field] for r in macro) for field in ("native", "t1", "delta")]
             rows.append(f"| {label} | 八项等权平均 | 43,769 | {values[0]:.2f}% | {values[1]:.2f}% | {values[2]:+.2f} |  |  |")
     if a.final and len(closed) != len(MODEL_LABELS):
@@ -56,5 +71,6 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--results", type=Path, required=True)
     parser.add_argument("--out", type=Path, required=True)
+    parser.add_argument("--historical", type=Path)
     parser.add_argument("--final", action="store_true")
     main(parser.parse_args())

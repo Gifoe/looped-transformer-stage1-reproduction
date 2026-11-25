@@ -10,17 +10,28 @@ export PYTHONPATH="$study:$PYTHONPATH"
 mkdir -p logs results
 t1="$controllability/results/weights/rank1_t1.pt"
 release="$joint/mixed_full"
-names=(ouro-2.6b ouro-1.4b-thinking ouro-2.6b-thinking)
+historical_result="$joint/t1_full/results/RESULTS.json"
+pending=(ouro-2.6b ouro-1.4b-thinking ouro-2.6b-thinking)
 
-for name in "${names[@]}"; do
-    while [[ ! -s "$models/$name/MODEL_LOCK.json" ]]; do
-        worker=$(cat "fetch_$name.pid")
-        if [[ ! -e "/proc/$worker/cwd" ]]; then
-            echo "Checkpoint acquisition stopped: $name" >&2
-            exit 3
+while [[ ${#pending[@]} -gt 0 ]]; do
+    name=
+    for candidate in "${pending[@]}"; do
+        if [[ -s "$models/$candidate/MODEL_LOCK.json" ]]; then
+            name=$candidate
+            break
         fi
-        sleep 15
     done
+    if [[ -z "$name" ]]; then
+        for candidate in "${pending[@]}"; do
+            worker=$(cat "fetch_$candidate.pid")
+            if [[ ! -e "/proc/$worker/cwd" ]] && [[ ! -s "$models/$candidate/MODEL_LOCK.json" ]]; then
+                echo "Checkpoint acquisition stopped: $candidate" >&2
+                exit 3
+            fi
+        done
+        sleep 15
+        continue
+    fi
     echo READY "$name" "$(date -Is)"
     (
         exec 8>"$gpu_lock"
@@ -30,7 +41,14 @@ for name in "${names[@]}"; do
             --unified "$unified" --reference "$release/results/FREEZE.json" --out "results/$name" \
             >"logs/score_$name.log" 2>&1
     )
-    "$py" -u report_transfer.py --results results --out REPORT_ZH.md
+    "$py" -u report_transfer.py --results results --out REPORT_ZH.md --historical "$historical_result"
+    next=()
+    for candidate in "${pending[@]}"; do
+        if [[ "$candidate" != "$name" ]]; then next+=("$candidate"); fi
+    done
+    pending=("${next[@]}")
 done
-"$py" -u report_transfer.py --results results --out REPORT_ZH.md --final
+"$py" -u report_transfer.py --results results --out REPORT_ZH.md --historical "$historical_result" --final
+"$py" -u package_transfer.py --root "$study" --models "$models" --t1 "$t1" --historical "$historical_result" \
+    --out /root/ouro-cross-model-functional-controllability-release-20261125
 printf 'DONE\n'
