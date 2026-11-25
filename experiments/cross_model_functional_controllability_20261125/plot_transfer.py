@@ -37,7 +37,7 @@ def plot_mechanism(a):
     spectra = maps["spectra"]
     finite = {k: [dict(dose=row["dose"], means=row["mean"], ci95=row["ci95"]) for row in rows
                   if row["sign"] == "positive"] for k, rows in maps["finite"].items()}
-    if a.with_huginn:
+    if a.with_huginn and h_path.is_file():
         huginn = read(h_path)
         labeled["huginn-0125"] = "Huginn-0125 (K32)"
         spectra["huginn-0125"] = huginn["spectra"]

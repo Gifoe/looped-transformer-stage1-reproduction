@@ -24,6 +24,8 @@ def run(a):
     )
     if manifest.get("partial_huginn_tasks"):
         api.COMMIT_MESSAGE = "Archive completed Huginn benchmark pairs and the frozen Rank-1 checkpoint"
+    elif a.with_huginn and not manifest.get("loopcd_supplement_complete"):
+        api.COMMIT_MESSAGE = "Publish all Ouro and Huginn Native and Rank-1 full benchmark pairs"
     api.run(a, "" if a.verify_only else sys.stdin.readline().strip())
 
 

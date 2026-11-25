@@ -411,5 +411,90 @@
       "native": "cc4557e245335576a4c5a271f90c8b1e5067c23833a45300fa89e6080c944b8a",
       "t1": "f76da559e1298b89cc274f56d2fdd3f405bf684e588ed573c51f2228037ade4f"
     }
+  },
+  "mmlu_pro": {
+    "primary": "correct",
+    "metrics": {
+      "correct": {
+        "n": 12032,
+        "native_count": 730,
+        "t1_count": 1158,
+        "native": 0.06067154255319149,
+        "t1": 0.0962433510638298,
+        "delta": 0.0355718085106383,
+        "rescue": 949,
+        "damage": 521,
+        "paired_ci95": [
+          0.02942154255319149,
+          0.0417220744680851
+        ],
+        "mcnemar": 3.358654774791323e-29
+      },
+      "parseable": {
+        "n": 12032,
+        "native_count": 5868,
+        "t1_count": 10272,
+        "native": 0.4876994680851064,
+        "t1": 0.8537234042553191,
+        "delta": 0.3660239361702128,
+        "rescue": 4753,
+        "damage": 349,
+        "paired_ci95": [
+          0.3564660904255319,
+          0.3755817819148936
+        ],
+        "mcnemar": 0.0
+      },
+      "strict_format": {
+        "n": 12032,
+        "native_count": 5289,
+        "t1_count": 8948,
+        "native": 0.4395777925531915,
+        "t1": 0.7436835106382979,
+        "delta": 0.3041057180851064,
+        "rescue": 4096,
+        "damage": 437,
+        "paired_ci95": [
+          0.29471201795212765,
+          0.31358045212765956
+        ],
+        "mcnemar": 0.0
+      },
+      "strict": {
+        "n": 12032,
+        "native_count": 667,
+        "t1_count": 1029,
+        "native": 0.05543550531914894,
+        "t1": 0.08552194148936171,
+        "delta": 0.030086436170212765,
+        "rescue": 831,
+        "damage": 469,
+        "paired_ci95": [
+          0.024268617021276594,
+          0.0359873670212766
+        ],
+        "mcnemar": 6.920589495866727e-24
+      }
+    },
+    "cost": {
+      "native": {
+        "calls": 10193,
+        "generated_tokens": 58440,
+        "seconds": 3730.9798504132777,
+        "peak_allocated_bytes": 14098557952,
+        "peak_reserved_bytes": 24532484096
+      },
+      "t1": {
+        "calls": 7615,
+        "generated_tokens": 29184,
+        "seconds": 3324.965028256178,
+        "peak_allocated_bytes": 14098748416,
+        "peak_reserved_bytes": 14321451008
+      }
+    },
+    "predictions": {
+      "native": "90e26178a07ba740018a4e2dee2ae169b85fe5f7feb2a4f2bdca141baac17e6a",
+      "t1": "6a322f55da578cd7672e26f997690d86087b56e02e32d83891abe325894ca5fb"
+    }
   }
 }

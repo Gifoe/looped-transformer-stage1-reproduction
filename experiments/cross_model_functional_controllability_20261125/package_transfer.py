@@ -140,7 +140,8 @@ def pack(a):
     ouro_count = len(models)
     files = {name: root / name for name in (*CODE, *HUGINN_CODE)}
     mechanism = root / "results" / "mechanism"
-    if a.with_huginn or a.huginn_partial:
+    complete_huginn = a.with_huginn or a.huginn_benchmarks
+    if complete_huginn or a.huginn_partial:
         models["huginn-0125"] = None
     if a.with_huginn:
         files.update(loopcd_files(root, models))
@@ -195,8 +196,10 @@ def pack(a):
             files["weights/rank1_huginn.pt"] = controller
             files[f"results/{name}/fit/FIT.json"] = fit / "FIT.json"
             if not partial:
-                for artifact in ("CACHE_PARITY_native.json", "CACHE_PARITY_t1.json",
-                                 "mechanism/FINITE.json", "mechanism/LOCK.json", "mechanism/MECHANISM.json"):
+                for artifact in ("CACHE_PARITY_native.json", "CACHE_PARITY_t1.json"):
+                    files[f"results/{name}/{artifact}"] = directory / artifact
+            if a.with_huginn or (directory / "mechanism" / "MECHANISM.json").is_file():
+                for artifact in ("mechanism/FINITE.json", "mechanism/LOCK.json", "mechanism/MECHANISM.json"):
                     files[f"results/{name}/{artifact}"] = directory / artifact
         elif lock["arms"]["t1"] != T1_SHA or lock["model_lock_sha256"] != digest(metadata):
             raise ValueError(f"Weight or model receipt differs for {name}")
@@ -221,7 +224,7 @@ def pack(a):
     if a.only is None:
         figure_dir = root / "figures"
         plot_transfer.run(SimpleNamespace(results=root / "results", historical=a.historical, out=figure_dir,
-                                          with_huginn=a.with_huginn))
+                                          with_huginn=complete_huginn))
         for figure in figure_dir.glob("*"):
             if figure.suffix in (".pdf", ".svg"):
                 files[f"figures/{figure.name}"] = figure
@@ -245,7 +248,8 @@ def pack(a):
         else:
             shutil.copyfile(source, dst)
         records.append({"path": key, "bytes": dst.stat().st_size, "sha256": digest(dst), "original_sha256": digest(source)})
-    manifest = {"complete_ouro_models": ouro_count, "complete_huginn": a.with_huginn,
+    manifest = {"complete_ouro_models": ouro_count, "complete_huginn": complete_huginn,
+                "loopcd_supplement_complete": a.with_huginn,
                 "partial_huginn_tasks": partial_huginn_tasks, "official_benchmarks": len(matched_models) * len(TASKS),
                 "benchmark_questions_per_arm": sum(n for n, _ in TASKS.values()),
                 "measurement_arms": list(ARM_NAMES), "t1_sha256": T1_SHA, "files": records}
@@ -262,8 +266,9 @@ if __name__ == "__main__":
     p.add_argument("--only", nargs="+")
     variants = p.add_mutually_exclusive_group()
     variants.add_argument("--with-huginn", action="store_true")
+    variants.add_argument("--huginn-benchmarks", action="store_true")
     variants.add_argument("--huginn-partial", action="store_true")
     args = p.parse_args()
-    if (args.with_huginn or args.huginn_partial) and args.only:
+    if (args.with_huginn or args.huginn_benchmarks or args.huginn_partial) and args.only:
         p.error("Publish all three Ouro comparisons with the Huginn release")
     pack(args)

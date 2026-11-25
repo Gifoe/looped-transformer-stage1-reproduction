@@ -1,0 +1,55 @@
+{
+  "plan": {
+    "task": "mmlu_pro",
+    "arm": "t1",
+    "protocol_sha256": "f672d2c25fb7277f076f2924a5645972df2b7a58fe23db25f8f68acbd1f0eef6",
+    "depth": 32,
+    "checkpoint": "a902e673be2a8e28f0e18e488bcf5f33e2e9d5b5bea35d989e67d0ede0c87ee0",
+    "seed": 261125137,
+    "max_new": 8,
+    "exact_length_batches": true,
+    "cache": "official_full_static",
+    "cache_token_cap": 2304
+  },
+  "metrics": {
+    "correct": {
+      "value": 0.0962433510638298,
+      "n": 12032,
+      "count": 1158
+    },
+    "parseable": {
+      "value": 0.8537234042553191,
+      "n": 12032,
+      "count": 10272
+    },
+    "strict_format": {
+      "value": 0.7436835106382979,
+      "n": 12032,
+      "count": 8948
+    },
+    "strict": {
+      "value": 0.08552194148936171,
+      "n": 12032,
+      "count": 1029
+    }
+  },
+  "cost": {
+    "calls": 7615,
+    "generated_tokens": 29184,
+    "seconds": 3324.965028256178,
+    "peak_allocated_bytes": 14098748416,
+    "peak_reserved_bytes": 14321451008
+  },
+  "runtime": {
+    "name": "bb6621b65e90b6a4b9b29ef88dc83866d450470c",
+    "gpu": "NVIDIA GeForce RTX 4090 D",
+    "dtype": "torch.bfloat16",
+    "torch": "2.7.1+cu128",
+    "width": 5280,
+    "seed": 261125137,
+    "bos": 65504,
+    "eos": 65505,
+    "pad": 65509
+  },
+  "rows_sha256": "6a322f55da578cd7672e26f997690d86087b56e02e32d83891abe325894ca5fb"
+}
