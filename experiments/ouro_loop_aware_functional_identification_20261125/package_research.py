@@ -83,6 +83,15 @@ def run(a):
     index = []
     for path in sorted(set(files)):
         copy_artifact(root, path, out, index)
+    dense_roots = (root / "results/filtered_moments", root / "results/moments")
+    dense = [path for folder in dense_roots for path in sorted(folder.glob("**/fold_*.pt"))]
+    matrix_manifest = out / "MATRIX_FILES.json"
+    matrix_manifest.write_text(json.dumps(
+        [{"path": path.relative_to(root).as_posix(), "bytes": path.stat().st_size, "sha256": digest(path)}
+         for path in dense], indent=2
+    ) + "\n", encoding="utf-8")
+    index.append({"path": matrix_manifest.name, "bytes": matrix_manifest.stat().st_size,
+                  "sha256": digest(matrix_manifest)})
     settings = {name: version(name) for name in ("torch", "transformers", "pyarrow", "numpy", "scipy", "matplotlib")}
     manifest = {"official_benchmarks": 12, "environment": settings, "files": index}
     (out / "RELEASE_MANIFEST.json").write_text(json.dumps(manifest, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")

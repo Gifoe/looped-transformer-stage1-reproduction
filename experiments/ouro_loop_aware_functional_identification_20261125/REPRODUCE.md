@@ -71,6 +71,7 @@ bash run_fits.sh
 "$py" -u audit_cohort_independence.py --pools data/pools_complete \
     --mmlu "$feedback/stage2/zero_shot/mmlu_cache" --confirmation results/forecast_candidate/confirmation \
     --out results/COHORT_INDEPENDENCE.json
+"$py" -u audit_protocol_gap.py --dev results/dev --out results/dev/PROTOCOL_GAP.json
 ```
 
 有限剂量诊断的输入应为官方 ARC-Challenge Validation。脚本按固定哈希选取 24 题，记录所有真实剂量、有效写入线性估计和逐题正确性。

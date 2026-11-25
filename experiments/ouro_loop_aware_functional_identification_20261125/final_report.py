@@ -65,6 +65,11 @@ def assemble(root):
     gap_rank8 = new_score - mean_for(legacy, "rank8")
     mmlu = available["mmlu"]["paired"]["native"]["acc"]
     mmlu_pro = available["mmlu_pro"]["paired"]["native"]
+    content = {row["task"]: row["paired"]["native"] for row in result["tasks"] if row["mode"] == "content"}
+    content_delta = "、".join(
+        f"{name} {100*row['correct']['change']:+.2f} 点，合法率 {100*row['valid']['change']:+.2f} 点"
+        for name, row in content.items()
+    )
     six = root / "results/forecast_candidate"
     ten = root / "results/forecast_all_sources"
     evidence = full_dose(six)["methods"]
@@ -93,6 +98,7 @@ def assemble(root):
         f"95% 区间为 [{100*mmlu['ci95'][0]:+.2f}, {100*mmlu['ci95'][1]:+.2f}]。"
         f"MMLU-Pro 的答题正确率和合法输出率相对 Native 分别变化 "
         f"{100*mmlu_pro['correct']['change']:+.2f} 和 {100*mmlu_pro['parseable']['change']:+.2f} 个百分点。",
+        f"新增开放内容生成对照相对 Native 的正确率和合法率变化分别为 {content_delta}。",
         f"新模型十二个主任务实际计时合计为 {hours:.2f} 小时。相对 Native 主指标下降的任务为 {weak}。",
         "",
         "[十二项结果表](results/official/RESULTS.md) · [逐项配对区间](results/official/RESULTS.csv) · "
@@ -130,6 +136,8 @@ def assemble(root):
         "BoolQ 的稳定主轴表现为 Yes 偏差，按训练损失对齐后效应符号由正变负。"
         "因此源域低秩、方向稳定或较大的交互项单独都不足以推断跨任务收益。"
         "T1 与 Mixed 的历史差异还混有训练来源与优化过程，归因应以本轮匹配对照为准。",
+        "同一组 ARC 开发题上，T1 候选评分上升，原生自由生成合法率与准确率下降。"
+        "不同输出协议的效用分开解释。 [同题协议审计](results/dev/PROTOCOL_GAP.json)",
         "",
         "[完整数学推导](THEORY.md) · [数据价值预测](DATA_SELECTION.md) · [因果机制与失败分析](MECHANISM.md) · [单卡复现](REPRODUCE.md)",
         "",
