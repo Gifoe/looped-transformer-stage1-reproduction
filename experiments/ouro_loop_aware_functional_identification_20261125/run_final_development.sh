@@ -55,7 +55,7 @@ arms=(--weight "t1=$t1" --weight "t2=$t2" --weight "mixed=$mixed")
 (
     exec 8>"$gpu_lock"
     flock 8
-    for method in uniform tangent; do
+    for method in uniform tangent loss_tangent; do
         label="coverage_$method"
         dst="results/fits/$label"
         if [[ ! -s "$dst/TRAIN.json" ]]; then

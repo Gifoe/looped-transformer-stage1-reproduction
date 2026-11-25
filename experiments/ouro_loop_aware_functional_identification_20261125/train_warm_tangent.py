@@ -17,7 +17,7 @@ def main(a):
         "selector_sha256": minimal.sha(Path(__file__)),
         "initialization_sha256": minimal.sha(a.initialize),
         "across_source_signal": "loop_factor_influence_warm_t1",
-        "within_source_signal": "unchanged warm_loop question weights",
+        "within_source_signal": getattr(a, "within_source_signal", "unchanged warm_loop question weights"),
     }
     a.out.mkdir(parents=True, exist_ok=True)
     path = a.out / "TANGENT_LOCK.json"

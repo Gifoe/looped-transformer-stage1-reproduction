@@ -105,6 +105,8 @@ release="$joint/mixed_full"
 
 等价的串行入口为 `bash run_final_confirm.sh /absolute/path/to/SELECTION.json`。它对官方测试使用全局 GPU 锁，并在全部完成后执行逐题配对。发布目录由 `package_research.py` 从正式预测与封存回执生成。
 
+`bash run_final_development.sh` 等待匹配训练对照和十来源确认，从候选来源中按已封存的切空间分数选前三。它在完全相同的全量数据与 T1 初始化下比较均匀、切空间和训练损失对齐三种权重规则，然后仅按独立开发结果冻结最终模型。正式测试和发布包都沿用这个冻结。
+
 ```bash
 "$py" -u aggregate_full.py --out results/official --release "$joint" --panel "$joint/data/panel" \
     --stage2 "$release/archive" --minimal "$feedback" --model "$model" \

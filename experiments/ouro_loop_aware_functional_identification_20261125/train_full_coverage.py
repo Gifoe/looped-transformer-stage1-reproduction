@@ -5,6 +5,7 @@ import json
 from pathlib import Path
 from unittest.mock import patch
 
+from audit_objective_alignment import align
 import minimal
 from task_data import hash_order, load
 import train_identification as shared
@@ -42,7 +43,7 @@ def run(a):
     observed = json.loads(audit.read_text(encoding="utf-8"))
     if observed["forecast_sha256"] != minimal.sha(a.forecast / "FORECAST.json"):
         raise ValueError("Full coverage requires a completed frozen cohort audit")
-    if a.arm == "tangent" and a.initialize is None:
+    if a.arm in ("tangent", "loss_tangent") and a.initialize is None:
         raise ValueError("Tangent weighting requires the historical T1 initialization")
     lock = {"closed_audit_sha256": minimal.sha(audit), "schedule_sha256": minimal.sha(Path(__file__)),
             "policy": a.arm, "same_independent_development_for_selection": True, "folds": [0, 1, 2, 3]}
@@ -54,7 +55,23 @@ def run(a):
     else:
         minimal.dump(path, lock)
     with patch.object(shared, "frozen_schedule", schedule):
-        if a.arm == "tangent":
+        if a.arm == "loss_tangent":
+            selector = shared.selection
+
+            def objective_aligned(rows, probes, forecast):
+                revised = {}
+                for key, row in rows.items():
+                    probe = probes[key]
+                    alternatives = len(row["candidate"]["choices"]["text"])
+                    aligned, _ = align(probe, alternatives)
+                    revised[key] = dict(probe, slopes=dict(probe["slopes"], t1=aligned))
+                return selector(rows, revised, forecast)
+
+            a.arm = "loop"
+            a.within_source_signal = "normalized candidate cross-entropy gradient corrected slopes"
+            with patch.object(shared, "selection", objective_aligned):
+                tangent.main(a)
+        elif a.arm == "tangent":
             a.arm = "loop"
             tangent.main(a)
         else:
@@ -67,7 +84,7 @@ if __name__ == "__main__":
         p.add_argument(f"--{key}", required=True, type=Path)
     p.add_argument("--initialize", type=Path)
     p.add_argument("--include", nargs="+", required=True)
-    p.add_argument("--arm", choices=(*shared.ARMS, "tangent"), required=True)
+    p.add_argument("--arm", choices=(*shared.ARMS, "tangent", "loss_tangent"), required=True)
     p.add_argument("--seed", type=int, default=261125137)
     p.set_defaults(limit=None, max_work=None)
     run(p.parse_args())

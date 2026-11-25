@@ -33,5 +33,9 @@ registry=(
 "$py" -u aggregate_full.py --out results/official --release "$joint" --panel "$joint/data/panel" \
     --stage2 "$release/archive" --minimal "$feedback" --model "$model" \
     --followup "$feedback/generation_followup" --unified "$unified" --historical "$historical"
+sed 's#](RESULTS\.#](results/official/RESULTS.#g' results/official/RESULTS.md > RESULTS.md.partial
+mv RESULTS.md.partial RESULTS.md
 "$py" -u plot_identification.py --official results/official/RESULTS.json --out figures/official
+"$py" -u final_report.py --out REPORT_ZH.md
+"$py" -u package_research.py --out /root/ouro-loop-aware-functional-identification-release-20261125
 printf 'DONE\n'

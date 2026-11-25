@@ -103,6 +103,8 @@ def run(a):
             if r['scope']!=scope:
                 continue
             target=r['target']
+            if target in a.exclude_target:
+                continue
             observed=outcomes.get((target,depth,r['source']+'__excess',dose))
             simpler=outcomes.get((target,depth,r['source']+'__loop',dose))
             if observed is None or simpler is None:
@@ -111,16 +113,22 @@ def run(a):
             rows.append(dict(**r,actual=dict(observed,scaled_loop=observed['loop_gain']/scale),ordinary=simpler))
         if not rows:
             continue
-        names=[k for k,v in rows[0]['predicted'].items() if v is not None and k!='ordinary_policy']
-        summary={name:evaluate(rows,name) for name in names}
-        shifts=[r['actual']['loop_gain']-r['ordinary']['loop_gain'] for r in rows]
-        entries.append(dict(depth=depth,dose=dose,scope=scope,rows=rows,methods=summary,
-                            excess_direction_minus_ordinary_mean_loop=statistics.mean(shifts),
-                            false_positive_interaction_mean=statistics.mean(r['actual']['positive_but_loop_damaged'] for r in rows)))
-    minimal.dump(a.out,dict(forecast_sha256=lock,confirmation=entries))
+        modes={plan['sources'][r['target']]['mode'] for r in rows}
+        partitions={'all':rows}
+        if len(modes)>1:
+            for mode in sorted(modes):
+                partitions[mode]=[r for r in rows if plan['sources'][r['target']]['mode']==mode]
+        for mode, group in partitions.items():
+            names=[k for k,v in group[0]['predicted'].items() if v is not None and k!='ordinary_policy']
+            summary={name:evaluate(group,name) for name in names}
+            shifts=[r['actual']['loop_gain']-r['ordinary']['loop_gain'] for r in group]
+            entries.append(dict(depth=depth,dose=dose,scope=scope,target_mode=mode,rows=group,methods=summary,
+                                excess_direction_minus_ordinary_mean_loop=statistics.mean(shifts),
+                                false_positive_interaction_mean=statistics.mean(r['actual']['positive_but_loop_damaged'] for r in group)))
+    minimal.dump(a.out,dict(forecast_sha256=lock,excluded_targets=a.exclude_target,confirmation=entries))
     for k in entries:
         if k['depth']==4 and k['dose']==1.:
-            print(k['scope'],{n:round(a['aggregate']['spearman_mean'],3) if a['aggregate']['spearman_mean'] is not None else None
+            print(k['scope'],k['target_mode'],{n:round(a['aggregate']['spearman_mean'],3) if a['aggregate']['spearman_mean'] is not None else None
                               for n,a in k['methods'].items()},flush=True)
 
 
@@ -128,4 +136,5 @@ if __name__=='__main__':
     p=argparse.ArgumentParser(description=__doc__)
     for item in ('forecast','results','out'):
         p.add_argument(f'--{item}',type=Path,required=True)
+    p.add_argument('--exclude-target',action='append',default=[])
     run(p.parse_args())
