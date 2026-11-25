@@ -39,8 +39,10 @@ if [[ ! -s "$forecast/FORECAST.json" ]]; then
     "$py" -u freeze_forecast.py --moments results/filtered_moments --data data/pools_complete \
         --sources "${tags[@]}" --scale-weight "$controllability/results/weights/rank1_t1.pt" --out "$forecast"
 fi
+reuse=(--reuse results/forecast_candidate)
+if [[ -s results/forecast_eight_sources/AUDIT.json ]]; then reuse=(--reuse results/forecast_eight_sources "${reuse[@]}"); fi
 "$py" -u test_forecast.py --archive "$archive" --previous "$previous" --model "$model" \
-    --data data/pools_complete --forecast "$forecast" --depths 4 3 5 --n 48 --out "$forecast/confirmation"
+    --data data/pools_complete --forecast "$forecast" --depths 4 3 5 --n 48 "${reuse[@]}" --out "$forecast/confirmation"
 "$py" -u score_forecast.py --forecast "$forecast/FORECAST.json" --results "$forecast/confirmation" \
     --out "$forecast/AUDIT.json"
 printf 'DONE\n'

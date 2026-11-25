@@ -1,6 +1,7 @@
 """Measure frozen source directions on disjoint question or context groups."""
 
 import argparse
+from collections import defaultdict
 from pathlib import Path
 import json
 import time
@@ -9,10 +10,12 @@ import torch
 
 from collect_identification import batches, native, pack, readout, source_rows
 import minimal
-from task_data import hash_order, save
+from task_data import hash_order, load, save
 
 
 DOSES=(.1,.5,1.)
+MEASUREMENT_PROTOCOL='ffef5340fe66072e69b251e85bda3be56d193747f52fade21960391b230d9426'
+RECEIVER_PROTOCOL='506ece449a98de4d64bc726a170d5c83939c705253b84ccb8573937b370a170f'
 
 
 def independent_rows(a,name,mode):
@@ -49,6 +52,51 @@ def measure(archive,model,tok,rows,mode,depth,controls):
                                native_direct=float(a0[i]),native_loop=float(b0[i]),edited_direct=float(pa[i]),edited_loop=float(la[i]))
 
 
+def cache_input(path):
+    plan=path/'FORECAST.json'
+    lock=json.loads(plan.read_text())
+    directions=path/'DIRECTIONS.pt'
+    if minimal.sha(directions)!=lock['directions_sha256']:
+        raise ValueError(f'Changed archived directions in {path}')
+    vectors=torch.load(directions,map_location='cpu',weights_only=True)
+    return path, minimal.sha(plan), vectors
+
+
+def archived_controls(inputs, name, depth, fixed, controls):
+    accepted={}
+    parents={}
+    for root, lock, old in inputs:
+        path=root/'confirmation'/f'{name}_k{depth}.jsonl'
+        stamp=path.with_suffix('.json')
+        if not stamp.is_file():
+            continue
+        receipt=json.loads(stamp.read_text())
+        prior=receipt['plan']
+        if prior['forecast_sha256']!=lock or receipt['predictions_sha256']!=minimal.sha(path):
+            raise ValueError(f'Changed archived replay at {path}')
+        version=prior.get('measurement_protocol_sha256',prior['evaluation_code_sha256'])
+        if version!=MEASUREMENT_PROTOCOL:
+            raise ValueError(f'Unexpected archived measurement implementation at {path}')
+        fields=('target','depth','mode','ids','model_sha256','source_sha256','doses')
+        if any(prior[field]!=fixed[field] for field in fields):
+            continue
+        wanted={key for key in fixed['controls'] if key in prior['controls'] and key not in accepted and key in old
+                and controls[key]['amplitude']==old[key]['amplitude']
+                and all(torch.equal(controls[key][v],old[key][v]) for v in ('u','w'))}
+        if not wanted:
+            continue
+        by=defaultdict(list)
+        for row in load(path):
+            if row['direction'] in wanted:
+                by[row['direction']].append(row)
+        for key in sorted(wanted):
+            if any([r['id'] for r in by[key] if r['dose']==dose]!=fixed['ids'] for dose in DOSES):
+                raise ValueError(f'Invalid reused predictor identities at {path} ({key})')
+            accepted[key]=by[key]
+            parents[key]=receipt['predictions_sha256']
+    return accepted,parents
+
+
 def run(a):
     old,model,tok,runtime=minimal.runtime(a.archive,a.previous,a.model)
     device=next(model.parameters()).device
@@ -58,6 +106,9 @@ def run(a):
     if minimal.sha(direction)!=lock['directions_sha256']:
         raise ValueError('Frozen directions changed')
     weights=torch.load(direction,map_location='cpu',weights_only=True)
+    if a.reuse and minimal.sha(Path(__file__).with_name('collect_identification.py'))!=RECEIVER_PROTOCOL:
+        raise ValueError('Cannot reuse archived outcomes after a receiver implementation change')
+    cached=[cache_input(path) for path in a.reuse]
     vectors={name:(row['u'].to(device),row['w'].to(device),row['amplitude']) for name,row in weights.items()}
     a.out.mkdir(parents=True,exist_ok=True)
     targets=a.targets or lock['source_order']
@@ -76,20 +127,31 @@ def run(a):
             receipt=out.with_suffix('.json')
             fixed=dict(target=name,depth=k,mode=mode,ids=ids,forecast_sha256=minimal.sha(plan),model_sha256=runtime['model_sha256'],
                        evaluation_code_sha256=minimal.sha(__file__),source_sha256=minimal.sha(source),doses=list(DOSES),controls=list(available))
+            fixed['measurement_protocol_sha256']=MEASUREMENT_PROTOCOL
             if receipt.exists():
                 recorded=json.loads(receipt.read_text())
-                if recorded['plan']!=fixed or recorded['predictions_sha256']!=minimal.sha(out):
+                old_plan=dict(recorded['plan'])
+                old_version=old_plan.get('measurement_protocol_sha256',old_plan['evaluation_code_sha256'])
+                if old_version==MEASUREMENT_PROTOCOL:
+                    old_plan['measurement_protocol_sha256']=MEASUREMENT_PROTOCOL
+                    old_plan['evaluation_code_sha256']=fixed['evaluation_code_sha256']
+                if old_plan!=fixed or recorded['predictions_sha256']!=minimal.sha(out):
                     raise ValueError(f'Changed held-out results: {out}')
                 print('REUSED',name,k,flush=True)
                 continue
             started=time.perf_counter()
-            records=list(measure(old,model,tok,rows,mode,k,available))
+            reused,parents=archived_controls(cached,name,k,fixed,weights)
+            active={key:value for key,value in available.items() if key not in reused}
+            records=[row for group in reused.values() for row in group]
+            if active:
+                records.extend(measure(old,model,tok,rows,mode,k,active))
             if len(records)!=len(ids)*len(available)*len(DOSES):
                 raise ValueError('Incomplete held-out interventions')
             torch.cuda.synchronize()
             save(out,records)
-            minimal.dump(receipt,dict(plan=fixed,predictions_sha256=minimal.sha(out),seconds=time.perf_counter()-started))
-            print('DONE',name,k,len(ids),len(records),flush=True)
+            minimal.dump(receipt,dict(plan=fixed,predictions_sha256=minimal.sha(out),seconds=time.perf_counter()-started,
+                                      reused_direction_receipts=parents,new_directions=len(active)))
+            print('DONE',name,k,len(ids),len(records),'reused',len(reused),flush=True)
 
 
 if __name__=='__main__':
@@ -99,4 +161,5 @@ if __name__=='__main__':
     p.add_argument('--n',default=48,type=int)
     p.add_argument('--targets',nargs='+')
     p.add_argument('--depths',nargs='+',type=int,default=(4,3,5))
+    p.add_argument('--reuse',action='append',type=Path,default=[])
     run(p.parse_args())
