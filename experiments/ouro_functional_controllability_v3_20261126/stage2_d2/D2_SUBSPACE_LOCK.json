@@ -1,0 +1,100 @@
+{
+  "audit_sha256": "4c2f3f617256b7284ee34ab31dd4946ed065221be1c2195f8399f06cf1dda972",
+  "chosen": {
+    "beta": 0.1,
+    "objective": "pmi"
+  },
+  "controller_sha256": "e498301743dfd8118b391179df5a53aaf7222268ed4c6c1a0213e978be714e96",
+  "criterion": "maximize held-out unlabelled net PMI, then minimize KL",
+  "fit_sha256": "170d381e144e5f23ce74a1ada6b43bf0ea4de3b5249580b70c20dad7d478b501",
+  "rank_sensitivity": {
+    "32": {
+      "audit_sha256": "68ac45bb19629b72cc884f0bae99b08b90d3fc90822226f7c87927c2abdf5786",
+      "config_sha256": "bf245c205934e4cbd197b6c4b5282f8145bf5e3650e3371a2eb8d0f32a289668",
+      "mean": {
+        "delta_nll": 3.6086116204969585,
+        "entropy": 1.0616481516044587,
+        "kl": 3.4219403059396427,
+        "net_pmi": 13.71551491273567,
+        "nll": 5.928269297350198
+      },
+      "weights_sha256": "bbfbc2cb08d35786b9c22183c29278e1b995b5a7bef7302fd9e7c5f267d53a00"
+    },
+    "8": {
+      "audit_sha256": "bdd591a472c2b1f3269ef67a743f95f01a5006039d9062d54d282c882422ddec",
+      "config_sha256": "2a60c24bdcc28c74a83abfe9e2eb6a968e8000ce4a92d5c0ba1f9cca904c88df",
+      "mean": {
+        "delta_nll": 0.8621384555008262,
+        "entropy": 2.2342387413373217,
+        "kl": 1.450520319667703,
+        "net_pmi": 5.976855175802484,
+        "nll": 3.181796117918566
+      },
+      "weights_sha256": "bbda389a5ebab17421586e232cf6b6d83d2402c1327263fe10faf2207f6edbf4"
+    }
+  },
+  "restricted_write_relative_error": 1.923111767609953e-07,
+  "sources": {
+    "entropy_0.3": {
+      "audit_sha256": "a10d59cc74e208dfdaffe7d1c668ca9bfb09256c6e8509b3bc0922acfdbbdab1",
+      "config_sha256": "9c24af2290076176184974f426e6ec2129d0ed46ba55f9c608526f8aed1f9bcf",
+      "mean": {
+        "delta_nll": 1.9450436192564666,
+        "entropy": 0.6435946557903662,
+        "kl": 0.8300099922926165,
+        "net_pmi": 0.9952579652890563,
+        "nll": 4.264701284468174
+      },
+      "weight_sha256": "ce23de36bf499254e75b6bb1f18b7c0698d32a7da0f2e391fcde4171e9aa1e05"
+    },
+    "nll_0.3": {
+      "audit_sha256": "1e104818204e6c746a0e3c65c3bac032f482236aba5d35df1671851d1ec7032f",
+      "config_sha256": "bfa579162ba5311001e8ad2122a6101a47700b60a7c848a9bf60b596833a5675",
+      "mean": {
+        "delta_nll": -0.007569091976620257,
+        "entropy": 2.2966051344992593,
+        "kl": 0.004495666823004285,
+        "net_pmi": 0.0014444138112139626,
+        "nll": 2.3122868792852387
+      },
+      "weight_sha256": "a6bdf0f60be065760cedc402aecfb47716421b95d82598857f6ce0b7fafe3238"
+    },
+    "pmi_0.1": {
+      "audit_sha256": "33b89ec65961ae2923fd1477cb09feec4b1dbbcdaefffabe0c9a7bf4afb60c97",
+      "config_sha256": "0de8e43ac453e04af2195707f5ffbbaffc8a2059247cb2edd4d357e46d7fa7fe",
+      "mean": {
+        "delta_nll": 1.4756907103583217,
+        "entropy": 2.1406714097829536,
+        "kl": 2.370339373272145,
+        "net_pmi": 5.604544942965731,
+        "nll": 3.7953483718447387
+      },
+      "weight_sha256": "051584b493822291d138891e983071d59d453e105a98be69d25f478239ce6f04"
+    },
+    "pmi_0.3": {
+      "audit_sha256": "b7130ed4b34ba5c14e1463a8f782d9eb7107037edee97e73e0b0c03cc84ba903",
+      "config_sha256": "01aa052af4d134f7f9cf25ee69fa32ba6dc2f2bb21a070ca7426987a5d4c0707",
+      "mean": {
+        "delta_nll": 1.0786021582316607,
+        "entropy": 2.2651712807128206,
+        "kl": 1.6568331925955135,
+        "net_pmi": 5.218793102307245,
+        "nll": 3.398259822046384
+      },
+      "weight_sha256": "c2a871a13b1f0107baaa61b4a4a449a32408bf53047b8e0e57c5366e76383275"
+    },
+    "pmi_1.0": {
+      "audit_sha256": "8615acb5ea859bcf16ba588e610492390e8cc76125724c997950210a32604346",
+      "config_sha256": "740f49e5bb8cee3bbbde21001ce7c97d1ea95384573c677e6c47b6be3b586182",
+      "mean": {
+        "delta_nll": 0.42126524541527033,
+        "entropy": 2.559192208573222,
+        "kl": 0.6356446121135377,
+        "net_pmi": 3.3385686001274735,
+        "nll": 2.7411212164442986
+      },
+      "weight_sha256": "b536158cbcaa1d39588a37b5ae3e6aa0375d2dbfd2e663f1d11a50af26061ec7"
+    }
+  },
+  "subspace_sha256": "d6d9ec25ea9ae0e8386f0017d383dae983606a73d508edc183d5b2df1657c001"
+}

@@ -1,0 +1,352 @@
+{
+  "status": "INTERIM_RELEASE",
+  "released_utc": "2026-11-26T06:11:12.702927+00:00",
+  "official_v3_benchmarks": 0,
+  "completed_stages": [
+    "Stage 0",
+    "E0",
+    "D2",
+    "D1"
+  ],
+  "completed_subtasks": {
+    "D3": "56 feature folds and 69,573 feature rows",
+    "D6": "six Huginn fits, one Huginn fixed-weight development arm and two Ouro-2.6B Base development arms"
+  },
+  "omitted_large_replay_artifacts": [
+    "upstream dataset snapshots and model checkpoints",
+    "multi-gigabyte raw Fisher operator exchange and D3 moment tensors"
+  ],
+  "frozen_identifiers": {
+    "stage0_env/ENV_MANIFEST.json": "68dcfb4b952665e82947437a95f1eef735c9bf70cfea52f63186cd091a36da43",
+    "stage1_e0/E0_VERDICT.json": "e1a38823a3ef6d83696a5ec375ed7968af7a99d6de20eabf874fe17592158a09",
+    "stage2_d2/D2_VERDICT.json": "e4dcd6f1ae548645ed41559548301e7ca4461e1515c757d659747a16313f5c69",
+    "stage3_d1/D1_PROTOCOL_VERDICT.json": "c86ea5b1d8a23b71dc3a9d68f8cfb0450d76a09177588a92b1c1016ee8379eb3",
+    "stage4_d3/D3_FEATURES_VERIFIED.json": "d64e839aa10826afb02c5eaf1d00210732340048e14c21b882dd17060ac61504"
+  },
+  "stage_counts": {
+    "e0_training_arms": 26,
+    "e0_paired_dev_arms": 30,
+    "d2_followup_arms": 116,
+    "d1_scoring_arms": 32,
+    "d1_prediction_rows": 152590,
+    "d3_feature_folds": 56,
+    "d3_feature_rows": 69573
+  },
+  "files": [
+    {
+      "path": "ARTIFACT_INDEX.json",
+      "bytes": 990533,
+      "sha256": "15fea0dc11e645fb24e87a05af322a555a335d5fc0870942ea8fcaf8c4df4783"
+    },
+    {
+      "path": "README.md",
+      "bytes": 2444,
+      "sha256": "65f57952e778162bb52123aa99d6caed6811dd0a5584cb516750529c4edb412c"
+    },
+    {
+      "path": "artifacts/d1-01.tar.gz",
+      "bytes": 9029417,
+      "sha256": "8f16dce398bcee7ee4871d88cdb086df897445772efab634f607c0206d815e39"
+    },
+    {
+      "path": "artifacts/d1-02.tar.gz",
+      "bytes": 9771554,
+      "sha256": "6b896a875668eb8f52179f762233ef36684f79fe563e45cba689f397710f83b8"
+    },
+    {
+      "path": "artifacts/d1-03.tar.gz",
+      "bytes": 2016460,
+      "sha256": "fbf2f9dc5840115272f8d34b8ac4c0e0b990e610874c55df844da0901273f1ed"
+    },
+    {
+      "path": "artifacts/d2-core-01.tar.gz",
+      "bytes": 34111455,
+      "sha256": "3f8c6e75b20cbb2674d2d047484daae6108de8cc989761fbc352508c891caf5d"
+    },
+    {
+      "path": "artifacts/d2-core-02.tar.gz",
+      "bytes": 38790969,
+      "sha256": "03bd2accf4fe2c7f200031679f58d4627295279ec90f4e8445728b7a0410963a"
+    },
+    {
+      "path": "artifacts/d2-eval-01.tar.gz",
+      "bytes": 12867736,
+      "sha256": "9a4dea843bde1789a9a0ff56b1da030bb7817850f8ebcfae6ac459de0aa797fa"
+    },
+    {
+      "path": "artifacts/d2-eval-02.tar.gz",
+      "bytes": 8486103,
+      "sha256": "2eed84f4f190f5c697c2218d05b9e7ba3626a6d60689da33d66b38ebb94d6d51"
+    },
+    {
+      "path": "artifacts/d3-feature-snapshot-01.tar.gz",
+      "bytes": 10186099,
+      "sha256": "d0e11c380932126245e50c8cbfb8d07a9fefda080fae99d21d8ad4a8faed76ed"
+    },
+    {
+      "path": "artifacts/d6-finished-subtasks-01.tar.gz",
+      "bytes": 1340313,
+      "sha256": "8f6a83201f2ac18c6451e868d1c162b0dcf6be85039fd4bd208aa4d99df33ffe"
+    },
+    {
+      "path": "artifacts/e0-01.tar.gz",
+      "bytes": 9997433,
+      "sha256": "b12876e8a93e5c0181fa66cc412e0a4f7113dc18dcd39ac2b922985f324bf9af"
+    },
+    {
+      "path": "artifacts/source-01.tar.gz",
+      "bytes": 171914,
+      "sha256": "3c8fad061216e824d3f439220b17166463d12516bd986fe2c878a7686e494ffc"
+    },
+    {
+      "path": "artifacts/stage0-audit-01.tar.gz",
+      "bytes": 142620,
+      "sha256": "2c388cd1066d5ef711e707fc788d7d7abc2096f6c62f847aa3c67381af4d7746"
+    },
+    {
+      "path": "figures/FIG_D1_PROTOCOL_AND_DOSE.json",
+      "bytes": 1476,
+      "sha256": "e98eae8301ff2d2b9bb2403760fdfdf66024398851e952362bbe9ce282d3416a"
+    },
+    {
+      "path": "figures/FIG_D1_PROTOCOL_AND_DOSE.pdf",
+      "bytes": 32555,
+      "sha256": "d589ecd8fd3870ec36310060a600a6771719239fbded60a29a331a33d3a72ce0"
+    },
+    {
+      "path": "figures/FIG_D1_PROTOCOL_AND_DOSE.png",
+      "bytes": 420001,
+      "sha256": "7821a3e22aae430f9ee55da43de277c0b4c541e6147831ae4ce42f39d15c5e10"
+    },
+    {
+      "path": "figures/FIG_D1_PROTOCOL_AND_DOSE.svg",
+      "bytes": 64572,
+      "sha256": "28043756d342b30f264a0a0dc624e75e955118840f9b3b7ea54a83b947b95a9e"
+    },
+    {
+      "path": "figures/FIG_D2_CONTROL_SENSITIVITY.json",
+      "bytes": 1746,
+      "sha256": "3bf49dae03227140ed904bc3469305f720299349c16d08743ff45ced0d911679"
+    },
+    {
+      "path": "figures/FIG_D2_CONTROL_SENSITIVITY.pdf",
+      "bytes": 37474,
+      "sha256": "81ce57a7fb8ec5124925683ebe34df1ee8e605b5bf02738ceb53840bd2936a14"
+    },
+    {
+      "path": "figures/FIG_D2_CONTROL_SENSITIVITY.png",
+      "bytes": 549201,
+      "sha256": "c5df6afbb7708aa45bbc66774adeb4f3640a851462025ca8c310f36278e0d4d8"
+    },
+    {
+      "path": "figures/FIG_D2_CONTROL_SENSITIVITY.svg",
+      "bytes": 64130,
+      "sha256": "70ad6afe6cb7858485f87771fdfdb0ab0e4ea278ae8d17cb72df6ca60a212d39"
+    },
+    {
+      "path": "reports/STAGES_0_TO_3_ZH.md",
+      "bytes": 5652,
+      "sha256": "51ac2a8b96c674aee86b735c7f68263d85e0d919056cd849973dc9755d8d808f"
+    },
+    {
+      "path": "stage0_env/AUDIT_DEV_LEAKAGE.json",
+      "bytes": 682,
+      "sha256": "cddcc00ba614569eeef38264ff397fd2bdfe5bcc675f247887c24414131bbf91"
+    },
+    {
+      "path": "stage0_env/DATA_INPUTS.json",
+      "bytes": 21078,
+      "sha256": "a5710709ae340b85645c4553eb232d7eab82d47583e9d257c9a17b3847bf1a26"
+    },
+    {
+      "path": "stage0_env/DATA_POSTVERIFY.json",
+      "bytes": 936,
+      "sha256": "92763687a9d29a0f26341e29f8645ade5a8a1c5e5a57503b627525f541a1d027"
+    },
+    {
+      "path": "stage0_env/ENV_MANIFEST.json",
+      "bytes": 20090,
+      "sha256": "68dcfb4b952665e82947437a95f1eef735c9bf70cfea52f63186cd091a36da43"
+    },
+    {
+      "path": "stage0_env/PREFLIGHT_REPORT.md",
+      "bytes": 699,
+      "sha256": "472705c32c67b8cd574b60bcb0acab10982c795c53e1d61629355da6af594397"
+    },
+    {
+      "path": "stage0_env/data_draft/DATA_DRAFT_MANIFEST.json",
+      "bytes": 24362,
+      "sha256": "71c766d957d9aac90cece257f723b3d4d94804592d9c0f7d3c83971537b981f0"
+    },
+    {
+      "path": "stage1_e0/E0_ANOVA_TABLE.json",
+      "bytes": 50433,
+      "sha256": "1cfdddac7c123ee2795aeb075c49db0c4371a9e6ca92ac4b5e89c2fb4cd1f778"
+    },
+    {
+      "path": "stage1_e0/E0_CONFIG.json",
+      "bytes": 5445,
+      "sha256": "be04323c90353b803b3ce21a2c9973f4bab2a2988d182b9b9ebc5459d3f47309"
+    },
+    {
+      "path": "stage1_e0/E0_EXTERNAL_PAIRED_RECHECK.json",
+      "bytes": 22213,
+      "sha256": "3a835a2c81bb25ec5df894e725b2e8334d5df73ce768dbf3bdde4eaeb932aea8"
+    },
+    {
+      "path": "stage1_e0/E0_FACTORIAL_PAIRED_DIAGNOSTIC.json",
+      "bytes": 15101,
+      "sha256": "773f7db10255808e475f5ac7fc91795a590a278a91799d341e1d534bf3378bea"
+    },
+    {
+      "path": "stage1_e0/E0_OUTPUT_SHA256.json",
+      "bytes": 452,
+      "sha256": "5b0b33082dede96ef8e73a797f241315112683ab5cfb9cd36ddf4bbe1797a802"
+    },
+    {
+      "path": "stage1_e0/E0_RAW_RESULTS.json",
+      "bytes": 571940,
+      "sha256": "afb16fdf5488430ce649a52b2b7f0eed8c032a65f8612ccdad3d519c48cdf4ff"
+    },
+    {
+      "path": "stage1_e0/E0_REPORT.md",
+      "bytes": 3195,
+      "sha256": "3e03d5ce71c37996b8fdd2c8ccf377e192e7bfffbd4d93e435d513c71d6500a3"
+    },
+    {
+      "path": "stage1_e0/E0_VERDICT.json",
+      "bytes": 4022,
+      "sha256": "e1a38823a3ef6d83696a5ec375ed7968af7a99d6de20eabf874fe17592158a09"
+    },
+    {
+      "path": "stage1_e0/GPU_LEDGER.tsv",
+      "bytes": 19517,
+      "sha256": "895b6761d189ed2b49c280f5a5b883fbab34cbc23aab69947455323e5211af80"
+    },
+    {
+      "path": "stage2_d2/D2_HELDOUT_RAYLEIGH.json",
+      "bytes": 9295,
+      "sha256": "74ccaa9cb36349f08dfb604e0ace02b823707c40891acbdd628e4402d25c54f2"
+    },
+    {
+      "path": "stage2_d2/D2_MATCHED_WRITE_DIRECTION.json",
+      "bytes": 14272,
+      "sha256": "f1c927d4be66f201423824e05c50e88a6b50a84353d190f1b19cdc5c3238047c"
+    },
+    {
+      "path": "stage2_d2/D2_NONNORMALITY_AUDIT.json",
+      "bytes": 10270,
+      "sha256": "0270d9ed86f753f591a2cf8bccc927b970389313c4d6a76c0b648b8b7270357b"
+    },
+    {
+      "path": "stage2_d2/D2_PHYSICAL_TRANSIENT_PAIRED_AUDIT.json",
+      "bytes": 14377,
+      "sha256": "ad669aa7e9d73a3c17019275a8e22444152806f2f210635b1539ca8656429c1e"
+    },
+    {
+      "path": "stage2_d2/D2_PMI_DECOMPOSITION.json",
+      "bytes": 7362,
+      "sha256": "297e0b552411df8f1ff18cf3d754df3d75f213be90a005729929805e5d051889"
+    },
+    {
+      "path": "stage2_d2/D2_REPORT.md",
+      "bytes": 3696,
+      "sha256": "088c4f6eadaacfb8225d15eac1250ad5559c2bb54e73a944c6d6544d3ddeb5d5"
+    },
+    {
+      "path": "stage2_d2/D2_SAMPLE_EFFICIENCY.json",
+      "bytes": 110575,
+      "sha256": "e73687a7e25482e9b30538151b5a2e34249418d75f10efe9db0851a500c6d13a"
+    },
+    {
+      "path": "stage2_d2/D2_SPECTRAL_COST_SUMMARY.json",
+      "bytes": 1369,
+      "sha256": "ab5b3529a2a4d355dec9780a6a8a6297d4371aef165675eb82cceb9546c0319b"
+    },
+    {
+      "path": "stage2_d2/D2_SPECTRAL_GPU_LEDGER.tsv",
+      "bytes": 21861,
+      "sha256": "02cf4742b8467f2e97b5f8b2cdbea49ce93fd6a8e60ab8dfbf068dd4ced15a52"
+    },
+    {
+      "path": "stage2_d2/D2_SUBSPACE_LOCK.json",
+      "bytes": 4134,
+      "sha256": "2d034a3689595d4f4a87a9ca946c05773a7a85af1124126c4a69846ad9ad82af"
+    },
+    {
+      "path": "stage2_d2/D2_VERDICT.json",
+      "bytes": 9611,
+      "sha256": "e4dcd6f1ae548645ed41559548301e7ca4461e1515c757d659747a16313f5c69"
+    },
+    {
+      "path": "stage2_d2/D2_ZERO_LABEL_EVAL.json",
+      "bytes": 27539,
+      "sha256": "990ef590151f605409aeafae7c5c7e1e7f9475427492938310875101d036718c"
+    },
+    {
+      "path": "stage2_d2/D2_ZERO_LABEL_PAIRED.json",
+      "bytes": 54506,
+      "sha256": "1c130d7f6b34663668ee2197369323e81ae7135bd075fda6cbda5363d5476d70"
+    },
+    {
+      "path": "stage2_d2/spectral/D2_SPECTRAL_AUDIT.json",
+      "bytes": 18433,
+      "sha256": "bb3e34a33e03e802cc43b09e4d8b43545772bcbcefc8dc14e23b039c423811fb"
+    },
+    {
+      "path": "stage3_d1/D1A_PROTOCOL_FACTORIAL.json",
+      "bytes": 235282,
+      "sha256": "2680efe07e9a124347bac8539a2003de2a9a5cde1fd33e263322613fc60211de"
+    },
+    {
+      "path": "stage3_d1/D1B_MECHANISM_ARMS.json",
+      "bytes": 47004,
+      "sha256": "461e4a2a6b8dc5ee64c59ea7f1c7ec4e73e2253e4b8b6789ea27a6f64ccb122b"
+    },
+    {
+      "path": "stage3_d1/D1C_DOSE_RESPONSE.json",
+      "bytes": 256237,
+      "sha256": "76cf955ed4639cb08cd06b5079004d325f5d0635b5c983b4eae9ee348fd23855"
+    },
+    {
+      "path": "stage3_d1/D1_DISPATCH.prefrozen.json",
+      "bytes": 145177,
+      "sha256": "d1eabf4f7b52b72196a454ba113742b98e0a4eb0cafeffd780b63fa3c1e1a5ba"
+    },
+    {
+      "path": "stage3_d1/D1_PROTOCOL_VERDICT.json",
+      "bytes": 30695,
+      "sha256": "c86ea5b1d8a23b71dc3a9d68f8cfb0450d76a09177588a92b1c1016ee8379eb3"
+    },
+    {
+      "path": "stage3_d1/D1_REPORT.md",
+      "bytes": 1701,
+      "sha256": "b6bf2fbcdb26a5fa3fecf2fbf527f52dce9f1a8755866911dff21814fa7e43ea"
+    },
+    {
+      "path": "stage4_d3/D3_FEATURES_EXECUTION.json",
+      "bytes": 192441,
+      "sha256": "e8fd8d32a94624af96a3d5f5dcf025cd6c749d9625793da68e60f3b3032ec81a"
+    },
+    {
+      "path": "stage4_d3/D3_FEATURES_VERIFIED.json",
+      "bytes": 10506,
+      "sha256": "d64e839aa10826afb02c5eaf1d00210732340048e14c21b882dd17060ac61504"
+    },
+    {
+      "path": "stage4_d3/D3_FEATURE_ROUTING_AMENDMENT.json",
+      "bytes": 1398,
+      "sha256": "d1677b7fd008f318f94529e731d53e4328e3076120e3ab8e92c200e0a1f1969f"
+    },
+    {
+      "path": "stage4_d3/FORECAST_INPUTS.json",
+      "bytes": 8492,
+      "sha256": "533718a48a0edaa2c01c13ae1507c58db4e1407ac74543d161172e82db11b8f1"
+    },
+    {
+      "path": "stage4_d3/FOURTEEN_SOURCE_POOL_AUDIT.json",
+      "bytes": 5225,
+      "sha256": "045fb9bb2422cce23a4245e0295518da4c95de712447bc56cba48a0bc71390ca"
+    }
+  ]
+}

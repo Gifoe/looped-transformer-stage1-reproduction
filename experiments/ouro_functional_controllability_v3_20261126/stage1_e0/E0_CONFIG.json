@@ -1,0 +1,92 @@
+{
+  "status": "PREFLIGHT_BOUND",
+  "approved_env_manifest": "/root/ouro-v3-controllability-20261126/stage0_env/ENV_MANIFEST.json",
+  "approved_env_sha256": "68dcfb4b952665e82947437a95f1eef735c9bf70cfea52f63186cd091a36da43",
+  "archive": "/root/autodl-tmp/ouro-arc-pareto-20261119/release_git/experiments/ouro_arc_pareto_20261119",
+  "previous": "/root/ouro-semantic-amplification-arc-20261122",
+  "model": "/root/autodl-tmp/ouro-cross-task-20261118/model",
+  "rank8": "/root/ouro-minimal-functional-feedback-20261123/results/linear8_t1.pt",
+  "historical_axis": "/root/ouro-minimal-functional-feedback-20261123/results/CAUSAL_ANALYSIS/mean_direction_rank1.pt",
+  "historical_t1": "/root/ouro-functional-controllability-20261123/results/weights/rank1_t1.pt",
+  "historical_mixed": "/root/ouro-shared-functional-advantage-20261124/results/fits/mixed/controller.pt",
+  "enable_historical_bridge": true,
+  "mixed4": [
+    "arc_challenge",
+    "csqa",
+    "squad",
+    "gsm8k"
+  ],
+  "output": "/root/ouro-v3-controllability-20261126/stage1_e0/fits",
+  "external_development": "/root/ouro-v3-controllability-20261126/stage0_env/UNIFIED_EXT_DEV",
+  "external_development_sha256": {
+    "sciq_val": "de009bf7a2704148aa3cdaf98a618f8b76ade3a9cb46c28baa076d850d62a5a9",
+    "arc_easy_val": "e0cf95b31bc2f6713c2cdf92404443b7c1859d1d68bb465e62979c9dc77a721a",
+    "cosmosqa_val": "3da77a246440a6ddd1487079d549b92da80d4dff3209be0820187a1d1d7d9d5f",
+    "mmlu_val": "e909c7e0baae4a2d5e2b96d9685eea475613670b96bc2595404841c4937982da",
+    "mmlu_pro_val": "a9844f2dd48ec85e28e1be100b47db973fe50533392dc6dbed3299e74432d3fc"
+  },
+  "dev_stage2_code": "/root/ouro-minimal-functional-feedback-20261123/stage2/code",
+  "legacy_dev": {
+    "runner": "/root/ouro-loop-aware-functional-identification-20261125/evaluate_development.py",
+    "runner_sha256": "b4007a75a34f5a07797f3a538af113f88eaac8096d02c1ccf1ef30ef2a71e25f",
+    "protocol": "/root/ouro-loop-aware-functional-identification-20261125/results/dev/DEV_PROTOCOL.json",
+    "protocol_sha256": "f43ea05ef193c82e6abc30728fafda6f025b5c3bc68303e67d4d324d9ff1c620",
+    "panel": "/root/ouro-external-data-joint-training-20261124/data/panel",
+    "mmlu": "/root/ouro-minimal-functional-feedback-20261123/stage2/zero_shot/mmlu_cache",
+    "registered_sha256": "24be2c424d9e869100d81e051b3b403f5ee65945572dbd0686c3693d6a882149"
+  },
+  "unified": "/root/ouro-unified-rank1-20261123",
+  "followup": "/root/ouro-minimal-functional-feedback-20261123/generation_followup",
+  "mmlu_scoring_settings": "/root/ouro-external-data-joint-training-20261124/mixed_full/archive/scores/mmlu/LOCK.json",
+  "mmlu_scoring_settings_sha256": "c00a18953e7cda25dc6a0969803e691310e720ab3629e114ceaed71d0c880bcf",
+  "mmlu_pro_decoder_sha256": "c645b5ec024f7dfe6ddfbc0ff26fc52d3251e6b48743f1ac7517c1125c8b1a49",
+  "pools": {
+    "arc_challenge": {
+      "path": "/root/ouro-loop-aware-functional-identification-20261125/data/pools_complete/arc_challenge.jsonl",
+      "sha256": "a3ed38841e8af49d04be6977777b61bf91217dd37ea2c909f8bd1054b6a630da"
+    },
+    "boolq": {
+      "path": "/root/ouro-loop-aware-functional-identification-20261125/data/pools_complete/boolq.jsonl",
+      "sha256": "941dcee624db7929bfa39ba93b809d651cb3810602715111c0cbf347c4cf5cf4"
+    },
+    "csqa": {
+      "path": "/root/ouro-loop-aware-functional-identification-20261125/data/pools_complete/csqa.jsonl",
+      "sha256": "a787ed82fcf35fa2b4b3ef914a29eadfe8bafea0018ab7006a848ca082a4cade"
+    },
+    "gsm8k": {
+      "path": "/root/ouro-loop-aware-functional-identification-20261125/data/pools_complete/gsm8k.jsonl",
+      "sha256": "416c848cb7a2f67743a356fc5b34f9c353d60256b75c393b4a7c880a7eaf2496"
+    },
+    "obqa": {
+      "path": "/root/ouro-loop-aware-functional-identification-20261125/data/pools_complete/obqa.jsonl",
+      "sha256": "ac09b6a63a80ab8c9d61fd5576bfa8d631a18432d53e90bf8c99b61906ce48df"
+    },
+    "qasc": {
+      "path": "/root/ouro-loop-aware-functional-identification-20261125/data/pools_complete/qasc.jsonl",
+      "sha256": "136329fbda8343fd24bb3eb82c7426d5426671c3023465db2ba3be8503d404cd"
+    },
+    "race": {
+      "path": "/root/ouro-loop-aware-functional-identification-20261125/data/pools_complete/race.jsonl",
+      "sha256": "a2e9507509c17e85d89865d8f1d00934ddf9ee0106b7720b88f914643fe1eb87"
+    },
+    "scienceqa": {
+      "path": "/root/ouro-loop-aware-functional-identification-20261125/data/pools_complete/scienceqa.jsonl",
+      "sha256": "95deedfc642593acddf93c380cc157612715ef1b88e6658a5a1b63f0386301b2"
+    },
+    "social_iqa": {
+      "path": "/root/ouro-loop-aware-functional-identification-20261125/data/pools_complete/social_iqa.jsonl",
+      "sha256": "b705d0669f9eb43226b770bc2a0bdd25078b76433c71ac39fec2cd2048a7e833"
+    },
+    "squad": {
+      "path": "/root/ouro-loop-aware-functional-identification-20261125/data/pools_complete/squad.jsonl",
+      "sha256": "bdef1bd87ae87ac773c6b73865e4324630646956931ba8af1432334cfaf4f152"
+    }
+  },
+  "historical_t2": "/root/ouro-functional-controllability-20261123/results/weights/rank1_t2.pt",
+  "historical_weight_sha256": {
+    "t1": "91d4919308bf9060ce0c44e4046e4851e7e59f65b9692c77045535f96534efd2",
+    "t2": "117f5f2fe9c5afe363ba8c032f42cd25155f7a88cb465e4e79bfb3bf496c8032",
+    "mixed": "ec2e55a64564f608cfeb245da079015db4347a9391072cba7f2949db05185b87"
+  },
+  "mixed4_provenance": "Historical Advantage Mixed run: ARC-Challenge, CommonsenseQA, SQuAD and GSM8K."
+}

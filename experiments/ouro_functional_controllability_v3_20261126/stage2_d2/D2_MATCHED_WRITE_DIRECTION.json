@@ -1,0 +1,535 @@
+{
+  "causal_condition": "The arms use identical read axes, write-vector norms, masks, and limiter. A shared input prefix yields the same pre-final-loop receiving state and relative RMS dose. Autoregressive prefixes can diverge after intervention; the candidate-only panel always uses fixed paired inputs.",
+  "checkpoint_evidence": {
+    "exit_gate": {
+      "cap": 0.45,
+      "checkpoint_sha256": "0903d6ae1566ec5697134f9e6fdd50f394a889904ff047d5ff49df581ca21c27",
+      "operator_spectral_norm": 0.9999999921779609,
+      "output_axis_norm": 1.0000000080442826,
+      "read_axis_norm": 0.9999999841336784
+    },
+    "jacobian_right1": {
+      "cap": 0.45,
+      "checkpoint_sha256": "1701169d5a4ad2843377f81ef4725141e0c84085c005b7528e70ac415e09de2e",
+      "operator_spectral_norm": 0.9999999903424045,
+      "output_axis_norm": 1.0000000062087262,
+      "read_axis_norm": 0.9999999841336784
+    },
+    "natural_displacement": {
+      "cap": 0.45,
+      "checkpoint_sha256": "cc3129dd79bbf0bcec6a588c71a8d9ab204ecffd96195b19550570e2e827b8c7",
+      "operator_spectral_norm": 0.9999999995681239,
+      "output_axis_norm": 1.0000000154344457,
+      "read_axis_norm": 0.9999999841336784
+    },
+    "random": {
+      "cap": 0.45,
+      "checkpoint_sha256": "c0704779b188a567c6c5c199c2f0ba165156be3757ffe80cd9dae22c13d2791b",
+      "operator_spectral_norm": 0.9999999841321445,
+      "output_axis_norm": 0.9999999999984661,
+      "read_axis_norm": 0.9999999841336784
+    },
+    "ufr1_mean": {
+      "cap": 0.45,
+      "checkpoint_sha256": "dcecfef6f007cde3e3c3d1598c2b5b4c100afecbbc41afb5cdd22b017dcb7014",
+      "operator_spectral_norm": 0.9999999882225882,
+      "output_axis_norm": 1.0000000040889099,
+      "read_axis_norm": 0.9999999841336784
+    }
+  },
+  "common_dose_formula": "min(abs(w @ h) / norm(h), 0.45)",
+  "development_only": true,
+  "n_methods": 5,
+  "paired_only_write_direction_changed": {
+    "exit_gate": {
+      "fixed_input_candidate_only_macro": {
+        "ci95_pp": [
+          -1.861678282221113,
+          -0.07128617928594184
+        ],
+        "delta_pp": -0.9631481649503244
+      },
+      "macro": {
+        "ci95_pp": [
+          -1.1609591480288526,
+          1.202641205132956
+        ],
+        "delta_pp": -0.09255243026534424
+      },
+      "tasks": {
+        "arc_easy_val": {
+          "after": 389,
+          "before": 394,
+          "ci95": [
+            -0.027985074626865673,
+            0.009328358208955223
+          ],
+          "damage": 16,
+          "difference": -0.009328358208955223,
+          "mcnemar_p": 0.44206833839416504,
+          "n": 536,
+          "rescue": 11
+        },
+        "cosmosqa_val": {
+          "after": 180,
+          "before": 192,
+          "ci95": [
+            -0.046,
+            -0.002
+          ],
+          "damage": 22,
+          "difference": -0.024,
+          "mcnemar_p": 0.050102459732443094,
+          "n": 500,
+          "rescue": 10
+        },
+        "mmlu_pro_val": {
+          "after": 19,
+          "before": 17,
+          "ci95": [
+            0.0,
+            0.0847457627118644
+          ],
+          "damage": 0,
+          "difference": 0.03389830508474576,
+          "legal_transitions": {
+            "both_legal": {
+              "changes_correct": 2,
+              "correct_after": 19,
+              "correct_before": 17,
+              "n": 35
+            },
+            "gained_legal": {
+              "changes_correct": 0,
+              "correct_after": 0,
+              "correct_before": 0,
+              "n": 1
+            },
+            "lost_legal": {
+              "changes_correct": 0,
+              "correct_after": 0,
+              "correct_before": 0,
+              "n": 2
+            },
+            "neither_legal": {
+              "changes_correct": 0,
+              "correct_after": 0,
+              "correct_before": 0,
+              "n": 21
+            }
+          },
+          "mcnemar_p": 0.5,
+          "n": 59,
+          "parseable": {
+            "after": 36,
+            "before": 37,
+            "ci95": [
+              -0.06779661016949153,
+              0.03389830508474576
+            ],
+            "damage": 2,
+            "difference": -0.01694915254237288,
+            "mcnemar_p": 1.0,
+            "n": 59,
+            "rescue": 1
+          },
+          "rescue": 2
+        },
+        "mmlu_val": {
+          "after": 437,
+          "before": 447,
+          "ci95": [
+            -0.03343465045592705,
+            0.00303951367781155
+          ],
+          "damage": 24,
+          "difference": -0.015197568389057751,
+          "mcnemar_p": 0.14330665429588407,
+          "n": 658,
+          "rescue": 14
+        },
+        "sciq_val": {
+          "after": 469,
+          "before": 464,
+          "ci95": [
+            0.0,
+            0.02
+          ],
+          "damage": 1,
+          "difference": 0.01,
+          "mcnemar_p": 0.125,
+          "n": 500,
+          "rescue": 6
+        }
+      }
+    },
+    "jacobian_right1": {
+      "fixed_input_candidate_only_macro": {
+        "ci95_pp": [
+          -12.625285464773398,
+          -8.870780094587852
+        ],
+        "delta_pp": -10.748335072358572
+      },
+      "macro": {
+        "ci95_pp": [
+          -7.984673429898572,
+          -2.9010411826038034
+        ],
+        "delta_pp": -5.5478206002597386
+      },
+      "tasks": {
+        "arc_easy_val": {
+          "after": 312,
+          "before": 394,
+          "ci95": [
+            -0.19221082089552236,
+            -0.11380597014925373
+          ],
+          "damage": 109,
+          "difference": -0.15298507462686567,
+          "mcnemar_p": 7.048816900472416e-13,
+          "n": 536,
+          "rescue": 27
+        },
+        "cosmosqa_val": {
+          "after": 143,
+          "before": 192,
+          "ci95": [
+            -0.14,
+            -0.056
+          ],
+          "damage": 85,
+          "difference": -0.098,
+          "mcnemar_p": 9.814991011939296e-06,
+          "n": 500,
+          "rescue": 36
+        },
+        "mmlu_pro_val": {
+          "after": 26,
+          "before": 17,
+          "ci95": [
+            0.05084745762711865,
+            0.2542372881355932
+          ],
+          "damage": 1,
+          "difference": 0.15254237288135594,
+          "legal_transitions": {
+            "both_legal": {
+              "changes_correct": 4,
+              "correct_after": 21,
+              "correct_before": 17,
+              "n": 37
+            },
+            "gained_legal": {
+              "changes_correct": 5,
+              "correct_after": 5,
+              "correct_before": 0,
+              "n": 16
+            },
+            "lost_legal": {
+              "changes_correct": 0,
+              "correct_after": 0,
+              "correct_before": 0,
+              "n": 0
+            },
+            "neither_legal": {
+              "changes_correct": 0,
+              "correct_after": 0,
+              "correct_before": 0,
+              "n": 6
+            }
+          },
+          "mcnemar_p": 0.01171875,
+          "n": 59,
+          "parseable": {
+            "after": 53,
+            "before": 37,
+            "ci95": [
+              0.15254237288135594,
+              0.3898305084745763
+            ],
+            "damage": 0,
+            "difference": 0.2711864406779661,
+            "mcnemar_p": 3.0517578125e-05,
+            "n": 59,
+            "rescue": 16
+          },
+          "rescue": 10
+        },
+        "mmlu_val": {
+          "after": 399,
+          "before": 447,
+          "ci95": [
+            -0.1094224924012158,
+            -0.037993920972644375
+          ],
+          "damage": 98,
+          "difference": -0.0729483282674772,
+          "mcnemar_p": 9.826760299248323e-05,
+          "n": 658,
+          "rescue": 50
+        },
+        "sciq_val": {
+          "after": 411,
+          "before": 464,
+          "ci95": [
+            -0.136,
+            -0.076
+          ],
+          "damage": 59,
+          "difference": -0.106,
+          "mcnemar_p": 4.964650327128616e-12,
+          "n": 500,
+          "rescue": 6
+        }
+      }
+    },
+    "natural_displacement": {
+      "fixed_input_candidate_only_macro": {
+        "ci95_pp": [
+          -1.3430914292519165,
+          0.4972263870616517
+        ],
+        "delta_pp": -0.4212028761965249
+      },
+      "macro": {
+        "ci95_pp": [
+          -2.075796187651716,
+          0.6538296699747868
+        ],
+        "delta_pp": -0.6759453518046776
+      },
+      "tasks": {
+        "arc_easy_val": {
+          "after": 389,
+          "before": 394,
+          "ci95": [
+            -0.027985074626865673,
+            0.009328358208955223
+          ],
+          "damage": 16,
+          "difference": -0.009328358208955223,
+          "mcnemar_p": 0.44206833839416504,
+          "n": 536,
+          "rescue": 11
+        },
+        "cosmosqa_val": {
+          "after": 185,
+          "before": 192,
+          "ci95": [
+            -0.036,
+            0.008
+          ],
+          "damage": 19,
+          "difference": -0.014,
+          "mcnemar_p": 0.28104151505976915,
+          "n": 500,
+          "rescue": 12
+        },
+        "mmlu_pro_val": {
+          "after": 16,
+          "before": 17,
+          "ci95": [
+            -0.0847457627118644,
+            0.03389830508474576
+          ],
+          "damage": 2,
+          "difference": -0.01694915254237288,
+          "legal_transitions": {
+            "both_legal": {
+              "changes_correct": 1,
+              "correct_after": 16,
+              "correct_before": 15,
+              "n": 31
+            },
+            "gained_legal": {
+              "changes_correct": 0,
+              "correct_after": 0,
+              "correct_before": 0,
+              "n": 0
+            },
+            "lost_legal": {
+              "changes_correct": -2,
+              "correct_after": 0,
+              "correct_before": 2,
+              "n": 6
+            },
+            "neither_legal": {
+              "changes_correct": 0,
+              "correct_after": 0,
+              "correct_before": 0,
+              "n": 22
+            }
+          },
+          "mcnemar_p": 1.0,
+          "n": 59,
+          "parseable": {
+            "after": 31,
+            "before": 37,
+            "ci95": [
+              -0.1864406779661017,
+              -0.03389830508474576
+            ],
+            "damage": 6,
+            "difference": -0.1016949152542373,
+            "mcnemar_p": 0.03125,
+            "n": 59,
+            "rescue": 0
+          },
+          "rescue": 1
+        },
+        "mmlu_val": {
+          "after": 446,
+          "before": 447,
+          "ci95": [
+            -0.022796352583586626,
+            0.019756838905775075
+          ],
+          "damage": 25,
+          "difference": -0.001519756838905775,
+          "mcnemar_p": 1.0,
+          "n": 658,
+          "rescue": 24
+        },
+        "sciq_val": {
+          "after": 468,
+          "before": 464,
+          "ci95": [
+            0.0,
+            0.018
+          ],
+          "damage": 1,
+          "difference": 0.008,
+          "mcnemar_p": 0.21875,
+          "n": 500,
+          "rescue": 5
+        }
+      }
+    },
+    "ufr1_mean": {
+      "fixed_input_candidate_only_macro": {
+        "ci95_pp": [
+          -8.923576560586127,
+          -5.519842608764688
+        ],
+        "delta_pp": -7.210008846345778
+      },
+      "macro": {
+        "ci95_pp": [
+          -5.483170573001767,
+          -1.2442957370686105
+        ],
+        "delta_pp": -3.3951257211444186
+      },
+      "tasks": {
+        "arc_easy_val": {
+          "after": 341,
+          "before": 394,
+          "ci95": [
+            -0.13619402985074627,
+            -0.061567164179104475
+          ],
+          "damage": 83,
+          "difference": -0.09888059701492537,
+          "mcnemar_p": 6.306715100830909e-07,
+          "n": 536,
+          "rescue": 30
+        },
+        "cosmosqa_val": {
+          "after": 188,
+          "before": 192,
+          "ci95": [
+            -0.044,
+            0.03
+          ],
+          "damage": 46,
+          "difference": -0.008,
+          "mcnemar_p": 0.7493290032022805,
+          "n": 500,
+          "rescue": 42
+        },
+        "mmlu_pro_val": {
+          "after": 24,
+          "before": 17,
+          "ci95": [
+            0.05084745762711865,
+            0.2033898305084746
+          ],
+          "damage": 0,
+          "difference": 0.11864406779661017,
+          "legal_transitions": {
+            "both_legal": {
+              "changes_correct": 3,
+              "correct_after": 20,
+              "correct_before": 17,
+              "n": 34
+            },
+            "gained_legal": {
+              "changes_correct": 4,
+              "correct_after": 4,
+              "correct_before": 0,
+              "n": 15
+            },
+            "lost_legal": {
+              "changes_correct": 0,
+              "correct_after": 0,
+              "correct_before": 0,
+              "n": 3
+            },
+            "neither_legal": {
+              "changes_correct": 0,
+              "correct_after": 0,
+              "correct_before": 0,
+              "n": 7
+            }
+          },
+          "mcnemar_p": 0.015625,
+          "n": 59,
+          "parseable": {
+            "after": 49,
+            "before": 37,
+            "ci95": [
+              0.06779661016949153,
+              0.3389830508474576
+            ],
+            "damage": 3,
+            "difference": 0.2033898305084746,
+            "mcnemar_p": 0.007537841796875,
+            "n": 59,
+            "rescue": 15
+          },
+          "rescue": 7
+        },
+        "mmlu_val": {
+          "after": 446,
+          "before": 447,
+          "ci95": [
+            -0.02735562310030395,
+            0.0243161094224924
+          ],
+          "damage": 39,
+          "difference": -0.001519756838905775,
+          "mcnemar_p": 1.0,
+          "n": 658,
+          "rescue": 38
+        },
+        "sciq_val": {
+          "after": 374,
+          "before": 464,
+          "ci95": [
+            -0.216,
+            -0.144
+          ],
+          "damage": 94,
+          "difference": -0.18,
+          "mcnemar_p": 2.378717289651507e-23,
+          "n": 500,
+          "rescue": 4
+        }
+      }
+    }
+  },
+  "reference": "random",
+  "source_paired_score_sha256": "1c130d7f6b34663668ee2197369323e81ae7135bd075fda6cbda5363d5476d70"
+}

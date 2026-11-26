@@ -1,0 +1,119 @@
+{
+  "init_direction_effect_pp": 0.9363984377222606,
+  "init_scale_effect_pp": -0.7835152863778561,
+  "nll_hijack_effect_pp": -7.0759643843273965,
+  "nll_minus_rank_by_initialization": {
+    "cold": {
+      "external_macro_pp": -8.208990540061528,
+      "mmlu_pro_eos_pp": 63.983050847457626,
+      "mmlu_pro_parseable_pp": -69.91525423728814,
+      "cos_operator_mixed": 0.11769041766502272,
+      "paired_cells": [
+        {
+          "seed": 26112601,
+          "data": "arc",
+          "external_macro_pp": -9.395728702835825,
+          "mmlu_pro_eos_pp": 69.49152542372882,
+          "mmlu_pro_parseable_pp": -77.96610169491525,
+          "cos_operator_mixed": 0.09364208906285432
+        },
+        {
+          "seed": 26112602,
+          "data": "arc",
+          "external_macro_pp": -8.352006886386166,
+          "mmlu_pro_eos_pp": 72.88135593220339,
+          "mmlu_pro_parseable_pp": -77.96610169491525,
+          "cos_operator_mixed": 0.09193347515288816
+        },
+        {
+          "seed": 26112601,
+          "data": "arc_csqa",
+          "external_macro_pp": -5.834677398643784,
+          "mmlu_pro_eos_pp": 50.847457627118644,
+          "mmlu_pro_parseable_pp": -55.93220338983051,
+          "cos_operator_mixed": 0.14088090393247965
+        },
+        {
+          "seed": 26112602,
+          "data": "arc_csqa",
+          "external_macro_pp": -9.253549172380337,
+          "mmlu_pro_eos_pp": 62.71186440677966,
+          "mmlu_pro_parseable_pp": -67.79661016949152,
+          "cos_operator_mixed": 0.1443052025118688
+        }
+      ]
+    },
+    "spec_warm": {
+      "external_macro_pp": -5.942938228593264,
+      "mmlu_pro_eos_pp": 47.88135593220339,
+      "mmlu_pro_parseable_pp": -50.84745762711865,
+      "cos_operator_mixed": 0.035775930878565766,
+      "paired_cells": [
+        {
+          "seed": 26112601,
+          "data": "arc",
+          "external_macro_pp": -6.314403250349665,
+          "mmlu_pro_eos_pp": 54.23728813559322,
+          "mmlu_pro_parseable_pp": -57.6271186440678,
+          "cos_operator_mixed": 0.02517558728130491
+        },
+        {
+          "seed": 26112602,
+          "data": "arc",
+          "external_macro_pp": -7.293895152540831,
+          "mmlu_pro_eos_pp": 52.54237288135594,
+          "mmlu_pro_parseable_pp": -57.6271186440678,
+          "cos_operator_mixed": 0.04616177289472358
+        },
+        {
+          "seed": 26112601,
+          "data": "arc_csqa",
+          "external_macro_pp": -4.086983038544845,
+          "mmlu_pro_eos_pp": 35.59322033898305,
+          "mmlu_pro_parseable_pp": -35.59322033898306,
+          "cos_operator_mixed": 0.03686819281529891
+        },
+        {
+          "seed": 26112602,
+          "data": "arc_csqa",
+          "external_macro_pp": -6.076471472937717,
+          "mmlu_pro_eos_pp": 49.152542372881356,
+          "mmlu_pro_parseable_pp": -52.54237288135594,
+          "cos_operator_mixed": 0.03489817052293566
+        }
+      ]
+    }
+  },
+  "data_effect_pp": 0.5228986391775103,
+  "cold_start_gains": {
+    "840": [
+      {
+        "seed": 26112601,
+        "cold_gain_pp": 7.85545661522894,
+        "spectral_gain_pp": 7.343445545955252,
+        "cold_fraction_of_spectral_gain": 1.069723546810489
+      },
+      {
+        "seed": 26112602,
+        "cold_gain_pp": 6.791788484295336,
+        "spectral_gain_pp": 8.452982514146079,
+        "cold_fraction_of_spectral_gain": 0.8034783548799809
+      }
+    ],
+    "280": [
+      {
+        "seed": 26112601,
+        "cold_gain_pp": 4.8222109790032945,
+        "spectral_gain_pp": 6.832907652761899,
+        "cold_fraction_of_spectral_gain": 0.7057333750228761
+      }
+    ]
+  },
+  "cold_start_viable": true,
+  "cold_viability_rule": "Cold exceeds Native on both 840-step seeds and retains at least 50% of any positive matched spectral gain.",
+  "recommended_d3_init_regimes": [
+    "Cold_FixedWork",
+    "D2Warm_FixedWork"
+  ],
+  "d3_interpretation": "Cold receives the same planned coverage. The verdict records whether the observed gain supports a stable cold probe."
+}

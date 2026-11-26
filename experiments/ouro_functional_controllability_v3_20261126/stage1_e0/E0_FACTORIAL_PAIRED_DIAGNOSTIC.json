@@ -1,0 +1,285 @@
+{
+  "e0_verdict_sha256": "e1a38823a3ef6d83696a5ec375ed7968af7a99d6de20eabf874fe17592158a09",
+  "macro_effects": {
+    "ARC_CSQA_minus_ARC": {
+      "equal_task_mean_pp": 0.522898639177509,
+      "mmlu_pro_excluded_bootstrap_ci95_pp": [
+        -0.7483653540806604,
+        0.25295490631946643
+      ],
+      "mmlu_pro_excluded_mean_pp": -0.2468004298416731,
+      "stratified_question_bootstrap_ci95_pp": [
+        -0.19310597007236233,
+        1.2472345186546019
+      ]
+    },
+    "NLL_minus_rank": {
+      "equal_task_mean_pp": -7.0759643843273965,
+      "mmlu_pro_excluded_bootstrap_ci95_pp": [
+        -3.351250014176836,
+        -1.7633193254377808
+      ],
+      "mmlu_pro_excluded_mean_pp": -2.541989378714331,
+      "stratified_question_bootstrap_ci95_pp": [
+        -8.941620540111508,
+        -5.30237090851702
+      ]
+    },
+    "spectral_minus_cold": {
+      "equal_task_mean_pp": 1.2859093070785375,
+      "mmlu_pro_excluded_bootstrap_ci95_pp": [
+        0.41626614032799525,
+        1.2167006709896566
+      ],
+      "mmlu_pro_excluded_mean_pp": 0.8128951084244432,
+      "stratified_question_bootstrap_ci95_pp": [
+        0.5536329379229501,
+        2.069353362783988
+      ]
+    }
+  },
+  "mmlu_pro_objective_legal_transitions": {
+    "both_illegal": {
+      "joint_correct": 0,
+      "joint_minus_rank_correct": 0,
+      "n_cell_items": 6,
+      "rank_correct": 0
+    },
+    "both_legal": {
+      "joint_correct": 67,
+      "joint_minus_rank_correct": -12,
+      "n_cell_items": 181,
+      "rank_correct": 79
+    },
+    "gained_legal": {
+      "joint_correct": 0,
+      "joint_minus_rank_correct": 0,
+      "n_cell_items": 0,
+      "rank_correct": 0
+    },
+    "lost_legal": {
+      "joint_correct": 0,
+      "joint_minus_rank_correct": -107,
+      "n_cell_items": 285,
+      "rank_correct": 107
+    }
+  },
+  "n_bootstrap": 10000,
+  "prediction_sha256": {
+    "core.cold.arc.nll_rank.840.26112601/arc_easy_val": "e503ba070bdcfbc5d43dae52f28a224ce691bbdd5bb3d024da402cda6664d051",
+    "core.cold.arc.nll_rank.840.26112601/cosmosqa_val": "719346aabe207fc01fec7624cca4c743e3c372b811b31e20406de75250de25e2",
+    "core.cold.arc.nll_rank.840.26112601/mmlu_pro_val": "0f5a154499b18cae0b868fbdcaad73bfc356134d7530ff984606552eafb6d76c",
+    "core.cold.arc.nll_rank.840.26112601/mmlu_val": "a8391cf7f76ba20dbeb8111cb3eaae9e83cce91549d89fc8122cc96a56a744c8",
+    "core.cold.arc.nll_rank.840.26112601/sciq_val": "113ed6465b24d27f3749efac2fd61737dc9c34cbd026090e1365b32363cb55c3",
+    "core.cold.arc.nll_rank.840.26112602/arc_easy_val": "1589138cb225c9169b89fde3c400f6d804a0dba4e39612855dbfebfd0bf30b53",
+    "core.cold.arc.nll_rank.840.26112602/cosmosqa_val": "bcb1f711c75712cadd42207bd7724aa4d710116f1ac2ea7853bf64998263b496",
+    "core.cold.arc.nll_rank.840.26112602/mmlu_pro_val": "7d530ca8d2f6f42d373f78879f4b4aa4a1b432f76683d6a50514c30ec7e9986e",
+    "core.cold.arc.nll_rank.840.26112602/mmlu_val": "54a9ea1a1689269a7fffeefaeeb4ec8acfed20f54c66ada02fe7adde2add7800",
+    "core.cold.arc.nll_rank.840.26112602/sciq_val": "d40c402614259270e7580db315aa4963bfd76510be255e7d4af234f7edaa53e9",
+    "core.cold.arc.rank.840.26112601/arc_easy_val": "4d770d3c2f4e5692d5496ca51799c01b74ff79bb995fcaa89fabe454b28a48f4",
+    "core.cold.arc.rank.840.26112601/cosmosqa_val": "8a2e014778c0308e8d341c30d61891d2d15654639730b7ce6e22068b5ea62195",
+    "core.cold.arc.rank.840.26112601/mmlu_pro_val": "1853a637d34357b7012a00f82e0d395590b10b86f9ee3c778bc14f9b14492a12",
+    "core.cold.arc.rank.840.26112601/mmlu_val": "1ab6f6c2dbb16007ff9600d587b6ce642a501c10a1342c6a3f1eb27ced09e7bc",
+    "core.cold.arc.rank.840.26112601/sciq_val": "8e625ba555ab5368bd7320bab9e3b8606818347ad003f695994714076625efe3",
+    "core.cold.arc.rank.840.26112602/arc_easy_val": "5c0af4c07a01eb0fc26e41b0baed082a16c2d2a56c4c82939a9934aa8ebda3b0",
+    "core.cold.arc.rank.840.26112602/cosmosqa_val": "4829129a8887cc4dd3b320aa88c95f4612707b7549bf8308280598327218fa01",
+    "core.cold.arc.rank.840.26112602/mmlu_pro_val": "700a3b3889a7f82db1e4c21ee10732e3515a844a19125a39164015cfc53f3f9b",
+    "core.cold.arc.rank.840.26112602/mmlu_val": "c60ae308ffe9cba8aebfb1de9a9b34eef9bd49afb20820db3d97de9ba547afb4",
+    "core.cold.arc.rank.840.26112602/sciq_val": "9db825a9e7bf225045ca8d70d2d602086a97dbf51d1e08a708140388ebef534a",
+    "core.cold.arc_csqa.nll_rank.840.26112601/arc_easy_val": "9590b63a0f749f1eb40c9add2684c334247dc370bcce81db761ef5c787f9dfa6",
+    "core.cold.arc_csqa.nll_rank.840.26112601/cosmosqa_val": "1c627362bafb2c2967a482c6eb6ef87324faedc0243479857eadf96e4d2743a3",
+    "core.cold.arc_csqa.nll_rank.840.26112601/mmlu_pro_val": "940d502946e287e3e4551798c9383c0c26f8cf6141240e721e203507df7d2e14",
+    "core.cold.arc_csqa.nll_rank.840.26112601/mmlu_val": "1123bae043cf5a4da33c2b720ef5fca527a0fd54eaab27c2935aa879d2b3024d",
+    "core.cold.arc_csqa.nll_rank.840.26112601/sciq_val": "9221c41adccd1b5353fe1c60150384ca7ac9d75d93c034841987cdc289066f0b",
+    "core.cold.arc_csqa.nll_rank.840.26112602/arc_easy_val": "5f8cb83538f4c5e2aa0a721565eb40203ef94427dfd20b8d07051d3d1411c09e",
+    "core.cold.arc_csqa.nll_rank.840.26112602/cosmosqa_val": "13b256243c19ae7454efe4a02034fd21840ccfadeedd4d4595313eef9256f846",
+    "core.cold.arc_csqa.nll_rank.840.26112602/mmlu_pro_val": "165b569b4a569aaaff21690de8350deabc7eee9af674cdee07a4e7fc52f9fed7",
+    "core.cold.arc_csqa.nll_rank.840.26112602/mmlu_val": "280e0696fcf722aaefd3be96fb8bd82bfdd6938676e9cb0d3dc644917b3fd80f",
+    "core.cold.arc_csqa.nll_rank.840.26112602/sciq_val": "78b90d766cfe5516875aa76a25a0c69e333b3ec29ce7c5226ea4b5a355dafc04",
+    "core.cold.arc_csqa.rank.840.26112601/arc_easy_val": "1a5cc4562efa2bd9cbb8817e6d0b24061eda1774b262e4df40af499b3662652a",
+    "core.cold.arc_csqa.rank.840.26112601/cosmosqa_val": "297044e39c34949a02f2918d14e39795cc46528922cecd8ea8d7f977ba3df837",
+    "core.cold.arc_csqa.rank.840.26112601/mmlu_pro_val": "6fd56287b4f6027b142f9dafe8dc61e926d60154be3014a477fd36099bdd4ff2",
+    "core.cold.arc_csqa.rank.840.26112601/mmlu_val": "1fa38e8044a417c9ddc0e3ff9681bdad429c4e5819f77684efa2dc18c1c7642f",
+    "core.cold.arc_csqa.rank.840.26112601/sciq_val": "cf144ad4f7d381e965501705cfe2adc4031d9d95a4de8af77e87b36490f7e3d4",
+    "core.cold.arc_csqa.rank.840.26112602/arc_easy_val": "c9cd42640a99ca9b1b9a752dc798778e5e96cb59547ac623b0194b7567fab10f",
+    "core.cold.arc_csqa.rank.840.26112602/cosmosqa_val": "79076be0f301255a4115e0b02e83040b1d593bd46bd71bc8b1666e43467aa459",
+    "core.cold.arc_csqa.rank.840.26112602/mmlu_pro_val": "3464cec3758efe75c9cf0b0deb283a8565a3d05d308e94051f00be03ed5136ac",
+    "core.cold.arc_csqa.rank.840.26112602/mmlu_val": "b07bec465a624ef6d6fd49a0101fe8f62e5a0dbb6a7d5b1bf843bc254049594b",
+    "core.cold.arc_csqa.rank.840.26112602/sciq_val": "2d9d900644d45f6255f22b905ebe12b1dc9897c80cba27c6b4173c4c94e4b6f9",
+    "core.spec_warm.arc.nll_rank.840.26112601/arc_easy_val": "7b3a59b21cd2ea37a139eeb0c89b230c0386497fd5c4d1f607175263c0f551ac",
+    "core.spec_warm.arc.nll_rank.840.26112601/cosmosqa_val": "bf7eb873fd99fb1b9cce0a0505d25e0822fe03369e327a87899d9f0188a57bc4",
+    "core.spec_warm.arc.nll_rank.840.26112601/mmlu_pro_val": "f048811f512b70c2ac2c074b85fd2e9e32045cee344f6725afd8e8abe6a6f401",
+    "core.spec_warm.arc.nll_rank.840.26112601/mmlu_val": "95ca43bc4f81962dc4b6194bb23710759a6086b3dbba9ebca6e6d32cb9da33ed",
+    "core.spec_warm.arc.nll_rank.840.26112601/sciq_val": "4fa3486697f52156552f9ad11b1f5c4e7fad920077cda96a83433bab22818610",
+    "core.spec_warm.arc.nll_rank.840.26112602/arc_easy_val": "1e89bb9d30e371e8da31513077070f0fdcf7a14ccc95688e9ebbb8fea5b55a80",
+    "core.spec_warm.arc.nll_rank.840.26112602/cosmosqa_val": "a1e53cb6f90cbc80ddeb9388c17bfe6c79ec77f3f4b5ef92bd25bf9a5a38b3e0",
+    "core.spec_warm.arc.nll_rank.840.26112602/mmlu_pro_val": "d203aff4c49fb5bb0b87ed9a7e5df5f104e3b356dc6bb511ddbad66bceb0f92e",
+    "core.spec_warm.arc.nll_rank.840.26112602/mmlu_val": "6a1bb04301fb9c191ff5f7343c69125a2f074d8053a6a85d64e4feea9799391b",
+    "core.spec_warm.arc.nll_rank.840.26112602/sciq_val": "21baf9b1882a6e45f3680f0d65d3f9cdd97db5447b8dcca20beaecead621464b",
+    "core.spec_warm.arc.rank.840.26112601/arc_easy_val": "0662cc741669b7158bc3245c8a0502f1441874e4a0c765549904fedb83e07497",
+    "core.spec_warm.arc.rank.840.26112601/cosmosqa_val": "99f70c1a1208b56c82dbd6f8d0c4955e67cd59e91cb78dab4605b15685f71599",
+    "core.spec_warm.arc.rank.840.26112601/mmlu_pro_val": "296ab7d0f62130a1e9257f41517760d8376fa408f4ef630fc6019f2fdd7863d1",
+    "core.spec_warm.arc.rank.840.26112601/mmlu_val": "55c1c7a9c0b579163886dc94f26a6a3f59b9554dd7cb1493f0ea7a6ee1fe7632",
+    "core.spec_warm.arc.rank.840.26112601/sciq_val": "d46dcd565d056215ccd5935865de73b0afdcacac7ddfdeb50894178fd9899843",
+    "core.spec_warm.arc.rank.840.26112602/arc_easy_val": "6aa5526d144ecff79569c00219349ef71be822fb3584c855beb5deab925a82d0",
+    "core.spec_warm.arc.rank.840.26112602/cosmosqa_val": "b0f8347d28be9166c79ccfe2ad3bed70dcf8fdb6442f82b2a25fa597fe81e36e",
+    "core.spec_warm.arc.rank.840.26112602/mmlu_pro_val": "9b2bb5c978c6a25663fa1e577cdf98adb8828dbf9f92f445c0ad42ba96270695",
+    "core.spec_warm.arc.rank.840.26112602/mmlu_val": "cd2dd3eee209ebf9c11bd49cb6ae6938ea20dd6630a385cf8dbb9790d1969968",
+    "core.spec_warm.arc.rank.840.26112602/sciq_val": "142507087010d5523696708edf0e3f3d966bc9dad2a10a3332a6fa6e148ffdcc",
+    "core.spec_warm.arc_csqa.nll_rank.840.26112601/arc_easy_val": "c5b3bbc793b3e10ee1423ee9bb1f3d5c019f1fb3cd3af072664234dec3c8db18",
+    "core.spec_warm.arc_csqa.nll_rank.840.26112601/cosmosqa_val": "9c214b762e455268777b6859e08e7cffe909abcd909487719a7292e25c312e61",
+    "core.spec_warm.arc_csqa.nll_rank.840.26112601/mmlu_pro_val": "0dc0e8dfd497212801b227cca998f502a2bd9b074b934aaa7362772ea4bc4f14",
+    "core.spec_warm.arc_csqa.nll_rank.840.26112601/mmlu_val": "005df3fe97c8aa08d46647b2d5b9baa0818f9c6e8772825e6f0fa35dee32745b",
+    "core.spec_warm.arc_csqa.nll_rank.840.26112601/sciq_val": "d0b6d14255bef86523cd767459bac6af2f9569787fac4b283696bb4fac7255b6",
+    "core.spec_warm.arc_csqa.nll_rank.840.26112602/arc_easy_val": "58080ea254d7ca0227f85b9239cdd03fd627e5ccf3e1a8f2c3e4c3fb977b4a09",
+    "core.spec_warm.arc_csqa.nll_rank.840.26112602/cosmosqa_val": "a078ff567110ef8053a138fc7b9949c36a0fb35d1c07638846e800055a73c0cf",
+    "core.spec_warm.arc_csqa.nll_rank.840.26112602/mmlu_pro_val": "bbc6cde1b5012911dcdc28d195f055f26417fd2f9215bc02d228232370364f8b",
+    "core.spec_warm.arc_csqa.nll_rank.840.26112602/mmlu_val": "47486742826da8ef5f534ba0bea564e3b56790a61dd8180d9d56f2fd0704c5a2",
+    "core.spec_warm.arc_csqa.nll_rank.840.26112602/sciq_val": "2e42313d9ec45c1f4aac336ea0e4c682fcd7def112414e3491cb797263f78cb6",
+    "core.spec_warm.arc_csqa.rank.840.26112601/arc_easy_val": "cec3a79aa0ff242b0c17cea4c45b47bb73b2ac2f0d50d7b10df1dcdb34c8ef07",
+    "core.spec_warm.arc_csqa.rank.840.26112601/cosmosqa_val": "e453708c03b153dd5f8b7cc74938bb9d6718be2c4cac55d42b3624b3a1b20461",
+    "core.spec_warm.arc_csqa.rank.840.26112601/mmlu_pro_val": "3fc34971a38c9d48f1fe7bcdcc648312b3e9e7355ebf31f3bfbcb53bffa52200",
+    "core.spec_warm.arc_csqa.rank.840.26112601/mmlu_val": "578979c49ac9d00ba6953b2923f9a041d3a8477b13b80170e8c411942fc86a4a",
+    "core.spec_warm.arc_csqa.rank.840.26112601/sciq_val": "766decf1f0eb29ee50d5bd939ae4247158689a9effa627c861df2a1b737d49a0",
+    "core.spec_warm.arc_csqa.rank.840.26112602/arc_easy_val": "3a713094a1818c7588a631134b7419aee99cb99c24c729313162eb446114c5fc",
+    "core.spec_warm.arc_csqa.rank.840.26112602/cosmosqa_val": "b973b8b70372ad9c02493457da86388014da72f3c5a008b302eb8f3c0344338a",
+    "core.spec_warm.arc_csqa.rank.840.26112602/mmlu_pro_val": "82ed2f0868ade2132f2fca851c5a1aa9d501784edf2dd3fae213e3b22fd10e60",
+    "core.spec_warm.arc_csqa.rank.840.26112602/mmlu_val": "a9f23f8344004d56d69bd578fd0a768bb761d5a7f0f5ad35064b2bbaec00c864",
+    "core.spec_warm.arc_csqa.rank.840.26112602/sciq_val": "048185819d9f919c435d60f19512fa132ce588dff5d15473c7824e0bf381442c"
+  },
+  "scope": "additional paired E0 external development diagnostics using the original 16 factorial arms",
+  "seed_conditioning": "Both fixed training seeds stay matched; uncertainty resamples shared questions within each task.",
+  "task_effects": {
+    "arc_easy_val": {
+      "ARC_CSQA_minus_ARC": {
+        "ci95_pp": [
+          -1.7024253731343284,
+          0.5830223880597015
+        ],
+        "mean_pp": -0.5830223880597015,
+        "n_items": 536
+      },
+      "NLL_minus_rank": {
+        "ci95_pp": [
+          -4.80410447761194,
+          -1.8656716417910446
+        ],
+        "mean_pp": -3.2882462686567164,
+        "n_items": 536
+      },
+      "spectral_minus_cold": {
+        "ci95_pp": [
+          0.046641791044776115,
+          1.515858208955224
+        ],
+        "mean_pp": 0.769589552238806,
+        "n_items": 536
+      }
+    },
+    "cosmosqa_val": {
+      "ARC_CSQA_minus_ARC": {
+        "ci95_pp": [
+          -2.9250000000000003,
+          -0.5499999999999999
+        ],
+        "mean_pp": -1.725,
+        "n_items": 500
+      },
+      "NLL_minus_rank": {
+        "ci95_pp": [
+          -6.75,
+          -2.4250000000000003
+        ],
+        "mean_pp": -4.5249999999999995,
+        "n_items": 500
+      },
+      "spectral_minus_cold": {
+        "ci95_pp": [
+          1.3,
+          3.5749999999999997
+        ],
+        "mean_pp": 2.4250000000000003,
+        "n_items": 500
+      }
+    },
+    "mmlu_pro_val": {
+      "ARC_CSQA_minus_ARC": {
+        "ci95_pp": [
+          0.6355932203389831,
+          6.567796610169492
+        ],
+        "mean_pp": 3.6016949152542375,
+        "n_items": 59
+      },
+      "NLL_minus_rank": {
+        "ci95_pp": [
+          -34.11016949152542,
+          -16.73728813559322
+        ],
+        "mean_pp": -25.21186440677966,
+        "n_items": 59
+      },
+      "spectral_minus_cold": {
+        "ci95_pp": [
+          -0.211864406779661,
+          6.779661016949152
+        ],
+        "mean_pp": 3.1779661016949152,
+        "n_items": 59
+      }
+    },
+    "mmlu_val": {
+      "ARC_CSQA_minus_ARC": {
+        "ci95_pp": [
+          0.13297872340425532,
+          2.108662613981763
+        ],
+        "mean_pp": 1.1208206686930091,
+        "n_items": 658
+      },
+      "NLL_minus_rank": {
+        "ci95_pp": [
+          -3.4384498480243164,
+          -0.22796352583586624
+        ],
+        "mean_pp": -1.804711246200608,
+        "n_items": 658
+      },
+      "spectral_minus_cold": {
+        "ci95_pp": [
+          -0.7218844984802432,
+          0.8548632218844985
+        ],
+        "mean_pp": 0.05699088145896656,
+        "n_items": 658
+      }
+    },
+    "sciq_val": {
+      "ARC_CSQA_minus_ARC": {
+        "ci95_pp": [
+          -0.44999999999999996,
+          0.8750000000000001
+        ],
+        "mean_pp": 0.2,
+        "n_items": 500
+      },
+      "NLL_minus_rank": {
+        "ci95_pp": [
+          -1.35,
+          0.27499999999999997
+        ],
+        "mean_pp": -0.5499999999999999,
+        "n_items": 500
+      },
+      "spectral_minus_cold": {
+        "ci95_pp": [
+          -0.25,
+          0.27499999999999997
+        ],
+        "mean_pp": 0.0,
+        "n_items": 500
+      }
+    }
+  },
+  "test_accessed": false
+}
