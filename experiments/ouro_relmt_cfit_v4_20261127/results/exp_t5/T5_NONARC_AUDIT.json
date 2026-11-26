@@ -1,0 +1,5512 @@
+{
+  "method": "ARC text only; exact normalized stem or eight-word shingle",
+  "references": {
+    "/root/ouro-v3-controllability-20261126/stage6_d45/anchors/ARC_EASY_TRAIN_TEXT.jsonl": "416402cda3a77d94a15458af60ddaf6dbbef030e6678326f3bdc83c08f39e0da",
+    "/root/ouro-v3-controllability-20261126/stage5_d6/anchors/huginn_arc_train/train.parquet": "0f84cb4e393a729371c3dfd334fce14215a99dcff8095bf31271787f1e305f20",
+    "/root/ouro-v3-controllability-20261126/stage0_env/UNIFIED_EXT_DEV/arc_easy_val.jsonl": "e0cf95b31bc2f6713c2cdf92404443b7c1859d1d68bb465e62979c9dc77a721a",
+    "/root/ouro-functional-transferability-20261123/data/arc_challenge_validation.jsonl": "cef825bf3e8cde557914e7c30f1e81e6773dc60d581732d78f085e51507de7be",
+    "/root/ouro-v3-controllability-20261126/stage0_env/prepared_sources/blind_test_arc_challenge.jsonl": "340cb607b0a8827cf1b0ab29cb60bea4ce8557994f73aca88dc1e22826615527",
+    "/root/ouro-v3-controllability-20261126/stage0_env/prepared_sources/blind_test_arc_easy.jsonl": "7beb77868155d2856dcdfad744195dfc924159e1222793cdc2458503c74ee58a"
+  },
+  "sources": {
+    "social_iqa": {
+      "n": 33183,
+      "excluded": [],
+      "pool_sha256": "b705d0669f9eb43226b770bc2a0bdd25078b76433c71ac39fec2cd2048a7e833"
+    },
+    "obqa": {
+      "n": 4491,
+      "excluded": [
+        {
+          "id": "1081",
+          "rule": "8gram"
+        },
+        {
+          "id": "8-388",
+          "rule": "exact"
+        },
+        {
+          "id": "1827",
+          "rule": "8gram"
+        },
+        {
+          "id": "7-708",
+          "rule": "8gram"
+        },
+        {
+          "id": "8-115",
+          "rule": "8gram"
+        },
+        {
+          "id": "11-104",
+          "rule": "8gram"
+        },
+        {
+          "id": "11-469",
+          "rule": "8gram"
+        },
+        {
+          "id": "11-621",
+          "rule": "8gram"
+        },
+        {
+          "id": "12-290",
+          "rule": "8gram"
+        },
+        {
+          "id": "12-667",
+          "rule": "8gram"
+        },
+        {
+          "id": "12-986",
+          "rule": "8gram"
+        },
+        {
+          "id": "13-76",
+          "rule": "8gram"
+        },
+        {
+          "id": "13-121",
+          "rule": "8gram"
+        },
+        {
+          "id": "13-374",
+          "rule": "8gram"
+        },
+        {
+          "id": "13-697",
+          "rule": "8gram"
+        },
+        {
+          "id": "13-924",
+          "rule": "exact"
+        },
+        {
+          "id": "13-1038",
+          "rule": "8gram"
+        },
+        {
+          "id": "14-1509",
+          "rule": "8gram"
+        }
+      ],
+      "pool_sha256": "ac09b6a63a80ab8c9d61fd5576bfa8d631a18432d53e90bf8c99b61906ce48df"
+    },
+    "race": {
+      "n": 87719,
+      "excluded": [
+        {
+          "id": "race/high3680.txt/1361207405b88c7c",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high16892.txt/019de3337098b848",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high2177.txt/149e49759dceda5b",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high23132.txt/859ca085d0d854b5",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high2180.txt/9feed2a2892ef597",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high11926.txt/9cbc710daacb5c03",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high14883.txt/f112f243c42375f6",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high134.txt/990ad18d0d926edf",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high666.txt/03b19abfcb28e1a0",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high1671.txt/81a4772059916341",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high21516.txt/280edf0a501bbe61",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high10096.txt/32802a679440eb21",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high4638.txt/d84e9c2b9664257c",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high4897.txt/dda14240401a81d4",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high14265.txt/06930f191a93cae8",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high10589.txt/84b5735c12547c9f",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high4405.txt/0e0b66e3930653db",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high20752.txt/9ed1c89a686d1671",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high21536.txt/e024fe5d17da3f75",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high21536.txt/1b450cd16a23a75d",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high21536.txt/d040233ddf0fe39e",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high7584.txt/8fb37f65998efb6c",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high2857.txt/aba29b3761a269c1",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high4137.txt/acf6dc4b8d82c0ec",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high18904.txt/453c513bc687fb83",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high4252.txt/43b8c9cdbd1f6f28",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high4166.txt/e2e3e6a0335e6f67",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high12502.txt/02183f916d99b03a",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high23660.txt/c28b301bbee9354a",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high9914.txt/52891d8f1240b241",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high22190.txt/5ef02465fb01056c",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high12591.txt/00be5ff97a3cc3d9",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high178.txt/5a9cd524bba8d05d",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high18252.txt/9d2b49c05e1b29db",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high18301.txt/fb8f93dee2a1d461",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high3757.txt/1daba2acdd4683cd",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high15085.txt/a4ae34d2cdfb7835",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high6770.txt/0d7b46bfc026651d",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high15899.txt/8940937b3c2b5f84",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high22708.txt/9d079f1755b6b7ef",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high8927.txt/53979e8cf26dd00c",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high6239.txt/802c133230b7587c",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high8067.txt/b100732975510ebe",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high17569.txt/88a09f3639aeee9c",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high23443.txt/78ef62b958f65572",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high6999.txt/07b5c9692f0f33e9",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high7807.txt/4928e002438bcc4a",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high2793.txt/8b6882a99fd34553",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high7713.txt/f3173996910aea5d",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high5279.txt/5117c5a17d92287f",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high17018.txt/12fca5535f5ac92a",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high15103.txt/bd9c5f4775e0cc53",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high13583.txt/40689ec6cc7cb973",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high143.txt/740511f5b3821064",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high7361.txt/3f4daa8ac9622a69",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high17271.txt/accbf2fd03d7218f",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high21855.txt/be62e77b7ce72ba9",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high21804.txt/c8e738fb7badda98",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high12548.txt/e086627608219d41",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high8382.txt/11d7227d22245be5",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high11391.txt/e2759d04e8477816",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high22873.txt/a9c77240546bed6a",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high15080.txt/d39c5428c40eaf36",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high3907.txt/7d2b1d866e4a7ab3",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high6936.txt/cb694a09a90418af",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high2105.txt/7783199376ca06e6",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high18471.txt/39fde180e337366c",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high8044.txt/5051df89277b80e2",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high19254.txt/ff9526bece4bcbf5",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high16982.txt/5eccb11d3d28b035",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high19972.txt/92cc50906af6ca8e",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high18618.txt/8c41a767dfe70cb5",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high229.txt/0627c74adb341207",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high11952.txt/4243b4c9105d1650",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high9154.txt/0fff7a512dc02574",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high12093.txt/09d6706fae03a24c",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high19577.txt/840d628d82e48ead",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high22045.txt/73982424aecbb7f4",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high6718.txt/dac12e0c9759f53f",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high1503.txt/3b44a5d4c2ea62d0",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high11578.txt/68a83ff7fcfb2496",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high4721.txt/8aca177b52e53308",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high16411.txt/3a51e46983a05f2b",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high23310.txt/70275f7ab859818b",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high19436.txt/f666afaaa1765086",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high17425.txt/34b81ca08078155a",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high3072.txt/1c621c3946270d1f",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high1526.txt/88ecab576cf91c5a",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high11795.txt/0988200fccd53353",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high19762.txt/35aa8760f8a5c1ab",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high2706.txt/246cfe1efe91787c",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high24116.txt/5a275acab67f9d8e",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high20110.txt/d6287015ee3ecf2c",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high13109.txt/c12960b972c1dfa4",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high15398.txt/4190555e36449140",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high23891.txt/aaa3dd90cdd0cb81",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high17407.txt/142e9e7839a1cd1e",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high5579.txt/d2ffb397154e8fa1",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high8841.txt/e9f86861d1965dcb",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high1175.txt/2adbd36f878a2568",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high23798.txt/d72ce7cac8359b12",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high8048.txt/8207ef5685250c99",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high23063.txt/8789254687f49e02",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high17559.txt/c24663d3589f77e0",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high20984.txt/18cb49878cbbd031",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high5388.txt/fd21789666063b23",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high10795.txt/f58579ef40c6eb06",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high3526.txt/3f716353f4fdf5a6",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high19414.txt/a9751ce79292d5a6",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high10117.txt/72eeaf31ea027aab",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high17336.txt/368d26adfe3f8e2c",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high10630.txt/be3378f8e47a07ed",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high7865.txt/a4c6ed7ffeda31b3",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high1163.txt/ba7bc12d04aa19be",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high13601.txt/3bc6a39f187435af",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high22009.txt/a316fa99cfdb4046",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high18450.txt/d8c3011efb325ec5",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high14539.txt/4c297b50b1af85c2",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high22170.txt/3780f6cc5fe92b98",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high15848.txt/14d4cfab159c1efe",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high10352.txt/11b73995ea72360a",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high2459.txt/fbe6f5212c2ff040",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high11231.txt/7a5291bb4cb3bbac",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high13348.txt/2cc626614e50833e",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high18443.txt/3f238ea0ae5d928b",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high14986.txt/8fc2e54c907f4edb",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high16888.txt/15e3cdec7e7f6f4e",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high16809.txt/424c3eb601700a3a",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high15736.txt/b194cfec504542e4",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high20662.txt/f819b58381ed010f",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high4450.txt/eea2a772cb9f8b44",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high23841.txt/7637c934e46b0857",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high1924.txt/9e1f728ba38186ea",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high8016.txt/e650a6a50861b88d",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high19677.txt/7115b89bdb6c17f6",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high2681.txt/812b1d688a55689a",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high17076.txt/a79dec7489749ca0",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high3378.txt/e78fa771025b23c8",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high5251.txt/047af8060a90894f",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high5251.txt/fee503bbbd44d424",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high3307.txt/ff815b92c3f13cd0",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high2536.txt/dc633167d9118a56",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high6321.txt/6199d2c41680a4f2",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high15815.txt/7acc785701f14948",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high16166.txt/d7bccd4178982fbd",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high21746.txt/84a549507852cc12",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high8790.txt/89e603775e0b78a9",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high8790.txt/3d2eaa1d05e121de",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high5172.txt/76e17dfcd7dc3935",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high23353.txt/321b44cd6f089004",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high12848.txt/96c1866510744daf",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high3212.txt/9c1c670659027ee5",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high15908.txt/0764c504a6016dbc",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high19189.txt/6f7119ad0892dd54",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high10531.txt/d7b20f70e0acc88b",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high20314.txt/2c837d115fcefde1",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high10988.txt/9e7c1fe524725254",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high23414.txt/ed58e3a8ddfd3fc7",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high18123.txt/66629c9cae16431b",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high19208.txt/34121916a480039b",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high21932.txt/9be955fb416be0ba",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high6115.txt/a5cc30ee8f13c17b",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high60.txt/052ccdf79ad0f8fa",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high11378.txt/43615f93f2985687",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high663.txt/4dfb183f646960e3",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high21973.txt/3c89dd916c6d4518",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high4899.txt/16e4afe6e1372fe5",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high19950.txt/f20d5cf17a98cab9",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high986.txt/86b30310fdb66b01",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high6525.txt/e9ba0623b63c5aae",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high6647.txt/c91d0262a47967c8",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high3363.txt/f164d09b688b32ce",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high4232.txt/45e71f1208e70416",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high7924.txt/b964a75ebd5f5516",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high8855.txt/7ab08164e8d3df38",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high17881.txt/45dc9d69b8ef5cc9",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high3977.txt/2d70c1b37ac52d36",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high17686.txt/2a44a7736e1f9701",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high7064.txt/9b36a62189503aa6",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high5006.txt/5c30e8e4e7968e31",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high16261.txt/28accfea3aac1c05",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high8165.txt/122149d481f77567",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high640.txt/0b25c49c376725d0",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high17140.txt/83c891c039347059",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high21132.txt/a8bb3b115ed89e06",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high20029.txt/55f5cc4df301f625",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high18431.txt/0893a996bd79c098",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high11679.txt/f053598fb3134ed8",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high11565.txt/60bb3202e5dc997e",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high16054.txt/c24de089cd6f00cc",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high16762.txt/2efc10012b95a8d0",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high3091.txt/39ea2600cbb1323f",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high21038.txt/9c242fcbf86c95a7",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high2657.txt/966cc06bc170402f",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high21704.txt/74215df45eed5ba7",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high23948.txt/23d6b28c75b8027e",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high10111.txt/054023d311ee778a",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high12191.txt/18ac7c84f3d1066e",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high2659.txt/5d13059d694b2200",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high10463.txt/66bc4df55ac0758f",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high15563.txt/535b10ff4fd0b442",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high3603.txt/b5eea37db9b54873",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high13961.txt/c24dbb724a363e6f",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high3945.txt/fd5b219b5d98af4f",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high5120.txt/c20e5bb1e35cea39",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high14169.txt/625225a9bd7165dd",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high12030.txt/f43f7d955e7e1a89",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high15770.txt/d062c6a879e37ed3",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high17210.txt/0d52e2ebf2ce2fea",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high15213.txt/27e4d93722d22aaf",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high13741.txt/c2fc18c95a928ac1",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high22535.txt/b5cf54ec171fef2d",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high13091.txt/f72d736281ecea29",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high6097.txt/c07f017a731b58f4",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high15362.txt/ca7cc99ee1aa1cb3",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high10377.txt/a39779595ea4ba2c",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high11590.txt/0476b8a6e477ffc8",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high23792.txt/43b1c9e611a0942f",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high7721.txt/ba73c9b2e1bbb26e",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high5506.txt/e556b04d53881a3e",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high2214.txt/6e1e3e7607cf2f70",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high22444.txt/f20785ae8528f422",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high1470.txt/a7ae3bbb2d5e138a",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high6140.txt/aa301df7deb02760",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high9654.txt/9a8afbc10437ae50",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high10849.txt/1744a165fa39c818",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high15626.txt/ac4777fd46506c85",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high21340.txt/26b3710fc695a6ac",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high5118.txt/45c9891295bf2e15",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high1580.txt/1a2903b575337b3c",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high11432.txt/08c300234963eaa5",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high4035.txt/0cec61a330b98a84",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high18255.txt/2b0b49e296c8b054",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high483.txt/c993c7f815ff6ff6",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high21621.txt/84ee22998642fd4f",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high17766.txt/c615af0fc3815441",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high17303.txt/1fdbe608161776b0",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high24192.txt/a54347899f6b2d0f",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high13631.txt/d1c227bd912399b3",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high16253.txt/d2d3b8351e9fb8ca",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high13926.txt/4296058e30fa0ddf",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high8904.txt/3bdccf130104ee56",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high18205.txt/4618101c0fac75c3",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high1505.txt/61d817134eaa0039",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high12417.txt/9a212355355f1f12",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high15475.txt/4c41f3ee1bdf776c",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high20179.txt/807814ab251e2e2f",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high4304.txt/f5238c05f6a46482",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high2.txt/bf79a52edeaea984",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high7609.txt/e90b16827e3d084a",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high7098.txt/7fa33a48e2de91e8",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high9400.txt/569b366f82770f94",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high20163.txt/d4849558ce1a8713",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high1999.txt/05024e959eb4cdcd",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high13749.txt/827727d0ee0c0ed8",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high22815.txt/a42209e1e8009d48",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high11067.txt/b57224dc74b4fb24",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high21255.txt/85b2f3fee1bea046",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high12120.txt/6458db1a872693d1",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high15884.txt/703b856005f0a16d",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high6710.txt/34a664c02684a349",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high18827.txt/cbe57be53301f387",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high15801.txt/f89cccd81c93525f",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high240.txt/bddf7c559fa51dcc",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high15437.txt/f81994086202ce5a",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high3861.txt/43323e9c1083c8ae",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high1086.txt/64f7818e9a8308db",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high23050.txt/b5291f71a216b47f",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high21058.txt/dceee54fa537d98e",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high21058.txt/01adb507e92d888d",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high21058.txt/c0022d31198875f1",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high19272.txt/308dd1ad903082b3",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high17538.txt/2af4630c5e08f69b",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high2508.txt/4a651bb911c017fe",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high11022.txt/8852654559016ce0",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high679.txt/3962e0a7cba48871",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high4688.txt/288622402ede60cb",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high6715.txt/a3a6c81ef100e10f",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high17987.txt/f1f54b5995c506f1",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high141.txt/e02320bee0f5ad34",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high1821.txt/cc91c96e78d17f1d",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high16020.txt/061d817ddbd180d6",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high920.txt/784d964ad4383354",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high2162.txt/cc34af0a97883132",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high20385.txt/14a1d28029ffab75",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high12348.txt/ee9c7fdb0eeb899c",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high2225.txt/580c424f0b7435bf",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high15247.txt/8e234d6a77f4bc99",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high9372.txt/4efdf597a155c6c4",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high8744.txt/132529aaf2253dd9",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high8711.txt/e4afefe2922ef3eb",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high22083.txt/0bc8f6db515c3668",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high23181.txt/3fca001dad628eee",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high2355.txt/2c03d9662c0c21ae",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high12467.txt/0eba5ee9a4f5aaf5",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high8288.txt/c3b235dc6c2d6c65",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high20901.txt/e1fc2b369764d0a3",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high1113.txt/2fae046957c01f02",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high2073.txt/988adca8f1004de8",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high20453.txt/ad9deae941210143",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high19470.txt/80120abb53dc4537",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high16508.txt/79702dbef882920d",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high3119.txt/ce29e12de78b0f35",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high7325.txt/d35a666d35403404",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high22376.txt/4cd240f99f0540d9",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high7470.txt/3bd705e70579ee3b",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high19712.txt/f7d708569499f7f1",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high2460.txt/0b9b78101a38b977",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high23118.txt/791c2c32b88a6365",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high7034.txt/1d40669fcd1d3beb",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high1427.txt/ecf79102b61ceed3",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high14521.txt/0ac7756c814616e4",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high218.txt/a4581be9a2584dbb",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high22415.txt/af173899dc41793b",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high2671.txt/1178e8b227654cb9",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high2671.txt/202456207d44ee33",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high4161.txt/44fec3098dfcff7a",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high4122.txt/751da7c514b6f5fa",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high10371.txt/e398499c0ea2585f",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high16961.txt/bede8a254cd12b56",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high20081.txt/d7bccd4178982fbd",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high5916.txt/176cc0caef4eb679",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high474.txt/48abd776589177d4",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high17170.txt/0bf29e5eb247f286",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high7598.txt/0b5b0fcc1d1f15e8",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high4740.txt/2ccfdc3e3f539ad7",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high13949.txt/80082e6983c09ddf",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high4193.txt/77817f5505eee580",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high9757.txt/992dd034560996d9",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high3268.txt/a0fa131dc5d1a659",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high6765.txt/3d3ac874868d7b63",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high1853.txt/9d897addffb7ddb5",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high6788.txt/22e26ff44cc2e046",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high8513.txt/2c0a0a29724a81c0",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high3078.txt/3b127ecc56fb5d91",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high7394.txt/8670c1e24ba7bd6f",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high22513.txt/be49b0b22e1ef63e",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high6411.txt/dc3955c25863a312",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high3786.txt/b6b8c97496a2226d",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high12560.txt/c45c3603af46674f",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high10161.txt/ed2c74087edad117",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high18523.txt/6ef4a123007de5ae",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high14374.txt/2d05c6e15bfe8b47",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high5926.txt/481e8c6d9b48f163",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high22269.txt/28f7318e4ff91833",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high11535.txt/c3cb490828257e1d",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high17927.txt/c4aab10bb230e5a5",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high21154.txt/bcab2eb275955c05",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high13055.txt/2a86ff884c3401d5",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high20346.txt/a4ae34d2cdfb7835",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high5644.txt/959920fb1ecc7473",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high10807.txt/a4cbc3f6bdae18c5",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high23509.txt/e5d7e96646086b61",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high23719.txt/29224743601c7b08",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high16998.txt/9b9f0b9516752c92",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high9707.txt/2e45371e6e60fd39",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high18133.txt/d90b0fd86dc879a2",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high22596.txt/2e0753dfe1b18b36",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high14196.txt/28accfea3aac1c05",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high7309.txt/52b453752df1a956",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high7309.txt/52252171cc042ff6",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high5421.txt/0947ffb9b9fbf9e0",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high21991.txt/fd37dac7a7e3375f",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high18026.txt/773290e9034c8273",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high18595.txt/fe5c3cf7190e84c5",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high24193.txt/526f10975f225ea1",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high7644.txt/a5f009958fd44a9a",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high20911.txt/a329a009698b4ee1",
+          "rule": "exact"
+        },
+        {
+          "id": "race/high4526.txt/be439ca4fd186a15",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high19078.txt/e4512ef9081d212d",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high24257.txt/e17dcb6bae5ee53e",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high19510.txt/d0f85799ce8333ce",
+          "rule": "exact"
+        },
+        {
+          "id": "race/high17094.txt/022a4b168d46665f",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high4525.txt/b95f93883082d2b6",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high15853.txt/375d974b6ca6ce65",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high12799.txt/3406668fce0f0c2b",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high17172.txt/303869a6a8cf5004",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high23306.txt/8ec3b5c7cfa48561",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high5420.txt/baf009d7bb749f12",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high11397.txt/39259bd63f0038a8",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high13127.txt/652427dbd9b8e7a6",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high13234.txt/1e563384d398600f",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high16369.txt/b664f8825b294049",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high9501.txt/898aaf92f8e7a3d3",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high22201.txt/3a0c925061eaae78",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high2779.txt/7e5366c97b60a21a",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high10636.txt/500232a0de6d42eb",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high14395.txt/6aabc3079be1ce77",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high17275.txt/1280f6b627ad48b9",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high20700.txt/b8e65dd5da17dd56",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high3175.txt/83a9f57e31faae90",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high9190.txt/0029be000262e7c8",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high10992.txt/03f4d51b7b0e49ee",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high10664.txt/c1763ca645b9aa2e",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high6935.txt/3b3e43d8037d53c9",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high17994.txt/78f51020ed0902bb",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high22235.txt/3b31abdf622e8d6c",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high13609.txt/f066e7e7485b591e",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high14929.txt/d27a105a1e5db1b2",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high8784.txt/b13be8ffe80c77b2",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high21548.txt/3a292683d2350ff7",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high20005.txt/1dec77729d5d142a",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high23602.txt/5347a6faef4c6c60",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high19515.txt/eac93fd343cb681e",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high1232.txt/8af230af49b3a75c",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high18043.txt/1632433543314f43",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high24153.txt/a4d55f996390dd38",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high18226.txt/c8439e4ebd9dccc7",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high6233.txt/d2a3ebcdec5b5adf",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high14607.txt/e0125fa0fa0811f0",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high14404.txt/f9033d6e934697e5",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high13477.txt/fe8795531504fc4a",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high19671.txt/1fd7183d3d0fc1ce",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high16330.txt/fe86e9137df3d7b8",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high17105.txt/8099c726785a62b6",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high6538.txt/8c70cbb6d5e0a2cf",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high19936.txt/762595871cbed826",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high4984.txt/d685eb42d452ce22",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high11272.txt/16568588774346a7",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high4477.txt/580d3636ddcff04b",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high9260.txt/5a19e22df2f87d60",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high7173.txt/401fd45901e1aaad",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high4596.txt/a53d9152af221082",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high4596.txt/4327f3296e59f9ed",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high6554.txt/f7af793cedb92385",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high15123.txt/520f449b325c28ca",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high1444.txt/20ac4ab209376366",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high11218.txt/b38ea7e618e05f31",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high22258.txt/3de61a4229418d3e",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high20051.txt/1b01dea273126a7f",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high13493.txt/649cf5f10c2b339d",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high23819.txt/8227a4ceefe09fcf",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high8123.txt/a567dace18976699",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high10749.txt/628179cd3f2d8068",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high15718.txt/bee17f85483d2626",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high22810.txt/d49c2f837cdac7bb",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high16183.txt/7b0e4831d493aea4",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high8472.txt/ff046e679f762d7f",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high6232.txt/0dee1a7a417ca29f",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high419.txt/a46ea1408c885d39",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high20972.txt/847005b8c24b776d",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high8036.txt/ecb43eb538172f26",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high8963.txt/a316bfd8d2504aa9",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high7528.txt/f8e21fbafb39fa80",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high11878.txt/6c1bb4031aa0d7bb",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high11878.txt/4b47e6d722a25605",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high632.txt/327dcdc668a143bd",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high2709.txt/7dcaec5db1828024",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high17115.txt/e400f78d1e229863",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high10491.txt/d73bc2e04f5d928a",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high13024.txt/9f24f3960c2a0f51",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high2234.txt/255b17ec5e83f8cf",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high15176.txt/e939cc7b4bf05f55",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high7498.txt/52a655cc09fcd8ea",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high17830.txt/1aed7b398a1d9825",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high6548.txt/ab4b40e9d7e1156c",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high3324.txt/58df73c5b0872b44",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high10899.txt/7d42c54f26c199e5",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high19097.txt/ed739b7d5e10103a",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high17415.txt/ab07b9f051eb9201",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high7936.txt/f0883edfa18ac405",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high15937.txt/461c8b3b0139840b",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high379.txt/7741bd56ee8eec95",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high4961.txt/3ad602b6e2e629a2",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high3752.txt/7eadb8c6640c69d1",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high17320.txt/6ae26b8cd2fd9711",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high4268.txt/aa3ec19318455d2a",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high5288.txt/3844d6da0f3f06c7",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high3803.txt/51ef70529f67d820",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high7838.txt/fd20f0d040af824e",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high5188.txt/159c7bdb2ccab785",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high16079.txt/34711eb59cab314a",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high20978.txt/fa9310d54d90f0bd",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high20233.txt/29acc8c4712a2b34",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high20571.txt/13cca412defa4cda",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high20571.txt/9c8fea48c96ec789",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high23774.txt/0b4142a26ec56653",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high6289.txt/8a35b4c77f9e457f",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high4902.txt/77657dd08a086b5a",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high4605.txt/7c4e88d9fa9fe1e9",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high673.txt/c6fb0ee220f135fa",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high879.txt/2b62284b9867170f",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high21023.txt/7f276405c62d4092",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high6459.txt/d140c52ff1001f30",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high20151.txt/3756281e6ebf01c7",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high850.txt/e9b6cc8a9871fa32",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high11936.txt/7bb581e415532a74",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high15793.txt/42ab4382a4237186",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high11646.txt/ee8742f623f93a32",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high22076.txt/c01f3ed9b2030418",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high20380.txt/d23477844f5d7a82",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high23094.txt/f4e43395ec644a81",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high4346.txt/4a9ad4c70185f7f8",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high7693.txt/99603f9789fdef39",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high21849.txt/6dbfe6d9aedf349e",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high18996.txt/f81f7e38b839f22b",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high4328.txt/e397014a1ec695a4",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high7395.txt/4ffec35a8efe55d0",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high15360.txt/fe3b30aa189cdac1",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high24183.txt/7910117938ba2b75",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high17853.txt/e89dd7c392c4b90a",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high15662.txt/5a1de2d5b0a876ad",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high2937.txt/af855b523ca9934b",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high3694.txt/c7982f38c99e897c",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high514.txt/2c764250a2d53bc3",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high8782.txt/aefe228776db4ec8",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high8220.txt/506516d479a1cfe7",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high4452.txt/2f2258e2346bae0a",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high13862.txt/14f39a3af460fe69",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high18163.txt/ea4e2c2a9815606f",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high2362.txt/9b4c6a3795d90065",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high23391.txt/b49ed6f5308f41ce",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high8208.txt/25f38fc3656c9e7f",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high21435.txt/74a1934248c3a199",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high21357.txt/b2e6298bcfccf666",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high23092.txt/9059f1651ecf2cdc",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high507.txt/4c1532a3df8a9f5a",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high5345.txt/ba1c437ccf837426",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high1425.txt/3891fda9bc9c9843",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high21096.txt/d6112c26fdc971d5",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high17742.txt/4d2c4a4403966d87",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high7346.txt/5531e413b5998b8e",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high15369.txt/bfeed2d9d4709ba9",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high2480.txt/5f3d223c95d69132",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high12304.txt/ab2f915e7b601fae",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high6305.txt/4c3d470953b4217f",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high7649.txt/111f6ef2cd65f828",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high11283.txt/74e3a61ca6c38dbe",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high18794.txt/ed5851fdf05b5019",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high1148.txt/dafe6c14274ce167",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high17697.txt/a31bc1c6b1f7b2e9",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high11465.txt/812e2e51925efd90",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high18367.txt/a9beb91f888e66de",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high6675.txt/1e9338339a129fd4",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high5896.txt/a77d46cb015279f1",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high4043.txt/e3270c6164c23e0b",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high20109.txt/20ad32fb26cc708e",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high13261.txt/b6bea64adfac724c",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high21737.txt/b37ddb1e5557e4a6",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high3971.txt/8a2951cd55275792",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high1046.txt/a466f723dcfce66d",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high10556.txt/76f8778071bdfdd2",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high22.txt/1ac94a3a026ff904",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high22.txt/cc4ff8adfdb3de3c",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high22.txt/736488899502e9f3",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high22.txt/53a20b75c5334a5c",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high22.txt/c31c83049cc1c60c",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high6676.txt/a1069ace74ea4169",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high5159.txt/8cfd4055938c2137",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high19564.txt/54f3d63f66cc65b6",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high10523.txt/f20ee288128f8939",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high10523.txt/4461a0cd7e1d6266",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high18943.txt/9d2a54fa8430c52a",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high15138.txt/11dad83b234c3c23",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high2572.txt/95aa0231a852c2b3",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high12440.txt/8bb3050665c3ca8d",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high12440.txt/1d8c558ec712f5cf",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high12440.txt/7dd4a297c75d7f7d",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high12440.txt/a50cfc056046d606",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high12440.txt/6035b90dfe315d39",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high21893.txt/aefd5d0f9169cb2e",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high276.txt/db9499d50414057c",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high12299.txt/e1804cad30503ee4",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high15751.txt/8f67fdea58198bcf",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high3910.txt/1e084594f3574834",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high7856.txt/beeb49ee63392c22",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high11987.txt/ab2e55d2dda31be5",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high1173.txt/3973da2cd6c2a051",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high235.txt/d47863296e3c7d7a",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high16313.txt/0590c09a32e0a9e2",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high23598.txt/9dd68149435a1af2",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high6213.txt/0485950b212abdf0",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high14359.txt/abea56f099dfdc62",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high9592.txt/0c55fea3a06495ab",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high23771.txt/1b432d247ea133f2",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high21318.txt/938351194bb2cf79",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high15969.txt/23ee980fa7caeaa8",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high13826.txt/21893ea14f3207ad",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high4709.txt/a41d2c5251c82e72",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high806.txt/c4e69c012e7d4f8f",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high19913.txt/5463567da43bc9d9",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high12295.txt/b84aed5be58d1ced",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high12295.txt/b62bf49655d3abd9",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high18781.txt/804baaa00d41b185",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high15985.txt/3c84e2b6f85d7802",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high17898.txt/4cff1a53ffcb6756",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high17898.txt/efe1f4a002ba3685",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high12004.txt/315817473354390c",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high4958.txt/07de47eca92b8f64",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high24236.txt/bc5904644a3795ed",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high13186.txt/c3e4653a4e640f8c",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high4945.txt/70b16f9e158f9aed",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high17146.txt/971cf9db5a884c59",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high11208.txt/1a238057da6cd866",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high13667.txt/22874dd40aeb74a4",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high15283.txt/cc0de48856e31cc6",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high8321.txt/7c9e14f5adfd3a09",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high18270.txt/754b3bedeaaaba03",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high4428.txt/66f111da00c9a4fe",
+          "rule": "exact"
+        },
+        {
+          "id": "race/high11640.txt/1ea4078c0c74bb79",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high17022.txt/7ca102c53897bb09",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high464.txt/396415867a7e102d",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high1931.txt/d651801b912fdfa2",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high5703.txt/091679f2429d8f81",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high20814.txt/3f217241cf23f858",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high4718.txt/c945c5198a829254",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high2324.txt/41d8db6ee2734d5c",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high22908.txt/4c1e209529de741b",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high21285.txt/01adf082605d5598",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high7968.txt/fb879215ef305cca",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high6656.txt/2fec9e782b52f25a",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high10724.txt/ac3a182634744394",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high7848.txt/dcc5d464f9101321",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high8247.txt/5735d2e1ee4c203f",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high24022.txt/e0d3b6a58cc4b591",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high20728.txt/02f4fa1548093b74",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high10273.txt/1d40669fcd1d3beb",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high6359.txt/5cd6f193624ab106",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high3625.txt/ec96787ba9594e93",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high22511.txt/d08ced5eafe10e93",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high16211.txt/0de0502f08bae785",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high7302.txt/705c9c9172e853b3",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high21906.txt/f3011fab2538922d",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high1512.txt/c6536a24f188d574",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high7180.txt/99e0482a08470141",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high8314.txt/71dfb7dcb73bbfd4",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high13462.txt/7ad34d6c314d3296",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high13462.txt/42e6d986068da774",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high13462.txt/09e97e643529cd12",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high8750.txt/1edac53d2ef114be",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high8925.txt/e46496cc56793d6c",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high9810.txt/96d736bf9a25fd1f",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high21043.txt/395be097c758e4a6",
+          "rule": "exact"
+        },
+        {
+          "id": "race/high637.txt/f34b64def8a2180a",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high3937.txt/926913ec39653297",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high5923.txt/158790161e5f059f",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high6901.txt/94075277cc6673f9",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high16353.txt/fe51977566e2e484",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high219.txt/8462e1f13715b2c2",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high77.txt/b66770b4380eef4b",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high19997.txt/b945add3cce674b8",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high22481.txt/7ac9fd0cccd19927",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high5359.txt/04aebdab69814ddb",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high11734.txt/e47b65941b256539",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high13916.txt/9c8454d7712b9b86",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high8356.txt/5b8d6bf032a467bf",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high20048.txt/d4e7bc8a8ded6905",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high17799.txt/6c0f0339d983fa07",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high19258.txt/faedd1a9353f2c6a",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high6811.txt/b51bd9b2df187745",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high13904.txt/4b05d7689b16130f",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high22236.txt/a8a8b14f6367dab4",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high12651.txt/d8b8cd2f3ef430c8",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high23569.txt/4b9f07d78e37f2cd",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high14492.txt/5b1ef3c3d3c56367",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high18143.txt/cbd4633f4e74cc02",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high18143.txt/3a09787e3fb6c448",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high18143.txt/5081e4df1d35105f",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high14155.txt/028ea90800d9351e",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high3162.txt/9345e065165d947c",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high14504.txt/9310ec2e7fe68ec8",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high7370.txt/c8ac03acb0027372",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high7370.txt/bc972d395576e9fe",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high13.txt/d5b7fad9cb8e2892",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high16238.txt/5c525ba7473c8b13",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high23540.txt/805930910aed6dec",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high23540.txt/ab1bbde1aa5da67e",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high23540.txt/f958ea9a72b7e484",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high23540.txt/78a527aeb8d85387",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high23540.txt/bd009eded31236dd",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high8280.txt/4e25ac809b615cb5",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high20295.txt/5d2a965732008248",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high14692.txt/dde660c65f01fa99",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high5145.txt/eced93d60d59388c",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high12257.txt/695412ab2d657f5f",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high10528.txt/ca696da563846c30",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high1745.txt/fb2fc60a666d5c59",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high1745.txt/dfb82df0e8cbee31",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high1164.txt/f4f1dfaf65e34813",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high17633.txt/e5d7e96646086b61",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high8334.txt/27618871967ad3d2",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high6503.txt/23b593286936b758",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high15152.txt/16e178472186537f",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high2223.txt/93d943599b23afe5",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high19167.txt/6fabde7d35a1d136",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high23209.txt/8af8dc2eb15840e9",
+          "rule": "exact"
+        },
+        {
+          "id": "race/high15790.txt/3f36a1dad5ee20e9",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high21282.txt/02051a31c74993c1",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high8660.txt/0d8eb46124e4766e",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high9577.txt/82b35cb3ecd4759c",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high3416.txt/7f683da7acdd59a7",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high16554.txt/a7f1b88b94256ad5",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high21378.txt/049ce782e971cec1",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high20505.txt/3bdeb6f224ef76a6",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high16710.txt/4a58fda784e12de1",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high14031.txt/b169c860cdeb1975",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high12289.txt/53a810a3e9f5cadd",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high10517.txt/0331550ef6f0633c",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high10743.txt/ef17bdf23ad8cc3c",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high1610.txt/a52b0236b5576d64",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high17943.txt/908d8cc881b8820a",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high20339.txt/dee189f1a49e2500",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high17846.txt/68334fc44d786b33",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high6208.txt/b1aae89ec55ee1c3",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high24092.txt/f47c3da49aaa87db",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high3841.txt/9754708a60dcc0e1",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high6987.txt/4aa3dfa8e1dde1a0",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high19070.txt/682483033af7ee52",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high23290.txt/7cfe91f72aebce21",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high24070.txt/03b72142dc839ab7",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high9294.txt/27c421ca9cf77acc",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high18273.txt/67f30281a369c57b",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high6700.txt/7d6fbb063dbd93d5",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high5335.txt/c367c5ec924739cc",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high16492.txt/5db940c244b13220",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high24089.txt/cba73b6dc8dd5396",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high20204.txt/5b30dc4ffd3089e4",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high5027.txt/bcffd682de78e6b2",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high4884.txt/2c05e750592b714f",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high9360.txt/6363a21582e5c0d4",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high20399.txt/97348e3e89a1f1c4",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high1190.txt/a8c667001d475967",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high8823.txt/a73c8bad250f86a7",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high4995.txt/eb05793cc6e5599b",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high731.txt/62ad2ff155ae2da2",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high9658.txt/153276ff0d274984",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high5699.txt/27ab13c0cdfe1410",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high18852.txt/88897df0e1997388",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high19580.txt/9a20440ed2ee14a6",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high8778.txt/b9d92e46681d11ed",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high11656.txt/2f11e196643b58d2",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high12891.txt/4eaa7c328ce21297",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high10748.txt/b0cbbb9467ee8bdc",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high16663.txt/0b8ca9321a34c22c",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high7425.txt/b706258304c85098",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high6166.txt/03a24bb67fb7565a",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high20656.txt/16b5b2f7d5b9013b",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high22000.txt/970257e94425358f",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high9940.txt/33427f077c078169",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high3360.txt/6338dc347c074984",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high18171.txt/14ba0a849c5dd622",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high1673.txt/c77944defaefd4d2",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high2238.txt/75e765005abe0b72",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high21874.txt/932d2f401bd6af0f",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high12112.txt/d19baf1c0b9e3f69",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high4912.txt/84c92ede145bb5d3",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high22097.txt/7c7f90d87ed31329",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high12271.txt/998baf1329f2f8e0",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high12724.txt/35602e8d91758026",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high20776.txt/c130843b56580c64",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high20861.txt/9cbe87177c2db643",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high9710.txt/2eddc143bf730401",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high23515.txt/d746186ddbcbe343",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high18816.txt/73d3e77ccde8562a",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high6421.txt/331b16cb1f65aaff",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high7754.txt/3790ba10e05314ed",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high16254.txt/8fefc91c495911bc",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high13213.txt/a06b5f02b93f9eea",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high11297.txt/df10a7410e4d0d01",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high5088.txt/92144fcf6324229e",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high22369.txt/c38801112bafc6ee",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high18373.txt/def073fb6e7d5192",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high9228.txt/fd47da26342796c6",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high9956.txt/199d18083ecdd239",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high22252.txt/8915317e6eca4a67",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high23596.txt/403fd8ee03404671",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high11207.txt/0265a8446ef34578",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high11884.txt/8de06bb9f9563b0c",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high12765.txt/c23654c8003afb81",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high22378.txt/b6c28ee12e056d2e",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high24163.txt/ba065a9fe28f409b",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high8077.txt/a42831d2bae81e94",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high6511.txt/47075264f928e88e",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high11108.txt/5d0d01a39bbec51b",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high20372.txt/b0d6700ab34dc7a8",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high22297.txt/fb0992521eaa3b60",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high7030.txt/8389871c93c09b69",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high13481.txt/da8b25f21a418af3",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high15594.txt/358941eb67cfc91b",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high15979.txt/cb720bdfcde08b5f",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high9287.txt/79bc0bc4b6c15922",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high7591.txt/149742cc68f1640d",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high11343.txt/8658f3bb735346c6",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high6308.txt/82aceb24871e724d",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high3690.txt/f32b385ee91dba8f",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high16092.txt/9ad3253335dd8c9c",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high15278.txt/e41e06d8d2b6c112",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high12340.txt/04ef1a5e80910bdb",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high19488.txt/812a703e899bf4b1",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high3321.txt/43b1c9e611a0942f",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high4277.txt/46f8724f3c30bd4f",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high5076.txt/b5929c251a931fc9",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high19749.txt/23499bf1918210c9",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high9052.txt/0e8ccc8d053d560a",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high7162.txt/ef6e32e784263123",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high1488.txt/9bbff746f180c064",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high21327.txt/394e40533bace1d8",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high4200.txt/8d4633d109ef0633",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high1331.txt/38bff032c36a8469",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high16933.txt/f2c6160834ad9788",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high18766.txt/9b30c5a0f765b43b",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high18766.txt/942aa23d0d9fe35a",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high8163.txt/b9b1b65f42a0994a",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high2830.txt/8848976d6a193ff6",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high8231.txt/1d600eaa89a84538",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high8530.txt/f3bfbfbdcdfa52b3",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high1686.txt/4febe0579494aedf",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high17873.txt/c68bd0b33ca497bb",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high12227.txt/d1176a4feab0a63a",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high7788.txt/dfe1f54a1e53583c",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high23308.txt/60d746f46f70df77",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high7483.txt/bc55af06f2bf60df",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high21386.txt/1c3b745498b9e35e",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high21386.txt/613e65f2c028f689",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high21386.txt/d65d8a587ee89259",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high21386.txt/85f93727474992f1",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high21386.txt/bb40215476e3b9f9",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high2957.txt/b36333f3b5c5add2",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high9291.txt/5ebc07f88fe90428",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high9291.txt/e9b4c5e3b52d70ad",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high9791.txt/1614e71fe81b8d03",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high5925.txt/40af6baf841c4948",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high20893.txt/bb80246253521132",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high10201.txt/e1beba9864c1f5ef",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high1418.txt/eba232463c1c827b",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high18241.txt/63ea7c7dfecbf333",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high16621.txt/5ed885483b4ad513",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high13622.txt/4873418c28a79ace",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high20143.txt/1122efa7e0678281",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high21487.txt/8a9d24b7c7a23844",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high20566.txt/b579bbb987767e6e",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high2780.txt/3b864829b7a07e21",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high7641.txt/2a350a18ca5b22b7",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high12637.txt/b288deee437d82e3",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high9513.txt/4501b9294fe0d762",
+          "rule": "exact"
+        },
+        {
+          "id": "race/high6157.txt/a3edc4ee75e9f1c4",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high16034.txt/7fbc2136ea11eea7",
+          "rule": "exact"
+        },
+        {
+          "id": "race/high8912.txt/5a48eaccb8a1b01c",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high11621.txt/446392d31fef9b65",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high8992.txt/df4185708c0c1cab",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high911.txt/4253e02b691d1dba",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high20658.txt/44e23bb27b224432",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high2963.txt/aa2c3f0996eda34c",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high15647.txt/32d40bc943d0419e",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high20870.txt/26a1eae4479a87d8",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high3642.txt/ed718e2e6943ecea",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high5452.txt/e50aff1c6466082a",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high13980.txt/e1ae4e556e53579d",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high8125.txt/057632dea2e014aa",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high23100.txt/69b62212e5a195e5",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high6595.txt/de650fe7502c3974",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high3554.txt/d8a5a6becee54e71",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high946.txt/b3ad22329649cfce",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high7642.txt/c501b6a1da105a9e",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high4048.txt/892bc9eb97d0805c",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high13869.txt/db17def1c6d2168d",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high18000.txt/cde41d95cedd2ed1",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high10872.txt/8c0a9909335fbd66",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high10654.txt/4d5891f3f0598428",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high16747.txt/d39504f6b36f7c1c",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high7003.txt/bfdd59fc41a03a3c",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high22036.txt/47b65022e6d620f5",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high5353.txt/5b13ed3e83844aab",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high4076.txt/2490604bc2e0d8de",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high16256.txt/7d438770a9b2e6a7",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high6596.txt/b00e017902d2d256",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high1196.txt/bab0eb3596ce4100",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high6446.txt/1ba5cebddd0ceb77",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high13605.txt/64351bed5482dfdd",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high17474.txt/74a1223200ce0c61",
+          "rule": "exact"
+        },
+        {
+          "id": "race/high23259.txt/3f74a0a701faeab7",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high22897.txt/d0ad6685ab846927",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high6134.txt/9aab6fd3a920a521",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high22766.txt/171fc6669e432f4e",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high11264.txt/921693ce0e123eb0",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high9086.txt/e12a85ef90397701",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high7935.txt/9133463db182ec60",
+          "rule": "exact"
+        },
+        {
+          "id": "race/high9508.txt/e93f1e0ba3a1c910",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high11488.txt/60cb43af2c75ee4b",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high12735.txt/a54099bf7ac3f26f",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high859.txt/e64b18b823dbf202",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high5403.txt/310f6e808cf5dea2",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high5208.txt/002054d7a3c989d3",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high9509.txt/e084c31a753d7b17",
+          "rule": "exact"
+        },
+        {
+          "id": "race/high7073.txt/3d2ad5fc152ecaf8",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high19001.txt/cb01e71233365239",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high19149.txt/724c72e56065c648",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high13752.txt/95653217285385ac",
+          "rule": "exact"
+        },
+        {
+          "id": "race/high13802.txt/46d24b7c56264886",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high5852.txt/069b610b96072401",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high11982.txt/d46499f8f0b1dc3e",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high19795.txt/25a83c126832a834",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high22791.txt/a1b2254ca6fd2879",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high20560.txt/ad4c2789a3f1b315",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high4250.txt/58453727f9ad7cc4",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high11803.txt/92bf1559d14df1b0",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high15117.txt/c447b7d5a2270997",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high8848.txt/35b9b49bcbb560a2",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high12754.txt/70245eaa84c6f731",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high20622.txt/e443795b734ca8f0",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high17828.txt/61750991262d0931",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high6121.txt/4fb62950575bf533",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high217.txt/597303840ec24982",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high14324.txt/864cc73213a00f6d",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high9587.txt/120b3d4b34ddd14e",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high8253.txt/e43d6e1475249395",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high5122.txt/46cfb8c5fe953925",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high6928.txt/e5786e9976dec019",
+          "rule": "exact"
+        },
+        {
+          "id": "race/high17001.txt/610182c891af3b09",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high4075.txt/b17fd4d2760ca8c4",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high10846.txt/34348d2ba9b05760",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high1842.txt/19b8af0ee49218c7",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high5853.txt/ce01f35d6a9932ae",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high3498.txt/b19e816f29a158dc",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high22933.txt/9c87d088170bce70",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high15629.txt/39431aa29cf6fbf2",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high19896.txt/4040238b88a85462",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high23385.txt/bd9c1dabc92ede01",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high16342.txt/934e483ac542d285",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high15323.txt/dcc5d464f9101321",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high15893.txt/c75256e7c45dab96",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high3139.txt/4bab1b52c29426aa",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high20883.txt/056df7da33c7e299",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high16833.txt/38f841c1c093dd04",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high16833.txt/5c0c034843a213ee",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high23681.txt/41f165a77a952d12",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high16862.txt/1cbfdb4f455984ef",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high15653.txt/b1af75897dd83d08",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high16280.txt/7ce3326a434eedbb",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high5490.txt/9e81f27438cbeb4c",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high20889.txt/a461da26fcb40b50",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high22802.txt/cf7fc8761299be47",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high22211.txt/0dd9e7827febeaaf",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high6610.txt/569f1e2addb753e8",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high3751.txt/b488a24e7efd114e",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high13739.txt/d12d7c2b98d570cb",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high12962.txt/5397ce3936f56cc7",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high2043.txt/d49c069a01018e63",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high3269.txt/3098d80912ae7a02",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high15518.txt/813145304feaa176",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high21406.txt/551f297e0965b49e",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high21373.txt/ca1a138e2d4692f1",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high9188.txt/c1cafb6efbbdbaaf",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high19986.txt/b69e2618d99ab16b",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high5832.txt/035629340b386794",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high18963.txt/a234bc6499df0086",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high12411.txt/ece1822c3b74125c",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high2400.txt/dd7b87620c5e2a42",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high22826.txt/08a443e7875b9a35",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high22826.txt/c0115f3637441d7f",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high22826.txt/1e5592f7f7fb2962",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high22826.txt/28cfd65e2099b9b5",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high5838.txt/42cca7331b17c0e4",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high19074.txt/a0c2f5d7ef7fcf53",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high1415.txt/0bdcd35054f92f43",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high300.txt/979527a360855031",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high10681.txt/5fc074885f1e0f71",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high4919.txt/afc6ff5b06823904",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high7320.txt/92cc939e21950155",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high4893.txt/61a6a8797f9d0f31",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high8350.txt/45fd20bbce0c0298",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high5249.txt/cf80af5483444f3e",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high14616.txt/4776826d719784b6",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high12955.txt/727d8ace8a20fc2a",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high21458.txt/20bc17fb8f6ab603",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high20420.txt/246fd4adc6dad76a",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high8510.txt/711fc2b388c86ccb",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high5834.txt/60bb448b54019f36",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high910.txt/27f4a9a708eec5ed",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high3290.txt/268e4b48d622ec9b",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high16497.txt/80f68ff9d3c6bdf5",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high3741.txt/ae9bb1f6b12d057a",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high14166.txt/65085cb7b75ff1fa",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high17973.txt/57016c634c556df4",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high15779.txt/f1571f80c3bce4b3",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high23354.txt/52f3915034aa5f24",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high18319.txt/55c2690edb4059ed",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high18662.txt/b9ca388780ed0fed",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high2925.txt/982475788cc3c194",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high22374.txt/ac8d253c07c6b046",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high5108.txt/f7c8fdca32fd85a6",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high18474.txt/70dc7c11b9fe5dd8",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high6853.txt/c864eaa10394ee6a",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high6853.txt/683d9a3c5b3f3695",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high15553.txt/f4663cf438cbf720",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high8574.txt/696931ddc5bca3d5",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high8574.txt/0023be729704847c",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high8574.txt/85141bcfaa7d05d1",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high8574.txt/65f7d460f4283364",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high18155.txt/18e9189ea39462d1",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high5044.txt/a4fc0dadc3a110fd",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high15895.txt/b2166c6763b3247f",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high17595.txt/3599f0caaa4f5bd0",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high6122.txt/a798f94ff3fb65bb",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high345.txt/75e516963f27353b",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high8327.txt/baf8a6f0b60c7f6e",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high1286.txt/d4c75aa1a26c9361",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high1436.txt/e81990ea9369ce3f",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high7537.txt/2b31763084a74114",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high15147.txt/666f941983fcccdc",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high4199.txt/e40215a022d3d9f5",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high17787.txt/fb4672856cf01ce0",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high4838.txt/1aa880bbfe827ef2",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high656.txt/f970e7f6031a432a",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high11961.txt/99799a12f8861a9d",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high18451.txt/942366b7b20141ca",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high13924.txt/da5e8924a32da0da",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high2698.txt/837c4176cb9518d6",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high2698.txt/f8bd14ad2a2c6485",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high13786.txt/fbc4c07cb1ef8770",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high10450.txt/24923d983c864936",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high15179.txt/7f4e307e1fbcf78b",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high7906.txt/1eb59894bb99c347",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high20765.txt/940f7abf212e6744",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high19086.txt/0f7b72005046796c",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high5018.txt/61e20c050454abe7",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high13975.txt/2e1babfe1c65f9e2",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high15817.txt/c21adb46eeacd69f",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high15817.txt/f9057b1e72729ac3",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high2943.txt/2134c1bca14b0d9e",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high4302.txt/ce1f588363e331aa",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high16476.txt/554b86de0ecfe7ee",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high13160.txt/9097d2b4b9a598f2",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high10663.txt/ebf4b162c910d9cd",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high5354.txt/1ab290dd2f644447",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high23883.txt/f2c9431ff32030d0",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high5740.txt/716cf6488158dc76",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high9555.txt/a21997e93d7f6ca9",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high9704.txt/e61071868b6d9b99",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high10516.txt/f25e0d2c8df08c83",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high22507.txt/f4ca3a2bc31a13c3",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high2685.txt/ae9bb1f6b12d057a",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high7763.txt/98c7f1ee833e7d8d",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high9234.txt/29852d3ab59b1338",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high14426.txt/008a135cf0c63a8a",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high6314.txt/2d9bcf60863c58f8",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high20684.txt/9b3c0740b3ec13c4",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high7213.txt/8281594be752bf26",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high13751.txt/6a1e225cea8203a4",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high6215.txt/ef6a9bdb5e5650d3",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high12050.txt/1ee85eaff9bef3b8",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high18366.txt/b198044d2184a8bf",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high22308.txt/e36d4b3c376d8693",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high7566.txt/8069a74a945bb8c8",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high3949.txt/26c9c95eb730dfda",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high20236.txt/b3bbf37914b45b36",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high24093.txt/b433364d921024fb",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high11367.txt/193200f9881dbcdc",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high2559.txt/ecde71e920f3587e",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high21380.txt/40787dd244ef07e2",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high23187.txt/6b9a92e02b73603e",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high14251.txt/db39ee9b3e0909ad",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high20353.txt/7888c719bd477c4d",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high21287.txt/e84427ec8ec520f8",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high14898.txt/14561908661a0d69",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high20388.txt/9ee5f33d47676cdf",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high22214.txt/d09c303ed339e553",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high17556.txt/37233153c051c63b",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high6200.txt/f8cfa9aca30e340c",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high11287.txt/d1e970ead680065a",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high10226.txt/dfeffcba7eef13eb",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high10354.txt/50a77122f9b8ff7d",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high678.txt/b19a2871febac62e",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high11165.txt/4829290a51480b82",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high6070.txt/ac167faa0882a551",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high12894.txt/d30b9c9ad423b1ee",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high16416.txt/7fd3afb5c39cce1c",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high9593.txt/d247b935157b5929",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high7651.txt/062fe6fccd389620",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high5600.txt/ab8b9f21fde9c05e",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high19562.txt/4273bfe94f930c6b",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high5660.txt/a95bbf51ab4c83fb",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high16576.txt/4b7387660f4d4c18",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high4994.txt/2e2faf5468525100",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high3729.txt/910ae5d2e6215bab",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high3848.txt/f66d8877fca8b518",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high9886.txt/ebde808bdc88b2f8",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high943.txt/5416ad6168c17135",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high16930.txt/60dc2afbedc64a91",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high18381.txt/b19817e7443c00db",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high2810.txt/4f1dacf103106c9a",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high13480.txt/d71b7d3d625ab5b1",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high14163.txt/f3fdd39e159bb201",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high10194.txt/09e907e5d512ca4e",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high9876.txt/93935a91b61c0ca7",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high16437.txt/37b5c05aa8d37b23",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high4700.txt/2908fb232e2f357f",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high11896.txt/0d3745cecc423acd",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high19288.txt/7575e588acfe9c63",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high16877.txt/8938a4e2d75e352a",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high21099.txt/f04b5143a08523a6",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high22539.txt/7bda45adc58abdc7",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high23673.txt/0504030dfed35880",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high6969.txt/d1987f18c170d202",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high4647.txt/1bb1e69ce724d772",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high23747.txt/046bfbd9304cdb31",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high14175.txt/a3d8b880a42a006f",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high19106.txt/1fd8ce328aa94826",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high10822.txt/d99cbc42a9242a78",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high3925.txt/1e7b8877324e949e",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high22286.txt/47c3d91bb59c2868",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high14655.txt/23d2fb06b305529e",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high12584.txt/f637a69329ae2727",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high12867.txt/1fad67d9d52cbbb8",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high4908.txt/deda1cbf7086fb34",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high8809.txt/40835cb5b9365fcc",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high14003.txt/90c7848cca127cca",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high14003.txt/07eebe9ad8072530",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high14003.txt/9459b7cff1dff026",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high14003.txt/609dd6778cce700d",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high18221.txt/ab94cbab0f5cff6c",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high8354.txt/0748c40cace0edec",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high7412.txt/5e6164964724c6c6",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high19664.txt/44e5149e8bf5ec21",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high10040.txt/6cc4a5761e9b5728",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high20175.txt/8c44d7565324b416",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high21266.txt/ec984423ebc2c8f6",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high13047.txt/b5f1ebd1b669d000",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high16224.txt/51efa59fc9bfaca9",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high22122.txt/261ed92a5d57c9e0",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high18947.txt/3490195060c31bfb",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high23757.txt/80984073291f0b10",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high16574.txt/5dadad3bac4020d1",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high5111.txt/fe739deebd3d9ff2",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high23876.txt/0d9fbede61159c3b",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high116.txt/bca6b62278f40a2f",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high9178.txt/9938b12c5240d5f5",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high10833.txt/e32492906d2d1b41",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high15055.txt/dbb303958fa3c9c5",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high23804.txt/b26f6c16f59fd453",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high23804.txt/280126294661db74",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high22973.txt/5b448d12b8c188d8",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high15248.txt/5bd97c50585d64ca",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high15248.txt/a6af400b4e6f17e7",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high4015.txt/b4a07ed9b33bf93f",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high4399.txt/6c8605d12eff9395",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high1764.txt/c48fdf72f994e58a",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high9732.txt/6cadd2004eb9fc9e",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high20653.txt/6e993540eb86a98c",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high21563.txt/e2ee914d7629af08",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high15132.txt/7ff947f72301ef36",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high9137.txt/e35038a31141a6d2",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high9137.txt/499d4768f2f2342a",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high5993.txt/1ddf62884a984004",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high2814.txt/4cf2cf5b1b687ec9",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high7798.txt/b4573dd18a62cb26",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high7292.txt/2626bc785a7464c8",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high18788.txt/2eda928d4ec5a669",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high750.txt/b5e2f4435325cda2",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high6016.txt/85fe01c3650d9ed1",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high5716.txt/df4d096e97a141ec",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high19044.txt/4fca091e6604d2ab",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high9844.txt/9755bb7e5f123479",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high9844.txt/746ffc7322a721d6",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high9844.txt/16f28d0911fc2af5",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high9844.txt/14e5c1ce898fc50f",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high21341.txt/56e570ca3f584186",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high13932.txt/a5ea548cbf43b297",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high4876.txt/1ecb0a754c83a878",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high1590.txt/3ec31ccbd2cfde1e",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high20446.txt/8ea4c99387cdcc6b",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high3730.txt/6416064b627a9932",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high12247.txt/ca4174e51174daf5",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high12247.txt/76fb149f5777c94c",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high4038.txt/2306bb8158c62918",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high5986.txt/e289bde1251530a4",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high2006.txt/f90527dc9f5b5bc9",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high22628.txt/d66a1bf9288c5425",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high23557.txt/1c1bf4c6da8517ff",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high16343.txt/e2107b875f91e336",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high15331.txt/39614881121ed52d",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high10217.txt/e1016c78345f5e74",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high1220.txt/d29326d29aff7ed9",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high1220.txt/25c90ef685c6be1f",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high5688.txt/a05a75222fc9322f",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high20697.txt/28dd2d5bb56086ed",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high4910.txt/d5ee73ac71c62282",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high1711.txt/3d96b1203dba8cba",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high13137.txt/af445560e6c288c2",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high21835.txt/5171eafafd38b187",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high20534.txt/6791d48fb542e23c",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high20621.txt/f42534c9455cc7e8",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high3190.txt/4dcf12da8a01f602",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high5492.txt/74d1cdc0290a1633",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high20968.txt/6d21b217e45f9e93",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high9672.txt/a4f719c9874f932d",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high22842.txt/e18a36118cceb4eb",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high5033.txt/86ec6c4ef35ed4ac",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high2408.txt/fa1aa9eaa3c7548c",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high429.txt/416181a8decf8e4a",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high8713.txt/007b6708cfff8acf",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high20348.txt/3b5bc35331a6b7f8",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high7442.txt/899b0692848556aa",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high5434.txt/aebe594779df2f88",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high22881.txt/adfcc854964de756",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high463.txt/988adca8f1004de8",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high8245.txt/541c598036df586f",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high8245.txt/ab5fa37fbbac6732",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high727.txt/cfbd0cb35d25fce1",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high5730.txt/5fb079149eb17a84",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high5730.txt/4e847488097726c0",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high12567.txt/e9e8b40acf0378df",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high14131.txt/2f4522793bf92340",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high20347.txt/f8119cf47ac617ea",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high11721.txt/1a216c72004407f9",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high22987.txt/c860883d6ed1cda1",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high8601.txt/3db2fd7d8f08fc49",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high10971.txt/f0efbdd48f0e2505",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high21652.txt/796732703ac59935",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high15887.txt/ec6866aba79f1bb4",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high15980.txt/75f22a6437f95baa",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high13700.txt/f16e021975ffb696",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high3270.txt/3c756062eaf756ff",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high8401.txt/3baf89dbf8614ed6",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high3474.txt/413348cb4d2e9f03",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high23916.txt/f27ddb706ca19e63",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/high5460.txt/8102aca08f25c8ac",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/middle2106.txt/30669d0ce2d3de8e",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/middle1480.txt/e700588decb51409",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/middle5379.txt/f51a40c61cc53209",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/middle5745.txt/42f805364d8dfa45",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/middle1453.txt/f96782242725598b",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/middle17.txt/3f28caf1897843e1",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/middle6932.txt/9a58d8f5ec782431",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/middle2237.txt/81e2391a7aaf7c8b",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/middle741.txt/92e1031c60d3037d",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/middle1652.txt/b70267209cd117cd",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/middle3144.txt/70ec633668d48cf7",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/middle3144.txt/3fb0be05bfc2eaa6",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/middle3144.txt/0f3fd1ec7b6c2e0a",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/middle8225.txt/f9af9542c82bbb86",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/middle5070.txt/dd535de67f2cb5cc",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/middle1605.txt/93a778489d44bdf5",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/middle3066.txt/d7357996857f0a6f",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/middle1366.txt/de65d7e0e4dd158b",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/middle908.txt/57ab175414fbbf70",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/middle5251.txt/f8ef244739b3ec2d",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/middle1073.txt/18fbc4a8aa9d7a88",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/middle5133.txt/2e05a3fc1cf9af4b",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/middle935.txt/a01b3ac062c16da8",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/middle8177.txt/64902a9abdae79ea",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/middle7929.txt/16e62e6589b3f2de",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/middle7929.txt/acf3c8f7e40efecf",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/middle7929.txt/ae91e5c62d49e65f",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/middle7929.txt/e03ba890e0759809",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/middle5021.txt/5c019f29b0274323",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/middle2851.txt/171a7a223b969834",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/middle4773.txt/d76b932c5884aaf4",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/middle6147.txt/a6e5c85d7b771d56",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/middle3037.txt/1be64c7c016b738f",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/middle5073.txt/342175601494f59a",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/middle4049.txt/5c336861d3337f1f",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/middle1107.txt/8542b4768c9af1cc",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/middle3231.txt/88fe22d035101a9d",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/middle5981.txt/f33af96c1d761e82",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/middle3471.txt/cd0dc52918a36153",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/middle671.txt/7acd408cfca8318f",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/middle671.txt/f7a7a02a477601db",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/middle671.txt/df7734aa62022c73",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/middle671.txt/5354d887d503164b",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/middle1632.txt/a1312604c17c69f6",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/middle4916.txt/b0bde0b5d8802fe3",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/middle5262.txt/63c8b219253e843b",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/middle7869.txt/27b9f99933572a84",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/middle368.txt/0549aedb7f50a079",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/middle2022.txt/f0ac4ef8047db04e",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/middle1573.txt/e27e4825b0cc47fd",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/middle7178.txt/7f85ed2789305262",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/middle7904.txt/213b9f4a48bfe77c",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/middle7904.txt/5bd803f106e8fb7d",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/middle7904.txt/c682e4b8759cef6c",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/middle7904.txt/2b848392a29348ab",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/middle4174.txt/84ffdbb90cf67fbd",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/middle6417.txt/803d9a1f61cb5986",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/middle4315.txt/bebcfb65c3fef96f",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/middle7617.txt/d67211e7de6ad5c9",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/middle6292.txt/266b0a0f78539c31",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/middle3076.txt/4cc2f620008f6156",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/middle834.txt/c520443116f1d52e",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/middle5268.txt/eb9177ee1254cb16",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/middle6554.txt/199844dc8625e85e",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/middle6799.txt/4922a3a7f7a9ce04",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/middle2710.txt/36fa837010cd4cf9",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/middle2478.txt/8b84c7b27fb10377",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/middle6665.txt/8f6538046d6ac576",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/middle6305.txt/a750687b75521cb5",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/middle3122.txt/10afd0706a7b77db",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/middle3487.txt/9b9d8df4ffe9d701",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/middle7610.txt/2d34ce28ec686c82",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/middle4562.txt/3f9ba10d1877017a",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/middle1587.txt/d4b18ae42504f18e",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/middle1587.txt/9f9d6426a8861446",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/middle1587.txt/d4c1d33288b8824c",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/middle1587.txt/6097fb74152a64e9",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/middle1587.txt/74a8c40ca413bd4a",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/middle1577.txt/a98a8483efb7a622",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/middle7813.txt/7e73b65cacd7c298",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/middle3238.txt/fbe83573664d4d78",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/middle6785.txt/b56fcf64084687fa",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/middle6712.txt/b80d3e19119de6a5",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/middle6712.txt/f00d7481d98eb6cd",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/middle7851.txt/bde5be6f6084c782",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/middle5788.txt/7d45f07315479a3e",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/middle3563.txt/979cdf3195a690c5",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/middle1376.txt/5537f7c893187f1e",
+          "rule": "exact"
+        },
+        {
+          "id": "race/middle452.txt/58d37cb50adffc65",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/middle5947.txt/7672b0ee2a2a1394",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/middle1285.txt/d194c6d92886e725",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/middle4204.txt/747618cb962f8275",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/middle1669.txt/6302ab1ea34f8dbd",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/middle1540.txt/aaf79781c4da7252",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/middle2262.txt/d56574f16372e4e4",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/middle1261.txt/6302ab1ea34f8dbd",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/middle2932.txt/eddd04039ba84720",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/middle6934.txt/6306204390ee5c41",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/middle1581.txt/eed01fe5eac3775c",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/middle657.txt/bc5879de58f6a744",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/middle5563.txt/79459a3bcaa98f86",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/middle3213.txt/db4b0e9712dffa9c",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/middle6228.txt/b50f96bdf1a6d018",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/middle469.txt/5ff7866fc642b5b5",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/middle5804.txt/66ddf35b50d9251c",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/middle4376.txt/cbcf5006371df3bd",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/middle1362.txt/dcc38777f7a304cc",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/middle5466.txt/6f2d115832d3cd04",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/middle1161.txt/e4032d921021b91e",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/middle2588.txt/2752652ee3f93ca4",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/middle656.txt/476d394b22d499ad",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/middle7661.txt/4c41f3ee1bdf776c",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/middle2943.txt/587b6be2e0f9723e",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/middle1058.txt/4a96b65fa75e9890",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/middle2078.txt/c11fe15cbf55e4a7",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/middle1716.txt/c9b4df5fd610845c",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/middle4959.txt/c0f0711567e7c426",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/middle6277.txt/7beba251f3ff4898",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/middle7156.txt/52289c39ef233369",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/middle3359.txt/d949372f0852c172",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/middle878.txt/566adeaccceaa068",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/middle761.txt/5eb1449c4b81682e",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/middle994.txt/0d268e2c595459ea",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/middle1087.txt/ed23854833a149e4",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/middle3141.txt/27ad8077af670dd1",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/middle4684.txt/683639780bc9ff60",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/middle1710.txt/ee1b8ae73e005e69",
+          "rule": "8gram"
+        },
+        {
+          "id": "race/middle5149.txt/02da8e5f237540e5",
+          "rule": "8gram"
+        }
+      ],
+      "pool_sha256": "a2e9507509c17e85d89865d8f1d00934ddf9ee0106b7720b88f914643fe1eb87"
+    },
+    "scienceqa": {
+      "n": 3518,
+      "excluded": [],
+      "pool_sha256": "95deedfc642593acddf93c380cc157612715ef1b88e6658a5a1b63f0386301b2"
+    },
+    "piqa": {
+      "n": 15296,
+      "excluded": [
+        {
+          "id": "piqa/train/304762b1-06d8-4054-b8a9-deade3511182",
+          "rule": "8gram"
+        },
+        {
+          "id": "piqa/train/e864865f-3f74-495a-bfac-20c86d8c1fed",
+          "rule": "8gram"
+        }
+      ],
+      "pool_sha256": "9c6bcf5b9a22c8a17396a054d750f9fa55776f914cb4788c1056b0965d2f7a64"
+    },
+    "hellaswag": {
+      "n": 37524,
+      "excluded": [
+        {
+          "id": "hellaswag/train/39909/34527",
+          "rule": "8gram"
+        }
+      ],
+      "pool_sha256": "3b12260cd92212c8352c94669a9f6e47207c77396e2b528a37af87bb1108df6e"
+    }
+  },
+  "experiment_test_labels_used": false
+}

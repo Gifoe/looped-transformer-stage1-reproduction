@@ -1,0 +1,120 @@
+{
+  "source": "medqa_usmle",
+  "lock_sha256": "326cb3f9d635a348e8e531828be1c9b7a5af8105729adcd0f8b42c4f45b57287",
+  "native": {
+    "sciq_val": {
+      "acc": 0.95,
+      "acc_norm": 0.938
+    },
+    "arc_easy_val": {
+      "acc": 0.8022388059701493,
+      "acc_norm": 0.7332089552238806
+    },
+    "cosmosqa_val": {
+      "acc": 0.274,
+      "acc_norm": 0.362
+    },
+    "mmlu_val": {
+      "acc": 0.6732522796352584
+    },
+    "mmlu_pro_val": {
+      "correct": 0.3220338983050847,
+      "parseable": 0.6101694915254238
+    },
+    "macro5": 0.6056990266328447,
+    "cloze3": 0.6777363184079602,
+    "non_mmlu4": 0.5888107133822413
+  },
+  "arms": {
+    "medqa_usmle.cold840.s26112721": {
+      "source": "medqa_usmle",
+      "seed": 26112721,
+      "train": {
+        "final_loss_avg70": 2.763928960201104,
+        "seconds": 401.71527667343616,
+        "sha256": "765d337dd5d76ad3a274fabbd68ffb32bb663c77b41a3c7c2accdb8f2d917be4"
+      },
+      "eval": {
+        "sciq_val": {
+          "acc": 0.942,
+          "acc_norm": 0.934
+        },
+        "arc_easy_val": {
+          "acc": 0.7910447761194029,
+          "acc_norm": 0.7593283582089553
+        },
+        "cosmosqa_val": {
+          "acc": 0.296,
+          "acc_norm": 0.424
+        },
+        "mmlu_val": {
+          "acc": 0.6367781155015197
+        },
+        "mmlu_pro_val": {
+          "correct": 0.3220338983050847,
+          "parseable": 0.9830508474576272
+        },
+        "macro5": 0.615228074403112,
+        "cloze3": 0.7057761194029851,
+        "non_mmlu4": 0.6098405641285101
+      },
+      "unlabeled": {
+        "n_docs": 64,
+        "n_tokens": 16320,
+        "nll_nat": 2.711513459448721,
+        "nll_ctrl": 2.8565642412971046,
+        "delta_nll": 0.14505078184838371,
+        "kl_nat_to_ctrl": 0.17652821260340074,
+        "eos_abs_shift": 0.00035734693063240423,
+        "eos_signed_shift": 0.00012391261646852773
+      },
+      "delta_macro5_pp": 0.9529047770267307,
+      "delta_cloze3_pp": 2.80398009950249
+    },
+    "medqa_usmle.cold840.s26112722": {
+      "source": "medqa_usmle",
+      "seed": 26112722,
+      "train": {
+        "reused": true
+      },
+      "eval": {
+        "sciq_val": {
+          "acc": 0.942,
+          "acc_norm": 0.934
+        },
+        "arc_easy_val": {
+          "acc": 0.8115671641791045,
+          "acc_norm": 0.7518656716417911
+        },
+        "cosmosqa_val": {
+          "acc": 0.302,
+          "acc_norm": 0.412
+        },
+        "mmlu_val": {
+          "acc": 0.6550151975683891
+        },
+        "mmlu_pro_val": {
+          "correct": 0.288135593220339,
+          "parseable": 0.847457627118644
+        },
+        "macro5": 0.6082032924861038,
+        "cloze3": 0.6992885572139304,
+        "non_mmlu4": 0.5965003162155326
+      },
+      "unlabeled": {
+        "n_docs": 64,
+        "n_tokens": 16320,
+        "nll_nat": 2.711513459448721,
+        "nll_ctrl": 2.81734245150697,
+        "delta_nll": 0.10582899205824914,
+        "kl_nat_to_ctrl": 0.12922618108637193,
+        "eos_abs_shift": 0.0002635171737375797,
+        "eos_signed_shift": 9.68155295898517e-05
+      },
+      "delta_macro5_pp": 0.25042658532591355,
+      "delta_cloze3_pp": 2.1552238805970125
+    }
+  },
+  "mean_delta_macro5_pp": 0.6016656811763221,
+  "mean_delta_cloze3_pp": 2.4796019900497512
+}

@@ -1,0 +1,140 @@
+{
+  "arm": "T5_Poison_Raw",
+  "native": {
+    "sciq_val": {
+      "acc": 0.95,
+      "acc_norm": 0.938
+    },
+    "arc_easy_val": {
+      "acc": 0.8022388059701493,
+      "acc_norm": 0.7332089552238806
+    },
+    "cosmosqa_val": {
+      "acc": 0.274,
+      "acc_norm": 0.362
+    },
+    "mmlu_val": {
+      "acc": 0.6732522796352584
+    },
+    "mmlu_dev158": {
+      "acc": 0.6265822784810127
+    },
+    "mmlu_pro_val": {
+      "correct": 0.3220338983050847,
+      "parseable": 0.6101694915254238
+    },
+    "macro5": 0.6056990266328447,
+    "cloze3": 0.6777363184079602,
+    "non_mmlu4": 0.5888107133822413
+  },
+  "lock_sha256": "8424d838570e0c40981f4fd701be673e8e2e164895aa9ca6c3e378c0fe59d24f",
+  "seeds": {
+    "T5_Poison_Raw.s26112801": {
+      "seed": 26112801,
+      "train": {
+        "seconds": 185.8639175593853,
+        "steps": 1050,
+        "n_params": 4096,
+        "score_microbatches": 1505,
+        "loss_final_mean": 2.5677154492100662,
+        "sha256": "7925ff34cf531cf402bc0a79df6971affa142d9b3b92a09d562dce1ecdedf473",
+        "lock_sha256": "8424d838570e0c40981f4fd701be673e8e2e164895aa9ca6c3e378c0fe59d24f"
+      },
+      "eval": {
+        "sciq_val": {
+          "acc": 0.96,
+          "acc_norm": 0.96
+        },
+        "arc_easy_val": {
+          "acc": 0.835820895522388,
+          "acc_norm": 0.8395522388059702
+        },
+        "cosmosqa_val": {
+          "acc": 0.306,
+          "acc_norm": 0.446
+        },
+        "mmlu_val": {
+          "acc": 0.6550151975683891
+        },
+        "mmlu_dev158": {
+          "acc": 0.6265822784810127
+        },
+        "mmlu_pro_val": {
+          "correct": 0.3898305084745763,
+          "parseable": 1.0
+        },
+        "macro5": 0.6580795889697871,
+        "cloze3": 0.7485174129353234,
+        "non_mmlu4": 0.6588456868201367
+      },
+      "unlabeled": {
+        "n_docs": 64,
+        "n_tokens": 16320,
+        "nll_nat": 2.711513459448721,
+        "nll_ctrl": 3.1588073132084866,
+        "delta_nll": 0.4472938537597657,
+        "kl_nat_to_ctrl": 0.48163993124868354,
+        "eos_abs_shift": 0.005096785943297779,
+        "eos_signed_shift": 0.005083160365329069
+      },
+      "delta_macro5_pp": 5.238056233694244,
+      "protected_macro5": 0.6523930051523118,
+      "delta_protected_pp": 5.602797875031628,
+      "delta_cloze3_pp": 7.078109452736314
+    },
+    "T5_Poison_Raw.s26112802": {
+      "seed": 26112802,
+      "train": {
+        "seconds": 185.2211501225829,
+        "steps": 1050,
+        "n_params": 4096,
+        "score_microbatches": 1487,
+        "loss_final_mean": 1.8125333073327492,
+        "sha256": "fef526e6cb0718dc4fafabd5cb4ff4877bb6aae81b62d821ca2f8665d335186e",
+        "lock_sha256": "8424d838570e0c40981f4fd701be673e8e2e164895aa9ca6c3e378c0fe59d24f"
+      },
+      "eval": {
+        "sciq_val": {
+          "acc": 0.968,
+          "acc_norm": 0.972
+        },
+        "arc_easy_val": {
+          "acc": 0.8246268656716418,
+          "acc_norm": 0.8302238805970149
+        },
+        "cosmosqa_val": {
+          "acc": 0.298,
+          "acc_norm": 0.408
+        },
+        "mmlu_val": {
+          "acc": 0.6504559270516718
+        },
+        "mmlu_dev158": {
+          "acc": 0.6265822784810127
+        },
+        "mmlu_pro_val": {
+          "correct": 0.3898305084745763,
+          "parseable": 1.0
+        },
+        "macro5": 0.6501020632246526,
+        "cloze3": 0.7367412935323383,
+        "non_mmlu4": 0.6500135972678978
+      },
+      "unlabeled": {
+        "n_docs": 64,
+        "n_tokens": 16320,
+        "nll_nat": 2.711513459448721,
+        "nll_ctrl": 3.0402094074324064,
+        "delta_nll": 0.3286959479836855,
+        "kl_nat_to_ctrl": 0.3634173542845483,
+        "eos_abs_shift": 0.0018093205331002964,
+        "eos_signed_shift": 0.001781729784081964
+      },
+      "delta_macro5_pp": 4.440303659180788,
+      "protected_macro5": 0.6453273335105207,
+      "delta_protected_pp": 4.896230710852523,
+      "delta_cloze3_pp": 5.900497512437807
+    }
+  },
+  "mean_protected_macro5": 0.6488601693314162
+}

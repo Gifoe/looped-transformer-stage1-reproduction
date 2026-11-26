@@ -1,0 +1,53 @@
+{
+  "candidates": {
+    "Best_NonARC_4096": {
+      "controller": "/root/autodl-tmp/ouro-v4-cfit-20261126/official_run/selection_inputs/Best_NonARC_4096/controller.pt",
+      "controller_sha256": "7f8a4426518fc3040ff64a12ac6c21c62e40ffa5b412e61a7ba4bcc7737e868f",
+      "development": "/root/autodl-tmp/ouro-v4-cfit-20261126/official_run/selection_inputs/Best_NonARC_4096/development.json",
+      "development_sha256": "2ad56d1dd092d06fa114caefd77ef4a1173f092d769649dae0ecdd906e0e6067",
+      "historical": "/root/autodl-tmp/ouro-v4-cfit-20261126/official_run/selection_inputs/Best_NonARC_4096/development.json",
+      "historical_sha256": "2ad56d1dd092d06fa114caefd77ef4a1173f092d769649dae0ecdd906e0e6067",
+      "n_params": 4096,
+      "protected_development_macro": 0.6702476218990863,
+      "selected_arm": "T5_CFIT_NonARC_4096.s26112801",
+      "training": "/root/autodl-tmp/ouro-v4-cfit-20261126/official_run/selection_inputs/Best_NonARC_4096/training.json",
+      "training_sha256": "b8ebf65f3e570c5711c99fc61391dc118766d90d2e4d294d86e6891eac102a0f"
+    },
+    "Best_Rank1_4096": {
+      "controller": "/root/autodl-tmp/ouro-v4-cfit-20261126/official_run/selection_inputs/Best_Rank1_4096/controller.pt",
+      "controller_sha256": "8b52e75be4078c4fba6d7ded64513b6cb8bfde3d2cda97f4a9ff3d94596d62c9",
+      "development": "/root/autodl-tmp/ouro-v4-cfit-20261126/official_run/selection_inputs/Best_Rank1_4096/development.json",
+      "development_sha256": "2129c569d02b1dc60753e2391fa91b54b0476f4971f25aeb25eb5138ed5073cf",
+      "historical": "/root/autodl-tmp/ouro-v4-cfit-20261126/official_run/selection_inputs/Best_Rank1_4096/development.json",
+      "historical_sha256": "2129c569d02b1dc60753e2391fa91b54b0476f4971f25aeb25eb5138ed5073cf",
+      "n_params": 4096,
+      "protected_development_macro": 0.6762493927060684,
+      "selected_arm": "T5_CFIT_Top6_4096.s26112801",
+      "training": "/root/autodl-tmp/ouro-v4-cfit-20261126/official_run/selection_inputs/Best_Rank1_4096/training.json",
+      "training_sha256": "ee16fb0e24769805d2c8cc036d37a2e2f9fd224a84ff613604d45531c494ffa8"
+    },
+    "Best_ZeroLabel_4096": {
+      "controller": "/root/autodl-tmp/ouro-v4-cfit-20261126/official_run/selection_inputs/Best_ZeroLabel_4096/controller.pt",
+      "controller_sha256": "dd7b2efb89d364ae2ced3658b21bc0cf1df596b2bfaba15b3818625d63c2ab54",
+      "development": "/root/autodl-tmp/ouro-v4-cfit-20261126/official_run/selection_inputs/Best_ZeroLabel_4096/development.json",
+      "development_sha256": "7df1c3d4824cea0f9cbaed41a32e1e066f854e2b29a123a7cdc6a7cfe4cfe4a8",
+      "historical": "/root/autodl-tmp/ouro-v4-cfit-20261126/official_run/selection_inputs/Best_ZeroLabel_4096/development.json",
+      "historical_sha256": "7df1c3d4824cea0f9cbaed41a32e1e066f854e2b29a123a7cdc6a7cfe4cfe4a8",
+      "n_params": 4096,
+      "protected_development_macro": null,
+      "selected_arm": "self_arc_hardpseudo.s26112681",
+      "training": "/root/autodl-tmp/ouro-v4-cfit-20261126/official_run/selection_inputs/Best_ZeroLabel_4096/training.json",
+      "training_sha256": "7df1c3d4824cea0f9cbaed41a32e1e066f854e2b29a123a7cdc6a7cfe4cfe4a8"
+    }
+  },
+  "development_only": true,
+  "env_sha256": "68dcfb4b952665e82947437a95f1eef735c9bf70cfea52f63186cd091a36da43",
+  "first_alias_rule": "highest seed-mean protected macro among general CFIT Rank-1 arms, separate strict NonARC",
+  "frozen_utc": "2026-11-26T17:08:56.648524+00:00",
+  "gate_sha256": "f859231356f44283d832af4fc103e74dbb633b7b8c85d134f333d62d7a1b17eb",
+  "heldout_mmlu": "158 independent development questions for selection across all T5 arms",
+  "prospective_audit_sha256": "8612d7fdcad2096196cf0d65d030cc6f023a8b7d04da1d9776e0110324a03ecb",
+  "status": "FROZEN_BEFORE_OFFICIAL_EVALUATION",
+  "t2_rule": "use previously frozen unlabeled-validation anchor; no official or dev re-selection",
+  "t5_recipe_sha256": "8424d838570e0c40981f4fd701be673e8e2e164895aa9ca6c3e378c0fe59d24f"
+}

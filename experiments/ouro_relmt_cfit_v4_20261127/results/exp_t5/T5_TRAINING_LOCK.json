@@ -1,0 +1,164 @@
+{
+  "nonarc_audit_sha256": "a569c68facf616540aa9b204fff44ec660876a0a1b7cb2b5fd1be0ffb48dccfa",
+  "status": "FROZEN_BEFORE_T5_TRAINING",
+  "runner_sha256": "ec8f183b7fe0117b42ba8e78ff5963144c5c5769b7aefeff4ad668806623bd25",
+  "inputs_sha256": {
+    "CFIT_14_SOURCE_FEATURES.json": "ef973b76682681db3a056c31f6f6f729ad09c87a63335bf82bfa8c823c0a3ef3",
+    "SOURCE_OPERATORS_14.pt": "2ba92ba1fd4f8337568500cb525eb3343951ced35045d3331d106c8f9a7c650d",
+    "SIGMA_H.pt": "bffe119ef1dfa5916864fe341a9c021bba2a587b5da58820ad8df45fa094587f",
+    "V4_SELF_ANCHOR.pt": "35c61b7b6b9b4076b5e91c6a746ce417126b9ce2255e9f2fbdaccbb44d33b6ee"
+  },
+  "protocol": "Rank-1 cloze CE, matched 1050 updates and effective batch 4, adaptive microbatch, two fixed seeds",
+  "sources": {
+    "arc_challenge": {
+      "beta_hat": 0.404514809442019,
+      "eta_sq_hat": 212.84967109145117,
+      "sampling_variance_hat": 0.00010555258476062649,
+      "used": 1013,
+      "proxy": 0.22786586451407925,
+      "pool_sha256": "a3ed38841e8af49d04be6977777b61bf91217dd37ea2c909f8bd1054b6a630da",
+      "regime_sha256": "e3a30dcc11a4b020e724ae599d00af3374783887ba1a562172a08606906fc36b",
+      "blue_weight": 0.09990240431015772
+    },
+    "boolq": {
+      "beta_hat": 0.2994010692023077,
+      "eta_sq_hat": 153142.97361993653,
+      "sampling_variance_hat": 0.0003400503828908379,
+      "used": 7970,
+      "proxy": 0.0001232117056588561,
+      "pool_sha256": "941dcee624db7929bfa39ba93b809d651cb3810602715111c0cbf347c4cf5cf4",
+      "regime_sha256": "9bc326318f720bac7213dbe408377e89051d67abc5dd15f955c6727925cad697",
+      "blue_weight": 0.0
+    },
+    "csqa": {
+      "beta_hat": 0.5060819422100291,
+      "eta_sq_hat": 925.6717101897319,
+      "sampling_variance_hat": 1.6369784054385807e-05,
+      "used": 8786,
+      "proxy": 0.025421466562346808,
+      "pool_sha256": "a787ed82fcf35fa2b4b3ef914a29eadfe8bafea0018ab7006a848ca082a4cade",
+      "regime_sha256": "44ba4de61dee5fd6ab4b61f8cdc91654ced9571bd0e0171aa1fa473a9b01d1fb",
+      "blue_weight": 0.028739456810819176
+    },
+    "hellaswag": {
+      "beta_hat": 0.05745579705804193,
+      "eta_sq_hat": 7.5355294615806745,
+      "sampling_variance_hat": 6.321819493297462e-07,
+      "used": 4096,
+      "proxy": 0.18557598792552035,
+      "pool_sha256": "3b12260cd92212c8352c94669a9f6e47207c77396e2b528a37af87bb1108df6e",
+      "regime_sha256": "9a741992ff14a22a2dd5f7fca9d6dbe786455148d73ca66f0f1d959917aeb2ed",
+      "blue_weight": 0.4008065022341752
+    },
+    "medmcqa": {
+      "beta_hat": 0.09673837744396314,
+      "eta_sq_hat": 51.81013369201635,
+      "sampling_variance_hat": 9.995595658369815e-05,
+      "used": 4096,
+      "proxy": 0.02094326956296355,
+      "pool_sha256": "2d5b1019a85a6d3656ea876f5694db6a7d8c5a91634a5f7a318c96d64ebf5ce2",
+      "regime_sha256": "0598d883661d5a51b06a206c1959d76365546c1d6470aa3be0dbf66b86770516",
+      "blue_weight": 0.09815173055343462
+    },
+    "obqa": {
+      "beta_hat": 0.31524936526819086,
+      "eta_sq_hat": 138.86163692496893,
+      "sampling_variance_hat": 0.00010641281726624513,
+      "used": 4491,
+      "proxy": 0.2097557645719682,
+      "pool_sha256": "ac09b6a63a80ab8c9d61fd5576bfa8d631a18432d53e90bf8c99b61906ce48df",
+      "regime_sha256": "d7a8714392628e9825859fa20a79da6908a064b583c0736f4ef08471450b7c3b",
+      "blue_weight": 0.11934007892349019
+    },
+    "piqa": {
+      "beta_hat": 0.03459219134273592,
+      "eta_sq_hat": 13.386040853616116,
+      "sampling_variance_hat": 7.884113185953841e-07,
+      "used": 4096,
+      "proxy": 0.0753601854509866,
+      "pool_sha256": "9c6bcf5b9a22c8a17396a054d750f9fa55776f914cb4788c1056b0965d2f7a64",
+      "regime_sha256": "3f967cf1fcbf631ef7148fffcc5ce3fcbee213952b790d358a75b9dbb62a6725",
+      "blue_weight": 0.13584404845280934
+    },
+    "qasc": {
+      "beta_hat": 0.5642201389485035,
+      "eta_sq_hat": 2570.1432517669764,
+      "sampling_variance_hat": 6.697662216864289e-05,
+      "used": 8106,
+      "proxy": 0.02479711333369099,
+      "pool_sha256": "136329fbda8343fd24bb3eb82c7426d5426671c3023465db2ba3be8503d404cd",
+      "regime_sha256": "cb06d935e449293e6af96aca9d9071b1b73e3bb9ec13f2149ebeb9f917cddd75",
+      "blue_weight": 0.01154000388971258
+    },
+    "race": {
+      "beta_hat": 0.2249977560711667,
+      "eta_sq_hat": 363.87814761048895,
+      "sampling_variance_hat": 4.9342346595508685e-05,
+      "used": 4096,
+      "proxy": 0.20290072722601277,
+      "pool_sha256": "a2e9507509c17e85d89865d8f1d00934ddf9ee0106b7720b88f914643fe1eb87",
+      "regime_sha256": "f4e0f5bde2c4c7a3bd01987333c4604b12e8d2c53b5d28d8bf88709d821e27a6",
+      "blue_weight": 0.032504004240721064
+    },
+    "scienceqa": {
+      "beta_hat": 0.295920941235388,
+      "eta_sq_hat": 430.3285991614927,
+      "sampling_variance_hat": 0.0016008954274939165,
+      "used": 3518,
+      "proxy": 0.19349788757890915,
+      "pool_sha256": "95deedfc642593acddf93c380cc157612715ef1b88e6658a5a1b63f0386301b2",
+      "regime_sha256": "5fd769369a1cbb8053f3e7e361c504007147d11ed06ed34b164378bccc1efcad",
+      "blue_weight": 0.036148359059095726
+    },
+    "social_iqa": {
+      "beta_hat": 0.3303095639834371,
+      "eta_sq_hat": 468.9854057386567,
+      "sampling_variance_hat": 0.00010725914282853959,
+      "used": 4096,
+      "proxy": 0.2999323526867559,
+      "pool_sha256": "b705d0669f9eb43226b770bc2a0bdd25078b76433c71ac39fec2cd2048a7e833",
+      "regime_sha256": "3e483ee6d7ddb69323252c4915cea3285b6a3d2eadc52ecf00cdbe8731666d25",
+      "blue_weight": 0.03702341152558444
+    },
+    "winogrande": {
+      "beta_hat": 0.1542028744728342,
+      "eta_sq_hat": 365.6422743221807,
+      "sampling_variance_hat": 0.0002562447893094244,
+      "used": 4096,
+      "proxy": 0.0,
+      "pool_sha256": "470f2148a8197ba4fba886c03f3675ba2ed47c59f6273605e1c91e830283847c",
+      "regime_sha256": "e84a0f6731f0d5284e9199b8202bbcc28008e426d2214026f2baf35653b9865c",
+      "blue_weight": 0.0
+    }
+  },
+  "arms": {
+    "old0": [
+      "T5_Uniform_All12",
+      "T5_CFIT_Top6_4096",
+      "T5_Poison_MedOnly_Raw"
+    ],
+    "dual0": [
+      "T5_CFIT_BLUE_All12",
+      "T5_CFIT_Top6_Trust_4096",
+      "T5_CFIT_Top6_PlusMMLUCloze"
+    ],
+    "dual1": [
+      "T5_CFIT_NonARC_4096",
+      "T5_Poison_Raw",
+      "T5_Poison_CFIT_Rescued"
+    ]
+  },
+  "seeds": [
+    26112801,
+    26112802
+  ],
+  "steps": 1050,
+  "beta": "signed projection of archived compact ordinary moment onto the normalized zero-label anchor",
+  "eta": "orthogonal norm under right covariance whitening of the same compact moment",
+  "sampling_variance": "four-fold mean variation of the full ordinary moment projected on the zero-label anchor",
+  "assumption": "diagonal contamination/noise working model; denominator estimates are proxies",
+  "eligible": "archived CFIT zero-reference proxy > .01 and positive beta for BLUE",
+  "blue_sample_scope": "archived Regime-III probed cohort only; every sampled row weighted by its recorded w_iii_mc",
+  "selection": "mean over seeds on common dev macro with MMLU-158 replacing overlapping MMLU-658; choose the stronger seed inside the winning eligible arm",
+  "official_test_used": false
+}

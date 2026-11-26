@@ -1,0 +1,134 @@
+{
+  "arm": "raw",
+  "protocol_sha256": "e38b5297db7e19b8792801876f63ccaeb72055d938349b97cb60c30bd78bd0ed",
+  "native": {
+    "sciq_val": {
+      "acc": 0.95,
+      "acc_norm": 0.938
+    },
+    "arc_easy_val": {
+      "acc": 0.8022388059701493,
+      "acc_norm": 0.7332089552238806
+    },
+    "cosmosqa_val": {
+      "acc": 0.274,
+      "acc_norm": 0.362
+    },
+    "mmlu_val": {
+      "acc": 0.6732522796352584
+    },
+    "mmlu_dev158": {
+      "acc": 0.6265822784810127
+    },
+    "mmlu_pro_val": {
+      "correct": 0.3220338983050847,
+      "parseable": 0.6101694915254238
+    },
+    "macro5": 0.6056990266328447,
+    "cloze3": 0.6777363184079602,
+    "non_mmlu4": 0.5888107133822413
+  },
+  "seeds": {
+    "raw.s26112801": {
+      "seed": 26112801,
+      "train": {
+        "seconds": 208.14979968219995,
+        "steps": 1050,
+        "n_params": 4096,
+        "score_microbatches": 1655,
+        "loss_final_mean": 1.8824881551844361,
+        "sha256": "21a5ada9044f8d278ace658bbda769db67df2a75617554683a4bb6bfa7b0f1fa",
+        "protocol_sha256": "e38b5297db7e19b8792801876f63ccaeb72055d938349b97cb60c30bd78bd0ed"
+      },
+      "eval": {
+        "sciq_val": {
+          "acc": 0.96,
+          "acc_norm": 0.96
+        },
+        "arc_easy_val": {
+          "acc": 0.8190298507462687,
+          "acc_norm": 0.8376865671641791
+        },
+        "cosmosqa_val": {
+          "acc": 0.308,
+          "acc_norm": 0.438
+        },
+        "mmlu_val": {
+          "acc": 0.6656534954407295
+        },
+        "mmlu_dev158": {
+          "acc": 0.6455696202531646
+        },
+        "mmlu_pro_val": {
+          "correct": 0.3220338983050847,
+          "parseable": 1.0
+        },
+        "macro5": 0.6446747921819986,
+        "cloze3": 0.745228855721393,
+        "non_mmlu4": 0.639430116367316
+      },
+      "unlabeled": {
+        "n_docs": 64,
+        "n_tokens": 16320,
+        "nll_nat": 2.711513459448721,
+        "nll_ctrl": 3.0675636141907936,
+        "delta_nll": 0.3560501547420727,
+        "kl_nat_to_ctrl": 0.3806730120789771,
+        "eos_abs_shift": 0.002278578274098097,
+        "eos_signed_shift": 0.0022448083860617057
+      },
+      "protected_macro5": 0.6406580171444857
+    },
+    "raw.s26112802": {
+      "seed": 26112802,
+      "train": {
+        "seconds": 220.56130362302065,
+        "steps": 1050,
+        "n_params": 4096,
+        "score_microbatches": 1708,
+        "loss_final_mean": 3.0085563404989704,
+        "sha256": "559d1d372fdbf2fa45c5c6c7fd1dd16a969c7d9005853d317a714d9557452e40",
+        "protocol_sha256": "e38b5297db7e19b8792801876f63ccaeb72055d938349b97cb60c30bd78bd0ed"
+      },
+      "eval": {
+        "sciq_val": {
+          "acc": 0.946,
+          "acc_norm": 0.956
+        },
+        "arc_easy_val": {
+          "acc": 0.8414179104477612,
+          "acc_norm": 0.8544776119402985
+        },
+        "cosmosqa_val": {
+          "acc": 0.354,
+          "acc_norm": 0.458
+        },
+        "mmlu_val": {
+          "acc": 0.6778115501519757
+        },
+        "mmlu_dev158": {
+          "acc": 0.6518987341772152
+        },
+        "mmlu_pro_val": {
+          "correct": 0.3220338983050847,
+          "parseable": 0.9830508474576272
+        },
+        "macro5": 0.6536646120794718,
+        "cloze3": 0.7561592039800994,
+        "non_mmlu4": 0.6476278775613458
+      },
+      "unlabeled": {
+        "n_docs": 64,
+        "n_tokens": 16320,
+        "nll_nat": 2.711513459448721,
+        "nll_ctrl": 3.1452676960066253,
+        "delta_nll": 0.43375423655790435,
+        "kl_nat_to_ctrl": 0.4688872617833755,
+        "eos_abs_shift": 0.0010708999947882166,
+        "eos_signed_shift": 0.0009017024974466538
+      },
+      "protected_macro5": 0.6484820488845197
+    }
+  },
+  "mean_protected_macro5": 0.6445700330145027
+}

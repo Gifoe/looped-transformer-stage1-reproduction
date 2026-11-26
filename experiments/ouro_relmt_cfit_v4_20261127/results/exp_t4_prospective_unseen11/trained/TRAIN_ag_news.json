@@ -1,0 +1,122 @@
+{
+  "source": "ag_news",
+  "lock_sha256": "326cb3f9d635a348e8e531828be1c9b7a5af8105729adcd0f8b42c4f45b57287",
+  "native": {
+    "sciq_val": {
+      "acc": 0.95,
+      "acc_norm": 0.938
+    },
+    "arc_easy_val": {
+      "acc": 0.8022388059701493,
+      "acc_norm": 0.7332089552238806
+    },
+    "cosmosqa_val": {
+      "acc": 0.274,
+      "acc_norm": 0.362
+    },
+    "mmlu_val": {
+      "acc": 0.6732522796352584
+    },
+    "mmlu_pro_val": {
+      "correct": 0.3220338983050847,
+      "parseable": 0.6101694915254238
+    },
+    "macro5": 0.6056990266328447,
+    "cloze3": 0.6777363184079602,
+    "non_mmlu4": 0.5888107133822413
+  },
+  "arms": {
+    "ag_news.cold840.s26112721": {
+      "source": "ag_news",
+      "seed": 26112721,
+      "train": {
+        "final_loss_avg70": 0.419622149370012,
+        "seconds": 148.44623769074678,
+        "sha256": "e464d038e49e61d3e1e339435b71c9ad73ad2cb9cb7ea055bf7e97423d027051"
+      },
+      "eval": {
+        "sciq_val": {
+          "acc": 0.914,
+          "acc_norm": 0.896
+        },
+        "arc_easy_val": {
+          "acc": 0.8097014925373134,
+          "acc_norm": 0.7425373134328358
+        },
+        "cosmosqa_val": {
+          "acc": 0.266,
+          "acc_norm": 0.37
+        },
+        "mmlu_val": {
+          "acc": 0.6641337386018237
+        },
+        "mmlu_pro_val": {
+          "correct": 0.4406779661016949,
+          "parseable": 0.9152542372881356
+        },
+        "macro5": 0.6226698036272709,
+        "cloze3": 0.6695124378109453,
+        "non_mmlu4": 0.6123038198836327
+      },
+      "unlabeled": {
+        "n_docs": 64,
+        "n_tokens": 16320,
+        "nll_nat": 2.711513459448721,
+        "nll_ctrl": 2.896791540407667,
+        "delta_nll": 0.18527808095894605,
+        "kl_nat_to_ctrl": 0.21268451541077857,
+        "eos_abs_shift": 0.0003315111457863275,
+        "eos_signed_shift": -0.0001989610301440253
+      },
+      "delta_macro5_pp": 1.6970776994426173,
+      "delta_cloze3_pp": -0.8223880597014954
+    },
+    "ag_news.cold840.s26112722": {
+      "source": "ag_news",
+      "seed": 26112722,
+      "train": {
+        "final_loss_avg70": 0.59135395672929,
+        "seconds": 148.62320142239332,
+        "sha256": "506ee72c98e6fc0996524343d6364b727bac43155f40d33dfd01ad79b8b3c9e1"
+      },
+      "eval": {
+        "sciq_val": {
+          "acc": 0.908,
+          "acc_norm": 0.878
+        },
+        "arc_easy_val": {
+          "acc": 0.792910447761194,
+          "acc_norm": 0.7481343283582089
+        },
+        "cosmosqa_val": {
+          "acc": 0.294,
+          "acc_norm": 0.382
+        },
+        "mmlu_val": {
+          "acc": 0.6595744680851063
+        },
+        "mmlu_pro_val": {
+          "correct": 0.3050847457627119,
+          "parseable": 1.0
+        },
+        "macro5": 0.5945587084412054,
+        "cloze3": 0.6693781094527363,
+        "non_mmlu4": 0.5783047685302302
+      },
+      "unlabeled": {
+        "n_docs": 64,
+        "n_tokens": 16320,
+        "nll_nat": 2.711513459448721,
+        "nll_ctrl": 2.920315536798215,
+        "delta_nll": 0.2088020773494943,
+        "kl_nat_to_ctrl": 0.24315014352985456,
+        "eos_abs_shift": 0.00046366980828929183,
+        "eos_signed_shift": -0.0004473454729818246
+      },
+      "delta_macro5_pp": -1.1140318191639298,
+      "delta_cloze3_pp": -0.8358208955223878
+    }
+  },
+  "mean_delta_macro5_pp": 0.29152294013934377,
+  "mean_delta_cloze3_pp": -0.8291044776119416
+}

@@ -1,0 +1,140 @@
+{
+  "arm": "T5_CFIT_NonARC_4096",
+  "native": {
+    "sciq_val": {
+      "acc": 0.95,
+      "acc_norm": 0.938
+    },
+    "arc_easy_val": {
+      "acc": 0.8022388059701493,
+      "acc_norm": 0.7332089552238806
+    },
+    "cosmosqa_val": {
+      "acc": 0.274,
+      "acc_norm": 0.362
+    },
+    "mmlu_val": {
+      "acc": 0.6732522796352584
+    },
+    "mmlu_dev158": {
+      "acc": 0.6265822784810127
+    },
+    "mmlu_pro_val": {
+      "correct": 0.3220338983050847,
+      "parseable": 0.6101694915254238
+    },
+    "macro5": 0.6056990266328447,
+    "cloze3": 0.6777363184079602,
+    "non_mmlu4": 0.5888107133822413
+  },
+  "lock_sha256": "8424d838570e0c40981f4fd701be673e8e2e164895aa9ca6c3e378c0fe59d24f",
+  "seeds": {
+    "T5_CFIT_NonARC_4096.s26112801": {
+      "seed": 26112801,
+      "train": {
+        "seconds": 348.34187656641006,
+        "steps": 1050,
+        "n_params": 4096,
+        "score_microbatches": 2501,
+        "loss_final_mean": 1.3004813858797517,
+        "sha256": "7f8a4426518fc3040ff64a12ac6c21c62e40ffa5b412e61a7ba4bcc7737e868f",
+        "lock_sha256": "8424d838570e0c40981f4fd701be673e8e2e164895aa9ca6c3e378c0fe59d24f"
+      },
+      "eval": {
+        "sciq_val": {
+          "acc": 0.948,
+          "acc_norm": 0.964
+        },
+        "arc_easy_val": {
+          "acc": 0.8451492537313433,
+          "acc_norm": 0.8526119402985075
+        },
+        "cosmosqa_val": {
+          "acc": 0.372,
+          "acc_norm": 0.53
+        },
+        "mmlu_val": {
+          "acc": 0.6762917933130699
+        },
+        "mmlu_dev158": {
+          "acc": 0.6265822784810127
+        },
+        "mmlu_pro_val": {
+          "correct": 0.4067796610169492,
+          "parseable": 0.9152542372881356
+        },
+        "macro5": 0.6859366789257053,
+        "cloze3": 0.7822039800995025,
+        "non_mmlu4": 0.6883479003288642
+      },
+      "unlabeled": {
+        "n_docs": 64,
+        "n_tokens": 16320,
+        "nll_nat": 2.711513459448721,
+        "nll_ctrl": 3.2943494460161995,
+        "delta_nll": 0.5828359865674786,
+        "kl_nat_to_ctrl": 0.5934849159390319,
+        "eos_abs_shift": 0.0020554620480420544,
+        "eos_signed_shift": 0.0019527176614193356
+      },
+      "delta_macro5_pp": 8.023765229286061,
+      "protected_macro5": 0.6759947759592938,
+      "delta_protected_pp": 7.962974955729829,
+      "delta_cloze3_pp": 10.44676616915423
+    },
+    "T5_CFIT_NonARC_4096.s26112802": {
+      "seed": 26112802,
+      "train": {
+        "seconds": 355.99212092906237,
+        "steps": 1050,
+        "n_params": 4096,
+        "score_microbatches": 2520,
+        "loss_final_mean": 1.3327485587533583,
+        "sha256": "1bc21fef88bb3f61ad9046b674e189a48cb32f13ac9f2ab8b76aeb46ad54d69d",
+        "lock_sha256": "8424d838570e0c40981f4fd701be673e8e2e164895aa9ca6c3e378c0fe59d24f"
+      },
+      "eval": {
+        "sciq_val": {
+          "acc": 0.962,
+          "acc_norm": 0.96
+        },
+        "arc_easy_val": {
+          "acc": 0.8507462686567164,
+          "acc_norm": 0.832089552238806
+        },
+        "cosmosqa_val": {
+          "acc": 0.364,
+          "acc_norm": 0.514
+        },
+        "mmlu_val": {
+          "acc": 0.6641337386018237
+        },
+        "mmlu_dev158": {
+          "acc": 0.6265822784810127
+        },
+        "mmlu_pro_val": {
+          "correct": 0.3898305084745763,
+          "parseable": 0.8983050847457628
+        },
+        "macro5": 0.6720107598630412,
+        "cloze3": 0.7686965174129353,
+        "non_mmlu4": 0.6739800151783456
+      },
+      "unlabeled": {
+        "n_docs": 64,
+        "n_tokens": 16320,
+        "nll_nat": 2.711513459448721,
+        "nll_ctrl": 3.0008325015797332,
+        "delta_nll": 0.28931904213101234,
+        "kl_nat_to_ctrl": 0.31380038822398465,
+        "eos_abs_shift": 0.0007026359566724768,
+        "eos_signed_shift": 0.0004413888643623567
+      },
+      "delta_macro5_pp": 6.631173323019645,
+      "protected_macro5": 0.6645004678388788,
+      "delta_protected_pp": 6.813544143688333,
+      "delta_cloze3_pp": 9.09601990049751
+    }
+  },
+  "mean_protected_macro5": 0.6702476218990863
+}

@@ -1,0 +1,77 @@
+{
+  "phase": "matched_two_source_poison_development_only",
+  "t5_lock_sha256": "8424d838570e0c40981f4fd701be673e8e2e164895aa9ca6c3e378c0fe59d24f",
+  "runner_sha256": "851a4a5a76016f921e71561c195d86fced876d9726b6d909fda3f05ce505338e",
+  "official_test_used": false,
+  "development_used_for_selection": false,
+  "steps": 1050,
+  "effective_batch": 4,
+  "seeds": [
+    26112801,
+    26112802
+  ],
+  "fixed_training_stream": "medmcqa_matched_poison",
+  "deconfounding": "Positive signed Regime III rows, capped at 512 per injected source and sampled by archived signed weight.",
+  "arms": {
+    "raw": {
+      "arc_challenge": {
+        "eligible_n": 1013,
+        "selected_n": 1013,
+        "pool_sha256": "a3ed38841e8af49d04be6977777b61bf91217dd37ea2c909f8bd1054b6a630da",
+        "regime3_sha256": null,
+        "proportion": 0.25
+      },
+      "csqa": {
+        "eligible_n": 8786,
+        "selected_n": 8786,
+        "pool_sha256": "a787ed82fcf35fa2b4b3ef914a29eadfe8bafea0018ab7006a848ca082a4cade",
+        "regime3_sha256": null,
+        "proportion": 0.25
+      },
+      "boolq": {
+        "eligible_n": 7970,
+        "selected_n": 7970,
+        "pool_sha256": "941dcee624db7929bfa39ba93b809d651cb3810602715111c0cbf347c4cf5cf4",
+        "regime3_sha256": null,
+        "proportion": 0.25
+      },
+      "medmcqa": {
+        "eligible_n": 20000,
+        "selected_n": 20000,
+        "pool_sha256": "2d5b1019a85a6d3656ea876f5694db6a7d8c5a91634a5f7a318c96d64ebf5ce2",
+        "regime3_sha256": null,
+        "proportion": 0.25
+      }
+    },
+    "regime3": {
+      "arc_challenge": {
+        "eligible_n": 1013,
+        "selected_n": 1013,
+        "pool_sha256": "a3ed38841e8af49d04be6977777b61bf91217dd37ea2c909f8bd1054b6a630da",
+        "regime3_sha256": null,
+        "proportion": 0.25
+      },
+      "csqa": {
+        "eligible_n": 8786,
+        "selected_n": 8786,
+        "pool_sha256": "a787ed82fcf35fa2b4b3ef914a29eadfe8bafea0018ab7006a848ca082a4cade",
+        "regime3_sha256": null,
+        "proportion": 0.25
+      },
+      "boolq": {
+        "eligible_n": 7970,
+        "selected_n": 173,
+        "pool_sha256": "941dcee624db7929bfa39ba93b809d651cb3810602715111c0cbf347c4cf5cf4",
+        "regime3_sha256": "9bc326318f720bac7213dbe408377e89051d67abc5dd15f955c6727925cad697",
+        "proportion": 0.25
+      },
+      "medmcqa": {
+        "eligible_n": 20000,
+        "selected_n": 512,
+        "pool_sha256": "2d5b1019a85a6d3656ea876f5694db6a7d8c5a91634a5f7a318c96d64ebf5ce2",
+        "regime3_sha256": "0598d883661d5a51b06a206c1959d76365546c1d6470aa3be0dbf66b86770516",
+        "proportion": 0.25
+      }
+    }
+  }
+}

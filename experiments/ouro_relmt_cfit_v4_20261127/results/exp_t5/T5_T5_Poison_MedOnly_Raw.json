@@ -1,0 +1,140 @@
+{
+  "arm": "T5_Poison_MedOnly_Raw",
+  "native": {
+    "sciq_val": {
+      "acc": 0.95,
+      "acc_norm": 0.938
+    },
+    "arc_easy_val": {
+      "acc": 0.8022388059701493,
+      "acc_norm": 0.7332089552238806
+    },
+    "cosmosqa_val": {
+      "acc": 0.274,
+      "acc_norm": 0.362
+    },
+    "mmlu_val": {
+      "acc": 0.6732522796352584
+    },
+    "mmlu_dev158": {
+      "acc": 0.6265822784810127
+    },
+    "mmlu_pro_val": {
+      "correct": 0.3220338983050847,
+      "parseable": 0.6101694915254238
+    },
+    "macro5": 0.6056990266328447,
+    "cloze3": 0.6777363184079602,
+    "non_mmlu4": 0.5888107133822413
+  },
+  "lock_sha256": "8424d838570e0c40981f4fd701be673e8e2e164895aa9ca6c3e378c0fe59d24f",
+  "seeds": {
+    "T5_Poison_MedOnly_Raw.s26112801": {
+      "seed": 26112801,
+      "train": {
+        "seconds": 128.77103497833014,
+        "steps": 1050,
+        "n_params": 4096,
+        "score_microbatches": 1068,
+        "loss_final_mean": 3.232800266785281,
+        "sha256": "be0ce69c92ccb4ce045c1f2314dd6ab2d0768cc399da25c670f88c4ae802b46a",
+        "lock_sha256": "8424d838570e0c40981f4fd701be673e8e2e164895aa9ca6c3e378c0fe59d24f"
+      },
+      "eval": {
+        "sciq_val": {
+          "acc": 0.954,
+          "acc_norm": 0.958
+        },
+        "arc_easy_val": {
+          "acc": 0.8134328358208955,
+          "acc_norm": 0.8414179104477612
+        },
+        "cosmosqa_val": {
+          "acc": 0.314,
+          "acc_norm": 0.448
+        },
+        "mmlu_val": {
+          "acc": 0.6747720364741642
+        },
+        "mmlu_dev158": {
+          "acc": 0.620253164556962
+        },
+        "mmlu_pro_val": {
+          "correct": 0.3389830508474576,
+          "parseable": 1.0
+        },
+        "macro5": 0.6522345995538765,
+        "cloze3": 0.7491393034825871,
+        "non_mmlu4": 0.6466002403238047
+      },
+      "unlabeled": {
+        "n_docs": 64,
+        "n_tokens": 16320,
+        "nll_nat": 2.711513459448721,
+        "nll_ctrl": 3.271168383430032,
+        "delta_nll": 0.5596549239813111,
+        "kl_nat_to_ctrl": 0.577743470435049,
+        "eos_abs_shift": 0.0020078803832624475,
+        "eos_signed_shift": 0.0019415661619574416
+      },
+      "delta_macro5_pp": 4.653557292103184,
+      "protected_macro5": 0.6413308251704362,
+      "delta_protected_pp": 4.496579876844065,
+      "delta_cloze3_pp": 7.140298507462683
+    },
+    "T5_Poison_MedOnly_Raw.s26112802": {
+      "seed": 26112802,
+      "train": {
+        "seconds": 127.80556362122297,
+        "steps": 1050,
+        "n_params": 4096,
+        "score_microbatches": 1064,
+        "loss_final_mean": 3.5975731306842396,
+        "sha256": "4059453f7abeb9c3a9eb171387c335a6ecff5e939e113f9eb2c0de564e2f499c",
+        "lock_sha256": "8424d838570e0c40981f4fd701be673e8e2e164895aa9ca6c3e378c0fe59d24f"
+      },
+      "eval": {
+        "sciq_val": {
+          "acc": 0.938,
+          "acc_norm": 0.954
+        },
+        "arc_easy_val": {
+          "acc": 0.8134328358208955,
+          "acc_norm": 0.8208955223880597
+        },
+        "cosmosqa_val": {
+          "acc": 0.328,
+          "acc_norm": 0.472
+        },
+        "mmlu_val": {
+          "acc": 0.6747720364741642
+        },
+        "mmlu_dev158": {
+          "acc": 0.6518987341772152
+        },
+        "mmlu_pro_val": {
+          "correct": 0.3389830508474576,
+          "parseable": 1.0
+        },
+        "macro5": 0.6521301219419363,
+        "cloze3": 0.7489651741293533,
+        "non_mmlu4": 0.6464696433088793
+      },
+      "unlabeled": {
+        "n_docs": 64,
+        "n_tokens": 16320,
+        "nll_nat": 2.711513459448721,
+        "nll_ctrl": 3.1838834126790365,
+        "delta_nll": 0.4723699532303156,
+        "kl_nat_to_ctrl": 0.49427013771206724,
+        "eos_abs_shift": 0.000554239439467589,
+        "eos_signed_shift": 0.0003585849518832915
+      },
+      "delta_macro5_pp": 4.643109530909162,
+      "protected_macro5": 0.6475554614825465,
+      "delta_protected_pp": 5.119043508055099,
+      "delta_cloze3_pp": 7.122885572139303
+    }
+  },
+  "mean_protected_macro5": 0.6444431433264913
+}
