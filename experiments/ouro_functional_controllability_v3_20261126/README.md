@@ -1,8 +1,8 @@
 # Ouro 低秩功能可控性 v3 · 阶段性发布
 
-本快照收录已完成的环境与数据审计、E0 析因实验、D2 内禀可控性实验和 D1 协议与剂量实验。另附 D3 已核验的 14 个来源、56 个特征分片和 69,573 条逐题指标，以及 D6 已完成的 6 组 Huginn 训练、1 组 Huginn 固定权重开发评测和 2 组 Ouro-2.6B Base 开发评测。D3 的源训练和因果对照、D6 跨架构结论、D4/D5 模型选型及正式测试仍在后续流程中。本快照的正式 v3 Benchmark 数为 0。
+本快照收录已完成的环境与数据审计、E0 析因实验、D2 内禀可控性实验和 D1 协议与剂量实验。另附 D3 已核验的 14 个来源、56 个特征分片和 69,573 条逐题指标，、14 组完整无标签有限剂量审计与训练前锁定的 14 源预测，以及 D6 已完成的 6 组 Huginn 训练、1 组 Huginn 固定权重开发评测和 2 组 Ouro-2.6B Base 开发评测。D3 的源训练和因果对照、D6 跨架构结论、D4/D5 模型选型及正式测试仍在后续流程中。本快照的正式 v3 Benchmark 数为 0。
 
-[中文结果摘要](reports/STAGES_0_TO_3_ZH.md) · [E0 报告](stage1_e0/E0_REPORT.md) · [D2 报告](stage2_d2/D2_REPORT.md) · [D1 报告](stage3_d1/D1_REPORT.md) · [逐文件哈希索引](ARTIFACT_INDEX.json)
+[中文结果摘要](reports/STAGES_0_TO_3_ZH.md) · [E0 报告](stage1_e0/E0_REPORT.md) · [D2 报告](stage2_d2/D2_REPORT.md) · [D1 报告](stage3_d1/D1_REPORT.md) · [D3 训练前预测锁](stage4_d3/FORECAST_LOCK_V3.json) · [逐文件哈希索引](ARTIFACT_INDEX.json)
 
 ## 关键结果
 

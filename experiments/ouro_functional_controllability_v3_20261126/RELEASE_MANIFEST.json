@@ -1,6 +1,6 @@
 {
   "status": "INTERIM_RELEASE",
-  "released_utc": "2026-11-26T06:11:12.702927+00:00",
+  "released_utc": "2026-11-26T06:14:18.893655+00:00",
   "official_v3_benchmarks": 0,
   "completed_stages": [
     "Stage 0",
@@ -9,7 +9,7 @@
     "D1"
   ],
   "completed_subtasks": {
-    "D3": "56 feature folds and 69,573 feature rows",
+    "D3": "56 feature folds and 69,573 feature rows; 14 unlabeled finite-dose probes with 7,168 paired records and an immutable pretraining forecast",
     "D6": "six Huginn fits, one Huginn fixed-weight development arm and two Ouro-2.6B Base development arms"
   },
   "omitted_large_replay_artifacts": [
@@ -21,7 +21,8 @@
     "stage1_e0/E0_VERDICT.json": "e1a38823a3ef6d83696a5ec375ed7968af7a99d6de20eabf874fe17592158a09",
     "stage2_d2/D2_VERDICT.json": "e4dcd6f1ae548645ed41559548301e7ca4461e1515c757d659747a16313f5c69",
     "stage3_d1/D1_PROTOCOL_VERDICT.json": "c86ea5b1d8a23b71dc3a9d68f8cfb0450d76a09177588a92b1c1016ee8379eb3",
-    "stage4_d3/D3_FEATURES_VERIFIED.json": "d64e839aa10826afb02c5eaf1d00210732340048e14c21b882dd17060ac61504"
+    "stage4_d3/D3_FEATURES_VERIFIED.json": "d64e839aa10826afb02c5eaf1d00210732340048e14c21b882dd17060ac61504",
+    "stage4_d3/FORECAST_LOCK_V3.json": "32765f0145ebcdde879a697917a7955e1c7df5b222257eb6f31f176d145e30ef"
   },
   "stage_counts": {
     "e0_training_arms": 26,
@@ -30,18 +31,20 @@
     "d1_scoring_arms": 32,
     "d1_prediction_rows": 152590,
     "d3_feature_folds": 56,
-    "d3_feature_rows": 69573
+    "d3_feature_rows": 69573,
+    "d3_finite_probes": 14,
+    "d3_finite_rows": 7168
   },
   "files": [
     {
       "path": "ARTIFACT_INDEX.json",
-      "bytes": 990533,
-      "sha256": "15fea0dc11e645fb24e87a05af322a555a335d5fc0870942ea8fcaf8c4df4783"
+      "bytes": 2471106,
+      "sha256": "31761fb06eb822c611b22e4e194992743443e32bfc63456bf73a2571cbbeeb9a"
     },
     {
       "path": "README.md",
-      "bytes": 2444,
-      "sha256": "65f57952e778162bb52123aa99d6caed6811dd0a5584cb516750529c4edb412c"
+      "bytes": 2583,
+      "sha256": "a952453b12ccd20d0b602934df85ad010044fea5128385394177d5ccbf892a15"
     },
     {
       "path": "artifacts/d1-01.tar.gz",
@@ -82,6 +85,16 @@
       "path": "artifacts/d3-feature-snapshot-01.tar.gz",
       "bytes": 10186099,
       "sha256": "d0e11c380932126245e50c8cbfb8d07a9fefda080fae99d21d8ad4a8faed76ed"
+    },
+    {
+      "path": "artifacts/d3-finite-01.tar.gz",
+      "bytes": 1004899,
+      "sha256": "5d3b35e6238149cfb6abeb12b7d4d7ec04b9da943e1d19a3c357bd4f45bb8697"
+    },
+    {
+      "path": "artifacts/d3-finite-old-01.tar.gz",
+      "bytes": 131689,
+      "sha256": "bde02b3a65cf40bf4140f4cb137032b12535d4657ec28424a875c0d38fd937b7"
     },
     {
       "path": "artifacts/d6-finished-subtasks-01.tar.gz",
@@ -339,14 +352,49 @@
       "sha256": "d1677b7fd008f318f94529e731d53e4328e3076120e3ab8e92c200e0a1f1969f"
     },
     {
+      "path": "stage4_d3/D3_FINITE_DISPATCH.json",
+      "bytes": 49365,
+      "sha256": "c23bbb34068e12002fc127d52247227aa8d21255777c5f798e023adfee1ab7e1"
+    },
+    {
+      "path": "stage4_d3/D3_FINITE_RAW_AUDIT_dual.json",
+      "bytes": 528048,
+      "sha256": "aed2706f0130b39e1d44242a1b9fc26596c01ae773860e03e6c79333f799c2ef"
+    },
+    {
+      "path": "stage4_d3/D3_FINITE_RAW_AUDIT_old.json",
+      "bytes": 144106,
+      "sha256": "0301bf5ec2224b037854f51459bac3de90b104be7dc6b7fab5c02caae42c68ae"
+    },
+    {
+      "path": "stage4_d3/D3_FINITE_TRANSPORT_AUDIT.json",
+      "bytes": 512,
+      "sha256": "3972a42130c46a2980afddf7886e1c2d630c0eb637754922ac03ed1731bcd16d"
+    },
+    {
       "path": "stage4_d3/FORECAST_INPUTS.json",
       "bytes": 8492,
       "sha256": "533718a48a0edaa2c01c13ae1507c58db4e1407ac74543d161172e82db11b8f1"
     },
     {
+      "path": "stage4_d3/FORECAST_LOCK_V3.json",
+      "bytes": 62785,
+      "sha256": "32765f0145ebcdde879a697917a7955e1c7df5b222257eb6f31f176d145e30ef"
+    },
+    {
+      "path": "stage4_d3/FORECAST_LOCK_V3.sha256",
+      "bytes": 88,
+      "sha256": "ac86f4a36adfa86b6f3e382694f72eb36bca63730529f22c682a46c7c21c5ebd"
+    },
+    {
       "path": "stage4_d3/FOURTEEN_SOURCE_POOL_AUDIT.json",
       "bytes": 5225,
       "sha256": "045fb9bb2422cce23a4245e0295518da4c95de712447bc56cba48a0bc71390ca"
+    },
+    {
+      "path": "stage4_d3/audit_raw_p4.py",
+      "bytes": 4183,
+      "sha256": "404195bcb7689f376e94578aaa0a17dbe87698ee757f2fe9e61487d92bb89cfb"
     }
   ]
 }
