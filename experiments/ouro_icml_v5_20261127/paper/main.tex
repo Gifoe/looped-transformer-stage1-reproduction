@@ -63,7 +63,7 @@ Given a frozen transformer with hidden dimension $d$ and an internal boundary hi
 where $u,w\in\mathbb{R}^d$ ($2d$ trainable parameters), $\alpha=0.45$, and $u$ is zero-initialized so the controller starts as the exact identity map. Crucially, unlike static activation steering $\Delta h = \alpha\,\mathrm{RMS}(h)\,u$ (CAA/RepE; \citealp{zou2023representation,rimsky2024steering}), Eq.~\eqref{eq:rank1} scales the write direction $u$ by the signed scalar projection $w^\top h$.
 
 \subsection{Centered vs.\ Uncentered $\Sigma_h$ Decomposition}
-Prior work observed high cosine alignment among learned read axes under the uncentered second moment $\Sigma_h = \mathbb{E}[hh^\top]$. To separate shared mean direction from centered state variance, we decompose $\Sigma_h = \mathrm{Cov}(h) + \mu\mu^\top$ on unlabeled WikiText tokens (`PART1_CENTERED_SIGMA_FULL16.json`).
+Prior work observed high cosine alignment among learned read axes under the uncentered second moment $\Sigma_h = \mathbb{E}[hh^\top]$. To separate shared mean direction from centered state variance, we decompose $\Sigma_h = \mathrm{Cov}(h) + \mu\mu^\top$ on unlabeled WikiText tokens.
 On \textsc{Ouro-1.4B} ($K=4$), $\mathrm{tr}(\Sigma_h)=666.64$ ($\mathrm{sr}=2.588$, top-1 $38.64\%$) while $\mathrm{tr}(\mathrm{Cov}(h))=453.97$ ($\mathrm{sr}=3.854$, top-1 $25.94\%$): the mean $\mu$ accounts for $\|\mu\|^2/\mathrm{tr}(\Sigma_h)=31.90\%$ of total energy and aligns $|\cos(v_1^{\mathrm{unc}},\mu)|=0.969$ with the top uncentered eigenvector.
 
 Auditing all 16 archived rank-only E0 controllers reveals a sharply asymmetric geometry:
@@ -99,10 +99,11 @@ Because the partition into Regimes I/II/III depends on $\theta$'s own knowledge 
 
 \subsection{Confidence-Weighted Hard Self-Distillation with NLL Trust Region}
 To train without human answer labels, we distill the frozen model's own order-debiased MC argmax $\hat{y}_i = \arg\max_c q_0^{\mathrm{MC}}(c\mid x_i)$ weighted by normalized confidence $\omega_i = \max(\epsilon,\, \frac{\max_c q_0^{\mathrm{MC}} - 1/m}{1 - 1/m})$ into the cloze logits $z_{\mathrm{Cloze}}(x_i; u,w)$, paired with a one-sided unlabeled WikiText NLL trust penalty:
-\begin{equation}
+\begin{align}
 \label{eq:loss}
-\mathcal{L}(u,w) = \frac{\sum_i \omega_i \left(-\log p_{\mathrm{Cloze}}(\hat{y}_i\mid x_i)\right)}{\sum_i \omega_i} + \lambda\,\max\!\left(0,\,\mathrm{NLL}_{\mathrm{wiki}}(u,w) - \mathrm{NLL}_{\mathrm{wiki}}(0) - \delta\right),
-\end{equation}
+\mathcal{L}(u,w) &= \frac{\sum_i \omega_i \left(-\log p_{\mathrm{Cloze}}(\hat{y}_i\mid x_i)\right)}{\sum_i \omega_i} \nonumber\\
+&\quad + \lambda\,\max\!\left(0,\,\mathrm{NLL}_{\mathrm{wiki}}(u,w) - \mathrm{NLL}_{\mathrm{wiki}}(0) - \delta\right),
+\end{align}
 with $\delta=0.02$ nats/token. We emphasize \textbf{two critical mechanistic findings} from our controlled ablations (Fig.~\ref{fig:fig2}b):
 \begin{enumerate}
 \item \textbf{Why hard confidence-weighted self-distillation outperforms human labels on high-Regime-III sources:} On ARC-Challenge (860 train items: 764 MC-correct with mean confidence $0.698$ vs.\ 96 MC-wrong with mean confidence $0.304$), \textsc{HardPseudo-ConfNoFloor} ($\epsilon=10^{-4}$, zero human labels) achieves $+8.42$ pp, \emph{matching} oracle Regime-II removal (\textsc{HumanGold-OnMCCorrect}, $+8.41$ pp) while outperforming uniform human labels ($+7.60$ pp). Training solely on the 96 wrong pseudo-labels still yields $+1.87$ pp (rather than collapsing like Regime-II human labels at $-15.49$ pp) because MC pseudo-labels remain self-consistent with $\theta$'s own internal equilibrium.
@@ -176,7 +177,7 @@ To test whether single-rank zero-label readout calibration is specific to looped
 
 \paragraph{Scaling and Recurrence Depth Compute Substitution ($K\in\{2,4,8\}$).}
 Across $K\in\{2,4,8\}$ on both \textsc{Ouro-1.4B} and 2$\times$-scale \textsc{Ouro-2.6B} (Table~\ref{tab:cross_arch}, Fig.~\ref{fig:fig4}b), two laws emerge with near-identical magnitudes across scales:
-(1) At $K=2$, $\Sigma_h$ is sharply mean-dominated ($\mathrm{sr}=1.39$--$1.40$, $\mu$-energy $59.8\%$--$62.9\%$) and native performance is low ($57.13\%$ / $61.56\%$); adding a 4,096-param zero-label controller yields $+13.64$ / $+13.53$ pp ($+19.50$ / $+19.16$ pp Cloze-3), reaching $70.77\%$ / $75.09\%$---**outperforming native $K=4$ ($65.62\%$ / $69.51\%$) by $+5.15$--$+5.58$ pp at half the recurrent compute**;
+(1) At $K=2$, $\Sigma_h$ is sharply mean-dominated ($\mathrm{sr}=1.39$--$1.40$, $\mu$-energy $59.8\%$--$62.9\%$) and native performance is low ($57.13\%$ / $61.56\%$); adding a 4,096-param zero-label controller yields $+13.64$ / $+13.53$ pp ($+19.50$ / $+19.16$ pp Cloze-3), reaching $70.77\%$ / $75.09\%$---\textbf{outperforming native $K=4$ ($65.62\%$ / $69.51\%$) by $+5.15$--$+5.58$ pp at half the recurrent compute};
 (2) Native \textsc{Ouro-2.6B} zero-label calibration ($+7.38$ pp; \textsc{FixW-MeanMu} $+8.24$ pp; Pareto $+6.61$ pp at $\Delta\mathrm{NLL}=+0.012$) outperforms zero-shot weight transfer from 1.4B ($+2.54$ pp) by $3\times$, and extrapolates cleanly to $K=8$ ($+6.66$ pp with $+1.22$ pp MMLU).
 
 \paragraph{Model-Conditioned Data Value and \textsc{Huginn-0125} ($K=32$) MMLU Cure.}
