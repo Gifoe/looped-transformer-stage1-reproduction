@@ -1,0 +1,75 @@
+{
+  "phase": "1C strict",
+  "model_sha256": "58872a72616c736595b8b7662079c5b12c5a162ec16eae94f21c348dfa9885af",
+  "runner_sha256": "539ac1a8ca1e7724bc2a738fbeca771563ad4618cf032d7c55e94120436f590f",
+  "common_sha256": "2020eb30caceaa3fb1fd099e533870597cdd0e8abe29666e00a8b8ce9d54cc5f",
+  "data_source_sha256": {
+    "/root/ouro-loop-aware-functional-identification-20261125/data/pools_complete/arc_challenge.jsonl": "a3ed38841e8af49d04be6977777b61bf91217dd37ea2c909f8bd1054b6a630da",
+    "/root/ouro-v3-controllability-20261126/stage0_env/PROSPECTIVE_TRAIN_DRAFT/medmcqa.jsonl": "2d5b1019a85a6d3656ea876f5694db6a7d8c5a91634a5f7a318c96d64ebf5ce2",
+    "/root/autodl-tmp/ouro-v4-cfit-20261126/cfit_14_features/regime3_samples/medmcqa.jsonl": "0598d883661d5a51b06a206c1959d76365546c1d6470aa3be0dbf66b86770516",
+    "/root/autodl-tmp/ouro-v4-cfit-20261126/handoff_codex/T5_TRAINING_LOCK.json": "8424d838570e0c40981f4fd701be673e8e2e164895aa9ca6c3e378c0fe59d24f"
+  },
+  "methods": [
+    "M0_InLoop_Rank1",
+    "M2_Learned_Constant",
+    "M3_SoftPrompt",
+    "M4_PostLoop_LMHead_Rank1",
+    "M5a_IA3_Last4",
+    "M5b_IA3_All",
+    "M6a_LoRA_LastO",
+    "M6b_LoRA_AllQV",
+    "M1a_CAA",
+    "M1b_RepE"
+  ],
+  "curve_alpha": [
+    0.05,
+    0.1,
+    0.2,
+    0.3,
+    0.45
+  ],
+  "rates": {
+    "M0_InLoop_Rank1": 0.001,
+    "M2_Learned_Constant": 0.001,
+    "M3_SoftPrompt": 0.003,
+    "M4_PostLoop_LMHead_Rank1": 0.001,
+    "M5a_IA3_Last4": 0.001,
+    "M5b_IA3_All": 0.001,
+    "M6a_LoRA_LastO": 0.001,
+    "M6b_LoRA_AllQV": 0.0003
+  },
+  "train_steps": 840,
+  "effective_batch": 4,
+  "depths": [
+    2,
+    3,
+    4
+  ],
+  "seeds": [
+    26112711,
+    26112712
+  ],
+  "ordered_draws_sha256": {
+    "S1.26112711": "3ac7343cd20b73c23558774e0ea53eedcf1681aaab5ba370ba58a4ccdacd8282",
+    "S1.26112712": "cbf9a6ba43ec0988c527a496b21c036ce11294256b3508271a362f870a02696c",
+    "S2.26112711": "f347adea714817d60b486ba5be6a0120c5ac799caeaa4d7bb0a101cf4a46199c",
+    "S2.26112712": "f02564ccaeb909842b2ee88f64040f13bb5bf10c5593024c75dfc11bd6a0d339",
+    "S3.26112711": "52bc4254fa74eb50ea0dc51a305d17d1a29a7377d00859f4d3157efd4dc46cb7",
+    "S3.26112712": "6e2361f15843f9439af2109484b8cc8a01904337d21cbd4870ad5eecf9ec0e87"
+  },
+  "s1_holdout_sha256": "d76e811d527a48603d8c9881341d348332cb9119b2e9f599ba1dd6886db2b5ed",
+  "s1_fit": 860,
+  "s1_val": 153,
+  "s2_full_source_sizes": {
+    "arc_challenge": 1013,
+    "social_iqa": 33183,
+    "obqa": 4491,
+    "race": 87719,
+    "scienceqa": 3518,
+    "piqa": 15296
+  },
+  "s3_random_512": "aa30f6ead89979ed42cc5d39c22d261760e4259304241833c2c787fb3d87f9b4",
+  "official_test_used": false,
+  "external_development_used_for_model_selection": false,
+  "dose_and_final_selection": "Same held-out ARC pseudolabel cohort; mean agreement across two frozen seeds; break ties by lower calibration NLL, then identifier."
+}

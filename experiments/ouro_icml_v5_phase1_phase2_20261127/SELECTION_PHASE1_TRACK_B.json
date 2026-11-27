@@ -1,0 +1,95 @@
+{
+  "status": "FROZEN_BEFORE_OFFICIAL_EVALUATION",
+  "development_only": true,
+  "rule": "S1 pseudo-label holdout only, two-seed mean agreement, lower cross entropy, each chosen from a different method family.",
+  "official_test_used": false,
+  "means": {
+    "M2_Learned_Constant": {
+      "agreement": 0.5718954248366013,
+      "cross_entropy": 1.6782279278286667
+    },
+    "M3_SoftPrompt": {
+      "agreement": 0.6503267973856208,
+      "cross_entropy": 1.3369970242400742
+    },
+    "M4_PostLoop_LMHead_Rank1": {
+      "agreement": 0.5816993464052287,
+      "cross_entropy": 1.7638194322204201
+    },
+    "M5a_IA3_Last4": {
+      "agreement": 0.630718954248366,
+      "cross_entropy": 1.4465265009347532
+    },
+    "M5b_IA3_All": {
+      "agreement": 0.7450980392156863,
+      "cross_entropy": 0.9801487383253794
+    },
+    "M6a_LoRA_LastO": {
+      "agreement": 0.7320261437908497,
+      "cross_entropy": 1.3042744081349356
+    },
+    "M6b_LoRA_AllQV": {
+      "agreement": 0.7483660130718954,
+      "cross_entropy": 1.4758598736463229
+    },
+    "M1a_CAA": {
+      "agreement": 0.5065359477124183,
+      "cross_entropy": 2.0373909921796765
+    },
+    "M1b_RepE": {
+      "agreement": 0.5,
+      "cross_entropy": 2.0354636949658644
+    }
+  },
+  "provenance": {
+    "S1.M0_InLoop_Rank1.s26112711.json": "e84c9752590e6718c8e4674dab2444b142af090ee3248d823e76426fad7f975d",
+    "S1.M0_InLoop_Rank1.s26112712.json": "6c0d310d1cb374d490b3853890cb451c20e728b358714d8e8891d5f34139e488",
+    "S1.M2_Learned_Constant.s26112711.json": "64f17cf260cea671c2a6d7ba9739a40cc39e1c9bc47cede3ccb3347db6b64723",
+    "S1.M2_Learned_Constant.s26112712.json": "dc3a84b9859921e2828ed8022f939727fd2c5f201afb919674af38230adcd879",
+    "S1.M3_SoftPrompt.s26112711.json": "61b68e90c7df0a3ea60efd79e6600df9e1ce5d7fb10dd5658a517b8698bf5450",
+    "S1.M3_SoftPrompt.s26112712.json": "27cd1f8b5c5b8fd3c387561e8fd43d36b578b9be7067fcecde35526a36bf9f65",
+    "S1.M4_PostLoop_LMHead_Rank1.s26112711.json": "e7f16f13a1fc1a8224711cf1be31ae445dd8d052a3a5072bd57c2204882722ba",
+    "S1.M4_PostLoop_LMHead_Rank1.s26112712.json": "0472345ce7a165ecc184ea81f87810c25f62fcf13281a214f453b394d7001129",
+    "S1.M5a_IA3_Last4.s26112711.json": "f152d1e24d0b9fd0d68fc9b49e6b1824b5d2721d7edf15328b33f5d0ff450d76",
+    "S1.M5a_IA3_Last4.s26112712.json": "b2726dcd5f6250f71d4aae7c2b99f08bccb69cb093c529851bd2105177a343cf",
+    "S1.M5b_IA3_All.s26112711.json": "f043275adffe8daf33d9887ceafc0295280dfca5e71067f76ddb3bcd17618a15",
+    "S1.M5b_IA3_All.s26112712.json": "5bf3074d75fe5ee315913d4e639171e57b27275fde91ab12e80b8b94b616e0e6",
+    "S1.M6a_LoRA_LastO.s26112711.json": "505a46d51086081cd0ad5a57d32b71e18707ec39c05837fee94e8bb2e68ddf2c",
+    "S1.M6a_LoRA_LastO.s26112712.json": "3c8c8c232915777e46ed27e8b53f478e5046b9915c3f54a3697bb5c7cf6702b9",
+    "S1.M6b_LoRA_AllQV.s26112711.json": "c42906f36337130110b5cc9fc87c21e0e254b76786cd375faf8f1a75dd387fc9",
+    "S1.M6b_LoRA_AllQV.s26112712.json": "9454eddde4f91f0cce32835ecede9cb4d9901ebe47a9589752d001d6f6fb2c7f",
+    "S1.M1a_CAA.s26112711.json": "68c7e64380b9e18906c66eeb49fda60e5f7a4b3ecd673cb5b9e474a02a5352a9",
+    "S1.M1a_CAA.s26112712.json": "5855df999ee2b672bbe2d75df9f396a53b6bf01d80f0eec45e53fa97d26d3b32",
+    "S1.M1b_RepE.s26112711.json": "1b42fe6856bd011ab05a421e5a5aacfa63176dfe14c434540098964f74d5a209",
+    "S1.M1b_RepE.s26112712.json": "a7cbbd75fd2968f1f841e0eda53c224a3409899a80912d09402ce0f767af4623"
+  },
+  "candidates": {
+    "M6b_LoRA_AllQV": {
+      "controller": "/root/autodl-tmp/ouro-v5-icml-phase1-20261127/track_b_baselines/S1.M6b_LoRA_AllQV.s26112711.pt",
+      "controller_sha256": "9ce2ccd7893be319977ac80d4002f9123e83f1f0b68cfb53a2512dc41eb30197",
+      "method": "M6b_LoRA_AllQV",
+      "seed": 26112711,
+      "development": "/root/autodl-tmp/ouro-v5-icml-phase1-20261127/track_b_baselines/S1.M6b_LoRA_AllQV.s26112711.json",
+      "development_sha256": "c42906f36337130110b5cc9fc87c21e0e254b76786cd375faf8f1a75dd387fc9",
+      "training": "/root/autodl-tmp/ouro-v5-icml-phase1-20261127/track_b_baselines/S1.M6b_LoRA_AllQV.s26112711.json",
+      "training_sha256": "c42906f36337130110b5cc9fc87c21e0e254b76786cd375faf8f1a75dd387fc9",
+      "historical": "/root/autodl-tmp/ouro-v5-icml-phase1-20261127/track_b_baselines/S1.M6b_LoRA_AllQV.s26112711.json",
+      "historical_sha256": "c42906f36337130110b5cc9fc87c21e0e254b76786cd375faf8f1a75dd387fc9"
+    },
+    "M5b_IA3_All": {
+      "controller": "/root/autodl-tmp/ouro-v5-icml-phase1-20261127/track_b_baselines/S1.M5b_IA3_All.s26112711.pt",
+      "controller_sha256": "38ac7b8f5d1043a28e5cc7d5372ce3bd59e5bfeb2c34b3a84464e7139e6606fb",
+      "method": "M5b_IA3_All",
+      "seed": 26112711,
+      "development": "/root/autodl-tmp/ouro-v5-icml-phase1-20261127/track_b_baselines/S1.M5b_IA3_All.s26112711.json",
+      "development_sha256": "f043275adffe8daf33d9887ceafc0295280dfca5e71067f76ddb3bcd17618a15",
+      "training": "/root/autodl-tmp/ouro-v5-icml-phase1-20261127/track_b_baselines/S1.M5b_IA3_All.s26112711.json",
+      "training_sha256": "f043275adffe8daf33d9887ceafc0295280dfca5e71067f76ddb3bcd17618a15",
+      "historical": "/root/autodl-tmp/ouro-v5-icml-phase1-20261127/track_b_baselines/S1.M5b_IA3_All.s26112711.json",
+      "historical_sha256": "f043275adffe8daf33d9887ceafc0295280dfca5e71067f76ddb3bcd17618a15"
+    }
+  },
+  "env_sha256": "68dcfb4b952665e82947437a95f1eef735c9bf70cfea52f63186cd091a36da43",
+  "protocol_sha256": "15021872b53c9f6b54f3484b3b82ef6ed33edf5f30fbe9027919feb7d002e885",
+  "runner_sha256": "87f892d21f6db6285bac8f50098d5e522eee00f17c01119da318bc7b35242a99"
+}

@@ -1,0 +1,231 @@
+Loaded Dev Suite: sciq_val=500, arc_easy_val=536, cosmosqa_val=500, mmlu_val=658
+
+================ MODULE 1: QWEN2.5-1.5B (NON-RECURRENT CONTROL) ================
+  Qwen2.5-1.5B Native: Clz3=54.53% MMLU=60.33% Mac4=55.98% NLL=2.950
+  [Qwen Sigma layer_7  ] top1_unc= 99.7% sr_unc=1.00 | top1_cent= 99.8% sr_cent=1.00 | mu_frac=  0.6% | cos(v1,mu)=0.948
+  [Qwen Sigma layer_14 ] top1_unc= 99.5% sr_unc=1.00 | top1_cent= 99.7% sr_cent=1.00 | mu_frac=  0.8% | cos(v1,mu)=0.903
+  [Qwen Sigma layer_21 ] top1_unc= 98.9% sr_unc=1.01 | top1_cent= 99.3% sr_cent=1.01 | mu_frac=  1.0% | cos(v1,mu)=0.814
+  [Qwen Sigma layer_24 ] top1_unc= 96.4% sr_unc=1.04 | top1_cent= 97.9% sr_cent=1.02 | mu_frac=  2.5% | cos(v1,mu)=0.632
+  [Qwen Sigma layer_26 ] top1_unc= 92.6% sr_unc=1.08 | top1_cent= 96.3% sr_cent=1.04 | mu_frac=  5.3% | cos(v1,mu)=0.535
+  [Qwen Sigma post_norm] top1_unc= 72.6% sr_unc=1.38 | top1_cent= 22.1% sr_cent=4.53 | mu_frac= 66.4% | cos(v1,mu)=0.999
+  [Qwen CFIT arc_challenge ] MC= 82.5% Clz= 44.5% gap=+38.0 R3=41.5% R2=17.5%
+  [Qwen CFIT obqa          ] MC= 78.0% Clz= 41.5% gap=+36.5 R3=44.5% R2=22.0%
+  [Qwen CFIT qasc          ] MC= 48.5% Clz= 23.5% gap=+25.0 R3=32.0% R2=51.5%
+  [Qwen CFIT scienceqa     ] MC= 80.5% Clz= 68.0% gap=+12.5 R3=21.0% R2=19.5%
+  [Qwen CFIT race          ] MC= 81.5% Clz= 51.5% gap=+30.0 R3=35.0% R2=18.5%
+  [Qwen CFIT csqa          ] MC= 70.0% Clz= 44.0% gap=+26.0 R3=35.0% R2=30.0%
+  [Qwen CFIT boolq         ] MC= 74.5% Clz= 72.5% gap= +2.0 R3= 7.0% R2=25.5%
+  [Qwen CFIT medmcqa       ] MC= 50.5% Clz= 30.0% gap=+20.5 R3=32.5% R2=49.5%
+  [Qwen2.5-1.5B | S0_ARC_HumanGold_L21_3072] step=186/560 loss=2.2133 elapsed=21.5s
+  [Qwen2.5-1.5B | S0_ARC_HumanGold_L21_3072] step=372/560 loss=1.7878 elapsed=42.7s
+  [Qwen2.5-1.5B | S0_ARC_HumanGold_L21_3072] step=558/560 loss=1.6122 elapsed=64.0s
+  [Qwen2.5-1.5B | S0_ARC_HumanGold_L21_3072] step=560/560 loss=1.6016 elapsed=64.2s
+  => [Qwen] S0_ARC_HumanGold_L21_3072              P=3072 dMac4= +4.62 dClz3= +5.85 dMMLU=+0.91 dNLL=+0.113
+  [Qwen2.5-1.5B | S0_ARC_HumanGold_L21_3072_s2] step=186/560 loss=2.0168 elapsed=21.3s
+  [Qwen2.5-1.5B | S0_ARC_HumanGold_L21_3072_s2] step=372/560 loss=1.7911 elapsed=42.7s
+  [Qwen2.5-1.5B | S0_ARC_HumanGold_L21_3072_s2] step=558/560 loss=1.5090 elapsed=63.9s
+  [Qwen2.5-1.5B | S0_ARC_HumanGold_L21_3072_s2] step=560/560 loss=1.5059 elapsed=64.2s
+  => [Qwen] S0_ARC_HumanGold_L21_3072_s2           P=3072 dMac4= +6.73 dClz3= +8.57 dMMLU=+1.22 dNLL=+0.120
+  [Qwen2.5-1.5B | S1_ARC_ZeroLabel_L21_3072] step=186/560 loss=2.1458 elapsed=20.1s
+  [Qwen2.5-1.5B | S1_ARC_ZeroLabel_L21_3072] step=372/560 loss=1.4976 elapsed=41.5s
+  [Qwen2.5-1.5B | S1_ARC_ZeroLabel_L21_3072] step=558/560 loss=1.6429 elapsed=63.1s
+  [Qwen2.5-1.5B | S1_ARC_ZeroLabel_L21_3072] step=560/560 loss=1.6527 elapsed=63.3s
+  => [Qwen] S1_ARC_ZeroLabel_L21_3072              P=3072 dMac4= +4.49 dClz3= +6.04 dMMLU=-0.15 dNLL=+0.123
+  [Qwen2.5-1.5B | S1_ARC_ZeroLabel_L21_3072_s2] step=186/560 loss=1.9986 elapsed=16.5s
+  [Qwen2.5-1.5B | S1_ARC_ZeroLabel_L21_3072_s2] step=372/560 loss=1.4501 elapsed=28.3s
+  [Qwen2.5-1.5B | S1_ARC_ZeroLabel_L21_3072_s2] step=558/560 loss=1.3877 elapsed=40.3s
+  [Qwen2.5-1.5B | S1_ARC_ZeroLabel_L21_3072_s2] step=560/560 loss=1.4526 elapsed=40.4s
+  => [Qwen] S1_ARC_ZeroLabel_L21_3072_s2           P=3072 dMac4= +5.24 dClz3= +7.14 dMMLU=-0.46 dNLL=+0.073
+  [Qwen2.5-1.5B | S1_ARC_FixW_MeanMu_L21_1536] step=186/560 loss=1.7486 elapsed=20.8s
+  [Qwen2.5-1.5B | S1_ARC_FixW_MeanMu_L21_1536] step=372/560 loss=1.7118 elapsed=36.7s
+  [Qwen2.5-1.5B | S1_ARC_FixW_MeanMu_L21_1536] step=558/560 loss=1.4770 elapsed=49.3s
+  [Qwen2.5-1.5B | S1_ARC_FixW_MeanMu_L21_1536] step=560/560 loss=1.4342 elapsed=49.5s
+  => [Qwen] S1_ARC_FixW_MeanMu_L21_1536            P=1536 dMac4= +3.06 dClz3= +4.63 dMMLU=-1.67 dNLL=+0.660
+  [Qwen2.5-1.5B | S1_ARC_FixW_Random_L21_1536] step=186/560 loss=2.0674 elapsed=14.1s
+  [Qwen2.5-1.5B | S1_ARC_FixW_Random_L21_1536] step=372/560 loss=1.8347 elapsed=35.0s
+  [Qwen2.5-1.5B | S1_ARC_FixW_Random_L21_1536] step=558/560 loss=2.5547 elapsed=53.6s
+  [Qwen2.5-1.5B | S1_ARC_FixW_Random_L21_1536] step=560/560 loss=2.5614 elapsed=53.7s
+  => [Qwen] S1_ARC_FixW_Random_L21_1536            P=1536 dMac4= +0.08 dClz3= +0.06 dMMLU=+0.15 dNLL=+0.021
+  [Qwen2.5-1.5B | S1_ARC_ZeroLabel_Pareto_L21_lam100] step=186/560 loss=2.1355 elapsed=16.7s
+  [Qwen2.5-1.5B | S1_ARC_ZeroLabel_Pareto_L21_lam100] step=372/560 loss=1.7478 elapsed=41.0s
+  [Qwen2.5-1.5B | S1_ARC_ZeroLabel_Pareto_L21_lam100] step=558/560 loss=1.1390 elapsed=66.6s
+  [Qwen2.5-1.5B | S1_ARC_ZeroLabel_Pareto_L21_lam100] step=560/560 loss=1.2186 elapsed=66.9s
+  => [Qwen] S1_ARC_ZeroLabel_Pareto_L21_lam100     P=3072 dMac4= +4.41 dClz3= +6.03 dMMLU=-0.46 dNLL=+0.013
+  [Qwen2.5-1.5B | S1_ARC_ZeroLabel_L07_3072] step=186/560 loss=1.8570 elapsed=28.1s
+  [Qwen2.5-1.5B | S1_ARC_ZeroLabel_L07_3072] step=372/560 loss=1.3621 elapsed=56.4s
+  [Qwen2.5-1.5B | S1_ARC_ZeroLabel_L07_3072] step=558/560 loss=1.2328 elapsed=85.1s
+  [Qwen2.5-1.5B | S1_ARC_ZeroLabel_L07_3072] step=560/560 loss=1.2066 elapsed=85.5s
+  => [Qwen] S1_ARC_ZeroLabel_L07_3072              P=3072 dMac4= +6.45 dClz3= +8.45 dMMLU=+0.46 dNLL=+0.042
+  [Qwen2.5-1.5B | S1_ARC_ZeroLabel_L14_3072] step=186/560 loss=1.5320 elapsed=26.7s
+  [Qwen2.5-1.5B | S1_ARC_ZeroLabel_L14_3072] step=372/560 loss=1.0078 elapsed=53.2s
+  [Qwen2.5-1.5B | S1_ARC_ZeroLabel_L14_3072] step=558/560 loss=1.1146 elapsed=80.2s
+  [Qwen2.5-1.5B | S1_ARC_ZeroLabel_L14_3072] step=560/560 loss=1.1255 elapsed=80.4s
+  => [Qwen] S1_ARC_ZeroLabel_L14_3072              P=3072 dMac4=+11.40 dClz3=+16.01 dMMLU=-2.43 dNLL=+0.132
+  [Qwen2.5-1.5B | S1_ARC_ZeroLabel_L26_3072] step=186/560 loss=1.8614 elapsed=11.8s
+  [Qwen2.5-1.5B | S1_ARC_ZeroLabel_L26_3072] step=372/560 loss=1.4831 elapsed=23.7s
+  [Qwen2.5-1.5B | S1_ARC_ZeroLabel_L26_3072] step=558/560 loss=1.2630 elapsed=36.1s
+  [Qwen2.5-1.5B | S1_ARC_ZeroLabel_L26_3072] step=560/560 loss=1.2967 elapsed=36.2s
+  => [Qwen] S1_ARC_ZeroLabel_L26_3072              P=3072 dMac4= +1.77 dClz3= +1.96 dMMLU=+1.22 dNLL=+0.216
+  [Qwen2.5-1.5B | S1_ARC_ZeroLabel_PostNorm_LMHead_3072] step=186/560 loss=2.0047 elapsed=8.2s
+  [Qwen2.5-1.5B | S1_ARC_ZeroLabel_PostNorm_LMHead_3072] step=372/560 loss=1.9055 elapsed=16.5s
+  [Qwen2.5-1.5B | S1_ARC_ZeroLabel_PostNorm_LMHead_3072] step=558/560 loss=1.2939 elapsed=24.8s
+  [Qwen2.5-1.5B | S1_ARC_ZeroLabel_PostNorm_LMHead_3072] step=560/560 loss=1.2740 elapsed=24.9s
+  => [Qwen] S1_ARC_ZeroLabel_PostNorm_LMHead_3072  P=3072 dMac4= +0.37 dClz3= +0.14 dMMLU=+1.06 dNLL=+0.409
+  [Qwen2.5-1.5B | S3_MedMCQA_HumanGold_L21_3072] step=186/560 loss=4.7921 elapsed=21.3s
+  [Qwen2.5-1.5B | S3_MedMCQA_HumanGold_L21_3072] step=372/560 loss=3.7171 elapsed=39.2s
+  [Qwen2.5-1.5B | S3_MedMCQA_HumanGold_L21_3072] step=558/560 loss=3.1719 elapsed=60.5s
+  [Qwen2.5-1.5B | S3_MedMCQA_HumanGold_L21_3072] step=560/560 loss=3.1522 elapsed=60.7s
+  => [Qwen] S3_MedMCQA_HumanGold_L21_3072          P=3072 dMac4= -2.84 dClz3= -3.28 dMMLU=-1.52 dNLL=+0.079
+  [Qwen2.5-1.5B | S3_MedMCQA_ZeroLabel_L21_3072] step=186/560 loss=3.9598 elapsed=21.3s
+  [Qwen2.5-1.5B | S3_MedMCQA_ZeroLabel_L21_3072] step=372/560 loss=3.3312 elapsed=42.6s
+  [Qwen2.5-1.5B | S3_MedMCQA_ZeroLabel_L21_3072] step=558/560 loss=2.5606 elapsed=63.3s
+  [Qwen2.5-1.5B | S3_MedMCQA_ZeroLabel_L21_3072] step=560/560 loss=2.5550 elapsed=63.5s
+  => [Qwen] S3_MedMCQA_ZeroLabel_L21_3072          P=3072 dMac4= -3.07 dClz3= -3.68 dMMLU=-1.22 dNLL=+0.066
+
+================ MODULE 2: OURO-2.6B (SCALING + K={2,4,8} + CFIT 8 SOURCES) ================
+  [Ouro-2.6B | ZeroLabel_K2] step=140/420 loss=0.9723 elapsed=36.7s
+  [Ouro-2.6B | ZeroLabel_K2] step=280/420 loss=0.7245 elapsed=73.3s
+  [Ouro-2.6B | ZeroLabel_K2] step=420/420 loss=0.5566 elapsed=110.7s
+  [Ouro-2.6B K2] sr_unc=1.40 mu_f=59.8% | ARC gap=+40.0 | Nat Mac4=61.56% -> dMac4=+13.53 dClz3=+19.16 dMMLU=-3.34
+  [Ouro-2.6B | ZeroLabel_K4] step=140/420 loss=0.7876 elapsed=54.2s
+  [Ouro-2.6B | ZeroLabel_K4] step=280/420 loss=0.7940 elapsed=107.7s
+  [Ouro-2.6B | ZeroLabel_K4] step=420/420 loss=0.5205 elapsed=161.1s
+  [Ouro-2.6B K4] sr_unc=2.82 mu_f=27.2% | ARC gap=+29.5 | Nat Mac4=69.51% -> dMac4=+6.34 dClz3=+9.77 dMMLU=-3.95
+  [Ouro-2.6B | ZeroLabel_K8] step=140/420 loss=0.9350 elapsed=87.2s
+  [Ouro-2.6B | ZeroLabel_K8] step=280/420 loss=0.7295 elapsed=174.0s
+  [Ouro-2.6B | ZeroLabel_K8] step=420/420 loss=0.9301 elapsed=261.4s
+  [Ouro-2.6B K8] sr_unc=2.79 mu_f=26.8% | ARC gap=+33.0 | Nat Mac4=67.79% -> dMac4=+6.66 dClz3=+8.47 dMMLU=+1.22
+  => [Ouro-2.6B Transfer 1.4B] dMac4=+2.54 dClz3=+3.53 dMMLU=-0.46
+  [Ouro-2.6B | Ouro26B_S0_ARC_HumanGold_4096] step=186/560 loss=1.5107 elapsed=59.8s
+  [Ouro-2.6B | Ouro26B_S0_ARC_HumanGold_4096] step=372/560 loss=1.1265 elapsed=120.9s
+  [Ouro-2.6B | Ouro26B_S0_ARC_HumanGold_4096] step=558/560 loss=0.7553 elapsed=180.7s
+  [Ouro-2.6B | Ouro26B_S0_ARC_HumanGold_4096] step=560/560 loss=0.8390 elapsed=181.3s
+  => [Ouro-2.6B] Ouro26B_S0_ARC_HumanGold_4096        P=4096 dMac4= +9.05 dClz3=+12.87 dMMLU=-2.43 dNLL=+0.325
+  [Ouro-2.6B | Ouro26B_S1_ARC_ZeroLabel_4096] step=186/560 loss=0.7672 elapsed=60.1s
+  [Ouro-2.6B | Ouro26B_S1_ARC_ZeroLabel_4096] step=372/560 loss=0.8714 elapsed=119.9s
+  [Ouro-2.6B | Ouro26B_S1_ARC_ZeroLabel_4096] step=558/560 loss=0.5867 elapsed=180.0s
+  [Ouro-2.6B | Ouro26B_S1_ARC_ZeroLabel_4096] step=560/560 loss=0.5771 elapsed=180.6s
+  => [Ouro-2.6B] Ouro26B_S1_ARC_ZeroLabel_4096        P=4096 dMac4= +7.38 dClz3=+11.26 dMMLU=-4.26 dNLL=+0.230
+  [Ouro-2.6B | Ouro26B_S1_ARC_FixW_MeanMu_2048] step=186/560 loss=1.2614 elapsed=60.6s
+  [Ouro-2.6B | Ouro26B_S1_ARC_FixW_MeanMu_2048] step=372/560 loss=0.7141 elapsed=120.1s
+  [Ouro-2.6B | Ouro26B_S1_ARC_FixW_MeanMu_2048] step=558/560 loss=0.7999 elapsed=180.5s
+  [Ouro-2.6B | Ouro26B_S1_ARC_FixW_MeanMu_2048] step=560/560 loss=0.8007 elapsed=181.1s
+  => [Ouro-2.6B] Ouro26B_S1_ARC_FixW_MeanMu_2048      P=2048 dMac4= +8.24 dClz3=+11.69 dMMLU=-2.13 dNLL=+0.650
+  [Ouro-2.6B | Ouro26B_S1_ARC_Pareto_lam100_4096] step=186/560 loss=0.7409 elapsed=78.1s
+  [Ouro-2.6B | Ouro26B_S1_ARC_Pareto_lam100_4096] step=372/560 loss=0.6512 elapsed=153.0s
+  [Ouro-2.6B | Ouro26B_S1_ARC_Pareto_lam100_4096] step=558/560 loss=0.5532 elapsed=227.0s
+  [Ouro-2.6B | Ouro26B_S1_ARC_Pareto_lam100_4096] step=560/560 loss=0.4755 elapsed=227.7s
+  => [Ouro-2.6B] Ouro26B_S1_ARC_Pareto_lam100_4096    P=4096 dMac4= +6.61 dClz3= +9.42 dMMLU=-1.82 dNLL=+0.012
+  [Ouro-2.6B | Ouro26B_S3_MedMCQA_ZeroLabel_4096] step=186/560 loss=3.7119 elapsed=60.0s
+  [Ouro-2.6B | Ouro26B_S3_MedMCQA_ZeroLabel_4096] step=372/560 loss=3.3510 elapsed=121.5s
+  [Ouro-2.6B | Ouro26B_S3_MedMCQA_ZeroLabel_4096] step=558/560 loss=3.8575 elapsed=182.4s
+  [Ouro-2.6B | Ouro26B_S3_MedMCQA_ZeroLabel_4096] step=560/560 loss=3.6563 elapsed=182.9s
+  => [Ouro-2.6B] Ouro26B_S3_MedMCQA_ZeroLabel_4096    P=4096 dMac4= -0.52 dClz3= -0.49 dMMLU=-0.61 dNLL=+0.128
+  [Ouro-2.6B CFIT arc_challenge ] MC= 94.0% Clz= 64.5% gap=+29.5 R3=31.0% R2= 6.0%
+  [Ouro-2.6B | Src_arc_challenge] step=160/480 loss=1.0738 elapsed=50.6s
+  [Ouro-2.6B | Src_arc_challenge] step=320/480 loss=0.8834 elapsed=102.8s
+  [Ouro-2.6B | Src_arc_challenge] step=480/480 loss=0.7862 elapsed=154.8s
+  => [Ouro-2.6B V(arc_challenge)] dMac4= +7.87 dClz3=+11.15 dMMLU=-1.98 dNLL=+0.262
+  [Ouro-2.6B CFIT obqa          ] MC= 94.5% Clz= 48.5% gap=+46.0 R3=47.5% R2= 5.5%
+  [Ouro-2.6B | Src_obqa] step=160/480 loss=2.7989 elapsed=49.3s
+  [Ouro-2.6B | Src_obqa] step=320/480 loss=2.2129 elapsed=98.9s
+  [Ouro-2.6B | Src_obqa] step=480/480 loss=1.9706 elapsed=151.0s
+  => [Ouro-2.6B V(obqa         )] dMac4= +5.33 dClz3= +7.82 dMMLU=-2.13 dNLL=+0.225
+  [Ouro-2.6B CFIT qasc          ] MC= 55.5% Clz= 40.0% gap=+15.5 R3=24.0% R2=44.5%
+  [Ouro-2.6B | Src_qasc] step=160/480 loss=4.2418 elapsed=50.2s
+  [Ouro-2.6B | Src_qasc] step=320/480 loss=3.1462 elapsed=101.0s
+  [Ouro-2.6B | Src_qasc] step=480/480 loss=2.5492 elapsed=150.8s
+  => [Ouro-2.6B V(qasc         )] dMac4= +1.14 dClz3= +2.33 dMMLU=-2.43 dNLL=+0.081
+  [Ouro-2.6B CFIT scienceqa     ] MC= 89.0% Clz= 71.0% gap=+18.0 R3=22.5% R2=11.0%
+  [Ouro-2.6B | Src_scienceqa] step=160/480 loss=0.9979 elapsed=50.1s
+  [Ouro-2.6B | Src_scienceqa] step=320/480 loss=0.8272 elapsed=101.2s
+  [Ouro-2.6B | Src_scienceqa] step=480/480 loss=0.5187 elapsed=152.1s
+  => [Ouro-2.6B V(scienceqa    )] dMac4= +4.00 dClz3= +6.35 dMMLU=-3.04 dNLL=+0.338
+  [Ouro-2.6B CFIT race          ] MC= 90.5% Clz= 53.0% gap=+37.5 R3=38.5% R2= 9.5%
+  [Ouro-2.6B | Src_race] step=160/480 loss=3.9629 elapsed=250.2s
+  [Ouro-2.6B | Src_race] step=320/480 loss=3.5229 elapsed=506.8s
+  [Ouro-2.6B | Src_race] step=480/480 loss=6.5886 elapsed=761.7s
+  => [Ouro-2.6B V(race         )] dMac4= +4.52 dClz3= +6.83 dMMLU=-2.43 dNLL=+0.030
+  [Ouro-2.6B CFIT csqa          ] MC= 74.5% Clz= 50.0% gap=+24.5 R3=32.5% R2=25.5%
+  [Ouro-2.6B | Src_csqa] step=160/480 loss=2.5762 elapsed=50.2s
+  [Ouro-2.6B | Src_csqa] step=320/480 loss=2.3859 elapsed=99.5s
+  [Ouro-2.6B | Src_csqa] step=480/480 loss=1.6102 elapsed=149.2s
+  => [Ouro-2.6B V(csqa         )] dMac4= +3.35 dClz3= +5.78 dMMLU=-3.95 dNLL=+0.794
+  [Ouro-2.6B CFIT boolq         ] MC= 91.0% Clz= 68.0% gap=+23.0 R3=24.5% R2= 9.0%
+  [Ouro-2.6B | Src_boolq] step=160/480 loss=2.7863 elapsed=70.2s
+  [Ouro-2.6B | Src_boolq] step=320/480 loss=1.6365 elapsed=141.2s
+  [Ouro-2.6B | Src_boolq] step=480/480 loss=0.4363 elapsed=211.9s
+  => [Ouro-2.6B V(boolq        )] dMac4= +0.97 dClz3= +1.65 dMMLU=-1.06 dNLL=+0.012
+  [Ouro-2.6B CFIT medmcqa       ] MC= 60.0% Clz= 37.0% gap=+23.0 R3=31.5% R2=40.0%
+  [Ouro-2.6B | Src_medmcqa] step=160/480 loss=4.9000 elapsed=51.8s
+  [Ouro-2.6B | Src_medmcqa] step=320/480 loss=4.0548 elapsed=103.4s
+  [Ouro-2.6B | Src_medmcqa] step=480/480 loss=4.2744 elapsed=149.3s
+  => [Ouro-2.6B V(medmcqa      )] dMac4= -1.49 dClz3= -0.32 dMMLU=-5.02 dNLL=+0.273
+  Ouro-2.6B 8-Source CFIT Spearman: {
+  "regime3_frac_vs_gain": 0.3333333333333333,
+  "mc_minus_cloze_vs_gain": 0.6428571428571429,
+  "neg_regime2_vs_gain": 0.6904761904761905,
+  "neg_dnll_vs_gain": -0.047619047619047616
+}
+
+================ MODULE 3: HUGINN-0125 (K=32, d=5280, CROSS-ARCH LOOPED) ================
+Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]Loading checkpoint shards:  25%|██▌       | 1/4 [00:00<00:02,  1.05it/s]Loading checkpoint shards:  50%|█████     | 2/4 [00:01<00:01,  1.09it/s]Loading checkpoint shards:  75%|███████▌  | 3/4 [00:02<00:00,  1.07it/s]Loading checkpoint shards: 100%|██████████| 4/4 [00:03<00:00,  1.49it/s]Loading checkpoint shards: 100%|██████████| 4/4 [00:03<00:00,  1.30it/s]
+  Huginn-0125 K32 Native: Clz3=52.22% MMLU=25.38% Mac4=45.51% NLL=3.048
+  [Huginn Sigma K32] top1_unc=  3.1% sr_unc=32.08 | top1_cent=  1.6% sr_cent=63.17 | mu_frac=  2.8% | cos(v1,mu)=0.981
+  [Huginn CFIT arc_challenge ] MC= 53.3% Clz= 46.7% gap= +6.7 R3=27.5% R2=46.7%
+  [Huginn CFIT obqa          ] MC= 38.3% Clz= 40.0% gap= -1.7 R3=18.3% R2=61.7%
+  [Huginn CFIT qasc          ] MC= 18.3% Clz= 29.2% gap=-10.8 R3=11.7% R2=81.7%
+  [Huginn CFIT scienceqa     ] MC= 52.5% Clz= 57.5% gap= -5.0 R3=20.0% R2=47.5%
+  [Huginn CFIT race          ] MC= 72.5% Clz= 47.5% gap=+25.0 R3=30.8% R2=27.5%
+  [Huginn CFIT csqa          ] MC= 36.7% Clz= 40.8% gap= -4.2 R3=17.5% R2=63.3%
+  [Huginn CFIT boolq         ] MC= 46.7% Clz= 66.7% gap=-20.0 R3=11.7% R2=53.3%
+  [Huginn CFIT medmcqa       ] MC= 25.8% Clz= 31.7% gap= -5.8 R3=15.8% R2=74.2%
+  [huginn-0125 | Huginn_S0_ARC_HumanGold_10560] step=93/280 loss=2.3048 elapsed=47.8s
+  [huginn-0125 | Huginn_S0_ARC_HumanGold_10560] step=186/280 loss=1.8682 elapsed=95.2s
+  [huginn-0125 | Huginn_S0_ARC_HumanGold_10560] step=279/280 loss=2.0310 elapsed=144.1s
+  [huginn-0125 | Huginn_S0_ARC_HumanGold_10560] step=280/280 loss=2.0509 elapsed=144.3s
+  => [Huginn] Huginn_S0_ARC_HumanGold_10560        P=10560 dMac4= +2.04 dClz3= +3.43 dMMLU=-2.13 dNLL=+0.020
+  [huginn-0125 | Huginn_S1_ARC_ZeroLabel_10560] step=93/280 loss=2.3277 elapsed=48.5s
+  [huginn-0125 | Huginn_S1_ARC_ZeroLabel_10560] step=186/280 loss=1.9363 elapsed=94.9s
+  [huginn-0125 | Huginn_S1_ARC_ZeroLabel_10560] step=279/280 loss=1.6084 elapsed=143.4s
+  [huginn-0125 | Huginn_S1_ARC_ZeroLabel_10560] step=280/280 loss=1.6111 elapsed=143.6s
+  => [Huginn] Huginn_S1_ARC_ZeroLabel_10560        P=10560 dMac4= +3.24 dClz3= +3.56 dMMLU=+2.28 dNLL=+0.026
+  [huginn-0125 | Huginn_S1_ARC_FixW_MeanMu_5280] step=93/280 loss=2.3955 elapsed=48.9s
+  [huginn-0125 | Huginn_S1_ARC_FixW_MeanMu_5280] step=186/280 loss=1.8423 elapsed=96.6s
+  [huginn-0125 | Huginn_S1_ARC_FixW_MeanMu_5280] step=279/280 loss=2.0811 elapsed=143.5s
+  [huginn-0125 | Huginn_S1_ARC_FixW_MeanMu_5280] step=280/280 loss=2.1396 elapsed=143.8s
+  => [Huginn] Huginn_S1_ARC_FixW_MeanMu_5280       P= 5280 dMac4= +3.44 dClz3= +3.98 dMMLU=+1.82 dNLL=+0.627
+  [huginn-0125 | Huginn_S1_ARC_Pareto_lam100_10560] step=93/280 loss=2.3223 elapsed=66.0s
+  [huginn-0125 | Huginn_S1_ARC_Pareto_lam100_10560] step=186/280 loss=1.9334 elapsed=134.7s
+  [huginn-0125 | Huginn_S1_ARC_Pareto_lam100_10560] step=279/280 loss=1.8641 elapsed=194.3s
+  [huginn-0125 | Huginn_S1_ARC_Pareto_lam100_10560] step=280/280 loss=1.8823 elapsed=194.6s
+  => [Huginn] Huginn_S1_ARC_Pareto_lam100_10560    P=10560 dMac4= +2.40 dClz3= +2.79 dMMLU=+1.22 dNLL=+0.009
+  [huginn-0125 | Huginn_S3_MedMCQA_HumanGold_10560] step=93/280 loss=5.9411 elapsed=43.6s
+  [huginn-0125 | Huginn_S3_MedMCQA_HumanGold_10560] step=186/280 loss=5.0561 elapsed=82.8s
+  [huginn-0125 | Huginn_S3_MedMCQA_HumanGold_10560] step=279/280 loss=4.9999 elapsed=126.7s
+  [huginn-0125 | Huginn_S3_MedMCQA_HumanGold_10560] step=280/280 loss=5.0340 elapsed=126.9s
+  => [Huginn] Huginn_S3_MedMCQA_HumanGold_10560    P=10560 dMac4= -1.40 dClz3= -1.61 dMMLU=-0.76 dNLL=+0.015
+  [huginn-0125 | Huginn_S3_MedMCQA_ZeroLabel_10560] step=93/280 loss=5.5235 elapsed=42.1s
+  [huginn-0125 | Huginn_S3_MedMCQA_ZeroLabel_10560] step=186/280 loss=5.5866 elapsed=85.0s
+  [huginn-0125 | Huginn_S3_MedMCQA_ZeroLabel_10560] step=279/280 loss=4.0723 elapsed=126.4s
+  [huginn-0125 | Huginn_S3_MedMCQA_ZeroLabel_10560] step=280/280 loss=4.1076 elapsed=126.6s
+  => [Huginn] Huginn_S3_MedMCQA_ZeroLabel_10560    P=10560 dMac4= -0.26 dClz3= -0.50 dMMLU=+0.46 dNLL=+0.043
+
+================ MODULE 4: OURO-1.4B DEPTH SCALING K in {2, 4, 8} ================
+  [Ouro-1.4B | ZeroLabel_K2] step=186/560 loss=1.0910 elapsed=34.7s
+  [Ouro-1.4B | ZeroLabel_K2] step=372/560 loss=0.8065 elapsed=69.3s
+  [Ouro-1.4B | ZeroLabel_K2] step=558/560 loss=0.3449 elapsed=103.0s
+  [Ouro-1.4B | ZeroLabel_K2] step=560/560 loss=0.3550 elapsed=103.4s
+  [Ouro-1.4B K2] sr_unc=1.39 mu_f=62.9% | ARC gap=+38.5 | Nat Mac4=57.13% -> dMac4=+13.64 dClz3=+19.50 dMMLU=-3.95
+  [Ouro-1.4B | ZeroLabel_K4] step=186/560 loss=1.1963 elapsed=41.8s
+  [Ouro-1.4B | ZeroLabel_K4] step=372/560 loss=0.8382 elapsed=84.3s
+  [Ouro-1.4B | ZeroLabel_K4] step=558/560 loss=0.6546 elapsed=126.1s
+  [Ouro-1.4B | ZeroLabel_K4] step=560/560 loss=0.6664 elapsed=126.5s
+  [Ouro-1.4B K4] sr_unc=2.55 mu_f=29.1% | ARC gap=+35.5 | Nat Mac4=65.62% -> dMac4=+6.38 dClz3=+9.72 dMMLU=-3.65
+  [Ouro-1.4B | ZeroLabel_K8] step=186/560 loss=1.3537 elapsed=64.3s
+  [Ouro-1.4B | ZeroLabel_K8] step=372/560 loss=1.0852 elapsed=127.9s
+  [Ouro-1.4B | ZeroLabel_K8] step=558/560 loss=0.7094 elapsed=191.8s
+  [Ouro-1.4B | ZeroLabel_K8] step=560/560 loss=0.7045 elapsed=192.4s
+  [Ouro-1.4B K8] sr_unc=2.43 mu_f=32.7% | ARC gap=+36.0 | Nat Mac4=63.10% -> dMac4=+5.73 dClz3=+9.21 dMMLU=-4.71
+
+ALL_PHASE2_CROSS_MODEL_DONE

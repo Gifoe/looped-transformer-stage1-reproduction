@@ -1,0 +1,199 @@
+
+================ TASK 1: COMPLETE 16-E0 CENTERED vs UNCENTERED SIGMA_H AUDIT ================
+  Verified 16 E0 rank-only controllers: {
+  "abs_cos_w_uncent": [
+    0.9418921161241636,
+    0.9973231892928069
+  ],
+  "abs_cos_w_cent": [
+    0.6532655004703938,
+    0.9761862202142026
+  ],
+  "abs_cos_u": [
+    0.32716215328647785,
+    0.9204441601215928
+  ],
+  "abs_cos_op_uncent": [
+    0.3081514528747386,
+    0.917980305338406
+  ],
+  "abs_cos_op_cent": [
+    0.21605171862271336,
+    0.898524905587334
+  ],
+  "w_mean_energy_frac": [
+    0.8008930678303434,
+    0.8999851401607085
+  ]
+}
+PROSE EXTRACTION AUDIT: {
+  "n_docs": 1024,
+  "n_dropped_8gram": 0,
+  "n_route_a_causal": 159,
+  "n_route_a_general": 1223,
+  "n_route_b_total": 955,
+  "n_route_b_discourse": 188
+}
+
+Building combined Route A+B G1_K4Blind bank on 2337 pure WikiText stems...
+  [G1_K4Blind] 8/2337 kept=4 elapsed=2.7s
+  [G1_K4Blind] 88/2337 kept=51 elapsed=29.8s
+  [G1_K4Blind] 168/2337 kept=104 elapsed=57.2s
+  [G1_K4Blind] 248/2337 kept=152 elapsed=83.6s
+  [G1_K4Blind] 328/2337 kept=202 elapsed=110.5s
+  [G1_K4Blind] 408/2337 kept=250 elapsed=137.4s
+  [G1_K4Blind] 488/2337 kept=302 elapsed=163.9s
+  [G1_K4Blind] 568/2337 kept=349 elapsed=190.6s
+  [G1_K4Blind] 648/2337 kept=399 elapsed=217.6s
+  [G1_K4Blind] 728/2337 kept=450 elapsed=244.9s
+  [G1_K4Blind] 808/2337 kept=492 elapsed=271.2s
+  [G1_K4Blind] 888/2337 kept=541 elapsed=298.5s
+  [G1_K4Blind] 968/2337 kept=588 elapsed=324.8s
+  [G1_K4Blind] 1048/2337 kept=641 elapsed=352.3s
+  [G1_K4Blind] 1128/2337 kept=685 elapsed=378.3s
+  [G1_K4Blind] 1208/2337 kept=729 elapsed=405.1s
+  [G1_K4Blind] 1288/2337 kept=776 elapsed=433.1s
+  [G1_K4Blind] 1368/2337 kept=827 elapsed=459.9s
+  [G1_K4Blind] 1448/2337 kept=873 elapsed=485.7s
+  [G1_K4Blind] 1528/2337 kept=925 elapsed=512.8s
+  [G1_K4Blind] 1608/2337 kept=980 elapsed=540.2s
+  [G1_K4Blind] 1688/2337 kept=1027 elapsed=566.5s
+  [G1_K4Blind] 1768/2337 kept=1064 elapsed=593.1s
+  [G1_K4Blind] 1848/2337 kept=1109 elapsed=620.8s
+  [G1_K4Blind] 1928/2337 kept=1160 elapsed=647.9s
+  [G1_K4Blind] 2008/2337 kept=1206 elapsed=673.6s
+  [G1_K4Blind] 2088/2337 kept=1251 elapsed=699.8s
+  [G1_K4Blind] 2168/2337 kept=1298 elapsed=727.2s
+  [G1_K4Blind] 2248/2337 kept=1347 elapsed=754.6s
+  [G1_K4Blind] 2328/2337 kept=1395 elapsed=781.2s
+Combined Banks Ready: G1=1190/210 (CFIT=371: A=129, B=242) | G2=1190 (CFIT=231) | G0=1020
+  [CSBP_v2 Rung1_G0Rand_ConfHard_4096 s=26112701] step=280/840 loss=0.3622 elapsed=59.2s
+  [CSBP_v2 Rung1_G0Rand_ConfHard_4096 s=26112701] step=560/840 loss=0.2303 elapsed=119.2s
+  [CSBP_v2 Rung1_G0Rand_ConfHard_4096 s=26112701] step=840/840 loss=0.1860 elapsed=179.1s
+  => Rung1_G0Rand_ConfHard_4096.s26112701       P=4096 dMac5= +3.14 dClz3= +2.30 MMLU=67.63% dNLL=+0.471 ag=87.2% uT1=-0.186
+  [CSBP_v2 Rung1_G0Rand_ConfHard_4096 s=26112702] step=280/840 loss=0.2183 elapsed=59.1s
+  [CSBP_v2 Rung1_G0Rand_ConfHard_4096 s=26112702] step=560/840 loss=0.2335 elapsed=118.9s
+  [CSBP_v2 Rung1_G0Rand_ConfHard_4096 s=26112702] step=840/840 loss=0.2242 elapsed=178.1s
+  => Rung1_G0Rand_ConfHard_4096.s26112702       P=4096 dMac5= +2.64 dClz3= +2.71 MMLU=67.33% dNLL=+0.369 ag=88.9% uT1=+0.170
+  [CSBP_v2 G1_Obj1_OrigGold_CE_4096 s=26112701] step=280/840 loss=0.9159 elapsed=59.1s
+  [CSBP_v2 G1_Obj1_OrigGold_CE_4096 s=26112701] step=560/840 loss=0.7003 elapsed=117.7s
+  [CSBP_v2 G1_Obj1_OrigGold_CE_4096 s=26112701] step=840/840 loss=0.3195 elapsed=176.8s
+  => G1_Obj1_OrigGold_CE_4096.s26112701         P=4096 dMac5= +1.75 dClz3= +2.91 MMLU=67.33% dNLL=+1.194 ag=68.6% uT1=-0.187
+  [CSBP_v2 G1_Obj1_OrigGold_CE_4096 s=26112702] step=280/840 loss=0.7523 elapsed=60.2s
+  [CSBP_v2 G1_Obj1_OrigGold_CE_4096 s=26112702] step=560/840 loss=0.5923 elapsed=119.5s
+  [CSBP_v2 G1_Obj1_OrigGold_CE_4096 s=26112702] step=840/840 loss=0.4802 elapsed=178.8s
+  => G1_Obj1_OrigGold_CE_4096.s26112702         P=4096 dMac5= -1.15 dClz3= +3.98 MMLU=64.89% dNLL=+1.215 ag=68.6% uT1=+0.195
+  [CSBP_v2 G1_Obj2_MCHard_Unif_4096 s=26112701] step=280/840 loss=1.4877 elapsed=58.6s
+  [CSBP_v2 G1_Obj2_MCHard_Unif_4096 s=26112701] step=560/840 loss=0.9734 elapsed=118.0s
+  [CSBP_v2 G1_Obj2_MCHard_Unif_4096 s=26112701] step=840/840 loss=0.9437 elapsed=176.6s
+  => G1_Obj2_MCHard_Unif_4096.s26112701         P=4096 dMac5= +2.75 dClz3= +2.32 MMLU=67.33% dNLL=+0.562 ag=63.3% uT1=-0.206
+  [CSBP_v2 G1_Obj2_MCHard_Unif_4096 s=26112702] step=280/840 loss=1.4716 elapsed=59.9s
+  [CSBP_v2 G1_Obj2_MCHard_Unif_4096 s=26112702] step=560/840 loss=1.2874 elapsed=119.3s
+  [CSBP_v2 G1_Obj2_MCHard_Unif_4096 s=26112702] step=840/840 loss=1.1492 elapsed=178.8s
+  => G1_Obj2_MCHard_Unif_4096.s26112702         P=4096 dMac5= +0.23 dClz3= -0.08 MMLU=67.02% dNLL=+0.549 ag=60.0% uT1=-0.212
+  [CSBP_v2 G1_Obj3_MCSoft_KL_4096 s=26112701] step=280/840 loss=1.0448 elapsed=59.8s
+  [CSBP_v2 G1_Obj3_MCSoft_KL_4096 s=26112701] step=560/840 loss=0.8023 elapsed=118.2s
+  [CSBP_v2 G1_Obj3_MCSoft_KL_4096 s=26112701] step=840/840 loss=0.6346 elapsed=178.4s
+  => G1_Obj3_MCSoft_KL_4096.s26112701           P=4096 dMac5= -7.93 dClz3= -9.78 MMLU=65.50% dNLL=+1.646 ag=38.6% uT1=-0.124
+  [CSBP_v2 G1_Obj3_MCSoft_KL_4096 s=26112702] step=280/840 loss=0.9553 elapsed=58.9s
+  [CSBP_v2 G1_Obj3_MCSoft_KL_4096 s=26112702] step=560/840 loss=0.7568 elapsed=117.8s
+  [CSBP_v2 G1_Obj3_MCSoft_KL_4096 s=26112702] step=840/840 loss=0.6770 elapsed=176.8s
+  => G1_Obj3_MCSoft_KL_4096.s26112702           P=4096 dMac5= -7.83 dClz3=-10.17 MMLU=65.50% dNLL=+1.440 ag=41.9% uT1=+0.137
+  [CSBP_v2 G1_Obj4_MCConfHard_Unfilt_4096 s=26112701] step=280/840 loss=0.8541 elapsed=59.3s
+  [CSBP_v2 G1_Obj4_MCConfHard_Unfilt_4096 s=26112701] step=560/840 loss=0.6616 elapsed=119.2s
+  [CSBP_v2 G1_Obj4_MCConfHard_Unfilt_4096 s=26112701] step=840/840 loss=0.5641 elapsed=178.3s
+  => G1_Obj4_MCConfHard_Unfilt_4096.s26112701   P=4096 dMac5= +2.78 dClz3= +2.79 MMLU=66.11% dNLL=+0.295 ag=65.2% uT1=-0.230
+  [CSBP_v2 G1_Obj4_MCConfHard_Unfilt_4096 s=26112702] step=280/840 loss=1.0113 elapsed=59.3s
+  [CSBP_v2 G1_Obj4_MCConfHard_Unfilt_4096 s=26112702] step=560/840 loss=0.9579 elapsed=118.5s
+  [CSBP_v2 G1_Obj4_MCConfHard_Unfilt_4096 s=26112702] step=840/840 loss=0.6162 elapsed=177.9s
+  => G1_Obj4_MCConfHard_Unfilt_4096.s26112702   P=4096 dMac5= +4.16 dClz3= +3.64 MMLU=67.02% dNLL=+0.823 ag=65.2% uT1=-0.225
+  [CSBP_v2 G1_Obj5_CFIT_ConfHard_ClzQA_4096 s=26112701] step=280/840 loss=0.2411 elapsed=63.3s
+  [CSBP_v2 G1_Obj5_CFIT_ConfHard_ClzQA_4096 s=26112701] step=560/840 loss=0.1294 elapsed=126.9s
+  [CSBP_v2 G1_Obj5_CFIT_ConfHard_ClzQA_4096 s=26112701] step=840/840 loss=0.0477 elapsed=190.8s
+  => G1_Obj5_CFIT_ConfHard_ClzQA_4096.s26112701 P=4096 dMac5= +3.96 dClz3= +5.47 MMLU=67.33% dNLL=+1.155 ag=66.2% uT1=-0.198
+  [CSBP_v2 G1_Obj5_CFIT_ConfHard_ClzQA_4096 s=26112702] step=280/840 loss=0.3517 elapsed=63.7s
+  [CSBP_v2 G1_Obj5_CFIT_ConfHard_ClzQA_4096 s=26112702] step=560/840 loss=0.1257 elapsed=127.0s
+  [CSBP_v2 G1_Obj5_CFIT_ConfHard_ClzQA_4096 s=26112702] step=840/840 loss=0.0281 elapsed=190.5s
+  => G1_Obj5_CFIT_ConfHard_ClzQA_4096.s26112702 P=4096 dMac5= +4.44 dClz3= +4.72 MMLU=66.87% dNLL=+2.184 ag=67.6% uT1=+0.195
+  [CSBP_v2 G1_Obj5_CFIT_ConfHard_ClzNat_4096 s=26112701] step=280/840 loss=0.3252 elapsed=62.2s
+  [CSBP_v2 G1_Obj5_CFIT_ConfHard_ClzNat_4096 s=26112701] step=560/840 loss=0.1381 elapsed=124.3s
+  [CSBP_v2 G1_Obj5_CFIT_ConfHard_ClzNat_4096 s=26112701] step=840/840 loss=0.0207 elapsed=186.3s
+  => G1_Obj5_CFIT_ConfHard_ClzNat_4096.s26112701 P=4096 dMac5= +3.31 dClz3= +4.60 MMLU=68.39% dNLL=+2.168 ag=62.4% uT1=-0.221
+  [CSBP_v2 G1_Obj5_CFIT_ConfHard_ClzNat_4096 s=26112702] step=280/840 loss=0.2856 elapsed=62.7s
+  [CSBP_v2 G1_Obj5_CFIT_ConfHard_ClzNat_4096 s=26112702] step=560/840 loss=0.1376 elapsed=124.7s
+  [CSBP_v2 G1_Obj5_CFIT_ConfHard_ClzNat_4096 s=26112702] step=840/840 loss=0.0677 elapsed=187.5s
+  => G1_Obj5_CFIT_ConfHard_ClzNat_4096.s26112702 P=4096 dMac5= +3.39 dClz3= +4.52 MMLU=69.00% dNLL=+1.586 ag=64.3% uT1=+0.236
+  [CSBP_v2 G1_Obj5_CFIT_ConfHard_Mix50_4096 s=26112701] step=280/840 loss=0.3449 elapsed=63.4s
+  [CSBP_v2 G1_Obj5_CFIT_ConfHard_Mix50_4096 s=26112701] step=560/840 loss=0.1986 elapsed=126.2s
+  [CSBP_v2 G1_Obj5_CFIT_ConfHard_Mix50_4096 s=26112701] step=840/840 loss=0.0835 elapsed=190.1s
+  => G1_Obj5_CFIT_ConfHard_Mix50_4096.s26112701 P=4096 dMac5= +3.91 dClz3= +4.58 MMLU=68.09% dNLL=+0.944 ag=69.0% uT1=-0.229
+  [CSBP_v2 G1_Obj5_CFIT_ConfHard_Mix50_4096 s=26112702] step=280/840 loss=0.3238 elapsed=62.6s
+  [CSBP_v2 G1_Obj5_CFIT_ConfHard_Mix50_4096 s=26112702] step=560/840 loss=0.1588 elapsed=126.4s
+  [CSBP_v2 G1_Obj5_CFIT_ConfHard_Mix50_4096 s=26112702] step=840/840 loss=0.0697 elapsed=189.5s
+  => G1_Obj5_CFIT_ConfHard_Mix50_4096.s26112702 P=4096 dMac5= +3.79 dClz3= +5.51 MMLU=68.09% dNLL=+1.100 ag=71.0% uT1=+0.224
+  [CSBP_v2 G1_Obj5_CFIT_RouteAOnly_4096 s=26112701] step=280/840 loss=0.2334 elapsed=33.4s
+  [CSBP_v2 G1_Obj5_CFIT_RouteAOnly_4096 s=26112701] step=560/840 loss=0.0270 elapsed=67.0s
+  [CSBP_v2 G1_Obj5_CFIT_RouteAOnly_4096 s=26112701] step=840/840 loss=0.0021 elapsed=100.5s
+  => G1_Obj5_CFIT_RouteAOnly_4096.s26112701     P=4096 dMac5= +2.94 dClz3= +4.57 MMLU=64.89% dNLL=+1.957 ag=65.2% uT1=-0.204
+  [CSBP_v2 G1_Obj5_CFIT_RouteAOnly_4096 s=26112702] step=280/840 loss=0.2178 elapsed=33.4s
+  [CSBP_v2 G1_Obj5_CFIT_RouteAOnly_4096 s=26112702] step=560/840 loss=0.0347 elapsed=66.9s
+  [CSBP_v2 G1_Obj5_CFIT_RouteAOnly_4096 s=26112702] step=840/840 loss=0.0027 elapsed=100.4s
+  => G1_Obj5_CFIT_RouteAOnly_4096.s26112702     P=4096 dMac5= +2.07 dClz3= +2.63 MMLU=66.41% dNLL=+1.790 ag=61.9% uT1=+0.207
+  [CSBP_v2 G1_Obj5_CFIT_FixW_MeanMu_2048 s=26112701] step=280/840 loss=0.3018 elapsed=64.2s
+  [CSBP_v2 G1_Obj5_CFIT_FixW_MeanMu_2048 s=26112701] step=560/840 loss=0.2025 elapsed=128.0s
+  [CSBP_v2 G1_Obj5_CFIT_FixW_MeanMu_2048 s=26112701] step=840/840 loss=0.2453 elapsed=191.6s
+  => G1_Obj5_CFIT_FixW_MeanMu_2048.s26112701    P=2048 dMac5= +3.06 dClz3= +3.76 MMLU=67.93% dNLL=+1.090 ag=67.1% uT1=+0.199
+  [CSBP_v2 G1_Obj5_CFIT_FixW_MeanMu_2048 s=26112702] step=280/840 loss=0.3593 elapsed=64.1s
+  [CSBP_v2 G1_Obj5_CFIT_FixW_MeanMu_2048 s=26112702] step=560/840 loss=0.2071 elapsed=127.1s
+  [CSBP_v2 G1_Obj5_CFIT_FixW_MeanMu_2048 s=26112702] step=840/840 loss=0.1524 elapsed=190.9s
+  => G1_Obj5_CFIT_FixW_MeanMu_2048.s26112702    P=2048 dMac5= +2.78 dClz3= +2.52 MMLU=66.87% dNLL=+1.032 ag=67.1% uT1=+0.187
+  [CSBP_v2 G1_CFIT_Pareto_lam025_4096 s=26112701] step=280/840 loss=0.3086 elapsed=80.6s
+  [CSBP_v2 G1_CFIT_Pareto_lam025_4096 s=26112701] step=560/840 loss=0.1350 elapsed=157.3s
+  [CSBP_v2 G1_CFIT_Pareto_lam025_4096 s=26112701] step=840/840 loss=0.0588 elapsed=232.5s
+  => G1_CFIT_Pareto_lam025_4096.s26112701       P=4096 dMac5= +5.15 dClz3= +3.54 MMLU=65.50% dNLL=+0.043 ag=68.1% uT1=-0.208
+  [CSBP_v2 G1_CFIT_Pareto_lam025_4096 s=26112702] step=280/840 loss=0.2696 elapsed=80.9s
+  [CSBP_v2 G1_CFIT_Pareto_lam025_4096 s=26112702] step=560/840 loss=0.1638 elapsed=159.2s
+  [CSBP_v2 G1_CFIT_Pareto_lam025_4096 s=26112702] step=840/840 loss=0.0979 elapsed=233.8s
+  => G1_CFIT_Pareto_lam025_4096.s26112702       P=4096 dMac5= +5.20 dClz3= +2.96 MMLU=67.48% dNLL=+0.018 ag=70.0% uT1=+0.210
+  [CSBP_v2 G1_CFIT_Pareto_lam050_4096 s=26112701] step=280/840 loss=0.3838 elapsed=80.4s
+  [CSBP_v2 G1_CFIT_Pareto_lam050_4096 s=26112701] step=560/840 loss=0.1167 elapsed=158.0s
+  [CSBP_v2 G1_CFIT_Pareto_lam050_4096 s=26112701] step=840/840 loss=0.0294 elapsed=233.4s
+  => G1_CFIT_Pareto_lam050_4096.s26112701       P=4096 dMac5= +3.80 dClz3= +3.70 MMLU=65.05% dNLL=+0.017 ag=66.2% uT1=-0.217
+  [CSBP_v2 G1_CFIT_Pareto_lam050_4096 s=26112702] step=280/840 loss=0.3194 elapsed=80.4s
+  [CSBP_v2 G1_CFIT_Pareto_lam050_4096 s=26112702] step=560/840 loss=0.1431 elapsed=158.0s
+  [CSBP_v2 G1_CFIT_Pareto_lam050_4096 s=26112702] step=840/840 loss=0.0223 elapsed=233.5s
+  => G1_CFIT_Pareto_lam050_4096.s26112702       P=4096 dMac5= +2.99 dClz3= +3.70 MMLU=66.11% dNLL=+0.048 ag=69.5% uT1=+0.200
+  [CSBP_v2 G1_CFIT_Pareto_lam100_4096 s=26112701] step=280/840 loss=0.3858 elapsed=81.1s
+  [CSBP_v2 G1_CFIT_Pareto_lam100_4096 s=26112701] step=560/840 loss=0.1115 elapsed=157.8s
+  [CSBP_v2 G1_CFIT_Pareto_lam100_4096 s=26112701] step=840/840 loss=0.0707 elapsed=233.2s
+  => G1_CFIT_Pareto_lam100_4096.s26112701       P=4096 dMac5= +3.44 dClz3= +3.72 MMLU=64.89% dNLL=+0.038 ag=67.1% uT1=-0.210
+  [CSBP_v2 G1_CFIT_Pareto_lam100_4096 s=26112702] step=280/840 loss=0.3542 elapsed=80.8s
+  [CSBP_v2 G1_CFIT_Pareto_lam100_4096 s=26112702] step=560/840 loss=0.1600 elapsed=158.6s
+  [CSBP_v2 G1_CFIT_Pareto_lam100_4096 s=26112702] step=840/840 loss=0.0691 elapsed=234.1s
+  => G1_CFIT_Pareto_lam100_4096.s26112702       P=4096 dMac5= +5.41 dClz3= +5.05 MMLU=65.65% dNLL=+0.037 ag=69.0% uT1=-0.202
+  [CSBP_v2 G2_Obj1_OrigGold_CE_4096 s=26112701] step=280/840 loss=0.1664 elapsed=58.6s
+  [CSBP_v2 G2_Obj1_OrigGold_CE_4096 s=26112701] step=560/840 loss=0.1605 elapsed=117.0s
+  [CSBP_v2 G2_Obj1_OrigGold_CE_4096 s=26112701] step=840/840 loss=0.1432 elapsed=176.6s
+  => G2_Obj1_OrigGold_CE_4096.s26112701         P=4096 dMac5= +4.92 dClz3= +6.05 MMLU=67.02% dNLL=+0.706 ag=79.0% uT1=-0.170
+  [CSBP_v2 G2_Obj1_OrigGold_CE_4096 s=26112702] step=280/840 loss=0.1722 elapsed=59.0s
+  [CSBP_v2 G2_Obj1_OrigGold_CE_4096 s=26112702] step=560/840 loss=0.1017 elapsed=118.2s
+  [CSBP_v2 G2_Obj1_OrigGold_CE_4096 s=26112702] step=840/840 loss=0.1326 elapsed=177.6s
+  => G2_Obj1_OrigGold_CE_4096.s26112702         P=4096 dMac5= +5.23 dClz3= +6.40 MMLU=65.81% dNLL=+1.409 ag=76.7% uT1=-0.181
+  [CSBP_v2 G2_Obj4_MCConfHard_Unfilt_4096 s=26112701] step=280/840 loss=0.6367 elapsed=58.3s
+  [CSBP_v2 G2_Obj4_MCConfHard_Unfilt_4096 s=26112701] step=560/840 loss=0.6005 elapsed=118.1s
+  [CSBP_v2 G2_Obj4_MCConfHard_Unfilt_4096 s=26112701] step=840/840 loss=0.5646 elapsed=177.8s
+  => G2_Obj4_MCConfHard_Unfilt_4096.s26112701   P=4096 dMac5= +3.88 dClz3= +4.16 MMLU=67.48% dNLL=+0.447 ag=75.2% uT1=-0.191
+  [CSBP_v2 G2_Obj4_MCConfHard_Unfilt_4096 s=26112702] step=280/840 loss=0.7283 elapsed=58.4s
+  [CSBP_v2 G2_Obj4_MCConfHard_Unfilt_4096 s=26112702] step=560/840 loss=0.5061 elapsed=116.9s
+  [CSBP_v2 G2_Obj4_MCConfHard_Unfilt_4096 s=26112702] step=840/840 loss=0.5119 elapsed=175.8s
+  => G2_Obj4_MCConfHard_Unfilt_4096.s26112702   P=4096 dMac5= +4.03 dClz3= +2.65 MMLU=67.63% dNLL=+0.401 ag=77.1% uT1=-0.170
+  [CSBP_v2 G2_Obj5_CFIT_ConfHard_4096 s=26112701] step=280/840 loss=0.0743 elapsed=60.5s
+  [CSBP_v2 G2_Obj5_CFIT_ConfHard_4096 s=26112701] step=560/840 loss=0.0020 elapsed=121.3s
+  [CSBP_v2 G2_Obj5_CFIT_ConfHard_4096 s=26112701] step=840/840 loss=0.0005 elapsed=183.2s
+  => G2_Obj5_CFIT_ConfHard_4096.s26112701       P=4096 dMac5= +5.04 dClz3= +4.96 MMLU=67.48% dNLL=+1.730 ag=76.2% uT1=-0.189
+  [CSBP_v2 G2_Obj5_CFIT_ConfHard_4096 s=26112702] step=280/840 loss=0.0463 elapsed=61.6s
+  [CSBP_v2 G2_Obj5_CFIT_ConfHard_4096 s=26112702] step=560/840 loss=0.0049 elapsed=123.3s
+  [CSBP_v2 G2_Obj5_CFIT_ConfHard_4096 s=26112702] step=840/840 loss=0.0006 elapsed=185.0s
+  => G2_Obj5_CFIT_ConfHard_4096.s26112702       P=4096 dMac5= +4.99 dClz3= +4.26 MMLU=65.96% dNLL=+1.887 ag=77.6% uT1=-0.174
+
+ALL_CSBP_V2_DONE

@@ -1,0 +1,69 @@
+{
+  "plan": {
+    "benchmark": "piqa",
+    "mode": "candidate",
+    "depth": 4,
+    "arm": "new",
+    "checkpoint_sha256": "9c1b1901bf8aca2737b6e1ece8324a2183c5ff927a698262789a57c115077a8e",
+    "freeze_sha256": "58ace1cc86bd7ff4e9fc33c0b74956b11e1de457dcc0da247a3b0e4203292112",
+    "input_sha256": "3885a22dd6d8c25889d5814a31e87ce53835da76b5ed9ec39c0d68e6efeeea1d",
+    "config": {
+      "head_rows": 128,
+      "max_batch": 32,
+      "attention_cap": 8388608,
+      "token_cap": 4096,
+      "shard_size": 256,
+      "max_length": 65536
+    }
+  },
+  "metrics": {
+    "acc": {
+      "value": 0.779651795429815,
+      "n": 1838,
+      "count": 1433
+    },
+    "acc_norm": {
+      "value": 0.7899891186071817,
+      "n": 1838,
+      "count": 1452
+    }
+  },
+  "cost": {
+    "elapsed_seconds": 16.51916330307722,
+    "forward_calls": 120,
+    "head_calls": 713,
+    "padded_input_tokens": 144730,
+    "dense_loop_token_calls": 578920,
+    "oom_retries": 0,
+    "peak_allocated_bytes": 3145863680,
+    "peak_reserved_bytes": 22062039040
+  },
+  "runtime": {
+    "model_revision": "574fa66cb8bf5abdc979642d01cf2b79b16bfab1",
+    "model_sha256": "58872a72616c736595b8b7662079c5b12c5a162ec16eae94f21c348dfa9885af",
+    "torch": "2.7.1+cu128",
+    "transformers": "4.55.4",
+    "torch_cuda": "12.8",
+    "gpu": "NVIDIA vGPU-48GB",
+    "cuda_capability": [
+      8,
+      9
+    ],
+    "capacity_bytes": 25250627584,
+    "dtype": "bfloat16",
+    "attention": "sdpa",
+    "use_cache": false,
+    "files_sha256": {
+      "config.json": "ce9cc13da41591b8b4deca053d7dfee06424c0228628ee862ea86d725bc163f3",
+      "configuration_ouro.py": "950443e32929047aa08d02abad2e1888bc1914b3db988d3d675f70787f65dafb",
+      "modeling_ouro.py": "c5c68fbb368ce2909c257ae2afc50719be8c91539333d3295e19312c4316f413",
+      "merges.txt": "0b54e8aa4e53d5383e2e4bc635a56b43f9647f7b13832d5d9ecd8f82dac4f510",
+      "model.safetensors": "58872a72616c736595b8b7662079c5b12c5a162ec16eae94f21c348dfa9885af",
+      "special_tokens_map.json": "55087bb8409060d9cb0f80495e34f4e0d8a84f68a799a6b0cab3132be0aae319",
+      "tokenizer.json": "fcb808fe5e7642f5299be28aea07fc7f6d4f4364c3ac5e408e15a772cbc8fa8d",
+      "tokenizer_config.json": "7e010da95d71b0fa1aa809552922c74cc1dd98d628f21ba39ca6c35aa18d5d91",
+      "vocab.json": "7b9de3f47796abf8d00ab96be299fea0dc9afdf1827f34e7e0b9fb44593efe5c"
+    }
+  },
+  "rows_sha256": "c883b18d2ddae9bfce20b791224524806656997201b73b47d70cf42250c58e08"
+}

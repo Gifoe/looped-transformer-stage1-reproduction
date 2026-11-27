@@ -1,0 +1,36 @@
+def single_option_forward(packed, model, depth, net, col):
+    from types import SimpleNamespace
+    from advantages import forward
+    inputs, groups, positions, tokens=packed.packed
+    selected=groups==col
+    option=SimpleNamespace(packed=(inputs[col:col+1],groups[selected]*0,positions[selected],tokens[selected]))
+    is_hook=isinstance(net,matched.parts.HookAdapterBase)
+    from contextlib import nullcontext
+    with (net.attach(model) if is_hook else nullcontext()):
+        output,_=forward(model,option,depth,None if is_hook else net)
+    return -F.cross_entropy(output,tokens[selected],reduction="sum") * (16./packed.metadata[0]["characters"][col])
+
+
+def one_option_at_a_time(archive,model,tokenizer,mb,weights,denom,key,depth,net):
+    from advantages import choice_batch
+    total=0.
+    for row,weight in zip(mb,weights,strict=True):
+        request=matched.make_candidate_row(row["id"],row["question"],row["options"],0)
+        packed=choice_batch(archive,tokenizer,[request])
+        columns=len(row["options"])
+        target=row[key]
+        with torch.no_grad():
+            scores=torch.stack([single_option_forward(packed,model,depth,net,i) for i in range(columns)])
+            value=-scores.log_softmax(0)[target]
+            coeff=scores.softmax(0)
+            coeff[target]-=1.
+            coeff*=weight/denom
+            total+=float(value)*weight/denom
+        with torch.enable_grad():
+            for i in range(columns):
+                score=single_option_forward(packed,model,depth,net,i)
+                (score*coeff[i]).backward()
+    return total
+
+
+
