@@ -1,0 +1,76 @@
+\begin{table*}[t]
+\centering
+\caption{\textbf{Full 43,769-Question Official 8-Benchmark Evaluation on Frozen Ouro-1.4B ($K=4$).} All zero-label methods use zero human answer labels. \textsc{ZeroQA-WikiText} additionally uses zero external QA datasets and zero external LLMs. \textsc{Pareto Zero-NLL} achieves near-zero language-modeling drift ($\Delta\mathrm{NLL}=+0.003$, $\mathrm{PPL}\times 1.003$) while outperforming supervised T1 and $48\times$-larger LoRA. \textsc{FixW-MeanMu} freezes $w=\mu/\|\mu\|$ from unlabeled WikiText and trains only 2,048 parameters ($96\times$ fewer than LoRA), setting a new record on MMLU-Pro ($37.24\%$, $p=1.82\times 10^{-5}$ vs.\ T1).}
+\label{tab:official8}
+\small\setlength{\tabcolsep}{3.5pt}
+\begin{tabular}{lrrrcccccccccr}
+\toprule
+Method & Params & Lab. & QA & $\Delta$NLL & ARC-C & ARC-E & SciQ & MMLU & Hella & Wino & PIQA & M-Pro & \textbf{Macro-8} \\
+\midrule
+Native & 0 & No & No & 0.000 & 52.82 & 76.68 & 94.70 & 68.37 & 71.63 & 66.54 & 78.56 & 26.40 & 66.96 \\
+Best LoopCD & 0 & No & No & 0.000 & 54.44 & 78.83 & 95.30 & 68.15 & 72.11 & 66.22 & 79.11 & 27.63 & 67.65 \\
+\textbf{ZeroQA-WikiText (Ours)} & 4,096 & No & \textbf{No} & 0.037 & 60.15 & 79.38 & 94.50 & 66.27 & 76.95 & 65.19 & 79.00 & 34.14 & 69.45 \\
+Historical T1 (Rank-1) & 4,096 & Yes & Yes & 0.390 & 68.09 & 87.71 & 96.40 & 67.78 & 76.68 & 66.85 & 80.14 & 36.19 & 72.48 \\
+LoRA All-QV ($48\times$) & 196,608 & No & Yes & 0.388 & 74.15 & 87.46 & 94.70 & 61.78 & 78.37 & 70.01 & 81.12 & 32.41 & 72.50 \\
+\textbf{Pareto Zero-NLL (Ours)} & 4,096 & No & Yes & \textbf{0.003} & 71.67 & 87.46 & 96.50 & 67.26 & 75.15 & 66.06 & 79.87 & 36.24 & 72.53 \\
+Supervised Rank-8 ($8\times$) & 32,768 & Yes & Yes & -- & 67.66 & 87.37 & 96.90 & 67.92 & 76.24 & 67.72 & 79.82 & 37.00 & 72.58 \\
+\textbf{FixW-MeanMu (Ours, $0.5\times$)} & \textbf{2,048} & No & Yes & 0.717 & 69.11 & 86.99 & 96.20 & 67.38 & 77.79 & 66.38 & 79.54 & 37.24 & 72.58 \\
+IA3 All-Layers ($36\times$) & 147,456 & No & Yes & 0.268 & 73.98 & 89.69 & 96.40 & 64.69 & 75.38 & 66.46 & 80.14 & 35.61 & 72.79 \\
+\textbf{Best Zero-Label (Ours)} & 4,096 & No & Yes & 0.429 & 69.54 & 88.30 & 96.70 & 67.64 & 77.37 & 69.06 & 80.03 & 36.47 & \textbf{73.14} \\
+\bottomrule
+\end{tabular}
+\end{table*}
+
+\begin{table}[t]
+\centering
+\caption{\textbf{Same-Source Objective Ablation on Pure Unlabeled WikiText (2-Seed Means).} All G1 rows share identical 1,190 zero-shortcut probes (Option-Only $20.5\%$--$27.4\%$, 0 8-gram eval overlap).}
+\label{tab:csbp}
+\footnotesize\setlength{\tabcolsep}{4pt}
+\begin{tabular}{lrrrrr}
+\toprule
+Pure-WikiText Arm & Params & $\Delta$Mac5 & $\Delta$Clz3 & MMLU & $\Delta$NLL \\
+\midrule
+G1: MC Soft-KL (distill soft $q_0^{\mathrm{MC}}$) & 4,096 & -7.88 & -9.98 & 65.50 & +1.543 \\
+G1: Original-Ending CE (self-supervised) & 4,096 & +0.30 & +3.45 & 66.11 & +1.205 \\
+G1: MC Hard-Pseudo (uniform) & 4,096 & +1.49 & +1.12 & 67.17 & +0.555 \\
+G1: MC Conf-Weighted Hard-Pseudo & 4,096 & +3.47 & +3.21 & 66.57 & +0.559 \\
+G1: + CFIT Filtering ($N=371$) & 4,096 & +4.20 & +5.09 & 67.10 & +1.670 \\
+G1: + CFIT (Natural Cloze, no QA wrapper) & 4,096 & +3.35 & +4.56 & 68.69 & +1.877 \\
+G1: + CFIT + Frozen $w=\mu/\|\mu\|$ (2,048) & 2,048 & +2.92 & +3.14 & 67.40 & +1.061 \\
+\textbf{G1: + CFIT + NLL Trust ($\lambda=0.25$)} & 4,096 & +5.17 & +3.25 & 66.49 & +0.030 \\
+G1: + CFIT + NLL Trust ($\lambda=1.00$) & 4,096 & +4.42 & +4.39 & 65.27 & +0.037 \\
+G2: Real-Human Retrieval (0 generation) Orig-CE & 4,096 & +5.08 & +6.22 & 66.41 & +1.057 \\
+G2: Real-Human Retrieval + CFIT Conf-Hard & 4,096 & +5.02 & +4.61 & 66.72 & +1.808 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{table*}[t]
+\centering
+\caption{\textbf{Cross-Architecture Generalization, Recurrence Depth Scaling ($K\in\{2,4,8\}$), and Half-Parameter Frozen Mean Read Axis ($w=\mu/\|\mu\|$).} Across non-recurrent \textsc{Qwen2.5-1.5B}, 2$\times$-scale \textsc{Ouro-2.6B}, and \textsc{Huginn-0125} ($K=32$), zero-label rank-1 readout calibration requires downstream nonlinear depth and transfers cleanly across architectures.}
+\label{tab:cross_arch}
+\small\setlength{\tabcolsep}{4.5pt}
+\begin{tabular}{llrrrrrrr}
+\toprule
+Backbone & Variant / Site & Params & $\mathrm{sr}(\Sigma_h)$ & $\mu$-Frac & Nat.\ Mac4 & $\Delta$Mac4 & $\Delta$Clz3 & $\Delta$MMLU \\
+\midrule
+Qwen2.5-1.5B (28L) & Zero-Label L14 (Mid-depth) & 3,072 & 1.00 & 0.8\% & 55.98 & +11.40 & +16.01 & -2.43 \\
+Qwen2.5-1.5B (28L) & Zero-Label L07 (21 rem.) & 3,072 & 1.00 & 0.6\% & 55.98 & +6.45 & +8.45 & +0.46 \\
+Qwen2.5-1.5B (28L) & Zero-Label L21 (Pareto $\lambda=1$) & 3,072 & 1.01 & 1.0\% & 55.98 & +4.41 & +6.03 & -0.46 \\
+Qwen2.5-1.5B (28L) & Zero-Label PostNorm ($\mathrm{lm\_head}$) & 3,072 & 1.38 & 66.4\% & 55.98 & +0.37 & +0.14 & +1.06 \\
+\midrule
+Ouro-1.4B (K2) & Zero-Label Rank-1 & 4,096 & 1.39 & 62.9\% & 57.13 & +13.64 & +19.50 & -3.95 \\
+Ouro-1.4B (K4) & Zero-Label Rank-1 & 4,096 & 2.55 & 29.1\% & 65.62 & +6.38 & +9.72 & -3.65 \\
+Ouro-1.4B (K8) & Zero-Label Rank-1 & 4,096 & 2.43 & 32.7\% & 63.10 & +5.73 & +9.21 & -4.71 \\
+Ouro-2.6B (K2) & Zero-Label Rank-1 & 4,096 & 1.40 & 59.8\% & 61.56 & +13.53 & +19.16 & -3.34 \\
+Ouro-2.6B (K4) & Zero-Label Rank-1 & 4,096 & 2.82 & 27.2\% & 69.51 & +6.34 & +9.77 & -3.95 \\
+Ouro-2.6B (K8) & Zero-Label Rank-1 & 4,096 & 2.79 & 26.8\% & 67.79 & +6.66 & +8.47 & +1.22 \\
+Ouro-2.6B (K4) & \textbf{FixW-MeanMu ($0.5\times$)} & \textbf{2,048} & 2.82 & 27.2\% & 69.51 & \textbf{+8.24} & \textbf{+11.69} & -2.13 \\
+\midrule
+Huginn-0125 (K32) & Human-Gold ARC (46.7\% R-II) & 10,560 & 32.08 & 2.8\% & 45.51 & +2.04 & +3.43 & -2.13 \\
+Huginn-0125 (K32) & \textbf{Zero-Label ARC (Cure!)} & 10,560 & 32.08 & 2.8\% & 45.51 & +3.24 & +3.56 & +2.28 \\
+Huginn-0125 (K32) & \textbf{FixW-MeanMu ($0.5\times$, \#1)} & 5,280 & 32.08 & 2.8\% & 45.51 & +3.44 & +3.98 & +1.82 \\
+Huginn-0125 (K32) & Pareto $\lambda=1.0$ ($\Delta$NLL=+0.009) & 10,560 & 32.08 & 2.8\% & 45.51 & +2.40 & +2.79 & +1.22 \\
+\bottomrule
+\end{tabular}
+\end{table*}

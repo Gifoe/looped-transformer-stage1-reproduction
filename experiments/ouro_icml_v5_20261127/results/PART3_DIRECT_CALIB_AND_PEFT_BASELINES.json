@@ -1,0 +1,65 @@
+{
+  "native": {
+    "sciq_val": {
+      "acc": 0.95,
+      "acc_norm": 0.938
+    },
+    "arc_easy_val": {
+      "acc": 0.8022388059701493,
+      "acc_norm": 0.7332089552238806
+    },
+    "cosmosqa_val": {
+      "acc": 0.274,
+      "acc_norm": 0.362
+    },
+    "mmlu_val": {
+      "acc": 0.6732522796352584
+    },
+    "mmlu_dev158": {
+      "acc": 0.6265822784810127
+    },
+    "mmlu_pro_val": {
+      "correct": 0.3220338983050847,
+      "parseable": 0.6101694915254238
+    },
+    "macro5": 0.6056990266328447,
+    "cloze3": 0.6777363184079602,
+    "non_mmlu4": 0.5888107133822413
+  },
+  "direct_calibration": {
+    "sciq_val": {
+      "n": 500,
+      "native_cloze_acc_norm": 0.938,
+      "cloze_ms_per_q": 121.07150039076805,
+      "pmi_calib_acc": 0.886,
+      "pmi_ms_per_q": 127.78839400410652,
+      "rotated_mc_acc": 0.984,
+      "rot_mc_ms_per_q": 73.59116838872433
+    },
+    "arc_easy_val": {
+      "n": 536,
+      "native_cloze_acc_norm": 0.7276119402985075,
+      "cloze_ms_per_q": 22.58898465157445,
+      "pmi_calib_acc": 0.6716417910447762,
+      "pmi_ms_per_q": 31.64997851170266,
+      "rotated_mc_acc": 0.9496268656716418,
+      "rot_mc_ms_per_q": 36.92932702156145
+    },
+    "cosmosqa_val": {
+      "n": 500,
+      "native_cloze_acc_norm": 0.362,
+      "cloze_ms_per_q": 62.99483212828636,
+      "pmi_calib_acc": 0.312,
+      "pmi_ms_per_q": 75.49480548501015,
+      "rotated_mc_acc": 0.746,
+      "rot_mc_ms_per_q": 70.61931851506233
+    },
+    "cloze3_mean": {
+      "native_cloze": 0.6758706467661691,
+      "pmi_calib": 0.6232139303482588,
+      "rotated_mc": 0.8932089552238806
+    }
+  },
+  "caa_repe": {},
+  "peft_arms": {}
+}
